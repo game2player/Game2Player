@@ -1,0 +1,351 @@
+game:
+  game_name: 367_10-103
+  url: https://nerdspartan.itch.io/10-103
+  speed_multiplier: 1.0
+  width: 960
+  height: 600
+  game_rules: "10-103 is a short side-scrolling horror shooter. You are a special-ops soldier\nsent down\
+    \ through the floors of the Aegis containment facility. Each floor is\na dark corridor with a wall\
+    \ label such as \"FLOOR 5\". You leave each floor in an\nelevator, which takes you to the next one\
+    \ down. There is no menu and no save.\nEach task starts directly on a floor.\n\n- Elevators: an elevator\
+    \ is a doorway with a lit up/down panel beside it. Stand\n  in the doorway and press Down to ride\
+    \ it to the next floor. The way to the\n  exit is not always the obvious direction. Some floors make\
+    \ you walk somewhere\n  else first: a dead elevator powers up, or a scripted event opens the way and\n\
+    \  sends you back.\n- Radio: the operator talks over the radio, with subtitles near the bottom.\n\
+    \  When \"Press TAB to report\" appears next to a walkie-talkie icon, the operator\n  is waiting for\
+    \ your reply: tap Tab, after the current subtitle line has\n  finished, to answer and hear what comes\
+    \ next. You can keep walking while the\n  prompt is up. Tab also reports unusual findings at any time.\n\
+    - Enemies: zombies and soldier zombies wake as you approach and walk at you.\n  Each hit takes one\
+    \ of your 3 health points.\n  Shoot them down; a zombie takes a few hits. Ghostly monsters cannot\
+    \ be shot\n  until the story allows it, so the answer is usually to get away from them.\n- Death:\
+    \ the screen turns fully red. A moment later, press Space to restart the\n  same floor from its beginning.\n\
+    - Floor 11 ends with a radio call about a bomb: confirm it and then deal with\n  what comes for you.\
+    \ After that the story moves to the last floor.\n"
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You control the soldier in the corridor. Walk left and right, shoot the
+
+        rifle in the direction you face, answer the radio, and take elevators down.
+
+        '
+      control_notes: "- ArrowLeft / ArrowRight: hold to walk that way and face it.\n- Space: fire the\
+        \ rifle toward the way you face. A quick tap does not\n  fire: hold Space for about 0.3 s per\
+        \ shot, or hold it longer to keep\n  firing. After a death, a tap of Space restarts the floor.\n\
+        - Tab: answer the radio or report a finding. A tap is enough.\n- ArrowDown: ride the elevator\
+        \ while standing in its doorway.\n- Waiting: radio transmissions play for several seconds. Answer\
+        \ only once\n  the subtitle line has finished.\n"
+    controls:
+      allowed_keys:
+      - ArrowLeft
+      - ArrowRight
+      - ArrowDown
+      - Space
+      - Tab
+      allow_clicks: false
+      hold_duration: 0.5
+tasks:
+- task_id: '367_01'
+  game_id: 367_10-103
+  difficulty: easy
+  game_url_suffix: ?task=367_01
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1.0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Floor 1, the facility entrance. Walk right along the corridor, answer the radio with Tab
+    when "Press TAB to report" appears, and keep going to the elevator. Stand in the elevator doorway
+    and press Down to ride to Floor 2. The task is complete when Floor 2 is reached.
+  progress_signal:
+    field: metrics.floor_route_progress
+    granularity: continuous
+    coarse_reason: ''
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.floor_route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.floor_route_progress
+    - metrics.run_progress
+    - metrics.current_floor
+    - metrics.floors_descended
+    - metrics.deaths
+    - metrics.kills
+    - metrics.player_hp
+    - game_state.variant.matches_requested
+    - terminal.outcome
+- task_id: '367_02'
+  game_id: 367_10-103
+  difficulty: easy
+  game_url_suffix: ?task=367_02
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1.0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Floor 2. Investigate the corridor, where something has happened, and report what you find
+    over the radio with Tab when you are asked. Then find this floor's elevator and press Down in its
+    doorway to ride to Floor 3. The task is complete when Floor 3 is reached.
+  progress_signal:
+    field: metrics.floor_route_progress
+    granularity: continuous
+    coarse_reason: ''
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.floor_route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.floor_route_progress
+    - metrics.run_progress
+    - metrics.current_floor
+    - metrics.floors_descended
+    - metrics.deaths
+    - metrics.kills
+    - metrics.player_hp
+    - game_state.variant.matches_requested
+    - terminal.outcome
+- task_id: '367_03'
+  game_id: 367_10-103
+  difficulty: easy
+  game_url_suffix: ?task=367_03
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1.0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Floor 3. Cross the corridor; something here will follow you. Reach the elevator and press
+    Down in its doorway to ride to Floor 4. The task is complete when Floor 4 is reached.
+  progress_signal:
+    field: metrics.floor_route_progress
+    granularity: continuous
+    coarse_reason: ''
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.floor_route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.floor_route_progress
+    - metrics.run_progress
+    - metrics.current_floor
+    - metrics.floors_descended
+    - metrics.deaths
+    - metrics.kills
+    - metrics.player_hp
+    - game_state.variant.matches_requested
+    - terminal.outcome
+- task_id: '367_04'
+  game_id: 367_10-103
+  difficulty: medium
+  game_url_suffix: ?task=367_04
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1.0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Floor 5. Zombies wake as you advance. Shoot them with Space before they reach you, and
+    push on to the elevator at the far end. Press Down in its doorway to ride to Floor 6. If you die,
+    press Space to restart the floor. The task is complete when Floor 6 is reached.
+  progress_signal:
+    field: metrics.floor_route_progress
+    granularity: continuous
+    coarse_reason: ''
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.floor_route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.floor_route_progress
+    - metrics.run_progress
+    - metrics.current_floor
+    - metrics.floors_descended
+    - metrics.deaths
+    - metrics.kills
+    - metrics.player_hp
+    - game_state.variant.matches_requested
+    - terminal.outcome
+- task_id: '367_05'
+  game_id: 367_10-103
+  difficulty: medium
+  game_url_suffix: ?task=367_05
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1.0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Floor 6. The elevator you arrive beside is dead. Go deep into the floor to bring it back
+    to life, then survive the way back and press Down in its doorway to ride to Floor 7. If you die, press
+    Space to restart the floor. The task is complete when Floor 7 is reached.
+  progress_signal:
+    field: metrics.floor_route_progress
+    granularity: continuous
+    coarse_reason: ''
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.floor_route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.floor_route_progress
+    - metrics.run_progress
+    - metrics.current_floor
+    - metrics.floors_descended
+    - metrics.deaths
+    - metrics.kills
+    - metrics.player_hp
+    - game_state.variant.matches_requested
+    - terminal.outcome
+- task_id: '367_06'
+  game_id: 367_10-103
+  difficulty: medium
+  game_url_suffix: ?task=367_06
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1.0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Floor 9. Zombies, a soldier zombie and a lurking monster guard this floor. Fight or slip
+    past them to the elevator and press Down in its doorway to ride to Floor 10. If you die, press Space
+    to restart the floor. The task is complete when Floor 10 is reached.
+  progress_signal:
+    field: metrics.floor_route_progress
+    granularity: continuous
+    coarse_reason: ''
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.floor_route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.floor_route_progress
+    - metrics.run_progress
+    - metrics.current_floor
+    - metrics.floors_descended
+    - metrics.deaths
+    - metrics.kills
+    - metrics.player_hp
+    - game_state.variant.matches_requested
+    - terminal.outcome
+- task_id: '367_07'
+  game_id: 367_10-103
+  difficulty: hard
+  game_url_suffix: ?task=367_07
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1.0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'Floor 10, where many players get stuck. Deal with the enemies, and change direction when
+    the floor''s events force you to: monsters appear on one side and then the other. Reach the elevator
+    and press Down in its doorway to ride to Floor 11. If you die, press Space to restart the floor. The
+    task is complete when Floor 11 is reached.'
+  progress_signal:
+    field: metrics.floor_route_progress
+    granularity: continuous
+    coarse_reason: ''
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.floor_route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.floor_route_progress
+    - metrics.run_progress
+    - metrics.current_floor
+    - metrics.floors_descended
+    - metrics.deaths
+    - metrics.kills
+    - metrics.player_hp
+    - game_state.variant.matches_requested
+    - terminal.outcome
+- task_id: '367_08'
+  game_id: 367_10-103
+  difficulty: hard
+  game_url_suffix: ?task=367_08
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1.0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Floor 11, the final confrontation. Advance until the operator calls about the bomb, and
+    once the call has finished, confirm the detonation with Tab. Then survive and deal with what comes
+    for you, until the story moves on to the last floor. If you die, press Space to restart the floor.
+    The task is complete when the final floor is reached.
+  progress_signal:
+    field: metrics.floor_route_progress
+    granularity: continuous
+    coarse_reason: ''
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.floor_route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.floor_route_progress
+    - metrics.run_progress
+    - metrics.current_floor
+    - metrics.floors_descended
+    - metrics.deaths
+    - metrics.kills
+    - metrics.player_hp
+    - game_state.variant.matches_requested
+    - terminal.outcome
+- task_id: '367_09'
+  game_id: 367_10-103
+  difficulty: hard
+  game_url_suffix: ?task=367_09
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5.0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'Start at the facility entrance on Floor 1 and descend floor by floor until you reach Floor
+    6. Each floor has an elevator to the next one down: stand in its doorway and press Down. Answer the
+    radio with Tab when prompted, and shoot enemies with Space. Dying restarts the current floor (press
+    Space). The task is complete when Floor 6 is reached.'
+  progress_signal:
+    field: metrics.run_progress
+    granularity: continuous
+    coarse_reason: ''
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.run_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.run_progress
+    - metrics.floor_route_progress
+    - metrics.current_floor
+    - metrics.floors_descended
+    - metrics.deaths
+    - metrics.kills
+    - metrics.player_hp
+    - game_state.variant.matches_requested
+    - terminal.outcome
+- task_id: '367_10'
+  game_id: 367_10-103
+  difficulty: very_hard
+  game_url_suffix: ?task=367_10
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 11.0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Play the whole operation. Start at the facility entrance on Floor 1 and work down through
+    every floor, answering the radio, fighting through the infected floors and solving each floor's way
+    to its elevator. On Floor 11, confirm the bomb detonation over the radio and survive what follows.
+    Dying restarts the current floor (press Space). The task is complete when the final floor, after the
+    detonation, is reached.
+  progress_signal:
+    field: metrics.run_progress
+    granularity: continuous
+    coarse_reason: ''
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.run_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.run_progress
+    - metrics.floor_route_progress
+    - metrics.current_floor
+    - metrics.floors_descended
+    - metrics.deaths
+    - metrics.kills
+    - metrics.player_hp
+    - game_state.variant.matches_requested
+    - terminal.outcome

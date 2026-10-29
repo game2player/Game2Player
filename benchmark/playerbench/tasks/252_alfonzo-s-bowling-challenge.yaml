@@ -1,0 +1,239 @@
+game:
+  game_name: 252_alfonzo-s-bowling-challenge
+  width: 640
+  height: 640
+  speed_multiplier: 1.0
+  game_rules: 'Alfonzo''s Bowling Challenge is a series of physics minigames. Your blue ball
+
+    bounces automatically; steer it horizontally to hit the round''s targets.
+
+    The two platforms move automatically and can bounce the ball upward. There
+
+    are no lives to lose. Each task begins in its specified round with one player.
+
+    The frame number is at the upper left and score at the upper right.
+
+
+    Bowling awards one point per pin. Breakfast requires cracking eggs and catching
+
+    their falling yolks in the moving pan; cracking alone gives no points.
+
+    Breakout awards one point per brick. Basketball awards two points per basket:
+
+    the ball must pass through the hoop from above. Barbershop awards one point
+
+    per hair piece. In the boss fight, the bar at the top shows remaining health;
+
+    hits damage the boss. Some rounds end automatically, so restart if the round
+
+    ends before you reach your goal.
+
+
+    In networking, complete Alonzo''s dialogue to earn one point per remark. A
+
+    O-button prompt means the line can be advanced. Hitting Alonzo interrupts
+
+    the conversation and ends the encounter. Between rounds, the coach also
+
+    speaks; advance his dialogue to continue. Title animations advance on their own.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You steer the blue ball and advance dialogue. The task''s round is
+
+        already started; no menu selection or joining is required.
+
+        '
+      control_notes: "- Hold ArrowLeft or ArrowRight to accelerate the ball horizontally.\n  A normal\
+        \ key action holds for 0.2 seconds; longer holds keep steering.\n  Release to let momentum and\
+        \ automatic bouncing carry it.\n- During dialogue, hold Z for 0.2 seconds to reveal the line.\
+        \ Release,\n  then press Z again for 0.2 seconds when the O-button prompt appears\n  to advance\
+        \ it. Z also joins if the screen says to join.\n- Press R to restart this task's round with a\
+        \ fresh ball and zero progress.\n- Wait to let the ball, platforms, pan, targets, and title animations\
+        \ move.\n"
+    controls:
+      allowed_keys:
+      - ArrowLeft
+      - ArrowRight
+      - z
+      - r
+      hold_duration: 0.2
+      allow_clicks: false
+tasks:
+- task_id: '252_01'
+  game_id: 252_alfonzo-s-bowling-challenge
+  task_prompt: Knock down all ten pins in the first bowling frame.
+  game_url_suffix: ?task=252_01
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 10
+  difficulty: easy
+  pause_during_inference: true
+  continue_on_fail: false
+  progress_signal:
+    field: metrics.bowling_pins
+    granularity: counter
+    coarse_reason: Each of ten physical pin knockdowns awards one native point.
+  evaluator_config:
+    score_field: metrics.bowling_pins
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.bowling_pins
+    - game_state.level
+    - game_state.mode
+    - game_state.round_score
+    - game_state.round_ended
+    - terminal.outcome
+- task_id: '252_02'
+  game_id: 252_alfonzo-s-bowling-challenge
+  task_prompt: Cook five eggs by landing their yolks in the moving pan.
+  game_url_suffix: ?task=252_02
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  difficulty: medium
+  pause_during_inference: true
+  continue_on_fail: false
+  progress_signal:
+    field: metrics.eggs_cooked
+    granularity: counter
+    coarse_reason: Each yolk caught and cooked awards one native point.
+  evaluator_config:
+    score_field: metrics.eggs_cooked
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.eggs_cooked
+    - game_state.level
+    - game_state.mode
+    - game_state.round_score
+    - game_state.round_ended
+    - terminal.outcome
+- task_id: '252_03'
+  game_id: 252_alfonzo-s-bowling-challenge
+  task_prompt: Destroy all forty bricks in the breakout round.
+  game_url_suffix: ?task=252_03
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 40
+  difficulty: medium
+  pause_during_inference: true
+  continue_on_fail: false
+  progress_signal:
+    field: metrics.bricks_destroyed
+    granularity: counter
+    coarse_reason: Each of forty destructible bricks awards one native point.
+  evaluator_config:
+    score_field: metrics.bricks_destroyed
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.bricks_destroyed
+    - game_state.level
+    - game_state.mode
+    - game_state.round_score
+    - game_state.round_ended
+    - terminal.outcome
+- task_id: '252_04'
+  game_id: 252_alfonzo-s-bowling-challenge
+  task_prompt: Score three baskets in the basketball round (six points).
+  game_url_suffix: ?task=252_04
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  difficulty: medium
+  pause_during_inference: true
+  continue_on_fail: false
+  progress_signal:
+    field: metrics.baskets_scored
+    granularity: counter
+    coarse_reason: Each basket awards two native points; progress counts completed baskets.
+  evaluator_config:
+    score_field: metrics.baskets_scored
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.baskets_scored
+    - game_state.level
+    - game_state.mode
+    - game_state.round_score
+    - game_state.round_ended
+    - terminal.outcome
+- task_id: '252_05'
+  game_id: 252_alfonzo-s-bowling-challenge
+  task_prompt: Earn five networking points by listening and advancing Alonzo's remarks.
+  game_url_suffix: ?task=252_05
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  difficulty: easy
+  pause_during_inference: true
+  continue_on_fail: false
+  progress_signal:
+    field: metrics.networking_points
+    granularity: counter
+    coarse_reason: Each completed uninterrupted brother remark awards one point, up to ten.
+  evaluator_config:
+    score_field: metrics.networking_points
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.networking_points
+    - game_state.level
+    - game_state.mode
+    - game_state.round_score
+    - game_state.round_ended
+    - terminal.outcome
+- task_id: '252_06'
+  game_id: 252_alfonzo-s-bowling-challenge
+  task_prompt: Remove all six hair pieces in the barbershop round.
+  game_url_suffix: ?task=252_06
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 6
+  difficulty: easy
+  pause_during_inference: true
+  continue_on_fail: false
+  progress_signal:
+    field: metrics.hair_removed
+    granularity: counter
+    coarse_reason: Each of six hair pieces awards one native point.
+  evaluator_config:
+    score_field: metrics.hair_removed
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.hair_removed
+    - game_state.level
+    - game_state.mode
+    - game_state.round_score
+    - game_state.round_ended
+    - terminal.outcome
+- task_id: '252_07'
+  game_id: 252_alfonzo-s-bowling-challenge
+  task_prompt: Defeat the boss by reducing its health from 100 to zero.
+  game_url_suffix: ?task=252_07
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  difficulty: medium
+  pause_during_inference: true
+  continue_on_fail: false
+  progress_signal:
+    field: metrics.boss_damage
+    granularity: counter
+    coarse_reason: Each boss hit removes four HP, giving twenty-five damage milestones.
+  evaluator_config:
+    score_field: metrics.boss_damage
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.boss_damage
+    - game_state.level
+    - game_state.mode
+    - game_state.round_score
+    - game_state.round_ended
+    - terminal.outcome

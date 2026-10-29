@@ -1,0 +1,297 @@
+game:
+  game_name: 357_snug
+  url: https://cookiecrayon.itch.io/snug
+  width: 1280
+  height: 800
+  speed_multiplier: 1.0
+  game_rules: 'Snug is a cozy physics puzzle about packing bags. Each level shows one bag
+
+    outline in the middle of the screen, a pile of oddly shaped items below it, and
+
+    a Packing List at the top left. Fit every listed item inside the bag outline.
+
+    There is no single correct arrangement.
+
+
+    An item counts as packed only when it is dropped entirely inside the bag
+
+    outline. Its list entry is then crossed out and moved to the bottom of the list.
+
+    A held item turns see-through where it cannot be dropped, either because it
+
+    overlaps another item or because it straddles the bag edge. Clicking there does
+
+    nothing and the item stays held. Dropped items fall and settle under gravity and
+
+    can push each other. Picking a packed item back up un-packs it until it is
+
+    dropped inside again. Some items behave differently; in the Sack level, for
+
+    example, the balloon floats upward. When every entry is crossed out, the bag is
+
+    complete and a round green checkmark button appears at the bottom right.
+
+    Clicking it moves on to the next bag.
+
+
+    The round pink arrow button at the top right, or the R key, restarts the
+
+    current bag with all items unpacked. Drop the held item before restarting:
+
+    restarting while holding an item can stop items from being picked up.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: You pick up, rotate and drop the items, placing each one inside the bag outline.
+      control_notes: '- Left-click an item to pick it up. It then follows the mouse cursor.
+
+        - Left-click again to drop the held item at the cursor. Clicking a point moves the cursor there
+        first, so clicking the destination both moves and drops the item. A drop only happens where the
+        item is not see-through.
+
+        - Right-click while holding an item to rotate it 45 degrees. Repeat to keep turning it.
+
+        - Left-click the round pink arrow button at the top right, or tap R, to restart the current bag.
+        Do this only when no item is held.
+
+        - Left-click the green checkmark button at the bottom right, shown after the bag is complete,
+        to go to the next bag.
+
+        '
+    controls:
+      allowed_keys:
+      - r
+      allow_clicks: true
+      hold_duration: 0.2
+tasks:
+- task_id: '357_01'
+  game_id: 357_snug
+  difficulty: easy
+  game_url_suffix: ?task=357_01
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 8
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Pack any 8 items into the backpack, the first bag. You start with all 22 items from the
+    Packing List unpacked below the bag. An item is packed once it is dropped entirely inside the bag
+    outline and its list entry is crossed out. Have 8 entries crossed out at the same time, with no item
+    being held. Restarting the bag brings back all items unpacked.
+  progress_signal:
+    field: metrics.best_packed_count
+    granularity: counter
+    coarse_reason: Each packed item is one step of 8. The game decides an item's packed state only when
+      it is dropped, so there is no finer native measure of an item being partly packed; straddling drops
+      are refused.
+  evaluator_config:
+    score_field: metrics.best_packed_count
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.packed_count
+    - metrics.best_packed_count
+    - metrics.total_items
+    - metrics.progress
+    - metrics.bag_complete
+    - metrics.item_held
+    - game_state.bag
+    - game_state.scene_index
+    - game_state.screen
+    - terminal.outcome
+- task_id: '357_02'
+  game_id: 357_snug
+  difficulty: medium
+  game_url_suffix: ?task=357_02
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Completely pack the backpack, the first bag. You start with all 22 items from the Packing
+    List unpacked below the bag. Fit every item inside the bag outline until all 22 list entries are crossed
+    out and the green checkmark button appears at the bottom right. Restarting the bag brings back all
+    items unpacked.
+  progress_signal:
+    field: metrics.progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.packed_count
+    - metrics.best_packed_count
+    - metrics.total_items
+    - metrics.progress
+    - metrics.bag_complete
+    - metrics.item_held
+    - game_state.bag
+    - game_state.scene_index
+    - game_state.screen
+    - terminal.outcome
+- task_id: '357_03'
+  game_id: 357_snug
+  difficulty: medium
+  game_url_suffix: ?task=357_03
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Completely pack the suitcase, the second bag. You start directly in the suitcase level
+    with all 16 items from the Packing List unpacked below it, including a Giant Axe. Fit every item inside
+    the suitcase outline until all 16 list entries are crossed out and the green checkmark button appears
+    at the bottom right. Restarting the bag brings back all items unpacked.
+  progress_signal:
+    field: metrics.progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.packed_count
+    - metrics.best_packed_count
+    - metrics.total_items
+    - metrics.progress
+    - metrics.bag_complete
+    - metrics.item_held
+    - game_state.bag
+    - game_state.scene_index
+    - game_state.screen
+    - terminal.outcome
+- task_id: '357_04'
+  game_id: 357_snug
+  difficulty: medium
+  game_url_suffix: ?task=357_04
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 8
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Pack any 8 items into the sack, the third bag. You start directly in the sack level (a
+    triangular drawstring sack) with all 16 items from the Packing List unpacked; the balloon floats upward.
+    An item is packed once it is dropped entirely inside the sack outline and its list entry is crossed
+    out. Have 8 entries crossed out at the same time, with no item being held. Restarting the bag brings
+    back all items unpacked.
+  progress_signal:
+    field: metrics.best_packed_count
+    granularity: counter
+    coarse_reason: Each packed item is one step of 8. The game decides an item's packed state only when
+      it is dropped, so there is no finer native measure of an item being partly packed; straddling drops
+      are refused.
+  evaluator_config:
+    score_field: metrics.best_packed_count
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.packed_count
+    - metrics.best_packed_count
+    - metrics.total_items
+    - metrics.progress
+    - metrics.bag_complete
+    - metrics.item_held
+    - game_state.bag
+    - game_state.scene_index
+    - game_state.screen
+    - terminal.outcome
+- task_id: '357_05'
+  game_id: 357_snug
+  difficulty: hard
+  game_url_suffix: ?task=357_05
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Completely pack the sack, the third bag. You start directly in the sack level (a triangular
+    drawstring sack) with all 16 items from the Packing List unpacked; the balloon floats upward. Fit
+    every item inside the sack outline until all 16 list entries are crossed out and the green checkmark
+    button appears at the bottom right. Restarting the bag brings back all items unpacked.
+  progress_signal:
+    field: metrics.progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.packed_count
+    - metrics.best_packed_count
+    - metrics.total_items
+    - metrics.progress
+    - metrics.bag_complete
+    - metrics.item_held
+    - game_state.bag
+    - game_state.scene_index
+    - game_state.screen
+    - terminal.outcome
+- task_id: '357_06'
+  game_id: 357_snug
+  difficulty: hard
+  game_url_suffix: ?task=357_06
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Completely pack the lumpy bag, the fourth bag. You start directly in its level with all
+    23 items from the Packing List unpacked below it. Fit every item inside the bag outline until all
+    23 list entries are crossed out and the green checkmark button appears at the bottom right. Restarting
+    the bag brings back all items unpacked.
+  progress_signal:
+    field: metrics.progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.packed_count
+    - metrics.best_packed_count
+    - metrics.total_items
+    - metrics.progress
+    - metrics.bag_complete
+    - metrics.item_held
+    - game_state.bag
+    - game_state.scene_index
+    - game_state.screen
+    - terminal.outcome
+- task_id: '357_07'
+  game_id: 357_snug
+  difficulty: hard
+  game_url_suffix: ?task=357_07
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Completely pack the hiking backpack, the fifth and final bag. You start directly in its
+    level with all 22 items from the Packing List unpacked below it. Fit every item inside the bag outline
+    until all 22 list entries are crossed out and the green checkmark button appears at the bottom right.
+    Restarting the bag brings back all items unpacked.
+  progress_signal:
+    field: metrics.progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.packed_count
+    - metrics.best_packed_count
+    - metrics.total_items
+    - metrics.progress
+    - metrics.bag_complete
+    - metrics.item_held
+    - game_state.bag
+    - game_state.scene_index
+    - game_state.screen
+    - terminal.outcome

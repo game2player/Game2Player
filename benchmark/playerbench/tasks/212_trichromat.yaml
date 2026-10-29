@@ -1,0 +1,223 @@
+game:
+  game_name: 212_trichromat
+  speed_multiplier: 1.0
+  width: 640
+  height: 640
+  url: https://spratt.itch.io/trichromat
+  game_rules: 'Trichromat is a Sokoban-style puzzle game with 20 levels after a short tutorial. Each level
+    is one small room shown three times at once, as a red, a green and a blue layer drawn on top of each
+    other with a chromatic-aberration offset (the colour fringes are the effect, not a rendering fault).
+    Every arrow press moves the player (the small white robot) one tile in all three layers at the same
+    moment, and pushes any box in its way one tile. The layers have different walls, doors and box positions,
+    so a move that is free in one layer can be blocked in another, and the three copies of the player
+    and of each box drift apart.
+
+
+    The goal of a level is to make the three copies of every player and box land on the same tile in all
+    three layers. A piece whose three copies are separated shows as a red, a green and a blue shape; when
+    they overlap exactly the colours merge to white. As soon as every piece is merged, the level is solved,
+    a short exit animation plays (about two seconds, input is ignored) and the next level loads by itself.
+    A move that changes nothing, because every copy is blocked, is not recorded. Boxes can be pushed in
+    a chain but never pulled, so a box pushed into a corner can make a level unsolvable; undo and restart
+    are unlimited. Floor buttons open doors while something stands on them.
+
+
+    The first level, the tutorial, is different: step the player onto the dotted ring (the teleporter).
+    The screen then glitches for several seconds before level 1 loads. Story emails appear before the
+    tutorial and before levels 6 and 13, and a closing message appears after level 20. Progress (the highest
+    unlocked level) is saved by the game. The level-select screen shows solved levels as numbered tiles
+    and locked levels as small dots.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You are the small white robot in a warehouse room that is displayed three times
+        over in red, green and blue. You push boxes so that all three coloured copies of every piece end
+        up on exactly the same tile.
+
+        '
+      control_notes: '- Arrow keys: move the player one tile (Up, Down, Left, Right) in all three layers
+        at once and push a box in front of it. One short press is one move; wait for the little movement
+        animation to finish before the next press. Presses made during the level entrance or exit animations
+        are ignored.
+
+        - Z: undo the last move that changed something (as many times as you like). On the level-select
+        screen it goes back to the title.
+
+        - X: confirm. Use it to dismiss a story email (it only reacts after the text has been on screen
+        for about a second) and to choose a title or level-select entry. It does nothing during a level.
+
+        - Enter: opens the pause menu in a level (Continue, Restart level, Level select, Theme, Options,
+        Reset cart); move with Up/Down and choose with X. "Restart level" restores the level''s starting
+        position. The Theme entry only changes the colours (rgb or cmy). Avoid "Reset cart", which restarts
+        the whole game. Enter also acts as confirm on the title and level-select screens.
+
+        - Title screen: "new game" (or "continue" when progress is saved) is highlighted first; X starts.
+        On the level-select screen the arrows pick an unlocked level and X loads it.
+
+        '
+    controls:
+      allowed_keys:
+      - ArrowUp
+      - ArrowDown
+      - ArrowLeft
+      - ArrowRight
+      - x
+      - z
+      - Enter
+      allow_clicks: false
+      hold_duration: 0.25
+tasks:
+- task_id: '212_01'
+  game_id: 212_trichromat
+  difficulty: easy
+  game_url_suffix: ?start=0&goal=1
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: false
+  continue_on_fail: false
+  task_prompt: 'You start on the tutorial level (the first story email is already on screen; press X once
+    it can be dismissed). Finish the tutorial so that level 1 loads. Progress is the number of levels
+    you have solved: 0 now, 1 once the tutorial is complete.
+
+    '
+  progress_signal:
+    field: game_state.levels_solved
+    granularity: counter
+    coarse_reason: The tutorial is one short atomic puzzle, so one solved-level counter is the natural
+      unit.
+  evaluator_config:
+    score_field: game_state.levels_solved
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.level
+    - game_state.levels_solved
+    - game_state.aligned_groups
+    - game_state.total_groups
+    - game_state.moves
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '212_02'
+  game_id: 212_trichromat
+  difficulty: easy
+  game_url_suffix: ?start=1&goal=2
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 2
+  pause_during_inference: false
+  continue_on_fail: false
+  task_prompt: 'You start on level 1 of 20. Solve level 1 and level 2 by making the red, green and blue
+    copies of every piece overlap. Progress is the number of levels you have solved since the start (0,
+    1 or 2).
+
+    '
+  progress_signal:
+    field: game_state.levels_solved
+    granularity: counter
+    coarse_reason: Each solved puzzle is a native stage; two levels give a mid-attempt step.
+  evaluator_config:
+    score_field: game_state.levels_solved
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.level
+    - game_state.levels_solved
+    - game_state.aligned_groups
+    - game_state.total_groups
+    - game_state.moves
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '212_03'
+  game_id: 212_trichromat
+  difficulty: medium
+  game_url_suffix: ?start=7&goal=3
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: false
+  continue_on_fail: false
+  task_prompt: 'You start on level 7 of 20. Solve levels 7, 8 and 9 in a row by making the red, green
+    and blue copies of every piece overlap. Progress is the number of levels you have solved since the
+    start (0 to 3).
+
+    '
+  progress_signal:
+    field: game_state.levels_solved
+    granularity: counter
+    coarse_reason: Each solved puzzle is a native stage; three levels give partial credit across the block.
+  evaluator_config:
+    score_field: game_state.levels_solved
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.level
+    - game_state.levels_solved
+    - game_state.aligned_groups
+    - game_state.total_groups
+    - game_state.moves
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '212_04'
+  game_id: 212_trichromat
+  difficulty: hard
+  game_url_suffix: ?start=13&goal=3
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: false
+  continue_on_fail: false
+  task_prompt: 'You start on level 13 of 20; the story email shown first can be dismissed with X once
+    it has been on screen for a moment. Solve levels 13, 14 and 15 in a row. Progress is the number of
+    levels you have solved since the start (0 to 3).
+
+    '
+  progress_signal:
+    field: game_state.levels_solved
+    granularity: counter
+    coarse_reason: Each solved puzzle is a native stage and the later levels are long, so one solved level
+      is substantial progress.
+  evaluator_config:
+    score_field: game_state.levels_solved
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.level
+    - game_state.levels_solved
+    - game_state.aligned_groups
+    - game_state.total_groups
+    - game_state.moves
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '212_05'
+  game_id: 212_trichromat
+  difficulty: very_hard
+  game_url_suffix: ?start=18&goal=3
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: false
+  continue_on_fail: false
+  task_prompt: 'You start on level 18 of 20. Solve levels 18, 19 and 20, the last three puzzles, to reach
+    the closing message. Progress is the number of levels you have solved since the start (0 to 3).
+
+    '
+  progress_signal:
+    field: game_state.levels_solved
+    granularity: counter
+    coarse_reason: Each solved puzzle is a native stage and the final three levels are the hardest; the
+      closing message follows the last one.
+  evaluator_config:
+    score_field: game_state.levels_solved
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.level
+    - game_state.levels_solved
+    - game_state.aligned_groups
+    - game_state.total_groups
+    - game_state.moves
+    - terminal.outcome
+    - terminal.isTerminal

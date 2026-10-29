@@ -1,0 +1,274 @@
+game:
+  game_name: 222_mindustry-classic
+  speed_multiplier: 1.0
+  width: 900
+  height: 675
+  url: https://anuke.itch.io/mindustry-classic
+  game_rules: 'Mindustry Classic is a factory and tower defense game. Protect the central core
+
+    by mining resources, carrying items along conveyors, and supplying ammunition
+
+    to turrets. Drills must stand on their matching resource floor. Conveyors move
+
+    items in their arrow direction; resources delivered to the core become the
+
+    shared building inventory shown above the lower-right build panel when no block
+
+    is selected.
+
+    Smelters consume iron and coal to produce steel. Construction spends inventory.
+
+
+    Each task starts directly on its named map and mode. Freebuild has finite
+
+    resources and no automatic enemy waves. Waves mode launches enemies on a timer;
+
+    the wave number advances when they spawn, before they have been defeated. The
+
+    next countdown normally runs after enemies are gone. Turrets fire automatically
+
+    when supplied. Your robot can also shoot and respawns after death; losing the
+
+    core ends the run. The tutorial restricts building to its current instruction
+
+    and marks required tiles. Its Next button remains disabled during required
+
+    construction steps. Finish the final instruction with Next to complete it.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You control the robot and the build cursor. Move around the map, construct
+
+        production and transport lines, and build supplied defenses around the core.
+
+        '
+      control_notes: "- Hold W/A/S/D with an explicit duration (for example, 1 second) to move\n  up/left/down/right.\
+        \ The camera follows the robot. Keys without a duration\n  are short 0.05-second taps.\n- Click\
+        \ a construction category and then a block icon in the right-hand\n  build panel. With a block\
+        \ selected, move the cursor to a valid nearby\n  tile, hold the left mouse button for 0.15 seconds,\
+        \ then release to place\n  it. The block preview and arrow show the intended position and direction.\n\
+        \  Buildings outside the robot's build range cannot be placed.\n- A block is selected only after\
+        \ you click its icon: its name, cost and\n  health then appear above the build panel and a ghost\
+        \ follows the cursor.\n  In the tutorial the \"select a conveyor\" step lets Next through without\
+        \ a\n  selection, so click the conveyor icon again before the placement step.\n  A placement worked\
+        \ only if the stone count drops and the tutorial moves\n  on at once; a hold with no block selected\
+        \ just fires the robot's gun.\n  Screen coordinates are pixels in the 900x675 window.\n- Tap E\
+        \ to turn a selected directional block a quarter turn counterclockwise\n  (default right becomes\
+        \ up); tap R to turn it the opposite way. Tutorial\n  text that says to use the scrollwheel means\
+        \ these keys; there is no\n  scrollwheel, Shift or Ctrl control.\n- A plain right click is too\
+        \ brief for the game to notice. Hold the right\n  mouse button for 0.15 seconds to cancel a selected\
+        \ building. With no\n  building selected, hold the right button 0.15 seconds over a nearby\n \
+        \ removable block to dismantle it.\n- With no building selected, hold the left mouse button to\
+        \ shoot toward\n  the cursor. Specify a duration such as 1 second for sustained fire.\n- Click\
+        \ tutorial Next and Back buttons to advance or review instructions\n  when they are enabled. Required\
+        \ placement steps advance automatically.\n- Tap Space to pause or resume. Tap Escape to open the\
+        \ menu; Escape again\n  resumes. Use the menu's Quit option to return to the title screen.\n"
+    controls:
+      allowed_keys:
+      - w
+      - a
+      - s
+      - d
+      - r
+      - e
+      - Space
+      - Escape
+      allow_clicks: true
+      hold_duration: 0.05
+tasks:
+- task_id: '222_01'
+  game_id: 222_mindustry-classic
+  game_url_suffix: ?task=222_01
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 6
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Place the first stone drill in the built-in tutorial, after placing its required conveyor.
+    Start at the fresh introductory desktop tutorial. Follow the on-screen instructions and highlighted
+    construction tiles; the goal is reached when the tutorial advances past the required drill placement.
+  progress_signal:
+    field: metrics.tutorial_drill_steps
+    granularity: counter
+    coarse_reason: Native desktop tutorial steps give intermediate progress; the final step requires the
+      correct drill at the designated tile.
+  evaluator_config:
+    score_field: metrics.tutorial_drill_steps
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.map
+    - game_state.mode
+    - game_state.difficulty
+    - game_state.tutorial_stage
+    - game_state.inventory.stone
+    - game_state.inventory.steel
+    - game_state.wave
+    - game_state.enemies
+    - metrics.tutorial_drill_steps
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '222_02'
+  game_id: 222_mindustry-classic
+  game_url_suffix: ?task=222_02
+  difficulty: medium
+  task_start_score_field: 0
+  task_target_score_field: 36
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Complete the entire built-in desktop tutorial from its fresh introductory stage. Follow
+    its construction, defense, liquid, power, and crafting instructions, and click Next after the final
+    instruction to finish.
+  progress_signal:
+    field: metrics.tutorial_completed_steps
+    granularity: counter
+    coarse_reason: The 36 reachable desktop tutorial stages give intermediate progress; the final point
+      is awarded only by native tutorial completion.
+  evaluator_config:
+    score_field: metrics.tutorial_completed_steps
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.map
+    - game_state.mode
+    - game_state.difficulty
+    - game_state.tutorial_stage
+    - game_state.inventory.stone
+    - game_state.inventory.steel
+    - game_state.wave
+    - game_state.enemies
+    - metrics.tutorial_completed_steps
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '222_03'
+  game_id: 222_mindustry-classic
+  game_url_suffix: ?task=222_03
+  difficulty: easy
+  task_start_score_field: 40
+  task_target_score_field: 100
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Accumulate at least 100 stone in the core inventory on Grassland in Freebuild mode. The
+    fresh map starts with 40 stone and finite resources. Progress records the highest stone stock reached
+    during this run.
+  progress_signal:
+    field: metrics.best_stone_stock
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.best_stone_stock
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.map
+    - game_state.mode
+    - game_state.difficulty
+    - game_state.tutorial_stage
+    - game_state.inventory.stone
+    - game_state.inventory.steel
+    - game_state.wave
+    - game_state.enemies
+    - metrics.best_stone_stock
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '222_04'
+  game_id: 222_mindustry-classic
+  game_url_suffix: ?task=222_04
+  difficulty: medium
+  task_start_score_field: 0
+  task_target_score_field: 30
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Produce and accumulate at least 30 steel in the core inventory on Grassland in Freebuild
+    mode. Start on a fresh map with native finite resources. Progress records the highest steel stock
+    reached during this run.
+  progress_signal:
+    field: metrics.best_steel_stock
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.best_steel_stock
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.map
+    - game_state.mode
+    - game_state.difficulty
+    - game_state.tutorial_stage
+    - game_state.inventory.stone
+    - game_state.inventory.steel
+    - game_state.wave
+    - game_state.enemies
+    - metrics.best_steel_stock
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '222_05'
+  game_id: 222_mindustry-classic
+  game_url_suffix: ?task=222_05
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 5
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Defend the core through five fully defeated enemy waves on Grassland in Waves mode at normal
+    difficulty. The map starts fresh with native resources. A wave counts only after all enemies scheduled
+    for it have spawned and been defeated; launching the next wave alone does not count.
+  progress_signal:
+    field: metrics.waves_cleared
+    granularity: counter
+    coarse_reason: Each fully defeated wave is a natural combat milestone; scheduled spawns are accounted
+      for before a wave can count.
+  evaluator_config:
+    score_field: metrics.waves_cleared
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.map
+    - game_state.mode
+    - game_state.difficulty
+    - game_state.tutorial_stage
+    - game_state.inventory.stone
+    - game_state.inventory.steel
+    - game_state.wave
+    - game_state.enemies
+    - metrics.waves_cleared
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '222_06'
+  game_id: 222_mindustry-classic
+  game_url_suffix: ?task=222_06
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 5
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Defend the core through five fully defeated enemy waves on Fortress in Waves mode at normal
+    difficulty. The map starts fresh with native resources. A wave counts only after all enemies scheduled
+    for it have spawned and been defeated; launching the next wave alone does not count.
+  progress_signal:
+    field: metrics.waves_cleared
+    granularity: counter
+    coarse_reason: Each fully defeated wave is a natural combat milestone on Fortress; scheduled spawns
+      are accounted for before a wave can count.
+  evaluator_config:
+    score_field: metrics.waves_cleared
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.map
+    - game_state.mode
+    - game_state.difficulty
+    - game_state.tutorial_stage
+    - game_state.inventory.stone
+    - game_state.inventory.steel
+    - game_state.wave
+    - game_state.enemies
+    - metrics.waves_cleared
+    - terminal.outcome
+    - terminal.isTerminal

@@ -1,0 +1,6 @@
+interface:
+  display_name: "PICO-8"
+  short_description: "Instrument one browser-exported PICO-8 cartridge"
+  default_prompt: "Use $pico8 for this confirmed PICO-8 Builder phase."
+policy:
+  allow_implicit_invocation: false

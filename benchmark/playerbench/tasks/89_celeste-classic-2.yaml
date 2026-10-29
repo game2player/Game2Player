@@ -1,0 +1,279 @@
+game:
+  game_name: 89_celeste-classic-2
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  url: https://maddymakesgamesinc.itch.io/celeste-classic-2
+  game_rules: "You are playing Celeste Classic 2: Lani's Trek, a precision platformer.\n\n## Game Objective\n\
+    - Climb the mountain from the first slope to the summit, one map at a time and\n  in order. A run\
+    \ is eight maps long; there is no level select.\n- Red strawberries are optional, set off the main\
+    \ climb. They are not needed to\n  finish a map.\n\n## Game Rules\n- The game opens straight onto\
+    \ the first slope: no title screen, no card, no menu\n  and no level select. A run is all eight maps\
+    \ in order.\n- Left and right arrow keys move; up and down do nothing. Z or C jumps, and hold\n  it\
+    \ for a higher jump. X fires the grappling hook, which stays inert until you\n  take the hook lying\
+    \ in the ravine (the second map); from the third map on it is\n  granted automatically.\n- Touch a\
+    \ strawberry to carry it, then land on solid ground to keep it. A fruit\n  you are still carrying\
+    \ when you die is lost.\n- Spikes and pits kill you; you respawn at the last flag you passed and the\
+    \ run\n  continues. Maps with no flag restart from their beginning. The timer on screen\n  counts\
+    \ in-game minutes and seconds.\n- Hook anchors are solid; ice is not. In the frozen caves, grab a\
+    \ snowball or\n  catch a floating grapple orb instead.\n"
+  game_roles:
+  - name: climber
+    context:
+      role_description: 'You are Lani. Jump, grapple, climb, and collect strawberries.
+
+        '
+      control_notes: '- Left/Right arrows: move
+
+        - Z or C: jump (hold for a higher jump)
+
+        - X: fire the grappling hook (from the ravine onward)
+
+        - Wait: let a jump, bounce, or respawn finish
+
+        '
+    controls:
+      allowed_keys:
+      - ArrowUp
+      - ArrowDown
+      - ArrowLeft
+      - ArrowRight
+      - z
+      - x
+      - c
+      allow_clicks: false
+      hold_duration: 0.2
+tasks:
+- task_id: '89_01'
+  game_id: 89_celeste-classic-2
+  difficulty: easy
+  evaluator_id: game_api_metric
+  task_target_score_field: 2
+  task_start_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'The game opens straight onto the first slope of the mountain; there is no title
+
+    or menu. Reach the ravine, the second map: run right, jump the gaps with Z or C,
+
+    and drop through the collapsing bridge at the end of the slope. The grappling
+
+    hook is not available yet. Spikes and pits return you to the start of the map
+
+    and the run continues.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.route_progress
+    - metrics.berries
+    - metrics.level
+    - metrics.hook
+    - metrics.seconds
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '89_02'
+  game_id: 89_celeste-classic-2
+  difficulty: easy
+  evaluator_id: game_api_metric
+  task_target_score_field: 3
+  task_start_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'The game opens straight onto the first slope; there is no title or menu. Reach
+
+    Trailhead, the third map. Cross the opening slope, ride the collapsing bridge
+
+    down into the ravine, and pick up the grappling hook waiting there - X fires it
+
+    once you hold it. Arrow keys move and Z or C jumps. Spikes and pits return you
+
+    to the start of the current map and the run continues. Work through the ravine
+
+    to enter Trailhead.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.route_progress
+    - metrics.berries
+    - metrics.level
+    - metrics.hook
+    - metrics.seconds
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '89_03'
+  game_id: 89_celeste-classic-2
+  difficulty: easy
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'The game opens straight onto the first slope; there is no title or menu. Collect
+
+    1 strawberry. Strawberries are the red fruit set off the main climb: touch one to
+
+    pick it up, then land on solid ground so it counts - a fruit you are still
+
+    carrying when you die is lost. Arrow keys move and Z or C jumps. The first fruit
+
+    sits in the ravine, the second map.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.berries
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.berries
+    - metrics.level
+    - metrics.hook
+    - metrics.seconds
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '89_04'
+  game_id: 89_celeste-classic-2
+  difficulty: medium
+  evaluator_id: game_api_metric
+  task_target_score_field: 4
+  task_start_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'The game opens straight onto the first slope; there is no title or menu. Reach
+
+    Glacial Caves, the fourth map. Get through the opening slope and the ravine, then
+
+    cross Trailhead: hook walls and grapple points with X, bounce on springs, and
+
+    clear crumbling blocks before they drop. Arrow keys move and Z or C jumps. Deaths
+
+    send you back to the last flag and the run continues. Enter the caves at the end
+
+    of Trailhead.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.route_progress
+    - metrics.berries
+    - metrics.level
+    - metrics.hook
+    - metrics.seconds
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '89_05'
+  game_id: 89_celeste-classic-2
+  difficulty: medium
+  evaluator_id: game_api_metric
+  task_target_score_field: 3
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'The game opens straight onto the first slope; there is no title or menu. Collect
+
+    3 strawberries. Strawberries are the red fruit set off the main climb: touch one,
+
+    then land on solid ground so it counts, and a fruit you are carrying when you die
+
+    is lost. Arrow keys move, Z or C jumps, and X grapples once you take the hook in
+
+    the ravine. Deaths send you back to the last flag, so land each fruit before
+
+    pressing on. The ravine holds one and Trailhead holds five.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.berries
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.berries
+    - metrics.level
+    - metrics.hook
+    - metrics.seconds
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '89_06'
+  game_id: 89_celeste-classic-2
+  difficulty: hard
+  evaluator_id: game_api_metric
+  task_target_score_field: 6
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'The game opens straight onto the first slope; there is no title or menu. Collect
+
+    6 strawberries. Strawberries are the red fruit set off the main climb: touch one,
+
+    then land on solid ground so it counts, and a fruit you are carrying when you die
+
+    is lost. Arrow keys move, Z or C jumps, and X grapples once you take the hook in
+
+    the ravine. Six is every fruit in the ravine and Trailhead together, so search
+
+    those two maps thoroughly - the fast route past them will not be enough.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.berries
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.berries
+    - metrics.level
+    - metrics.hook
+    - metrics.seconds
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '89_07'
+  game_id: 89_celeste-classic-2
+  difficulty: very_hard
+  evaluator_id: game_api_metric
+  task_target_score_field: 8
+  task_start_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'The game opens straight onto the first slope; there is no title or menu. Reach
+
+    the destination, the eighth map. Climb the whole mountain in order: the opening
+
+    slope, the ravine, Trailhead, Glacial Caves, Golden Valley and the valley
+
+    stretches that follow. Arrow keys move, Z or C jumps, and X grapples once you
+
+    take the hook in the ravine. Ice cannot be hooked - grab a snowball or catch a
+
+    floating grapple orb there. Deaths send you back to the last flag and the run
+
+    continues. Push on until you reach the final trail.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.route_progress
+    - metrics.berries
+    - metrics.level
+    - metrics.hook
+    - metrics.seconds
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal

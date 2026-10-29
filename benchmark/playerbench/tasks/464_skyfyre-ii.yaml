@@ -1,0 +1,238 @@
+game:
+  game_name: 464_skyfyre-ii
+  width: 640
+  height: 480
+  speed_multiplier: 1.0
+  url: https://armorgames.com/play/10666/skyfyre-ii
+  game_rules: 'SkyFyre II is a side-scrolling shooter. Fly through enemy waves, defeat the miniboss and
+    the final boss, and clear the selected stage. Your vulnerable point is near the mouse cursor. Dodge
+    enemy bodies and bullets, shoot to the right, and collect dropped coins and supplies. Red is health,
+    blue is magic, and the yellow center shield is spirit. Magic regenerates; spirit builds through class-specific
+    combat actions.
+
+
+    Each task begins in combat with its specified class and stage, default attributes, full health and
+    magic, and no equipment or money. Spirit mode differs by class: Warrior and Hunter gain stronger attacks.
+    Hunter cannot cast while spirit mode is active. BattleMage reflects enemy bullets and stops normal
+    firing. Paladin becomes invulnerable but cannot fire or cast while active.
+
+
+    Defeat leads to a results screen. Click Continue to return to the map, select the requested stage,
+    and click Start to try again. Earned experience, coins, and upgrades persist between native attempts.
+    After defeat, health returns at about 10% of the maximum. Char Details provides attributes and Recover
+    options; Shop & Equip provides equipment. Clearing a stage unlocks the next. Return to the requested
+    stage if you leave it.'
+  game_roles:
+  - name: player
+    context:
+      role_description: You steer the rider and dragon, aim by choosing your height, fire, cast magic,
+        use spirit mode, and manage native retries and upgrades.
+      control_notes: 'Move the mouse to steer the rider and dragon. Hold the left mouse button to fire
+        continuously to the right; use a click_hold lasting about 1–2 seconds. To move while firing, drag
+        with the left button held, for example over 0.5–1 second.
+
+
+        Press Space to cast a magic attack when enough blue magic remains and your spirit mode allows
+        casting. Press Q when the yellow spirit shield is full to activate the class''s spirit mode; Q
+        also turns an active spirit mode off.
+
+
+        Press Escape to open the pause menu. Wait for the panel to settle in the center, then click Continue
+        to resume or Quit to return to the map. Click the game''s buttons, stage icons, tabs, and shop
+        items to navigate menus. On results, click Continue; on the map, select the requested stage and
+        click Start to retry. Wait for screen fades to finish before clicking menu buttons. Waiting advances
+        combat and magic recovery.'
+    controls:
+      allowed_keys:
+      - Space
+      - q
+      - Escape
+      allow_clicks: true
+      hold_duration: 0.5
+tasks:
+- task_id: '464_01'
+  game_id: 464_skyfyre-ii
+  game_url_suffix: ?task=464_01
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: easy
+  progress_signal:
+    field: metrics.stage_clear_progress
+    granularity: dense
+  task_prompt: Clear Stage 1, Ngalig (Monster skies), as the Warrior. You begin in that stage with default
+    attributes, full health and magic, no equipment or money, and no spirit. Native retries, recovery,
+    earned upgrades, and equipment are allowed. After defeat, click Continue, select Stage 1 on the map,
+    and click Start to retry.
+  evaluator_config:
+    score_field: metrics.stage_clear_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.stage_clear_progress
+    - metrics.attempt_enemy_health_removed
+    - metrics.best_attempt_enemy_health_removed
+    - metrics.attempts_started
+    - game_state.character
+    - game_state.stage
+    - game_state.health
+    - game_state.magic
+    - game_state.screen
+    - terminal.outcome
+- task_id: '464_02'
+  game_id: 464_skyfyre-ii
+  game_url_suffix: ?task=464_02
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  progress_signal:
+    field: metrics.stage_clear_progress
+    granularity: dense
+  task_prompt: Clear Stage 1, Ngalig (Monster skies), as the Hunter. You begin in that stage with default
+    attributes, full health and magic, no equipment or money, and no spirit. Native retries, recovery,
+    earned upgrades, and equipment are allowed. After defeat, click Continue, select Stage 1 on the map,
+    and click Start to retry.
+  evaluator_config:
+    score_field: metrics.stage_clear_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.stage_clear_progress
+    - metrics.attempt_enemy_health_removed
+    - metrics.best_attempt_enemy_health_removed
+    - metrics.attempts_started
+    - game_state.character
+    - game_state.stage
+    - game_state.health
+    - game_state.magic
+    - game_state.screen
+    - terminal.outcome
+- task_id: '464_03'
+  game_id: 464_skyfyre-ii
+  game_url_suffix: ?task=464_03
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  progress_signal:
+    field: metrics.stage_clear_progress
+    granularity: dense
+  task_prompt: Clear Stage 1, Ngalig (Monster skies), as the Paladin. You begin in that stage with default
+    attributes, full health and magic, no equipment or money, and no spirit. Native retries, recovery,
+    earned upgrades, and equipment are allowed. After defeat, click Continue, select Stage 1 on the map,
+    and click Start to retry.
+  evaluator_config:
+    score_field: metrics.stage_clear_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.stage_clear_progress
+    - metrics.attempt_enemy_health_removed
+    - metrics.best_attempt_enemy_health_removed
+    - metrics.attempts_started
+    - game_state.character
+    - game_state.stage
+    - game_state.health
+    - game_state.magic
+    - game_state.screen
+    - terminal.outcome
+- task_id: '464_04'
+  game_id: 464_skyfyre-ii
+  game_url_suffix: ?task=464_04
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  progress_signal:
+    field: metrics.stage_clear_progress
+    granularity: dense
+  task_prompt: Clear Stage 1, Ngalig (Monster skies), as the BattleMage. You begin in that stage with
+    default attributes, full health and magic, no equipment or money, and no spirit. Native retries, recovery,
+    earned upgrades, and equipment are allowed. After defeat, click Continue, select Stage 1 on the map,
+    and click Start to retry.
+  evaluator_config:
+    score_field: metrics.stage_clear_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.stage_clear_progress
+    - metrics.attempt_enemy_health_removed
+    - metrics.best_attempt_enemy_health_removed
+    - metrics.attempts_started
+    - game_state.character
+    - game_state.stage
+    - game_state.health
+    - game_state.magic
+    - game_state.screen
+    - terminal.outcome
+- task_id: '464_05'
+  game_id: 464_skyfyre-ii
+  game_url_suffix: ?task=464_05
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: hard
+  progress_signal:
+    field: metrics.stage_clear_progress
+    granularity: dense
+  task_prompt: Clear Stage 2, Ngathug (Monster waters), as the Warrior. You begin in that stage with default
+    attributes, full health and magic, no equipment or money, and no spirit. Native retries, recovery,
+    earned upgrades, and equipment are allowed. After defeat, click Continue, select Stage 2 on the map,
+    and click Start to retry.
+  evaluator_config:
+    score_field: metrics.stage_clear_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.stage_clear_progress
+    - metrics.attempt_enemy_health_removed
+    - metrics.best_attempt_enemy_health_removed
+    - metrics.attempts_started
+    - game_state.character
+    - game_state.stage
+    - game_state.health
+    - game_state.magic
+    - game_state.screen
+    - terminal.outcome
+- task_id: '464_06'
+  game_id: 464_skyfyre-ii
+  game_url_suffix: ?task=464_06
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: hard
+  progress_signal:
+    field: metrics.stage_clear_progress
+    granularity: dense
+  task_prompt: Clear Stage 3, Tuyud (Monster dunes), as the Warrior. You begin in that stage with default
+    attributes, full health and magic, no equipment or money, and no spirit. Native retries, recovery,
+    earned upgrades, and equipment are allowed. After defeat, click Continue, select Stage 3 on the map,
+    and click Start to retry.
+  evaluator_config:
+    score_field: metrics.stage_clear_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.stage_clear_progress
+    - metrics.attempt_enemy_health_removed
+    - metrics.best_attempt_enemy_health_removed
+    - metrics.attempts_started
+    - game_state.character
+    - game_state.stage
+    - game_state.health
+    - game_state.magic
+    - game_state.screen
+    - terminal.outcome

@@ -1,0 +1,275 @@
+game:
+  game_name: 73_zombotron-reboot
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  url: https://antkarlov.itch.io/zombotron-reboot
+  game_rules: "Zombotron Re-Boot is a side-scrolling run-and-gun shooter. Stage 1 is already\nin progress\
+    \ when the environment loads; there is no title screen or menu to\nget past.\n\n## Game Objective\n\
+    - Fight through the opening stage, use elevators to move between floors, and\n  reach the exit alive.\n\
+    - The stage also hides one secret place off the main path; some sparkle.\n\n## Game Rules\n- You start\
+    \ with a pistol, three hearts of health, and no money.\n- Enemies shoot back and grab at close range.\
+    \ Every hit costs a heart; at zero\n  hearts the run is over and the stage restarts from the beginning.\n\
+    - Killing enemies and looting money, dropped weapons and the hidden secret are\n  optional side goals;\
+    \ the exit is what ends the stage.\n- The level is wider and taller than one screen: lower and upper\
+    \ floors are\n  joined by elevators.\n"
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You control the soldier in stage 1: move, jump, aim and shoot your way
+
+        through the level. Do not open the pause menu.
+
+        '
+      control_notes: '- A/D or left/right: walk
+
+        - Space: jump
+
+        - Mouse move: aim; left click: fire the equipped weapon
+
+        - R: reload
+
+        - E: interact - elevators, switches, pickups, and the exit
+
+        - Do not press Escape; it opens the pause menu and stops the game
+
+        - Waiting is meaningful while shots, jumps or enemies resolve
+
+        '
+    controls:
+      allowed_keys:
+      - w
+      - a
+      - s
+      - d
+      - Space
+      - e
+      - r
+      allow_clicks: true
+      hold_duration: 0.35
+tasks:
+- task_id: '73_01'
+  game_id: 73_zombotron-reboot
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 2
+  difficulty: easy
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Defeat 2 enemies in the opening stage.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.enemies
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.enemies
+    - metrics.money
+    - metrics.floor
+    - metrics.secrets
+    - metrics.weapons
+    - metrics.won
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '73_02'
+  game_id: 73_zombotron-reboot
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 20
+  difficulty: easy
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Collect 20 money in the opening stage.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.money
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.enemies
+    - metrics.money
+    - metrics.floor
+    - metrics.secrets
+    - metrics.weapons
+    - metrics.won
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '73_03'
+  game_id: 73_zombotron-reboot
+  evaluator_id: game_api_metric
+  task_start_score_field: 1
+  task_target_score_field: 2
+  difficulty: easy
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Find and pick up a second weapon in the opening stage.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.weapons
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.enemies
+    - metrics.money
+    - metrics.floor
+    - metrics.secrets
+    - metrics.weapons
+    - metrics.won
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '73_04'
+  game_id: 73_zombotron-reboot
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  difficulty: easy
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Find the opening stage''s secret place.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.secrets
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.enemies
+    - metrics.money
+    - metrics.floor
+    - metrics.secrets
+    - metrics.weapons
+    - metrics.won
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '73_05'
+  game_id: 73_zombotron-reboot
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 6
+  difficulty: medium
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Defeat 6 enemies in the opening stage.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.enemies
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.enemies
+    - metrics.money
+    - metrics.floor
+    - metrics.secrets
+    - metrics.weapons
+    - metrics.won
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '73_06'
+  game_id: 73_zombotron-reboot
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 75
+  difficulty: medium
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Collect 75 money in the opening stage.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.money
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.enemies
+    - metrics.money
+    - metrics.floor
+    - metrics.secrets
+    - metrics.weapons
+    - metrics.won
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '73_07'
+  game_id: 73_zombotron-reboot
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 2
+  difficulty: medium
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Reach floor 2 of the opening stage with an elevator.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.floor
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.enemies
+    - metrics.money
+    - metrics.floor
+    - metrics.secrets
+    - metrics.weapons
+    - metrics.won
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '73_08'
+  game_id: 73_zombotron-reboot
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 12
+  difficulty: hard
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Defeat 12 enemies in the opening stage.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.enemies
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.enemies
+    - metrics.money
+    - metrics.floor
+    - metrics.secrets
+    - metrics.weapons
+    - metrics.won
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '73_09'
+  game_id: 73_zombotron-reboot
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  difficulty: hard
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Clear the opening stage by reaching the exit alive.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.won
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.enemies
+    - metrics.money
+    - metrics.floor
+    - metrics.secrets
+    - metrics.weapons
+    - metrics.won
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal

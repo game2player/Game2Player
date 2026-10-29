@@ -1,0 +1,194 @@
+game:
+  game_name: 246_petal-quest
+  width: 640
+  height: 664
+  speed_multiplier: 1.0
+  url: https://noelcody.itch.io/petal-quest
+  game_rules: 'Petal Quest is a top-down forest puzzle adventure. You are a dog seeking the
+
+    white ghostflower for the girl. Explore connected rooms, collect birds, and
+
+    bring them to the chamber with bird perches. Twelve deposited birds unlock
+
+    the flower''s gate. Touch the flower to carry it, then return to the girl.
+
+    The adventure starts beside the girl, already past the title screen.
+
+    The bottom ledger shows birds collected, occupied perches, flower, and bow.
+
+
+    Birds sing short sequences and show colored notes. Bark near birds to hear
+
+    their song again; bark near flowers to activate their notes in sequence and
+
+    open puzzle doors. Singing a matching color can collect a visible bird.
+
+    Some birds and flowers conceal their true colors. Bunnies respond to barking,
+
+    and glowing paths help reveal routes through dark rooms. Walls block movement;
+
+    there is no health meter or combat. Room changes and animations happen automatically.
+
+    Floor buttons activate when you walk onto them; the perch chamber''s button
+
+    deposits your carried birds. After the chorus is assembled, its song also
+
+    supports an optional secret passage and hidden bow. Returning the flower ends
+
+    the run, so pursue optional discoveries before completing that return.
+
+    '
+  game_roles:
+  - name: dog
+    context:
+      role_description: 'Control the dog as it walks through the forest, barks at nearby objects,
+
+        sings colored notes, gathers birds, and carries the ghostflower.
+
+        '
+      control_notes: "- Hold an arrow key to walk in that direction. Walking onto buttons or\n  collectible\
+        \ items activates them; no interaction key is needed.\n- Press X to bark. Bark reaches nearby\
+        \ objects in front of the dog.\n- Hold C and X together to sit and sing. Keep both held, then\
+        \ press an\n  arrow: Left sings blue, Right pink, Up yellow, Down red. Release and\n  press the\
+        \ arrow again for each note; allow at least 0.35 seconds between\n  notes. Release C and X to\
+        \ resume walking. The colored note display\n  appears around the sitting dog.\n- Wait for songs,\
+        \ dialogue, fades, moving doors, and bird flights to finish.\n"
+    controls:
+      allowed_keys:
+      - ArrowUp
+      - ArrowDown
+      - ArrowLeft
+      - ArrowRight
+      - c
+      - x
+      allow_clicks: false
+      hold_duration: 0.35
+tasks:
+- task_id: '246_01'
+  game_id: 246_petal-quest
+  difficulty: easy
+  game_url_suffix: ?task=246_01
+  task_prompt: Collect your first bird. You start beside the girl in a fresh adventure.
+  task_start_score_field: 0
+  task_target_score_field: 1
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  progress_signal:
+    field: metrics.birds_collected
+    granularity: counter
+    coarse_reason: Each bird is a discrete native collectible; the first collection is an atomic milestone.
+    provenance: engine_hook
+  evaluator_config:
+    score_field: metrics.birds_collected
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.birds_collected
+    - metrics.birds_deposited
+    - metrics.chorus_progress
+    - metrics.quest_progress
+    - metrics.secret_bow_progress
+    - game_state.flower_obtained
+    - game_state.secret_found
+    - game_state.has_bow
+    - game_state.native_win
+    - terminal.outcome
+- task_id: '246_02'
+  game_id: 246_petal-quest
+  difficulty: medium
+  game_url_suffix: ?task=246_02
+  task_prompt: Gather and deposit twelve birds to unlock the ghostflower gate. You start beside the girl
+    in a fresh adventure. Both collecting birds and depositing them count toward progress.
+  task_start_score_field: 0
+  task_target_score_field: 24
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  progress_signal:
+    field: metrics.chorus_progress
+    granularity: counter
+    coarse_reason: Discrete collection and deposition events provide intermediate credit across the twelve-bird
+      objective.
+    provenance: engine_hook
+  evaluator_config:
+    score_field: metrics.chorus_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.birds_collected
+    - metrics.birds_deposited
+    - metrics.chorus_progress
+    - metrics.quest_progress
+    - metrics.secret_bow_progress
+    - game_state.flower_obtained
+    - game_state.secret_found
+    - game_state.has_bow
+    - game_state.native_win
+    - terminal.outcome
+- task_id: '246_03'
+  game_id: 246_petal-quest
+  difficulty: medium
+  game_url_suffix: ?task=246_03
+  task_prompt: Find the ghostflower and return it to the girl to finish the adventure. You start beside
+    the girl in a fresh adventure. Gather and deposit the twelve-bird chorus, obtain the flower, and bring
+    it back.
+  task_start_score_field: 0
+  task_target_score_field: 26
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  progress_signal:
+    field: metrics.quest_progress
+    granularity: counter
+    coarse_reason: Includes bird collection, deposition, flower acquisition, and return rather than exposing
+      only the final win flag.
+    provenance: engine_hook
+  evaluator_config:
+    score_field: metrics.quest_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.birds_collected
+    - metrics.birds_deposited
+    - metrics.chorus_progress
+    - metrics.quest_progress
+    - metrics.secret_bow_progress
+    - game_state.flower_obtained
+    - game_state.secret_found
+    - game_state.has_bow
+    - game_state.native_win
+    - terminal.outcome
+- task_id: '246_04'
+  game_id: 246_petal-quest
+  difficulty: hard
+  game_url_suffix: ?task=246_04
+  task_prompt: Unlock the secret passage by singing the deposited birds’ song, then collect the hidden
+    bow. You start beside the girl in a fresh adventure. Assemble the twelve-bird chorus, discover its
+    secret passage, and obtain the bow before ending the adventure.
+  task_start_score_field: 0
+  task_target_score_field: 26
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  progress_signal:
+    field: metrics.secret_bow_progress
+    granularity: counter
+    coarse_reason: Collection and deposition provide intermediate credit before the discrete secret-song
+      and bow events.
+    provenance: engine_hook
+  evaluator_config:
+    score_field: metrics.secret_bow_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.birds_collected
+    - metrics.birds_deposited
+    - metrics.chorus_progress
+    - metrics.quest_progress
+    - metrics.secret_bow_progress
+    - game_state.flower_obtained
+    - game_state.secret_found
+    - game_state.has_bow
+    - game_state.native_win
+    - terminal.outcome

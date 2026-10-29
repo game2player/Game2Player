@@ -1,0 +1,320 @@
+campaign: playerbench
+agent: codex
+options:
+  builder_revisions: 3
+  policy_revisions: 50
+  repair_rounds: 2
+  turn_timeout_minutes: 25
+  vlm_workers: 1
+held_out:
+- 38_mobs-inc
+- 61_gun-knight
+- 64_kingdom-rush
+- 73_zombotron-reboot
+- 80_tiny-kingdom
+- 86_raide
+- 89_celeste-classic-2
+- 100_chess-by-sparsh
+- 105_memory-match
+- 107_simon-sequence
+- 125_shift-2
+- 134_nom-nom-great-autumn-jam
+- 142_hit8ox
+- 148_pigeon-ascent
+- 167_a-dance-of-fire-and-ice
+- 174_auto-necrochess
+- 175_project-intellisphere
+- 190_bonnies-bakery
+- 197_frogfall
+- 212_trichromat
+- 222_mindustry-classic
+- 224_a-small-world-cup
+- 226_dominoir
+- 241_two-timin-towers
+- 246_petal-quest
+- 252_alfonzo-s-bowling-challenge
+- 264_guardian-sphere
+- 299_packed-to-the-gills
+- 300_handshakes
+- 311_sulka
+- 332_forward
+- 354_conservation-of-bass
+- 357_snug
+- 363_dusk-child
+- 367_10-103
+- 396_william-and-sly
+- 410_my-own-hero-party
+- 413_family-reunion
+- 414_last-seen-online
+- 430_about-time
+- 431_humanconstructionsite
+- 449_pico-puzzle-league
+- 456_mechanical-commando-2-burning-skies
+- 457_give-up
+- 464_skyfyre-ii
+- 475_offroaders-2
+- 483_fair-squares
+- 491_bright-lancer
+- 495_debbie-s-diner-derby
+- 496_rhythm-quest-demo
+vlm_check:
+  plan: examples/plans/vlm_check.yaml
+  model: codex-player
+  thinking: low
+policy_collect:
+  plan: examples/plans/policy_collect.yaml
+vlm_collect:
+  plan: examples/plans/vlm_collect.yaml
+  model: codex-player
+  thinking: low
+games:
+- game_id: 38_mobs-inc
+  title: MOBS, INC
+  source_url: https://overboy.itch.io/mobs-inc
+  engine: construct
+  task_spec: benchmark/playerbench/tasks/38_mobs-inc.yaml
+- game_id: 61_gun-knight
+  title: Gun Knight
+  source_url: https://stepford.itch.io/gun-knight
+  engine: gamemaker_html5
+  task_spec: benchmark/playerbench/tasks/61_gun-knight.yaml
+- game_id: 64_kingdom-rush
+  title: Kingdom Rush
+  source_url: https://www.newgrounds.com/portal/view/587194
+  engine: flash
+  task_spec: benchmark/playerbench/tasks/64_kingdom-rush.yaml
+- game_id: 73_zombotron-reboot
+  title: Zombotron Re-Boot
+  source_url: https://antkarlov.itch.io/zombotron-reboot
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/73_zombotron-reboot.yaml
+- game_id: 80_tiny-kingdom
+  title: Tiny Kingdom
+  source_url: https://neltile.itch.io/tiny-kingdom
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/80_tiny-kingdom.yaml
+- game_id: 86_raide
+  title: Raide
+  source_url: https://kultisti.itch.io/raide
+  engine: gamemaker_html5
+  task_spec: benchmark/playerbench/tasks/86_raide.yaml
+- game_id: 89_celeste-classic-2
+  title: Celeste Classic 2
+  source_url: https://maddymakesgamesinc.itch.io/celeste-classic-2
+  engine: pico8
+  task_spec: benchmark/playerbench/tasks/89_celeste-classic-2.yaml
+- game_id: 100_chess-by-sparsh
+  title: Chess by Sparsh
+  source_url: https://github.com/sparshsam/chess-by-sparsh
+  engine: html5
+  task_spec: benchmark/playerbench/tasks/100_chess-by-sparsh.yaml
+- game_id: 105_memory-match
+  title: Memory Match
+  source_url: benchmark/playerbench/originals/105_memory-match
+  engine: html5
+  task_spec: benchmark/playerbench/tasks/105_memory-match.yaml
+- game_id: 107_simon-sequence
+  title: Simon Sequence
+  source_url: benchmark/playerbench/originals/107_simon-sequence
+  engine: html5
+  task_spec: benchmark/playerbench/tasks/107_simon-sequence.yaml
+- game_id: 125_shift-2
+  title: SHIFT 2
+  source_url: https://armorgames.com/play/964/shift-2
+  engine: flash
+  task_spec: benchmark/playerbench/tasks/125_shift-2.yaml
+- game_id: 134_nom-nom-great-autumn-jam
+  title: NOM NOM - Great Autumn Jam
+  source_url: https://anaissalla.itch.io/nomnom
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/134_nom-nom-great-autumn-jam.yaml
+- game_id: 142_hit8ox
+  title: HIT8OX
+  source_url: https://vladcomarlau.itch.io/hit8ox
+  engine: pico8
+  task_spec: benchmark/playerbench/tasks/142_hit8ox.yaml
+- game_id: 148_pigeon-ascent
+  title: Pigeon Ascent
+  source_url: https://escada-games.itch.io/pigeon-ascent
+  engine: godot
+  task_spec: benchmark/playerbench/tasks/148_pigeon-ascent.yaml
+- game_id: 167_a-dance-of-fire-and-ice
+  title: A Dance of Fire and Ice
+  source_url: https://fizzd.itch.io/a-dance-of-fire-and-ice
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/167_a-dance-of-fire-and-ice.yaml
+- game_id: 174_auto-necrochess
+  title: Auto Necrochess
+  source_url: https://stopsignal.itch.io/auto-necrochess
+  engine: gamemaker_html5
+  task_spec: benchmark/playerbench/tasks/174_auto-necrochess.yaml
+- game_id: 175_project-intellisphere
+  title: 'Project: Intellisphere'
+  source_url: https://stylemistake.itch.io/intellisphere
+  engine: godot
+  task_spec: benchmark/playerbench/tasks/175_project-intellisphere.yaml
+- game_id: 190_bonnies-bakery
+  title: Bonnie's Bakery
+  source_url: https://aislebsoupid.itch.io/bonnies-bakery
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/190_bonnies-bakery.yaml
+- game_id: 197_frogfall
+  title: Frogfall
+  source_url: https://kultisti.itch.io/frogfall
+  engine: gamemaker_html5
+  task_spec: benchmark/playerbench/tasks/197_frogfall.yaml
+- game_id: 212_trichromat
+  title: Trichromat
+  source_url: https://spratt.itch.io/trichromat
+  engine: html5
+  task_spec: benchmark/playerbench/tasks/212_trichromat.yaml
+- game_id: 222_mindustry-classic
+  title: Mindustry Classic
+  source_url: https://anuke.itch.io/mindustry-classic
+  engine: html5
+  task_spec: benchmark/playerbench/tasks/222_mindustry-classic.yaml
+- game_id: 224_a-small-world-cup
+  title: A Small World Cup
+  source_url: https://rujogames.itch.io/a-small-world-cup
+  engine: construct
+  task_spec: benchmark/playerbench/tasks/224_a-small-world-cup.yaml
+- game_id: 226_dominoir
+  title: Dominoir
+  source_url: https://kawakubo.itch.io/dominoir
+  engine: godot
+  task_spec: benchmark/playerbench/tasks/226_dominoir.yaml
+- game_id: 241_two-timin-towers
+  title: Two-Timin' Towers
+  source_url: https://z-richman.itch.io/two-timin-towers
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/241_two-timin-towers.yaml
+- game_id: 246_petal-quest
+  title: Petal Quest
+  source_url: https://noelcody.itch.io/petal-quest
+  engine: pico8
+  task_spec: benchmark/playerbench/tasks/246_petal-quest.yaml
+- game_id: 252_alfonzo-s-bowling-challenge
+  title: Alfonzo's Bowling Challenge
+  source_url: https://kittenm4ster.itch.io/abc
+  engine: pico8
+  task_spec: benchmark/playerbench/tasks/252_alfonzo-s-bowling-challenge.yaml
+- game_id: 264_guardian-sphere
+  title: Guardian Sphere
+  source_url: https://pixel-boy.itch.io/guardian-sphere
+  engine: godot
+  task_spec: benchmark/playerbench/tasks/264_guardian-sphere.yaml
+- game_id: 299_packed-to-the-gills
+  title: Packed to the Gills
+  source_url: https://moonlightjammers.itch.io/packed-to-the-gills
+  engine: html5
+  task_spec: benchmark/playerbench/tasks/299_packed-to-the-gills.yaml
+- game_id: 300_handshakes
+  title: Handshakes
+  source_url: https://petpumpkin.itch.io/handshakes
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/300_handshakes.yaml
+- game_id: 311_sulka
+  title: Sulka
+  source_url: https://kultisti.itch.io/sulka
+  engine: gamemaker_html5
+  task_spec: benchmark/playerbench/tasks/311_sulka.yaml
+- game_id: 332_forward
+  title: Forward (Game Jam version)
+  source_url: https://twotinydice.itch.io/forward
+  engine: html5
+  task_spec: benchmark/playerbench/tasks/332_forward.yaml
+- game_id: 354_conservation-of-bass
+  title: Conservation of Bass
+  source_url: https://emlise.itch.io/conservation-of-bass
+  engine: gamemaker_html5
+  task_spec: benchmark/playerbench/tasks/354_conservation-of-bass.yaml
+- game_id: 357_snug
+  title: Snug
+  source_url: https://cookiecrayon.itch.io/snug
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/357_snug.yaml
+- game_id: 363_dusk-child
+  title: Dusk Child
+  source_url: https://sophieh.itch.io/dusk-child
+  engine: pico8
+  task_spec: benchmark/playerbench/tasks/363_dusk-child.yaml
+- game_id: 367_10-103
+  title: 10-103
+  source_url: https://nerdspartan.itch.io/10-103
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/367_10-103.yaml
+- game_id: 396_william-and-sly
+  title: William and Sly
+  source_url: https://www.newgrounds.com/portal/view/503833
+  engine: flash
+  task_spec: benchmark/playerbench/tasks/396_william-and-sly.yaml
+- game_id: 410_my-own-hero-party
+  title: My Own Hero Party
+  source_url: https://viniflores.itch.io/my-own-hero-party
+  engine: godot
+  task_spec: benchmark/playerbench/tasks/410_my-own-hero-party.yaml
+- game_id: 413_family-reunion
+  title: 'Family Reunion: The Appetizer'
+  source_url: https://waibinin.itch.io/family-reunion
+  engine: html5
+  task_spec: benchmark/playerbench/tasks/413_family-reunion.yaml
+- game_id: 414_last-seen-online
+  title: Last Seen Online
+  source_url: https://qwook.itch.io/last-seen-online
+  engine: html5
+  task_spec: benchmark/playerbench/tasks/414_last-seen-online.yaml
+- game_id: 430_about-time
+  title: About Time!
+  source_url: https://ameblohsh.itch.io/about-time
+  engine: godot
+  task_spec: benchmark/playerbench/tasks/430_about-time.yaml
+- game_id: 431_humanconstructionsite
+  title: Human Construction Site
+  source_url: https://faesu.itch.io/humanconstructionsite
+  engine: html5
+  task_spec: benchmark/playerbench/tasks/431_humanconstructionsite.yaml
+- game_id: 449_pico-puzzle-league
+  title: Pico Puzzle League
+  source_url: https://tvil.itch.io/pico-puzzle-league
+  engine: pico8
+  task_spec: benchmark/playerbench/tasks/449_pico-puzzle-league.yaml
+- game_id: 456_mechanical-commando-2-burning-skies
+  title: 'Mechanical Commando 2: Burning Skies'
+  source_url: https://www.newgrounds.com/portal/view/574778
+  engine: flash
+  task_spec: benchmark/playerbench/tasks/456_mechanical-commando-2-burning-skies.yaml
+- game_id: 457_give-up
+  title: Give Up
+  source_url: https://armorgames.com/play/13662/give-up
+  engine: flash
+  task_spec: benchmark/playerbench/tasks/457_give-up.yaml
+- game_id: 464_skyfyre-ii
+  title: SkyFyre II
+  source_url: https://armorgames.com/play/10666/skyfyre-ii
+  engine: flash
+  task_spec: benchmark/playerbench/tasks/464_skyfyre-ii.yaml
+- game_id: 475_offroaders-2
+  title: Offroaders 2
+  source_url: https://armorgames.com/play/15403/offroaders-2
+  engine: flash
+  task_spec: benchmark/playerbench/tasks/475_offroaders-2.yaml
+- game_id: 483_fair-squares
+  title: Fair Squares
+  source_url: https://kindanice.itch.io/fair-squares
+  engine: godot
+  task_spec: benchmark/playerbench/tasks/483_fair-squares.yaml
+- game_id: 491_bright-lancer
+  title: Bright Lancer
+  source_url: https://slo-nod.itch.io/bright-lancer
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/491_bright-lancer.yaml
+- game_id: 495_debbie-s-diner-derby
+  title: Debbie's Diner Derby
+  source_url: https://team-bugulon.itch.io/debbies-diner-derby
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/495_debbie-s-diner-derby.yaml
+- game_id: 496_rhythm-quest-demo
+  title: Rhythm Quest (Demo)
+  source_url: https://ddrkirbyisq.itch.io/rhythm-quest
+  engine: unity_webgl
+  task_spec: benchmark/playerbench/tasks/496_rhythm-quest-demo.yaml

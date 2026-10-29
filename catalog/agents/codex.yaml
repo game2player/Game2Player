@@ -1,0 +1,4 @@
+# Uses the installed Codex CLI and its configured model.
+backend: codex
+executable: codex
+reasoning_effort: high

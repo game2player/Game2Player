@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "game2player"
+version = "0.0.1"
+description = "Generate browser game environments and collect agent trajectories"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.12"
+dependencies = [
+    "brotli>=1.1",
+    "colorlog",
+    "filelock>=3.10",
+    "jinja2>=3.1",
+    "pillow==10.3.0",
+    "playwright==1.45.0",
+    "pyyaml>=6.0",
+    "requests==2.34.2",
+    "shrinko==1.2.7.1",  # PICO-8 carts: python -m tools.pico8
+]
+
+[project.optional-dependencies]
+engine-tools = ["UnityPy==1.25.4"]
+
+[tool.setuptools]
+py-modules = ["play", "logging_setup"]
+
+[tool.setuptools.packages.find]
+include = ["agents*", "catalog*", "env*", "harnesses*", "tools*"]
+exclude = ["*.tests*", "tests*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+"tools.flash" = ["vendor/*.zip", "vendor/LICENSE", "vendor/README.md", "vendor/LICENSE_MIT", "vendor/LICENSE_APACHE", "vendor/RUFFLE.md"]
+"tools.godot" = ["vendor/*.zip", "vendor/LICENSE", "vendor/README.md"]
+"tools.unity_webgl" = ["vendor/il2cppdumper/*", "README.md", "bridge.js"]
+"tools.engine_inspect" = ["README.md"]
+"tools.train" = ["*.yaml", "README.md"]
+"tools.datagen" = ["README.md"]
+"env" = ["browser_scripts/*.js"]
+"catalog" = ["agents/*.yaml"]
+"catalog.models" = ["*.yaml"]
+"catalog.prompt_templates" = ["*.j2"]
+"tools.environment_factory" = ["prompts/*.md"]
+"tools.policy_author" = ["prompt.md"]
+"tools.trajectory_recorder" = ["browser_extension/*.html", "browser_extension/*.js", "browser_extension/*.json"]

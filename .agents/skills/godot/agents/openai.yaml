@@ -1,0 +1,6 @@
+interface:
+  display_name: "Godot"
+  short_description: "Instrument a Godot HTML5 export"
+  default_prompt: "Use $godot for this Builder phase."
+policy:
+  allow_implicit_invocation: false

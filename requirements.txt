@@ -1,0 +1,4 @@
+# Python dependencies have one source of truth: pyproject.toml.
+# Java and .NET runtime requirements are documented in README.md.
+# Recording also needs the ffmpeg package (ffmpeg + ffprobe) in the active environment.
+-e .[engine-tools]

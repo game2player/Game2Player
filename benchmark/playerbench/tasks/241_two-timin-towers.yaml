@@ -1,0 +1,218 @@
+game:
+  game_name: 241_two-timin-towers
+  speed_multiplier: 1.0
+  width: 960
+  height: 600
+  url: https://z-richman.itch.io/two-timin-towers
+  game_rules: 'Two-Timin'' Towers is a tower defense where your own towers'' bullets also hurt you.
+
+    Robots walk a winding dirt path across the map (they enter at the left; the path
+
+    ends at the bottom). You, a small engineer, stand on the grass and place towers
+
+    beside the path to destroy them. Hearts at the top left are your health; you lose
+
+    hearts when robots get through and when stray bullets, including your towers'', hit
+
+    you. At zero hearts the Game Over screen appears and the run ends.
+
+
+    The run is a series of waves, shown as WAVE: n at the top left. Before each wave
+
+    you are in a build phase: spend resources on towers, then press the green START
+
+    button to send the wave. Each wave is a stream of robots that must all be killed
+
+    or pass through before the next build phase. Dead robots drop colored pickups;
+
+    walk over them to collect them. Pickups raise your five resource counts (yellow,
+
+    red, blue, green, grey), which pay for towers. The tower panel on the right lists
+
+    each tower with "have / cost"; a tower is available when you hold its cost. Quad-Shot
+
+    costs yellow, Octo-Shot blue, Lock-On red, Spinner green, Blockade grey. Waves
+
+    grow harder and the run is endless until you die.
+
+
+    The task start loads a fresh Classic map run in the build phase of wave 1 with 10
+
+    hearts and 40 yellow, 30 red, 40 blue. Nothing happens until you press START.
+
+    After Game Over the environment starts a fresh run.
+
+    '
+  game_roles:
+  - name: engineer
+    context:
+      role_description: 'The engineer who walks the grass, places towers beside the path, swings a
+
+        wrench to deflect bullets, and picks up robot drops.
+
+        '
+      control_notes: "- Keys W A S D: hold to walk up, left, down, right (a held key keeps walking\n \
+        \ until released). Walk away from your own towers' firing lines and over\n  pickups.\n- Left click\
+        \ on a tower in the right-hand panel: select it (its cost is taken\n  from your resources right\
+        \ away). Then left click on a free grass tile to\n  place it; path tiles cannot hold towers. A\
+        \ placed tower fires on its own.\n- Left click with no tower selected: the game lists the left\
+        \ mouse button as\n  the way to deflect bullets; the wrench follows the cursor.\n- Right click:\
+        \ cancel the selected tower and get its cost back.\n- Left click the green START button at the\
+        \ top left to begin the wave; it is\n  only shown in the build phase.\n- E: detonate a bomb if\
+        \ you hold one (the bomb icon at the lower right shows\n  how many).\n- Waiting lets the wave\
+        \ play out; towers and robots act without input.\n"
+    controls:
+      allowed_keys:
+      - w
+      - a
+      - s
+      - d
+      - e
+      allow_clicks: true
+      hold_duration: 0.35
+tasks:
+- task_id: '241_01'
+  game_id: 241_two-timin-towers
+  game_url_suffix: ?task=241_01
+  difficulty: easy
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Survive and finish wave 1 on the Classic map. Build towers with your starting resources,
+    press
+
+    START, dodge stray bullets, and clear the whole first wave before your hearts run out. The task
+
+    starts in the build phase with the first wave waiting.
+
+    '
+  progress_signal:
+    field: game_state.waves_cleared
+    granularity: counter
+    coarse_reason: 'Native wave counter: the game''s own count of waves completed, 0 at the start and
+      +1 each time a wave is finished.'
+  evaluator_config:
+    score_field: game_state.waves_cleared
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.waves_cleared
+    - game_state.total_collected_currency
+    - game_state.phase
+    - game_state.wave_in_effect
+    - game_state.enemies_alive
+    - game_state.enemies_killed_this_wave
+    - game_state.player_hitpoints
+    - game_state.map
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '241_02'
+  game_id: 241_two-timin-towers
+  game_url_suffix: ?task=241_02
+  difficulty: medium
+  evaluator_id: game_api_metric
+  task_target_score_field: 4
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Survive the early game: finish waves 1 to 4 on the Classic map. Between waves, spend the
+    pickups you
+
+    collect on more towers and keep dodging the friendly-fire bullets. The task starts in the build
+
+    phase with wave 1 waiting.
+
+    '
+  progress_signal:
+    field: game_state.waves_cleared
+    granularity: counter
+    coarse_reason: 'Native wave counter: each increment is one finished wave, and waves last about a minute,
+      so it moves several times in an attempt.'
+  evaluator_config:
+    score_field: game_state.waves_cleared
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.waves_cleared
+    - game_state.total_collected_currency
+    - game_state.phase
+    - game_state.wave_in_effect
+    - game_state.enemies_alive
+    - game_state.enemies_killed_this_wave
+    - game_state.player_hitpoints
+    - game_state.map
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '241_03'
+  game_id: 241_two-timin-towers
+  game_url_suffix: ?task=241_03
+  difficulty: hard
+  evaluator_id: game_api_metric
+  task_target_score_field: 10
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Survive deep into the Classic map: finish 10 waves by growing and mixing your towers and
+    positioning
+
+    yourself away from their bullets. The task starts in the build phase with wave 1 waiting.
+
+    '
+  progress_signal:
+    field: game_state.waves_cleared
+    granularity: counter
+    coarse_reason: 'Native wave counter: about ten steps of partial credit, one per finished wave.'
+  evaluator_config:
+    score_field: game_state.waves_cleared
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.waves_cleared
+    - game_state.total_collected_currency
+    - game_state.phase
+    - game_state.wave_in_effect
+    - game_state.enemies_alive
+    - game_state.enemies_killed_this_wave
+    - game_state.player_hitpoints
+    - game_state.map
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '241_04'
+  game_id: 241_two-timin-towers
+  game_url_suffix: ?task=241_04
+  difficulty: medium
+  evaluator_id: game_api_metric
+  task_target_score_field: 150
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Scavenge the battlefield: collect robot drops by walking over them until you have picked
+    up 150 in
+
+    total this run. Kill robots with towers and gather their drops while staying alive. The task starts
+
+    in the build phase with wave 1 waiting.
+
+    '
+  progress_signal:
+    field: game_state.total_collected_currency
+    granularity: dense
+    coarse_reason: Running total of pickups collected by walking over robot drops; it rises with every
+      pickup, so it gives fine partial credit.
+  evaluator_config:
+    score_field: game_state.total_collected_currency
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.waves_cleared
+    - game_state.total_collected_currency
+    - game_state.phase
+    - game_state.wave_in_effect
+    - game_state.enemies_alive
+    - game_state.enemies_killed_this_wave
+    - game_state.player_hitpoints
+    - game_state.map
+    - terminal.outcome
+    - terminal.isTerminal

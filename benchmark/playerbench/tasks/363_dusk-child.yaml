@@ -1,0 +1,334 @@
+game:
+  game_name: 363_dusk-child
+  speed_multiplier: 1.0
+  width: 640
+  height: 640
+  url: https://sophieh.itch.io/dusk-child
+  game_rules: "Dusk Child is a quiet exploration-puzzle platformer. You arrive in a dark\ncave world made\
+    \ of connected single screens; walking or falling off a\nscreen edge moves you to the neighbouring\
+    \ screen. Your people left through a\ngreat stone door, and the natural goal is to open it and follow\
+    \ them.\n\n- Items: orbs (green spheres), keystones and buckets. You carry one item at a\n  time,\
+    \ shown in the box at the bottom left. Picking up another item while\n  holding one swaps them. Event\
+    \ messages scroll in the text line beside it.\n- Pulley shelves: a shelf hanging beside a stone door\
+    \ rises up. Weighing it\n  down with an orb, a keystone or a bucket holding water lifts the door in\n\
+    \  that screen. A carried bucket leaks, and an empty bucket is too light.\n  Buckets fill under falling\
+    \ water.\n- Temples: the large central hall has two keystone holes, one for the western\n  temple\
+    \ and one for the eastern. Dropping a keystone into a hole opens that\n  temple's gates for good.\n\
+    - The ancient tablet in the western temple awakens you. From then on X turns\n  you into living fire\
+    \ and back. In fire form flames do not hurt you, water\n  kills you and water in a bucket evaporates.\
+    \ Touching the outstretched hands\n  of a kneeling statue in fire form lights its fire. The great\
+    \ door opens\n  once a western and an eastern statue fire both burn; stand in front of it.\n- Hazards:\
+    \ spikes (landing on them), fire, and eyedols, the eye idols\n  that flash when you come near and\
+    \ kill you if you get too close. An orb that\n  you carry, or one lying in the same screen, pacifies\
+    \ them. Before awakening,\n  X only shows \"?\".\n- Glowing mirror spheres are checkpoints. Touching\
+    \ one saves your position.\n  After a death you reappear at the last sphere you touched, and the world\n\
+    \  (items, open temples, lit statues) returns to how it was at that moment.\n  There are no lives\
+    \ and no game over. The ending shows \"THE END\".\n"
+  game_roles:
+  - name: dusk_child
+    context:
+      role_description: 'You control the small red-haired child: walk, jump, crawl, carry one
+
+        item at a time and, once awakened, become living fire.
+
+        '
+      control_notes: "- ArrowLeft / ArrowRight: walk. Hold the key (press_key with a duration)\n  to keep\
+        \ walking; a plain tap moves only a few pixels.\n- ArrowUp: jump (tap). Only works while standing\
+        \ on the ground.\n- ArrowDown: duck; hold it while walking to crawl through low gaps.\n- Z: while\
+        \ standing on the ground, pick up the item you stand on, drop the\n  carried item, or examine\
+        \ signs and objects (the text appears at the\n  bottom). Dropping a keystone at a keystone hole\
+        \ sets it in place.\n- X: switch fire form on or off, once the tablet has awakened you.\n- Wait:\
+        \ let the death fade, door movement or tablet sequence finish.\n"
+    controls:
+      allowed_keys:
+      - ArrowUp
+      - ArrowDown
+      - ArrowLeft
+      - ArrowRight
+      - z
+      - x
+      allow_clicks: false
+      hold_duration: 0.2
+tasks:
+- task_id: '363_01'
+  game_id: 363_dusk-child
+  game_url_suffix: ?start=fresh
+  difficulty: easy
+  task_prompt: 'Find and pick up an orb, a glowing green sphere. The nearest one lies in
+
+    the cave below the second screen. Stand on it and press Z; it then appears
+
+    in the item box at the bottom left.
+
+    '
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.orb_pickup_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.orb_pickup_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.start
+    - game_state.start_match
+    - game_state.mode
+    - game_state.room
+    - game_state.carrying
+    - game_state.west_temple_open
+    - game_state.east_temple_open
+    - game_state.west_statue_lit
+    - game_state.east_statue_lit
+    - game_state.fire_power
+    - metrics.orb_pickup_progress
+    - metrics.rooms_visited
+    - metrics.deaths
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '363_02'
+  game_id: 363_dusk-child
+  game_url_suffix: ?start=fresh
+  difficulty: medium
+  task_prompt: 'Explore the world: enter 12 different screens, counting the one you start
+
+    in. Walking or falling off a screen edge takes you to the neighbouring
+
+    screen.
+
+    '
+  evaluator_id: game_api_metric
+  task_start_score_field: 1
+  task_target_score_field: 12
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.rooms_visited
+    granularity: counter
+    coarse_reason: Screens are the game's natural unit of discovery; per-tile coverage would reward pacing
+      inside one screen. Eleven increments separate start and target.
+  evaluator_config:
+    score_field: metrics.rooms_visited
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.start
+    - game_state.start_match
+    - game_state.mode
+    - game_state.room
+    - game_state.carrying
+    - game_state.west_temple_open
+    - game_state.east_temple_open
+    - game_state.west_statue_lit
+    - game_state.east_statue_lit
+    - game_state.fire_power
+    - metrics.rooms_visited
+    - metrics.deaths
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '363_03'
+  game_id: 363_dusk-child
+  game_url_suffix: ?start=fresh
+  difficulty: medium
+  task_prompt: 'Open a pulley door. Find a stone door with a raised shelf hanging beside it
+
+    and weigh the shelf down by dropping a heavy object on it with Z: an orb, a
+
+    keystone, or a bucket that holds water. The task is done when the door has
+
+    fully risen.
+
+    '
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.pulley_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.pulley_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.start
+    - game_state.start_match
+    - game_state.mode
+    - game_state.room
+    - game_state.carrying
+    - game_state.west_temple_open
+    - game_state.east_temple_open
+    - game_state.west_statue_lit
+    - game_state.east_statue_lit
+    - game_state.fire_power
+    - metrics.pulley_progress
+    - metrics.rooms_visited
+    - metrics.deaths
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '363_04'
+  game_id: 363_dusk-child
+  game_url_suffix: ?start=fresh
+  difficulty: hard
+  task_prompt: 'Open a temple. Find a keystone, carry it to one of the two keystone holes
+
+    in the large central hall, and drop it in with Z until the message says the
+
+    keystone slots in.
+
+    '
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.keystone_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.keystone_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.start
+    - game_state.start_match
+    - game_state.mode
+    - game_state.room
+    - game_state.carrying
+    - game_state.west_temple_open
+    - game_state.east_temple_open
+    - game_state.west_statue_lit
+    - game_state.east_statue_lit
+    - game_state.fire_power
+    - metrics.keystone_progress
+    - metrics.rooms_visited
+    - metrics.deaths
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '363_05'
+  game_id: 363_dusk-child
+  game_url_suffix: ?start=fresh
+  difficulty: very_hard
+  task_prompt: 'Receive the awakening of the ancient tablet deep in the western temple.
+
+    The western temple opens only once a keystone is set in its hole in the
+
+    large central hall. Then reach the tablet and wait while it awakens you
+
+    ("you feel different", "awakened").
+
+    '
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.awakening_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.awakening_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.start
+    - game_state.start_match
+    - game_state.mode
+    - game_state.room
+    - game_state.carrying
+    - game_state.west_temple_open
+    - game_state.east_temple_open
+    - game_state.west_statue_lit
+    - game_state.east_statue_lit
+    - game_state.fire_power
+    - metrics.awakening_progress
+    - metrics.rooms_visited
+    - metrics.deaths
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '363_06'
+  game_id: 363_dusk-child
+  game_url_suffix: ?start=awakened
+  difficulty: medium
+  task_prompt: 'You have just been awakened at the ancient tablet. Press X to turn into
+
+    living fire, then light a statue''s fire by touching the outstretched hands
+
+    of one of the large kneeling statues outside this tablet chamber. The
+
+    message says "you light the statue fire".
+
+    '
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.statue_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.statue_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.start
+    - game_state.start_match
+    - game_state.mode
+    - game_state.room
+    - game_state.carrying
+    - game_state.west_temple_open
+    - game_state.east_temple_open
+    - game_state.west_statue_lit
+    - game_state.east_statue_lit
+    - game_state.fire_power
+    - metrics.statue_progress
+    - metrics.rooms_visited
+    - metrics.deaths
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '363_07'
+  game_id: 363_dusk-child
+  game_url_suffix: ?start=awakened
+  difficulty: very_hard
+  task_prompt: 'You have just been awakened at the ancient tablet. Using your fire form (X),
+
+    light the fire of a western statue and of an eastern statue. Then stand in
+
+    front of the great stone door until it opens and the ending ("THE END")
+
+    appears.
+
+    '
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.ending_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.ending_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.start
+    - game_state.start_match
+    - game_state.mode
+    - game_state.room
+    - game_state.carrying
+    - game_state.west_temple_open
+    - game_state.east_temple_open
+    - game_state.west_statue_lit
+    - game_state.east_statue_lit
+    - game_state.fire_power
+    - metrics.ending_progress
+    - metrics.rooms_visited
+    - metrics.deaths
+    - terminal.isTerminal
+    - terminal.outcome

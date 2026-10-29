@@ -1,0 +1,274 @@
+game:
+  game_name: 495_debbie-s-diner-derby
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  game_rules: 'Debbie''s Diner Derby is a top-down skating food-service game. Complete a shift
+
+    by taking the customers'' orders, fetching their food from the kitchen, and
+
+    delivering it to their tables. The task begins in the selected shift''s kitchen.
+
+
+    Customers with exclamation bubbles want to order. Stop beside their table to
+
+    take orders automatically; their bubbles then show the requested food. Return
+
+    to the kitchen counter to collect prepared plates automatically, then stop at
+
+    the matching customers'' tables to serve them. The top-right counter shows how
+
+    many customers have been served. Further customers start ordering as earlier
+
+    waves are served. Bubbles at screen edges point toward off-screen customers.
+
+
+    Skating has momentum: releasing a direction does not stop Debbie immediately.
+
+    Brake to stop at tables and negotiate turns. Collisions can spill carried food;
+
+    puddles and moving diners make later layouts harder to handle. The clock and
+
+    stars reward quick, careful service, but completing a shift does not require a
+
+    particular star rating. There is no restart button during a shift. The native
+
+    completion screen offers menu, retry, and next-shift buttons.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You control Debbie, the roller-skating server. Read customer bubbles,
+
+        carry food from the kitchen, and stop at tables to complete deliveries.
+
+        '
+      control_notes: "- Hold W/A/S/D or Up/Left/Down/Right arrows to skate in that direction.\n  Use holds\
+        \ of about 0.3–1 second for controlled movement; short taps make\n  small adjustments. Debbie\
+        \ continues gliding after you release a key.\n- Hold Space or Shift to brake until stopped; allow\
+        \ about 0.5 seconds.\n  Orders, food pickup, and deliveries happen automatically nearby, so\n\
+        \  there is no separate interaction key.\n- In native menus, use the direction keys to select\
+        \ a button and tap\n  Space or Shift to activate it. On the completion screen, the circular\n\
+        \  arrow is retry, the list icon returns to the menu, and the triangle\n  advances to the next\
+        \ shift.\n- Waiting lets skating, food animations, and customers continue in real\n  time. Brake\
+        \ before waiting if you want to stay still.\n"
+    controls:
+      allowed_keys:
+      - w
+      - a
+      - s
+      - d
+      - ArrowUp
+      - ArrowLeft
+      - ArrowDown
+      - ArrowRight
+      - Space
+      - Shift
+      allow_clicks: false
+      hold_duration: 0.2
+tasks:
+- task_id: '495_01'
+  game_id: 495_debbie-s-diner-derby
+  difficulty: easy
+  game_url_suffix: ?task=495_01
+  task_prompt: Complete Day 1, New Girl, by serving all 3 customers. You begin at the kitchen. Take orders,
+    collect the matching food, and return to serve the tables until the level-complete screen appears.
+    Any star rating is sufficient.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 7
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.service_units
+    granularity: counter
+    coarse_reason: Accepted orders and completed deliveries are discrete native milestones across multiple
+      customers. Position and speed were inspected but do not measure service progress; no continuous
+      native service meter exists.
+  evaluator_config:
+    score_field: metrics.service_units
+    end_field: metrics.shift_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.service_units
+    - metrics.service_target
+    - metrics.orders_taken
+    - metrics.customers_served
+    - metrics.customers_total
+    - metrics.shift_complete
+    - game_state.variant.matches_requested
+    - game_state.level.wave
+    - game_state.level.won
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '495_02'
+  game_id: 495_debbie-s-diner-derby
+  difficulty: easy
+  game_url_suffix: ?task=495_02
+  task_prompt: Complete Day 2, Donuts, by serving all 4 customers. You begin at the kitchen. Take orders,
+    collect the matching food, and return to serve the tables until the level-complete screen appears.
+    Any star rating is sufficient.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 9
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.service_units
+    granularity: counter
+    coarse_reason: Accepted orders and completed deliveries are discrete native milestones across multiple
+      customers. Position and speed were inspected but do not measure service progress; no continuous
+      native service meter exists.
+  evaluator_config:
+    score_field: metrics.service_units
+    end_field: metrics.shift_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.service_units
+    - metrics.service_target
+    - metrics.orders_taken
+    - metrics.customers_served
+    - metrics.customers_total
+    - metrics.shift_complete
+    - game_state.variant.matches_requested
+    - game_state.level.wave
+    - game_state.level.won
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '495_03'
+  game_id: 495_debbie-s-diner-derby
+  difficulty: medium
+  game_url_suffix: ?task=495_03
+  task_prompt: Complete Day 3, Slippery When Wet, by serving all 6 customers. You begin at the kitchen.
+    Take orders, collect the matching food, and return to serve the tables until the level-complete screen
+    appears. Watch for puddles. Any star rating is sufficient.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 13
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.service_units
+    granularity: counter
+    coarse_reason: Accepted orders and completed deliveries are discrete native milestones across multiple
+      customers. Position and speed were inspected but do not measure service progress; no continuous
+      native service meter exists.
+  evaluator_config:
+    score_field: metrics.service_units
+    end_field: metrics.shift_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.service_units
+    - metrics.service_target
+    - metrics.orders_taken
+    - metrics.customers_served
+    - metrics.customers_total
+    - metrics.shift_complete
+    - game_state.variant.matches_requested
+    - game_state.level.wave
+    - game_state.level.won
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '495_04'
+  game_id: 495_debbie-s-diner-derby
+  difficulty: medium
+  game_url_suffix: ?task=495_04
+  task_prompt: Complete Day 5, Foot Traffic, by serving all 7 customers. You begin at the kitchen. Take
+    orders, collect the matching food, and return to serve the tables until the level-complete screen
+    appears. Watch for moving diners. Any star rating is sufficient.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 15
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.service_units
+    granularity: counter
+    coarse_reason: Accepted orders and completed deliveries are discrete native milestones across multiple
+      customers. Position and speed were inspected but do not measure service progress; no continuous
+      native service meter exists.
+  evaluator_config:
+    score_field: metrics.service_units
+    end_field: metrics.shift_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.service_units
+    - metrics.service_target
+    - metrics.orders_taken
+    - metrics.customers_served
+    - metrics.customers_total
+    - metrics.shift_complete
+    - game_state.variant.matches_requested
+    - game_state.level.wave
+    - game_state.level.won
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '495_05'
+  game_id: 495_debbie-s-diner-derby
+  difficulty: medium
+  game_url_suffix: ?task=495_05
+  task_prompt: Complete Day 7, The Fat Rat Gang, by serving all 3 customers. You begin at the kitchen.
+    Take orders, collect the matching food, and return to serve the tables until the level-complete screen
+    appears. Watch for the moving obstacles. Any star rating is sufficient.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 7
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.service_units
+    granularity: counter
+    coarse_reason: Accepted orders and completed deliveries are discrete native milestones across multiple
+      customers. Position and speed were inspected but do not measure service progress; no continuous
+      native service meter exists.
+  evaluator_config:
+    score_field: metrics.service_units
+    end_field: metrics.shift_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.service_units
+    - metrics.service_target
+    - metrics.orders_taken
+    - metrics.customers_served
+    - metrics.customers_total
+    - metrics.shift_complete
+    - game_state.variant.matches_requested
+    - game_state.level.wave
+    - game_state.level.won
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '495_06'
+  game_id: 495_debbie-s-diner-derby
+  difficulty: medium
+  game_url_suffix: ?task=495_06
+  task_prompt: Complete Day 11, Like Waves, by serving all 7 customers. You begin at the kitchen. Take
+    orders, collect the matching food, and return to serve the tables until the level-complete screen
+    appears. This shift uses the fish-themed layout. Any star rating is sufficient.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 15
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.service_units
+    granularity: counter
+    coarse_reason: Accepted orders and completed deliveries are discrete native milestones across multiple
+      customers. Position and speed were inspected but do not measure service progress; no continuous
+      native service meter exists.
+  evaluator_config:
+    score_field: metrics.service_units
+    end_field: metrics.shift_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.service_units
+    - metrics.service_target
+    - metrics.orders_taken
+    - metrics.customers_served
+    - metrics.customers_total
+    - metrics.shift_complete
+    - game_state.variant.matches_requested
+    - game_state.level.wave
+    - game_state.level.won
+    - terminal.outcome
+    - terminal.isTerminal

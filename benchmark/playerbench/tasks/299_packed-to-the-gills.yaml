@@ -1,0 +1,241 @@
+game:
+  game_name: 299_packed-to-the-gills
+  speed_multiplier: 1.0
+  width: 960
+  height: 540
+  url: https://moonlightjammers.itch.io/packed-to-the-gills
+  game_rules: "You are playing Packed to the Gills, a quick reflex puzzle. A sardine commuter\n(the white\
+    \ fish at the left of the platform) boards one train car after another.\nEach car arrives packed with\
+    \ sea creatures and leaves one gap; the fish must squeeze\nin by striking the pose whose silhouette\
+    \ fits that gap. A conductor octopus watches\nfrom the right of the platform.\n\n## Rules\n- Each\
+    \ run begins with an ~8 second train-arrival animation. Nothing can be answered\n  until the first\
+    \ car stops and the countdown bar appears at the bottom centre; wait.\n- The pose buttons sit in the\
+    \ cloud at the top left: straight fish (Up), squat fish\n  (Down), fish bowed left (Left), fish bowed\
+    \ right (Right). Level 1 shows only the\n  straight and squat buttons, so their positions there differ\
+    \ from later levels. Pick the pose whose shape\n  fits the gap in the car. A right pose boards the\
+    \ fish; a wrong pose or running out\n  of time is a mistake (the fish flops onto the platform) and\
+    \ the next car arrives.\n- Every car has a shrinking bar at the bottom centre: 3 seconds per car,\
+    \ 1 second in\n  Rush Hour. If it runs out the answer counts as \"do nothing\".\n- Level 1 only offers\
+    \ Up and Down (Left/Right count as mistakes). Levels 2 and\n  later use all four poses.\n- Levels\
+    \ 3 and 4 and Endless mode add jellyfish passengers: a jellyfish icon appears\n  bottom-left; press\
+    \ Space first to let it on, then answer the same car with its pose.\n  Skipping the jellyfish is a\
+    \ mistake.\n- Level 4, Endless and Rush Hour also have jammed cars (a solid wall of passengers\n \
+    \ or a whale in the doorway) that cannot be boarded: press nothing and let the bar\n  run out, which\
+    \ counts as the correct answer. Pressing a pose is a mistake.\n- Story levels have a fixed number\
+    \ of cars (HUD \"trains left: N\", top right) and\n  cannot be lost; the level ends after the last\
+    \ car. Endless mode (HUD \"trains caught:\n  N\" and \"mistakes: M\") ends at the third mistake. Rush\
+    \ Hour (HUD \"trains left: N\")\n  ends at the first mistake or after 100 cars. The \"trains caught\"\
+    \ score counts cars\n  actually boarded; correctly waiting out a jammed car does not add to it.\n\
+    - After every answer there is a short (about one second) train-change animation in\n  which key presses\
+    \ are ignored; the next car's bar marks when you can answer again.\n- When a run ends the game shows\
+    \ results text and then a menu; a run that has ended\n  is over.\n"
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You control the sardine commuter on the platform. You choose a pose for each
+
+        arriving train car.
+
+        '
+      control_notes: '- ArrowUp: straight pose (the upright fish silhouette in the cloud at the top left)
+
+        - ArrowDown: squat pose (the rounded, squat silhouette in the cloud)
+
+        - ArrowLeft: bow-left pose (the fish-bowed-left silhouette); levels 2 and later only, a mistake
+        in level 1
+
+        - ArrowRight: bow-right pose (the fish-bowed-right silhouette); levels 2 and later only, a mistake
+        in level 1
+
+        - Space: let the jellyfish on first (only while the jellyfish icon is shown), then press the pose
+        for that car
+
+        - Wait: do nothing; use it during the arrival animation and to let the bar run out on a jammed
+        car
+
+        '
+    controls:
+      allowed_keys:
+      - ArrowUp
+      - ArrowDown
+      - ArrowLeft
+      - ArrowRight
+      - Space
+      allow_clicks: true
+      hold_duration: 0.1
+tasks:
+- task_id: '299_01'
+  game_id: 299_packed-to-the-gills
+  game_url_suffix: ?start=level1
+  evaluator_id: game_api_metric
+  task_target_score_field: 18
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: easy
+  task_prompt: 'Level 1: board at least 18 of the 20 train cars with the correct pose (only Up and Down
+    are in play). A wrong pose or timeout is a mistake; the level ends after the 20th car.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.correct_trains
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.correct_trains
+    - metrics.trains_caught
+    - metrics.misses
+    - game_state.mode
+    - game_state.phase
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '299_02'
+  game_id: 299_packed-to-the-gills
+  game_url_suffix: ?start=level2
+  evaluator_id: game_api_metric
+  task_target_score_field: 22
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: easy
+  task_prompt: 'Level 2: board at least 22 of the 25 train cars with the correct pose (Up, Down, Left
+    and Right are in play).
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.correct_trains
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.correct_trains
+    - metrics.trains_caught
+    - metrics.misses
+    - game_state.mode
+    - game_state.phase
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '299_03'
+  game_id: 299_packed-to-the-gills
+  game_url_suffix: ?start=level3
+  evaluator_id: game_api_metric
+  task_target_score_field: 26
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Level 3: board at least 26 of the 30 train cars with the correct pose. Some cars carry
+    a jellyfish: press Space to let it on first, then give the pose.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.correct_trains
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.correct_trains
+    - metrics.trains_caught
+    - metrics.misses
+    - game_state.mode
+    - game_state.phase
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '299_04'
+  game_id: 299_packed-to-the-gills
+  game_url_suffix: ?start=level4
+  evaluator_id: game_api_metric
+  task_target_score_field: 30
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Level 4: handle at least 30 of the 35 train cars correctly. Jammed cars are handled correctly
+    only by waiting for the bar to run out; jellyfish cars need Space first, then the pose.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.correct_trains
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.correct_trains
+    - metrics.trains_caught
+    - metrics.misses
+    - game_state.mode
+    - game_state.phase
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '299_05'
+  game_id: 299_packed-to-the-gills
+  game_url_suffix: ?start=endless
+  evaluator_id: game_api_metric
+  task_target_score_field: 25
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Endless mode: reach at least 25 on the ''trains caught'' counter before the third mistake
+    ends the run.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.trains_caught
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.correct_trains
+    - metrics.trains_caught
+    - metrics.misses
+    - game_state.mode
+    - game_state.phase
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '299_06'
+  game_id: 299_packed-to-the-gills
+  game_url_suffix: ?start=endless
+  evaluator_id: game_api_metric
+  task_target_score_field: 60
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: hard
+  task_prompt: 'Endless mode: reach at least 60 on the ''trains caught'' counter before the third mistake
+    ends the run.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.trains_caught
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.correct_trains
+    - metrics.trains_caught
+    - metrics.misses
+    - game_state.mode
+    - game_state.phase
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '299_07'
+  game_id: 299_packed-to-the-gills
+  game_url_suffix: ?start=rush
+  evaluator_id: game_api_metric
+  task_target_score_field: 25
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: hard
+  task_prompt: 'Rush Hour (1 second per car; the first mistake ends the run): board at least 25 cars (the
+    game''s ''trains caught'' score; jammed cars you correctly wait out are not counted).
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.trains_caught
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.correct_trains
+    - metrics.trains_caught
+    - metrics.misses
+    - game_state.mode
+    - game_state.phase
+    - terminal.outcome
+    - terminal.isTerminal

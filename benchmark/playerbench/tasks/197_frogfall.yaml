@@ -1,0 +1,240 @@
+game:
+  game_name: 197_frogfall
+  url: https://kultisti.itch.io/frogfall
+  width: 768
+  height: 768
+  speed_multiplier: 1.0
+  game_rules: 'Frogfall is a puzzle platformer about collecting all the flies in a small room
+
+    during one airborne attempt. Each fly you touch bounces you upward. Steer through
+
+    the remaining flies before landing; the final required hit clears the room and
+
+    the game advances automatically. Some flies return and must be hit twice. Dim
+
+    flies become available only after the other flies have been collected.
+
+
+    You can walk on your starting ledge before jumping. Landing after a jump, or
+
+    hitting a dangerous surface, immediately returns you to the start and restores
+
+    the room''s flies. Attempts are unlimited. Reusable bounce points help you move
+
+    but do not count as collected flies. In the skatepark, touching a rail attaches
+
+    you to it and carries you automatically; you can jump off.
+
+
+    Tasks begin directly in their first room. The top line names the room and shows
+
+    collected/required hits for the current attempt; multi-room tasks also show
+
+    cleared rooms. A returning fly contributes one hit each time it is collected.
+
+    Use the environment reset to return to the task''s first room with fresh progress.'
+  game_roles:
+  - name: player
+    context:
+      role_description: Control the pale frog, steering its jumps and automatic fly bounces through each
+        room.
+      control_notes: '- Hold ArrowLeft or ArrowRight to move horizontally, including while airborne. Longer
+        holds move farther; release to stop horizontal movement.
+
+        - Press Space to jump from the starting ledge. Combine Space with Left or Right to jump while
+        steering. Release Space before another jump press; holding it does not repeatedly jump in normal
+        mode. Touching a fly bounces you automatically.
+
+        - On a horizontal rail, press Space to jump off. On a vertical rail, combine Space with Left or
+        Right to jump off toward that side.
+
+        - Wait without keys to let gravity, automatic rail movement, fly reappearance, or room transitions
+        continue. A normal key press is a brief tap; specify a hold duration, such as 0.2 seconds, for
+        sustained movement.'
+    controls:
+      allowed_keys:
+      - ArrowLeft
+      - ArrowRight
+      - Space
+      allow_clicks: false
+      hold_duration: 0.2
+tasks:
+- task_id: '197_01'
+  game_id: 197_frogfall
+  difficulty: easy
+  game_url_suffix: ?task=197_01
+  task_prompt: Clear all three introductory tutorial rooms. You start fresh in Tutorial 1; collect every
+    fly in each room to advance through Tutorial 3. Each room must be cleared in one airborne attempt.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 6
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: counter
+    coarse_reason: Each native required fly collision advances progress; six required hits span three
+      short rooms.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.rooms_cleared
+    - metrics.attempt_hits
+    - metrics.required_hits
+    - game_state.room_name
+    - game_state.level_data
+    - game_state.normal_mode
+    - game_state.room_clear
+    - terminal.outcome
+- task_id: '197_02'
+  game_id: 197_frogfall
+  difficulty: medium
+  game_url_suffix: ?task=197_02
+  task_prompt: Clear Roof levels 1 through 3 consecutively. You start fresh in Roof 1, “first fall”. Collect
+    every fly in each room before landing; the game advances automatically.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 9
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: counter
+    coarse_reason: Nine native fly hits provide intermediate progress across three distinct rooms.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.rooms_cleared
+    - metrics.attempt_hits
+    - metrics.required_hits
+    - game_state.room_name
+    - game_state.level_data
+    - game_state.normal_mode
+    - game_state.room_clear
+    - terminal.outcome
+- task_id: '197_03'
+  game_id: 197_frogfall
+  difficulty: medium
+  game_url_suffix: ?task=197_03
+  task_prompt: Clear Swamp level 3, “fork”, from a fresh start. Collect every fly in one airborne attempt,
+    including the dim flies that become active after the others.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 6
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: counter
+    coarse_reason: Six required collisions give partial credit while preserving the room's deferred-activation
+      mechanic.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.rooms_cleared
+    - metrics.attempt_hits
+    - metrics.required_hits
+    - game_state.room_name
+    - game_state.level_data
+    - game_state.normal_mode
+    - game_state.room_clear
+    - terminal.outcome
+- task_id: '197_04'
+  game_id: 197_frogfall
+  difficulty: medium
+  game_url_suffix: ?task=197_04
+  task_prompt: Clear Cave level 3, “repetition”, from a fresh start. Collect every fly in one airborne
+    attempt, hitting the returning flies again when they reappear.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 7
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: counter
+    coarse_reason: The native counter measures seven required hits, including two hits each on returning
+      flies.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.rooms_cleared
+    - metrics.attempt_hits
+    - metrics.required_hits
+    - game_state.room_name
+    - game_state.level_data
+    - game_state.normal_mode
+    - game_state.room_clear
+    - terminal.outcome
+- task_id: '197_05'
+  game_id: 197_frogfall
+  difficulty: medium
+  game_url_suffix: ?task=197_05
+  task_prompt: Clear Skate level 2, “simple tricks”, from a fresh start. Use the rail and fly bounces
+    to collect every required fly hit in one airborne attempt, including the returning fly.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: counter
+    coarse_reason: Three required fly hits are the room's natural achievement units; skating supports
+      collecting them.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.rooms_cleared
+    - metrics.attempt_hits
+    - metrics.required_hits
+    - game_state.room_name
+    - game_state.level_data
+    - game_state.normal_mode
+    - game_state.room_clear
+    - terminal.outcome
+- task_id: '197_06'
+  game_id: 197_frogfall
+  difficulty: hard
+  game_url_suffix: ?task=197_06
+  task_prompt: Clear Mountain level 3, “for later”, from a fresh start. Collect every required fly hit
+    in one airborne attempt, using reusable bounces and handling the returning and deferred flies.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 6
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: counter
+    coarse_reason: Six required hits measure progress through the combined returning-fly, deferred-fly,
+      and reusable-bounce room.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.rooms_cleared
+    - metrics.attempt_hits
+    - metrics.required_hits
+    - game_state.room_name
+    - game_state.level_data
+    - game_state.normal_mode
+    - game_state.room_clear
+    - terminal.outcome

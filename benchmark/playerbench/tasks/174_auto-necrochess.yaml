@@ -1,0 +1,270 @@
+game:
+  game_name: 174_auto-necrochess
+  url: https://stopsignal.itch.io/auto-necrochess
+  width: 1024
+  height: 768
+  speed_multiplier: 1.0
+  game_rules: 'Auto Necrochess is a solo army-building auto-battler. Recruit undead, arrange
+
+    them across three lanes, and use spellbooks and buildings to support them.
+
+    Your army fights automatically after preparation. Allies reaching the far end
+
+    damage the castle; enemies reaching your end take a heart. Breach the castle,
+
+    defeat the King, and survive to win. Losing all ten hearts ends the run.
+
+
+    You begin in preparation with an empty army and ten gold. Press R for the
+
+    initial shop roll. The shop is on the left, army positions on the right,
+
+    and the three book slots are at the far right. Buying costs three gold;
+
+    later rolls cost one. Spend all remaining gold before starting battle with
+
+    the top-right banner. A locked banner means gold remains. Preparation returns
+
+    automatically after combat and grants fresh gold. Higher tiers unlock as
+
+    the run advances; roll when the shop is hidden by a new-tier announcement.
+
+
+    For each mouse tap, hold the button for 0.1 seconds, then release. Select a
+
+    shop piece, wait for its selection animation, then tap its destination.
+
+    Units and buildings occupy army cells; spellbooks occupy the marked book slots.
+
+    Select an owned piece and click an empty matching cell
+
+    to move it. Merge pieces of the same name AND level by selecting one and clicking
+
+    the other. Two level-one copies make level two; two level-two copies make
+
+    level three. Fully upgraded spellbooks change to a stronger spell. Hover a piece
+
+    to read its description and look for its upgrade marks.
+
+
+    Right-click a shop piece to freeze or thaw it: frozen stock survives rerolls
+
+    and the next round. Hold right-click on an owned piece for one second to sell
+
+    it for gold. Allow placement and roll animations to finish before another action.
+
+
+    Battles run by themselves. Owning a spellbook starts battle paused so you can
+
+    cast. Space resumes or requests a pause at the next action boundary. While
+
+    paused, select a book with 1, 2 or 3 and click a highlighted valid target;
+
+    books have limited uses per battle. Spell selection and targeting remain
+
+    available during pauses. Shift switches between normal and faster speed during
+
+    unpaused combat.
+
+    The numbers below each fighter show attack and health. Pink hearts belong to
+
+    the witch; blue hearts belong to the castle. The numeric strip below the top
+
+    banners also reports gold, health, castle health and the current phase.
+
+
+    Hold the small circular restart arrow at the bottom right for 1.5 seconds to
+
+    abandon the run and begin again. Each environment reset starts a fresh run.
+
+    '
+  game_roles:
+  - name: necromancer
+    context:
+      role_description: 'You buy, position and merge an undead army, place buildings and equip
+
+        spellbooks during preparation. During automatic combat you can pause
+
+        and cast spells. The run is already started; begin by rolling the shop.
+
+        '
+      control_notes: "- Mouse taps require a 0.1-second hold and release: use click_hold with\n  duration\
+        \ 0.1 (left button unless otherwise specified).\n- Left mouse tap: select a piece, then tap its\
+        \ destination or an equal-name,\n  equal-level piece to place, move or merge it. Pause briefly\
+        \ between clicks.\n- R: roll the initial shop or reroll stock; wait for the animation to finish.\n\
+        - Right mouse tap on shop stock (0.1 seconds): toggle freeze. Hold right-click on an owned\n \
+        \ piece for 1 second to sell it.\n- Left mouse tap on the top-right battle banner after spending\
+        \ all gold: start combat.\n- Space: resume combat or request a pause at its next action boundary.\n\
+        - 1 / 2 / 3: select a spellbook in battle; while paused, left mouse tap on a valid\n  highlighted\
+        \ target to cast it.\n- Escape: cancel a piece selection in preparation.\n- Shift: switch normal/faster\
+        \ speed during unpaused combat.\n- Hold left-click on the bottom-right circular arrow for 1.5\
+        \ seconds: restart.\n- Mouse move: hover a piece for its description. Wait: animations and\n \
+        \ unpaused combat proceed automatically.\n"
+    controls:
+      allowed_keys:
+      - r
+      - Space
+      - '1'
+      - '2'
+      - '3'
+      - Escape
+      - Shift
+      allow_clicks: true
+      hold_duration: 0.25
+tasks:
+- task_id: '174_01'
+  game_id: 174_auto-necrochess
+  game_url_suffix: ?task=174_01
+  difficulty: easy
+  task_prompt: Deal at least five points of damage to the enemy castle in a fresh run. Send allies through
+    enemy lanes to the far edge; castle damage persists between battles. The castle begins with 60 blue
+    hearts.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  pause_during_inference: true
+  continue_on_fail: false
+  evaluator_config:
+    score_field: metrics.castle_damage
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.castle_damage
+    - metrics.castle_damage
+    - metrics.king_health_depleted_fraction
+    - metrics.king_defeated
+    - metrics.native_won
+    - metrics.round
+    - metrics.gold
+    - metrics.player_health
+    - game_state.phase
+    - terminal.outcome
+  progress_signal:
+    field: metrics.castle_damage
+    granularity: counter
+    coarse_reason: Pawn_Step_0 applies castle damage in whole-heart increments of one or two. Source inspection
+      found no fractional castle damage; pawn movement would measure a different objective.
+- task_id: '174_02'
+  game_id: 174_auto-necrochess
+  game_url_suffix: ?task=174_02
+  difficulty: medium
+  task_prompt: Merge an army unit to level three in a fresh run. Combine two copies of the same name and
+    level; two level-two copies make one level-three unit. Spellbooks, buildings and consumables do not
+    count.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 4
+  pause_during_inference: true
+  continue_on_fail: false
+  evaluator_config:
+    score_field: metrics.unit_upgrade_material
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.unit_upgrade_material
+    - metrics.castle_damage
+    - metrics.king_health_depleted_fraction
+    - metrics.king_defeated
+    - metrics.native_won
+    - metrics.round
+    - metrics.gold
+    - metrics.player_health
+    - game_state.phase
+    - terminal.outcome
+  progress_signal:
+    field: metrics.unit_upgrade_material
+    granularity: counter
+    coarse_reason: Inspected native levelprogress, which stays zero. Purchases and equal-level merges
+      provide discrete copy-material milestones; there is no fractional upgrade process.
+- task_id: '174_03'
+  game_id: 174_auto-necrochess
+  game_url_suffix: ?task=174_03
+  difficulty: medium
+  task_prompt: Fully upgrade a spellbook in a fresh run by merging equal-name, equal-level copies. Combine
+    two level-one books, then two level-two books, to obtain the stronger final spell.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 4
+  pause_during_inference: true
+  continue_on_fail: false
+  evaluator_config:
+    score_field: metrics.spell_upgrade_material
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.spell_upgrade_material
+    - metrics.castle_damage
+    - metrics.king_health_depleted_fraction
+    - metrics.king_defeated
+    - metrics.native_won
+    - metrics.round
+    - metrics.gold
+    - metrics.player_health
+    - game_state.phase
+    - terminal.outcome
+  progress_signal:
+    field: metrics.spell_upgrade_material
+    granularity: counter
+    coarse_reason: Native levelprogress remains zero. Acquisition and equal-level merges are discrete
+      milestones; the final merge is immediately normalized from internal level3 to5.
+- task_id: '174_04'
+  game_id: 174_auto-necrochess
+  game_url_suffix: ?task=174_04
+  difficulty: hard
+  task_prompt: Merge a building to level three in a fresh run. Combine two buildings of the same name
+    and level; two level-two copies make level three. Consumable items do not count.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 4
+  pause_during_inference: true
+  continue_on_fail: false
+  evaluator_config:
+    score_field: metrics.building_upgrade_material
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.building_upgrade_material
+    - metrics.castle_damage
+    - metrics.king_health_depleted_fraction
+    - metrics.king_defeated
+    - metrics.native_won
+    - metrics.round
+    - metrics.gold
+    - metrics.player_health
+    - game_state.phase
+    - terminal.outcome
+  progress_signal:
+    field: metrics.building_upgrade_material
+    granularity: counter
+    coarse_reason: Source inspection found no fractional building upgrade progress. Owned copies and equal-level
+      merges provide discrete intermediate milestones.
+- task_id: '174_05'
+  game_id: 174_auto-necrochess
+  game_url_suffix: ?task=174_05
+  difficulty: very_hard
+  task_prompt: 'Win a fresh run: breach the enemy castle, defeat the King, and keep the witch alive. Reducing
+    the castle to zero is only the first part; a tie in which the witch also dies does not count as a
+    win.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 62
+  pause_during_inference: true
+  continue_on_fail: false
+  evaluator_config:
+    score_field: metrics.siege_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.siege_progress
+    - metrics.castle_damage
+    - metrics.king_health_depleted_fraction
+    - metrics.king_defeated
+    - metrics.native_won
+    - metrics.round
+    - metrics.gold
+    - metrics.player_health
+    - game_state.phase
+    - terminal.outcome
+  progress_signal:
+    field: metrics.siege_progress
+    granularity: dense

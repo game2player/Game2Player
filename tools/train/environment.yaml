@@ -1,0 +1,19 @@
+name: game2player-swift
+channels: [conda-forge]
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.8.0
+      - torchvision==0.23.0
+      - ms-swift==4.5.3
+      - transformers==5.16.1
+      - peft==0.20.0
+      - accelerate==1.15.0
+      - datasets==4.8.4
+      - qwen-vl-utils==0.0.14
+      - deepspeed==0.19.7
+      - liger-kernel==0.8.3
+      - flash-linear-attention==0.5.2
+      - pyyaml>=6.0

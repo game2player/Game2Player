@@ -1,0 +1,187 @@
+game:
+  game_name: 80_tiny-kingdom
+  speed_multiplier: 1.0
+  width: 1280
+  height: 800
+  game_rules: 'Tiny Kingdom is a card-based city builder. Expand the island and place buildings
+
+    to grow the population, complete connected regions, and eventually build a castle.
+
+    Each task begins in a fresh kingdom with the welcome letter already dismissed.
+
+
+    Houses increase population and supply more cards. Island cards extend the land.
+
+    Fields earn gold, with bonuses for adjacent fields; a Wheat Field region completes
+
+    at size 4. Connected houses grow a house region whose first House Size target is 9.
+
+    Hover over a region to inspect its progress bar. Matching region types connect along
+
+    their edges. Red placement previews cannot be built.
+
+
+    Drawing from the deck costs 1 gold. Card descriptions explain their placement
+
+    effects and rewards; Lumberyards supply cards according to adjacent trees.
+
+    Population quests award gold or unlock cards. Card draws, discoveries, and region
+
+    rewards animate automatically; wait for the hand to settle before selecting again.
+
+    Running out of usable cards and ways to draw can end the run. Reset starts a fresh
+
+    kingdom; later card order is random.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You choose cards, place and rotate tiles, and manage the kingdom''s land,
+
+        population, gold, and connected regions.
+
+        '
+      control_notes: "- Move the mouse over a card at the bottom to raise it and read it. Wait for\n \
+        \ it to finish rising, then left-click the raised card to select it.\n- Move the selected tile\
+        \ onto the board; left-click a valid preview to place\n  it. Right-click cancels placement and\
+        \ returns the card to your hand.\n- Q and E rotate the selected tile left and right.\n- With no\
+        \ tile selected, left-click the deck on the right to draw a card for\n  1 gold. If a placement\
+        \ preview is active, place the tile or right-click to\n  cancel before drawing. Left-click visible\
+        \ buttons to acknowledge discoveries\n  or use menus.\n- Hold W/A/S/D or the arrow keys to pan\
+        \ the view up/left/down/right.\n- Escape opens the pause menu; Escape again resumes play.\n- Wait\
+        \ for card and building animations before the next action. Hovering\n  over a region shows its\
+        \ progress bar and the tile's card description.\n"
+    controls:
+      allowed_keys:
+      - w
+      - a
+      - s
+      - d
+      - ArrowUp
+      - ArrowLeft
+      - ArrowDown
+      - ArrowRight
+      - q
+      - e
+      - Escape
+      allow_clicks: true
+      hold_duration: 0.3
+tasks:
+- task_id: '80_01'
+  game_id: 80_tiny-kingdom
+  difficulty: easy
+  game_url_suffix: ?task=80_01
+  evaluator_id: game_api_metric
+  task_target_score_field: 20
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Grow the kingdom to 20 population. Start from the fresh standard kingdom with 0 population
+    and 10 gold.
+  progress_signal:
+    field: metrics.best_population
+    granularity: counter
+    coarse_reason: Population is the native integer achievement measure and increases when houses are
+      built.
+  evaluator_config:
+    score_field: metrics.best_population
+    terminal_status: fail
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.best_population
+    - metrics.best_wheat_region_amount
+    - metrics.best_house_region_amount
+    - game_state.population
+    - game_state.gold
+    - game_state.start.verified
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '80_02'
+  game_id: 80_tiny-kingdom
+  difficulty: medium
+  game_url_suffix: ?task=80_02
+  evaluator_id: game_api_metric
+  task_target_score_field: 50
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Grow the kingdom to 50 population. Start from the fresh standard kingdom with 0 population
+    and 10 gold.
+  progress_signal:
+    field: metrics.best_population
+    granularity: counter
+    coarse_reason: Native population gives incremental credit throughout expansion toward the Stone House
+      milestone.
+  evaluator_config:
+    score_field: metrics.best_population
+    terminal_status: fail
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.best_population
+    - metrics.best_wheat_region_amount
+    - metrics.best_house_region_amount
+    - game_state.population
+    - game_state.gold
+    - game_state.start.verified
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '80_03'
+  game_id: 80_tiny-kingdom
+  difficulty: medium
+  game_url_suffix: ?task=80_03
+  evaluator_id: game_api_metric
+  task_target_score_field: 4
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Complete one Wheat Field region of size 4. Grow a connected Wheat Field region to its native
+    completion target; harvesting it is not required. Start from the fresh standard kingdom with 0 population
+    and 10 gold.
+  progress_signal:
+    field: metrics.best_wheat_region_amount
+    granularity: counter
+    coarse_reason: The native Size parameter counts discrete contributions toward a four-part Wheat Field
+      region.
+  evaluator_config:
+    score_field: metrics.best_wheat_region_amount
+    terminal_status: fail
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.best_population
+    - metrics.best_wheat_region_amount
+    - metrics.best_house_region_amount
+    - game_state.population
+    - game_state.gold
+    - game_state.start.verified
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '80_04'
+  game_id: 80_tiny-kingdom
+  difficulty: medium
+  game_url_suffix: ?task=80_04
+  evaluator_id: game_api_metric
+  task_target_score_field: 9
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Complete one house region with House Size 9. Grow a connected house region to its first
+    native completion target. Start from the fresh standard kingdom with 0 population and 10 gold.
+  progress_signal:
+    field: metrics.best_house_region_amount
+    granularity: counter
+    coarse_reason: The native House Size parameter measures connected regional growth, separately from
+      total population.
+  evaluator_config:
+    score_field: metrics.best_house_region_amount
+    terminal_status: fail
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.best_population
+    - metrics.best_wheat_region_amount
+    - metrics.best_house_region_amount
+    - game_state.population
+    - game_state.gold
+    - game_state.start.verified
+    - terminal.outcome
+    - terminal.isTerminal

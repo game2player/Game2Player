@@ -1,0 +1,276 @@
+game:
+  game_name: 148_pigeon-ascent
+  speed_multiplier: 1.0
+  width: 1024
+  height: 600
+  url: https://escada-games.itch.io/pigeon-ascent
+  game_rules: "You are playing \"Pigeon Ascent\", a pet-raising auto-battler. You raise a\npigeon named\
+    \ Pombo through a run of ten one-on-one fights against stronger\nand stronger pigeons. The tenth fight\
+    \ is against the final boss, Pigod. If\nyou beat it, the run ends on an ending screen.\n\n## Hub screen\n\
+    - Left: your pigeon's class, HP and FOOD bars, and the Attack, Defense and\n  Speed stats. \"Stat\
+    \ points left\" shows unspent points. A run starts with\n  5 points, and every win gives 2 more.\n\
+    - Centre: the FIGHT button, and above your pigeon a \"FIGHTS WON n/10 LIVES n\"\n  readout.\n- Right:\
+    \ the shop and your gold (bottom right). Hovering an item shows its\n  description and cost in the\
+    \ panel below the list. Items, top to bottom:\n  Potion (100, +10 HP), Popcorn (50, +5 Food), Protein\
+    \ / Orange / Onigiri\n  (150 each, +15 Food and +1 Attack / Defense / Speed for the next fight),\n\
+    \  Hotdog (300, +30 Food and +1 to every stat for the next fight), Heart\n  (500, see Losing). Healing\
+    \ and food items cannot be bought while that bar\n  is full.\n\n## Fights\n- FIGHT opens \"Choose\
+    \ your opponent!\". It lists three opponents with their\n  class, level, Attack/Defense/Speed and\
+    \ the gold you get for beating them.\n  REROLL draws a new set for 100 gold; its label shows a higher\
+    \ price after\n  each use, but every reroll costs 100. At level 10 the only opponent is\n  Pigod (1000\
+    \ HP).\n- Battles are fully automatic: the pigeons attack in turns and the battle\n  log on the right\
+    \ narrates them. Attack mainly raises the damage you deal.\n  Defense mainly raises max HP and reduces\
+    \ the damage you take. Speed mainly\n  lets your pigeon act more often than a slower opponent, and\
+    \ raises max\n  Food. Each attack uses 1 Food. At 0 Food a Hunger debuff sets in.\n- A win gives the\
+    \ gold reward and 2 stat points and moves you up a level.\n  HP and Food carry over between fights,\
+    \ so restore them in the shop.\n- Losing: the run starts with one spare life. The first loss uses\
+    \ it\n  (\"You lost a live. Continue?\"), and your pigeon heals and stays at the same\n  level. A\
+    \ loss with no spare life is game over (\"Retry?\"), and the run ends.\n  The Heart item (500) restores\
+    \ the spare life once it has been used.\n\n## Evolution\n- After the second win (reaching level 3),\
+    \ the pigeon evolves based on its\n  strictly highest stat: Attack gives Stronga, Defense gives Knight,\
+    \ Speed\n  gives Winged. A tie gives Platy.\n- After the fifth win (level 6) it evolves again. Stronga\
+    \ becomes Wyrm if\n  you own the Wyvern Wing, otherwise Whey. Knight becomes Fridgeon if you own\n\
+    \  Ice, otherwise Crusader. Winged becomes Hatoshi if you own the Sword,\n  otherwise Winged 2.\n\
+    - Wyvern Wing, Ice and Sword (500 gold each, one of each per run) appear at\n  the top of the shop\
+    \ only after the matching first evolution. Buying one\n  also fully restores HP and Food.\n- The \"\
+    Your pigeon evolved!!!\" panel shows the change. Clicking \"YOU MAY\n  CLICK HERE TO CANCEL\" before\
+    \ the new form appears cancels the evolution.\n\nEach task starts on the hub of a fresh run at level\
+    \ 1: class Normal, stats\n1/1/1, 5 stat points, 100 gold.\n"
+  game_roles:
+  - name: trainer
+    context:
+      role_description: 'You are the pigeon''s trainer. Between fights you spend stat points,
+
+        buy items and choose opponents. You do not control the battles.
+
+        '
+      control_notes: "- Left-click the green arrow button on the Attack, Defense or Speed\n  panel to\
+        \ spend one stat point on that stat.\n- Left-click a shop item to buy it, if you have enough gold.\
+        \ Move the\n  mouse over an item to read its description and cost. To see the rest\n  of the list,\
+        \ move the mouse over the shop and scroll the wheel down;\n  each scroll moves the list about\
+        \ half an item, so scroll several\n  times.\n- Left-click FIGHT (top centre) to open the opponent\
+        \ list. Then click\n  the red FIGHT button on an opponent's row to start that battle, click\n\
+        \  REROLL (below the rows) for a new set, or click the small x at the\n  panel's top right corner\
+        \ to close the list. After a reroll the panel\n  sits a little lower, so its x moves down too.\n\
+        - During a battle there is nothing to do. Wait about 5-40 seconds\n  until \"The battle is over!\"\
+        \ appears and a small Return button shows\n  in the arena. Click Return to go back to the hub.\n\
+        - When the evolution panel appears, wait a few seconds for the new form,\n  then click the x at\
+        \ its top right to close it.\n- After a game over, click the Retry button in the arena to go back\
+        \ to\n  the title screen. Click the title's FIGHT button to start a new\n  pigeon.\n"
+    controls:
+      allowed_keys: []
+      allow_clicks: true
+      hold_duration: 0.2
+tasks:
+- task_id: '148_01'
+  game_id: 148_pigeon-ascent
+  game_url_suffix: ?start=run
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Win your first fight. Spend your 5 starting stat points on Attack, Defense
+
+    and Speed, click FIGHT, pick one of the three opponents and watch the battle.
+
+    The task is complete when the battle log says your pigeon (Pombo) won.
+
+    '
+  evaluator_config:
+    score_field: game_state.run_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.run_progress
+    - metrics.knight_progress
+    - metrics.fridgeon_progress
+    - metrics.wyrm_progress
+    - game_state.level
+    - game_state.lives
+    - game_state.pigeon_class
+    - game_state.stat_points
+    - game_state.has_ice
+    - game_state.has_wings
+    - metrics.gold
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '148_02'
+  game_id: 148_pigeon-ascent
+  game_url_suffix: ?start=run
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 3
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Make your pigeon evolve into a Knight. The first evolution happens after
+
+    your second win, and it becomes a Knight only if Defense is strictly its
+
+    highest stat at that moment. Win two fights, then let the "Your pigeon
+
+    evolved!!!" panel finish without cancelling. The task is complete when the
+
+    class under the pigeon''s name reads Knight.
+
+    '
+  evaluator_config:
+    score_field: metrics.knight_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.run_progress
+    - metrics.knight_progress
+    - metrics.fridgeon_progress
+    - metrics.wyrm_progress
+    - game_state.level
+    - game_state.lives
+    - game_state.pigeon_class
+    - game_state.stat_points
+    - game_state.has_ice
+    - game_state.has_wings
+    - metrics.gold
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '148_03'
+  game_id: 148_pigeon-ascent
+  game_url_suffix: ?start=run
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_target_score_field: 5
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Win five fights in this run, reaching level 6. Losing a fight uses up your
+
+    one spare life, and losing again ends the run, so keep the pigeon''s HP and
+
+    Food up between fights and choose opponents you can beat. The task is
+
+    complete when the fifth fight is won (FIGHTS WON 5/10).
+
+    '
+  evaluator_config:
+    score_field: game_state.run_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.run_progress
+    - metrics.knight_progress
+    - metrics.fridgeon_progress
+    - metrics.wyrm_progress
+    - game_state.level
+    - game_state.lives
+    - game_state.pigeon_class
+    - game_state.stat_points
+    - game_state.has_ice
+    - game_state.has_wings
+    - metrics.gold
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '148_04'
+  game_id: 148_pigeon-ascent
+  game_url_suffix: ?start=run
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_target_score_field: 8
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Evolve your pigeon into a Fridgeon. First make it a Knight: Defense must
+
+    be strictly its highest stat when it evolves after the second win. Then buy
+
+    Ice (500 gold), which appears at the top of the shop once it is a Knight.
+
+    Keep winning until the second evolution after the fifth win, while you own
+
+    the Ice. The task is complete when the class reads Fridgeon.
+
+    '
+  evaluator_config:
+    score_field: metrics.fridgeon_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.run_progress
+    - metrics.knight_progress
+    - metrics.fridgeon_progress
+    - metrics.wyrm_progress
+    - game_state.level
+    - game_state.lives
+    - game_state.pigeon_class
+    - game_state.stat_points
+    - game_state.has_ice
+    - game_state.has_wings
+    - metrics.gold
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '148_05'
+  game_id: 148_pigeon-ascent
+  game_url_suffix: ?start=run
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_target_score_field: 8
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Evolve your pigeon into a Wyrm. First make it a Stronga: Attack must be
+
+    strictly its highest stat when it evolves after the second win. Then buy the
+
+    Wyvern Wing (500 gold), which appears at the top of the shop once it is a
+
+    Stronga. Keep winning until the second evolution after the fifth win, while
+
+    you own the Wing. The task is complete when the class reads Wyrm.
+
+    '
+  evaluator_config:
+    score_field: metrics.wyrm_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.run_progress
+    - metrics.knight_progress
+    - metrics.fridgeon_progress
+    - metrics.wyrm_progress
+    - game_state.level
+    - game_state.lives
+    - game_state.pigeon_class
+    - game_state.stat_points
+    - game_state.has_ice
+    - game_state.has_wings
+    - metrics.gold
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '148_06'
+  game_id: 148_pigeon-ascent
+  game_url_suffix: ?start=run
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_target_score_field: 10
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Finish the run. Win all ten fights, the last being the final boss Pigod
+
+    (1000 HP) at level 10. You have one spare life, and a loss without one ends
+
+    the run. The task is complete when Pigod is defeated.
+
+    '
+  evaluator_config:
+    score_field: game_state.run_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.run_progress
+    - metrics.knight_progress
+    - metrics.fridgeon_progress
+    - metrics.wyrm_progress
+    - game_state.level
+    - game_state.lives
+    - game_state.pigeon_class
+    - game_state.stat_points
+    - game_state.has_ice
+    - game_state.has_wings
+    - metrics.gold
+    - terminal.isTerminal
+    - terminal.outcome

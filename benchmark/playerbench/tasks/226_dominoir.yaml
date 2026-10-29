@@ -1,0 +1,190 @@
+game:
+  game_name: 226_dominoir
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  url: https://kawakubo.itch.io/dominoir
+  game_rules: "Dominoir is a Balatro-style domino roguelike. You climb a tournament ladder from Rank 25\n\
+    towards Rank 1; each rung is one round against a score target (round 1 needs 100 points and\nevery\
+    \ later round needs more). Each round gives you 3 turns, a hand of 5 dominoes, a\nboneyard (draw pile)\
+    \ and 3 discards.\n\n## A round\n- Placing: clicking a domino in your hand puts it on the table by\
+    \ itself, joined to an open\n  end whose number matches one of its halves (the first domino can go\
+    \ anywhere). If nothing\n  matches, nothing happens. Clicking a domino you placed this turn takes\
+    \ it back to your hand.\n- Scoring: End Turn scores the table: the pips on the dominoes are Chips,\
+    \ multiplied by Mult\n  (artifacts and special dominoes add to both). The turn score is added to the\
+    \ round score\n  (\"Score: x / goal\" in the left panel). Dominoes placed in earlier turns stay on\
+    \ the table\n  and keep counting, so chains that grow over the 3 turns score more. After End Turn\
+    \ the\n  hand is refilled to 5 from the boneyard.\n- Discard: right-click up to 2 hand dominoes to\
+    \ mark them (they lift), then press Discard;\n  they are replaced from the boneyard. Only 3 discards\
+    \ per round.\n- Winning: reach the goal by the end of a turn, even earlier than turn 3. A \"ROUND\
+    \ COMPLETE\"\n  card shows the reward in dollars (more money for turns left over); press Next Round.\n\
+    - Losing: if the 3rd turn ends below the goal the card says GAME OVER; the run is lost.\n  \"Try Again\"\
+    \ returns to the title screen.\n\n## Between rounds\n- The Shop sells artifacts (permanent score bonuses,\
+    \ at most 4 held), extra dominoes for\n  your deck and one-use items. Buy with the Buy button on a\
+    \ slot if you can afford the price;\n  Reroll costs $3. NEXT ROUND leaves the shop for the ladder\
+    \ screen, where PLAY ROUND starts the next round.\n- A new run starts with no artifacts, no items\
+    \ and $0.\n"
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You are the domino player in the tournament: you place dominoes from your hand,
+
+        end turns to score, discard, and shop between rounds.
+
+        '
+      control_notes: "- Everything is done with the left mouse button on the 1280x720 screen, except marking\n\
+        \  dominoes for discard, which uses the right mouse button; no keys are needed.\n- Positions below\
+        \ are fractions of the screenshot (left-to-right, top-to-bottom), so\n  they hold in whatever\
+        \ coordinate system your click action uses.\n- Hand: up to five dominoes in a row along the bottom\
+        \ edge (about 90% down, centred\n  horizontally, roughly 5% of the width apart); the row re-centres\
+        \ as dominoes leave it,\n  so read each domino's position from the screenshot. Left-click one\
+        \ to place it on the\n  table; a domino that fits nowhere does nothing. Marked dominoes lift slightly.\n\
+        - The left panel ends with two buttons, DISCARD above END TURN, both about 11% across.\n  DISCARD\
+        \ is about 77% down and END TURN about 83% down (labelled on the screen).\n  To discard, first\
+        \ right-click up to 2 hand dominoes to mark them, then click DISCARD;\n  the Discards counter\
+        \ in the panel drops by one. END TURN scores the table and the\n  Turns counter drops by one (it\
+        \ does nothing while the table is empty).\n- Round-complete / game-over card: click its button\
+        \ (Next Round / Try Again) in the\n  middle of the screen.\n- Shop screen (The Market): click\
+        \ the Buy button on a slot, Reroll, or NEXT ROUND (bottom\n  right) to go to the ladder screen;\
+        \ there, PLAY ROUND starts the next round. Read the\n  button positions from the screenshot.\n"
+    controls:
+      allowed_keys: []
+      allow_clicks: true
+      hold_duration: 0.1
+tasks:
+- task_id: '226_01'
+  game_id: 226_dominoir
+  game_url_suffix: ?task=226_01
+  difficulty: easy
+  task_target_score_field: 1
+  task_start_score_field: 0
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'A new run has started at Rank 25. Win the first round: reach the round goal of 100
+
+    points within your 3 turns, then the round-complete card appears.
+
+    '
+  progress_signal:
+    field: game_state.ladder_progress
+    granularity: counter
+    coarse_reason: Score only changes at End Turn (at most 3 times in round 1) and the goal is one atomic
+      round win; progress also counts the fraction of the round goal reached.
+    provenance: internal
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.ladder_progress
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - game_state.ladder_progress
+    - game_state.shop_progress
+    - game_state.rounds_cleared
+    - game_state.round_score
+    - game_state.round_goal
+    - game_state.rank
+    - game_state.money
+    - terminal.isTerminal
+- task_id: '226_02'
+  game_id: 226_dominoir
+  game_url_suffix: ?task=226_02
+  difficulty: medium
+  task_target_score_field: 3
+  task_start_score_field: 0
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'A new run has started at Rank 25. Win the first round, press Next Round to reach the
+
+    shop, and buy at least one thing there (an artifact, domino or item).
+
+    '
+  progress_signal:
+    field: game_state.shop_progress
+    granularity: counter
+    coarse_reason: 'A short fixed chain of discrete milestones: round won (1), shop entered (2), first
+      purchase made (3).'
+    provenance: internal
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.shop_progress
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - game_state.ladder_progress
+    - game_state.shop_progress
+    - game_state.rounds_cleared
+    - game_state.round_score
+    - game_state.round_goal
+    - game_state.rank
+    - game_state.money
+    - terminal.isTerminal
+- task_id: '226_03'
+  game_id: 226_dominoir
+  game_url_suffix: ?task=226_03
+  difficulty: hard
+  task_target_score_field: 3
+  task_start_score_field: 0
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'A new run has started at Rank 25. Win three rounds in a row (rounds 1 to 3), using the
+
+    shop between rounds to strengthen your deck, until you reach Rank 22.
+
+    '
+  progress_signal:
+    field: game_state.ladder_progress
+    granularity: dense
+    coarse_reason: Each round win adds 1 and the fraction of the current round goal adds partial credit
+      at every End Turn.
+    provenance: internal
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.ladder_progress
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - game_state.ladder_progress
+    - game_state.shop_progress
+    - game_state.rounds_cleared
+    - game_state.round_score
+    - game_state.round_goal
+    - game_state.rank
+    - game_state.money
+    - terminal.isTerminal
+- task_id: '226_04'
+  game_id: 226_dominoir
+  game_url_suffix: ?task=226_04
+  difficulty: very_hard
+  task_target_score_field: 6
+  task_start_score_field: 0
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'A new run has started at Rank 25. Win six rounds in a row, using the shop between
+
+    rounds to build up artifacts and dominoes, until you reach Rank 19. A lost round ends the run.
+
+    '
+  progress_signal:
+    field: game_state.ladder_progress
+    granularity: dense
+    coarse_reason: Each round win adds 1 and the fraction of the current round goal adds partial credit
+      at every End Turn.
+    provenance: internal
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.ladder_progress
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - game_state.ladder_progress
+    - game_state.shop_progress
+    - game_state.rounds_cleared
+    - game_state.round_score
+    - game_state.round_goal
+    - game_state.rank
+    - game_state.money
+    - terminal.isTerminal

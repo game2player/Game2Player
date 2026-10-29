@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="A deterministic offline memory pair game.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1020'/%3E%3Crect x='10' y='10' width='19' height='19' rx='5' fill='%237ee7d4'/%3E%3Crect x='35' y='10' width='19' height='19' rx='5' fill='%23ffc857'/%3E%3Crect x='10' y='35' width='19' height='19' rx='5' fill='%23a994ff'/%3E%3Crect x='35' y='35' width='19' height='19' rx='5' fill='%23ff8e9e'/%3E%3C/svg%3E">
+  <title>Memory Match</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-shell" data-ready="false" data-actionable="false" data-terminal="false" data-phase="booting">
+    <header class="topbar">
+      <div class="brand" aria-label="Memory Match">
+        <div class="brand-mark" aria-hidden="true"><span>?</span><span>✦</span><span>☾</span><span>!</span></div>
+        <div>
+          <h1>Memory Match</h1>
+          <p>find the hidden pairs</p>
+        </div>
+      </div>
+      <nav id="level-picker" class="level-picker" aria-label="Choose a memory set"></nav>
+      <div class="top-actions">
+        <div class="streak-pill"><span class="streak-dot"></span><span id="streak-value">0</span><span>streak</span></div>
+        <button id="restart-button" class="icon-button" type="button" title="Restart this memory set (R)">↻ <span>Restart</span></button>
+      </div>
+    </header>
+
+    <main class="game-layout">
+      <aside class="mission-card">
+        <div class="eyebrow">MEMORY FILE <span id="file-number">01</span></div>
+        <h2 id="level-name">Loading…</h2>
+        <p id="level-description">Preparing a fresh set of hidden pairs.</p>
+
+        <div class="stats" aria-label="Memory set statistics">
+          <div class="stat"><span>Pairs found</span><strong id="pairs-value">0 / 0</strong></div>
+          <div class="stat"><span>Turns</span><strong id="moves-value">0</strong></div>
+          <div class="stat"><span>Misses</span><strong id="misses-value">0</strong></div>
+        </div>
+
+        <div class="progress-label"><span>Recall progress</span><strong id="progress-value">0%</strong></div>
+        <div class="progress-track" aria-label="Recall progress"><div id="progress-bar"></div></div>
+
+        <div class="rules-card">
+          <div class="rules-heading"><span class="rules-icon">◎</span><span>How to play</span></div>
+          <p>Reveal two cards at a time. Matching symbols stay lit; a mismatch stays visible until you tap either card to hide both.</p>
+        </div>
+
+        <div class="shortcuts"><kbd>R</kbd><span>restart set</span><span class="shortcut-divider"></span><span class="legend-swatch"></span><span>known match</span></div>
+      </aside>
+
+      <section class="board-stage" aria-label="Memory matching board">
+        <div class="glow glow-one"></div><div class="glow glow-two"></div>
+        <div class="board-wrap">
+          <div class="board-heading">
+            <div><span class="eyebrow">ACTIVE BOARD</span><h2 id="phase-title">Select a card</h2></div>
+            <div class="phase-badge" id="phase-badge">READY</div>
+          </div>
+          <div id="board" class="card-grid" role="grid" aria-label="Face-down memory cards"></div>
+          <div class="board-footer"><span class="footer-spark">✦</span><span id="status-copy">Every symbol has one twin.</span><span class="footer-line"></span><span id="theme-copy">Offline collection</span></div>
+        </div>
+
+        <section id="complete-card" class="complete-card" hidden aria-live="polite">
+          <div class="complete-icon">✓</div>
+          <div>
+            <div class="eyebrow">MEMORY FILE COMPLETE</div>
+            <h2>Perfect recall.</h2>
+            <p id="complete-summary">All pairs recovered.</p>
+          </div>
+          <button id="replay-button" type="button">Replay</button>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="game_api.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

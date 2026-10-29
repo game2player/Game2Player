@@ -1,0 +1,16 @@
+# One model episode on every task of a new game, before any collection, with the tool
+# to report a control that does not do what the guide says, a screen it cannot use, or
+# a broken game. Reports become builder repair requests (tools.rollout env-reports).
+# The pipeline passes the games, model and thinking level.
+name: vlm_check
+mode: collect
+games: all
+tasks: all
+target_per_task: 1
+max_steps: 100
+inference: paused
+# The last 50 actions and notes, with the last 6 screenshots.
+harness: {history_steps: 50, images_max: 6}
+report_tool: true
+sampling:
+  temperature: 1.0

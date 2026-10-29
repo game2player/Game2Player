@@ -1,0 +1,25 @@
+# Replace the placeholder source before running. This is not a bundled game.
+campaign: my-games
+agent: codex
+options:
+  builder_revisions: 3
+  policy_revisions: 50
+  repair_rounds: 2
+  turn_timeout_minutes: 25
+  vlm_workers: 1
+held_out: []
+vlm_check:
+  plan: examples/plans/vlm_check.yaml
+  model: codex-player
+  thinking: low
+policy_collect:
+  plan: examples/plans/policy_collect.yaml
+vlm_collect:
+  plan: examples/plans/vlm_collect.yaml
+  model: codex-player
+  thinking: low
+games:
+  - game_id: 1_my-game
+    title: My Game
+    source_url: https://example.com/game
+    notes: Replace this with the original game source and relevant integration notes.

@@ -1,0 +1,293 @@
+game:
+  game_name: 105_memory-match
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  url: benchmark/playerbench/originals/105_memory-match
+  game_rules: 'You are playing Memory Match, a deterministic offline concentration game. The assigned
+    memory file is already loaded and ready to play.
+
+
+    ## Objective
+
+    - Find every matching pair of symbols on the board.
+
+
+    ## Rules
+
+    - Click a face-down card to reveal it, then click a second face-down card.
+
+    - Matching symbols stay face up and count as a pair.
+
+    - A mismatch remains visible until you click either revealed card to hide both, then you may continue.
+
+    - The board is deterministic for each URL level and contains no remote assets.
+
+    - Press R or click Restart to reset the assigned memory file.
+
+    '
+  game_roles:
+  - name: memory_solver
+    context:
+      role_description: 'You are the memory solver. Reveal cards, remember every visible symbol and its
+        position, then recover all pairs with as few mismatches as possible.
+
+        '
+      control_notes: '- Click the center of any face-down card to reveal it.
+
+        - After a mismatch, click either of the two revealed cards to hide both before selecting another
+        pair.
+
+        - A matched card stays face up and does not need to be clicked again.
+
+        - The assigned level is already open from the URL; do not select another level.
+
+        - R restarts the assigned memory file.
+
+        '
+    controls:
+      allowed_keys:
+      - r
+      allow_clicks: true
+      hold_duration: 0.12
+tasks:
+- task_id: '105_01'
+  game_id: 105_memory-match
+  game_url_suffix: ?level=1
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Complete Dawn Sprint by finding all three symbol pairs.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.requested_level
+    - game_state.requested_level_match
+    - game_state.level_name
+    - game_state.theme
+    - game_state.phase
+    - game_state.cards
+    - game_state.pending_first
+    - game_state.mismatch_cards
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.matched_pairs
+    - metrics.total_pairs
+    - metrics.score
+    - metrics.best_score
+    - metrics.moves
+    - metrics.mismatches
+    - metrics.streak
+    - metrics.perfect
+    - metrics.restarts
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '105_02'
+  game_id: 105_memory-match
+  game_url_suffix: ?level=2
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Complete Garden Grid by finding all four botanical pairs.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.requested_level
+    - game_state.requested_level_match
+    - game_state.level_name
+    - game_state.theme
+    - game_state.phase
+    - game_state.cards
+    - game_state.pending_first
+    - game_state.mismatch_cards
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.matched_pairs
+    - metrics.total_pairs
+    - metrics.score
+    - metrics.best_score
+    - metrics.moves
+    - metrics.mismatches
+    - metrics.streak
+    - metrics.perfect
+    - metrics.restarts
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '105_03'
+  game_id: 105_memory-match
+  game_url_suffix: ?level=3
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Complete Tidal Signals by recovering all six coastal pairs.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.requested_level
+    - game_state.requested_level_match
+    - game_state.level_name
+    - game_state.theme
+    - game_state.phase
+    - game_state.cards
+    - game_state.pending_first
+    - game_state.mismatch_cards
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.matched_pairs
+    - metrics.total_pairs
+    - metrics.score
+    - metrics.best_score
+    - metrics.moves
+    - metrics.mismatches
+    - metrics.streak
+    - metrics.perfect
+    - metrics.restarts
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '105_04'
+  game_id: 105_memory-match
+  game_url_suffix: ?level=4
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Complete Night Observatory by mapping all eight astral pairs.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.requested_level
+    - game_state.requested_level_match
+    - game_state.level_name
+    - game_state.theme
+    - game_state.phase
+    - game_state.cards
+    - game_state.pending_first
+    - game_state.mismatch_cards
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.matched_pairs
+    - metrics.total_pairs
+    - metrics.score
+    - metrics.best_score
+    - metrics.moves
+    - metrics.mismatches
+    - metrics.streak
+    - metrics.perfect
+    - metrics.restarts
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '105_05'
+  game_id: 105_memory-match
+  game_url_suffix: ?level=5
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Complete Elemental Relay by recovering all eight elemental pairs.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.requested_level
+    - game_state.requested_level_match
+    - game_state.level_name
+    - game_state.theme
+    - game_state.phase
+    - game_state.cards
+    - game_state.pending_first
+    - game_state.mismatch_cards
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.matched_pairs
+    - metrics.total_pairs
+    - metrics.score
+    - metrics.best_score
+    - metrics.moves
+    - metrics.mismatches
+    - metrics.streak
+    - metrics.perfect
+    - metrics.restarts
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '105_06'
+  game_id: 105_memory-match
+  game_url_suffix: ?level=6
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Complete Festival Vault by recovering all eight parade pairs.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.requested_level
+    - game_state.requested_level_match
+    - game_state.level_name
+    - game_state.theme
+    - game_state.phase
+    - game_state.cards
+    - game_state.pending_first
+    - game_state.mismatch_cards
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.matched_pairs
+    - metrics.total_pairs
+    - metrics.score
+    - metrics.best_score
+    - metrics.moves
+    - metrics.mismatches
+    - metrics.streak
+    - metrics.perfect
+    - metrics.restarts
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal

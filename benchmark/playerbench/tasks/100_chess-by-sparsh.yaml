@@ -1,0 +1,318 @@
+game:
+  game_name: 100_chess-by-sparsh
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  url: https://github.com/sparshsam/chess-by-sparsh
+  game_rules: 'You are playing Chess by Sparsh against a computer opponent.
+
+
+    ## Game Objective
+
+    - You always control White; the computer always controls Black.
+
+    - Complete the task-specific chess objective shown in the prompt.
+
+
+    ## Game Rules
+
+    - Standard chess rules apply, including check, checkmate, castling, en passant, promotion, stalemate,
+    and draw rules.
+
+    - Click one of your white pieces, then click a highlighted legal destination square.
+
+    - After your move, wait while the computer calculates and plays Black''s response.
+
+    - If a pawn promotes, choose the new piece in the promotion dialog.
+
+    - Each benchmark task fixes the starting position and computer difficulty. New Game and reset return
+    to that same task position.
+
+    - The benchmark build contains human-versus-computer play only; local two-player mode is unavailable.
+
+    '
+  game_roles:
+  - name: white_player
+    context:
+      role_description: 'You play White against the computer playing Black. Inspect the board, plan legal
+        moves, and achieve the stated task objective.
+
+        '
+      control_notes: '- Left-click a white piece, then left-click a highlighted destination square.
+
+        - Legal destinations appear after selecting a piece.
+
+        - Wait whenever the computer is thinking; the board is temporarily non-interactive.
+
+        - Use the promotion dialog when a pawn reaches the last rank.
+
+        - New Game restarts the same benchmark position. Undo takes back the most recent white/black move
+        pair when available.
+
+        '
+    controls:
+      allowed_keys:
+      - ArrowUp
+      - ArrowDown
+      - ArrowLeft
+      - ArrowRight
+      - Enter
+      - Space
+      allow_clicks: true
+      hold_duration: 0.25
+tasks:
+- task_id: '100_01'
+  game_id: 100_chess-by-sparsh
+  game_url_suffix: ?task=CHESS-01
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Play the first five White moves against the Beginner Bot from the standard starting position.
+
+    Keep your queen and do not fall behind by more than one minor piece (3 material points) when your
+    fifth move is complete.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.objective
+    - game_state.difficulty
+    - game_state.fen
+    - game_state.turn
+    - game_state.in_check
+    - game_state.is_computer_thinking
+    - metrics.objective_complete
+    - metrics.human_win
+    - metrics.computer_win
+    - metrics.draw
+    - metrics.plies
+    - metrics.human_moves
+    - metrics.computer_moves
+    - metrics.captured_value_by_human
+    - metrics.captured_value_by_computer
+    - metrics.material_advantage
+    - metrics.queen_captured_by_human
+    - metrics.promotions_by_human
+    - metrics.checks_by_human
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '100_02'
+  game_id: 100_chess-by-sparsh
+  game_url_suffix: ?task=CHESS-02
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Win Black''s queen against the Beginner Bot.
+
+    Use the White knight to create a fork: check the Black king while attacking the queen, then capture
+    the queen after the computer responds.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.objective
+    - game_state.difficulty
+    - game_state.fen
+    - game_state.turn
+    - game_state.in_check
+    - game_state.is_computer_thinking
+    - metrics.objective_complete
+    - metrics.human_win
+    - metrics.computer_win
+    - metrics.draw
+    - metrics.plies
+    - metrics.human_moves
+    - metrics.computer_moves
+    - metrics.captured_value_by_human
+    - metrics.captured_value_by_computer
+    - metrics.material_advantage
+    - metrics.queen_captured_by_human
+    - metrics.promotions_by_human
+    - metrics.checks_by_human
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '100_03'
+  game_id: 100_chess-by-sparsh
+  game_url_suffix: ?task=CHESS-03
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Promote White''s advanced a-pawn against the Beginner Bot.
+
+    Move the pawn safely to the eighth rank and choose any promotion piece.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.objective
+    - game_state.difficulty
+    - game_state.fen
+    - game_state.turn
+    - game_state.in_check
+    - game_state.is_computer_thinking
+    - metrics.objective_complete
+    - metrics.human_win
+    - metrics.computer_win
+    - metrics.draw
+    - metrics.plies
+    - metrics.human_moves
+    - metrics.computer_moves
+    - metrics.captured_value_by_human
+    - metrics.captured_value_by_computer
+    - metrics.material_advantage
+    - metrics.queen_captured_by_human
+    - metrics.promotions_by_human
+    - metrics.checks_by_human
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '100_04'
+  game_id: 100_chess-by-sparsh
+  game_url_suffix: ?task=CHESS-04
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Checkmate the Casual Bot from a king-and-queen versus king endgame.
+
+    Coordinate your king and queen, restrict the Black king without stalemating it, and deliver checkmate.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.objective
+    - game_state.difficulty
+    - game_state.fen
+    - game_state.turn
+    - game_state.in_check
+    - game_state.is_computer_thinking
+    - metrics.objective_complete
+    - metrics.human_win
+    - metrics.computer_win
+    - metrics.draw
+    - metrics.plies
+    - metrics.human_moves
+    - metrics.computer_moves
+    - metrics.captured_value_by_human
+    - metrics.captured_value_by_computer
+    - metrics.material_advantage
+    - metrics.queen_captured_by_human
+    - metrics.promotions_by_human
+    - metrics.checks_by_human
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '100_05'
+  game_id: 100_chess-by-sparsh
+  game_url_suffix: ?task=CHESS-05
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Defeat the Beginner Bot from a materially winning position.
+
+    White begins with the normal army while Black has no queen. Convert the extra queen into checkmate;
+    a draw does not count.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.objective
+    - game_state.difficulty
+    - game_state.fen
+    - game_state.turn
+    - game_state.in_check
+    - game_state.is_computer_thinking
+    - metrics.objective_complete
+    - metrics.human_win
+    - metrics.computer_win
+    - metrics.draw
+    - metrics.plies
+    - metrics.human_moves
+    - metrics.computer_moves
+    - metrics.captured_value_by_human
+    - metrics.captured_value_by_computer
+    - metrics.material_advantage
+    - metrics.queen_captured_by_human
+    - metrics.promotions_by_human
+    - metrics.checks_by_human
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '100_06'
+  game_id: 100_chess-by-sparsh
+  game_url_suffix: ?task=CHESS-06
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Defeat the Beginner Bot from the standard starting position.
+
+    Play a complete game as White and win by checkmate. A draw or resignation does not count.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.objective
+    - game_state.difficulty
+    - game_state.fen
+    - game_state.turn
+    - game_state.in_check
+    - game_state.is_computer_thinking
+    - metrics.objective_complete
+    - metrics.human_win
+    - metrics.computer_win
+    - metrics.draw
+    - metrics.plies
+    - metrics.human_moves
+    - metrics.computer_moves
+    - metrics.captured_value_by_human
+    - metrics.captured_value_by_computer
+    - metrics.material_advantage
+    - metrics.queen_captured_by_human
+    - metrics.promotions_by_human
+    - metrics.checks_by_human
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal

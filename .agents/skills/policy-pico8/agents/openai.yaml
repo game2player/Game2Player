@@ -1,0 +1,6 @@
+interface:
+  display_name: "Policy PICO-8"
+  short_description: "Read PICO-8 GPIO and base RAM into a policy probe"
+  default_prompt: "Use $policy-pico8 for this PICO-8 Policy Author phase."
+policy:
+  allow_implicit_invocation: false

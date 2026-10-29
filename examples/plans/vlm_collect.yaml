@@ -1,0 +1,14 @@
+# Model play on every task of the games built by tools.game_pipeline, 3 valid episodes
+# per task, after the environment checks and repairs. Held-out games are never passed.
+# The pipeline passes the games, model and thinking level.
+name: vlm_collect
+mode: collect
+games: all
+tasks: all
+target_per_task: 3
+max_steps: 100
+inference: paused
+# The last 50 actions and notes, with the last 6 screenshots.
+harness: {history_steps: 50, images_max: 6}
+sampling:
+  temperature: 1.0

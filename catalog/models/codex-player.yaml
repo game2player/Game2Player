@@ -1,0 +1,12 @@
+# Uses the installed Codex CLI, its login and its default model.
+# Add model: <model-id> to select a specific model.
+model_name: codex-player
+backend: codex_cli
+codec: canonical_tool
+request_timeout: 180
+request_options: {service_tier: default}
+unsupported_params: [temperature, top_p, top_k, min_p, presence_penalty, repetition_penalty, seed, max_tokens]
+thinking:
+  low: {effort: low}
+  medium: {effort: medium}
+  high: {effort: high}

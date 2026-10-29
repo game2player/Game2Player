@@ -1,0 +1,64 @@
+name: playerbench
+mode: eval
+games:
+  test:
+  - 38_mobs-inc
+  - 61_gun-knight
+  - 64_kingdom-rush
+  - 73_zombotron-reboot
+  - 80_tiny-kingdom
+  - 86_raide
+  - 89_celeste-classic-2
+  - 100_chess-by-sparsh
+  - 105_memory-match
+  - 107_simon-sequence
+  - 125_shift-2
+  - 134_nom-nom-great-autumn-jam
+  - 142_hit8ox
+  - 148_pigeon-ascent
+  - 167_a-dance-of-fire-and-ice
+  - 174_auto-necrochess
+  - 175_project-intellisphere
+  - 190_bonnies-bakery
+  - 197_frogfall
+  - 212_trichromat
+  - 222_mindustry-classic
+  - 224_a-small-world-cup
+  - 226_dominoir
+  - 241_two-timin-towers
+  - 246_petal-quest
+  - 252_alfonzo-s-bowling-challenge
+  - 264_guardian-sphere
+  - 299_packed-to-the-gills
+  - 300_handshakes
+  - 311_sulka
+  - 332_forward
+  - 354_conservation-of-bass
+  - 357_snug
+  - 363_dusk-child
+  - 367_10-103
+  - 396_william-and-sly
+  - 410_my-own-hero-party
+  - 413_family-reunion
+  - 414_last-seen-online
+  - 430_about-time
+  - 431_humanconstructionsite
+  - 449_pico-puzzle-league
+  - 456_mechanical-commando-2-burning-skies
+  - 457_give-up
+  - 464_skyfyre-ii
+  - 475_offroaders-2
+  - 483_fair-squares
+  - 491_bright-lancer
+  - 495_debbie-s-diner-derby
+  - 496_rhythm-quest-demo
+tasks: all
+seeds:
+- 67
+max_steps: 100
+inference: paused
+harness:
+  history_steps: 50
+  images_max: 6
+sampling:
+  temperature: 1.0

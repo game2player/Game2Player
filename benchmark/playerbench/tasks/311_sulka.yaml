@@ -1,0 +1,198 @@
+game:
+  game_name: 311_sulka
+  url: https://kultisti.itch.io/sulka
+  width: 576
+  height: 576
+  speed_multiplier: 1.0
+  game_rules: 'Sulka is a gravity and momentum platformer. Guide the pale bird into the dotted
+
+    doorway. Spikes and moving spiked hazards hurt Sulka; falling out of the room
+
+    also returns Sulka to the room''s starting position. You can retry without a
+
+    time limit.
+
+
+    Crossing a bright yellow dotted line reverses gravity while preserving vertical
+
+    momentum. Sulka can stand and jump on either side of platforms. The doorway''s
+
+    orientation must match Sulka''s gravity. In rooms with yellow keys, collect all
+
+    of them to open the doorway. A death restores the room''s keys.
+
+
+    Each task starts directly in its room. The top caption identifies the level
+
+    and, where applicable, the number of keys collected. Entering the exit clears
+
+    the room and the game advances automatically. Restart in the pause menu restores
+
+    the current room; environment reset returns to the task''s original room.'
+  game_roles:
+  - name: player
+    context:
+      role_description: Control Sulka's movement and jumps to collect required keys and enter the exit.
+      control_notes: '- Hold Left or Right to move horizontally. Short holds make small adjustments.
+
+        - Tap Up or Space to jump from a platform, against the current gravity. Combine either jump key
+        with Left or Right for a moving jump.
+
+        - Press Escape to open the pause menu. In that menu, tap Up or Down to change the highlighted
+        option and Space to select it. To resume, highlight Continue and press Space. To restart the room,
+        press Escape, tap Down once to highlight Restart, then press Space.
+
+        - Wait to let gravity, moving hazards, automatic respawning, and room transitions continue.'
+    controls:
+      allowed_keys:
+      - ArrowLeft
+      - ArrowRight
+      - ArrowUp
+      - ArrowDown
+      - Space
+      - Escape
+      allow_clicks: false
+      hold_duration: 0.2
+tasks:
+- task_id: '311_01'
+  game_id: 311_sulka
+  difficulty: easy
+  game_url_suffix: ?task=311_01
+  task_prompt: Clear level 4. Reach the dotted exit while avoiding the spikes and the moving spiked hazard.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.taskProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.taskProgress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.taskProgress
+    - metrics.keys_collected
+    - metrics.keys_total
+    - metrics.gravity_inversions
+    - metrics.respawns
+    - game_state.level
+    - game_state.room_name
+    - game_state.requested_level_match
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '311_02'
+  game_id: 311_sulka
+  difficulty: easy
+  game_url_suffix: ?task=311_02
+  task_prompt: Clear level 8. Cross the gravity-line platforms and enter the inverted dotted exit.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.taskProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.taskProgress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.taskProgress
+    - metrics.keys_collected
+    - metrics.keys_total
+    - metrics.gravity_inversions
+    - metrics.respawns
+    - game_state.level
+    - game_state.room_name
+    - game_state.requested_level_match
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '311_03'
+  game_id: 311_sulka
+  difficulty: medium
+  game_url_suffix: ?task=311_03
+  task_prompt: Clear level 12. Traverse the gravity-line platforms, avoid the stationary and moving spikes,
+    and enter the elevated dotted exit.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.taskProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.taskProgress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.taskProgress
+    - metrics.keys_collected
+    - metrics.keys_total
+    - metrics.gravity_inversions
+    - metrics.respawns
+    - game_state.level
+    - game_state.room_name
+    - game_state.requested_level_match
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '311_04'
+  game_id: 311_sulka
+  difficulty: medium
+  game_url_suffix: ?task=311_04
+  task_prompt: Clear level 16. Collect all three yellow keys, then enter the unlocked dotted exit.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.taskProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.taskProgress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.taskProgress
+    - metrics.keys_collected
+    - metrics.keys_total
+    - metrics.gravity_inversions
+    - metrics.respawns
+    - game_state.level
+    - game_state.room_name
+    - game_state.requested_level_match
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '311_05'
+  game_id: 311_sulka
+  difficulty: medium
+  game_url_suffix: ?task=311_05
+  task_prompt: Clear level 20. Collect both yellow keys above and below the platforms, then enter the
+    unlocked inverted dotted exit.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.taskProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.taskProgress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.taskProgress
+    - metrics.keys_collected
+    - metrics.keys_total
+    - metrics.gravity_inversions
+    - metrics.respawns
+    - game_state.level
+    - game_state.room_name
+    - game_state.requested_level_match
+    - game_state.task_complete
+    - terminal.outcome

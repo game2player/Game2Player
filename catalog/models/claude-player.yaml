@@ -1,0 +1,13 @@
+# Uses the Claude CLI and the same private subscription token as the coding agent.
+# Add model: <model-id> to select a specific model.
+model_name: claude-player
+backend: claude_cli
+codec: canonical_tool
+api_key_file: ~/.config/game2player/claude.token
+max_tokens: 8192
+request_timeout: 300
+unsupported_params: [temperature, top_p, top_k, min_p, presence_penalty, repetition_penalty, seed]
+thinking:
+  low: {effort: low}
+  medium: {effort: medium}
+  high: {effort: high}

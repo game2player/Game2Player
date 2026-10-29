@@ -1,0 +1,235 @@
+game:
+  game_name: 475_offroaders-2
+  url: https://armorgames.com/play/15403/offroaders-2
+  speed_multiplier: 1.0
+  width: 700
+  height: 550
+  game_rules: 'Race an off-road vehicle around isometric circuits against seven computer
+
+    opponents. Complete the displayed number of laps; finishing in the first
+
+    three places earns a podium trophy. The green arrow marks your car. Follow
+
+    the circuit using the road and the minimap at the lower right. Steering
+
+    turns the vehicle relative to its heading, rather than moving it directly
+
+    toward a screen edge. Driving off the road or hitting barriers slows you.
+
+
+    Collect yellow stars along the course to fill the STAR TARGET counter at
+
+    the upper left. Stars also replenish boost. The boost gauge charges over
+
+    time and drains when used. Ramps launch your car into the air; while airborne,
+
+    it keeps moving. After finishing, the car drives automatically while the
+
+    race results appear.
+
+
+    Each task begins on the specified race''s starting grid with the first car
+
+    and its default upgrades. Wait for the starting lights to turn green before
+
+    accelerating. LAP shows 0 before you cross the start line, then 1 for the
+
+    first lap. A temporary controls panel covers the minimap near the start.
+
+    Race 1 and Race 2 have two laps; Race 3 has three.
+
+
+    To retry during a race, click the circular-arrow icon at the top right.
+
+    At the results screen, click RESTART and confirm the retry. A retry begins
+
+    the same race again and clears that attempt''s collected stars.
+
+    '
+  game_roles:
+  - name: driver
+    context:
+      role_description: 'Control the car marked by the green arrow: accelerate, brake, steer,
+
+        and use boost while following the course and collecting stars.
+
+        '
+      control_notes: "- Hold Up to accelerate. Hold Down to brake; at low speed, keep holding\n  Down\
+        \ to reverse. Use holds of about 0.5–2 seconds for driving.\n- Hold Left or Right to steer. Combine\
+        \ either with Up to steer while\n  accelerating; release the steering key to straighten the wheels.\n\
+        - Hold X together with Up to use boost while accelerating.\n- Tap Escape to open the options menu.\
+        \ Click RESUME to continue racing.\n- Click the circular-arrow icon at the top right to restart\
+        \ during a\n  race. At the results screen, click RESTART and confirm the retry.\n- Waiting advances\
+        \ the starting lights, opponents, coasting, and boost\n  recharge. Click menu buttons normally.\n"
+    controls:
+      allowed_keys:
+      - ArrowUp
+      - ArrowDown
+      - ArrowLeft
+      - ArrowRight
+      - x
+      - Escape
+      allow_clicks: true
+      hold_duration: 0.05
+tasks:
+- task_id: '475_01'
+  game_id: 475_offroaders-2
+  game_url_suffix: ?task=475_01
+  difficulty: easy
+  task_prompt: 'Complete Race 1: drive both laps and reach the race results screen. Any finishing position
+    counts.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.raceCompletionProgress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.raceCompletionProgress
+    end_field: game_state.taskComplete
+    terminal_status: success
+    metrics_fields:
+    - metrics.raceCompletionProgress
+    - metrics.podiumProgress
+    - metrics.bestAttemptStars
+    - game_state.raceNumber
+    - game_state.lap
+    - game_state.totalLaps
+    - game_state.position
+    - game_state.finishPosition
+    - game_state.stars
+    - game_state.resultsOpen
+    - game_state.attempt
+    - terminal.outcome
+- task_id: '475_02'
+  game_id: 475_offroaders-2
+  game_url_suffix: ?task=475_02
+  difficulty: medium
+  task_prompt: 'Earn a podium finish in Race 1: complete both laps in first, second, or third place and
+    reach the results screen.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.podiumProgress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.podiumProgress
+    end_field: game_state.taskComplete
+    terminal_status: success
+    metrics_fields:
+    - metrics.raceCompletionProgress
+    - metrics.podiumProgress
+    - metrics.bestAttemptStars
+    - game_state.raceNumber
+    - game_state.lap
+    - game_state.totalLaps
+    - game_state.position
+    - game_state.finishPosition
+    - game_state.stars
+    - game_state.resultsOpen
+    - game_state.attempt
+    - terminal.outcome
+- task_id: '475_03'
+  game_id: 475_offroaders-2
+  game_url_suffix: ?task=475_03
+  difficulty: medium
+  task_prompt: Collect at least 42 stars during one attempt at Race 1. Use the STAR TARGET counter at
+    the upper left to track your collection. Restarting clears the stars collected in that attempt.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 42
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.bestAttemptStars
+    granularity: counter
+    coarse_reason: The objective has 42 native pickup increments. Distance toward an individual star does
+      not measure stars collected and depends on which optional pickup the player approaches.
+  evaluator_config:
+    score_field: metrics.bestAttemptStars
+    end_field: game_state.taskComplete
+    terminal_status: success
+    metrics_fields:
+    - metrics.raceCompletionProgress
+    - metrics.podiumProgress
+    - metrics.bestAttemptStars
+    - game_state.raceNumber
+    - game_state.lap
+    - game_state.totalLaps
+    - game_state.position
+    - game_state.finishPosition
+    - game_state.stars
+    - game_state.resultsOpen
+    - game_state.attempt
+    - terminal.outcome
+- task_id: '475_04'
+  game_id: 475_offroaders-2
+  game_url_suffix: ?task=475_04
+  difficulty: easy
+  task_prompt: 'Complete Race 2: drive both laps and reach the race results screen. Any finishing position
+    counts.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.raceCompletionProgress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.raceCompletionProgress
+    end_field: game_state.taskComplete
+    terminal_status: success
+    metrics_fields:
+    - metrics.raceCompletionProgress
+    - metrics.podiumProgress
+    - metrics.bestAttemptStars
+    - game_state.raceNumber
+    - game_state.lap
+    - game_state.totalLaps
+    - game_state.position
+    - game_state.finishPosition
+    - game_state.stars
+    - game_state.resultsOpen
+    - game_state.attempt
+    - terminal.outcome
+- task_id: '475_05'
+  game_id: 475_offroaders-2
+  game_url_suffix: ?task=475_05
+  difficulty: medium
+  task_prompt: 'Complete Race 3: drive all three laps and reach the race results screen. Any finishing
+    position counts.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.raceCompletionProgress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.raceCompletionProgress
+    end_field: game_state.taskComplete
+    terminal_status: success
+    metrics_fields:
+    - metrics.raceCompletionProgress
+    - metrics.podiumProgress
+    - metrics.bestAttemptStars
+    - game_state.raceNumber
+    - game_state.lap
+    - game_state.totalLaps
+    - game_state.position
+    - game_state.finishPosition
+    - game_state.stars
+    - game_state.resultsOpen
+    - game_state.attempt
+    - terminal.outcome

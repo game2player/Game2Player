@@ -1,0 +1,232 @@
+game:
+  game_name: 134_nom-nom-great-autumn-jam
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  game_rules: "NOM NOM - Great Autumn Jam is a cozy café game: forest animals come to your\ncounter and\
+    \ you make each of them a jam dish that matches their taste.\n\n## Goal\nEarn good reviews. Every\
+    \ customer is rated on how many of their three\npreferences the dish matched (0 to 3); matching all\
+    \ three is a perfect review.\nThe game starts on Day 1 at the café counter, already past the title\
+    \ screen.\n\n## Preferences\n- While ordering, a customer says the three things they like, highlighted\
+    \ in\n  colour: a fruit (apple, pumpkin or fig), a charm (space, nature or spooky)\n  and a taste\
+    \ (sweet, sour or savory).\n- The fruit and the charm belong to the jam: the fruit is the jam's fruit,\
+    \ and\n  the charm is its decoration (star = space, leaf = nature, ghost = spooky).\n- The taste belongs\
+    \ to the dish the jam is served on: Pancakes = sweet,\n  Yoghurt = sour, Cheese Board = savory. Sparkles\
+    \ are only decorative, but a jam\n  needs one before it can be finished.\n\n## Day and night\n- A\
+    \ day lasts about three minutes; the wall clock fills up as it passes and the\n  \"Waiting in line\"\
+    \ sign counts customers queueing behind the one at the counter.\n- Customers arrive one by one, and\
+    \ the counter can stay empty for half a minute\n  or more between them; the day only ends when the\
+    \ wall clock is full.\n- When the clock runs out the café closes: customers still waiting leave with\
+    \ a\n  0-star review, and the phone opens the review site showing the day's star\n  rating (the average\
+    \ of that day's reviews).\n- Customers who got a perfect review come back on the next day.\n- At night\
+    \ the phone has a reviews site, a contacts list (customers' known\n  preferences) and a fishing app.\
+    \ The moon button starts the next day.\n- Three bad days in a row lose the game.\n"
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You run the café: take each order, make a jam in the kitchen, put it on a
+
+        dish and serve it.
+
+        '
+      control_notes: "Everything is played by left-clicking.\n- Click the customer's speech box to advance\
+        \ their dialogue. When the order\n  is complete a PREPARE button appears at the bottom right;\
+        \ click it to go\n  to the jam shelf.\n- Jam shelf: the pot button under an empty jar opens the\
+        \ jam maker. Once a\n  jar holds jam, the spoon button under it takes that jam to the dish table\n\
+        \  and the bin button throws it away. The left and right arrows move along\n  the shelf.\n- Jam\
+        \ maker: on the left panel click one fruit, one decoration and one of\n  the three sparkle buttons,\
+        \ then click the jar button at the bottom right\n  to finish the jam.\n- Dish table: the left\
+        \ and right arrows switch between Cheese Board,\n  Pancakes and Yoghurt (the card names the current\
+        \ dish); the cloche button\n  at the bottom centre serves it.\n- The shop button at the top right\
+        \ returns to the café counter; the jar\n  button at the top goes back to the jam shelf. Back at\
+        \ the counter after\n  an order was taken, a chef-hat button at the bottom right (where PREPARE\n\
+        \  was) returns to the jam shelf.\n- Early in the game a hint bubble sits on the right side of\
+        \ the screen. It\n  covers what is beneath it (including the right arrows) and takes clicks:\n\
+        \  click it to show the next hint, and after the last hint it closes.\n- When the clock runs out,\
+        \ the review site opens by itself a few seconds\n  later (after any customer still talking has\
+        \ said goodbye); wait for it,\n  then click the X at its top right to close it.\n- At night click\
+        \ the phone on the counter to open it, the app icons to use\n  it, and the moon button at the\
+        \ bottom right to sleep. The phone also opens\n  during the day, but without the moon button.\n\
+        - Dialogue, camera moves and the start of a day take a second or two; wait\n  for the screen to\
+        \ settle before the next click.\n"
+    controls:
+      allowed_keys: []
+      allow_clicks: true
+tasks:
+- task_id: '134_01'
+  game_id: 134_nom-nom-great-autumn-jam
+  game_url_suffix: ?task=134_01
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 3
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Serve one customer a perfect dish: a jam whose fruit and decoration match the
+
+    fruit and charm they asked for, on the dish that matches the taste they asked
+
+    for. A perfect dish matches all three preferences.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.best_serve_rating
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.best_serve_rating
+    - metrics.best_day_perfect_reviews
+    - metrics.today_perfect_reviews
+    - metrics.regular_customer_stage
+    - metrics.best_day_rating
+    - metrics.days_finished
+    - metrics.day_number
+    - game_state.phase
+    - game_state.day_clock_s
+    - game_state.customers_present
+    - game_state.reviews_today
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '134_02'
+  game_id: 134_nom-nom-great-autumn-jam
+  game_url_suffix: ?task=134_02
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_target_score_field: 3
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Serve 3 customers perfect dishes within a single café day, matching each
+
+    customer''s fruit, charm and taste. Only perfect serves made during the same
+
+    day count together; the count starts over when a new day begins.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.best_day_perfect_reviews
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.best_serve_rating
+    - metrics.best_day_perfect_reviews
+    - metrics.today_perfect_reviews
+    - metrics.regular_customer_stage
+    - metrics.best_day_rating
+    - metrics.days_finished
+    - metrics.day_number
+    - game_state.phase
+    - game_state.day_clock_s
+    - game_state.customers_present
+    - game_state.reviews_today
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '134_03'
+  game_id: 134_nom-nom-great-autumn-jam
+  game_url_suffix: ?task=134_03
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_target_score_field: 9
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Serve 9 customers perfect dishes within a single café day, matching each
+
+    customer''s fruit, charm and taste. Only perfect serves made during the same
+
+    day count together; the count starts over when a new day begins.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.best_day_perfect_reviews
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.best_serve_rating
+    - metrics.best_day_perfect_reviews
+    - metrics.today_perfect_reviews
+    - metrics.regular_customer_stage
+    - metrics.best_day_rating
+    - metrics.days_finished
+    - metrics.day_number
+    - game_state.phase
+    - game_state.day_clock_s
+    - game_state.customers_present
+    - game_state.reviews_today
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '134_04'
+  game_id: 134_nom-nom-great-autumn-jam
+  game_url_suffix: ?task=134_04
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_target_score_field: 3
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Win a regular. Serve a customer a perfect dish so that they come back, then
+
+    play into the next day and, when that customer returns, serve them a perfect
+
+    dish again.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.regular_customer_stage
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.best_serve_rating
+    - metrics.best_day_perfect_reviews
+    - metrics.today_perfect_reviews
+    - metrics.regular_customer_stage
+    - metrics.best_day_rating
+    - metrics.days_finished
+    - metrics.day_number
+    - game_state.phase
+    - game_state.day_clock_s
+    - game_state.customers_present
+    - game_state.reviews_today
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '134_05'
+  game_id: 134_nom-nom-great-autumn-jam
+  game_url_suffix: ?task=134_05
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_target_score_field: 3
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Finish a café day with a perfect 3-star rating on the review site. The day''s
+
+    rating is the average of that day''s reviews, so every customer reviewed that
+
+    day must get a perfect dish, and nobody may be left waiting when the café
+
+    closes.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.best_day_rating
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.best_serve_rating
+    - metrics.best_day_perfect_reviews
+    - metrics.today_perfect_reviews
+    - metrics.regular_customer_stage
+    - metrics.best_day_rating
+    - metrics.days_finished
+    - metrics.day_number
+    - game_state.phase
+    - game_state.day_clock_s
+    - game_state.customers_present
+    - game_state.reviews_today
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal

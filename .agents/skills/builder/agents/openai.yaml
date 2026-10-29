@@ -1,0 +1,6 @@
+interface:
+  display_name: "Builder"
+  short_description: "Cross-engine facts and traps for building one game environment"
+  default_prompt: "Use $builder for this Builder phase."
+policy:
+  allow_implicit_invocation: false

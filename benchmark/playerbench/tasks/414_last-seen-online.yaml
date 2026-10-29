@@ -1,0 +1,189 @@
+game:
+  game_name: 414_last-seen-online
+  speed_multiplier: 1.0
+  width: 800
+  height: 600
+  url: https://qwook.itch.io/last-seen-online
+  game_rules: 'Last Seen Online is a point-and-click horror puzzle game. You investigate a
+
+    stranger''s computer, using its files and conversations to uncover clues and
+
+    unlock the Other World. The later puzzles take place in a first-person 3D space.
+
+
+    Click desktop icons, windows, and objects to inspect them. Read messages and
+
+    images for clues, and use those clues in password or symbol puzzles. In the
+
+    Other World, click the navigation arrows at the edges of the scene to move
+
+    between places. Some changes happen after a short in-game pause. The game saves
+
+    its progress in the browser; reload the page to return to the current start.
+
+    '
+  game_roles:
+  - name: investigator
+    context:
+      role_description: 'You are looking through Liz''s computer and the world it connects to.
+
+        Find the clues that let you open files, follow Orion''s instructions, and
+
+        solve the puzzles you encounter.
+
+        '
+      control_notes: '- Left click a desktop icon, window, message, image, or puzzle object to interact
+        with it.
+
+        - Click a text field, type your answer, and press Enter to submit it.
+
+        - Use the visible navigation arrows in the Other World to move between scenes.
+
+        - Click a window''s X to close it when you need to return to the desktop.
+
+        - Wait briefly when a message or scene transition is still playing.
+
+        '
+    controls:
+      allowed_keys:
+      - Enter
+      allow_clicks: true
+      hold_duration: 0.05
+tasks:
+- task_id: '414_01'
+  game_id: 414_last-seen-online
+  game_url_suffix: ?task=414_01
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 2
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Solve the password on the stranger''s computer and reach Liz''s desktop. Use the
+
+    clues available on the login screen, then enter your answer in the password box
+
+    and submit it.
+
+    '
+  progress_signal:
+    field: game_state.login_clue_progress
+    granularity: counter
+    coarse_reason: The source checks two required substrings together and persists only the final loggedin
+      result. Retaining how many of those two semantic parts appear in the player-visible input is the
+      finest honest partial measure.
+  evaluator_config:
+    terminal_status: fail
+    aggregate_score_fields:
+    - game_state.login_clue_progress
+    - metrics.login_submit_adjustment
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.login_submit_adjustment
+    - game_state.login_clue_progress
+    - game_state.loggedin
+    - game_state.task_start_verified
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '414_02'
+  game_id: 414_last-seen-online
+  game_url_suffix: ?task=414_02
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 2
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Investigate Liz''s desktop and extract photos4em.zip. Open the archive, find its
+
+    password from the computer''s clues, and use it to extract the files.
+
+    '
+  progress_signal:
+    field: game_state.photos_archive_progress
+    granularity: counter
+    coarse_reason: The game stores the active window list and the final photosUnzipped flag, but not clue-reading
+      or password-attempt progress. Opening the archive prompt and extracting it are the finest stable
+      milestones.
+  evaluator_config:
+    terminal_status: fail
+    score_field: game_state.photos_archive_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.task_progress
+    - game_state.photos_archive_progress
+    - game_state.photosUnzipped
+    - game_state.visible_windows
+    - game_state.task_start_verified
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '414_03'
+  game_id: 414_last-seen-online
+  game_url_suffix: ?task=414_03
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 4
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: hard
+  task_prompt: 'From Liz''s desktop, extract COOL!!!.zip, follow Orion''s chat prompts, activate
+
+    the Other World app, and sign in to enter it. Use the computer''s messages and
+
+    files to find the needed clues.
+
+    '
+  progress_signal:
+    field: game_state.ritual_entry_progress
+    granularity: counter
+    coarse_reason: The source persists the archive, app-activation, and Other World login gates but not
+      the intervening dialogue path. The archive window plus those three native events provide the finest
+      stable partial stages.
+  evaluator_config:
+    terminal_status: fail
+    score_field: game_state.ritual_entry_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.task_progress
+    - game_state.ritual_entry_progress
+    - game_state.ritualUnzipped
+    - game_state.otherWorldActivated
+    - game_state.loggedInOtherworld
+    - game_state.visible_windows
+    - game_state.task_start_verified
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '414_05'
+  game_id: 414_last-seen-online
+  game_url_suffix: ?task=414_05
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 8
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Use the fountain''s clue to enter its seven-symbol sequence and unlock the next
+
+    gate. Then use the left navigation arrow to enter the fountain.
+
+    '
+  progress_signal:
+    field: game_state.fountain_sequence_progress
+    granularity: counter
+    coarse_reason: The source retains only the last seven inputs and checks the full sequence. A correct-prefix
+      count at one-symbol resolution is the finest monotonic measure of progress toward that check.
+  evaluator_config:
+    terminal_status: fail
+    aggregate_score_fields:
+    - game_state.fountain_sequence_progress
+    - metrics.fountain_route_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.fountain_route_progress
+    - game_state.fountain_sequence_progress
+    - game_state.level
+    - game_state.task_start_verified
+    - terminal.outcome
+    - terminal.isTerminal

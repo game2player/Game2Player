@@ -1,0 +1,205 @@
+game:
+  game_name: 456_mechanical-commando-2-burning-skies
+  url: https://www.newgrounds.com/portal/view/574778
+  speed_multiplier: 1.0
+  width: 700
+  height: 550
+  game_rules: 'Pilot a customizable aircraft through a vertically scrolling shooter. Destroy the mission''s
+    boss while dodging enemy aircraft, ground weapons, and projectiles. Your guns fire straight upward;
+    move the ship to line up shots. The scenery scrolls automatically, so waiting brings more enemies
+    rather than completing the objective.
+
+
+    Health is the number at the upper left. Weapon meters above it show firing readiness. The boss has
+    its own health bar; some bosses require destroying attached weapons before their main body becomes
+    vulnerable. Losing all health brings up GAME OVER. Defeating the boss is followed by dialogue: click
+    NEXT until the mission victory screen appears.
+
+
+    Each task starts in active flight in its specified mission with the default craft and no experience.
+    If destroyed, click RESTART, then advance the experience/unlock summary with its BACK/RESUME button
+    to retry. Click again if the first click only finishes the summary animation. Native retries keep
+    earned experience and unlocked equipment. Click NEXT through any briefing and SKIP on the movement
+    tutorial if they appear again. P opens the native pause menu, which shows the mission objective and
+    has a BACK button to resume.'
+  game_roles:
+  - name: pilot
+    context:
+      role_description: Control the aircraft, aim by moving beneath enemies, manage primary and secondary
+        fire, and survive long enough to destroy the mission target.
+      control_notes: '- Hold the arrow keys to move in the corresponding direction; combine two arrows
+        for diagonal movement.
+
+        - Hold X to fire the primary guns. Hold Z to fire the secondary weapon. You can hold both while
+        moving. Release fire to let the weapons recover between bursts.
+
+        - Tap P to pause. Tap P again after the pause panel opens, or click its BACK button, to resume.
+
+        - Wait for panels to finish opening, then click visible menu buttons. Click NEXT through dialogue,
+        SKIP to dismiss the movement tutorial, and RESTART after defeat. The following experience summary
+        uses BACK/RESUME to continue; its first click may only finish the animation.
+
+        - Waiting advances enemies, projectiles, automatic scrolling, and weapon recovery.'
+    controls:
+      allowed_keys:
+      - ArrowLeft
+      - ArrowRight
+      - ArrowUp
+      - ArrowDown
+      - x
+      - z
+      - p
+      allow_clicks: true
+      hold_duration: 0.3
+tasks:
+- task_id: '456_01'
+  game_id: 456_mechanical-commando-2-burning-skies
+  game_url_suffix: ?task=456_01
+  difficulty: medium
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Complete Mission 1, Plarzus Headquarter: destroy the Specter Mechanized-Recon Unit and
+    reach mission victory. Advance the concluding dialogue with NEXT. You start in active flight with
+    the default craft.'
+  progress_signal:
+    field: metrics.mission_progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.mission_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.mission_progress
+    - metrics.ordinary_kills
+    - metrics.boss_damage_fraction
+    - game_state.mission
+    - game_state.player.hp
+    - game_state.ordinaryKills
+    - game_state.attempt
+    - game_state.gameOver
+    - game_state.victory
+    - terminal.outcome
+- task_id: '456_02'
+  game_id: 456_mechanical-commando-2-burning-skies
+  game_url_suffix: ?task=456_02
+  difficulty: medium
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Complete Mission 2, Plarzus Atmosphere: destroy the enemy Ultra Bomber and reach mission
+    victory. Advance the concluding dialogue with NEXT. You start in active flight with the default craft.'
+  progress_signal:
+    field: metrics.mission_progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.mission_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.mission_progress
+    - metrics.ordinary_kills
+    - metrics.boss_damage_fraction
+    - game_state.mission
+    - game_state.player.hp
+    - game_state.ordinaryKills
+    - game_state.attempt
+    - game_state.gameOver
+    - game_state.victory
+    - terminal.outcome
+- task_id: '456_03'
+  game_id: 456_mechanical-commando-2-burning-skies
+  game_url_suffix: ?task=456_03
+  difficulty: hard
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Complete Mission 3, Plarzus Orbit: destroy the enemy Orbital Canon and reach mission victory.
+    Advance the concluding dialogue with NEXT. You start in active flight with the default craft.'
+  progress_signal:
+    field: metrics.mission_progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.mission_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.mission_progress
+    - metrics.ordinary_kills
+    - metrics.boss_damage_fraction
+    - game_state.mission
+    - game_state.player.hp
+    - game_state.ordinaryKills
+    - game_state.attempt
+    - game_state.gameOver
+    - game_state.victory
+    - terminal.outcome
+- task_id: '456_04'
+  game_id: 456_mechanical-commando-2-burning-skies
+  game_url_suffix: ?task=456_04
+  difficulty: hard
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Complete Mission 4, New Jordaw Facility: destroy the mining facility and reach mission
+    victory. Advance the concluding dialogue with NEXT. You start in active flight with the default craft.'
+  progress_signal:
+    field: metrics.mission_progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.mission_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.mission_progress
+    - metrics.ordinary_kills
+    - metrics.boss_damage_fraction
+    - game_state.mission
+    - game_state.player.hp
+    - game_state.ordinaryKills
+    - game_state.attempt
+    - game_state.gameOver
+    - game_state.victory
+    - terminal.outcome
+- task_id: '456_05'
+  game_id: 456_mechanical-commando-2-burning-skies
+  game_url_suffix: ?task=456_05
+  difficulty: hard
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Complete Mission 5, Kobu III Orbit: destroy the communication satellite and reach mission
+    victory. Advance the concluding dialogue with NEXT. You start in active flight with the default craft.'
+  progress_signal:
+    field: metrics.mission_progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.mission_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.mission_progress
+    - metrics.ordinary_kills
+    - metrics.boss_damage_fraction
+    - game_state.mission
+    - game_state.player.hp
+    - game_state.ordinaryKills
+    - game_state.attempt
+    - game_state.gameOver
+    - game_state.victory
+    - terminal.outcome

@@ -1,0 +1,339 @@
+game:
+  game_name: 496_rhythm-quest-demo
+  width: 1000
+  height: 600
+  speed_multiplier: 1.0
+  game_rules: 'Rhythm Quest is a two-button rhythm runner. Your character runs to the right automatically.
+    Clear the selected level by timing jumps over gaps and attacks on enemies as they reach you. The green
+    ground markers and obstacle animations show the rhythm. Some obstacles need jumping and attacking
+    together, repeated attacks, or holding and releasing jump. Wing paths let you fly; follow the visible
+    hold and release cues.
+
+
+    A missed obstacle sends you back to the latest checkpoint and the music restarts that section. Retries
+    are unlimited. Tutorial sections may freeze at an obstacle until you use the requested action. The
+    level starts automatically; wait through its short opening count-in. Clearing the final section ends
+    the level.'
+  game_roles:
+  - name: player
+    context:
+      role_description: Control the runner’s jump and attack timing. Running and checkpoint retries happen
+        automatically.
+      control_notes: '- Tap F to jump, or hold F for the long jumps and wing paths marked on screen. Release
+        F at the end of a hold path. For a hold, specify its duration; for a precise release across actions,
+        use set_keys.
+
+        - Tap J to attack. Tap again for each hit on enemies that need multiple hits.
+
+        - Press F and J together when a gap and an enemy coincide.
+
+        - Escape opens the native pause menu. Use its buttons to resume or restart the level; left-click
+        selects a button.
+
+        - Waiting advances the music and automatic running. Time actions to the approaching obstacles;
+        a default key press is a short tap.'
+    controls:
+      allowed_keys:
+      - f
+      - j
+      - Escape
+      allow_clicks: true
+      hold_duration: 0.2
+tasks:
+- task_id: '496_01'
+  game_id: 496_rhythm-quest-demo
+  difficulty: easy
+  game_url_suffix: ?task=496_01
+  task_prompt: Clear level 1-1 on Easy. Play with autoplay and practice mode off, checkpoints on, and
+    music at normal speed. Time jumps and attacks to pass the obstacles; missed sections retry automatically
+    from the latest checkpoint.
+  progress_signal:
+    field: metrics.level_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.level_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress
+    - metrics.completed
+    - game_state.level
+    - game_state.difficulty
+    - game_state.checkpoint_index
+    - game_state.checkpoint_count
+    - game_state.chain
+    - game_state.deaths
+    - game_state.autoplay
+    - game_state.practice_mode
+    - game_state.music_speed
+    - game_state.level_ended
+    - terminal.outcome
+- task_id: '496_02'
+  game_id: 496_rhythm-quest-demo
+  difficulty: medium
+  game_url_suffix: ?task=496_02
+  task_prompt: Clear level 1-2 on Normal. Play with autoplay and practice mode off, checkpoints on, and
+    music at normal speed. Time jumps and attacks to pass the obstacles; missed sections retry automatically
+    from the latest checkpoint.
+  progress_signal:
+    field: metrics.level_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.level_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress
+    - metrics.completed
+    - game_state.level
+    - game_state.difficulty
+    - game_state.checkpoint_index
+    - game_state.checkpoint_count
+    - game_state.chain
+    - game_state.deaths
+    - game_state.autoplay
+    - game_state.practice_mode
+    - game_state.music_speed
+    - game_state.level_ended
+    - terminal.outcome
+- task_id: '496_03'
+  game_id: 496_rhythm-quest-demo
+  difficulty: medium
+  game_url_suffix: ?task=496_03
+  task_prompt: Clear level 1-3 on Normal. Play with autoplay and practice mode off, checkpoints on, and
+    music at normal speed. Time jumps and attacks to pass the obstacles; missed sections retry automatically
+    from the latest checkpoint.
+  progress_signal:
+    field: metrics.level_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.level_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress
+    - metrics.completed
+    - game_state.level
+    - game_state.difficulty
+    - game_state.checkpoint_index
+    - game_state.checkpoint_count
+    - game_state.chain
+    - game_state.deaths
+    - game_state.autoplay
+    - game_state.practice_mode
+    - game_state.music_speed
+    - game_state.level_ended
+    - terminal.outcome
+- task_id: '496_04'
+  game_id: 496_rhythm-quest-demo
+  difficulty: medium
+  game_url_suffix: ?task=496_04
+  task_prompt: Clear level 1-4 on Normal. Play with autoplay and practice mode off, checkpoints on, and
+    music at normal speed. Time jumps and attacks to pass the obstacles; missed sections retry automatically
+    from the latest checkpoint.
+  progress_signal:
+    field: metrics.level_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.level_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress
+    - metrics.completed
+    - game_state.level
+    - game_state.difficulty
+    - game_state.checkpoint_index
+    - game_state.checkpoint_count
+    - game_state.chain
+    - game_state.deaths
+    - game_state.autoplay
+    - game_state.practice_mode
+    - game_state.music_speed
+    - game_state.level_ended
+    - terminal.outcome
+- task_id: '496_05'
+  game_id: 496_rhythm-quest-demo
+  difficulty: hard
+  game_url_suffix: ?task=496_05
+  task_prompt: Clear level 2-1 on Normal. Play with autoplay and practice mode off, checkpoints on, and
+    music at normal speed. Time jumps and attacks to pass the obstacles; missed sections retry automatically
+    from the latest checkpoint.
+  progress_signal:
+    field: metrics.level_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.level_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress
+    - metrics.completed
+    - game_state.level
+    - game_state.difficulty
+    - game_state.checkpoint_index
+    - game_state.checkpoint_count
+    - game_state.chain
+    - game_state.deaths
+    - game_state.autoplay
+    - game_state.practice_mode
+    - game_state.music_speed
+    - game_state.level_ended
+    - terminal.outcome
+- task_id: '496_06'
+  game_id: 496_rhythm-quest-demo
+  difficulty: hard
+  game_url_suffix: ?task=496_06
+  task_prompt: Clear level 2-2 on Normal. Play with autoplay and practice mode off, checkpoints on, and
+    music at normal speed. Time jumps and attacks to pass the obstacles; missed sections retry automatically
+    from the latest checkpoint.
+  progress_signal:
+    field: metrics.level_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.level_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress
+    - metrics.completed
+    - game_state.level
+    - game_state.difficulty
+    - game_state.checkpoint_index
+    - game_state.checkpoint_count
+    - game_state.chain
+    - game_state.deaths
+    - game_state.autoplay
+    - game_state.practice_mode
+    - game_state.music_speed
+    - game_state.level_ended
+    - terminal.outcome
+- task_id: '496_07'
+  game_id: 496_rhythm-quest-demo
+  difficulty: hard
+  game_url_suffix: ?task=496_07
+  task_prompt: Clear level 2-3 on Normal. Play with autoplay and practice mode off, checkpoints on, and
+    music at normal speed. Time jumps and attacks to pass the obstacles; missed sections retry automatically
+    from the latest checkpoint.
+  progress_signal:
+    field: metrics.level_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.level_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress
+    - metrics.completed
+    - game_state.level
+    - game_state.difficulty
+    - game_state.checkpoint_index
+    - game_state.checkpoint_count
+    - game_state.chain
+    - game_state.deaths
+    - game_state.autoplay
+    - game_state.practice_mode
+    - game_state.music_speed
+    - game_state.level_ended
+    - terminal.outcome
+- task_id: '496_08'
+  game_id: 496_rhythm-quest-demo
+  difficulty: hard
+  game_url_suffix: ?task=496_08
+  task_prompt: Clear level 3-1 on Normal. Play with autoplay and practice mode off, checkpoints on, and
+    music at normal speed. Time jumps and attacks to pass the obstacles; missed sections retry automatically
+    from the latest checkpoint.
+  progress_signal:
+    field: metrics.level_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.level_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress
+    - metrics.completed
+    - game_state.level
+    - game_state.difficulty
+    - game_state.checkpoint_index
+    - game_state.checkpoint_count
+    - game_state.chain
+    - game_state.deaths
+    - game_state.autoplay
+    - game_state.practice_mode
+    - game_state.music_speed
+    - game_state.level_ended
+    - terminal.outcome
+- task_id: '496_09'
+  game_id: 496_rhythm-quest-demo
+  difficulty: hard
+  game_url_suffix: ?task=496_09
+  task_prompt: Clear level 3-4 on Normal. Play with autoplay and practice mode off, checkpoints on, and
+    music at normal speed. Time jumps and attacks to pass the obstacles; missed sections retry automatically
+    from the latest checkpoint.
+  progress_signal:
+    field: metrics.level_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.level_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress
+    - metrics.completed
+    - game_state.level
+    - game_state.difficulty
+    - game_state.checkpoint_index
+    - game_state.checkpoint_count
+    - game_state.chain
+    - game_state.deaths
+    - game_state.autoplay
+    - game_state.practice_mode
+    - game_state.music_speed
+    - game_state.level_ended
+    - terminal.outcome

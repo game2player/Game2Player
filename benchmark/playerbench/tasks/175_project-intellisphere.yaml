@@ -1,0 +1,170 @@
+game:
+  game_name: 175_project-intellisphere
+  url: https://stylemistake.itch.io/intellisphere
+  speed_multiplier: 1.0
+  width: 1280
+  height: 960
+  game_rules: 'Project: Intellisphere is a flight combat game with one mission. You start
+
+    airborne with 90 missiles and an AI wingman. Destroy the required enemy aircraft
+
+    and radar sites to complete the mission. Optional enemy aircraft can also be
+
+    attacked. Red radar contacts and red TGT labels identify required targets;
+
+    white contacts are optional enemies and blue contacts are friendly. Radar sites
+
+    are stationary ground targets. The top-right panel shows your air kills,
+
+    destroyed sites, required targets, and the selected target''s health and lock.
+
+
+    Your aircraft keeps flying during waits. Speed and altitude affect handling;
+
+    terrain collisions and enemy missiles can destroy you. The native DMG display
+
+    shows damage taken. Watch the missile warning and keep clear of the terrain.
+
+    Destroying all required targets completes the mission and leaves free flight.
+
+    Restarting begins the same mission from scratch, including after a loss.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You pilot the aircraft in the chase view, steering, changing speed,
+
+        selecting enemies, and firing missiles.
+
+        '
+      control_notes: "- Hold W to pitch the nose down, S to pitch up; hold A/D to roll left/right\n  and\
+        \ Q/E to yaw left/right. Short holds make small corrections; keys can\n  be held together, such\
+        \ as a roll and pitch combination to turn.\n- Hold Up Arrow for extra thrust; hold Down Arrow\
+        \ to brake and slow down.\n  Releasing either returns to normal cruising thrust.\n- Tap Tab to\
+        \ cycle selectable nearby enemies. Targets beyond about 9500 m\n  cannot be selected yet; the\
+        \ radar still helps you head toward them.\n  Turn toward enemy contacts before selecting; selection\
+        \ favors contacts\n  in front. The game also selects targets automatically as they come into view.\n\
+        - Keep the selected enemy ahead and within 2500 m to obtain LOCKED in the\n  panel. The selected\
+        \ HUD box becomes red with a diamond when locked.\n  Tap Space to launch one missile. Without\
+        \ a lock it flies unguided.\n  Release and tap again for another shot; holding Space does not\
+        \ repeat.\n- There are two missile rails, each taking about four seconds to reload.\n  The panel's\
+        \ Ready count shows available shots; allow it to fill at the\n  beginning and after firing. Waiting\
+        \ also advances flight and enemies.\n- Tap R to restart the current task's mission with full health\
+        \ and missiles.\n"
+    controls:
+      allowed_keys:
+      - w
+      - s
+      - a
+      - d
+      - q
+      - e
+      - ArrowUp
+      - ArrowDown
+      - Tab
+      - Space
+      - r
+      allow_clicks: false
+      hold_duration: 0.2
+tasks:
+- task_id: '175_01'
+  game_id: 175_project-intellisphere
+  difficulty: easy
+  game_url_suffix: ?task=175_01
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'Destroy one enemy aircraft with your missiles. Required and optional enemy
+
+    aircraft both count, but your wingman''s kills do not. Use the radar to find an
+
+    enemy, select it with Tab when nearby, and fire with Space when locked. Your
+
+    air-kill count in the top-right panel confirms a destruction credited to you.
+
+    '
+  progress_signal:
+    field: metrics.air_kill_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.air_kill_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.air_kill_progress
+    - metrics.player_air_kills
+    - metrics.enemy_aircraft_remaining
+    - metrics.missiles
+    - game_state.start.matches_requested
+    - terminal.outcome
+- task_id: '175_02'
+  game_id: 175_project-intellisphere
+  difficulty: easy
+  game_url_suffix: ?task=175_02
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'Destroy all three enemy radar sites in the fresh mission. Cycle nearby targets
+
+    with Tab and check the selected target name for Radar Site. Aim toward a site
+
+    and launch missiles with Space when locked, keeping clear of the terrain and
+
+    hostile aircraft. The top-right Radar sites count shows how many are destroyed.
+
+    '
+  progress_signal:
+    field: metrics.radar_site_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.radar_site_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.radar_site_progress
+    - metrics.radar_sites_destroyed
+    - metrics.primary_targets_remaining
+    - metrics.missiles
+    - game_state.start.matches_requested
+    - terminal.outcome
+- task_id: '175_03'
+  game_id: 175_project-intellisphere
+  difficulty: medium
+  game_url_suffix: ?task=175_03
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 6
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'Complete the mission by destroying all six required targets: three enemy
+
+    aircraft and three radar sites. Follow the red radar contacts and TGT labels;
+
+    the other enemy aircraft are optional. The top-right Required targets count
+
+    tracks destruction. Finish with the mission accomplished rather than losing
+
+    your aircraft before the last required target is destroyed.
+
+    '
+  progress_signal:
+    field: metrics.mission_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.mission_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.mission_progress
+    - metrics.primary_targets_destroyed
+    - metrics.primary_targets_remaining
+    - metrics.radar_sites_destroyed
+    - metrics.missiles
+    - game_state.mission_success
+    - game_state.start.matches_requested
+    - terminal.outcome

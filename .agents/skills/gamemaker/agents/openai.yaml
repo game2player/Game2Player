@@ -1,0 +1,6 @@
+interface:
+  display_name: "GameMaker"
+  short_description: "Instrument a GameMaker HTML5 export"
+  default_prompt: "Use $gamemaker for this Builder phase."
+policy:
+  allow_implicit_invocation: false

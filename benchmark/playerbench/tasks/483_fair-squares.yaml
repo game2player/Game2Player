@@ -1,0 +1,262 @@
+game:
+  game_name: 483_fair-squares
+  url: https://kindanice.itch.io/fair-squares
+  speed_multiplier: 1.0
+  width: 960
+  height: 720
+  game_rules: 'Fair Squares is an arena shooter. You control the small blue square: dodge enemy
+
+    collisions and projectiles while shooting enemies. An ordinary arena has three
+
+    waves; the next wave arrives automatically when the current one is defeated.
+
+    Red enemies dash, green enemies ricochet, and pink enemies launch orbiting shots.
+
+    Bosses have their own attack patterns and wake up when hit.
+
+
+    Each task begins at its named arena, boss, or upgrade choice, with three health
+
+    points and an unmodified gun. Health is at the lower left and ammunition at the
+
+    lower right. The upper display identifies the arena and wave or boss health.
+
+    Empty magazines reload automatically; reloading briefly prevents shooting.
+
+
+    Cleared arenas open portals. Walk into a portal to enter it. The left upgrade
+
+    portal lists a blue benefit for you and a colored benefit for enemies; both apply
+
+    together. The right portal marked "i''m good" declines the upgrade. Portals also
+
+    restore some health. Screen wipes and the intervening upgrade display take a few
+
+    seconds. Losing all health triggers an automatic retry at this task''s checkpoint.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: Move the blue square, aim and fire, reload, and choose upgrade portals.
+      control_notes: "- Hold W/A/S/D to move up/left/down/right. Combine two keys for diagonal movement.\n\
+        - Hold an arrow key to shoot in that direction; combine two arrows to fire\n  diagonally. Combine\
+        \ arrows with WASD to shoot while moving.\n- Alternatively, move the mouse to aim and hold the\
+        \ left mouse button to fire.\n  Use a click_hold of at least 0.3 seconds for sustained shooting.\n\
+        - Tap R to reload a partly empty magazine. Wait for its reload animation to finish.\n- Walk into\
+        \ a portal to choose it; a mouse click does not select a portal.\n- Wait during enemy arrivals,\
+        \ portal transitions, reloads, and the automatic\n  retry after defeat. There is no retry key\
+        \ to press.\n"
+    controls:
+      allowed_keys:
+      - w
+      - a
+      - s
+      - d
+      - ArrowLeft
+      - ArrowRight
+      - ArrowUp
+      - ArrowDown
+      - r
+      allow_clicks: true
+      hold_duration: 0.25
+tasks:
+- task_id: '483_01'
+  game_id: 483_fair-squares
+  difficulty: easy
+  game_url_suffix: ?task=483_01
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear all three waves of the first red-world arena. You begin in the arena with an unmodified
+    gun.
+  progress_signal:
+    field: metrics.arena_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.arena_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.arena_progress
+    - game_state.world
+    - game_state.arena_index
+    - game_state.rounds_cleared
+    - game_state.player_hp
+    - game_state.ammo
+    - game_state.boss_hp
+    - game_state.upgrade_accepted
+    - terminal.outcome
+- task_id: '483_02'
+  game_id: 483_fair-squares
+  difficulty: medium
+  game_url_suffix: ?task=483_02
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear all three waves of the first green-world arena. You begin in the arena with an unmodified
+    gun.
+  progress_signal:
+    field: metrics.arena_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.arena_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.arena_progress
+    - game_state.world
+    - game_state.arena_index
+    - game_state.rounds_cleared
+    - game_state.player_hp
+    - game_state.ammo
+    - game_state.boss_hp
+    - game_state.upgrade_accepted
+    - terminal.outcome
+- task_id: '483_03'
+  game_id: 483_fair-squares
+  difficulty: medium
+  game_url_suffix: ?task=483_03
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear all three waves of the first pink-world arena. You begin in the arena with an unmodified
+    gun.
+  progress_signal:
+    field: metrics.arena_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.arena_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.arena_progress
+    - game_state.world
+    - game_state.arena_index
+    - game_state.rounds_cleared
+    - game_state.player_hp
+    - game_state.ammo
+    - game_state.boss_hp
+    - game_state.upgrade_accepted
+    - terminal.outcome
+- task_id: '483_04'
+  game_id: 483_fair-squares
+  difficulty: medium
+  game_url_suffix: ?task=483_04
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'Accept the offered upgrade, then clear all three waves of the following red-world arena.
+    You begin between two portals after the first arena: walk into the left portal under the blue upgrade
+    text to accept both the player and enemy modifiers. The right portal marked "i''m good" declines this
+    offer.'
+  progress_signal:
+    field: metrics.upgrade_arena_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.upgrade_arena_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.upgrade_arena_progress
+    - game_state.world
+    - game_state.arena_index
+    - game_state.rounds_cleared
+    - game_state.player_hp
+    - game_state.ammo
+    - game_state.boss_hp
+    - game_state.upgrade_accepted
+    - terminal.outcome
+- task_id: '483_05'
+  game_id: 483_fair-squares
+  difficulty: medium
+  game_url_suffix: ?task=483_05
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Defeat the saw boss. You begin in its arena with three health points and an unmodified
+    gun. Its health is displayed at the top.
+  progress_signal:
+    field: metrics.boss_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.boss_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.boss_progress
+    - game_state.world
+    - game_state.arena_index
+    - game_state.rounds_cleared
+    - game_state.player_hp
+    - game_state.ammo
+    - game_state.boss_hp
+    - game_state.upgrade_accepted
+    - terminal.outcome
+- task_id: '483_06'
+  game_id: 483_fair-squares
+  difficulty: hard
+  game_url_suffix: ?task=483_06
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Defeat the orbit boss. You begin in its arena with three health points and an unmodified
+    gun. Its health is displayed at the top.
+  progress_signal:
+    field: metrics.boss_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.boss_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.boss_progress
+    - game_state.world
+    - game_state.arena_index
+    - game_state.rounds_cleared
+    - game_state.player_hp
+    - game_state.ammo
+    - game_state.boss_hp
+    - game_state.upgrade_accepted
+    - terminal.outcome
+- task_id: '483_07'
+  game_id: 483_fair-squares
+  difficulty: hard
+  game_url_suffix: ?task=483_07
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Defeat the final boss. You begin in its arena with three health points and an unmodified
+    gun. Its health is displayed at the top. This goal is complete when the boss is defeated; the later
+    ending is outside this task.
+  progress_signal:
+    field: metrics.boss_progress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.boss_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.boss_progress
+    - game_state.world
+    - game_state.arena_index
+    - game_state.rounds_cleared
+    - game_state.player_hp
+    - game_state.ammo
+    - game_state.boss_hp
+    - game_state.upgrade_accepted
+    - terminal.outcome

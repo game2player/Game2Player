@@ -1,0 +1,324 @@
+game:
+  game_name: 167_a-dance-of-fire-and-ice
+  url: https://fizzd.itch.io/a-dance-of-fire-and-ice
+  speed_multiplier: 1.0
+  width: 1200
+  height: 600
+  game_rules: 'A Dance of Fire and Ice is a one-button rhythm game. Two planets, one red and one
+
+    blue, travel along a path of stone tiles. One planet rests on the current tile
+
+    while the other orbits around it at the speed of the music. Pressing as the
+
+    orbiting planet passes over the next tile on the path lands it there; it becomes
+
+    the new pivot and the other planet starts orbiting. Reach the white finish circle
+
+    at the end of the track to clear the level.
+
+
+    The orbit speed is fixed by the song, so the time between presses depends on the
+
+    shape of the path: a straight run is an even beat, while corners and hairpin
+
+    turns bring the next tile around sooner or later. A press slightly off the beat
+
+    still counts, and timing feedback such as "Perfect!" appears near the planets.
+
+    Letting the orbiting planet swing well past the next tile fails the attempt, and a
+
+    badly timed press can fail it too.
+
+
+    Each level opens with its title at the top, "Get Ready" and a short countdown;
+
+    presses do nothing until the planet starts orbiting. The bar at the bottom left
+
+    shows the tile the planets are on out of the level''s last tile. After a failed
+
+    attempt the bar first says "missed" while the planets break apart, and presses
+
+    are ignored; about half a second later it adds "press Space to retry", and the
+
+    next press restarts the level from its first tile after a new countdown. Retries
+
+    are unlimited.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: You control when the orbiting planet lands on the next tile of the path.
+      control_notes: "- Tap Space just as the orbiting planet passes over the center of the next\n  tile\
+        \ to land it there. Use one short tap per tile; holding does nothing more.\n- Do not press during\
+        \ \"Get Ready\" and the countdown, and do not press again\n  until the other planet has swung\
+        \ around to the following tile.\n- After a failed attempt, wait until the bottom-left bar says\
+        \ \"press Space to\n  retry\" (about half a second), then tap Space once to restart the level\
+        \ and\n  wait for the countdown.\n"
+    controls:
+      allowed_keys:
+      - Space
+      allow_clicks: false
+      hold_duration: 0.05
+tasks:
+- task_id: '167_01'
+  game_id: 167_a-dance-of-fire-and-ice
+  game_url_suffix: ?task=167_01
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear level 1-1 'Playing it Straight'. Guide the planets along the straight track to the
+    white finish circle by tapping Space on every beat as the orbiting planet reaches the next tile. If
+    an attempt fails, tap Space to restart the level and keep trying.
+  progress_signal:
+    field: metrics.level_progress_pct
+    granularity: counter
+    coarse_reason: 1-1 is a straight 10-tile track; each tile is one press, the game's finest unit of
+      progress. Time-driven planet angle is not progress.
+  evaluator_config:
+    score_field: metrics.level_progress_pct
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress_pct
+    - metrics.best_floor
+    - metrics.last_floor
+    - game_state.level
+    - game_state.start_verified
+    - game_state.attempt_state
+    - game_state.current_floor
+    - game_state.misses
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '167_02'
+  game_id: 167_a-dance-of-fire-and-ice
+  game_url_suffix: ?task=167_02
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear level 1-2 'S-Bend', the first level whose track turns. Tap Space as the orbiting
+    planet reaches each next tile, including around the bends, until the planets reach the white finish
+    circle. If an attempt fails, tap Space to restart the level and keep trying.
+  progress_signal:
+    field: metrics.level_progress_pct
+    granularity: counter
+    coarse_reason: 1-2 is a short tutorial level; one press advances one tile, the finest gameplay unit.
+      Time-driven planet angle is not progress.
+  evaluator_config:
+    score_field: metrics.level_progress_pct
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress_pct
+    - metrics.best_floor
+    - metrics.last_floor
+    - game_state.level
+    - game_state.start_verified
+    - game_state.attempt_state
+    - game_state.current_floor
+    - game_state.misses
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '167_03'
+  game_id: 167_a-dance-of-fire-and-ice
+  game_url_suffix: ?task=167_03
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Clear level 1-X ''A Dance of Fire and Ice'', World 1''s final test: a long track mixing
+    straight runs and corners. Tap Space as the orbiting planet reaches each next tile until the planets
+    reach the white finish circle. If an attempt fails, tap Space to restart the level and keep trying.'
+  progress_signal:
+    field: metrics.level_progress_pct
+    granularity: dense
+    coarse_reason: 168 floors give fine per-press progress.
+  evaluator_config:
+    score_field: metrics.level_progress_pct
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress_pct
+    - metrics.best_floor
+    - metrics.last_floor
+    - game_state.level
+    - game_state.start_verified
+    - game_state.attempt_state
+    - game_state.current_floor
+    - game_state.misses
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '167_04'
+  game_id: 167_a-dance-of-fire-and-ice
+  game_url_suffix: ?task=167_04
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear level 2-1 'North and South are Always Off Beat', which adds tiles going up and down
+    that land between the beats. Tap Space as the orbiting planet reaches each next tile until the planets
+    reach the white finish circle. If an attempt fails, tap Space to restart the level and keep trying.
+  progress_signal:
+    field: metrics.level_progress_pct
+    granularity: counter
+    coarse_reason: A short tutorial level where one press is one tile, the finest gameplay unit. Time-driven
+      planet angle is not progress.
+  evaluator_config:
+    score_field: metrics.level_progress_pct
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress_pct
+    - metrics.best_floor
+    - metrics.last_floor
+    - game_state.level
+    - game_state.start_verified
+    - game_state.attempt_state
+    - game_state.current_floor
+    - game_state.misses
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '167_05'
+  game_id: 167_a-dance-of-fire-and-ice
+  game_url_suffix: ?task=167_05
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear level 2-3 'Upbeat', a World 2 tutorial on upbeat timing. Tap Space as the orbiting
+    planet reaches each next tile until the planets reach the white finish circle. If an attempt fails,
+    tap Space to restart the level and keep trying.
+  progress_signal:
+    field: metrics.level_progress_pct
+    granularity: counter
+    coarse_reason: A short tutorial level where one press is one tile, the finest gameplay unit. Time-driven
+      planet angle is not progress.
+  evaluator_config:
+    score_field: metrics.level_progress_pct
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress_pct
+    - metrics.best_floor
+    - metrics.last_floor
+    - game_state.level
+    - game_state.start_verified
+    - game_state.attempt_state
+    - game_state.current_floor
+    - game_state.misses
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '167_06'
+  game_id: 167_a-dance-of-fire-and-ice
+  game_url_suffix: ?task=167_06
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear level 2-X 'Offbeats', World 2's final test of off-beat up-and-down patterns on a
+    long track. Tap Space as the orbiting planet reaches each next tile until the planets reach the white
+    finish circle. If an attempt fails, tap Space to restart the level and keep trying.
+  progress_signal:
+    field: metrics.level_progress_pct
+    granularity: dense
+    coarse_reason: 146 floors give fine per-press progress.
+  evaluator_config:
+    score_field: metrics.level_progress_pct
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress_pct
+    - metrics.best_floor
+    - metrics.last_floor
+    - game_state.level
+    - game_state.start_verified
+    - game_state.attempt_state
+    - game_state.current_floor
+    - game_state.misses
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '167_07'
+  game_id: 167_a-dance-of-fire-and-ice
+  game_url_suffix: ?task=167_07
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear level 3-1 'Three Point Turns', a short track that doubles back on itself in hairpin
+    turns. Tap Space as the orbiting planet reaches each next tile until the planets reach the white finish
+    circle. If an attempt fails, tap Space to restart the level and keep trying.
+  progress_signal:
+    field: metrics.level_progress_pct
+    granularity: counter
+    coarse_reason: 18 floors, so 17 per-press increments; a tile is the finest gameplay unit. Time-driven
+      planet angle is not progress.
+  evaluator_config:
+    score_field: metrics.level_progress_pct
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress_pct
+    - metrics.best_floor
+    - metrics.last_floor
+    - game_state.level
+    - game_state.start_verified
+    - game_state.attempt_state
+    - game_state.current_floor
+    - game_state.misses
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '167_08'
+  game_id: 167_a-dance-of-fire-and-ice
+  game_url_suffix: ?task=167_08
+  evaluator_id: game_api_metric
+  difficulty: very_hard
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear level 3-X 'THE WIND-UP', the demo's final and fastest level, a long track with hairpin
+    turns. Tap Space as the orbiting planet reaches each next tile until the planets reach the white finish
+    circle. If an attempt fails, tap Space to restart the level and keep trying.
+  progress_signal:
+    field: metrics.level_progress_pct
+    granularity: dense
+    coarse_reason: 193 floors give fine per-press progress.
+  evaluator_config:
+    score_field: metrics.level_progress_pct
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: success
+    metrics_fields:
+    - metrics.level_progress_pct
+    - metrics.best_floor
+    - metrics.last_floor
+    - game_state.level
+    - game_state.start_verified
+    - game_state.attempt_state
+    - game_state.current_floor
+    - game_state.misses
+    - game_state.task_complete
+    - terminal.outcome

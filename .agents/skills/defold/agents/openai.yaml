@@ -1,0 +1,6 @@
+interface:
+  display_name: "Defold"
+  short_description: "Instrument a Defold HTML5 export"
+  default_prompt: "Use $defold for this Builder phase."
+policy:
+  allow_implicit_invocation: false

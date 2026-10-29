@@ -1,0 +1,165 @@
+game:
+  game_name: 491_bright-lancer
+  width: 960
+  height: 540
+  speed_multiplier: 1.0
+  game_rules: 'Bright Lancer is a top-down action adventure across floating islands. Defeat
+
+    the creatures on each island to open the way onward. Your lancer begins on
+
+    the airship at the left; the nearby signs introduce the island''s controls.
+
+    The circular gauge at the upper left shows your health.
+
+
+    Fight with aimed melee attacks and charged teleports through enemies. Quick
+
+    dashes help avoid attacks. Enemies can rush you or attack from a distance.
+
+    Teleporting beyond solid ground causes a fall and costs health. Breaking
+
+    dangerous crystals restores health. Losing all health kills the lancer.
+
+    Press R to restart the current level.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'Control the lancer: explore the islands, aim attacks, dash, and charge
+
+        teleports to cross gaps and defeat enemies.
+
+        '
+      control_notes: "- Hold W, A, S, or D to move up, left, down, or right. Combine keys for diagonals.\n\
+        - Move the mouse to aim; left-click toward an enemy to attack in that direction.\n  Click again\
+        \ for another attack as the attack animation finishes.\n- Tap Space while moving to dash in your\
+        \ movement direction. Let an attack\n  animation finish before starting a dash.\n- Point the mouse\
+        \ toward your destination, hold Shift to charge a teleport,\n  then release Shift to execute it.\
+        \ A longer hold goes farther; try 0.5 seconds\n  for a short teleport. The target marker previews\
+        \ the destination.\n- Press R to restart the current level, including after death.\n- Waiting\
+        \ lets enemies and animations continue; it does not attack.\n"
+    controls:
+      allowed_keys:
+      - w
+      - a
+      - s
+      - d
+      - Space
+      - Shift
+      - r
+      allow_clicks: true
+      hold_duration: 0.2
+tasks:
+- task_id: '491_01'
+  game_id: 491_bright-lancer
+  difficulty: easy
+  game_url_suffix: ?task=491_01
+  task_prompt: Defeat every enemy in Level 1. You begin a fresh level on the airship. Explore the island
+    and clear its combat area; the exit opens once the enemies are defeated. Use R to retry the level
+    if you die.
+  progress_signal:
+    field: metrics.combat_clear_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.combat_clear_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.combat_clear_progress
+    - metrics.enemies_remaining
+    - metrics.enemies_defeated
+    - metrics.health
+    - game_state.level
+    - game_state.exit_active
+    - game_state.player.dead
+    - terminal.outcome
+- task_id: '491_02'
+  game_id: 491_bright-lancer
+  difficulty: easy
+  game_url_suffix: ?task=491_02
+  task_prompt: Defeat every enemy in Level 2. You begin a fresh level on the airship. Explore the island
+    and clear its combat area; the exit opens once the enemies are defeated. Use R to retry the level
+    if you die.
+  progress_signal:
+    field: metrics.combat_clear_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.combat_clear_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.combat_clear_progress
+    - metrics.enemies_remaining
+    - metrics.enemies_defeated
+    - metrics.health
+    - game_state.level
+    - game_state.exit_active
+    - game_state.player.dead
+    - terminal.outcome
+- task_id: '491_03'
+  game_id: 491_bright-lancer
+  difficulty: medium
+  game_url_suffix: ?task=491_03
+  task_prompt: Defeat every enemy in Level 3. You begin a fresh level on the airship. Explore the island
+    and clear its combat area; the exit opens once the enemies are defeated. Use R to retry the level
+    if you die.
+  progress_signal:
+    field: metrics.combat_clear_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.combat_clear_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.combat_clear_progress
+    - metrics.enemies_remaining
+    - metrics.enemies_defeated
+    - metrics.health
+    - game_state.level
+    - game_state.exit_active
+    - game_state.player.dead
+    - terminal.outcome
+- task_id: '491_04'
+  game_id: 491_bright-lancer
+  difficulty: medium
+  game_url_suffix: ?task=491_04
+  task_prompt: Defeat every enemy in Level 4. You begin a fresh level on the airship. Explore the island
+    and clear its combat area; the exit opens once the enemies are defeated. Use R to retry the level
+    if you die.
+  progress_signal:
+    field: metrics.combat_clear_progress
+    granularity: dense
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  evaluator_config:
+    score_field: metrics.combat_clear_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.combat_clear_progress
+    - metrics.enemies_remaining
+    - metrics.enemies_defeated
+    - metrics.health
+    - game_state.level
+    - game_state.exit_active
+    - game_state.player.dead
+    - terminal.outcome

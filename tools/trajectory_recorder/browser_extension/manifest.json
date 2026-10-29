@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Trajectory Recorder",
+  "version": "0.1.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArqvrcCm9qzcDgU6Hv6Ug/kEQ3L3BL2WXMR6FkQnHnu/vR6wA150ink7oKBsV3vxh+2YWkvKy3rEcOiSoSv2+5SJDJ6LqS+aabg0FgROmrGK61BjA9++xQ5cf0nctAg9lqrZguvEGqTJoeYa5ov9tYIPHAV+9TXUPZ+Usa24WwYXwSLOmxuu5BLjXEcYf/StHDiRPXyqrWzaOjhyh4ZkmxQ9jAV04Qbxc0LDCADtu9wHAbjrGuzEQ4pAG8jIVZSrq+Y07WtSTVrQoo53xhmRf/S4APooN5H7MEounZwT+awHumIWWYDmQv/P4z0HpjJvtgCkmGOg4fQ3YwEozF2RLNwIDAQAB",
+  "description": "Records game tab video for local trajectory collection.",
+  "permissions": [
+    "tabCapture",
+    "tabs"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:*/*",
+    "http://localhost:*/*"
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  }
+}

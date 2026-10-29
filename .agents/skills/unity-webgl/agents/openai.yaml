@@ -1,0 +1,6 @@
+interface:
+  display_name: "Unity WebGL"
+  short_description: "Build one Unity WebGL game with the shared bridge"
+  default_prompt: "Use $unity-webgl for this confirmed Unity WebGL Builder phase."
+policy:
+  allow_implicit_invocation: false

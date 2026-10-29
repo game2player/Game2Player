@@ -1,0 +1,206 @@
+game:
+  game_name: 64_kingdom-rush
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  url: https://www.newgrounds.com/portal/view/587194
+  game_rules: "Kingdom Rush is a lane tower defence. This local build boots straight into the\nfirst level,\
+    \ Southport: there is no menu and no level select, and every episode\nstarts the same way - 20 lives,\
+    \ 265 gold, wave 0 of 7.\n\n## Objective\n- Enemies walk a single road from the top of the map toward\
+    \ the exit at the\n  right edge. Every enemy that reaches the exit costs one life.\n- Survive all\
+    \ 7 waves with at least one life left to win the level.\n- At 0 lives the battle is lost: the game\
+    \ pauses on a defeat screen and stays\n  there. It does not restart by itself; only a reset starts\
+    \ a fresh attempt.\n\n## Rules\n- Gold buys towers and upgrades. Enemies killed by your towers pay\
+    \ gold back.\n- Waves start on their own, roughly every 35 seconds once the previous wave is\n  cleared.\
+    \ Calling the next wave early with the bottom-right button pays a gold\n  bonus. You cannot slow the\
+    \ waves down.\n- A tower only fires at enemies in its range, so placement along the road is\n  what\
+    \ decides how many enemies die before the exit.\n- Winning a level awards 3 stars for losing at most\
+    \ 2 lives, 2 stars for 6-17\n  lives left, and 1 star for anything less.\n"
+  game_roles:
+  - name: commander
+    context:
+      role_description: 'You are the commander. Defend the road with towers and keep the enemies
+
+        from reaching the exit.
+
+        '
+      control_notes: "- Left click an empty build spot (a small flag marker standing on the\n  grass beside\
+        \ the road) to open its build menu, then left click a tower\n  to build it. Towers cost gold.\n\
+        - Left click a tower that is already built for its upgrade and sell\n  options.\n- Left click\
+        \ the enemy button in the bottom-right corner to call the next\n  wave early and collect bonus\
+        \ gold.\n- Press 1, 2, or 3 once those powers unlock to cast fireball,\n  reinforcements, or lightning\
+        \ anywhere on the map.\n- Press P to pause, and press it again to resume. Space or Escape cancels\n\
+        \  the power or rally point you are currently placing.\n- Click once on the game area before using\
+        \ the keyboard; Ruffle only\n  sends key presses after the game has taken focus.\n- Wait: towers\
+        \ fire on their own and the next wave arrives on a timer.\n"
+    controls:
+      allowed_keys:
+      - '1'
+      - '2'
+      - '3'
+      - p
+      allow_clicks: true
+      hold_duration: 0.2
+tasks:
+- task_id: '64_01'
+  game_id: 64_kingdom-rush
+  difficulty: easy
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 25
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Destroy at least 25 enemies in Southport.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.kills
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.kills
+    - metrics.towers
+    - metrics.waves
+    - metrics.won
+    - metrics.stars
+    - metrics.lives
+    - metrics.cash
+    - metrics.gold
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '64_02'
+  game_id: 64_kingdom-rush
+  difficulty: easy
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 4
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Build 4 towers in Southport.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.towers
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.towers
+    - metrics.kills
+    - metrics.waves
+    - metrics.won
+    - metrics.stars
+    - metrics.lives
+    - metrics.cash
+    - metrics.gold
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '64_03'
+  game_id: 64_kingdom-rush
+  difficulty: medium
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Survive 5 of Southport''s 7 waves.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.waves
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.waves
+    - metrics.kills
+    - metrics.towers
+    - metrics.won
+    - metrics.stars
+    - metrics.lives
+    - metrics.cash
+    - metrics.gold
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '64_04'
+  game_id: 64_kingdom-rush
+  difficulty: hard
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 60
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Destroy at least 60 enemies in Southport.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.kills
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.kills
+    - metrics.towers
+    - metrics.waves
+    - metrics.won
+    - metrics.stars
+    - metrics.lives
+    - metrics.cash
+    - metrics.gold
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '64_05'
+  game_id: 64_kingdom-rush
+  difficulty: hard
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 7
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Win the battle: clear all 7 waves of Southport.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.waves
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.waves
+    - metrics.won
+    - metrics.kills
+    - metrics.towers
+    - metrics.stars
+    - metrics.lives
+    - metrics.cash
+    - metrics.gold
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '64_06'
+  game_id: 64_kingdom-rush
+  difficulty: very_hard
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Win Southport with 3 stars, losing no more than 2 of your 20 lives.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.stars
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.stars
+    - metrics.won
+    - metrics.waves
+    - metrics.kills
+    - metrics.towers
+    - metrics.lives
+    - metrics.cash
+    - metrics.gold
+    - metrics.survived_s
+    - terminal.outcome
+    - terminal.isTerminal

@@ -1,0 +1,6 @@
+interface:
+  display_name: "HTML5 Capture"
+  short_description: "Capture and instrument one browser-native game"
+  default_prompt: "Use $html5-capture for this confirmed HTML5 Builder phase."
+policy:
+  allow_implicit_invocation: false

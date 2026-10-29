@@ -1,0 +1,241 @@
+game:
+  game_name: 300_handshakes
+  speed_multiplier: 1.0
+  width: 1200
+  height: 800
+  game_rules: 'Handshakes is a grid puzzle about bringing two hands together for a handshake.
+
+    Each episode starts directly in its first puzzle. The number and puzzle name
+
+    appear below the board. Clear each puzzle, then continue to the next one.
+
+
+    Each hand extends an arm from its base. The number on its base is the remaining
+
+    arm length. Moving back along its own arm retracts it and restores length;
+
+    walls and other pieces can block a move. Later puzzles involve buttons and doors,
+
+    pushing crates or the other base, and severed arms. A closing door can cut an arm,
+
+    and detached pieces can still be pushed. Undo or restart if you get stuck.
+
+    There is no time limit. Use handshakes to clear puzzles; do not use Skip Level.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: Control both hands, coordinating their routes and manipulating the board to make
+        them shake hands.
+      control_notes: "- Press W, A, S, or D to move the WASD hand up, left, down, or right by one cell.\n\
+        - Press an arrow key to move the other hand in that direction by one cell.\n  Holding a movement\
+        \ key repeats movement; use separate taps for precise moves.\n- Press E to undo the last move.\
+        \ Press R to restart the current puzzle.\n- After a handshake, wait for the continuation prompt\
+        \ and press Space to advance.\n- Press Escape or Tab to open or close the options menu. Close\
+        \ it to resume play.\n- Allow the movement or level transition to finish before acting again.\n"
+    controls:
+      allowed_keys:
+      - w
+      - a
+      - s
+      - d
+      - ArrowUp
+      - ArrowLeft
+      - ArrowDown
+      - ArrowRight
+      - e
+      - r
+      - Space
+      - Escape
+      - Tab
+      allow_clicks: false
+      hold_duration: 0.05
+tasks:
+- task_id: '300_01'
+  game_id: 300_handshakes
+  difficulty: easy
+  game_url_suffix: ?task=300_01
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  progress_signal:
+    field: metrics.puzzles_completed
+    granularity: counter
+    coarse_reason: Five native puzzle completions provide four intermediate milestones. Hand-distance
+      scoring was rejected after real movement showed a necessary opening move increases separation; retraction
+      and mechanism manipulation also make proximity misleading.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Complete puzzles 0 through 4, from “first steps” through “straight”. You begin in puzzle
+    0. Bring the two hands together in each puzzle, then press Space at the continuation prompt. Finish
+    every puzzle in this sequence by a handshake; do not use Skip Level. You may undo moves with E and
+    restart the current puzzle with R.
+  evaluator_config:
+    score_field: metrics.puzzles_completed
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.puzzles_completed
+    - game_state.level
+    - game_state.level_name
+    - game_state.completed_levels
+    - game_state.start_verified
+    - game_state.awaiting_continue
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '300_02'
+  game_id: 300_handshakes
+  difficulty: medium
+  game_url_suffix: ?task=300_02
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  progress_signal:
+    field: metrics.puzzles_completed
+    granularity: counter
+    coarse_reason: Five puzzle completions supply intermediate progress. Raw hand proximity cannot reliably
+      measure progress through switches, detached arms, and required detours.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Complete puzzles 5 through 9, from “purple buttons” through “just short”. You begin in
+    puzzle 5. Bring the two hands together in each puzzle, then press Space at the continuation prompt.
+    Finish every puzzle in this sequence by a handshake; do not use Skip Level. You may undo moves with
+    E and restart the current puzzle with R.
+  evaluator_config:
+    score_field: metrics.puzzles_completed
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.puzzles_completed
+    - game_state.level
+    - game_state.level_name
+    - game_state.completed_levels
+    - game_state.start_verified
+    - game_state.awaiting_continue
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '300_03'
+  game_id: 300_handshakes
+  difficulty: medium
+  game_url_suffix: ?task=300_03
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  progress_signal:
+    field: metrics.puzzles_completed
+    granularity: counter
+    coarse_reason: Five native puzzle-clear milestones provide partial credit. Hand separation and arm
+      extension do not preserve progress semantics during pushing, retraction, and object placement.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Complete puzzles 10 through 14, from “sharing is caring” through “put the thing on the
+    thing”. You begin in puzzle 10. Bring the two hands together in each puzzle, then press Space at the
+    continuation prompt. Finish every puzzle in this sequence by a handshake; do not use Skip Level. You
+    may undo moves with E and restart the current puzzle with R.
+  evaluator_config:
+    score_field: metrics.puzzles_completed
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.puzzles_completed
+    - game_state.level
+    - game_state.level_name
+    - game_state.completed_levels
+    - game_state.start_verified
+    - game_state.awaiting_continue
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '300_04'
+  game_id: 300_handshakes
+  difficulty: hard
+  game_url_suffix: ?task=300_04
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  progress_signal:
+    field: metrics.puzzles_completed
+    granularity: counter
+    coarse_reason: The sequence supplies four intermediate puzzle-clear milestones before success. Geometric
+      proximity cannot reliably grade the required preparation and coordinated object manipulation.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Complete puzzles 15 through 19, from “lift me up” through “preparation is key”. You begin
+    in puzzle 15. Bring the two hands together in each puzzle, then press Space at the continuation prompt.
+    Finish every puzzle in this sequence by a handshake; do not use Skip Level. You may undo moves with
+    E and restart the current puzzle with R.
+  evaluator_config:
+    score_field: metrics.puzzles_completed
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.puzzles_completed
+    - game_state.level
+    - game_state.level_name
+    - game_state.completed_levels
+    - game_state.start_verified
+    - game_state.awaiting_continue
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '300_05'
+  game_id: 300_handshakes
+  difficulty: hard
+  game_url_suffix: ?task=300_05
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  progress_signal:
+    field: metrics.puzzles_completed
+    granularity: counter
+    coarse_reason: Five independent puzzle-clear events provide meaningful intermediate credit. Hand distance
+      cannot distinguish useful door manipulation from premature approach or necessary retreat.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Complete puzzles 20 through 24, from “removal service” through “eegnrs”. You begin in puzzle
+    20. Bring the two hands together in each puzzle, then press Space at the continuation prompt. Finish
+    every puzzle in this sequence by a handshake; do not use Skip Level. You may undo moves with E and
+    restart the current puzzle with R.
+  evaluator_config:
+    score_field: metrics.puzzles_completed
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.puzzles_completed
+    - game_state.level
+    - game_state.level_name
+    - game_state.completed_levels
+    - game_state.start_verified
+    - game_state.awaiting_continue
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '300_06'
+  game_id: 300_handshakes
+  difficulty: hard
+  game_url_suffix: ?task=300_06
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  progress_signal:
+    field: metrics.puzzles_completed
+    granularity: counter
+    coarse_reason: Five final-puzzle completions provide four intermediate milestones. Raw movement, proximity,
+      and crate displacement cannot reliably measure these puzzles' combined mechanical objectives.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Complete puzzles 25 through 29, from “use and discard” through “thanks for playing!”. You
+    begin in puzzle 25. Bring the two hands together in each puzzle, then press Space at the continuation
+    prompt. Finish every puzzle in this sequence by a handshake; do not use Skip Level. You may undo moves
+    with E and restart the current puzzle with R.
+  evaluator_config:
+    score_field: metrics.puzzles_completed
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - metrics.puzzles_completed
+    - game_state.level
+    - game_state.level_name
+    - game_state.completed_levels
+    - game_state.start_verified
+    - game_state.awaiting_continue
+    - terminal.isTerminal
+    - terminal.outcome

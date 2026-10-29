@@ -1,0 +1,236 @@
+game:
+  game_name: 61_gun-knight
+  width: 512
+  height: 832
+  speed_multiplier: 1.0
+  game_rules: 'Gun Knight is a top-down dungeon shooter. Clear enemies to open the exit at
+
+    the top of each floor, then walk through it to descend. You begin in an empty
+
+    entrance room marked 0. The number over the exit identifies the current floor.
+
+    Slimes can split into smaller enemies; those must also be defeated. Avoid
+
+    enemy bodies, projectiles, and floor spikes. Hearts at the top left show health;
+
+    losing all health ends the attempt.
+
+
+    Your gun has a finite magazine, shown down the right edge. It reloads automatically
+
+    when empty, or you can reload early. Gun parts replace one attachment slot and
+
+    change how the weapon fires or behaves. Move directly onto a part and press E
+
+    to exchange it; the old part drops on the floor. Nearby parts display their names
+
+    and effects. Gold is collected by approaching dropped coins and is shown at the
+
+    bottom left. Every fifth floor opens a shop passage on the left; stand on an
+
+    offered attachment and press E to buy it if you can afford the displayed price.
+
+    Gold is capped at 100. Bosses appear every tenth floor, with a health bar on screen.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You control the Gun Knight''s movement and gun. Aim with the mouse while
+
+        moving, shoot enemies, and choose which dropped or shop parts to equip.
+
+        '
+      control_notes: "- Hold W/A/S/D to move up/left/down/right. Combine keys to move diagonally.\n- Move\
+        \ the mouse to aim the gun.\n- With the starting semi-automatic trigger, hold the left mouse button\
+        \ for\n  about 0.25 seconds, then release. Use a new press for each shot.\n- With an automatic\
+        \ trigger, hold the left mouse button for about one second\n  or longer for sustained fire; release\
+        \ to stop shooting.\n- With a charged trigger, hold the left mouse button to charge, then release\
+        \ to fire.\n- Press R to reload early; right mouse held briefly also reloads.\n  Reloading takes\
+        \ time, and an empty magazine reloads automatically.\n- Stand directly on a dropped part or shop\
+        \ attachment and press E to equip\n  or purchase it. Merely standing nearby does not pick up gun\
+        \ parts.\n"
+    controls:
+      allowed_keys:
+      - w
+      - a
+      - s
+      - d
+      - r
+      - e
+      allow_clicks: true
+      hold_duration: 0.25
+tasks:
+- task_id: '61_01'
+  game_id: 61_gun-knight
+  game_url_suffix: ?task=61_01
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear the first three combat floors in one run. You start in the empty entrance room marked
+    0. Enter floor 1, defeat every enemy (including smaller slimes), and repeat through floor 3. Opening
+    the exit after clearing floor 3 completes the goal; entering floor 3 alone does not.
+  progress_signal:
+    field: metrics.floors_cleared
+    granularity: counter
+    coarse_reason: Completed combat floors are natural discrete milestones.
+  evaluator_config:
+    score_field: metrics.floors_cleared
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - game_state.floor
+    - game_state.health
+    - game_state.gold
+    - game_state.player.ammo
+    - game_state.boss.health
+    - game_state.boss.first_defeated
+    - game_state.boss.second_defeated
+    - metrics.floors_cleared
+    - metrics.attachment_slots_replaced
+    - metrics.shop_purchases
+    - metrics.first_boss_progress
+    - metrics.second_boss_progress
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '61_02'
+  game_id: 61_gun-knight
+  game_url_suffix: ?task=61_02
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_start_score_field: 0
+  task_target_score_field: 2
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Replace gun parts in two different attachment slots during one run. Pick up dropped parts
+    or buy shop parts by standing directly on them and pressing E. Replacing the same slot repeatedly
+    counts only once. The available slots are magazine, trigger, grip, barrel, stock, scope, and ammunition.
+  progress_signal:
+    field: metrics.attachment_slots_replaced
+    granularity: counter
+    coarse_reason: Each successful exchange in a new attachment category is a discrete intermediate achievement.
+  evaluator_config:
+    score_field: metrics.attachment_slots_replaced
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - game_state.floor
+    - game_state.health
+    - game_state.gold
+    - game_state.player.ammo
+    - game_state.boss.health
+    - game_state.boss.first_defeated
+    - game_state.boss.second_defeated
+    - metrics.floors_cleared
+    - metrics.attachment_slots_replaced
+    - metrics.shop_purchases
+    - metrics.first_boss_progress
+    - metrics.second_boss_progress
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '61_03'
+  game_id: 61_gun-knight
+  game_url_suffix: ?task=61_03
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 2
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Purchase two gun attachments from shops during one run. Collect gold and use the left shop
+    passage on every fifth floor. Stand directly on an attachment and press E when you can afford its
+    displayed price. Free part pickups and purchases of hearts do not count.
+  progress_signal:
+    field: metrics.shop_purchases
+    granularity: counter
+    coarse_reason: The two paid transactions provide separate, objective partial-credit milestones.
+  evaluator_config:
+    score_field: metrics.shop_purchases
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - game_state.floor
+    - game_state.health
+    - game_state.gold
+    - game_state.player.ammo
+    - game_state.boss.health
+    - game_state.boss.first_defeated
+    - game_state.boss.second_defeated
+    - metrics.floors_cleared
+    - metrics.attachment_slots_replaced
+    - metrics.shop_purchases
+    - metrics.first_boss_progress
+    - metrics.second_boss_progress
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '61_04'
+  game_id: 61_gun-knight
+  game_url_suffix: ?task=61_04
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_start_score_field: 0
+  task_target_score_field: 10
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Defeat Slime King, the first boss on floor 10, in one run from the fresh entrance. Clearing
+    the preceding floors and removing the boss's health earn progress. Merely entering floor 10 does not
+    complete the goal; Slime King must be defeated.
+  progress_signal:
+    field: metrics.first_boss_progress
+    granularity: continuous
+  evaluator_config:
+    score_field: metrics.first_boss_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - game_state.floor
+    - game_state.health
+    - game_state.gold
+    - game_state.player.ammo
+    - game_state.boss.health
+    - game_state.boss.first_defeated
+    - game_state.boss.second_defeated
+    - metrics.floors_cleared
+    - metrics.attachment_slots_replaced
+    - metrics.shop_purchases
+    - metrics.first_boss_progress
+    - metrics.second_boss_progress
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '61_05'
+  game_id: 61_gun-knight
+  game_url_suffix: ?task=61_05
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 20
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Defeat Mage, the second boss on floor 20, in one run from the fresh entrance. Clear the
+    preceding floors, including the first boss floor, and defeat Mage. Intermediate floor clears and damage
+    to Mage earn progress; merely reaching floor 20 does not complete the goal.
+  progress_signal:
+    field: metrics.second_boss_progress
+    granularity: continuous
+  evaluator_config:
+    score_field: metrics.second_boss_progress
+    end_field: terminal.isTerminal
+    terminal_status: success
+    metrics_fields:
+    - game_state.floor
+    - game_state.health
+    - game_state.gold
+    - game_state.player.ammo
+    - game_state.boss.health
+    - game_state.boss.first_defeated
+    - game_state.boss.second_defeated
+    - metrics.floors_cleared
+    - metrics.attachment_slots_replaced
+    - metrics.shop_purchases
+    - metrics.first_boss_progress
+    - metrics.second_boss_progress
+    - terminal.outcome
+    - terminal.isTerminal

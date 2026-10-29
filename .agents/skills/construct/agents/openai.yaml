@@ -1,0 +1,6 @@
+interface:
+  display_name: "Construct"
+  short_description: "Instrument a Construct 2/3 HTML5 export"
+  default_prompt: "Use $construct for this Builder phase."
+policy:
+  allow_implicit_invocation: false

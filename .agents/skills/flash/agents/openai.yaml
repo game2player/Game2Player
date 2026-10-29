@@ -1,0 +1,6 @@
+interface:
+  display_name: "Flash"
+  short_description: "Build one SWF game with local Ruffle"
+  default_prompt: "Use $flash for this confirmed Flash Builder phase."
+policy:
+  allow_implicit_invocation: false

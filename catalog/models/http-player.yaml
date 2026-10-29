@@ -1,0 +1,12 @@
+# Replace model and endpoint with your OpenAI-compatible vision service.
+# Set codec: qwen for the normalized-coordinate <tool_call> text protocol.
+# For an authenticated service, add api_key_env: [GAME2PLAYER_API_KEY].
+model_name: http-player
+backend: http_chat
+codec: canonical_tool
+model: YOUR_VISION_MODEL
+endpoint: http://127.0.0.1:8000/v1/chat/completions
+max_tokens: 4096
+request_timeout: 300
+thinking:
+  off: {}

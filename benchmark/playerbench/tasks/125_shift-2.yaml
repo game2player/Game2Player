@@ -1,0 +1,250 @@
+game:
+  game_name: 125_shift-2
+  speed_multiplier: 1.0
+  width: 500
+  height: 500
+  url: https://armorgames.com/play/964/shift-2
+  game_rules: "You are playing SHIFT 2, a black-and-white puzzle platformer. Each chamber is\none single-screen\
+    \ room made of black and white terrain. The\nbuild drops you straight into the chamber named by the\
+    \ task; it never shows\nthe title menu.\n\n## Game Objective\n- Reach the exit door of each chamber.\
+    \ Clearing a chamber loads the next one\n  immediately, and chamber progress only lasts while the\
+    \ page stays loaded.\n\n## Game Rules\n- Pressing Shift while standing fully on a black/white terrain\
+    \ surface turns\n  the whole room 180 degrees and swaps which colour is solid. Shift cannot\n  cross\
+    \ the outer room boundary, grey check-blocks, or door frames, and cannot\n  repeat while a flip is\
+    \ playing.\n- When your figure is black, black terrain is solid and white space is empty.\n  When\
+    \ your figure turns white, white terrain is solid and black space is empty.\n- Doors are rotating\
+    \ black barriers that block a path. Picking up a key of the\n  matching colour rotates the linked\
+    \ door half a turn and removes the key.\n- Round grey switches toggle grey check-blocks on and off,\
+    \ opening and closing\n  passages.\n- Spikes kill on contact: the screen splats and the same chamber\
+    \ restarts\n  automatically about 3–4 seconds later at the chamber's start point. Cleared\n  chambers\
+    \ are kept; there is no life count.\n- Some chambers display joke text, including a fake \"less than\
+    \ N seconds\"\n  countdown and taunts. They are gags that resolve themselves and never end\n  the\
+    \ run.\n- Nothing is timed against you. The run ends only at the game's ending screen,\n  which appears\
+    \ after the final campaign chamber is cleared.\n"
+  game_roles:
+  - name: subject
+    context:
+      role_description: 'You control the small walking figure inside one chamber. Run, jump and
+
+        invert gravity to get from the chamber''s start point to its exit door.
+
+        '
+      control_notes: "- ArrowLeft / ArrowRight: hold to run in that direction. The game\n  samples the\
+        \ keyboard once per frame at 25 fps, so hold for a few\n  tenths of a second and repeat; a very\
+        \ short tap can fall between\n  frames and do nothing.\n- Space: jump; fixed height, and only\
+        \ while standing on a surface. Hold\n  it for about a quarter of a second for a reliable input.\n\
+        - Shift: invert gravity and swap the solid colour. Stand fully on a\n  black/white terrain surface,\
+        \ away from doors. Outer room borders and\n  grey check-blocks cannot be crossed with Shift. The\
+        \ room rotates for\n  about a second, then left and right stay the same on screen. If nothing\n\
+        \  happens, move onto a clear stretch of terrain and press Shift again.\n- p: pause or resume.\
+        \ The screen freezes while paused.\n- Wait: after a death on spikes, the same chamber restarts\
+        \ by itself in\n  about 3–4 seconds. After clearing a chamber, the next room loads in\n  about\
+        \ two seconds. There is nothing to press for either transition.\n- The mouse is not used anywhere\
+        \ in this build.\n"
+    controls:
+      allowed_keys:
+      - ArrowLeft
+      - ArrowRight
+      - Space
+      - Shift
+      - p
+      allow_clicks: false
+      hold_duration: 0.5
+tasks:
+- task_id: '125_01'
+  game_id: 125_shift-2
+  game_url_suffix: ?level=0
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: easy
+  progress_signal:
+    field: metrics.chamber_approach_progress
+    granularity: continuous
+  task_prompt: 'Clear chamber 1 by reaching its exit door. ArrowLeft/ArrowRight run, Space jumps, Shift
+    inverts gravity.
+
+    Partial credit tracks your best approach to the exit; full credit requires clearing the chamber.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.chamber_approach_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.chamber_approach_progress
+    - metrics.chambers_cleared
+    - metrics.play_time_s
+    - metrics.deaths
+    - metrics.on_ground
+    - metrics.inverted
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '125_02'
+  game_id: 125_shift-2
+  game_url_suffix: ?level=0
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: easy
+  task_prompt: 'Clear the first three chambers of the campaign in one run. Each chamber''s exit door leads
+    straight to the next room.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.chambers_cleared
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.chambers_cleared
+    - metrics.play_time_s
+    - metrics.deaths
+    - metrics.on_ground
+    - metrics.inverted
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '125_03'
+  game_id: 125_shift-2
+  game_url_suffix: ?level=0
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 6
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Clear the first six chambers of the campaign in one run.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.chambers_cleared
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.chambers_cleared
+    - metrics.play_time_s
+    - metrics.deaths
+    - metrics.on_ground
+    - metrics.inverted
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '125_04'
+  game_id: 125_shift-2
+  game_url_suffix: ?level=0
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 18
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: very_hard
+  task_prompt: 'Clear all 18 chambers of the campaign in one run and reach the ending screen.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.chambers_cleared
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.chambers_cleared
+    - metrics.play_time_s
+    - metrics.deaths
+    - metrics.on_ground
+    - metrics.inverted
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '125_05'
+  game_id: 125_shift-2
+  game_url_suffix: ?level=8
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  progress_signal:
+    field: metrics.chamber_approach_progress
+    granularity: continuous
+  task_prompt: 'Clear chamber 9, starting directly inside it.
+
+    Partial credit tracks your best approach to the exit; full credit requires clearing the chamber.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.chamber_approach_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.chamber_approach_progress
+    - metrics.chambers_cleared
+    - metrics.play_time_s
+    - metrics.deaths
+    - metrics.on_ground
+    - metrics.inverted
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '125_06'
+  game_id: 125_shift-2
+  game_url_suffix: ?level=14
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: hard
+  progress_signal:
+    field: metrics.chamber_approach_progress
+    granularity: continuous
+  task_prompt: 'Clear chamber 15, starting directly inside it.
+
+    Partial credit tracks your best approach to the exit; full credit requires clearing the chamber.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.chamber_approach_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.chamber_approach_progress
+    - metrics.chambers_cleared
+    - metrics.play_time_s
+    - metrics.deaths
+    - metrics.on_ground
+    - metrics.inverted
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '125_07'
+  game_id: 125_shift-2
+  game_url_suffix: ?level=17
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: hard
+  progress_signal:
+    field: metrics.chamber_approach_progress
+    granularity: continuous
+  task_prompt: 'Clear the final chamber 18, starting directly inside it. Its exit triggers the game''s
+    ending.
+
+    Partial credit tracks your best approach to the switch and five key regions, then your return toward
+    the exit after visiting those key regions. Region visits measure approach, not key collection. Full
+    credit requires clearing the final chamber and triggering the ending.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.chamber_approach_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.chamber_approach_progress
+    - metrics.chambers_cleared
+    - metrics.play_time_s
+    - metrics.deaths
+    - metrics.on_ground
+    - metrics.inverted
+    - terminal.outcome
+    - terminal.isTerminal

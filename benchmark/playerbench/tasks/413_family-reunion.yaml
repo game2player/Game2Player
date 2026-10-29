@@ -1,0 +1,148 @@
+game:
+  game_name: 413_family-reunion
+  url: https://waibinin.itch.io/family-reunion
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  game_rules: 'Family Reunion: The Appetizer is a solo dinner-time life simulation. Get through
+
+    dinner by choosing small actions, spending time, and responding to your family.
+
+    The dinner clock runs during play; interactions can also change its pace and the
+
+    table''s ambience, alcohol, and attention. The demo includes character-specific
+
+    actions, family interruptions, and short expeditions around the house.
+
+    '
+  game_roles:
+  - name: dinner_guest
+    context:
+      role_description: 'You are a child at a family dinner. Choose how to spend the evening, keep an
+
+        eye on the table and clock, and explore the house when the family is distracted.
+
+        '
+      control_notes: "- Click a visible action button to use it. Chatty begins with Small Talk and\n \
+        \ Joke; Adventurer begins with Toss.\n- New ideas and items are announced in a short notice over\
+        \ your character\n  card. Use that cue when an idea unlocks; the Mind and Pocket selectors may\n\
+        \  not be visible during a fresh run.\n- When the family is distracted, click Explore on the right\
+        \ to start an\n  expedition. In an ordinary room, click the large picture to explore it and\n\
+        \  continue. A special room may show a highlighted item; clicking that item\n  collects it and\
+        \ ends the outing. If a special room does not advance when\n  you click the picture, use its visible\
+        \ item hotspot to return to dinner,\n  then start another outing.\n- When a family interruption\
+        \ appears, choose one of its reply buttons. Replies\n  marked [CONVERSATION] use conversation.\n"
+    controls:
+      allowed_keys: []
+      allow_clicks: true
+tasks:
+- task_id: '413_01'
+  game_id: 413_family-reunion
+  game_url_suffix: ?task=413_01
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 10
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'In the fresh Chatty dinner, use Small Talk at least ten times. Watch for the notice
+
+    over your character card announcing Storyteller as a new Mind idea; if it appears
+
+    before your tenth use, keep going until you have both made ten uses and seen the
+
+    notice.
+
+    '
+  progress_signal:
+    field: game_state.small_talks
+    granularity: counter
+    coarse_reason: One Small Talk use is an atomic action; the game records one count per use and has
+      no finer progress state.
+    provenance: internal
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.small_talks
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - game_state.task_start_matches
+    - game_state.character_class
+    - game_state.small_talks
+    - game_state.storyteller_unlocked
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '413_02'
+  game_id: 413_family-reunion
+  game_url_suffix: ?task=413_02
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 5
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'As Adventurer, explore five rooms during one expedition. When the family becomes
+
+    distracted and Explore appears on the right, click it. In ordinary rooms, click the
+
+    large picture to continue. Some special rooms do not advance on a picture click and
+
+    show a highlighted item hotspot; clicking that item collects it and ends the outing.
+
+    If that happens, start a fresh outing for another five-room attempt. Adventurer has
+
+    five exploration turns before the next ordinary room click ends the outing.
+
+    '
+  progress_signal:
+    field: game_state.adventurer_rooms_explored
+    granularity: counter
+    coarse_reason: One room visit is the game's atomic exploration step; there is no finer progress state
+      within a visit.
+    provenance: internal
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.adventurer_rooms_explored
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - game_state.task_start_matches
+    - game_state.character_class
+    - game_state.adventurer_rooms_explored
+    - game_state.exploration_energy
+    - terminal.isTerminal
+    - terminal.outcome
+- task_id: '413_03'
+  game_id: 413_family-reunion
+  game_url_suffix: ?task=413_03
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 2
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'As Chatty, click an empty part of the dinner area ten times quickly, within three
+
+    seconds, to bring up Mom''s intervention. Then choose one of the replies marked
+
+    [CONVERSATION].
+
+    '
+  progress_signal:
+    field: game_state.mom_intervention_progress
+    granularity: counter
+    coarse_reason: The task has two discrete game events—opening the intervention and choosing one reply—with
+      no finer progress inside either event.
+    provenance: engine_hook
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.mom_intervention_progress
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - game_state.task_start_matches
+    - game_state.character_class
+    - game_state.mom_intervention_progress
+    - game_state.mom_interventions
+    - terminal.isTerminal
+    - terminal.outcome

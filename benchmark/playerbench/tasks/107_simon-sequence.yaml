@@ -1,0 +1,218 @@
+game:
+  game_name: 107_simon-sequence
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  url: benchmark/playerbench/originals/107_simon-sequence
+  game_rules: 'You are playing Simon Sequence, a deterministic signal-memory game.
+
+
+    ## Objective
+
+    - Repeat the displayed color sequence in exact order.
+
+
+    ## Rules
+
+    - The assigned sequence is displayed before input begins and is public to the player.
+
+    - Click one color at a time from left to right.
+
+    - A wrong color fails the attempt; the task ends successfully after the final correct color.
+
+    - The assigned level is selected by the task URL and starts immediately.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You are repeating the displayed signal. Memorize its order and enter it without
+        mistakes.
+
+        '
+      control_notes: '- Left-click the color buttons.
+
+        - Follow the numbered signal chips from left to right.
+
+        - The assigned level starts immediately; do not select another level.
+
+        '
+    controls:
+      allowed_keys: []
+      allow_clicks: true
+      hold_duration: 0.12
+tasks:
+- task_id: '107_01'
+  game_id: 107_simon-sequence
+  game_url_suffix: ?level=1
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Repeat Warm Signal exactly.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.level_name
+    - game_state.sequence_length
+    - game_state.input_index
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.score
+    - metrics.objective_complete
+    - metrics.failed
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '107_02'
+  game_id: 107_simon-sequence
+  game_url_suffix: ?level=2
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Repeat Rose Circuit exactly.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.level_name
+    - game_state.sequence_length
+    - game_state.input_index
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.score
+    - metrics.objective_complete
+    - metrics.failed
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '107_03'
+  game_id: 107_simon-sequence
+  game_url_suffix: ?level=3
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Repeat Tide Code exactly.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.level_name
+    - game_state.sequence_length
+    - game_state.input_index
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.score
+    - metrics.objective_complete
+    - metrics.failed
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '107_04'
+  game_id: 107_simon-sequence
+  game_url_suffix: ?level=4
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Repeat Prism Relay exactly.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.level_name
+    - game_state.sequence_length
+    - game_state.input_index
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.score
+    - metrics.objective_complete
+    - metrics.failed
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '107_05'
+  game_id: 107_simon-sequence
+  game_url_suffix: ?level=5
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Repeat Night Pulse exactly.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.level_name
+    - game_state.sequence_length
+    - game_state.input_index
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.score
+    - metrics.objective_complete
+    - metrics.failed
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal
+- task_id: '107_06'
+  game_id: 107_simon-sequence
+  game_url_suffix: ?level=6
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_target_score_field: 100
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Repeat Aurora Test exactly.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.task_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.level
+    - game_state.level_name
+    - game_state.sequence_length
+    - game_state.input_index
+    - game_state.last_action
+    - metrics.task_progress
+    - metrics.score
+    - metrics.objective_complete
+    - metrics.failed
+    - terminal.outcome
+    - terminal.reason
+    - terminal.isTerminal

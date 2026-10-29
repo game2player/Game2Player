@@ -1,0 +1,113 @@
+game:
+  game_name: 190_bonnies-bakery
+  url: https://aislebsoupid.itch.io/bonnies-bakery
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  game_rules: 'Bonnie''s Bakery starts in its daytime cooking shift, with the tutorial skipped.
+
+    Bake food in the preparation view, then serve customers in the overhead bakery.
+
+    Customers show their requested food in a bubble; the bar above them is their
+
+    patience. Correct orders earn score. Customers who run out of patience leave
+
+    and shorten the shift. The long bar along the bottom shows time remaining.
+
+    When time runs out, the cooking shift ends; the game can then show an ending
+
+    or continue toward its night section.
+
+
+    There are four recipes: red velvet cake, pastry, donut, and bun. The recipe book
+
+    in the preparation view shows their ingredients and tools. Follow the recipe''s
+
+    order; ingredients and tools are dragged onto the appropriate equipment.
+
+    Finished food is carried by Bonnie. The three plates on the central counter
+
+    store food; picking up another dish can exchange the carried and plated food.
+
+    The order board in the preparation view summarizes outstanding orders.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You control Bonnie''s baking, food storage, and customer service during
+
+        the daytime shift.
+
+        '
+      control_notes: "Use the mouse. For objects and buttons, hold the left mouse button on\nthe target\
+        \ for 0.15 seconds and release (click_hold).\n- In the overhead bakery, activate the preparation\
+        \ counter on the right\n  to open the kitchen. Activate a serving plate to put down or pick up\n\
+        \  food. Activate a customer while carrying the food they requested to\n  serve them; Bonnie moves\
+        \ to the customer automatically.\n- In the kitchen, drag ingredients from the labeled bottom shelf\
+        \ to the\n  mixer or cutting board, following the recipe book. Drag tools and food\n  between\
+        \ work surfaces as the recipe requires. Use drags lasting about\n  0.5 seconds, releasing over\
+        \ the destination.\n- Activate the recipe book at the lower right to read recipes, and its\n \
+        \ visible arrows to change pages. Close it with its X. The X at the top\n  right of the kitchen\
+        \ returns to the overhead bakery.\n- Activate the Mix button to run the mixer. Baking and Bonnie's\
+        \ walking\n  take time; wait for the animation to finish before the next action.\n- The pause\
+        \ icon at the upper left opens the pause menu.\n"
+    controls:
+      allowed_keys: []
+      allow_clicks: true
+      hold_duration: 0.5
+tasks:
+- task_id: '190_01'
+  game_id: 190_bonnies-bakery
+  game_url_suffix: ?task=190_01
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'Prepare one red velvet cake and place it on one of the three serving plates
+
+    on the central counter. The shift begins fresh with the tutorial skipped.
+
+    '
+  evaluator_config:
+    score_field: metrics.red_velvet_cakes_prepared
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.red_velvet_cakes_prepared
+    - metrics.orders_served
+    - game_state.score
+    - game_state.carried_dish
+    - game_state.plates
+    - game_state.shift_finished
+    - terminal.outcome
+- task_id: '190_02'
+  game_id: 190_bonnies-bakery
+  game_url_suffix: ?task=190_02
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'Successfully fulfill three customer orders during this fresh cooking shift.
+
+    Match the food shown in each customer''s order bubble and serve it before
+
+    their patience runs out. The tutorial is already skipped.
+
+    '
+  evaluator_config:
+    score_field: metrics.orders_served
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.orders_served
+    - metrics.red_velvet_cakes_prepared
+    - game_state.score
+    - game_state.carried_dish
+    - game_state.plates
+    - game_state.shift_finished
+    - terminal.outcome

@@ -1,0 +1,29 @@
+model_name: game2player-4b
+backend: http_chat
+codec: qwen
+model: game2player-4b
+max_tokens: 512
+request_timeout: 1800
+thinking:
+  'off':
+    chat_template_kwargs: {enable_thinking: false}
+  'on':
+    max_tokens: 32768
+    chat_template_kwargs: {enable_thinking: true}
+serve:
+  weights: game2player/Game2Player-4B
+  args:
+    - --dtype
+    - bfloat16
+    - --max-model-len
+    - '65536'
+    - --max-num-seqs
+    - '8'
+    - --max-num-batched-tokens
+    - '4096'
+    - --limit-mm-per-prompt
+    - '{"image":7,"video":0}'
+    - --mm-processor-kwargs
+    - '{"max_pixels":1048576}'
+    - --reasoning-parser
+    - qwen3

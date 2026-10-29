@@ -1,0 +1,16 @@
+# Policy collection for games built by tools.game_pipeline: every task the game's
+# policy has completed, filled to 10 valid episodes. Tasks the policy's record marks as
+# never completed are skipped; a task whose first 5 attempts all fail is given up. The
+# pipeline passes the games and --out.
+name: policy_collect
+mode: collect
+games: all
+tasks: all
+target_per_task: 10
+duration_s: 600
+continue_on_fail: false
+give_up_after: 5
+watchdog:
+  progress_stall_s: 60
+  adaptive_stall_cap_s: 300
+  max_consecutive_failures: 5

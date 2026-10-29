@@ -1,0 +1,6 @@
+# Create this private token file with `claude setup-token` and chmod 600.
+# Omitting model uses the installed Claude CLI's default.
+backend: claude
+executable: claude
+reasoning_effort: high
+credential_file: ~/.config/game2player/claude.token

@@ -1,0 +1,283 @@
+game:
+  game_name: 332_forward
+  url: https://twotinydice.itch.io/forward
+  speed_multiplier: 1.0
+  width: 1100
+  height: 800
+  game_rules: 'Forward is a turn-based card roguelike. Survive six areas to win the run.
+
+    Your hero is the card at the bottom. Drag it onto a card in the nearest row
+
+    above it, in the same column or one column to either side. Empty spaces and
+
+    cards two columns away are invalid. The board advances after each choice.
+
+
+    Entering a monster deals its numbered damage, using shield before health.
+
+    After your move, a monster directly ahead in the next row also attacks
+
+    automatically, then becomes loot. Wait for attacks and board movement to
+
+    finish before dragging again. Monsters do not attack merely because you wait.
+
+    Ordinary shields replace your current shield; potions restore health up to
+
+    your maximum. Coins add gold. Items in the left inventory change these rules;
+
+    hover over cards and items to read their effects in the left panel.
+
+
+    Chests lead to short reward boards; choose rewards and then the return card.
+
+    Each main area ends with a boss and an area card. Enter an area card to clear
+
+    the area and choose the next destination. The upper-right Area number shows
+
+    your current area, and the name above the board shows the current location.
+
+    After the sixth area, enter the glowing final exit card to obtain Victory.
+
+    Losing all health ends the run.
+
+
+    Each task starts directly with its assigned character and original equipment.
+
+    The Headless Knight starts with a map and an apple that heals on area changes.
+
+    The Thief''s cloak prevents automatic monster attacks when health is even,
+
+    while the Monster Eye hides the furthest row. The Harpy has 20 maximum health
+
+    and shields heal her instead of providing armor. The Warrior begins with
+
+    armor, stronger but less frequent shields, and an emerald that awards gold
+
+    when entering a monster card. Read acquired items for further changes.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You choose the cards your hero enters, manage health and shield, and
+
+        select rewards and destinations to survive the requested journey.
+
+        '
+      control_notes: "- Drag with the left mouse button from the hero's center to the center\n  of a valid\
+        \ card in the nearest row above it, then release.\n- Move the mouse over a card or inventory item\
+        \ to read its effects.\n- Wait until the area title, combat animations and board movement finish\n\
+        \  before your next drag. No key needs to be held between turns.\n- Tap R at any time to restart\
+        \ the same task with its original character,\n  equipment and seeded layout.\n"
+    controls:
+      allowed_keys:
+      - r
+      allow_clicks: true
+      hold_duration: 0.2
+tasks:
+- task_id: '332_01'
+  game_id: 332_forward
+  game_url_suffix: ?task=332_01
+  difficulty: easy
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 15
+  progress_signal:
+    field: metrics.route_progress
+    granularity: counter
+    coarse_reason: Each area has 15 discrete ordered rows. Native row and exit events measure approach
+      throughout play; within-turn animation is not additional achievement.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear the first area as the Headless Knight. Enter an area card at its end to arrive in
+    area 2. You start with 15 health, a Map and an Apple. The Area number at upper right shows your current
+    area. Tap R to retry the same task from the beginning.
+  evaluator_config:
+    score_field: metrics.route_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.route_progress
+    - metrics.completed_areas
+    - metrics.gold
+    - game_state.character
+    - game_state.character_matches
+    - game_state.area
+    - game_state.location
+    - game_state.main_row
+    - game_state.health
+    - game_state.shield
+    - game_state.native_win
+    - terminal.outcome
+- task_id: '332_02'
+  game_id: 332_forward
+  game_url_suffix: ?task=332_02
+  difficulty: medium
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 30
+  progress_signal:
+    field: metrics.route_progress
+    granularity: counter
+    coarse_reason: The route consists of discrete card rows, providing 30 progression units across two
+      areas; animation and elapsed time add no meaningful resolution.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear the first two areas in one Headless Knight run, arriving in area 3. You start with
+    15 health, a Map and an Apple. Choose an area card at the end of each area to continue. The Area number
+    at upper right shows your current area. Tap R to retry the same task from the beginning.
+  evaluator_config:
+    score_field: metrics.route_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.route_progress
+    - metrics.completed_areas
+    - metrics.gold
+    - game_state.character
+    - game_state.character_matches
+    - game_state.area
+    - game_state.location
+    - game_state.main_row
+    - game_state.health
+    - game_state.shield
+    - game_state.native_win
+    - terminal.outcome
+- task_id: '332_03'
+  game_id: 332_forward
+  game_url_suffix: ?task=332_03
+  difficulty: hard
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 90
+  progress_signal:
+    field: metrics.route_progress
+    granularity: counter
+    coarse_reason: Six 15-row boards provide 90 route units. Native progression is discrete; time and
+      card animations cannot honestly provide finer achievement.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Win a complete six-area run as the Headless Knight. You start with 15 health, a Map and
+    an Apple. Survive every area, then enter the glowing final exit card to reach the Victory screen.
+    The Area number at upper right shows your current area. Tap R to retry the same task from the beginning.
+  evaluator_config:
+    score_field: metrics.route_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.route_progress
+    - metrics.completed_areas
+    - metrics.gold
+    - game_state.character
+    - game_state.character_matches
+    - game_state.area
+    - game_state.location
+    - game_state.main_row
+    - game_state.health
+    - game_state.shield
+    - game_state.native_win
+    - terminal.outcome
+- task_id: '332_04'
+  game_id: 332_forward
+  game_url_suffix: ?task=332_04
+  difficulty: medium
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 30
+  progress_signal:
+    field: metrics.route_progress
+    granularity: counter
+    coarse_reason: Thirty ordered main-route rows provide intermediate progress. Character visibility
+      and combat effects change decisions but do not create finer route units.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear the first two areas in one Thief run, arriving in area 3. You start with 12 health,
+    an Invisibility Cloak and a Monster Eye. The cloak prevents automatic attacks when your health is
+    even; the eye hides the furthest row. The Area number at upper right shows your current area. Tap
+    R to retry the same task from the beginning.
+  evaluator_config:
+    score_field: metrics.route_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.route_progress
+    - metrics.completed_areas
+    - metrics.gold
+    - game_state.character
+    - game_state.character_matches
+    - game_state.area
+    - game_state.location
+    - game_state.main_row
+    - game_state.health
+    - game_state.shield
+    - game_state.native_win
+    - terminal.outcome
+- task_id: '332_05'
+  game_id: 332_forward
+  game_url_suffix: ?task=332_05
+  difficulty: medium
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 30
+  progress_signal:
+    field: metrics.route_progress
+    granularity: counter
+    coarse_reason: Thirty ordered main-route rows measure approach throughout the task. Shield-to-healing
+      effects affect survival rather than route resolution.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Clear the first two areas in one Harpy run, arriving in area 3. You start with 20 health
+    and a Ring of Vitality: shield cards heal you instead of providing armor. The Area number at upper
+    right shows your current area. Tap R to retry the same task from the beginning.'
+  evaluator_config:
+    score_field: metrics.route_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.route_progress
+    - metrics.completed_areas
+    - metrics.gold
+    - game_state.character
+    - game_state.character_matches
+    - game_state.area
+    - game_state.location
+    - game_state.main_row
+    - game_state.health
+    - game_state.shield
+    - game_state.native_win
+    - terminal.outcome
+- task_id: '332_06'
+  game_id: 332_forward
+  game_url_suffix: ?task=332_06
+  difficulty: medium
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 30
+  progress_signal:
+    field: metrics.route_progress
+    granularity: counter
+    coarse_reason: Thirty ordered main-route rows provide meaningful partial progress. Resource changes
+      are tactical consequences, not finer measurements of area completion.
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear the first two areas in one Warrior run, arriving in area 3. You start with 10 health,
+    10 shield, a Shiny Shield and an Emerald. Shield cards are stronger but less frequent, and entering
+    monster cards earns gold. The Area number at upper right shows your current area. Tap R to retry the
+    same task from the beginning.
+  evaluator_config:
+    score_field: metrics.route_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.route_progress
+    - metrics.completed_areas
+    - metrics.gold
+    - game_state.character
+    - game_state.character_matches
+    - game_state.area
+    - game_state.location
+    - game_state.main_row
+    - game_state.health
+    - game_state.shield
+    - game_state.native_win
+    - terminal.outcome

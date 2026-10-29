@@ -1,0 +1,243 @@
+game:
+  game_name: 396_william-and-sly
+  url: https://www.newgrounds.com/portal/view/503833
+  width: 700
+  height: 500
+  speed_multiplier: 1.0
+  game_rules: 'William and Sly is an exploration platformer. Sly, a fox, explores a large
+
+    connected forest and its hidden caves. William wants the runestones restored
+
+    so he can reach his storage cave. Mushrooms, locked chests and bridge switches
+
+    are optional discoveries along the way.
+
+
+    Each task begins with William''s opening conversation. Advance the text with
+
+    Space until Sly can move. Mushrooms, keys, chests and switches activate when
+
+    Sly touches them. A chest consumes one key and contains two or three mushrooms;
+
+    Sly can carry at most five keys. Some paths and caves are hidden behind scenery.
+
+
+    Gather five glowing fairyflies and touch an unlit runestone to light it.
+
+    One stone is already lit at the start. Lighting a stone consumes five
+
+    fairyflies and gives Sly a temporary white magic glow. Touch darklings while
+
+    glowing to banish them. Without that charge, darklings steal carried fairyflies.
+
+    Adjacent lit runestones allow teleportation between them.
+
+
+    Shift opens the status panel: runestones at the upper left, darklings at the
+
+    upper right, mushrooms at the lower left, and chests and bridge switches at
+
+    the lower right. William provides a map after some runestone progress; return
+
+    to him to receive it. Shift closes the panel again. Progress saves automatically.'
+  game_roles:
+  - name: player
+    context:
+      role_description: Control Sly, the orange fox, exploring the forest and caves.
+      control_notes: '- Tap Space to advance each opening dialogue page. Movement unlocks after the conversation
+        ends.
+
+        - Hold ArrowLeft or ArrowRight to run. Holds of 0.2–0.5 seconds give controlled movement; longer
+        holds travel farther.
+
+        - Press ArrowUp to jump. Hold it for a higher jump, and combine it with a direction to jump while
+        moving. Release Up before jumping again.
+
+        - Tap Shift to open or close the status panel and map. Close it for a clear view of the terrain.
+
+        - While standing on a lit runestone, tap q to teleport to the adjacent lit stone on the left or
+        e for the one on the right. The nearby text shows available destinations.
+
+        - Wait for conversation, teleport and other automatic animations to finish before moving again.'
+    controls:
+      allowed_keys:
+      - ArrowLeft
+      - ArrowRight
+      - ArrowUp
+      - Space
+      - Shift
+      - q
+      - e
+      allow_clicks: false
+      hold_duration: 0.3
+tasks:
+- task_id: '396_01'
+  game_id: 396_william-and-sly
+  difficulty: easy
+  game_url_suffix: ?task=396_01
+  task_prompt: Collect 15 mushrooms. Mushrooms found inside locked chests also count. Begin by finishing
+    William's opening conversation.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 15
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.mushrooms_collected
+    granularity: counter
+    coarse_reason: Fifteen atomic mushroom pickups provide partial credit; distance to unordered collectibles
+      would measure a different objective.
+  evaluator_config:
+    score_field: metrics.mushrooms_collected
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.mushrooms_collected
+    - game_state.mushrooms
+    - game_state.runestones_active
+    - game_state.chests_opened
+    - game_state.bridge_switches
+    - game_state.darklings_banished
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '396_02'
+  game_id: 396_william-and-sly
+  difficulty: hard
+  game_url_suffix: ?task=396_02
+  task_prompt: Collect 60 mushrooms, including any you find inside locked chests. Begin by finishing William's
+    opening conversation.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 60
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.mushrooms_collected
+    granularity: counter
+    coarse_reason: Sixty mushroom units provide frequent partial credit. Atomic pickups and chest rewards
+      have no fractional collection state; proximity to an unordered item is not collection.
+  evaluator_config:
+    score_field: metrics.mushrooms_collected
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.mushrooms_collected
+    - game_state.mushrooms
+    - game_state.runestones_active
+    - game_state.chests_opened
+    - game_state.bridge_switches
+    - game_state.darklings_banished
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '396_03'
+  game_id: 396_william-and-sly
+  difficulty: medium
+  game_url_suffix: ?task=396_03
+  task_prompt: Activate three additional runestones, bringing the total to four lit stones. Gather five
+    fairyflies for each unlit stone. Begin by finishing William's opening conversation.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.runestone_progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.runestone_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.runestone_progress
+    - game_state.mushrooms
+    - game_state.runestones_active
+    - game_state.chests_opened
+    - game_state.bridge_switches
+    - game_state.darklings_banished
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '396_04'
+  game_id: 396_william-and-sly
+  difficulty: medium
+  game_url_suffix: ?task=396_04
+  task_prompt: Open four locked chests. Find keys and touch the chests to open them; each chest uses one
+    key. Begin by finishing William's opening conversation.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 4
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.chest_progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.chest_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.chest_progress
+    - game_state.mushrooms
+    - game_state.runestones_active
+    - game_state.chests_opened
+    - game_state.bridge_switches
+    - game_state.darklings_banished
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '396_05'
+  game_id: 396_william-and-sly
+  difficulty: hard
+  game_url_suffix: ?task=396_05
+  task_prompt: Activate all three bridge switches. Touch each switch to operate its bridge. Begin by finishing
+    William's opening conversation.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.bridge_progress
+    granularity: continuous
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.bridge_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.bridge_progress
+    - game_state.mushrooms
+    - game_state.runestones_active
+    - game_state.chests_opened
+    - game_state.bridge_switches
+    - game_state.darklings_banished
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '396_06'
+  game_id: 396_william-and-sly
+  difficulty: hard
+  game_url_suffix: ?task=396_06
+  task_prompt: Banish five darklings. Light runestones to gain a temporary white magic glow, then touch
+    darklings while glowing. Begin by finishing William's opening conversation.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.darkling_progress
+    granularity: dense
+    coarse_reason: ''
+  evaluator_config:
+    score_field: metrics.darkling_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.darkling_progress
+    - game_state.mushrooms
+    - game_state.runestones_active
+    - game_state.chests_opened
+    - game_state.bridge_switches
+    - game_state.darklings_banished
+    - game_state.task_complete
+    - terminal.outcome

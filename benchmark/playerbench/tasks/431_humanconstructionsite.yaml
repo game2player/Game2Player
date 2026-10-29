@@ -1,0 +1,176 @@
+game:
+  game_name: 431_humanconstructionsite
+  speed_multiplier: 1.0
+  width: 816
+  height: 624
+  url: https://faesu.itch.io/humanconstructionsite
+  game_rules: 'Human Construction Site is a top-down survival-horror story adventure. Explore connected
+
+    rooms, speak with people, inspect objects, and solve environmental puzzles to continue.
+
+    Some rooms contain threats or choices that affect how the story unfolds.
+
+
+    A fresh game begins with a dark opening and several text boxes before the bedroom is
+
+    revealed. Press Z or Enter to advance each line.
+
+
+    ## Controls
+
+    - Arrow keys: walk
+
+    - Hold Shift while moving: run
+
+    - Z or Enter: interact, advance dialogue, and confirm choices
+
+    - X or Escape: cancel or open the in-game menu
+
+    - At a choice, use Up and Down to select a response, then press Z or Enter
+
+    '
+  game_roles:
+  - name: explorer
+    context:
+      role_description: 'You explore the building, interact with its occupants and machinery, and find
+        a way
+
+        through each room while uncovering the story.
+
+        '
+      control_notes: '- Arrow keys: walk in that direction
+
+        - Hold Shift while moving with an arrow key: run
+
+        - Z or Enter: interact with a person or object in front of you, advance text, or confirm
+
+        - Up and Down: move through a dialogue choice
+
+        - X or Escape: cancel or open the in-game menu
+
+        '
+    controls:
+      allowed_keys:
+      - ArrowDown
+      - ArrowLeft
+      - ArrowRight
+      - ArrowUp
+      - Shift
+      - z
+      - Enter
+      - x
+      - Escape
+      allow_clicks: false
+      hold_duration: 0.2
+tasks:
+- task_id: '431_01'
+  game_id: 431_humanconstructionsite
+  game_url_suffix: ?task=431_01
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 2
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Open the locked gate out of the first bedroom by completing the hand-slot and computer
+
+    sequence. A fresh game begins with a dark opening and several text boxes; press Z or Enter
+
+    to advance them until the bedroom is revealed. Then use the arrow keys to move and Z or
+
+    Enter to inspect nearby objects and confirm choices.
+
+    '
+  progress_signal:
+    field: metrics.first_room_escape_steps
+    granularity: counter
+    coarse_reason: The room authors two distinct puzzle milestones, switch 38 and switch 20, with no finer
+      objective counter.
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.first_room_escape_steps
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.first_room_escape_steps
+    - game_state.map_id
+    - game_state.map_name
+    - game_state.player.x
+    - game_state.player.y
+    - game_state.switches.first_room_hand_slot
+    - game_state.switches.first_room_gate_unlocked
+    - game_state.task_start_verified
+    - game_state.task_success
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '431_03'
+  game_id: 431_humanconstructionsite
+  game_url_suffix: ?task=431_03
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'When Noh asks whether Eva can be trusted, choose the response “You can trust her.” Use
+    the
+
+    arrow keys to reach Noh, press Z or Enter to speak, and use Up and Down followed by Z or
+
+    Enter to select the response.
+
+    '
+  progress_signal:
+    field: metrics.nou_trust_choice
+    granularity: flag
+    coarse_reason: The objective is one discrete authored dialogue choice; the game records it as a single
+      variable increment with no intermediate response state.
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.nou_trust_choice
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.nou_trust_choice
+    - game_state.map_id
+    - game_state.map_name
+    - game_state.player.x
+    - game_state.player.y
+    - game_state.variables.variable_3
+    - game_state.switches.noh_trust_scene_enabled
+    - game_state.task_start_verified
+    - game_state.task_success
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '431_04'
+  game_id: 431_humanconstructionsite
+  game_url_suffix: ?task=431_04
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: 'Pull the lever in the Computer Lab when prompted. Use the arrow keys to stand beside the
+
+    lever, press Z or Enter to interact, then confirm the prompt.
+
+    '
+  progress_signal:
+    field: metrics.lab_lever_pulled
+    granularity: flag
+    coarse_reason: This is one authored yes/no lever interaction recorded by switch 17; the game exposes
+      no intermediate lever state.
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.lab_lever_pulled
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.lab_lever_pulled
+    - game_state.map_id
+    - game_state.map_name
+    - game_state.player.x
+    - game_state.player.y
+    - game_state.switches.lab_lever_pulled
+    - game_state.task_start_verified
+    - game_state.task_success
+    - terminal.outcome
+    - terminal.isTerminal

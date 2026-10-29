@@ -1,0 +1,265 @@
+game:
+  game_name: 457_give-up
+  speed_multiplier: 1.0
+  width: 900
+  height: 500
+  url: https://armorgames.com/play/13662/give-up
+  game_rules: 'Give Up is a precision platformer with 40 increasingly dangerous floors. Move the cyan
+    runner from the entrance door to the exit marked with the next floor number; the final exit says END.
+    Touching the exit automatically loads the next floor. Your current Floor and death count appear at
+    the lower right.
+
+
+    Jump and double-jump between platforms while avoiding spikes, saws, lasers and projectiles. Some platforms
+    fall or disappear, and hazards can start moving when you move. Dying immediately respawns you at the
+    entrance of the same floor, with unlimited retries. The requested floor starts automatically. The
+    large GIVE UP button abandons the attempt.'
+  game_roles:
+  - name: runner
+    context:
+      role_description: You control the cyan runner, steering and timing jumps to reach each floor's exit.
+      control_notes: '- Hold ArrowLeft or ArrowRight for 0.2–0.5 seconds to move horizontally, including
+        in the air. The runner retains some momentum after release.
+
+        - Press ArrowUp to jump. Release it, wait at least 0.05 seconds, and press again while airborne
+        for one double jump; holding it does not repeatedly jump. Walking off a ledge leaves only the
+        airborne jump. You can combine horizontal movement with Up.
+
+        - Tap p to pause or resume; release for at least 0.05 seconds between taps. Waiting while unpaused
+        lets gravity, moving hazards and projectiles continue.
+
+        - Left-click GIVE UP only to abandon the attempt. Ordinary deaths retry the same floor automatically;
+        no restart input is needed.'
+    controls:
+      allowed_keys:
+      - ArrowLeft
+      - ArrowRight
+      - ArrowUp
+      - p
+      allow_clicks: true
+      hold_duration: 0.3
+tasks:
+- task_id: '457_01'
+  game_id: 457_give-up
+  game_url_suffix: ?task=457_01
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  difficulty: easy
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear Floors 1–5 and reach Floor 6. Reach each floor's exit with the cyan runner. Use Left/Right
+    to steer and Up to jump; release and press Up again in the air to double-jump. Deaths automatically
+    retry the current floor.
+  progress_signal:
+    field: metrics.segmentProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.segmentProgress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.floor
+    - game_state.deaths
+    - game_state.playerX
+    - game_state.playerY
+    - game_state.nativeGameComplete
+    - metrics.floorsCompleted
+    - metrics.segmentProgress
+    - terminal.outcome
+- task_id: '457_02'
+  game_id: 457_give-up
+  game_url_suffix: ?task=457_02
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  difficulty: easy
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear Floors 6–10 and reach Floor 11. Reach each floor's exit with the cyan runner. Use
+    Left/Right to steer and Up to jump; release and press Up again in the air to double-jump. Deaths automatically
+    retry the current floor.
+  progress_signal:
+    field: metrics.segmentProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.segmentProgress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.floor
+    - game_state.deaths
+    - game_state.playerX
+    - game_state.playerY
+    - game_state.nativeGameComplete
+    - metrics.floorsCompleted
+    - metrics.segmentProgress
+    - terminal.outcome
+- task_id: '457_03'
+  game_id: 457_give-up
+  game_url_suffix: ?task=457_03
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  difficulty: medium
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear Floors 11–15 and reach Floor 16. Reach each floor's exit with the cyan runner. Use
+    Left/Right to steer and Up to jump; release and press Up again in the air to double-jump. Deaths automatically
+    retry the current floor.
+  progress_signal:
+    field: metrics.segmentProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.segmentProgress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.floor
+    - game_state.deaths
+    - game_state.playerX
+    - game_state.playerY
+    - game_state.nativeGameComplete
+    - metrics.floorsCompleted
+    - metrics.segmentProgress
+    - terminal.outcome
+- task_id: '457_04'
+  game_id: 457_give-up
+  game_url_suffix: ?task=457_04
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  difficulty: hard
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear Floors 16–20 and reach Floor 21. Reach each floor's exit with the cyan runner. Use
+    Left/Right to steer and Up to jump; release and press Up again in the air to double-jump. Deaths automatically
+    retry the current floor.
+  progress_signal:
+    field: metrics.segmentProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.segmentProgress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.floor
+    - game_state.deaths
+    - game_state.playerX
+    - game_state.playerY
+    - game_state.nativeGameComplete
+    - metrics.floorsCompleted
+    - metrics.segmentProgress
+    - terminal.outcome
+- task_id: '457_05'
+  game_id: 457_give-up
+  game_url_suffix: ?task=457_05
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  difficulty: hard
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear Floors 21–25 and reach Floor 26. Reach each floor's exit with the cyan runner. Use
+    Left/Right to steer and Up to jump; release and press Up again in the air to double-jump. Deaths automatically
+    retry the current floor.
+  progress_signal:
+    field: metrics.segmentProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.segmentProgress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.floor
+    - game_state.deaths
+    - game_state.playerX
+    - game_state.playerY
+    - game_state.nativeGameComplete
+    - metrics.floorsCompleted
+    - metrics.segmentProgress
+    - terminal.outcome
+- task_id: '457_06'
+  game_id: 457_give-up
+  game_url_suffix: ?task=457_06
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  difficulty: hard
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear Floors 26–30 and reach Floor 31. Reach each floor's exit with the cyan runner. Use
+    Left/Right to steer and Up to jump; release and press Up again in the air to double-jump. Deaths automatically
+    retry the current floor.
+  progress_signal:
+    field: metrics.segmentProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.segmentProgress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.floor
+    - game_state.deaths
+    - game_state.playerX
+    - game_state.playerY
+    - game_state.nativeGameComplete
+    - metrics.floorsCompleted
+    - metrics.segmentProgress
+    - terminal.outcome
+- task_id: '457_07'
+  game_id: 457_give-up
+  game_url_suffix: ?task=457_07
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  difficulty: very_hard
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear Floors 31–35 and reach Floor 36. Reach each floor's exit with the cyan runner. Use
+    Left/Right to steer and Up to jump; release and press Up again in the air to double-jump. Deaths automatically
+    retry the current floor.
+  progress_signal:
+    field: metrics.segmentProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.segmentProgress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.floor
+    - game_state.deaths
+    - game_state.playerX
+    - game_state.playerY
+    - game_state.nativeGameComplete
+    - metrics.floorsCompleted
+    - metrics.segmentProgress
+    - terminal.outcome
+- task_id: '457_08'
+  game_id: 457_give-up
+  game_url_suffix: ?task=457_08
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  difficulty: very_hard
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Clear Floors 36–40 and finish the game through the END exit on Floor 40. Reach each floor's
+    exit with the cyan runner. Use Left/Right to steer and Up to jump; release and press Up again in the
+    air to double-jump. Deaths automatically retry the current floor.
+  progress_signal:
+    field: metrics.segmentProgress
+    granularity: dense
+  evaluator_config:
+    score_field: metrics.segmentProgress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - game_state.floor
+    - game_state.deaths
+    - game_state.playerX
+    - game_state.playerY
+    - game_state.nativeGameComplete
+    - metrics.floorsCompleted
+    - metrics.segmentProgress
+    - terminal.outcome

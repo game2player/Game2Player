@@ -1,0 +1,286 @@
+game:
+  game_name: 142_hit8ox
+  url: https://vladcomarlau.itch.io/hit8ox
+  speed_multiplier: 1.0
+  width: 640
+  height: 640
+  game_rules: 'HIT8OX is a 3D one-on-one fighting game made in PICO-8. Each fight is a
+
+    single bout to a knockout against a CPU opponent; there are no rounds or
+
+    timer. The two bars at the bottom of the screen are the health bars: the
+
+    left bar is your fighter (Fighter 1), the right bar is the CPU. When one
+
+    fighter''s health runs out, "VICTORY FOR FIGHTER 1" (you) or "VICTORY FOR
+
+    FIGHTER 2" (the CPU) appears over the fight.
+
+
+    The fighters move freely on the floor and always turn to face each other.
+
+    Punches and kicks only land at close range. Pressing the same attack again
+
+    while it is still swinging continues it into a follow-up strike. Holding
+
+    both attack buttons blocks: a blocked strike still costs a little health,
+
+    about half of what it would otherwise cost. Every attack uses stamina; a
+
+    tired fighter sweats and moves and strikes more slowly, and stamina
+
+    recovers while standing or walking without attacking.
+
+
+    About seven seconds after a knockout the game leaves the fight and shows
+
+    the COLORS screen (fighter color customization). X there opens the fight
+
+    menu with GAME MODE, AI DIFFICULTY, STAGE and START FIGHT rows. The fight
+
+    menu keeps the last difficulty and stage. GAME MODE should stay SOLO: in
+
+    VERSUS the second fighter is meant for a second human player. Stages
+
+    (City, Subway Station, Parking Lot) change only the scenery.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'Control Fighter 1, the fighter whose health bar is on the left, against
+
+        the CPU fighter. Between fights, use the COLORS screen and fight menu to
+
+        set up and start the next fight.
+
+        '
+      control_notes: "- Arrow keys: hold to walk. Each arrow always walks the same way across\n  the arena\
+        \ floor, not relative to the screen. At the start of a fight\n  Right walks toward the CPU, Left\
+        \ away from it, and Up/Down step into\n  or out of the screen. The camera turns to keep both fighters\
+        \ side by\n  side, so after you circle the opponent these directions point\n  elsewhere on screen;\
+        \ watch how your fighter moves and adjust.\n- X: punch. Z: kick. Tap again while the attack is\
+        \ swinging for a\n  follow-up strike.\n- Z and X held together: block for as long as both are\
+        \ held.\n- Wait: let attacks, recovery and the CPU play out; after a knockout\n  the banner stays\
+        \ about seven seconds before the COLORS screen.\n- COLORS screen: X opens the fight menu. (Up/Down\
+        \ pick a body part,\n  Z changes its color, Left/Right switch between your colors and the\n  CPU's;\
+        \ none of this affects the fight.)\n- Fight menu: Up/Down choose a row. Z changes the chosen value\n\
+        \  (stage, difficulty) or starts the fight on START FIGHT. X goes back to\n  the COLORS screen.\n\
+        - After switching between the COLORS screen and the fight menu, both\n  screens ignore X and Z\
+        \ for about one second; wait a moment before\n  pressing them again.\n- Each task starts inside\
+        \ its fight, with no menu setup required.\n"
+    controls:
+      allowed_keys:
+      - ArrowUp
+      - ArrowDown
+      - ArrowLeft
+      - ArrowRight
+      - z
+      - x
+      allow_clicks: false
+      hold_duration: 0.3
+tasks:
+- task_id: '142_01'
+  game_id: 142_hit8ox
+  game_url_suffix: ?task=142_01&difficulty=easy&stage=city&goal=win
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Win a solo fight against the EASY CPU on the City stage. You are Fighter 1 (left health
+    bar). Knock the CPU out by draining its health bar (bottom right) to get the "VICTORY FOR FIGHTER
+    1" banner. If your own health runs out first, the attempt is over.
+  progress_signal:
+    field: metrics.fight_progress
+    granularity: dense
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.fight_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.fight_progress
+    - metrics.blocked_attacks
+    - metrics.decisive_win_progress
+    - metrics.stage_tour_progress
+    - metrics.hard_stages_won
+    - metrics.p1_health
+    - metrics.cpu_health
+    - metrics.fights_won
+    - metrics.fights_lost
+    - game_state.fight.difficulty
+    - game_state.fight.stage
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '142_02'
+  game_id: 142_hit8ox
+  game_url_suffix: ?task=142_02&difficulty=normal&stage=parking&goal=win
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Win a solo fight against the NORMAL CPU on the Parking Lot stage. You are Fighter 1 (left
+    health bar). Knock the CPU out by draining its health bar (bottom right) to get the "VICTORY FOR FIGHTER
+    1" banner. If your own health runs out first, the attempt is over.
+  progress_signal:
+    field: metrics.fight_progress
+    granularity: dense
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.fight_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.fight_progress
+    - metrics.blocked_attacks
+    - metrics.decisive_win_progress
+    - metrics.stage_tour_progress
+    - metrics.hard_stages_won
+    - metrics.p1_health
+    - metrics.cpu_health
+    - metrics.fights_won
+    - metrics.fights_lost
+    - game_state.fight.difficulty
+    - game_state.fight.stage
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '142_03'
+  game_id: 142_hit8ox
+  game_url_suffix: ?task=142_03&difficulty=hard&stage=subway&goal=win
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Win a solo fight against the HARD CPU on the Subway Station stage. You are Fighter 1 (left
+    health bar). Knock the CPU out by draining its health bar (bottom right) to get the "VICTORY FOR FIGHTER
+    1" banner. If your own health runs out first, the attempt is over.
+  progress_signal:
+    field: metrics.fight_progress
+    granularity: dense
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.fight_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.fight_progress
+    - metrics.blocked_attacks
+    - metrics.decisive_win_progress
+    - metrics.stage_tour_progress
+    - metrics.hard_stages_won
+    - metrics.p1_health
+    - metrics.cpu_health
+    - metrics.fights_won
+    - metrics.fights_lost
+    - game_state.fight.difficulty
+    - game_state.fight.stage
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '142_04'
+  game_id: 142_hit8ox
+  game_url_suffix: ?task=142_04&difficulty=hard&stage=city&goal=blocks
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 20
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: Block 20 strikes from the HARD CPU on the City stage. Hold Z and X together to block, and
+    keep the block up while the CPU punches or kicks you; each of its strikes that lands on your block
+    counts. Strikes that hit you while you are not blocking do not count. If the fight ends before you
+    have blocked 20 strikes, the attempt is over.
+  progress_signal:
+    field: metrics.blocked_attacks
+    granularity: counter
+    coarse_reason: Each blocked CPU strike is a single atomic defensive event in the game (it costs half
+      the health of an unblocked hit); nothing finer exists, and 20 steps give the task resolution.
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.blocked_attacks
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.fight_progress
+    - metrics.blocked_attacks
+    - metrics.decisive_win_progress
+    - metrics.stage_tour_progress
+    - metrics.hard_stages_won
+    - metrics.p1_health
+    - metrics.cpu_health
+    - metrics.fights_won
+    - metrics.fights_lost
+    - game_state.fight.difficulty
+    - game_state.fight.stage
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '142_05'
+  game_id: 142_hit8ox
+  game_url_suffix: ?task=142_05&difficulty=hard&stage=parking&goal=decisive
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 100
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'Win a decisive fight against the HARD CPU on the Parking Lot stage: knock the CPU out
+    while keeping at least 90 of your 100 health, so your health bar (bottom left) must stay nearly full.
+    Blocked strikes still chip a little health. The attempt is over when the fight ends; a win with less
+    than 90 health left does not count.'
+  progress_signal:
+    field: metrics.decisive_win_progress
+    granularity: dense
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.decisive_win_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.fight_progress
+    - metrics.blocked_attacks
+    - metrics.decisive_win_progress
+    - metrics.stage_tour_progress
+    - metrics.hard_stages_won
+    - metrics.p1_health
+    - metrics.cpu_health
+    - metrics.fights_won
+    - metrics.fights_lost
+    - game_state.fight.difficulty
+    - game_state.fight.stage
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '142_06'
+  game_id: 142_hit8ox
+  game_url_suffix: ?task=142_06&difficulty=hard&stage=city&goal=tour
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 300
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'Defeat the HARD CPU on all three stages: City, Subway Station and Parking Lot. The first
+    fight, on City at HARD, is already running. After each fight the game shows the COLORS screen; press
+    X to open the fight menu, keep GAME MODE on SOLO and AI DIFFICULTY on HARD, change STAGE with Z, then
+    select START FIGHT and press Z. Losing a fight does not end the attempt; just start that stage again.
+    Only wins against the HARD CPU in SOLO count, and each stage needs one win.'
+  progress_signal:
+    field: metrics.stage_tour_progress
+    granularity: dense
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.stage_tour_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.fight_progress
+    - metrics.blocked_attacks
+    - metrics.decisive_win_progress
+    - metrics.stage_tour_progress
+    - metrics.hard_stages_won
+    - metrics.p1_health
+    - metrics.cpu_health
+    - metrics.fights_won
+    - metrics.fights_lost
+    - game_state.fight.difficulty
+    - game_state.fight.stage
+    - terminal.outcome
+    - terminal.isTerminal

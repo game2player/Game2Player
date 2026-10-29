@@ -1,0 +1,253 @@
+game:
+  game_name: 410_my-own-hero-party
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  url: https://viniflores.itch.io/my-own-hero-party
+  game_rules: 'My Own Hero Party is a room-based auto-combat dungeon game. Each task opens a
+
+    fresh Goblin''s Dungeon expedition in Room 1. That first room has no enemies,
+
+    so the heroes soon move into Room 2. They move and fight on their own, then
+
+    head through exits as rooms clear. Yellow coins dropped in a room are
+
+    collected when the mouse cursor passes over them. The room number appears at
+
+    the upper left, below the yellow-gold counter.
+
+
+    When an expedition ends, its summary lets you return to the Tavern or rerun it.
+
+    Use the Wait action for 2.5 seconds at a time to give the party time to fight
+
+    and travel through cleared rooms. At the Tavern, a red speech bubble can cover
+
+    the skill tree. Click the bubble until it disappears; one click may finish
+
+    typing a line, and another advances it. Hover the small hourglass node near
+
+    the middle of the tree to see its name and cost. The first Stamina upgrade
+
+    costs 40 yellow gold.
+
+    '
+  game_roles:
+  - name: party_leader
+    context:
+      role_description: 'You guide an automatically fighting party through Goblin''s Dungeon,
+
+        collect its yellow-gold drops, and improve the party at the Tavern.
+
+        '
+      control_notes: "- Move the mouse cursor over yellow coin drops to collect them; clicking\n  a coin\
+        \ is not needed.\n- Use Wait for 2.5 seconds at a time while the heroes move, fight, and\n  travel\
+        \ through a cleared room's exit. The room number is at the upper\n  left, below the gold counter.\n\
+        - Left-click visible buttons in the expedition summary to rerun or return\n  to the Tavern. If\
+        \ a red dialogue bubble appears, click it until it\n  disappears; one click may finish typing\
+        \ a line, and another advances it.\n- In the Tavern, hover the small hourglass node near the middle\
+        \ of the\n  skill tree to see the Stamina name and cost, then left-click it to buy\n  the upgrade\
+        \ when you have at least 40 yellow gold.\n"
+    controls:
+      allowed_keys: []
+      allow_clicks: true
+      hold_duration: 2.5
+tasks:
+- task_id: '410_01'
+  game_id: 410_my-own-hero-party
+  game_url_suffix: ?task=410_01
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 2
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: easy
+  task_prompt: 'Defeat both Goblins in Room 2 of Goblin''s Dungeon. Your party attacks
+
+    automatically; wait for 2.5 seconds at a time while the Room 2 fight resolves.
+
+    '
+  progress_signal:
+    field: game_state.run_goblin_kills
+    granularity: counter
+    coarse_reason: Room 2 contains two Goblins, and the game records each kill event, giving 0, 1, and
+      2 as natural progress steps.
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.run_goblin_kills
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.run_goblin_kills
+    - game_state.room
+    - game_state.dungeon_id
+    - game_state.task_start_matches
+    - terminal.isTerminal
+- task_id: '410_02'
+  game_id: 410_my-own-hero-party
+  game_url_suffix: ?task=410_02
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Advance through Goblin''s Dungeon until you enter Room 5. Your heroes move and
+
+    fight automatically; move the cursor over yellow coin drops to collect them,
+
+    then use 2.5-second waits while the party continues through cleared rooms.
+
+    '
+  progress_signal:
+    field: game_state.best_room
+    granularity: counter
+    coarse_reason: The native room value advances on real room transitions and provides intermediate milestones
+      during an attempt.
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.best_room
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.best_room
+    - game_state.room
+    - game_state.dungeon_id
+    - game_state.task_start_matches
+    - terminal.isTerminal
+- task_id: '410_03'
+  game_id: 410_my-own-hero-party
+  game_url_suffix: ?task=410_03
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 10
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: hard
+  task_prompt: 'Advance through Goblin''s Dungeon until you enter Room 10. Your heroes move
+
+    and fight automatically; collect visible yellow coins by moving the cursor
+
+    over them, and use 2.5-second waits while the party continues through cleared
+
+    rooms.
+
+    '
+  progress_signal:
+    field: game_state.best_room
+    granularity: counter
+    coarse_reason: The native room value advances on actual transitions, so the approach to Room 10 has
+      multiple in-game milestones.
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.best_room
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.best_room
+    - game_state.room
+    - game_state.dungeon_id
+    - game_state.task_start_matches
+    - terminal.isTerminal
+- task_id: '410_04'
+  game_id: 410_my-own-hero-party
+  game_url_suffix: ?task=410_04
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 40
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Collect at least 40 yellow gold during one Goblin''s Dungeon expedition. Move
+
+    the cursor over yellow coin drops to pick them up, and watch the yellow-gold
+
+    counter in the HUD while your party fights automatically. Use 2.5-second
+
+    waits to let the fight and coin drops progress.
+
+    '
+  progress_signal:
+    field: game_state.best_run_gold
+    granularity: dense
+    coarse_reason: The value rises by actual pickup amounts during play and is latched as a best-attempt
+      value so retries do not reduce progress.
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.best_run_gold
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.best_run_gold
+    - game_state.run_gold
+    - game_state.gold
+    - game_state.room
+    - game_state.dungeon_id
+    - game_state.task_start_matches
+    - terminal.isTerminal
+- task_id: '410_05'
+  game_id: 410_my-own-hero-party
+  game_url_suffix: ?task=410_05
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Earn yellow gold in Goblin''s Dungeon, return to the Tavern, and buy the first
+
+    Stamina upgrade. It costs 40 yellow gold. If you need more, rerun a Goblin
+
+    expedition and collect its yellow coin drops, using 2.5-second waits while
+
+    the party fights. After returning to the Tavern, click any red dialogue bubble
+
+    until it disappears, then hover the small hourglass skill node to check its
+
+    cost and click it when you have enough gold.
+
+    '
+  progress_signal:
+    field: game_state.upgrades.start_stamina
+    granularity: counter
+    coarse_reason: The objective is one complete first-level purchase; the upgrade has no partial state
+      and is available from a fresh save.
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.upgrades.start_stamina
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.upgrades.start_stamina
+    - game_state.gold
+    - game_state.dungeon_id
+    - game_state.task_start_matches
+    - terminal.isTerminal
+- task_id: '410_06'
+  game_id: 410_my-own-hero-party
+  game_url_suffix: ?task=410_06
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 20
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: very_hard
+  task_prompt: 'Reach Room 20, the final room of Goblin''s Dungeon. Your heroes move and fight
+
+    automatically; collect yellow coins by moving the cursor over them and let
+
+    the party continue through the cleared rooms with 2.5-second waits. Stop when
+
+    the room counter shows 20; defeating its boss is not required.
+
+    '
+  progress_signal:
+    field: game_state.best_room
+    granularity: counter
+    coarse_reason: The native room value advances on each real room transition, providing progress across
+      the long run; this objective is reaching the final room, not defeating its boss.
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.best_room
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.best_room
+    - game_state.room
+    - game_state.dungeon_id
+    - game_state.task_start_matches
+    - terminal.isTerminal

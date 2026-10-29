@@ -1,0 +1,281 @@
+game:
+  game_name: 430_about-time
+  url: https://ameblohsh.itch.io/about-time
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  game_rules: 'About Time! is a clock-building roguelike. In each shift, the two hands land
+
+    on clock numbers and multiply their values into the shift score. Gear abilities
+
+    can change those results. Reach the displayed Minimum Score before your forwards
+
+    run out; a clear pays cash and raises the next shift''s target, while falling short
+
+    ends the run. Gear bought in the shop fills up to five slots. A paper box costs
+
+    $6 and opens clock editing, where papers can change a selected number.
+
+
+    Task links enter either the Tutorial''s opening dialogue or a fresh standard run
+
+    at Round 1. The tutorial''s opening callouts explain how to begin forwarding time.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You control the clock run: spend forwards to build score, then use shift
+
+        payouts to buy gears or papers that change later results.
+
+        '
+      control_notes: "- In the opening Tutorial, press Space while dialogue or a callout is\n  visible.\
+        \ It speeds text while it is appearing; press Space again after\n  the text finishes to advance.\
+        \ The final opening callout closes and enables\n  Forward Time.\n- In a shift, left-click Forward\
+        \ Time once to spend one forward. The clock\n  hands and score animate afterward; wait until the\
+        \ hands stop and the Round\n  Score finishes rolling before clicking again. The button stays visible\n\
+        \  while disabled during this animation, so rapid taps are ignored. Watch the\n  accumulated score,\
+        \ Minimum Score target, and remaining forwards at the\n  sides of the clock. Reach the target\
+        \ before using the last forward.\n- After a clear, left-click Finish shift on the payout panel\
+        \ to collect the\n  cash and open the shop. Wait until the shop finishes sliding into place\n\
+        \  before clicking inside it. Click a gear or paper box to unfold its price\n  tag; wait until\
+        \ the full tag is visible, then click the tag to buy it. A\n  bought gear appears in an empty\
+        \ slot on the right. Click Play to return\n  to the clock.\n- The paper box costs $6. Buying it\
+        \ opens Clock Changing. Wait until that\n  panel finishes sliding into place, then click a clock\
+        \ number to select it\n  and click a paper. Wait until the paper's Use control unfolds, then click\n\
+        \  Use to apply it. Cash-only papers add money and do not change a clock\n  number.\n"
+    controls:
+      allowed_keys:
+      - Space
+      - Enter
+      allow_clicks: true
+      hold_duration: 0.05
+tasks:
+- task_id: '430_01'
+  game_id: 430_about-time
+  game_url_suffix: ?task=430_01
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 8
+  pause_during_inference: false
+  continue_on_fail: false
+  task_prompt: 'Complete the Tutorial''s opening dialogue and its four clock callouts. Press
+
+    Press Space to speed the visible text, then press Space again after it has
+
+    finished to advance. Stop when the final callout closes and Forward Time is
+
+    enabled for the first shift.
+
+    '
+  progress_signal:
+    field: game_state.tutorial_progress
+    granularity: counter
+    coarse_reason: The source exposes three dialogue beats and four callouts as the seven opening tutorial
+      milestones; animated text reveal is presentation rather than another tutorial milestone.
+    provenance: engine_hook
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.tutorial_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.mode
+    - game_state.task_start_ready
+    - game_state.task_start_matches
+    - game_state.tutorial_progress
+    - game_state.tutorial_completion_progress
+    - game_state.forward_time_enabled
+    - game_state.task_success
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '430_02'
+  game_id: 430_about-time
+  game_url_suffix: ?task=430_02
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: false
+  continue_on_fail: false
+  task_prompt: 'In a fresh standard run, clear the first shift by reaching its displayed
+
+    Minimum Score before the five forwards run out. Left-click Forward Time to
+
+    advance the clock and build the score.
+
+    '
+  progress_signal:
+    field: game_state.shift_progress
+    granularity: continuous
+    coarse_reason: ''
+    provenance: engine_hook
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.shift_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.mode
+    - game_state.round
+    - game_state.current_score
+    - game_state.score_target
+    - game_state.cleared_shifts
+    - game_state.task_start_matches
+    - game_state.shift_progress
+    - game_state.task_success
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '430_03'
+  game_id: 430_about-time
+  game_url_suffix: ?task=430_03
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_start_score_field: 0
+  task_target_score_field: 2
+  pause_during_inference: false
+  continue_on_fail: false
+  task_prompt: 'Clear the first shift, then left-click Finish shift to claim its payout. In the
+
+    shop, buy a gear using its price tag and confirm that it appears in one of the
+
+    five gear slots on the right.
+
+    '
+  progress_signal:
+    field: game_state.gear_shop_progress
+    granularity: continuous
+    coarse_reason: ''
+    provenance: engine_hook
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.gear_shop_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.mode
+    - game_state.round
+    - game_state.cleared_shifts
+    - game_state.first_shift_payout
+    - game_state.gears_added
+    - game_state.gear_shop_progress
+    - game_state.task_start_matches
+    - game_state.task_success
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '430_04'
+  game_id: 430_about-time
+  game_url_suffix: ?task=430_04
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 4
+  pause_during_inference: false
+  continue_on_fail: false
+  task_prompt: 'Earn enough shift money to buy the $6 paper box. In Clock Changing, click a
+
+    clock number, choose a paper that changes its value, and click Use. A paper
+
+    that only adds cash does not change a clock number.
+
+    '
+  progress_signal:
+    field: game_state.paper_edit_progress
+    granularity: continuous
+    coarse_reason: ''
+    provenance: engine_hook
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.paper_edit_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.mode
+    - game_state.round
+    - game_state.current_score
+    - game_state.score_target
+    - game_state.cleared_shifts
+    - game_state.cash_high_water
+    - game_state.paper_box_purchased
+    - game_state.paper_number_edits
+    - game_state.paper_edit_progress
+    - game_state.task_start_matches
+    - game_state.task_success
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '430_05'
+  game_id: 430_about-time
+  game_url_suffix: ?task=430_05
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: false
+  continue_on_fail: false
+  task_prompt: 'Clear the score targets for shifts 1, 2, and 3. Left-click Forward Time to
+
+    build each shift''s score, then click Finish shift after a clear to claim the
+
+    payout and continue through the shop.
+
+    '
+  progress_signal:
+    field: game_state.run_progress
+    granularity: continuous
+    coarse_reason: ''
+    provenance: engine_hook
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.run_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.mode
+    - game_state.round
+    - game_state.current_score
+    - game_state.score_target
+    - game_state.cleared_shifts
+    - game_state.run_progress
+    - game_state.task_start_matches
+    - game_state.task_success
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '430_06'
+  game_id: 430_about-time
+  game_url_suffix: ?task=430_06
+  evaluator_id: game_api_metric
+  difficulty: very_hard
+  task_start_score_field: 0
+  task_target_score_field: 6
+  pause_during_inference: false
+  continue_on_fail: false
+  task_prompt: 'Clear the score targets for shifts 1 through 6. Left-click Forward Time to
+
+    build each shift''s score, then click Finish shift after a clear to claim the
+
+    payout and continue through the shop.
+
+    '
+  progress_signal:
+    field: game_state.run_progress
+    granularity: continuous
+    coarse_reason: ''
+    provenance: engine_hook
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.run_progress
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - game_state.task_id
+    - game_state.mode
+    - game_state.round
+    - game_state.current_score
+    - game_state.score_target
+    - game_state.cleared_shifts
+    - game_state.run_progress
+    - game_state.task_start_matches
+    - game_state.task_success
+    - terminal.outcome
+    - terminal.isTerminal

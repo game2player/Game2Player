@@ -1,0 +1,232 @@
+game:
+  game_name: 86_raide
+  speed_multiplier: 1.0
+  width: 1280
+  height: 720
+  url: https://kultisti.itch.io/raide
+  game_rules: "Raide is a miniature railway logic puzzle. Every puzzle hands you a scattered set\nof track\
+    \ pieces and an engine; you lay the pieces into the empty slots so the train\ncan run from its start\
+    \ to the end of the named route.\n\n## Objective\n- Rebuild the named track and send the train; the\
+    \ puzzle is solved when the train\n  completes the route.\n\n## Screen layout\n- The puzzle board\
+    \ is the lower panel, with the current puzzle's name printed above\n  it. The town map sits above\
+    \ that, showing the houses of the town.\n- There is no title menu: a puzzle is already on screen and\
+    \ ready to be worked on.\n\n## Controls\n- Left-click a loose piece to pick it up, left-click an empty\
+    \ slot to place the\n  piece you are holding, and left-click a placed piece to rotate it.\n- Send\
+    \ the train with the engine / start control (the small arrow at the bottom-right\n  of the board).\
+    \ The train then runs on its own; watch where it stops.\n- R restarts the current puzzle from its\
+    \ opening state; the RESET button on the board\n  does the same.\n\n## Progression and failure\n-\
+    \ Solving a puzzle moves straight on to the next one, so a run is a chain of puzzles\n  rather than\
+    \ a single board.\n- The campaign is five towns of five named puzzles, and the puzzles get longer\
+    \ and\n  more intricate as you go.\n- There is no health, timer or score to protect: a route that\
+    \ is wrong simply stops\n  or derails the train, and you fix it or restart the puzzle. Nothing is\
+    \ lost.\n- The environment reloads the page for a fresh attempt, which returns you to the same\n \
+    \ puzzle the run started on.\n"
+  game_roles:
+  - name: engineer
+    context:
+      role_description: 'You are laying miniature railway tracks. The puzzle board is already on screen:
+
+        click pieces to pick them up, rotate them and place them so the train can finish
+
+        the named route, then send the train. There are no menus to open.
+
+        '
+      control_notes: '- Left click: pick up a loose piece, drop the held piece into a slot, or rotate
+        a placed piece
+
+        - Left click the engine / start control at the bottom-right of the board: send the train
+
+        - R: restart the current puzzle from scratch
+
+        - Wait: the train runs by itself once sent, and the game moves to the next puzzle by itself once
+        it finishes
+
+        '
+    controls:
+      allowed_keys:
+      - r
+      allow_clicks: true
+      hold_duration: 0.2
+tasks:
+- task_id: '86_01'
+  game_id: 86_raide
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: easy
+  task_prompt: 'Solve BEGINNING, the first campaign puzzle: rebuild its track and send the train
+
+    from start to finish.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.levels_cleared
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.levels_cleared
+    - metrics.puzzle
+    - metrics.stage
+    - metrics.won
+    - metrics.survived_s
+    - game_state.player.puzzle_name
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '86_02'
+  game_id: 86_raide
+  evaluator_id: game_api_metric
+  task_target_score_field: 3
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: easy
+  task_prompt: 'Solve the first three campaign puzzles in order: BEGINNING, then OTHER SIDE, then
+
+    FOREST.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.levels_cleared
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.levels_cleared
+    - metrics.puzzle
+    - metrics.stage
+    - metrics.won
+    - metrics.survived_s
+    - game_state.player.puzzle_name
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '86_03'
+  game_id: 86_raide
+  evaluator_id: game_api_metric
+  task_target_score_field: 5
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Finish the opening town of five puzzles, ending with MOUNTAINS.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.levels_cleared
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.levels_cleared
+    - metrics.puzzle
+    - metrics.stage
+    - metrics.won
+    - metrics.survived_s
+    - game_state.player.puzzle_name
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '86_04'
+  game_id: 86_raide
+  game_url_suffix: ?start=6
+  evaluator_id: game_api_metric
+  task_target_score_field: 6
+  task_start_score_field: 5
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: easy
+  task_prompt: 'You start on DAMAGED, the first puzzle of the next town. Solve it: leftover broken
+
+    pieces still have to be laid so the train can get through.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.levels_cleared
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.levels_cleared
+    - metrics.puzzle
+    - metrics.stage
+    - metrics.won
+    - metrics.survived_s
+    - game_state.player.puzzle_name
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '86_05'
+  game_id: 86_raide
+  game_url_suffix: ?start=6
+  evaluator_id: game_api_metric
+  task_target_score_field: 8
+  task_start_score_field: 5
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: medium
+  task_prompt: 'Starting on DAMAGED, solve three puzzles of this town: DAMAGED, SIMILAR and
+
+    JUNKYARD.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.levels_cleared
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.levels_cleared
+    - metrics.puzzle
+    - metrics.stage
+    - metrics.won
+    - metrics.survived_s
+    - game_state.player.puzzle_name
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '86_06'
+  game_id: 86_raide
+  game_url_suffix: ?start=6
+  evaluator_id: game_api_metric
+  task_target_score_field: 10
+  task_start_score_field: 5
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: hard
+  task_prompt: 'Starting on DAMAGED, finish this whole damaged-track town, ending with COPYCAT.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.levels_cleared
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.levels_cleared
+    - metrics.puzzle
+    - metrics.stage
+    - metrics.won
+    - metrics.survived_s
+    - game_state.player.puzzle_name
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '86_07'
+  game_id: 86_raide
+  game_url_suffix: ?start=21
+  evaluator_id: game_api_metric
+  task_target_score_field: 25
+  task_start_score_field: 20
+  pause_during_inference: true
+  continue_on_fail: true
+  difficulty: very_hard
+  task_prompt: 'You start on FINAL DUET. Solve the whole final town and finish the campaign with
+
+    THE FINAL TRACK.
+
+    '
+  evaluator_config:
+    terminal_status: fail
+    score_field: metrics.levels_cleared
+    end_field: terminal.isTerminal
+    metrics_fields:
+    - metrics.levels_cleared
+    - metrics.puzzle
+    - metrics.stage
+    - metrics.won
+    - metrics.survived_s
+    - game_state.player.puzzle_name
+    - terminal.outcome
+    - terminal.isTerminal

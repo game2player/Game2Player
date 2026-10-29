@@ -1,0 +1,27 @@
+# Python and local environments
+**/__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.DS_Store
+
+# Local credentials
+.env
+.env.*
+*.token
+
+# Generated assets, recordings, working files and output
+/games/
+/data/
+/.cache/
+/output/
+/results/
+*.log
+
+# Packaging
+/build/
+/dist/

@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simon Sequence</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<main class="app-shell"><header class="topbar"><div><div class="eyebrow">SIGNAL ROOM</div><h1>Simon Sequence</h1><p>Watch the signal, then repeat it exactly.</p></div><div class="stats"><span>Step<strong id="step-value">0</strong></span><span>Length<strong id="length-value">0</strong></span></div></header>
+<section class="game-shell"><aside class="mission"><span class="pill">CURRENT SIGNAL</span><h2 id="level-name">Loading…</h2><p id="level-description"></p><p class="hint">The colored signal above is public once displayed. Repeat it from left to right.</p><button id="restart-button" type="button">Replay signal</button></aside>
+<section class="signal-panel" aria-label="Simon sequence"><div id="sequence-display" class="sequence-display"></div><div id="palette" class="palette" aria-label="Signal buttons"></div><div id="status" class="status" aria-live="polite">Repeat the signal</div></section></section>
+</main><script src="game_api.js"></script><script src="game.js"></script>
+</body></html>
+

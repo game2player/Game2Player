@@ -1,0 +1,161 @@
+game:
+  game_name: 224_a-small-world-cup
+  width: 700
+  height: 400
+  speed_multiplier: 1.0
+  url: https://rujogames.itch.io/a-small-world-cup
+  game_rules: 'Play physics soccer with one ragdoll per team. Knock the ball into the right-hand
+
+    goal; the computer attacks your left-hand goal. The score at top left is yours.
+
+    Players and ball fall, bounce, and collide automatically between actions.
+
+    Timed matches last 45 seconds, with added time; a tie continues until broken.
+
+    Golden Goal ends after the deciding goal. A World Cup has seven matches, including
+
+    three match days and knockout rounds. Losing ends the campaign.
+
+    Tasks begin inside the opening match. On a winner screen, wait until its animation
+
+    finishes, then click to see the tournament bracket. After a win, click the bracket
+
+    once the next match is ready to begin it. The pre-match introduction can be skipped
+
+    by clicking once it has begun. Reset starts a fresh campaign.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: You control Argentina's ragdoll, which starts on the left, against the computer.
+      control_notes: 'Drag with the left mouse button anywhere on the pitch, then release to fling
+
+        your player in the direction of the drag. Longer drags give a stronger impulse,
+
+        up to a cap. Use a drag action (press, move, release), not a plain click.
+
+        Wait to let physics, the opponent, and the match clock advance.
+
+        On later result and bracket screens, click to continue once the animation is
+
+        ready. A click during the pre-match introduction skips it once it has begun.
+
+        '
+    controls:
+      allowed_keys: []
+      allow_clicks: true
+      hold_duration: 0.25
+tasks:
+- task_id: '224_01'
+  game_id: 224_a-small-world-cup
+  game_url_suffix: ?task=224_01
+  evaluator_id: game_api_metric
+  task_target_score_field: 3
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  difficulty: easy
+  task_prompt: Score three goals in the opening easy 45-second World Cup match. You control Argentina
+    against Brazil. All three goals must be in this match.
+  evaluator_config:
+    terminal_status: success
+    score_field: metrics.match_goals_best
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - metrics.match_goals_best
+    - game_state.human_goals
+    - game_state.opponent_goals
+    - game_state.match_number
+    - metrics.matches_won
+    - terminal.outcome
+    - terminal.isTerminal
+  progress_signal:
+    field: metrics.match_goals_best
+    granularity: counter
+    coarse_reason: Progress advances on native goal and match-victory events.
+- task_id: '224_02'
+  game_id: 224_a-small-world-cup
+  game_url_suffix: ?task=224_02
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  difficulty: easy
+  task_prompt: Win the opening Golden Goal match on easy difficulty as Argentina against Brazil. Score
+    the deciding goal.
+  evaluator_config:
+    terminal_status: success
+    score_field: metrics.golden_match_won
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - metrics.golden_match_won
+    - game_state.human_goals
+    - game_state.opponent_goals
+    - game_state.match_number
+    - metrics.matches_won
+    - terminal.outcome
+    - terminal.isTerminal
+  progress_signal:
+    field: metrics.golden_match_won
+    granularity: flag
+    coarse_reason: The deciding goal is an atomic victory.
+- task_id: '224_03'
+  game_id: 224_a-small-world-cup
+  game_url_suffix: ?task=224_03
+  evaluator_id: game_api_metric
+  task_target_score_field: 1
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  difficulty: medium
+  task_prompt: Win the opening normal-difficulty 45-second World Cup match as Argentina against Brazil.
+    Scoring goals earns partial credit; finish with the native match victory.
+  evaluator_config:
+    terminal_status: success
+    score_field: metrics.match_victory_progress
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - metrics.match_victory_progress
+    - game_state.human_goals
+    - game_state.opponent_goals
+    - game_state.match_number
+    - metrics.matches_won
+    - terminal.outcome
+    - terminal.isTerminal
+  progress_signal:
+    field: metrics.match_victory_progress
+    granularity: counter
+    coarse_reason: Progress advances on native goal and match-victory events.
+- task_id: '224_04'
+  game_id: 224_a-small-world-cup
+  game_url_suffix: ?task=224_04
+  evaluator_id: game_api_metric
+  task_target_score_field: 7
+  task_start_score_field: 0
+  pause_during_inference: true
+  continue_on_fail: false
+  difficulty: hard
+  task_prompt: Win the seven-match World Cup on normal difficulty as Argentina, starting against Brazil.
+    Continue through the bracket after each win and reach the cup-win screen after the final.
+  evaluator_config:
+    terminal_status: success
+    score_field: metrics.cup_victory_progress
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - metrics.cup_victory_progress
+    - game_state.human_goals
+    - game_state.opponent_goals
+    - game_state.match_number
+    - metrics.matches_won
+    - terminal.outcome
+    - terminal.isTerminal
+  progress_signal:
+    field: metrics.cup_victory_progress
+    granularity: counter
+    coarse_reason: Progress advances on native goal and match-victory events.

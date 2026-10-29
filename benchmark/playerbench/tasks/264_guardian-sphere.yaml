@@ -1,0 +1,305 @@
+game:
+  game_name: 264_guardian-sphere
+  speed_multiplier: 1.0
+  width: 640
+  height: 360
+  url: https://html-classic.itch.zone/html/2260147/index.html
+  game_rules: 'Guardian Sphere is a vertical-scrolling shoot ''em up in five worlds (Cactus
+
+    Canyon, Union City, Peace Garden, Zenith Building, Alien Ship). You pilot a
+
+    small guardian through a stage that scrolls up by itself, shooting enemies and
+
+    dodging their shots. Each world ends in a boss arena; when the boss dies it
+
+    drops a large glowing sphere, and picking that sphere up clears the world and
+
+    opens a results screen.
+
+
+    The glowing spheres circling your character are both your health and your
+
+    money. You start with 3 of 10. Enemies drop spheres when they die; flying
+
+    over them collects them. Every hit takes spheres away, and a hit taken at 0
+
+    spheres kills you. The task starts have no continues, so dying ends the run
+
+    (the game-over screen offers Retry, which restarts from world 1).
+
+
+    The bar at the bottom of the screen shows STAGE (the current world), KILLS
+
+    (enemies you have destroyed this run) and CREDIT.
+
+
+    Now and then a lab building appears at the side of the stage. Flying into its
+
+    door opens a shop and pauses the game: you pay spheres for a permanent upgrade
+
+    (more damage, shield, speed, extra shot, bigger sphere capacity, and so on).
+
+    Prices rise with each level of the same upgrade, and you cannot buy what you
+
+    cannot pay for. Wave enemies, turrets, rocks and walls fill each stage; the
+
+    stage keeps scrolling whether or not you act, and you cannot fly below the
+
+    bottom edge of the screen.
+
+    '
+  game_roles:
+  - name: player
+    context:
+      role_description: 'You control the Sphere guardian (the character shown at the bottom of
+
+        the playfield), moving over the scrolling stage and firing upward.
+
+        '
+      control_notes: "- Arrow keys: move in all four directions. Hold them for the length of\n  each action;\
+        \ a key must stay down a moment (about 0.2 s) to register.\n- Hold C: fire shots upward (the guardian\
+        \ slows slightly while firing).\n  Taps shorter than the hold duration may not fire.\n- V: use\
+        \ the stored special item if one is shown (it also backs out of\n  shop menus).\n- Enter: confirm\
+        \ on the stage-clear results screen (shown after you\n  pick up the boss's sphere) and continue\
+        \ to the next world. The screen\n  ignores Enter for the first few seconds, so keep pressing it\
+        \ every\n  second or so until the next world's intro starts.\n- P or Escape: pause or resume.\n\
+        - Shop (flying into a lab door): arrow keys move the cursor over the four\n  items, C opens the\
+        \ purchase popup, Left selects Yes and Right selects\n  No, C confirms; V leaves, then Left selects\
+        \ Yes and C confirms to\n  close the shop.\n- Waiting does nothing useful: the stage and enemies\
+        \ keep moving.\n"
+    controls:
+      allowed_keys:
+      - ArrowUp
+      - ArrowDown
+      - ArrowLeft
+      - ArrowRight
+      - c
+      - v
+      - Enter
+      - p
+      - Escape
+      allow_clicks: false
+      hold_duration: 0.2
+tasks:
+- task_id: '264_01'
+  game_id: 264_guardian-sphere
+  game_url_suffix: ?world=1&difficulty=medium
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 40
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'You start in world 1 (Cactus Canyon) on medium difficulty with 3 spheres. Fly
+
+    with the arrow keys and hold C to shoot. Destroy 40 enemies in total; the
+
+    counter on the task is the number of enemies you have killed with your own
+
+    shots. You have one life: if you are hit at 0 spheres the run ends.
+
+    '
+  progress_signal:
+    field: game_state.enemies_destroyed
+    granularity: dense
+  evaluator_config:
+    score_field: game_state.enemies_destroyed
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: fail
+    metrics_fields:
+    - game_state.enemies_destroyed
+    - game_state.sphere_hp
+    - game_state.stage_progress
+    - game_state.screen
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '264_02'
+  game_id: 264_guardian-sphere
+  game_url_suffix: ?world=1&difficulty=medium
+  difficulty: medium
+  task_start_score_field: 0
+  task_target_score_field: 1
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'You start in world 1 (Cactus Canyon) on medium difficulty. Survive the
+
+    scrolling stage, defeat the boss at its end, and pick up the big sphere it
+
+    drops to clear the stage. Progress rises as the stage scrolls toward the boss
+
+    and as the boss is damaged, and reaches 1 only when the stage is cleared.
+
+    '
+  progress_signal:
+    field: game_state.stage_progress
+    granularity: continuous
+  evaluator_config:
+    score_field: game_state.stage_progress
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: fail
+    metrics_fields:
+    - game_state.stage_progress
+    - game_state.scroll_fraction
+    - game_state.boss_damage_fraction
+    - game_state.enemies_destroyed
+    - game_state.sphere_hp
+    - game_state.stage_cleared
+    - game_state.screen
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '264_03'
+  game_id: 264_guardian-sphere
+  game_url_suffix: ?world=1&difficulty=medium
+  difficulty: medium
+  task_start_score_field: 0
+  task_target_score_field: 2
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'You start in world 1 (Cactus Canyon) on medium difficulty with 3 spheres.
+
+    Collect spheres from defeated enemies, fly into a lab door when one appears,
+
+    and buy 2 upgrades in total with your spheres (any items; each purchase spends
+
+    spheres and counts once).
+
+    '
+  progress_signal:
+    field: game_state.upgrades_bought
+    granularity: counter
+    coarse_reason: Lab purchases are discrete shop events and only a few labs appear in a stage, so a
+      small integer count of completed purchases is the natural measure.
+  evaluator_config:
+    score_field: game_state.upgrades_bought
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: fail
+    metrics_fields:
+    - game_state.upgrades_bought
+    - game_state.sphere_hp
+    - game_state.enemies_destroyed
+    - game_state.stage_progress
+    - game_state.screen
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '264_04'
+  game_id: 264_guardian-sphere
+  game_url_suffix: ?world=2&difficulty=medium
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 1
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'You start directly in world 2 (Union City) on medium difficulty with a fresh
+
+    guardian (3 spheres, no upgrades). Survive the stage, defeat its boss and pick
+
+    up the big sphere it drops to clear the stage. Progress rises with the stage
+
+    scroll and boss damage, and reaches 1 only when the stage is cleared.
+
+    '
+  progress_signal:
+    field: game_state.stage_progress
+    granularity: continuous
+  evaluator_config:
+    score_field: game_state.stage_progress
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: fail
+    metrics_fields:
+    - game_state.stage_progress
+    - game_state.scroll_fraction
+    - game_state.boss_damage_fraction
+    - game_state.enemies_destroyed
+    - game_state.sphere_hp
+    - game_state.stage_cleared
+    - game_state.world
+    - game_state.screen
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '264_05'
+  game_id: 264_guardian-sphere
+  game_url_suffix: ?world=1&difficulty=hard
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 1
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'You start in world 1 (Cactus Canyon) on HARD difficulty: faster scrolling,
+
+    tougher enemies and bosses, and no continues. Survive the stage, defeat the
+
+    boss and pick up the big sphere it drops to clear the stage. Progress rises
+
+    with the stage scroll and boss damage, and reaches 1 only when the stage is
+
+    cleared.
+
+    '
+  progress_signal:
+    field: game_state.stage_progress
+    granularity: continuous
+  evaluator_config:
+    score_field: game_state.stage_progress
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: fail
+    metrics_fields:
+    - game_state.stage_progress
+    - game_state.scroll_fraction
+    - game_state.boss_damage_fraction
+    - game_state.enemies_destroyed
+    - game_state.sphere_hp
+    - game_state.stage_cleared
+    - game_state.difficulty
+    - game_state.screen
+    - terminal.outcome
+    - terminal.isTerminal
+- task_id: '264_06'
+  game_id: 264_guardian-sphere
+  game_url_suffix: ?world=1&difficulty=medium
+  difficulty: very_hard
+  task_start_score_field: 0
+  task_target_score_field: 3
+  evaluator_id: game_api_metric
+  pause_during_inference: true
+  continue_on_fail: false
+  task_prompt: 'You start in world 1 (Cactus Canyon) on medium difficulty. Clear three worlds
+
+    in one run: Cactus Canyon, Union City and Peace Garden. Defeat each boss, pick
+
+    up its big sphere, and press Enter on the results screen to move on to the
+
+    next world. Spheres and upgrades you earn carry over. Progress counts cleared
+
+    worlds plus how far through the current one you are; it reaches 3 when Peace
+
+    Garden is cleared.
+
+    '
+  progress_signal:
+    field: game_state.campaign_progress
+    granularity: continuous
+  evaluator_config:
+    score_field: game_state.campaign_progress
+    end_field: terminal.isTerminal
+    end_value: true
+    terminal_status: fail
+    metrics_fields:
+    - game_state.campaign_progress
+    - game_state.worlds_cleared
+    - game_state.world
+    - game_state.stage_progress
+    - game_state.enemies_destroyed
+    - game_state.upgrades_bought
+    - game_state.sphere_hp
+    - game_state.screen
+    - terminal.outcome
+    - terminal.isTerminal

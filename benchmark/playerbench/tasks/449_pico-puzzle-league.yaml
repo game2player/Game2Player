@@ -1,0 +1,121 @@
+game:
+  game_name: 449_pico-puzzle-league
+  url: https://tvil.itch.io/pico-puzzle-league
+  width: 640
+  height: 640
+  speed_multiplier: 1.0
+  genre: Puzzle
+  tags:
+  - pico8
+  - match3
+  - puzzle
+  description: A compact Puzzle League demake. Swap adjacent blocks to form horizontal or vertical lines
+    of three matching symbols.
+  game_rules: The board rises from the bottom. Lines of three or more equal symbols disappear and blocks
+    fall into the cleared spaces. Clear the requested number of blocks before the stack reaches the top.
+    The same fresh opening is used for every task, with increasing clearance targets.
+  game_roles:
+  - name: player
+    context:
+      role_description: Arrange the rising block stack into matching lines.
+      control_notes: Tap arrow keys to move the two-block cursor. Tap Z or X to exchange its adjacent
+        blocks. Make horizontal or vertical lines of three matching symbols. The top is initially empty;
+        wait for the first rows to enter play. Inputs can repeat while held.
+    controls:
+      allowed_keys:
+      - ArrowLeft
+      - ArrowRight
+      - ArrowUp
+      - ArrowDown
+      - z
+      - x
+      allow_clicks: false
+      hold_duration: 0.08
+tasks:
+- task_id: '449_01'
+  game_id: 449_pico-puzzle-league
+  game_url_suffix: ?task=449_01
+  evaluator_id: game_api_metric
+  difficulty: easy
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear at least 3 blocks in a fresh game of Pico Puzzle League. Tap arrow keys to move the
+    two-block cursor, then Z or X to swap adjacent symbols. Match three or more equal symbols in a horizontal
+    or vertical line. Wait for the first rows to rise into play; clear blocks before the stack reaches
+    the top.
+  progress_signal:
+    field: game_state.blocks_cleared
+    granularity: counter
+    coarse_reason: Actual blocks first marked for native match removal are discrete events.
+    provenance: engine_hook
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.blocks_cleared
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - game_state.blocks_cleared
+    - game_state.swaps
+    - game_state.native_phase
+    - game_state.task_start_matches
+    - terminal.outcome
+- task_id: '449_02'
+  game_id: 449_pico-puzzle-league
+  game_url_suffix: ?task=449_02
+  evaluator_id: game_api_metric
+  difficulty: medium
+  task_start_score_field: 0
+  task_target_score_field: 12
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear at least 12 blocks in a fresh game of Pico Puzzle League. Tap arrow keys to move
+    the two-block cursor, then Z or X to swap adjacent symbols. Match three or more equal symbols in a
+    horizontal or vertical line. Wait for the first rows to rise into play; clear blocks before the stack
+    reaches the top.
+  progress_signal:
+    field: game_state.blocks_cleared
+    granularity: counter
+    coarse_reason: Actual blocks first marked for native match removal are discrete events.
+    provenance: engine_hook
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.blocks_cleared
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - game_state.blocks_cleared
+    - game_state.swaps
+    - game_state.native_phase
+    - game_state.task_start_matches
+    - terminal.outcome
+- task_id: '449_03'
+  game_id: 449_pico-puzzle-league
+  game_url_suffix: ?task=449_03
+  evaluator_id: game_api_metric
+  difficulty: hard
+  task_start_score_field: 0
+  task_target_score_field: 30
+  pause_during_inference: true
+  continue_on_fail: true
+  task_prompt: Clear at least 30 blocks in a fresh game of Pico Puzzle League. Tap arrow keys to move
+    the two-block cursor, then Z or X to swap adjacent symbols. Match three or more equal symbols in a
+    horizontal or vertical line. Wait for the first rows to rise into play; clear blocks before the stack
+    reaches the top.
+  progress_signal:
+    field: game_state.blocks_cleared
+    granularity: counter
+    coarse_reason: Actual blocks first marked for native match removal are discrete events.
+    provenance: engine_hook
+  evaluator_config:
+    terminal_status: success
+    score_field: game_state.blocks_cleared
+    end_field: terminal.isTerminal
+    end_value: true
+    metrics_fields:
+    - game_state.blocks_cleared
+    - game_state.swaps
+    - game_state.native_phase
+    - game_state.task_start_matches
+    - terminal.outcome

@@ -1,0 +1,392 @@
+game:
+  game_name: 354_conservation-of-bass
+  url: https://emlise.itch.io/conservation-of-bass
+  width: 720
+  height: 720
+  speed_multiplier: 1.0
+  game_rules: 'Conservation of Bass is a puzzle platformer seen from the side. You guide Bass, a
+
+    small cyan fish on legs, through single-screen rooms of clutter. Touch the glass of
+
+    water in each room to clear it. A "YAY!" bubble and a wave transition then load the
+
+    next level.
+
+
+    Bass walks, and jumps about one tile high. Bass cannot climb, so the main tool is
+
+    swapping. The dashed square near Bass marks the swap target: the tile two tiles away
+
+    in the last arrow direction you pressed. Pressing X makes Bass and the block in that
+
+    square trade places instantly. Any block the size of one tile can be swapped: vases,
+
+    plant pots, clocks, TVs, crates, life rings and single brick blocks alike. Pieces of
+
+    bigger objects that span several tiles, such as beds and bookshelves, cannot be
+
+    swapped. The square looks solid on a swappable block, faint over empty space, and
+
+    red on something that cannot be swapped.
+
+
+    Holding X freezes Bass in place while you aim, including in mid-air. Use the arrows
+
+    to aim during the hold; releasing X performs the swap.
+
+
+    Spikes and other hazards kill Bass, and so does leaving the room. Death restarts the
+
+    current level from its starting layout, with unlimited retries. Pressing R also
+
+    restarts the level.
+
+
+    Each level has a par number of swaps. Clearing a level in one attempt with no more
+
+    swaps than par earns its star. The glass changes appearance once your swaps go over
+
+    par. When you enter a new area, a short title stinger plays and Bass cannot move for
+
+    a couple of seconds.
+
+
+    The bar under the room shows the task''s current level, your swaps this attempt and
+
+    the level''s par.'
+  game_roles:
+  - name: player
+    context:
+      role_description: Control Bass. Walk, jump and swap places with nearby objects to reach the glass
+        of water in each level.
+      control_notes: '- ArrowLeft / ArrowRight: walk. Hold the key to keep walking. From a standstill
+        Bass needs about 0.35 seconds of holding per tile.
+
+        - ArrowUp: jump (a fixed hop of about one tile; a tap is enough). It also points the swap target
+        upward. To jump sideways, hold the arrow together with ArrowUp (press_keys ArrowRight+ArrowUp
+        with a duration).
+
+        - ArrowDown: points the swap target two tiles below Bass without moving.
+
+        - x: swap with the object in the dashed target square. A tap swaps immediately. Hold x to freeze
+        Bass while you change the aim with the arrows; releasing x swaps.
+
+        - r: restart the current level.'
+    controls:
+      allowed_keys:
+      - ArrowLeft
+      - ArrowRight
+      - ArrowUp
+      - ArrowDown
+      - x
+      - r
+      allow_clicks: false
+      hold_duration: 0.3
+tasks:
+- task_id: '354_01'
+  game_id: 354_conservation-of-bass
+  difficulty: easy
+  game_url_suffix: ?task=354_01
+  task_prompt: 'Clear the first three bedroom levels in order: the walking tutorial, the swap tutorial
+    and "look up". You start in the walking tutorial. Reach the glass of water in each level to move on
+    to the next. Restarts with r are unlimited.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: dense
+    coarse_reason: Ordered native level clears plus straight-line closeness of Bass to the glass within
+      the current level, capped below one level, give continuous partial credit.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.levels_cleared
+    - metrics.level_closeness
+    - metrics.restarts
+    - metrics.clears_over_par
+    - game_state.room_name
+    - game_state.target_level
+    - game_state.swaps
+    - game_state.par
+    - game_state.star_earned
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '354_02'
+  game_id: 354_conservation-of-bass
+  difficulty: medium
+  game_url_suffix: ?task=354_02
+  task_prompt: 'Clear four bedroom levels in order: easy U, up or down, the can''t-swap tutorial and two
+    tiles. You start in easy U. Reach the glass of water in each level to move on to the next. Restarts
+    with r are unlimited.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 4
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: dense
+    coarse_reason: Ordered native level clears plus straight-line closeness to the glass within the current
+      level, capped below one level.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.levels_cleared
+    - metrics.level_closeness
+    - metrics.restarts
+    - metrics.clears_over_par
+    - game_state.room_name
+    - game_state.target_level
+    - game_state.swaps
+    - game_state.par
+    - game_state.star_earned
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '354_03'
+  game_id: 354_conservation-of-bass
+  difficulty: medium
+  game_url_suffix: ?task=354_03
+  task_prompt: 'Clear the first three greenhouse levels in order: the hold-x tutorial, hops and tiny U.
+    You start in the hold-x tutorial; the greenhouse title plays first and Bass can move once it ends.
+    Reach the glass of water in each level to move on to the next. Restarts with r are unlimited.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: dense
+    coarse_reason: Ordered native level clears plus straight-line closeness to the glass within the current
+      level, capped below one level.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.levels_cleared
+    - metrics.level_closeness
+    - metrics.restarts
+    - metrics.clears_over_par
+    - game_state.room_name
+    - game_state.target_level
+    - game_state.swaps
+    - game_state.par
+    - game_state.star_earned
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '354_04'
+  game_id: 354_conservation-of-bass
+  difficulty: medium
+  game_url_suffix: ?task=354_04
+  task_prompt: 'Clear three greenhouse levels in order: the mid-air swap tutorial, one small hop and big
+    fish. You start in the mid-air swap tutorial. Reach the glass of water in each level to move on to
+    the next. Restarts with r are unlimited.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: dense
+    coarse_reason: Ordered native level clears plus straight-line closeness to the glass within the current
+      level, capped below one level.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.levels_cleared
+    - metrics.level_closeness
+    - metrics.restarts
+    - metrics.clears_over_par
+    - game_state.room_name
+    - game_state.target_level
+    - game_state.swaps
+    - game_state.par
+    - game_state.star_earned
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '354_05'
+  game_id: 354_conservation-of-bass
+  difficulty: medium
+  game_url_suffix: ?task=354_05
+  task_prompt: 'Clear the first three playroom levels in order: spike swap, spike up and two spike. You
+    start in spike swap; the playroom title plays first and Bass can move once it ends. Touching a red
+    spike kills Bass and restarts the level. Reach the glass of water in each level to move on to the
+    next. Restarts with r are unlimited.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: dense
+    coarse_reason: Ordered native level clears plus straight-line closeness to the glass within the current
+      level, capped below one level.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.levels_cleared
+    - metrics.level_closeness
+    - metrics.restarts
+    - metrics.clears_over_par
+    - game_state.room_name
+    - game_state.target_level
+    - game_state.swaps
+    - game_state.par
+    - game_state.star_earned
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '354_06'
+  game_id: 354_conservation-of-bass
+  difficulty: hard
+  game_url_suffix: ?task=354_06
+  task_prompt: 'Clear three playroom levels in order: one tele, sidestep and spike drag. You start in
+    one tele. Spikes kill Bass and restart the level. Reach the glass of water in each level to move on
+    to the next. Restarts with r are unlimited.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 3
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: dense
+    coarse_reason: Ordered native level clears plus straight-line closeness to the glass within the current
+      level, capped below one level.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.levels_cleared
+    - metrics.level_closeness
+    - metrics.restarts
+    - metrics.clears_over_par
+    - game_state.room_name
+    - game_state.target_level
+    - game_state.swaps
+    - game_state.par
+    - game_state.star_earned
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '354_07'
+  game_id: 354_conservation-of-bass
+  difficulty: hard
+  game_url_suffix: ?task=354_07
+  task_prompt: 'Earn the star on the bedroom level "loopy": reach the glass of water using at most 6 swaps
+    in a single attempt. The bar under the room shows your swaps and the par. The glass changes appearance
+    once you go over par; press r to restart with zero swaps. If you reach the glass over par, you are
+    sent back to the start of loopy to try again.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: dense
+    coarse_reason: The star is one native event; partial credit is the straight-line closeness to the
+      glass reached during attempts still within par, capped below 1.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.levels_cleared
+    - metrics.level_closeness
+    - metrics.restarts
+    - metrics.clears_over_par
+    - game_state.room_name
+    - game_state.target_level
+    - game_state.swaps
+    - game_state.par
+    - game_state.star_earned
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '354_08'
+  game_id: 354_conservation-of-bass
+  difficulty: hard
+  game_url_suffix: ?task=354_08
+  task_prompt: Clear the first of the "really hard" bonus levels. You start in it after its title plays.
+    Reach the glass of water to clear it. Restarts with r are unlimited.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 1
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: dense
+    coarse_reason: A single level clear; partial credit is the straight-line closeness of Bass to the
+      glass, capped below 1 until the native clear.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.levels_cleared
+    - metrics.level_closeness
+    - metrics.restarts
+    - metrics.clears_over_par
+    - game_state.room_name
+    - game_state.target_level
+    - game_state.swaps
+    - game_state.par
+    - game_state.star_earned
+    - game_state.task_complete
+    - terminal.outcome
+- task_id: '354_09'
+  game_id: 354_conservation-of-bass
+  difficulty: very_hard
+  game_url_suffix: ?task=354_09
+  task_prompt: 'Clear two bonus B-side levels in order: sidestep, then two and three. You start in the
+    B-side sidestep. Reach the glass of water in each level to move on to the next. Restarts with r are
+    unlimited.'
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 2
+  pause_during_inference: true
+  continue_on_fail: true
+  progress_signal:
+    field: metrics.task_progress
+    granularity: dense
+    coarse_reason: Ordered native level clears plus straight-line closeness to the glass within the current
+      level, capped below one level.
+  evaluator_config:
+    score_field: metrics.task_progress
+    end_field: game_state.task_complete
+    terminal_status: success
+    metrics_fields:
+    - metrics.task_progress
+    - metrics.levels_cleared
+    - metrics.level_closeness
+    - metrics.restarts
+    - metrics.clears_over_par
+    - game_state.room_name
+    - game_state.target_level
+    - game_state.swaps
+    - game_state.par
+    - game_state.star_earned
+    - game_state.task_complete
+    - terminal.outcome

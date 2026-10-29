@@ -1,0 +1,188 @@
+game:
+  game_name: 38_mobs-inc
+  url: https://overboy.itch.io/mobs-inc
+  speed_multiplier: 1.0
+  width: 960
+  height: 720
+  game_rules: 'You are a monster employee fighting adventurers in an arena. Dash through enemies
+
+    to kill them and gain experience. Later levels require more kills per level and
+
+    introduce tougher enemy types. Avoid swords, charging attackers, and arrows;
+
+    hearts at the bottom show your health.
+
+
+    Losing all health sends you to the CEO for an automatic review. Levels persist
+
+    between lives. Promotions at levels 20, 40, and 60 unlock Q, W, and E respectively,
+
+    and are awarded during the review, rather than immediately at the level threshold.
+
+    A review without a promotion gives a verbal warning; four warnings end the run.
+
+    Wait for review animations to finish. A promotion may show a skill card: click it
+
+    once it blinks to dismiss it, then wait for respawning.
+
+
+    The arena is already started. Some tasks begin with a promoted monster. Level and
+
+    warnings appear at the top; unlocked skills and their cooldown covers appear at
+
+    the bottom. The small task counter tracks the current goal. Ordinary dash kills
+
+    do not count toward a task asking for a particular special ability.
+
+    '
+  game_roles:
+  - name: monster
+    context:
+      role_description: You control the monster's movement, aimed dashes, and unlocked special attacks.
+      control_notes: "- Move the mouse to guide the monster toward the pointer. Movement continues\n \
+        \ toward that point while you wait.\n- Left-click inside the arena to dash toward the pointer,\
+        \ killing enemies\n  you pass through. Aim away from walls and scenery that block targeting.\n\
+        - Press Q (0.25 seconds), then left-click an arena location to land there\n  with an area attack.\
+        \ The game slows while you choose the landing point.\n- Press W (0.25 seconds), then left-click\
+        \ to launch a rolling ball toward\n  that point. It kills enemies it touches for about five game\
+        \ seconds.\n- Press E (0.25 seconds), then make five separate aimed left-clicks to dash\n  along\
+        \ a route. Enemies crossed are marked and die after the fifth dash.\n- A special requires its\
+        \ promotion and a ready cooldown, and cannot start\n  during another special. Q/W/E cooldowns\
+        \ are about 6/12/17 game seconds.\n- Wait to let attacks, cooldowns, automatic reviews, and respawns\
+        \ finish.\n  Click a blinking skill card to dismiss it if one appears.\n"
+    controls:
+      allowed_keys:
+      - q
+      - w
+      - e
+      allow_clicks: true
+      hold_duration: 0.25
+tasks:
+- task_id: '38_01'
+  game_id: 38_mobs-inc
+  difficulty: easy
+  game_url_suffix: ?task=38_01
+  task_prompt: From a fresh unpromoted monster at level 0, reach level 10.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 10
+  pause_during_inference: true
+  continue_on_fail: false
+  evaluator_config:
+    score_field: metrics.best_level_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.best_level_progress
+    - game_state.level
+    - game_state.promotion_rank
+    - game_state.warnings
+    - game_state.health
+    - terminal.outcome
+  progress_signal:
+    field: metrics.best_level_progress
+    granularity: dense
+- task_id: '38_02'
+  game_id: 38_mobs-inc
+  difficulty: medium
+  game_url_suffix: ?task=38_02
+  task_prompt: From a fresh unpromoted monster at level 0, earn your first promotion. Reach level 20 and
+    receive the promotion during the CEO review after losing your health.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 21
+  pause_during_inference: true
+  continue_on_fail: false
+  evaluator_config:
+    score_field: metrics.first_promotion_progress
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.first_promotion_progress
+    - game_state.level
+    - game_state.promotion_rank
+    - game_state.warnings
+    - game_state.health
+    - terminal.outcome
+  progress_signal:
+    field: metrics.first_promotion_progress
+    granularity: dense
+- task_id: '38_03'
+  game_id: 38_mobs-inc
+  difficulty: easy
+  game_url_suffix: ?task=38_03
+  task_prompt: You begin at level 20 with the first promotion, full health, no warnings, and ready abilities.
+    Defeat five adventurers using the Q landing-area attack. Only kills from that attack count.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  pause_during_inference: true
+  continue_on_fail: false
+  evaluator_config:
+    score_field: metrics.q_kills
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.q_kills
+    - game_state.level
+    - game_state.promotion_rank
+    - game_state.warnings
+    - game_state.health
+    - terminal.outcome
+  progress_signal:
+    field: metrics.q_kills
+    granularity: counter
+    coarse_reason: Each native ability kill is an atomic defeat; individual kills provide partial credit.
+- task_id: '38_04'
+  game_id: 38_mobs-inc
+  difficulty: easy
+  game_url_suffix: ?task=38_04
+  task_prompt: You begin at level 40 with the second promotion, full health, no warnings, and ready abilities.
+    Defeat five adventurers using the W rolling-ball ability. Only kills from that ability count.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  pause_during_inference: true
+  continue_on_fail: false
+  evaluator_config:
+    score_field: metrics.w_kills
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.w_kills
+    - game_state.level
+    - game_state.promotion_rank
+    - game_state.warnings
+    - game_state.health
+    - terminal.outcome
+  progress_signal:
+    field: metrics.w_kills
+    granularity: counter
+    coarse_reason: Each native ability kill is an atomic defeat; individual kills provide partial credit.
+- task_id: '38_05'
+  game_id: 38_mobs-inc
+  difficulty: easy
+  game_url_suffix: ?task=38_05
+  task_prompt: You begin at level 60 with the third promotion, full health, no warnings, and ready abilities.
+    Defeat five adventurers using E multi-dash. Mark enemies along the five-click route; they count when
+    the sequence kills them.
+  evaluator_id: game_api_metric
+  task_start_score_field: 0
+  task_target_score_field: 5
+  pause_during_inference: true
+  continue_on_fail: false
+  evaluator_config:
+    score_field: metrics.e_kills
+    end_field: terminal.isTerminal
+    terminal_status: fail
+    metrics_fields:
+    - metrics.e_kills
+    - game_state.level
+    - game_state.promotion_rank
+    - game_state.warnings
+    - game_state.health
+    - terminal.outcome
+  progress_signal:
+    field: metrics.e_kills
+    granularity: counter
+    coarse_reason: Each native ability kill is an atomic defeat; individual kills provide partial credit.

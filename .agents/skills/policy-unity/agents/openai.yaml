@@ -1,0 +1,6 @@
+interface:
+  display_name: "Policy Unity"
+  short_description: "Read Unity IL2CPP state into a policy probe"
+  default_prompt: "Use $policy-unity for this Unity WebGL Policy Author phase."
+policy:
+  allow_implicit_invocation: false
