@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/hero.webp" alt="Game2Player: 568 games, 15.7K trajectories, 1.56M steps, 307 hours of gameplay, with animated gameplay" width="100%">
+</p>
+
 <div align="center">
 
 <h3>
@@ -24,10 +28,6 @@ Manling Li<sup>4</sup>, Yang Zhang<sup>5</sup>, Shiyu Chang<sup>2</sup>, Tong Zh
 </p>
 
 </div>
-
-<p align="center">
-  <img src="assets/hero.webp" alt="Game2Player: 568 games, 15.7K trajectories, 1.56M steps, 307 hours of gameplay, with animated gameplay" width="100%">
-</p>
 
 ## Overview
 
