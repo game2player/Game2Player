@@ -5,7 +5,7 @@
 <div align="center">
 
 <h3>
-<img src="assets/title.png" alt="Game2Player" width="150">: Scaling Gameplay Experience for Visual<br>
+<img src="assets/title.png" alt="Game2Player" width="120">: Scaling Gameplay Experience for Visual<br>
 Agents through Environment–Player Co-Development
 </h3>
 
