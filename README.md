@@ -91,6 +91,7 @@ over a game's tasks and then over games. Success is the share of tasks completed
   <tr><td><b>Game2Player-9B</b></td><td align="center">off</td><td align="right"><b>28.6</b></td><td align="right"><b>14.6</b></td><td align="right"><b>33.9</b></td><td align="right"><b>14.1</b></td></tr>
   <tr><td>Qwen3.5-4B</td><td align="center">on</td><td align="right">15.9</td><td align="right">5.6</td><td align="right">26.9</td><td align="right">8.2</td></tr>
   <tr><td><b>Game2Player-4B</b></td><td align="center">on</td><td align="right"><b>31.1</b></td><td align="right"><b>14.6</b></td><td align="right"><b>49.5</b></td><td align="right"><b>27.6</b></td></tr>
+  <tr><td>Qwen3.5-9B</td><td align="center">on</td><td align="right">14.3</td><td align="right">5.2</td><td align="right">30.0</td><td align="right">13.5</td></tr>
   <tr><td><b>Game2Player-9B</b></td><td align="center">on</td><td align="right"><b>31.2</b></td><td align="right"><b>15.0</b></td><td align="right"><b>53.1</b></td><td align="right"><b>29.4</b></td></tr>
 </table>
 
