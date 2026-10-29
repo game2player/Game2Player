@@ -7,7 +7,7 @@ through Environment–Player Co-Development
 </h3>
 
 <p>
-Xirui Jiang<sup>1,*</sup>, Yuxi Chen<sup>1,*</sup>, Feng Luo<sup>2,*</sup>, Rui Yang<sup>1,*</sup>,<br>
+Xirui Jiang<sup>1,*</sup>, Yuxi Chen<sup>1,*</sup>, Rui Yang<sup>1,*</sup>, Feng Luo<sup>2,*</sup>,<br>
 Pengcheng Wang<sup>1</sup>, Bingxuan Li<sup>1</sup>, Zihao Zhao<sup>3</sup>, Yushan Li<sup>1</sup>, Han Wang<sup>1</sup>,<br>
 Manling Li<sup>4</sup>, Yang Zhang<sup>5</sup>, Shiyu Chang<sup>2</sup>, Tong Zhang<sup>1</sup>, Huan Zhang<sup>1</sup>
 </p>
@@ -246,7 +246,7 @@ and [catalog fields](docs/CATALOG.md) are described in `docs/`.
 
 ```bibtex
 @misc{game2player2026,
-  author       = {Jiang, Xirui and Chen, Yuxi and Luo, Feng and Yang, Rui and
+  author       = {Jiang, Xirui and Chen, Yuxi and Yang, Rui and Luo, Feng and
                   Wang, Pengcheng and Li, Bingxuan and Zhao, Zihao and
                   Li, Yushan and Wang, Han and Li, Manling and Zhang, Yang and
                   Chang, Shiyu and Zhang, Tong and Zhang, Huan},
