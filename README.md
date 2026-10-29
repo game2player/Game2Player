@@ -1,9 +1,8 @@
 <div align="center">
 
 <h3>
-<img src="assets/title.png" alt="Game2Player" width="455"><br>
-Scaling Gameplay Experience for Visual Agents<br>
-through Environment–Player Co-Development
+<img src="assets/title.png" alt="Game2Player" width="150">: Scaling Gameplay Experience for Visual<br>
+Agents through Environment–Player Co-Development
 </h3>
 
 <p>
@@ -24,14 +23,10 @@ Manling Li<sup>4</sup>, Yang Zhang<sup>5</sup>, Shiyu Chang<sup>2</sup>, Tong Zh
   <a href="https://huggingface.co/game2player"><img height="22" src="https://img.shields.io/badge/Models-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" alt="Models"></a>
 </p>
 
-<p>
-<img src="assets/stats.png" alt="568 games, 15.7K trajectories, 1.56M steps, 307 hours of gameplay" width="620">
-</p>
-
 </div>
 
 <p align="center">
-  <img src="assets/teaser.webp" alt="Gameplay from games in the Game2Player collection" width="100%">
+  <img src="assets/hero.webp" alt="Game2Player: 568 games, 15.7K trajectories, 1.56M steps, 307 hours of gameplay, with animated gameplay" width="100%">
 </p>
 
 ## Overview
