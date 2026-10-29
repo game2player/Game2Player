@@ -7,14 +7,14 @@ through Environment–Player Co-Development
 </h3>
 
 <p>
-Xirui Jiang<sup>1,*</sup>, Yuxi Chen<sup>1,*</sup>, Rui Yang<sup>1,*</sup>, Feng Luo<sup>2,*</sup>,<br>
+Xirui Jiang<sup>1,*</sup>, Yuxi Chen<sup>1,*</sup>, Rui Yang<sup>1,*,†</sup>, Feng Luo<sup>2,*</sup>,<br>
 Pengcheng Wang<sup>1</sup>, Bingxuan Li<sup>1</sup>, Zihao Zhao<sup>3</sup>, Yushan Li<sup>1</sup>, Han Wang<sup>1</sup>,<br>
 Manling Li<sup>4</sup>, Yang Zhang<sup>5</sup>, Shiyu Chang<sup>2</sup>, Tong Zhang<sup>1</sup>, Huan Zhang<sup>1</sup>
 </p>
 <p>
 <sup>1</sup> UIUC &nbsp; <sup>2</sup> UCSB &nbsp; <sup>3</sup> Georgia Tech &nbsp; <sup>4</sup> Northwestern &nbsp; <sup>5</sup> IBM
 </p>
-<p><sup>*</sup> Equal contribution</p>
+<p><sup>*</sup> Equal contribution &nbsp; <sup>†</sup> Project lead</p>
 
 <p>
   <img height="22" src="https://img.shields.io/badge/Paper-coming%20soon-555?style=for-the-badge&logo=arxiv&logoColor=white&labelColor=b31b1b" alt="Paper: coming soon">
