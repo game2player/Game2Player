@@ -12,14 +12,9 @@ Pengcheng Wang<sup>1</sup>, Bingxuan Li<sup>1</sup>, Zihao Zhao<sup>3</sup>, Yus
 Manling Li<sup>4</sup>, Yang Zhang<sup>5</sup>, Shiyu Chang<sup>2</sup>, Tong Zhang<sup>1</sup>, Huan Zhang<sup>1</sup>
 </p>
 <p>
-<sup>1</sup> University of Illinois Urbana-Champaign &nbsp; <sup>2</sup> UC Santa Barbara<br>
-<sup>3</sup> Georgia Institute of Technology &nbsp; <sup>4</sup> Northwestern University &nbsp; <sup>5</sup> IBM
+<sup>1</sup> UIUC &nbsp; <sup>2</sup> UCSB &nbsp; <sup>3</sup> Georgia Tech &nbsp; <sup>4</sup> Northwestern &nbsp; <sup>5</sup> IBM
 </p>
 <p><sup>*</sup> Equal contribution</p>
-
-<p>
-<img src="assets/affiliations.png" alt="University of Illinois Urbana-Champaign · UC Santa Barbara · Georgia Institute of Technology · Northwestern University · IBM" width="720">
-</p>
 
 <p>
   <img height="22" src="https://img.shields.io/badge/Paper-coming%20soon-555?style=for-the-badge&logo=arxiv&logoColor=white&labelColor=b31b1b" alt="Paper: coming soon">
