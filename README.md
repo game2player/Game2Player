@@ -10,9 +10,8 @@ Agents through Environment–Player Co-Development
 </h3>
 
 <p>
-Xirui Jiang<sup>1,*</sup>, Yuxi Chen<sup>1,*</sup>, Rui Yang<sup>1,*,†</sup>, Feng Luo<sup>2,*</sup>,<br>
-Pengcheng Wang<sup>1</sup>, Bingxuan Li<sup>1</sup>, Zihao Zhao<sup>3</sup>, Yushan Li<sup>1</sup>, Han Wang<sup>1</sup>,<br>
-Manling Li<sup>4</sup>, Yang Zhang<sup>5</sup>, Shiyu Chang<sup>2</sup>, Tong Zhang<sup>1</sup>, Huan Zhang<sup>1</sup>
+Xirui Jiang<sup>1,*</sup>, Yuxi Chen<sup>1,*</sup>, Rui Yang<sup>1,*,†</sup>, Feng Luo<sup>2,*</sup>, Pengcheng Wang<sup>1</sup>, Bingxuan Li<sup>1</sup>, Zihao Zhao<sup>3</sup>,<br>
+Yushan Li<sup>1</sup>, Han Wang<sup>1</sup>, Manling Li<sup>4</sup>, Yang Zhang<sup>5</sup>, Shiyu Chang<sup>2</sup>, Tong Zhang<sup>1</sup>, Huan Zhang<sup>1</sup>
 </p>
 <p>
 <sup>1</sup> UIUC &nbsp; <sup>2</sup> UCSB &nbsp; <sup>3</sup> Georgia Tech &nbsp; <sup>4</sup> Northwestern &nbsp; <sup>5</sup> IBM
