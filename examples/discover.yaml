@@ -1,0 +1,21 @@
+campaign: discover-puzzle
+agent: codex
+scout_prompt: >
+  Find 3 short single-player browser puzzle games on itch.io.
+  They should use keyboard or mouse controls and be playable offline.
+options:
+  builder_revisions: 3
+  policy_revisions: 50
+  repair_rounds: 2
+  turn_timeout_minutes: 25
+  vlm_workers: 1
+vlm_check:
+  plan: examples/plans/vlm_check.yaml
+  model: codex-player
+  thinking: low
+policy_collect:
+  plan: examples/plans/policy_collect.yaml
+vlm_collect:
+  plan: examples/plans/vlm_collect.yaml
+  model: codex-player
+  thinking: low

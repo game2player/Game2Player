@@ -140,18 +140,40 @@ to run them locally or through an existing model server.
 
 ### Generate an environment
 
-Copy `examples/campaign.yaml` to `my-games.yaml` and fill in the game ID, title and
-source URL. To use Claude, set `agent: claude`, and `model: claude-player` under
-both `vlm_check` and `vlm_collect`.
+To find games from a description, run the discovery example:
 
 ```bash
-python -m tools.game_pipeline my-games.yaml --jobs 1 --until builder   # environment and tasks
-python -m tools.game_pipeline my-games.yaml --jobs 1 --until policy    # then playtesting and the code policy
-python -m tools.game_pipeline my-games.yaml --jobs 1                   # then trajectory collection
+python -m tools.game_pipeline examples/discover.yaml --jobs 2 --until policy
 ```
 
-Running a command again resumes it. `--jobs` sets how many games run at once, and
-`target_per_task` in the collection plans sets how many episodes each task records.
+Edit `scout_prompt` in that YAML to choose a platform, genre and number of games.
+
+To build a specific game, run the 2048 example:
+
+```bash
+python -m tools.game_pipeline examples/campaign.yaml --jobs 1 --until policy
+```
+
+To use another game, copy this YAML and edit its entry under `games`.
+For each game, only `source_url` is required. You can also provide `title` and
+`game_id`, or let them be generated automatically. Use `game_id` in later play
+commands, for example `1_2048`. Use a new `campaign` name to start a separate run.
+
+To use Claude, set `agent: claude`, and `model: claude-player` under both
+`vlm_check` and `vlm_collect`.
+
+`--until builder` stops after generating the environment and tasks. `--until policy`
+also runs playtesting and repairs, then creates a code policy. Omit `--until` to
+continue through trajectory collection. Running the same command again resumes
+its work.
+
+`--jobs` sets how many games run at once. `--workers` sets how many VLM episodes
+run at once within each game and overrides `options.vlm_workers` in the YAML.
+`vlm_workers` defaults to 2. The examples use 1.
+For example, `--jobs 4 --workers 1` processes up to four games with one VLM
+episode per game. To use both coding agents, pass `--agents codex=2,claude=2`
+instead of `--jobs`. `target_per_task` in the collection plans sets how many
+episodes each task records.
 
 ### Reconstruct PlayerBench
 
@@ -172,11 +194,11 @@ directories. See the benchmark guide for evaluation commands.
 
 ### Play a generated game
 
-Use your own game and task IDs in place of `1_my-game` and `1_01`:
+Use the game and task IDs from your generated catalog, for example:
 
 ```bash
-python play.py run --game 1_my-game --task 1_01                  # play it yourself
-python play.py run --game 1_my-game --task 1_01 \
+python play.py run --game 1_2048 --task 1_01                  # play it yourself
+python play.py run --game 1_2048 --task 1_01 \
   --actor vlm --model codex-player --headless --max-steps 100    # let the VLM Player play
 ```
 

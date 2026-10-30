@@ -1,5 +1,6 @@
 """Run a list of new games from Scout to training data, one pipeline per game.
 
+Supply ``games`` directly, or ``scout_prompt`` to find the games in one Scout search.
 Every listed game goes through the stages below on its own, at most ``--jobs`` games
 at a time; ``--from`` and ``--until`` pick a range:
 
@@ -43,6 +44,7 @@ import subprocess
 import sys
 import time
 import traceback
+from urllib.parse import urlparse
 
 import yaml
 
@@ -172,6 +174,54 @@ def _scout_brief(game: dict) -> str:
 
 def _campaign_dir(root: Path, campaign: str) -> Path:
     return root / ".cache" / "game-pipeline" / campaign
+
+
+def _prepare_games(plan: dict, root: Path, used_ids: set[str]) -> dict:
+    """Resolve one Scout search, then give every game a stable local name."""
+    plan = dict(plan)
+    saved = _read(_campaign_dir(root, plan["campaign"]) / "plan.json")
+    prompt = plan.get("scout_prompt")
+    if prompt:
+        if plan.get("games"):
+            raise ValueError("use either scout_prompt or games in a campaign")
+        if saved.get("scout_prompt"):
+            if saved["scout_prompt"] != prompt:
+                raise ValueError("use a new campaign name for a different scout_prompt")
+            games = saved["games"]
+        else:
+            scout = Scout(f"{plan['campaign']}-search", root=root,
+                          agent=load_agent(plan["agent"]),
+                          turn_timeout_s=plan.get("options", {}).get("turn_timeout_minutes", 25) * 60)
+            report = (scout.state.reports[-1] if scout.state.reports
+                      else scout.run(prompt, discover=True))
+            print(f"[{plan['campaign']}] Scout: {report['summary']}", flush=True)
+            games = report["candidates"]
+    else:
+        if not plan.get("games"):
+            raise ValueError("a campaign needs scout_prompt or games")
+        games = plan["games"]
+    previous = {game["source_url"]: game for game in saved.get("games", [])}
+    used_ids.update(game["game_id"] for game in games if game.get("game_id"))
+    used_ids.update(game["game_id"] for game in previous.values() if game.get("game_id"))
+    number = max((int(match.group(1)) for game_id in used_ids
+                  if (match := re.match(r"^(\d+)_", game_id))), default=0) + 1
+    prepared = []
+    for source in games:
+        game = dict(source)
+        url = game["source_url"]
+        old = previous.get(url, {})
+        game.setdefault("title", old.get("title") or
+                        urlparse(url).path.rstrip("/").rsplit("/", 1)[-1] or "Game")
+        if not game.get("game_id"):
+            game["game_id"] = old.get("game_id")
+            if not game["game_id"]:
+                slug = re.sub(r"[^a-z0-9]+", "-", game["title"].lower()).strip("-") or "game"
+                game["game_id"] = f"{number}_{slug}"
+                number += 1
+        used_ids.add(game["game_id"])
+        prepared.append(game)
+    plan["games"] = prepared
+    return plan
 
 
 def _policy_path(root: Path, game_id: str) -> Path:
@@ -385,7 +435,7 @@ class GameRun:
                 arguments += ["--endpoints", ",".join(endpoints)]
             level = _player_thinking(config, self.root)
             arguments += ["--thinking", level]
-            arguments += ["--workers", str(self.options.get("vlm_workers", 6))]
+            arguments += ["--workers", str(self.options.get("vlm_workers", 2))]
         if self.slot is not None:
             base = ROLLOUT_PORT_BASE + self.slot * ROLLOUT_PORT_BLOCK
             arguments += ["--port-base", str(base),
@@ -684,7 +734,7 @@ def _check_plan(plan: dict, stages: tuple[str, ...]) -> None:
                if not (plan.get(key) or {}).get(field)]
     if missing:
         raise ValueError(f"the campaign plan needs {', '.join(missing)}")
-    if plan.get("options", {}).get("vlm_workers", 6) > ROLLOUT_PORT_BLOCK // 2:
+    if plan.get("options", {}).get("vlm_workers", 2) > ROLLOUT_PORT_BLOCK // 2:
         raise ValueError(f"vlm_workers is at most {ROLLOUT_PORT_BLOCK // 2}, the ports one "
                          "game's rollout has")
     held_out = set(plan.get("held_out") or [])
@@ -1006,6 +1056,13 @@ def run_campaigns(plans: list[dict], *, root: Path, start: str = "scout", until:
     stages = STAGES[STAGES.index(start):STAGES.index(until) + 1]
     if agents is None and len(plans) != 1:
         raise ValueError("several campaigns run together need --agents")
+    used_ids = {path.stem for path in (root / "catalog" / "games").glob("*.yaml")}
+    used_ids.update(game["game_id"] for plan in plans for game in plan.get("games", [])
+                    if game.get("game_id"))
+    for plan in plans:
+        saved = _read(_campaign_dir(root, plan["campaign"]) / "plan.json")
+        used_ids.update(game["game_id"] for game in saved.get("games", []))
+    plans = [_prepare_games(plan, root, used_ids) for plan in plans]
     _check_unique([game for plan in plans for game in plan["games"]])
     for plan in plans:
         _check_plan(plan, stages)
@@ -1120,7 +1177,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("plan", type=Path, nargs="+",
-                        help="campaign YAML: agent, games, stage settings; several with --agents")
+                        help="campaign YAML: agent, games or scout_prompt, stage settings; several with --agents")
     parser.add_argument("--root", type=Path, default=CODE_ROOT)
     parser.add_argument("--from", dest="start", choices=STAGES, default="scout")
     parser.add_argument("--until", choices=STAGES, default="collect")
@@ -1138,7 +1195,7 @@ def main() -> int:
     parser.add_argument("--gpus", help="GPUs that serve a local model for the whole campaign")
     parser.add_argument("--wait-idle", action="store_true", help="wait until those GPUs are free")
     parser.add_argument("--vllm", help="vLLM executable (default: $GAMEENV_VLLM, else vllm on PATH)")
-    parser.add_argument("--workers", type=int, help="model episodes at once per game (default 6)")
+    parser.add_argument("--workers", type=int, help="model episodes at once per game (default 2)")
     parser.add_argument("--game", help="internal: run one game's stages")
     parser.add_argument("--slot", type=int, help="internal: the port block of that game's rollouts")
     parser.add_argument("--agent", help="internal: the agent that game runs on")

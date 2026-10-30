@@ -90,6 +90,29 @@ CANDIDATE_SCHEMA: dict[str, Any] = {
 }
 
 
+DISCOVERY_SCHEMA: dict[str, Any] = {
+    "type": "object",
+    "properties": {
+        "campaign": {"type": "string"},
+        "summary": {"type": "string"},
+        "candidates": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "title": {"type": "string"},
+                    "source_url": {"type": "string"},
+                },
+                "required": ["title", "source_url"],
+                "additionalProperties": False,
+            },
+        },
+    },
+    "required": ["campaign", "summary", "candidates"],
+    "additionalProperties": False,
+}
+
+
 @dataclass(slots=True)
 class ScoutState:
     campaign: str
@@ -179,7 +202,7 @@ class Scout:
             web_search=True,
         )
 
-    def run(self, brief: str) -> dict[str, Any]:
+    def run(self, brief: str, *, discover: bool = False) -> dict[str, Any]:
         brief = brief.strip()
         if not brief:
             raise ValueError("Scout brief must not be empty")
@@ -191,7 +214,8 @@ class Scout:
                 f"Current research brief:\n{brief}"
             )
         else:
-            template = (Path(__file__).with_name("prompts") / "scout.md").read_text(
+            template = (Path(__file__).with_name("prompts") /
+                        ("scout_discover.md" if discover else "scout.md")).read_text(
                 encoding="utf-8"
             )
             prompt = template.format(campaign=self.campaign, brief=brief,
@@ -201,7 +225,7 @@ class Scout:
             try:
                 report = self.session.turn(
                     prompt,
-                    CANDIDATE_SCHEMA,
+                    DISCOVERY_SCHEMA if discover else CANDIDATE_SCHEMA,
                     sandbox="read-only",
                 )
                 if report.get("campaign") != self.campaign:

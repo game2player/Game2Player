@@ -1,5 +1,5 @@
-# Replace the placeholder source before running. This is not a bundled game.
-campaign: my-games
+# Build 2048 from its original source repository.
+campaign: build-2048
 agent: codex
 options:
   builder_revisions: 3
@@ -19,7 +19,6 @@ vlm_collect:
   model: codex-player
   thinking: low
 games:
-  - game_id: 1_my-game
-    title: My Game
-    source_url: https://example.com/game
-    notes: Replace this with the original game source and relevant integration notes.
+  - game_id: "1_2048"
+    title: "2048"
+    source_url: https://github.com/gabrielecirulli/2048

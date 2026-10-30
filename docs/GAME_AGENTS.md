@@ -7,9 +7,11 @@ screenshots through a model configured in `catalog/models/`.
 
 ## The loop
 
-Scout checks whether a game can be adapted. Builder captures its runtime, exposes
-its state and defines tasks. The VLM Player plays the tasks and reports what goes
-wrong, and Builder fixes the environment. The Coding Player then writes the code
+With `scout_prompt`, Scout first searches for candidate games. Each candidate then
+gets its own Scout session to check whether it can be adapted. A campaign with
+`games` starts directly with those individual checks. Builder captures the game's
+runtime, exposes its state and defines tasks. The VLM Player plays the tasks and
+reports what goes wrong, and Builder fixes the environment. The Coding Player then writes the code
 policy and sends any environment defect it finds back to Builder. Games that pass
 are used to collect trajectories.
 
