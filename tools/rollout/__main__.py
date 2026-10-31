@@ -329,7 +329,7 @@ def cmd_run(args: argparse.Namespace) -> int:
             episode_prefix=_tag(prefix),
             plan_copy=plan_copy,
             harness_config=harness_path,
-            job_timeout_s=args.job_timeout_s or (1800.0 if kind == "policy" else 3600.0),
+            job_timeout_s=args.job_timeout_s or (1800.0 if kind == "policy" else 86400.0),
             keep_going=getattr(args, "keep_going", False),
             reused=reused,
             skipped_at_start=skipped_at_start,
@@ -390,7 +390,7 @@ def parser() -> argparse.ArgumentParser:
                      help="collect: reverse game-id order, placing the priority group last")
     run.add_argument("--tasks", help="comma-separated subset of the selected task ids")
     run.add_argument("--seed-namespace", help="collect: seed prefix (default: the plan's, else the output folder name)")
-    run.add_argument("--job-timeout-s", type=float, help="per-episode wall clock limit (policy 1800, model 3600)")
+    run.add_argument("--job-timeout-s", type=float, help="per-episode wall clock limit (policy 1800, model 86400)")
     run.add_argument("--keep-going", action="store_true",
                      help="leave failed tasks pending and continue other jobs")
     run.add_argument("--port-base", type=int, default=21100)
