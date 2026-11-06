@@ -80,8 +80,8 @@ def cmd_run(args: argparse.Namespace) -> int:
     plan = load_plan(args.plan)
     if args.thinking is not None:
         plan = replace(plan, thinking=thinking_level(args.thinking))
-    if plan.continue_on_fail not in {None, False}:
-        raise SystemExit("plan continue_on_fail may only be false (or absent)")
+    if plan.continue_on_fail not in {None, False, True}:
+        raise SystemExit("plan continue_on_fail must be true or false (or absent)")
     kind = "policy" if args.model == "policy" else "vlm"
     profile = None
     gpus = [int(item) for item in args.gpus.split(",") if item.strip()] if args.gpus else []

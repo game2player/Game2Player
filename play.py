@@ -120,13 +120,12 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     run.set_defaults(stop_on_terminal=True)
     run.add_argument(
-        "--no-continue-on-fail",
+        "--continue-on-fail",
         dest="continue_on_fail",
-        action="store_false",
+        action=argparse.BooleanOptionalAction,
         help=(
-            "End the episode on a failed attempt instead of resetting and playing on. "
-            "Without this option the task's own continue_on_fail applies, and "
-            "--duration-s is what ends the recording."
+            "Override whether a failed attempt resets and continues. "
+            "Without this option the task's own continue_on_fail applies."
         ),
     )
     run.set_defaults(continue_on_fail=None)

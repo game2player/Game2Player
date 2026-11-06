@@ -165,6 +165,8 @@ about other files belong in another field.
 
 Task design
 
+- Set `continue_on_fail: true` in every newly created task YAML. Preserve the
+  existing value when working on an existing task.
 - Task ids are `<game number>_<NN>`, numbered within this game -- `19_01`, `19_02`,
   and the file is `catalog/tasks/{game_id}/<id>.yaml`. Both the frozen plan and the
   task loader reject anything else. Where a URL query already carries a name the game itself branches

@@ -848,8 +848,8 @@ class Scheduler:
         command += ["--wall-clock-s", f"{max(60.0, self.job_timeout_s - WALL_CLOCK_MARGIN_S):g}"]
         if self.plan.inference is not None:
             command += ["--inference-mode", self.plan.inference]
-        if self.plan.continue_on_fail is False:
-            command.append("--no-continue-on-fail")
+        if self.plan.continue_on_fail is not None:
+            command.append("--continue-on-fail" if self.plan.continue_on_fail else "--no-continue-on-fail")
         return command
 
     async def run_attempt(self, worker: Worker, job: Job, attempt: int) -> tuple[str, str, str | None]:
