@@ -61,9 +61,9 @@ python -m tools.datagen render data/datasets/my_dataset/vlm \
   data/datasets/my_dataset/vlm/train.jsonl --reasoning recorded
 ```
 
-`--reasoning recorded` keeps the recorded native thinking. A code policy has none, so
-its empty thinking block is marked `loss: false` and is not trained on. Without the
-flag, samples carry no thinking. Notes are included either way.
+Use `--reasoning recorded` to train on native thinking when the recording includes it.
+The export masks empty thinking blocks from the loss. Action targets and notes
+are included either way.
 
 `--history 20 --images 3` uses less history than the dataset stores. A row's weight
 sets how many times it is written. `--weights none` writes each row once.

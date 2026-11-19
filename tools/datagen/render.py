@@ -119,11 +119,9 @@ def render_swift(dataset: Path, output: Path, *, history: int | None = None, rea
                 route = "think" if item["thought"] else ("masked" if row.get("actor") == "policy" else "no_think")
             if route == "think":
                 assistant = [{"role": "assistant", "content": f"<think>\n{item['thought'].strip()}\n</think>\n\n{answer}"}]
-            elif route == "masked":
+            elif route in ("masked", "no_think"):
                 assistant = [{"role": "assistant", "content": EMPTY_THINK, "loss": False},
                              {"role": "assistant", "content": answer}]
-            elif route == "no_think":
-                assistant = [{"role": "assistant", "content": EMPTY_THINK + answer}]
             else:
                 raise ValueError(f"unknown route {route!r} for row {row['id']}")
             line = json.dumps(_swift([{"role": "system", "content": prompts[task_key]},
