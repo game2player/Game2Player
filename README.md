@@ -19,7 +19,7 @@ Yushan Li<sup>1</sup>, Han Wang<sup>1</sup>, Manling Li<sup>4</sup>, Yang Zhang<
 <p><sup>*</sup> Equal contribution &nbsp; <sup>†</sup> Project lead</p>
 
 <p>
-  <img height="22" src="https://img.shields.io/badge/Paper-coming%20soon-555?style=for-the-badge&logo=arxiv&logoColor=white&labelColor=b31b1b" alt="Paper: coming soon">
+  <a href="https://arxiv.org/abs/2611.24154"><img height="22" src="https://img.shields.io/badge/arXiv-2611.24154-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="Paper on arXiv"></a>
   <a href="https://game2player.github.io"><img height="22" src="https://img.shields.io/badge/Project%20Page-12a594?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Project Page"></a>
   <a href="https://game2player.github.io/#leaderboard"><img height="22" src="https://img.shields.io/badge/Leaderboard-5b5bd6?style=for-the-badge" alt="Leaderboard"></a>
   <img height="22" src="https://img.shields.io/badge/Dataset-coming%20soon-555?style=for-the-badge&logo=huggingface&logoColor=black&labelColor=FFD21E" alt="Dataset: coming soon">
@@ -265,8 +265,10 @@ and [catalog fields](docs/CATALOG.md) are described in `docs/`.
   title        = {Game2Player: Scaling Gameplay Experience for Visual Agents
                   through Environment--Player Co-Development},
   year         = {2026},
-  howpublished = {GitHub project},
-  url          = {https://github.com/game2player/Game2Player}
+  eprint       = {2611.24154},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CV},
+  url          = {https://arxiv.org/abs/2611.24154}
 }
 ```
 
