@@ -15,7 +15,7 @@ import threading
 import time
 import traceback
 from contextlib import contextmanager
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -501,6 +501,7 @@ class RecordingConfig:
     block_external_network: bool = True
     # The run plan this episode belongs to (as written), kept in the summary.
     run_plan: dict[str, Any] | None = None
+    smooth_video: bool = field(default_factory=lambda: os.environ.get("GAMEENV_SMOOTH_VIDEO") == "1")
 
 
 def _json_default(value: Any) -> Any:
@@ -592,7 +593,7 @@ def _video_bitrate_to_bps(value: str) -> int:
     return int(cleaned)
 
 
-def _playwright_video_patch_source(*, fps: int, bitrate: str) -> str:
+def _playwright_video_patch_source(*, fps: int, bitrate: str, smooth_video: bool = False) -> str:
     return f"""
 const fs = require('fs');
 const Module = require('module');
@@ -602,6 +603,15 @@ const targetBitrate = {json.dumps(bitrate)};
 const originalLoader = Module._extensions['.js'];
 
 Module._extensions['.js'] = function(module, filename) {{
+  // Playwright's 35 ms acknowledgement interval targets 25 fps. Give the
+  // recorder fresh compositor frames to choose from at higher output rates.
+  if ({json.dumps(smooth_video)} && targetFps > 25 && filename.endsWith('/server/page.js')) {{
+    const source = fs.readFileSync(filename, 'utf8').replace(
+      'new FrameThrottler(10, 35, 200)',
+      'new FrameThrottler(10, browserContext._options.recordVideo ? 12 : 35, 200)'
+    );
+    return module._compile(source, filename);
+  }}
   if (!filename.endsWith('/server/chromium/videoRecorder.js')) {{
     return originalLoader(module, filename);
   }}
@@ -1094,6 +1104,7 @@ class TrajectoryRecorder:
             _playwright_video_patch_source(
                 fps=self.config.video_fps,
                 bitrate=_validate_video_bitrate(self.config.video_bitrate),
+                smooth_video=self.config.smooth_video,
             ),
             encoding="utf-8",
         )
@@ -1385,6 +1396,7 @@ class TrajectoryRecorder:
                 "version": self._browser_version(),
                 "headless": self.config.headless,
                 "video_backend": self.config.video_backend,
+                **({"smooth_video": True} if self.config.smooth_video else {}),
                 "offline": self.config.block_external_network,
                 "blocked_external_requests": max(
                     self._blocked_external_requests,
@@ -1918,6 +1930,7 @@ class TrajectoryRecorder:
                 game_api_init_options=getattr(self.task, "game_api_init_options", {}),
                 record_video_dir=record_video_dir,
                 record_video_size=(self.game.width, self.game.height),
+                fast_png=self.config.smooth_video,
                 extension_dir=extension_dir,
                 user_data_dir=user_data_dir,
                 unity_profile=unity_profile,

@@ -153,15 +153,34 @@ class AutomatedTrajectoryRecorder(TrajectoryRecorder):
             return ()
         return tuple(self.harness.page_init_scripts)
 
-    async def _infer(self, observation: HarnessObservation):
-        paused = False
-        if self.inference_mode == "paused":
-            paused = await self._begin_inference_pause()
+    async def _observe_and_decide(self, page):
+        # Freeze before image readback so the scene stays at the decision boundary.
+        pause_for_inference = self.inference_mode == "paused"
+        pause_before_image = (
+            pause_for_inference and self.config.smooth_video
+            and self.harness.observation_mode == "screenshot"
+        )
+        paused = pause_before_image and await self._begin_inference_pause()
         try:
-            return await self.harness.step(observation)
+            try:
+                observation, state = await self._observe(page)
+            except PlaywrightError as exc:
+                observation_error = exc
+            else:
+                if is_terminal(state):
+                    return observation, state, None
+                if pause_for_inference and not pause_before_image:
+                    paused = await self._begin_inference_pause()
+                decision = await self.harness.step(observation)
+                return observation, state, decision
         finally:
             if paused:
                 await self._end_inference_pause()
+
+        # A reloaded page must be running while its readiness hook initializes.
+        if not await self._recover_navigation(observation_error):
+            raise observation_error
+        return None
 
     async def _after_task_reset(self) -> None:
         if self._executor is not None:
@@ -211,15 +230,13 @@ class AutomatedTrajectoryRecorder(TrajectoryRecorder):
                 if self._wall_clock_spent():
                     await self._stop_at_limit("wall_clock")
                     break
-                try:
-                    observation, trusted_state = await self._observe(page)
-                except PlaywrightError as exc:
-                    if not await self._recover_navigation(exc):
-                        raise
+                result = await self._observe_and_decide(page)
+                if result is None:
                     continue
+                observation, trusted_state, decision = result
                 # A finished game waits for the recorder to stop or reset the task.
                 # Failed resets now raise an interface report instead of resuming play.
-                if is_terminal(trusted_state):
+                if decision is None:
                     await self._executor.release_all_keys()
                     if self.task is not None:
                         await asyncio.sleep(0.05)
@@ -242,7 +259,6 @@ class AutomatedTrajectoryRecorder(TrajectoryRecorder):
                     await asyncio.sleep(0.05)
                     continue
 
-                decision = await self._infer(observation)
                 if self._gameplay_ready is not None:
                     await self._gameplay_ready.wait()
                 if self._stop_event.is_set() or self._stop_deadline is not None:

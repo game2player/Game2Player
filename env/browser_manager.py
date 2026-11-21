@@ -152,6 +152,7 @@ class ScreenshotConfig:
     width: int
     height: int
     screenshot_dir: Path
+    fast_png: bool = False
 
 
 class CDPScreenshotter:
@@ -180,6 +181,7 @@ class CDPScreenshotter:
             "Page.captureScreenshot",
             {
                 "format": "png",
+                "optimizeForSpeed": self.config.fast_png,
                 "captureBeyondViewport": False,
                 "fromSurface": True,
             },
@@ -323,6 +325,7 @@ class BrowserConfig:
     # The card, by PCI bus id as nvidia-smi prints it; None lets the driver choose.
     gpu_device: str | None = field(
         default_factory=lambda: None if _webgl_gpu() in (None, "any") else _webgl_gpu())
+    fast_png: bool = False
 
 
 class BrowserGameManager:
@@ -345,6 +348,7 @@ class BrowserGameManager:
                 width=config.width,
                 height=config.height,
                 screenshot_dir=config.screenshot_dir,
+                fast_png=config.fast_png,
             )
         )
 

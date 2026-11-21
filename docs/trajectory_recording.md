@@ -21,6 +21,11 @@ Recordings are AV1 WebM, encoded with FFmpeg's `libsvtav1`. Headed sessions capt
 the Chrome tab and headless sessions use Chromium's screencast. Both are aligned to
 the input events.
 
+Set `GAMEENV_SMOOTH_VIDEO=1` for smoother recordings. It enables faster lossless
+PNG screenshots and samples headless video more frequently above 25 fps. In paused
+VLM play, the game freezes before each screenshot. With the default settings,
+the game freezes after the screenshot, so the player may observe a different state.
+
 On Linux, `GAMEENV_WEBGL_GPU` picks the NVIDIA GPU that renders WebGL by its PCI bus
 ID, which `nvidia-smi --query-gpu=index,pci.bus_id --format=csv` lists.
 `GAMEENV_WEBGL_GPUS` spreads batch workers over several GPUs. Policies and video
