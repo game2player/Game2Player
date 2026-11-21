@@ -359,8 +359,9 @@ class BrowserGameManager:
         """Launch Playwright and navigate to the configured game URL."""
         self._owns_screenshot_dir = not self.config.screenshot_dir.exists()
         self.config.screenshot_dir.mkdir(parents=True, exist_ok=True)
-        started = time.monotonic()
         await self._launch_browser()
+        # Chromium/GPU startup is not time spent loading the game interface.
+        started = time.monotonic()
         self.page.on("pageerror", lambda error: self._record_browser_error(str(error)))
         self.page.on("console", lambda message: self._record_browser_error(message.text)
                      if message.type == "error" else None)
