@@ -2173,6 +2173,8 @@ class TrajectoryRecorder:
                 "ffprobe",
                 "-v",
                 "error",
+                "-threads",
+                "4",
                 "-count_frames",
                 "-select_streams",
                 "v:0",

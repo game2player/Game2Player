@@ -2,11 +2,15 @@
 
 from __future__ import annotations
 
+import logging
 import statistics
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 MARKER_SEQUENCE = (
@@ -102,7 +106,8 @@ def trim_video_to_trajectory_start(
         raise ValueError("fps must be greater than zero")
     trim_s = max(0.0, -offset_s)
     pauses = _merge_intervals(pause_intervals or [])
-    pts = _frame_pts(video_path, duration_s=None)
+    # Only the frames up to the cut can determine the first retained frame.
+    pts = _frame_pts(video_path, duration_s=max(1.0, trim_s + 1.0))
     if not pts:
         raise RuntimeError("Video has no decodable frames.")
     if trim_s > 0:
@@ -144,45 +149,58 @@ def trim_video_to_trajectory_start(
                 f"setpts=PTS-STARTPTS,fps={fps}"
             )
         video_filter += f",trim=duration={duration_s:.6f}"
-        result = subprocess.run(
-            [
-                "ffmpeg",
-                "-y",
-                "-v",
-                "error",
-                "-threads",
-                "2",
-                "-i",
-                str(video_path),
-                "-vf",
-                video_filter,
-                "-map",
-                "0:v:0",
-                "-an",
-                "-fps_mode",
-                "cfr",
-                "-c:v",
-                "libsvtav1",
-                "-preset",
-                "6",
-                "-crf",
-                "30",
-                "-svtav1-params",
-                "lp=4",
-                "-filter_threads",
-                "1",
-                str(output_path),
-            ],
-            capture_output=True,
-            text=True,
-            check=False,
+        command = [
+            "ffmpeg",
+            "-y",
+            "-nostdin",
+            "-v",
+            "error",
+            "-threads",
+            "2",
+            "-i",
+            str(video_path),
+            "-vf",
+            video_filter,
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "cfr",
+            "-filter_threads",
+            "1",
+        ]
+        encoders = (
+            ["-c:v", "libsvtav1", "-preset", "10", "-crf", "34", "-svtav1-params", "lp=4"],
+            ["-c:v", "libvpx-vp9", "-deadline", "realtime", "-cpu-used", "8",
+             "-crf", "34", "-b:v", "0", "-threads", "2"],
         )
-        if result.returncode:
+        timeout_s = max(120.0, min(600.0, duration_s * 2.0))
+        errors = []
+        for encoder in encoders:
+            try:
+                result = subprocess.run(
+                    [*command, *encoder, str(output_path)],
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                    timeout=timeout_s,
+                )
+            except subprocess.TimeoutExpired:
+                error = f"{encoder[1]} exceeded {timeout_s:g}s"
+            else:
+                if result.returncode:
+                    error = f"{encoder[1]}: {result.stderr.strip()}"
+                elif not output_path.exists() or output_path.stat().st_size == 0:
+                    error = f"{encoder[1]} produced an empty trimmed video"
+                else:
+                    break
+            errors.append(error)
+            output_path.unlink(missing_ok=True)
+            LOGGER.warning("Video encoding failed: %s", error)
+        else:
             raise RuntimeError(
-                f"ffmpeg failed to rebuild the active video timeline: {result.stderr.strip()}"
+                "ffmpeg failed to rebuild the active video timeline: " + "; ".join(errors)
             )
-        if not output_path.exists() or output_path.stat().st_size == 0:
-            raise RuntimeError("ffmpeg produced an empty trimmed video.")
         output_path.replace(video_path)
     finally:
         output_path.unlink(missing_ok=True)

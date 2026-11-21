@@ -17,9 +17,10 @@ Other options include `--state-fps`, `--video-fps`, `--video-bitrate` and
 
 ## Video and GPU
 
-Recordings are AV1 WebM, encoded with FFmpeg's `libsvtav1`. Headed sessions capture
-the Chrome tab and headless sessions use Chromium's screencast. Both are aligned to
-the input events.
+Headed sessions capture the Chrome tab and headless sessions use Chromium's
+screencast. FFmpeg aligns the recording to the input events and saves a WebM
+using `libsvtav1` (preset 10, CRF 34). If AV1 encoding fails or times out, the
+recorder retries once with VP9.
 
 Set `GAMEENV_SMOOTH_VIDEO=1` for smoother recordings. It enables faster lossless
 PNG screenshots and samples headless video more frequently above 25 fps. In paused
