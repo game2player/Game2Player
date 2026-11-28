@@ -1,0 +1,10 @@
+{
+  "/AboutTime.wasm": { "Content-Type": "application/wasm" },
+  "/AboutTime.pck": { "Content-Type": "application/octet-stream" },
+  "/AboutTime.js": { "Content-Type": "application/javascript; charset=utf-8" },
+  "/game_api.js": { "Content-Type": "application/javascript; charset=utf-8" },
+  "/index.html": { "Content-Type": "text/html; charset=utf-8" },
+  "/AboutTime.png": { "Content-Type": "image/png" },
+  "/AboutTime.icon.png": { "Content-Type": "image/png" },
+  "/AboutTime.apple-touch-icon.png": { "Content-Type": "image/png" }
+}

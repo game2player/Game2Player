@@ -1,0 +1,21 @@
+{
+  "game_id": "396_william-and-sly",
+  "source_url": "https://www.newgrounds.com/portal/view/503833",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://uploads.ungrounded.net/503000/503833_secure_Platformer.swf",
+      "path": "game.swf",
+      "sha256": "bfd95ef0c08b5d066c79479925a123200fcfa2a21add2e1f664602321b9ab6fd",
+      "headers": {
+        "Referer": "https://www.newgrounds.com/portal/view/503833"
+      }
+    },
+    {
+      "url": "https://github.com/ruffle-rs/ruffle/releases/download/v0.4.1/ruffle-0.4.1-web-selfhosted.zip",
+      "path": "ruffle",
+      "sha256": "d33c135beea75c83183da1938a49ee3f08c2f7a2eb2ae8f3ce43de842412aae6",
+      "unpack": "zip"
+    }
+  ]
+}

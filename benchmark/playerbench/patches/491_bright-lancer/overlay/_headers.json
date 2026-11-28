@@ -1,0 +1,11 @@
+{
+  "/Build/Bright Lancer Web Experimental.wasm.code.unityweb": {
+    "Content-Type": "application/wasm"
+  },
+  "/Build/Bright Lancer Web Experimental.data.unityweb": {
+    "Content-Type": "application/octet-stream"
+  },
+  "/Build/Bright Lancer Web Experimental.wasm.framework.unityweb": {
+    "Content-Type": "application/javascript"
+  }
+}

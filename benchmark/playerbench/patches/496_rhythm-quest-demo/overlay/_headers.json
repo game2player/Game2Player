@@ -1,0 +1,11 @@
+{
+  "/Build/Rhythm Quest Demo.wasm": {
+    "Content-Type": "application/wasm"
+  },
+  "/Build/Rhythm Quest Demo.framework.js": {
+    "Content-Type": "application/javascript"
+  },
+  "/Build/Rhythm Quest Demo.data": {
+    "Content-Type": "application/octet-stream"
+  }
+}

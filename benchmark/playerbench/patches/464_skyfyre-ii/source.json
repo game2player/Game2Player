@@ -1,0 +1,22 @@
+{
+  "game_id": "464_skyfyre-ii",
+  "source_url": "https://armorgames.com/play/10666/skyfyre-ii",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://cache.armorgames.com/files/games/skyfyre-ii-10666.swf?v=1373587525",
+      "path": "game.swf",
+      "sha256": "3b892731061a8738c6879d7ebe358914a11683936bfa2edd689269505ac113f7",
+      "headers": {
+        "Referer": "https://armorgames.com/play/10666/skyfyre-ii",
+        "User-Agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "url": "https://github.com/ruffle-rs/ruffle/releases/download/v0.4.1/ruffle-0.4.1-web-selfhosted.zip",
+      "path": "ruffle",
+      "sha256": "d33c135beea75c83183da1938a49ee3f08c2f7a2eb2ae8f3ce43de842412aae6",
+      "unpack": "zip"
+    }
+  ]
+}

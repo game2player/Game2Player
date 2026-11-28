@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bright Lancer</title>
+  <style>
+    html,body {margin:0;width:100%;height:100%;overflow:hidden;background:#0b1520}
+    #unityContainer {position:absolute;inset:0;width:100%;height:100%}
+    canvas {display:block;width:100%!important;height:100%!important;outline:none}
+    #loading {position:absolute;inset:0;display:grid;place-items:center;color:#eef;font:20px sans-serif;pointer-events:none}
+  </style>
+  <script src="Build/UnityLoader.js"></script>
+  <script src="game_api.js"></script>
+</head>
+<body>
+  <div id="unityContainer"></div><div id="loading">Loading Bright Lancer…</div>
+  <script>
+    window.unityInstance=UnityLoader.instantiate("unityContainer",
+      "Build/Bright Lancer Web Experimental.json",{onProgress:function(instance,p){
+        if(p===1) document.getElementById("loading")?.remove();
+      }});
+  </script>
+</body>
+</html>

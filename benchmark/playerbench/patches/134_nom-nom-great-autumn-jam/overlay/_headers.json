@@ -1,0 +1,20 @@
+{
+  "/Build/Web_Build_01_2024_v2.loader.js": {
+    "Content-Type": "text/javascript; charset=utf-8"
+  },
+  "/Build/Web_Build_01_2024_v2.framework.js.unityweb": {
+    "Content-Type": "text/javascript; charset=utf-8"
+  },
+  "/Build/Web_Build_01_2024_v2.wasm.unityweb": {
+    "Content-Type": "application/wasm"
+  },
+  "/Build/Web_Build_01_2024_v2.data.unityweb": {
+    "Content-Type": "application/octet-stream"
+  },
+  "/StreamingAssets/aa/catalog.json": {
+    "Content-Type": "application/json"
+  },
+  "/StreamingAssets/aa/settings.json": {
+    "Content-Type": "application/json"
+  }
+}

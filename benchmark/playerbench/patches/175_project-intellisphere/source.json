@@ -1,0 +1,37 @@
+{
+  "game_id": "175_project-intellisphere",
+  "source_url": "https://stylemistake.itch.io/intellisphere",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/5257141/index.html",
+      "path": "index.html",
+      "sha256": "dddece20ede4b018e2d9b3fe623e5ed93ab8fa41f073ffb2f731ec6fd6e85d7f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/5257141/intellisphere.apple-touch-icon.png",
+      "path": "intellisphere.apple-touch-icon.png",
+      "sha256": "9b151238d7e221700e1f6ac9f6d33f2f2f2fe11b7be149756883394d67aca45d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/5257141/intellisphere.icon.png",
+      "path": "intellisphere.icon.png",
+      "sha256": "b66169c1967a146632aebf81438359d0879871766b3aa57cceeec02a54a94fae"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/5257141/intellisphere.js",
+      "path": "intellisphere.js",
+      "sha256": "d394a8162fe9dda1460252fe19e5d353c42025637087bc46b91337b78ce21fc6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/5257141/intellisphere.pck",
+      "path": "intellisphere.pck",
+      "sha256": "6379ef959696dad8c1ed8e21751d0520ff72485bc1912a3b820505c64b42bbfb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/5257141/intellisphere.wasm",
+      "path": "intellisphere.wasm",
+      "sha256": "52a16fa3446953567f705a5dc045c368a4a15810d1fc674c54a27dcf0a847b20"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+// Review extract of the authored Main bridge additions.
+      // The bridge observes the original simulation; task scoring stays in game_api.js.
+      public static var gwEpoch:int = 0;
+      public static var gwAttempt:int = 0;
+      public static var gwSimulationMs:Number = 0;
+      public static var gwRandomSeed:uint = 42;
+      public static var gwRandomEnabled:Boolean = false;
+
+      public static function GWRandom() : Number
+      {
+         if(!gwRandomEnabled) return Math.random();
+         gwRandomSeed = uint(gwRandomSeed * 1664525 + 1013904223);
+         return Number(gwRandomSeed) / 4294967296;
+      }
+      public static function GWRead() : Object
+      {
+         var ready:Boolean = GameData.bInitialised && Game.GameStateID_InGame >= 0;
+         var c:Car = ready ? CarManager.GetPlayerCar() : null;
+         var r:Race = ready ? RaceManager.GetCurrentRace() : null;
+         return {epoch:gwEpoch,attempt:gwAttempt,gameTimeMs:gwSimulationMs,
+            ready:ready,title:ready && UIScreenManager.IsScreenOpen(Game.UIScreenID_MainMenu),
+            inGame:ready && GameStateManager.GetState() == Game.GameStateID_InGame,
+            resultsOpen:ready && UIScreenManager.IsScreenOpen(Game.UIScreenID_RaceResults),
+            paused:Game.bPaused,raceId:ready ? RaceManager.GetCurrentRaceID() : -1,
+            laps:r ? r.numberOfLaps : 0,starTarget:r ? r.tokenTarget : 0,
+            pathLength:r ? r.aiPath.totalDistance : 0,pathEntries:r ? r.aiPath.GetNumberOfEntries() : 0,
+            carIndex:GameData.currentCarIndex,upgrades:ready ? GameData.carUpgradeLevels[GameData.currentCarIndex] : 0,
+            money:GameData.money,racesUnlocked:GameData.numOfRacesUnlocked,
+            startState:ready ? RaceManager.GetStartSequenceState() : -1,
+            raceTime:ready ? RaceManager.GetRaceTime() : 0,
+            x:c ? c.x : 0,y:c ? c.y : 0,z:c ? c.z : 0,heading:c ? c.zRot : 0,
+            speed:c ? c.carSpeedKPH : 0,throttle:c ? c.carThrottleInput : 0,
+            steering:c ? c.carSteeringInput : 0,brake:c ? c.carBrakeInput : 0,
+            boost:c ? c.boostCharge : 0,lap:c ? c.curLapNumber : 0,
+            sector:c ? c.curSectorIndex : -1,distance:c ? c.raceDistance : 0,
+            position:c ? c.curRacePosition : 0,finishPosition:c ? c.finishPosition : 0,
+            aiControl:c ? c.bAIControl : false,
+            stars:GameData.totalNumOfTokens-GameData.totalNumOfTokensBeforeThisRace,
+            hoops:GameData.totalNumOfHoops-GameData.totalNumOfHoopsBeforeThisRace};
+      }
+      public static function GWStart(race:int, epoch:int, seed:uint) : Boolean
+      {
+         if(!GameData.bInitialised || !UIScreenManager.IsScreenOpen(Game.UIScreenID_MainMenu)) return false;
+         if(race < 0 || race >= RaceManager.GetNumberOfRaces()) return false;
+         GameData.Reset();
+         gwEpoch = epoch;
+         gwAttempt = 0;
+         gwSimulationMs = 0;
+         gwRandomSeed = seed;
+         gwRandomEnabled = true;
+         // Same transition as the native first-race Play button, then select content.
+         UIScreenMainMenu.PlayGameButtonHandler(null);
+         return RaceManager.SetCurrentRace(race);
+      }
+      public static function GWPublish() : void
+      {
+         if(gwEpoch > 0 && ExternalInterface.available)
+         {
+            if(GameStateManager.GetState() == Game.GameStateID_InGame && !Game.bPaused)
+               gwSimulationMs += deltaT * 1000;
+            ExternalInterface.call("gwNativeFrame", GWRead());
+         }
+      }
+

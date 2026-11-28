@@ -1,0 +1,71 @@
+schema_version: 1
+game_id: 367_10-103
+
+runtime:
+  pointer_size: 4
+  class_static_fields_offset: 92
+  allow_method_calls: false
+
+# RadioManager and Stress are the only per-scene singletons with an initialized
+# TypeInfo slot (static `Instance` at +0). The player, elevators, triggers and
+# enemies are per-scene objects that game_api.js finds after every scene load and
+# turns into the public state; these raw reads are diagnostics.
+state:
+  fields:
+    game_state.internal.radio_in_transmission:
+      kind: memory
+      type: u8
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 2142376  # RadioManager_TypeInfo
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 2142376
+          - offset: 56  # RadioManager.InTransmission
+    game_state.internal.radio_request_response:
+      kind: memory
+      type: u8
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 2142376
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 2142376
+          - offset: 58  # RadioManager.RequestResponse ("Press TAB to report")
+    game_state.internal.stress_factor:
+      kind: memory
+      type: f32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 2142372  # Stress_TypeInfo
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 2142372
+          - offset: 12  # Stress.StressFactor
+  status:
+    default: loading
+  actionable_statuses: []
+
+actions:
+  reset:
+    kind: reload
+
+capabilities:
+  supports_seed: false
+  supports_level_select: true
+  supports_difficulty: false
+  supports_inplace_reset: true
+  supports_reload_reset: true
+  supports_pause_detection: false
+  supports_menu_detection: false
+  supports_task_autostart: true
+  provides_actionable_flag: true

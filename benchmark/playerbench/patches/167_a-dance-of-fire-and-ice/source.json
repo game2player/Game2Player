@@ -1,0 +1,55 @@
+{
+  "game_id": "167_a-dance-of-fire-and-ice",
+  "source_url": "https://fizzd.itch.io/a-dance-of-fire-and-ice",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/1175401/index.html",
+      "path": "index.html",
+      "sha256": "c501a547f674bf9e3d30fa8fc0e1b2155fa2913b4e2f8761e85fa88cdfb125eb",
+      "headers": {
+        "Referer": "https://fizzd.itch.io/a-dance-of-fire-and-ice"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1175401/Build/adofaiii4.json",
+      "path": "Build/adofaiii4.json",
+      "sha256": "fa4c8cffa5ad6745ef57c43ac692221e788a0fdc69e6a10b1e7063c15cbc5e32",
+      "headers": {
+        "Referer": "https://fizzd.itch.io/a-dance-of-fire-and-ice"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1175401/Build/UnityLoader.js",
+      "path": "Build/UnityLoader.js",
+      "sha256": "09cf226e3d59b235f51dceec11eccd0cab4e415a132af33a2eaa3e5354deddd9",
+      "headers": {
+        "Referer": "https://fizzd.itch.io/a-dance-of-fire-and-ice"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1175401/Build/adofaiii4.wasm.code.unityweb",
+      "path": "Build/adofaiii4.wasm.code.unityweb",
+      "sha256": "4915dbae33a24c2dfa8d5db78d6a01b2b0c7767c6aff2fe7463ccdb7f00c44eb",
+      "headers": {
+        "Referer": "https://fizzd.itch.io/a-dance-of-fire-and-ice"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1175401/Build/adofaiii4.wasm.framework.unityweb",
+      "path": "Build/adofaiii4.wasm.framework.unityweb",
+      "sha256": "5e69cf87d0da0d230ff9dee7e8cc67ee0640b96d8910c1b58d902c4c5e5d3374",
+      "headers": {
+        "Referer": "https://fizzd.itch.io/a-dance-of-fire-and-ice"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1175401/Build/adofaiii4.data.unityweb",
+      "path": "Build/adofaiii4.data.unityweb",
+      "sha256": "21fc89122fe8486bfd80adb284c3a9ec49488e1b3f4d85efc282e5eeb6cb2908",
+      "headers": {
+        "Referer": "https://fizzd.itch.io/a-dance-of-fire-and-ice"
+      }
+    }
+  ]
+}

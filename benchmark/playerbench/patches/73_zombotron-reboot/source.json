@@ -1,0 +1,57 @@
+{
+  "game_id": "73_zombotron-reboot",
+  "source_url": "https://antkarlov.itch.io/zombotron-reboot",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/13200376/index.html",
+      "path": "index.html",
+      "sha256": "f089318a36204662a62f7660547aef20da67cc0fb74b8067242d61fbf67ebf2d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13200376/Build/Zombotron.loader.js",
+      "path": "Build/Zombotron.loader.js",
+      "sha256": "19758841e102daeb8b277ef49953e6e803e95ecc233e27d0dadb73ff6ad4d41f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13200376/Build/Zombotron.data.unityweb",
+      "path": "Build/Zombotron.data.unityweb",
+      "sha256": "c619091a29441cf7371421f178c632616cd683a5267a53aee33cc5baa8c7c9f0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13200376/Build/Zombotron.framework.js.unityweb",
+      "path": "Build/Zombotron.framework.js.unityweb",
+      "sha256": "635f0955b8aed230019a5f67b873e173551a8ed4c656328da4f64f5f63430a5f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13200376/Build/Zombotron.wasm.unityweb",
+      "path": "Build/Zombotron.wasm.unityweb",
+      "sha256": "7c1728ae64a53fafb0f234b933ee59b09d408b625e99923d0ac84c0afa632915"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13200376/TemplateData/style.css",
+      "path": "TemplateData/style.css",
+      "sha256": "770df54fb4284ee58acdd3893480247d555e732f52bf8e15d24f346fd119b5b4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13200376/TemplateData/favicon.ico",
+      "path": "TemplateData/favicon.ico",
+      "sha256": "cbfea65667e0114950da395164be1edc0e325636fbc73ffc06ef8c30cd3c6ff4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13200376/TemplateData/unity-logo-dark.png",
+      "path": "TemplateData/unity-logo-dark.png",
+      "sha256": "9fa91473841e082bed76845acf317c16a02ec9c487ac88232563fa73ff4341b9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13200376/TemplateData/progress-bar-empty-dark.png",
+      "path": "TemplateData/progress-bar-empty-dark.png",
+      "sha256": "bbee7131afe8a3365906240d89184dc86234c119467f390bc4bc6802328fdb4d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13200376/TemplateData/progress-bar-full-dark.png",
+      "path": "TemplateData/progress-bar-full-dark.png",
+      "sha256": "3306a6244dcb3926fca38a28e3ced589df8ff1beed955eb17c0bbf01c918bc62"
+    }
+  ]
+}

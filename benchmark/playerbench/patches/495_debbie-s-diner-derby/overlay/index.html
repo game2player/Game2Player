@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Debbie's Diner Derby</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #3a1618; }
+    #unity-canvas { display: block; width: 100%; height: 100%; outline: none; }
+    #loading { position: fixed; inset: 0; display: grid; place-items: center; color: #ffcf49; font: 24px monospace; pointer-events: none; }
+  </style>
+  <script src="game_api.js"></script>
+</head>
+<body>
+  <canvas id="unity-canvas" width="1280" height="720" tabindex="0"></canvas>
+  <div id="loading">Loading Debbie's Diner Derby…</div>
+  <script src="Build/Debbie's Diner Derby.loader.js"></script>
+  <script>
+    const canvas = document.getElementById('unity-canvas');
+    const loading = document.getElementById('loading');
+    createUnityInstance(canvas, {
+      dataUrl: "Build/Debbie's Diner Derby.data.unityweb",
+      frameworkUrl: "Build/Debbie's Diner Derby.framework.js.unityweb",
+      codeUrl: "Build/Debbie's Diner Derby.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "Debbie's Diner Derby",
+      productVersion: "1.0"
+    }).then(instance => {
+      window.unityInstance = instance;
+      window.__unityBridge?.captureUnityInstance(instance);
+      loading.remove();
+      canvas.focus();
+      window.gameAPI?.init({}).catch(console.error);
+    }).catch(error => {
+      loading.textContent = String(error);
+      console.error(error);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+[
+  {
+    "path": "Globals/gear_storage_unit.gdc",
+    "source_sha256": "1364cc2419f14cca6e1b71fa637282a26c008067920fea711fab01df801549ff",
+    "patched_source_sha256": "65c004dd8bea9c4dcdacbfed1e2dfe9be5257fe6dd0342eb2a9e282f453b4669",
+    "edits": [
+      {
+        "start": 6,
+        "end": 6,
+        "text": "\nfunc _enter_tree() -> void :\n\tif not OS.has_feature(\"web\"):\n\t\treturn\n\tvar runner_seed: Variant = JavaScriptBridge.eval(\n\t\t\"typeof window.__getRandomSeed === 'function' ? window.__getRandomSeed() : null\", \n\t\ttrue\n\t)\n\tif typeof(runner_seed) == TYPE_INT or typeof(runner_seed) == TYPE_FLOAT:\n\t\tseed(int(runner_seed))\n"
+      }
+    ]
+  },
+  {
+    "path": "Menu/main_menu.gdc",
+    "source_sha256": "9a71a22551aa06dde8e132cebe99d46d303a398403633be0f8e7a2bf6cdd2f94",
+    "patched_source_sha256": "22cad3d0d2dbca5d01568804315be46b12497fa461a47f374bf6257325dcc2b1",
+    "edits": [
+      {
+        "start": 7,
+        "end": 7,
+        "text": "\tvar task_id: String = JavaScriptBridge.eval(\"window.__aboutTimeTaskId || ''\", true)\n\tif task_id == \"430_01\":\n\t\t$Buttons / Buttons / ButtonTutorial.call_deferred(\"_on_pressed\")\n\telif task_id in [\"430_02\", \"430_03\", \"430_04\", \"430_05\", \"430_06\"]:\n\t\t$Buttons / Buttons / PlayButton.call_deferred(\"_on_pressed\")\n"
+      }
+    ]
+  },
+  {
+    "path": "Scenes/end_shift.gdc",
+    "source_sha256": "907d1f017b6fc369767e4638a1b8a73ec1f7244a94da88fd3b0677818dfc45fd",
+    "patched_source_sha256": "30e91554878503f3eb664b058f218a72714074e974d0f83d7cf7067873670cb4",
+    "edits": [
+      {
+        "start": 12,
+        "end": 12,
+        "text": "\tJavaScriptBridge.eval(\"window.__aboutTimePayoutClaimed()\", true)\n"
+      }
+    ]
+  },
+  {
+    "path": "Scenes/game.gdc",
+    "source_sha256": "0396b79a7e3086c0b90c98d1d152aab167ea263750407da16fa110f79fa03361",
+    "patched_source_sha256": "3d97227f7cbbdd271568bdcb5ddce025baeb2c0d5bbcac699f12f8dbabbebe57",
+    "edits": [
+      {
+        "start": 9,
+        "end": 9,
+        "text": "var _policy_observation_elapsed: float = 0.0\nconst POLICY_OBSERVATION_INTERVAL: float = 0.12\n"
+      },
+      {
+        "start": 12,
+        "end": 12,
+        "text": "\tvar mode: String = \"tutorial\" if get_tree().current_scene.find_child(\"Cutscene\", true, false) else \"standard\"\n\tvar round_num: int = $\"../Stats&Items/Left/V/MinScore\".rounds\n\tvar target: float = $\"../Stats&Items/Left/V/MinScore\".min_score\n\tvar score: float = $\"../Stats&Items/Left/V/RoundScore\".val\n\tvar forwards: int = $\"../Stats&Items/Right/V/Plays\".plays_left\n\tJavaScriptBridge.eval(\"window.__aboutTimeSceneLoaded('%s', %d, %s, %s, %d)\" % [mode, round_num, str(target), str(score), forwards], true)\n"
+      },
+      {
+        "start": 13,
+        "end": 14,
+        "text": "func _process(delta: float) -> void :\n"
+      },
+      {
+        "start": 22,
+        "end": 22,
+        "text": "\t_policy_observation_elapsed += delta\n\tif _policy_observation_elapsed >= POLICY_OBSERVATION_INTERVAL:\n\t\t_policy_observation_elapsed = 0.0\n\t\t_publish_policy_observation()\n"
+      },
+      {
+        "start": 104,
+        "end": 104,
+        "text": "\n\nfunc _publish_policy_observation() -> void :\n\tvar scene: Node = get_tree().current_scene\n\tif scene == null:\n\t\treturn\n\tvar viewport_size: Vector2 = get_viewport().get_visible_rect().size\n\tvar viewport_rect: Rect2 = Rect2(Vector2.ZERO, viewport_size)\n\tvar controls: Array = []\n\tvar blocker: Node = _policy_find(scene, \"MouseStopper\")\n\tvar input_blocked: bool = blocker != null and blocker is CanvasItem and (blocker as CanvasItem).is_visible_in_tree()\n\t_policy_collect_controls(scene, controls, viewport_rect, input_blocked)\n\tvar tutorial_state: Variant = _policy_tutorial_text(scene, viewport_rect)\n\tvar snapshot: Dictionary = {\n\t\t\"screen_phase\": _policy_screen_phase(scene, viewport_rect, tutorial_state, input_blocked), \n\t\t\"active_controls\": controls, \n\t\t\"clock_readouts\": _policy_clock_readouts(scene), \n\t\t\"tutorial_text_state\": tutorial_state, \n\t\t\"visible_shop_edit_state\": _policy_shop_edit_state(scene, viewport_rect), \n\t\t\"_viewport_size\": [viewport_size.x, viewport_size.y]\n\t}\n\tJavaScriptBridge.eval(\"window.__setAboutTimePolicyObservation(\" + JSON.stringify(snapshot) + \")\", true)\n\n\nfunc _policy_find(root: Node, node_name: String) -> Node:\n\tif root == null:\n\t\treturn null\n\treturn root.find_child(node_name, true, false)\n\n\nfunc _policy_bool(value: Variant) -> bool:\n\treturn value is bool and value\n\n\nfunc _policy_script_path(node: Node) -> String:\n\tif node == null:\n\t\treturn \"\"\n\tvar script_resource: Variant = node.get_script()\n\tif script_resource is Script:\n\t\treturn script_resource.resource_path\n\treturn \"\"\n\n\nfunc _policy_collect_script_nodes(root: Node, suffix: String, output: Array) -> void :\n\tif root == null:\n\t\treturn\n\tif _policy_script_path(root).ends_with(suffix):\n\t\toutput.append(root)\n\tfor child in root.get_children():\n\t\t_policy_collect_script_nodes(child, suffix, output)\n\n\nfunc _policy_visible_on_screen(node: Node, viewport_rect: Rect2) -> bool:\n\tif not node is Control:\n\t\treturn false\n\tvar control: Control = node as Control\n\tif not control.is_visible_in_tree():\n\t\treturn false\n\tvar rect: Rect2 = control.get_global_rect()\n\treturn rect.size.x > 0.5 and rect.size.y > 0.5 and rect.intersects(viewport_rect)\n\n\nfunc _policy_screen_content(root: Node) -> Node:\n\tif root == null:\n\t\treturn null\n\tif root.name == \"ClockChanging\":\n\t\treturn root.get_node_or_null(\"SkipButton\")\n\tvar panel: Node = root.get_node_or_null(\"Panel\")\n\treturn panel if panel != null else root\n\n\nfunc _policy_screen_content_visible(root: Node, viewport_rect: Rect2) -> bool:\n\treturn _policy_visible_on_screen(_policy_screen_content(root), viewport_rect)\n\n\nfunc _policy_screen_transition_settled(root: Node, viewport_rect: Rect2, open_state: Variant = null) -> bool:\n\tif root == null or not root is Control:\n\t\treturn true\n\tif not _policy_screen_content_visible(root, viewport_rect):\n\t\treturn true\n\tvar control: Control = root as Control\n\tvar open_target: Vector2 = Vector2.ZERO\n\tvar closed_target: Vector2 = Vector2(0.0, control.size.y)\n\tif open_state is bool:\n\t\tvar target: Vector2 = open_target if open_state else closed_target\n\t\treturn control.position.distance_to(target) <= 1.0\n\treturn minf(control.position.distance_to(open_target), control.position.distance_to(closed_target)) <= 1.0\n\n\nfunc _policy_text_from_control(node: Node) -> String:\n\tif node is RichTextLabel:\n\t\treturn (node as RichTextLabel).get_parsed_text().strip_edges()\n\tif node is Label:\n\t\treturn (node as Label).text.strip_edges()\n\treturn \"\"\n\n\nfunc _policy_display_text(node: Node, viewport_rect: Rect2) -> String:\n\tif node == null:\n\t\treturn \"\"\n\tif node is Button and !(node as Button).text.strip_edges().is_empty():\n\t\treturn (node as Button).text.strip_edges()\n\tfor child_name in [\"Text\", \"Label\"]:\n\t\tvar label: Node = node.find_child(child_name, true, false)\n\t\tif label != null and _policy_visible_on_screen(label, viewport_rect):\n\t\t\tvar text: String = _policy_text_from_control(label)\n\t\t\tif !text.is_empty():\n\t\t\t\treturn text\n\treturn \"\"\n\n\nfunc _policy_button_action(button: BaseButton) -> String:\n\tvar script_path: String = _policy_script_path(button)\n\tif button.name == \"PassTime\":\n\t\treturn \"forward_time\"\n\tif button.name == \"EndShift\":\n\t\treturn \"finish_shift\"\n\tif button.name == \"PlayButton\":\n\t\treturn \"play\"\n\tif button.name == \"Use\":\n\t\treturn \"use_paper\"\n\tif button.name == \"SkipButton\":\n\t\treturn \"skip_clock_edit\"\n\tif button.name == \"Buy\":\n\t\treturn \"buy_item\"\n\tif script_path.ends_with(\"/changeable_clock_number.gd\"):\n\t\treturn \"select_clock_number\"\n\tif script_path.ends_with(\"/Objs/Papers/paper.gd\"):\n\t\treturn \"select_paper\"\n\tif script_path.ends_with(\"/Objs/Papers/box_of_papers.gd\"):\n\t\treturn \"select_paper_box\"\n\tif script_path.ends_with(\"/Objs/Gears/gear.gd\"):\n\t\treturn \"select_gear\"\n\tif script_path.ends_with(\"/Objs/Gears/usable_gear.gd\"):\n\t\treturn \"gear_slot\"\n\treturn \"press_button\"\n\n\nfunc _policy_button_selected(button: BaseButton) -> bool:\n\tvar script_path: String = _policy_script_path(button)\n\tif script_path.ends_with(\"/Objs/Gears/gear.gd\") or script_path.ends_with(\"/Objs/Papers/box_of_papers.gd\") or script_path.ends_with(\"/Objs/Papers/paper.gd\"):\n\t\treturn _policy_bool(button.get(\"active\"))\n\treturn button.button_pressed\n\n\nfunc _policy_collect_controls(root: Node, output: Array, viewport_rect: Rect2, input_blocked: bool) -> void :\n\tif root is BaseButton:\n\t\tvar button: BaseButton = root as BaseButton\n\t\tif button.name != \"InvisibleButton\" and _policy_visible_on_screen(button, viewport_rect):\n\t\t\tvar label: String = _policy_display_text(button, viewport_rect)\n\t\t\tvar action: String = _policy_button_action(button)\n\t\t\tvar rect: Rect2 = button.get_global_rect()\n\t\t\tif action == \"select_clock_number\":\n\t\t\t\trect = _policy_transformed_rect(button)\n\t\t\tif label.is_empty():\n\t\t\t\tlabel = action\n\t\t\toutput.append({\n\t\t\t\t\"id\": str(button.get_path()), \n\t\t\t\t\"label\": label, \n\t\t\t\t\"action\": action, \n\t\t\t\t\"enabled\": !button.disabled and button.mouse_filter != Control.MOUSE_FILTER_IGNORE and !input_blocked, \n\t\t\t\t\"selected\": _policy_button_selected(button), \n\t\t\t\t\"bbox\": {\"x\": rect.position.x, \"y\": rect.position.y, \"width\": rect.size.x, \"height\": rect.size.y}\n\t\t\t})\n\tfor child in root.get_children():\n\t\t_policy_collect_controls(child, output, viewport_rect, input_blocked)\n\n\nfunc _policy_transformed_rect(control: Control) -> Rect2:\n\tvar transform: Transform2D = control.get_global_transform_with_canvas()\n\tvar points: Array[Vector2] = [\n\t\ttransform * Vector2.ZERO, \n\t\ttransform * Vector2(control.size.x, 0.0), \n\t\ttransform * control.size, \n\t\ttransform * Vector2(0.0, control.size.y)\n\t]\n\tvar minimum: Vector2 = points[0]\n\tvar maximum: Vector2 = points[0]\n\tfor point in points:\n\t\tminimum.x = minf(minimum.x, point.x)\n\t\tminimum.y = minf(minimum.y, point.y)\n\t\tmaximum.x = maxf(maximum.x, point.x)\n\t\tmaximum.y = maxf(maximum.y, point.y)\n\treturn Rect2(minimum, maximum - minimum)\n\n\nfunc _policy_tutorial_text(scene: Node, viewport_rect: Rect2) -> Variant:\n\tvar cutscene: Node = _policy_find(scene, \"Cutscene\")\n\tif cutscene != null and _policy_visible_on_screen(cutscene, viewport_rect):\n\t\tvar label: Node = cutscene.find_child(\"Label\", true, false)\n\t\tvar text: String = _policy_text_from_control(label)\n\t\tvar visible_count: int = int(label.get(\"visible_characters\")) if label != null else 0\n\t\tif visible_count < 0:\n\t\t\tvisible_count = text.length()\n\t\tvar visible_text: String = text.substr(0, min(visible_count, text.length()))\n\t\tvar tween: Variant = cutscene.get(\"current_tween\")\n\t\treturn {\"kind\": \"dialogue\", \"text\": visible_text, \"reveal_complete\": visible_count >= text.length() and (tween == null or !tween.is_running())}\n\tvar overlay: Node = _policy_find(scene, \"Tutorial Overlay\")\n\tif overlay != null and _policy_visible_on_screen(overlay, viewport_rect) and int(overlay.get(\"current\")) > 0:\n\t\tvar index: int = int(overlay.get(\"current\")) - 1\n\t\tif index >= 0 and index < overlay.get_child_count():\n\t\t\tvar callout: Node = overlay.get_child(index)\n\t\t\tvar panel: Node = callout.find_child(\"PanelContainer\", true, false)\n\t\t\tvar label: Node = panel.get_child(0) if panel != null and panel.get_child_count() > 0 else null\n\t\t\tvar text: String = _policy_text_from_control(label)\n\t\t\tvar visible_count: int = int(label.get(\"visible_characters\")) if label != null else 0\n\t\t\tif visible_count < 0:\n\t\t\t\tvisible_count = text.length()\n\t\t\tvar visible_text: String = text.substr(0, min(visible_count, text.length()))\n\t\t\tvar tween: Variant = overlay.get(\"current_tween\")\n\t\t\treturn {\"kind\": \"callout\", \"text\": visible_text, \"reveal_complete\": visible_count >= text.length() and (tween == null or !tween.is_running())}\n\treturn null\n\n\nfunc _policy_clock_animation_settled(scene: Node, round_score: Node, current_score: Node, game_node: Node) -> bool:\n\tif game_node != null and _policy_bool(game_node.get(\"playing\")):\n\t\treturn false\n\tif round_score != null and absf(float(round_score.get(\"lerpval\")) - float(round_score.get(\"val\"))) > 0.11:\n\t\treturn false\n\tif current_score != null and (_policy_bool(current_score.get(\"multiplying\")) or _policy_bool(current_score.get(\"finishing\"))):\n\t\treturn false\n\tvar clock: Node = _policy_find(game_node, \"Clock\") if game_node != null else null\n\tvar pointers: Node = _policy_find(clock, \"Pointers\") if clock != null else null\n\tif pointers != null:\n\t\tfor pointer in pointers.get_children():\n\t\t\tvar target_angle: float = float(pointer.get(\"angle\"))\n\t\t\tif absf(wrapf(float(pointer.rotation) - target_angle, - PI, PI)) > 0.02:\n\t\t\t\treturn false\n\tvar spin_labels: Array = []\n\t_policy_collect_script_nodes(scene, \"/Scenes/SpinLabel.gd\", spin_labels)\n\tfor label in spin_labels:\n\t\tif _policy_visible_on_screen(label, get_viewport().get_visible_rect()):\n\t\t\tif absf(float(label.rotation_degrees)) > 0.1 or absf(float(label.scale.x) - 1.0) > 0.01 or absf(float(label.scale.y) - 1.0) > 0.01:\n\t\t\t\treturn false\n\treturn true\n\n\nfunc _policy_clock_readouts(scene: Node) -> Variant:\n\tvar stats: Node = _policy_find(scene, \"Stats&Items\")\n\tvar minimum: Node = _policy_find(stats, \"MinScore\") if stats != null else null\n\tvar score: Node = _policy_find(stats, \"RoundScore\") if stats != null else null\n\tvar current: Node = _policy_find(stats, \"CurentScore\") if stats != null else null\n\tvar plays: Node = _policy_find(stats, \"Plays\") if stats != null else null\n\tvar game_node: Node = _policy_find(scene, \"Game\")\n\tif minimum == null or score == null or plays == null:\n\t\treturn null\n\treturn {\n\t\t\"round_number\": int(minimum.get(\"rounds\")), \n\t\t\"round_score_points\": float(score.get(\"val\")), \n\t\t\"minimum_score_points\": float(minimum.get(\"min_score\")), \n\t\t\"forwards_remaining\": int(plays.get(\"plays_left\")), \n\t\t\"animation_settled\": _policy_clock_animation_settled(scene, score, current, game_node)\n\t}\n\n\nfunc _policy_visible_description(item: Node, viewport_rect: Rect2) -> Variant:\n\tvar description: Node = item.find_child(\"Description\", true, false)\n\tif description == null or not description is Control:\n\t\treturn null\n\tvar panel: Control = description as Control\n\tif panel.scale.x < 0.9 or panel.scale.y < 0.9 or not _policy_visible_on_screen(panel, viewport_rect):\n\t\treturn null\n\tvar label: Node = panel.find_child(\"Label\", true, false)\n\tif label == null or not _policy_visible_on_screen(label, viewport_rect):\n\t\treturn null\n\treturn _policy_text_from_control(label)\n\n\nfunc _policy_item_name(item: Node) -> String:\n\tvar resource: Variant = item.get(\"res\")\n\tif resource != null:\n\t\tvar value: Variant = resource.get(\"Name\")\n\t\tif value != null:\n\t\t\treturn str(value)\n\treturn \"\"\n\n\nfunc _policy_item_price(item: Node, viewport_rect: Rect2) -> Variant:\n\tif not _policy_bool(item.get(\"active\")):\n\t\treturn null\n\tvar buy: Node = item.find_child(\"Buy\", true, false)\n\tif buy == null or not _policy_visible_on_screen(buy, viewport_rect):\n\t\treturn null\n\tvar text: String = _policy_display_text(buy, viewport_rect)\n\tif text.is_empty():\n\t\treturn null\n\treturn {\"display\": text, \"dollars\": text.replace(\"$\", \"\").to_float()}\n\n\nfunc _policy_shop_edit_state(scene: Node, viewport_rect: Rect2) -> Variant:\n\tvar stats: Node = _policy_find(scene, \"Stats&Items\")\n\tif stats == null:\n\t\treturn null\n\tvar result: Dictionary = {\"cash_display\": null, \"cash_dollars\": null, \"shop_items\": [], \"gear_slots\": [], \"clock_numbers\": null, \"papers\": null}\n\tvar money: Node = _policy_find(stats, \"Money\")\n\tvar money_label: Node = _policy_find(money, \"Label\") if money != null else null\n\tif money_label != null and _policy_visible_on_screen(money_label, viewport_rect):\n\t\tvar cash_text: String = _policy_text_from_control(money_label)\n\t\tresult.cash_display = cash_text\n\t\tresult.cash_dollars = cash_text.replace(\"$\", \"\").to_float()\n\tvar gear_slots: Node = _policy_find(stats, \"Gears\")\n\tif gear_slots != null:\n\t\tvar equipped: Array = []\n\t\t_policy_collect_script_nodes(gear_slots, \"/Objs/Gears/usable_gear.gd\", equipped)\n\t\tfor item in equipped:\n\t\t\tif _policy_visible_on_screen(item, viewport_rect):\n\t\t\t\tresult.gear_slots.append({\"slot\": item.get_index(), \"item\": _policy_item_name(item), \"description\": _policy_visible_description(item, viewport_rect)})\n\tvar shop: Node = scene.get_node_or_null(\"Shop\")\n\tif shop != null:\n\t\tvar shop_items: Array = []\n\t\tvar gear_offers: Array = []\n\t\tvar paper_boxes: Array = []\n\t\t_policy_collect_script_nodes(shop, \"/Objs/Gears/gear.gd\", gear_offers)\n\t\t_policy_collect_script_nodes(shop, \"/Objs/Papers/box_of_papers.gd\", paper_boxes)\n\t\tfor item in gear_offers:\n\t\t\tif _policy_visible_on_screen(item, viewport_rect):\n\t\t\t\tshop_items.append({\"kind\": \"gear\", \"item\": _policy_item_name(item), \"price\": _policy_item_price(item, viewport_rect), \"selected\": _policy_bool(item.get(\"active\")), \"description\": _policy_visible_description(item, viewport_rect)})\n\t\tfor item in paper_boxes:\n\t\t\tif _policy_visible_on_screen(item, viewport_rect):\n\t\t\t\tshop_items.append({\"kind\": \"paper_box\", \"item\": \"Box of Papers\", \"price\": _policy_item_price(item, viewport_rect), \"selected\": _policy_bool(item.get(\"active\")), \"description\": _policy_visible_description(item, viewport_rect)})\n\t\tresult.shop_items = shop_items\n\tvar edit: Node = _policy_find(scene, \"ClockChanging\")\n\tif edit != null and _policy_bool(edit.get(\"open\")):\n\t\tvar displayed_numbers: Array = []\n\t\tvar number_nodes: Array = []\n\t\t_policy_collect_script_nodes(edit, \"/changeable_clock_number.gd\", number_nodes)\n\t\tfor number in number_nodes:\n\t\t\tif _policy_visible_on_screen(number, viewport_rect):\n\t\t\t\tdisplayed_numbers.append({\"value\": int(number.get(\"val\")), \"selected\": number.button_pressed, \"id\": str(number.get_path())})\n\t\tresult.clock_numbers = displayed_numbers\n\t\tvar visible_papers: Array = []\n\t\tvar paper_nodes: Array = []\n\t\t_policy_collect_script_nodes(edit, \"/Objs/Papers/paper.gd\", paper_nodes)\n\t\tfor paper in paper_nodes:\n\t\t\tif _policy_visible_on_screen(paper, viewport_rect):\n\t\t\t\tvisible_papers.append({\"item\": _policy_item_name(paper), \"selected\": _policy_bool(paper.get(\"active\")), \"description\": _policy_visible_description(paper, viewport_rect)})\n\t\tresult.papers = visible_papers\n\treturn result\n\n\nfunc _policy_screen_phase(scene: Node, viewport_rect: Rect2, tutorial_state: Variant, input_blocked: bool) -> Dictionary:\n\tvar game_node: Node = scene.get_node_or_null(\"Game\")\n\tvar shop: Node = scene.get_node_or_null(\"Shop\")\n\tvar money: Node = scene.get_node_or_null(\"Money\")\n\tvar edit: Node = scene.get_node_or_null(\"ClockChanging\")\n\tvar death: Node = scene.get_node_or_null(\"Death\")\n\tvar menu: Node = scene.get_node_or_null(\"Menu\")\n\tvar phase: String = \"transition\"\n\tvar underlying: String = \"transition\"\n\tvar pass_time: Node = game_node.get_node_or_null(\"PassTime\") if game_node != null else null\n\tvar clock_screen_visible: bool = _policy_visible_on_screen(pass_time, viewport_rect)\n\tif death != null and _policy_bool(death.get(\"open\")) and _policy_screen_content_visible(death, viewport_rect):\n\t\tphase = \"terminal\"\n\t\tunderlying = \"terminal\"\n\telif edit != null and _policy_bool(edit.get(\"open\")) and _policy_screen_content_visible(edit, viewport_rect):\n\t\tunderlying = \"clock_edit\"\n\t\tphase = \"number_selection\"\n\t\tvar numbers: Node = _policy_find(edit, \"Numbers\")\n\t\tif numbers != null:\n\t\t\tfor number in numbers.get_children():\n\t\t\t\tif number is BaseButton and (number as BaseButton).button_pressed:\n\t\t\t\t\tphase = \"paper_selection\"\n\t\tvar paper_nodes: Array = []\n\t\t_policy_collect_script_nodes(edit, \"/Objs/Papers/paper.gd\", paper_nodes)\n\t\tfor paper in paper_nodes:\n\t\t\tif _policy_bool(paper.get(\"active\")):\n\t\t\t\tphase = \"paper_selection\"\n\telif money != null and _policy_bool(money.get(\"open\")) and _policy_screen_content_visible(money, viewport_rect):\n\t\tphase = \"payout\"\n\t\tunderlying = \"payout\"\n\telif shop != null and _policy_bool(shop.get(\"open\")) and _policy_screen_content_visible(shop, viewport_rect):\n\t\tphase = \"shop\"\n\t\tunderlying = \"shop\"\n\telif menu != null and _policy_screen_content_visible(menu, viewport_rect):\n\t\tphase = \"menu\"\n\t\tunderlying = \"menu\"\n\telif clock_screen_visible:\n\t\tunderlying = \"active_clock\"\n\t\tvar stats: Node = _policy_find(scene, \"Stats&Items\")\n\t\tvar score: Node = _policy_find(stats, \"RoundScore\") if stats != null else null\n\t\tvar current: Node = _policy_find(stats, \"CurentScore\") if stats != null else null\n\t\tif not _policy_clock_animation_settled(scene, score, current, game_node):\n\t\t\tphase = \"score_animation\"\n\t\telse:\n\t\t\tphase = \"active_clock\"\n\tif tutorial_state != null:\n\t\tif tutorial_state[\"kind\"] == \"dialogue\":\n\t\t\tphase = \"tutorial_dialogue\"\n\t\telif tutorial_state[\"kind\"] == \"callout\":\n\t\t\tphase = \"tutorial_callout\"\n\tvar settled: bool = !input_blocked\n\tvar transition: Node = scene.get_node_or_null(\"Transition\")\n\tif transition != null and transition is Control and (transition as Control).visible:\n\t\tif absf((transition as Control).position.y + 720.0) > 1.0:\n\t\t\tsettled = false\n\tfor panel in [game_node, shop, money, edit, death, menu]:\n\t\tvar panel_open: Variant = panel.get(\"open\") if panel != null else null\n\t\tif panel == game_node:\n\t\t\tif clock_screen_visible:\n\t\t\t\tpanel_open = true\n\t\t\telse:\n\t\t\t\tcontinue\n\t\tif not _policy_screen_transition_settled(panel, viewport_rect, panel_open):\n\t\t\tsettled = false\n\tvar overlay: Node = _policy_find(scene, \"Tutorial Overlay\")\n\tif overlay != null and overlay.is_visible_in_tree():\n\t\tfor child in overlay.get_children():\n\t\t\tif child is Control and child.name != \"Overlay\" and child.name != \"Voice\":\n\t\t\t\tvar scale: Vector2 = (child as Control).scale\n\t\t\t\tif scale.x > 0.02 and scale.x < 0.98:\n\t\t\t\t\tsettled = false\n\treturn {\"stage\": phase, \"underlying_screen\": underlying, \"transition_settled\": settled}\n"
+      }
+    ]
+  },
+  {
+    "path": "Scenes/pass_time.gdc",
+    "source_sha256": "173be9e915cb76753735fac09eac0af6a96eac671ce0dda5a3cac5bfb82880b9",
+    "patched_source_sha256": "07eb7a84b311d9e239268f0945e6f3dcd22599a87646d4833f3a082e047402b8",
+    "edits": [
+      {
+        "start": 9,
+        "end": 9,
+        "text": "\t\tJavaScriptBridge.eval(\"window.__aboutTimeForwardsChanged(%d)\" % $\"../../Stats&Items/Right/V/Plays\".plays_left, true)\n"
+      }
+    ]
+  },
+  {
+    "path": "Scenes/moneydisplay.gdc",
+    "source_sha256": "63397e5f99cc0469cca53731137d4ff377b51afad313e17c1101669a21df8a6b",
+    "patched_source_sha256": "f3fc732f06b810ab93aead92e209a789893721e6cc0624ec32d68e9ee581b4e4",
+    "edits": [
+      {
+        "start": 9,
+        "end": 9,
+        "text": "\t\tJavaScriptBridge.eval(\"window.__aboutTimeCashHighWater(%s)\" % str(highest_money), true)\n"
+      }
+    ]
+  },
+  {
+    "path": "Scenes/round_score.gdc",
+    "source_sha256": "d388384a32bc50134b3d56471a4bed3a8acc52bee501c00bddc4bf1cba02c639",
+    "patched_source_sha256": "3261b5852d6c48f75a9612d24ed75ee3f56544fb8284b098c91f3276297692de",
+    "edits": [
+      {
+        "start": 4,
+        "end": 4,
+        "text": "var _hook_score: float = INF\nvar _hook_round: int = -1\nvar _hook_target: float = -1\n"
+      },
+      {
+        "start": 8,
+        "end": 8,
+        "text": "\tvar min_score: float = $\"../MinScore\".min_score\n\tvar round_num: int = $\"../MinScore\".rounds\n\tif val != _hook_score or round_num != _hook_round or min_score != _hook_target:\n\t\t_hook_score = val\n\t\t_hook_round = round_num\n\t\t_hook_target = min_score\n\t\tJavaScriptBridge.eval(\"window.__aboutTimeScoreChanged(%d, %s, %s)\" % [round_num, str(val), str(min_score)], true)\n"
+      },
+      {
+        "start": 9,
+        "end": 9,
+        "text": "\t\tJavaScriptBridge.eval(\"window.__aboutTimeShiftCleared(%d)\" % $\"../MinScore\".rounds, true)\n"
+      }
+    ]
+  },
+  {
+    "path": "Objs/Papers/paper.gdc",
+    "source_sha256": "4363e4f10a94bd979f5e08774d7fac409a1cde61622d57510146bc1f664ae73a",
+    "patched_source_sha256": "b301b6b4b6c6526974160bb6fd27e04dd632e2aec02eac02e23ec7f3fca9aa79",
+    "edits": [
+      {
+        "start": 81,
+        "end": 81,
+        "text": "\t\tvar old_value: float = selected.val\n"
+      },
+      {
+        "start": 106,
+        "end": 106,
+        "text": "\t\tif old_value != result:\n\t\t\tJavaScriptBridge.eval(\"window.__aboutTimePaperNumberEdited()\", true)\n"
+      }
+    ]
+  },
+  {
+    "path": "Objs/Papers/box_of_papers.gdc",
+    "source_sha256": "53b8b3df957d55ecac7efb8befddf1fe4fd596cb2960af3788bda88e4b683aa4",
+    "patched_source_sha256": "5f9b42a8a5d78323e2e566d7cd2869d3d8423d6435d08e511adaeee135e8c242",
+    "edits": [
+      {
+        "start": 45,
+        "end": 45,
+        "text": "\t\tJavaScriptBridge.eval(\"window.__aboutTimePaperBoxPurchased()\", true)\n"
+      }
+    ]
+  },
+  {
+    "path": "Objs/Gears/gear.gdc",
+    "source_sha256": "064b97601d9e28bc82261627c283657f8c638f5ddccebb7b6d5d4adfcf4ea014",
+    "patched_source_sha256": "65f147544b2b2aece3c9758d856bb5d20678c71e86c4cdecf59418be9e739d95",
+    "edits": [
+      {
+        "start": 94,
+        "end": 94,
+        "text": "\t\tJavaScriptBridge.eval(\"window.__aboutTimeGearAdded()\", true)\n"
+      }
+    ]
+  },
+  {
+    "path": "Scenes/Tut/cutscene.gdc",
+    "source_sha256": "0fdc1764a5a94258f1644aceb1173fb61770212d788bc41f1d5049449444cbc5",
+    "patched_source_sha256": "84371f07e6996f0af5eb6e6a869172f967f67deccafd3c436683d5e7d3994c8c",
+    "edits": [
+      {
+        "start": 22,
+        "end": 22,
+        "text": "\tif current_dialoue == 1:\n\t\tJavaScriptBridge.eval(\"window.__aboutTimeTutorialReady(%d)\" % current_dialoue, true)\n"
+      },
+      {
+        "start": 38,
+        "end": 38,
+        "text": "\tJavaScriptBridge.eval(\"window.__aboutTimeTutorialDialogueCompleted()\", true)\n"
+      }
+    ]
+  },
+  {
+    "path": "Scenes/Tut/tutorial_overlay.gdc",
+    "source_sha256": "50d2f5459dc6b1de94dceb92ad0c4c4bc37894a16b196169fe3424a0b1ee891b",
+    "patched_source_sha256": "99c90667ec1deddedee90a659abdfe9b1f2cb952ee8dbc53edf178e1bcf0df09",
+    "edits": [
+      {
+        "start": 72,
+        "end": 72,
+        "text": "\t\tJavaScriptBridge.eval(\"window.__aboutTimeTutorialCalloutCompleted()\", true)\n"
+      },
+      {
+        "start": 100,
+        "end": 100,
+        "text": "\t\tJavaScriptBridge.eval(\"window.__aboutTimeTutorialCalloutCompleted()\", true)\n\t\tJavaScriptBridge.eval(\"window.__aboutTimeTutorialForwardEnabled()\", true)\n"
+      }
+    ]
+  },
+  {
+    "path": "Scenes/Tut/death.gdc",
+    "source_sha256": "56d17a8fb4dc8a89af023ed3a3aae2950acbcf642790c0cd24e8537f2029a416",
+    "patched_source_sha256": "7a80bab11644d180677f5d96b464b3565265b419cbd555a0d1ef7a935999ca73",
+    "edits": [
+      {
+        "start": 16,
+        "end": 16,
+        "text": "\tJavaScriptBridge.eval(\"window.__aboutTimeRunFailed()\", true)\n"
+      }
+    ]
+  }
+]

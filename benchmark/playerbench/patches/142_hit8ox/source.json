@@ -1,0 +1,17 @@
+{
+  "game_id": "142_hit8ox",
+  "source_url": "https://vladcomarlau.itch.io/hit8ox",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/7723275/HIT8OX/index.html",
+      "path": "index.html",
+      "sha256": "336c039e5e16cf26eb52cbde5d21284a15c32691b5fb90b8dceff033707d1e11"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/7723275/HIT8OX/hit8ox.js",
+      "path": "hit8ox.js",
+      "sha256": "dcc49c61266e4450e1383e5303e5d5b78c83996ba65e779d6fd53abca619c368"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "game_id": "125_shift-2",
+  "source_url": "https://armorgames.com/play/964/shift-2",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://cache.armorgames.com/files/games/shift-2-964.swf",
+      "path": "game.swf",
+      "sha256": "c8ce18026a386a05cd81fa202cabd67c66fc723e45321ded9e25588c6919a5aa"
+    },
+    {
+      "url": "https://github.com/ruffle-rs/ruffle/releases/download/v0.4.1/ruffle-0.4.1-web-selfhosted.zip",
+      "path": "ruffle",
+      "sha256": "d33c135beea75c83183da1938a49ee3f08c2f7a2eb2ae8f3ce43de842412aae6",
+      "unpack": "zip"
+    }
+  ]
+}

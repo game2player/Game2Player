@@ -1,0 +1,1 @@
+var __gwd=16,__gws=0,__gwv=-1;for(__gws=0;__gws<5;__gws++){__gwv=Number(_inst.gmlLEVELS[__gws]);if(!isFinite(__gwv))__gwv=-1;if(__gwv<4){__gwd=16+__gws*5+__gwv+1;break;}}_inst.gmlSTAGE=((__gwd-16)/5)|0;_inst.gmlLEVEL=((__gwd-16)%5);room_goto(YYASSET_REF(50331648+__gwd));

@@ -1,0 +1,47 @@
+{
+  "game_id": "241_two-timin-towers",
+  "source_url": "https://z-richman.itch.io/two-timin-towers",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/3170081/index.html",
+      "path": "index.html",
+      "sha256": "5695aa4084bd4f3e376b6b89d52e8a49a494a74dd190f737797d75756d8ffe9a",
+      "headers": {
+        "Referer": "https://z-richman.itch.io/two-timin-towers"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3170081/Build/1.2001%20-%20Web.loader.js",
+      "path": "Build/Web.loader.js",
+      "sha256": "b05d6e423107cf7d7eb2331740e895b2bd1098172b73044444a581056b94db5b",
+      "headers": {
+        "Referer": "https://z-richman.itch.io/two-timin-towers"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3170081/Build/1.2001%20-%20Web.framework.js",
+      "path": "Build/Web.framework.js",
+      "sha256": "c8d1050b32987bb461c97dbe7791a704c792af6e13d24cc5138025a5f8ec2aa9",
+      "headers": {
+        "Referer": "https://z-richman.itch.io/two-timin-towers"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3170081/Build/1.2001%20-%20Web.data",
+      "path": "Build/Web.data",
+      "sha256": "841428adb5da4b23d5dc45a281c762a4bec02e6233e7fea48dec2e3877e4fd64",
+      "headers": {
+        "Referer": "https://z-richman.itch.io/two-timin-towers"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3170081/Build/1.2001%20-%20Web.wasm",
+      "path": "Build/Web.wasm",
+      "sha256": "a62d31323771db1a25305d7f8cde2a2a9dce53540761739e285c58138490fb6b",
+      "headers": {
+        "Referer": "https://z-richman.itch.io/two-timin-towers"
+      }
+    }
+  ]
+}

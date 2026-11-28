@@ -1,0 +1,26 @@
+{
+  "input_sha256": "fcfebe3516286f598490d3794828a5e88c4497f734e32dc8a2e63dd5dbea0ac0",
+  "output_sha256": "a103a853410e9ae4ce03527d640ed4c7abec350f13e2e28382ed4aada391b4b1",
+  "edits": [
+    {
+      "start": 49,
+      "end": 76,
+      "text": "var bSendAnalytics := false # gameworld: offline build, no Firebase analytics\n"
+    },
+    {
+      "start": 7756,
+      "end": 7756,
+      "text": "\t_gwInit()\n"
+    },
+    {
+      "start": 8936,
+      "end": 8936,
+      "text": "\t_gwTick(_delta)\n"
+    },
+    {
+      "start": 12702,
+      "end": 12702,
+      "text": "\n\n# --- gameworld environment hook -------------------------------------------\n# Projects run state to the page as window.__pigeonHook(state) for game_api.js.\n# `?start=run` deletes the local save DB (Hall of Tries/achievements) and presses\n# the title FIGHT button's own startGame(), so the page opens on a fresh level-1 hub.\nconst _GW_BATTLE := \"res://scenes/battleSceneNew.tscn\"\nconst _GW_OPPONENTS := \"res://scenes/opponentPanelControl.tscn\"\nconst _GW_EVOLVE := \"res://scenes/evolvePannel.tscn\"\nvar _gwWeb := false\nvar _gwStartRun := false\nvar _gwStarted := false\nvar _gwT := 0.0\nvar _gwMaxLevel := 1\nvar _gwRunsStarted := 0\nvar _gwLastScene := \"\"\nvar _gwSig := \"\"\n\nfunc _gwInit() -> void:\n\t_gwWeb = OS.has_feature(\"web\")\n\tif not _gwWeb:\n\t\treturn\n\tvar q := str(JavaScriptBridge.eval(\"window.location.search\", true))\n\t_gwStartRun = q.contains(\"start=run\")\n\tif _gwStartRun and FileAccess.file_exists(\"user://pigeonAscentDb.db\"):\n\t\tDirAccess.remove_absolute(\"user://pigeonAscentDb.db\")\n\nfunc _gwPigeon(p:PigeonClass) -> Dictionary:\n\treturn {\n\t\t\"name\": p.strPigeonName, \"class\": p.resPigeonClass.strClassName, \"level\": p.iLevel,\n\t\t\"hp\": p.iHp, \"max_hp\": p.iMaxHp, \"food\": p.iEnergy, \"max_food\": p.iMaxEnergy,\n\t\t\"str\": p.iStr, \"def\": p.iDef, \"spd\": p.iSpd, \"gold\": p.iGold,\n\t}\n\nfunc _gwTick(delta:float) -> void:\n\tif not _gwWeb:\n\t\treturn\n\tvar cs := get_tree().current_scene\n\tvar sceneName := cs.scene_file_path.get_file().get_basename() if cs else \"\"\n\tif _gwStartRun and not _gwStarted and sceneName == \"intro\":\n\t\tvar btn = cs.find_child(\"texBtnStartGame\", true, false)\n\t\tif btn and btn.is_inside_tree():\n\t\t\t_gwStarted = true\n\t\t\tbtn.startGame()\n\t\t\treturn\n\tif sceneName != _gwLastScene:\n\t\tif sceneName == \"root\":\n\t\t\t_gwRunsStarted += 1\n\t\t_gwLastScene = sceneName\n\tif sceneName == \"root\":\n\t\t_gwMaxLevel = max(_gwMaxLevel, level)\n\t\n\tvar battle = null\n\tvar opponentsOpen := false\n\tfor c in get_tree().root.get_children():\n\t\tif c.scene_file_path == _GW_BATTLE and not c.is_queued_for_deletion():\n\t\t\tbattle = c\n\t\telif c.scene_file_path == _GW_OPPONENTS and not c.is_queued_for_deletion():\n\t\t\topponentsOpen = true\n\tvar evolving := false\n\tif cs:\n\t\tfor c in cs.get_children():\n\t\t\tif c.scene_file_path == _GW_EVOLVE:\n\t\t\t\tevolving = true\n\tvar battleEnded:bool = battle != null and battle.ended\n\tvar sig := \"%s|%d|%s|%s|%d|%s|%d|%d\" % [sceneName, level, battle != null, battleEnded, player.arrEvolutions.size(), evolving, player.iHp, enemy.iHp]\n\t_gwT += delta\n\tif _gwT < 0.1 and sig == _gwSig:\n\t\treturn\n\t_gwT = 0.0\n\t_gwSig = sig\n\t\n\tvar offered := []\n\tif opponentsOpen:\n\t\tfor e in arrEnemyPigeons:\n\t\t\toffered.append(_gwPigeon(e))\n\tvar d := {\n\t\t\"scene\": sceneName, \"start_run\": _gwStartRun, \"runs_started\": _gwRunsStarted,\n\t\t\"ticks_ms\": Time.get_ticks_msec(), \"level\": level, \"max_level\": _gwMaxLevel,\n\t\t\"lives\": iPlayerLives, \"death_handicap\": iDeathHandicap,\n\t\t\"player\": _gwPigeon(player), \"stat_points\": player.iStatPointsLeft,\n\t\t\"extra_str\": player.iExtraStr, \"extra_def\": player.iExtraDef, \"extra_spd\": player.iExtraSpd,\n\t\t\"evolutions\": player.arrEvolutions, \"bought_items\": player.arrBoughtItems,\n\t\t\"has_wings\": hasWings, \"has_ice\": hasIce, \"has_sword\": hasSword,\n\t\t\"opponents_open\": opponentsOpen, \"opponents\": offered, \"evolving\": evolving,\n\t\t\"in_battle\": battle != null, \"battle_fighting\": battle != null and battle.fighting,\n\t\t\"battle_ended\": battleEnded, \"battle_turn\": battle.turn if battle != null else 0,\n\t\t\"battle_game_over\": battleEnded and battle.resetButton.visible,\n\t\t\"enemy\": _gwPigeon(enemy),\n\t}\n\tJavaScriptBridge.eval(\"window.__pigeonHook && window.__pigeonHook(\" + JSON.stringify(d) + \");\", true)\n"
+    }
+  ]
+}

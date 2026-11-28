@@ -1,0 +1,17 @@
+{
+  "game_id": "212_trichromat",
+  "source_url": "https://spratt.itch.io/trichromat",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/9925875/index.html",
+      "path": "index.html",
+      "sha256": "735afc4c287d5849824ce2ff5ea58fb0758072af0745ad01a7ded624b6103a26"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9925875/trichromat.js",
+      "path": "trichromat.js",
+      "sha256": "13a361d3c2eaeb3923d356298fd7edbdcd60172f98cc7b2ebf89b61c53259c67"
+    }
+  ]
+}

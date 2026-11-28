@@ -1,0 +1,77 @@
+schema_version: 1
+game_id: 300_handshakes
+runtime:
+  pointer_size: 4
+  class_static_fields_offset: 92
+  allow_method_calls: false
+state:
+  fields:
+    game_state.engine.level:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base: &id001
+          kind: chain
+          base: &id002
+            kind: static_fields
+            type_info: 1760016
+          steps:
+          - offset: 4
+            dereference: true
+          - offset: 16
+            dereference: true
+            expected_type_info: 1760016
+        steps:
+        - offset: 144
+    game_state.engine.can_continue:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 148
+    game_state.engine.starting:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 149
+    game_state.engine.controls_enabled:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base: *id002
+        steps:
+        - offset: 24
+    game_state.engine.skipping_possible:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base: *id002
+        steps:
+        - offset: 26
+  status:
+    field: game_state.engine.controls_enabled
+    mapping:
+      'true': playing
+      'false': transition
+    default: loading
+  actionable_statuses: []
+actions:
+  reset:
+    kind: reload
+capabilities:
+  supports_seed: false
+  supports_level_select: true
+  supports_inplace_reset: false
+  supports_reload_reset: true
+  supports_pause_detection: false
+  supports_menu_detection: false
+  supports_task_autostart: true
+  provides_actionable_flag: true

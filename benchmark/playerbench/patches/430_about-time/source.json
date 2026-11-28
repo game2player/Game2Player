@@ -1,0 +1,58 @@
+{
+  "game_id": "430_about-time",
+  "source_url": "https://ameblohsh.itch.io/about-time",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/18113627/index.html",
+      "path": "index.html",
+      "sha256": "5b468cd3bfe69cd3517faa0289b2f9a818faf5a07a21e684934df5b92d4a4f41"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/18113627/AboutTime.js",
+      "path": "AboutTime.js",
+      "sha256": "ffc3898b59fba6f5af0c02f76e5ee526cc061e65c7d2d6f4f98186876cea15c4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/18113627/AboutTime.wasm",
+      "path": "AboutTime.wasm",
+      "sha256": "a7f772811c728a540ff559a91742ef025f9dc6de1947a09dd9f5cf8c93bf85c7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/18113627/AboutTime.pck",
+      "path": "AboutTime.pck",
+      "sha256": "503fa13fe78ac737481b00693763f2353ffcd1a824c315841853eb5d7811b8b0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/18113627/AboutTime.icon.png",
+      "path": "AboutTime.icon.png",
+      "sha256": "af14ca79b95617ee20cd3f45644c082f596da63d6de91f6f9ef517ac08881ebe"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/18113627/AboutTime.apple-touch-icon.png",
+      "path": "AboutTime.apple-touch-icon.png",
+      "sha256": "c0408755aab582fb3ed33fa4d5043220f9172abb2623a3908be8b9d186bcffcd"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/18113627/AboutTime.png",
+      "path": "AboutTime.png",
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    {
+      "url": "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.4/GDRE_tools-v2.7.4-linux.zip",
+      "path": "_patch_tools",
+      "unpack": "zip",
+      "sha256": "3dc4f1244dda62e41e0c952ac00a69e60e07f3b0d5a211164806bf9d41a54758"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/18113627/AboutTime.audio.position.worklet.js",
+      "path": "AboutTime.audio.position.worklet.js",
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/18113627/AboutTime.audio.worklet.js",
+      "path": "AboutTime.audio.worklet.js",
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+schema_version: 1
+game_id: 357_snug
+# Unity 6 IL2CPP (metadata v31), wasm32, single function table. Item_TypeInfo slot
+# 5080756 holds the Item class; its static fields start with anyItemHeld (bool).
+# game_api.js starts bags with SceneManager.LoadScene(int) (table 12832) and reads
+# the scene's Item.currentBagState / GameManager.win objects; see that file.
+runtime:
+  pointer_size: 4
+  class_static_fields_offset: 92
+  allow_method_calls: false
+state:
+  fields:
+    game_state.profile.any_item_held:
+      kind: memory
+      type: bool
+      address:
+        kind: static_fields
+        type_info: 5080756
+  status:
+    default: loading
+  actionable_statuses: []
+actions:
+  reset:
+    kind: reload
+capabilities:
+  supports_seed: false
+  supports_level_select: true
+  supports_difficulty: false
+  supports_inplace_reset: true
+  supports_reload_reset: false
+  supports_pause_detection: false
+  supports_menu_detection: false
+  supports_task_autostart: true
+  provides_actionable_flag: true

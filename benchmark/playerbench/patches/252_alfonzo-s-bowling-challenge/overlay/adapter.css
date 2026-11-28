@@ -1,0 +1,5 @@
+html,body,#body_0 {margin:0!important;padding:0!important;width:100vw!important;height:100vh!important;overflow:hidden!important;background:#000;}
+#p8_frame_0,#p8_frame,#p8_container,#p8_playarea {position:static!important;width:100vw!important;height:100vh!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;}
+#p8_playarea {display:block!important;}
+#canvas {display:block!important;width:100vmin!important;height:100vmin!important;margin:0!important;image-rendering:pixelated;outline:none;}
+#p8_menu_buttons,#p8_menu_buttons_touch,#touch_controls_gfx,#touch_controls_background,.p8_controller_area,#p8_start_button {display:none!important;}

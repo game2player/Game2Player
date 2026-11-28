@@ -1,0 +1,17 @@
+{
+  "game_id": "252_alfonzo-s-bowling-challenge",
+  "source_url": "https://kittenm4ster.itch.io/abc",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/2528777/index.html",
+      "path": "index.html",
+      "sha256": "ee9613de61bb283d4c0ce47d40ea571c41c94e7a33a8010db07a9ce978c99db2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/2528777/abc.js",
+      "path": "abc.js",
+      "sha256": "3f6a5a4a6f9fc62485cafbd3225219c60e21dfbaf1896f0e348f7d6c6d1e8f13"
+    }
+  ]
+}

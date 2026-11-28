@@ -1,0 +1,57 @@
+{
+  "game_id": "148_pigeon-ascent",
+  "source_url": "https://escada-games.itch.io/pigeon-ascent",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html.itch.zone/html/7992085-1100486/index.apple-touch-icon.png",
+      "path": "index.apple-touch-icon.png",
+      "sha256": "c5915c2f0db361bd70d8e8af44bbd758223a5e188c5f31bf1f5b2b26340ca0e0"
+    },
+    {
+      "url": "https://html.itch.zone/html/7992085-1100486/index.audio.worklet.js",
+      "path": "index.audio.worklet.js",
+      "sha256": "68eb462e0750e6b087b3eb3c62a225d87a51a6ec414c1d8cdcc51abaf1bc0e8a"
+    },
+    {
+      "url": "https://html.itch.zone/html/7992085-1100486/index.html",
+      "path": "index.html",
+      "sha256": "d7620735ba3c5ef8f81e8c0afed92ff0887c31fbc099f5923183869ffe47ae7b"
+    },
+    {
+      "url": "https://html.itch.zone/html/7992085-1100486/index.icon.png",
+      "path": "index.icon.png",
+      "sha256": "03ea20894d6eaaaf232a725610e51c97e1789acea684197f2c7093651b22d693"
+    },
+    {
+      "url": "https://html.itch.zone/html/7992085-1100486/index.js",
+      "path": "index.js",
+      "sha256": "ef66294e467b63d0b80fcca36301068c6cbecb94545435b81876bf4401915463"
+    },
+    {
+      "url": "https://html.itch.zone/html/7992085-1100486/index.pck",
+      "path": "index.pck",
+      "sha256": "e3762dc454c865395a59811f96ebe446dc673dbfda5fe3e9b811c3511db3089e"
+    },
+    {
+      "url": "https://html.itch.zone/html/7992085-1100486/index.side.wasm",
+      "path": "index.side.wasm",
+      "sha256": "5f1d7b13d80728a627087b1281356efa4f659688b721a5bfb210d547237f0eb8"
+    },
+    {
+      "url": "https://html.itch.zone/html/7992085-1100486/index.wasm",
+      "path": "index.wasm",
+      "sha256": "51619a9121b0c58533e0bd9abc9eb0cf57ed715536696042daccb39f904fbab0"
+    },
+    {
+      "url": "https://html.itch.zone/html/7992085-1100486/index.worker.js",
+      "path": "index.worker.js",
+      "sha256": "dc8e62c681a38c2e48e55e63c9ec6a6d5b8874c83bf1308d14199bfe91197ae4"
+    },
+    {
+      "url": "https://html.itch.zone/html/7992085-1100486/libgdsqlite.web.template_release.wasm32.wasm",
+      "path": "libgdsqlite.web.template_release.wasm32.wasm",
+      "sha256": "44d9961611ecadd0fae43b8c2a87a4ec51955ede1a5f7fd76b27573847d19a1a"
+    }
+  ]
+}

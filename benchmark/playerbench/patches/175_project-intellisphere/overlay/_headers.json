@@ -1,0 +1,8 @@
+{
+  "/intellisphere.wasm": {
+    "Content-Type": "application/wasm"
+  },
+  "/intellisphere.pck": {
+    "Content-Type": "application/octet-stream"
+  }
+}

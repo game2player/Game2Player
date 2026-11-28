@@ -1,0 +1,41 @@
+{
+  "input_sha256": "4affbbde2308752801ab601ab0f1f434848507f175424ab69be74ea3b09cdbf1",
+  "output_sha256": "d1a70925be65d38979e2452ef4da7892a1af1f4d8cfb13b04b18f3c3ff117a96",
+  "edits": [
+    {
+      "start": 0,
+      "end": 0,
+      "text": "poke(0x5f80,77)\nwhile peek(0x5fff)!=1 do flip() end\nsrand(peek(0x5ff8)+256*peek(0x5ff9))\ncleared=0 frames=0 swaps=0\npoke(0x5f81,1)\n"
+    },
+    {
+      "start": 235,
+      "end": 236,
+      "text": " "
+    },
+    {
+      "start": 302,
+      "end": 303,
+      "text": " then\n for c in all{q-i,q-i*2,q} do if b[c]>0 then cleared+=1 end end\n "
+    },
+    {
+      "start": 332,
+      "end": 332,
+      "text": "\nend"
+    },
+    {
+      "start": 446,
+      "end": 446,
+      "text": "frames+=1\npoke(0x5f82,cleared%256) poke(0x5f83,flr(cleared/256))\npoke(0x5f84,frames%256) poke(0x5f85,flr(frames/256))\npoke(0x5f86,h) poke(0x5f87,j) poke(0x5f88,flr(z+128))\npoke(0x5f89,swaps%256) poke(0x5f8a,flr(swaps/256))\nfor c=0,min(j-1,71) do poke(0x5f90+c,max(0,b[c] or 0)) end\n"
+    },
+    {
+      "start": 508,
+      "end": 508,
+      "text": "swaps+=1 "
+    },
+    {
+      "start": 588,
+      "end": 588,
+      "text": "\n\npoke(0x5f81,2)"
+    }
+  ]
+}

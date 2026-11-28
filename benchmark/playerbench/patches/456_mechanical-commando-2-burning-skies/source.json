@@ -1,0 +1,22 @@
+{
+  "game_id": "456_mechanical-commando-2-burning-skies",
+  "source_url": "https://www.newgrounds.com/portal/view/574778",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://uploads.ungrounded.net/574000/574778_mc2b_viral_secure.swf",
+      "path": "game.swf",
+      "sha256": "7d439abb1803765228babd9f494c589278afc517a2315b6920ad14d40b93a459",
+      "headers": {
+        "Referer": "https://www.newgrounds.com/portal/view/574778",
+        "User-Agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "url": "https://github.com/ruffle-rs/ruffle/releases/download/v0.4.1/ruffle-0.4.1-web-selfhosted.zip",
+      "path": "ruffle",
+      "sha256": "d33c135beea75c83183da1938a49ee3f08c2f7a2eb2ae8f3ce43de842412aae6",
+      "unpack": "zip"
+    }
+  ]
+}

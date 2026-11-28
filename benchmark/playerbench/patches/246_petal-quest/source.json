@@ -1,0 +1,22 @@
+{
+  "game_id": "246_petal-quest",
+  "source_url": "https://noelcody.itch.io/petal-quest",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://web.archive.org/web/20260529085754id_/https://html-classic.itch.zone/html/12497479/petal_quest_1.2_html/index.html",
+      "path": "index.html",
+      "sha256": "aaa00edd2bce748b408d245b999c02dbc4540038d47d3765981464f7e86a1500"
+    },
+    {
+      "url": "https://www.lexaloffle.com/bbs/cposts/pe/petal_quest-12.p8.png",
+      "path": "petal_quest-12.p8.png",
+      "sha256": "e48b3e8174d4967276bf173968c804ce0dbbd1fc75630ba76fb024a8e45849e5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9925875/trichromat.js",
+      "path": "engine-export.js",
+      "sha256": "13a361d3c2eaeb3923d356298fd7edbdcd60172f98cc7b2ebf89b61c53259c67"
+    }
+  ]
+}

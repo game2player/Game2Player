@@ -1,0 +1,895 @@
+{
+  "game_id": "38_mobs-inc",
+  "source_url": "https://overboy.itch.io/mobs-inc",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/appmanifest.json",
+      "path": "appmanifest.json",
+      "sha256": "02ff034d145399134474fae4486a85c25d296ebe34b64587168aa29456d8d1dd",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/box2d.wasm",
+      "path": "box2d.wasm",
+      "sha256": "980c1932c6b690cc927a5df0cf2b483b58740979f2966922a2f1c9af7270a80e",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/box2d.wasm.js",
+      "path": "box2d.wasm.js",
+      "sha256": "fae7eb10b764b146a07295802d6427755292d4aac375da0e0c6e0ed444beec42",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/data.json",
+      "path": "data.json",
+      "sha256": "2389817d680fa97bd7adda65c49799d6c78b9dc5a295b3d4a0be367d5ff9c631",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/icons/icon-114.png",
+      "path": "icons/icon-114.png",
+      "sha256": "be1515be4799447784005c7e06f71cf493d05881c30e5880dab8fb7ad453297d",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/icons/icon-128.png",
+      "path": "icons/icon-128.png",
+      "sha256": "9144b06589551cab2217f99be40af85c4c970037e5b13e5da859d2e5563aa1ef",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/icons/icon-16.png",
+      "path": "icons/icon-16.png",
+      "sha256": "0fc463ba69419b02d929e1a0aa47ef40f23b3a171758c67bfb80e2e31ce7beed",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/icons/icon-256.png",
+      "path": "icons/icon-256.png",
+      "sha256": "bd9aa51038e08b59b54e707f0a1f48a4c11816afa11c39f3008e439ddd61cff1",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/icons/icon-32.png",
+      "path": "icons/icon-32.png",
+      "sha256": "3e050c4168412f9e516bd5e02aaba761189ada0d9d2bfaa6c66b14138a56313b",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/adarcher-sheet0.webp",
+      "path": "images/adarcher-sheet0.webp",
+      "sha256": "8ca5a87276ddd1298ff35835bd0f896e000bdcfcce7ea63e71bacd55e3597a30",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/adarcher2-sheet0.webp",
+      "path": "images/adarcher2-sheet0.webp",
+      "sha256": "c96b2b906a3427ae8556fe5efcc20b9d180f944187ed2c1edd7ad6fb6c94580c",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/adarcher3-sheet0.webp",
+      "path": "images/adarcher3-sheet0.webp",
+      "sha256": "91ef162ca3cbd36a6de0e1dbe27a3fb8063c6dee4e03a5033c33e98fee4fb6db",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/addasher-sheet0.webp",
+      "path": "images/addasher-sheet0.webp",
+      "sha256": "66683fec27e7ca400c2ec533b2b9cdfebf7d849ed36363df8e4fa7c5081d5505",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/addasher2-sheet0.webp",
+      "path": "images/addasher2-sheet0.webp",
+      "sha256": "e3625ab1b3aeaa95da6fe80122e2178afc537c6d62f9f1ef357937924fe1964a",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/addasher3-sheet0.webp",
+      "path": "images/addasher3-sheet0.webp",
+      "sha256": "9c520f24d9efd53bb1bebaf82acfd49a840a94171aacd5d2f63c84d30440300a",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/adknight-sheet0.webp",
+      "path": "images/adknight-sheet0.webp",
+      "sha256": "cd11a2869d383655091e1d19cb7f99bce05d9daa16a27074ad95bcc4e230367d",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/airstrike-sheet0.webp",
+      "path": "images/airstrike-sheet0.webp",
+      "sha256": "b632a50862d30a730c7d4222d7b7b03f7de40028bb90516c249c8361f3abe534",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/airstrikecall-sheet0.webp",
+      "path": "images/airstrikecall-sheet0.webp",
+      "sha256": "ac53736220a214cec20eed9742889d6f93de50b641bb08482fa17354ab4419d2",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/bandes-sheet0.webp",
+      "path": "images/bandes-sheet0.webp",
+      "sha256": "8e6d0dbfbfa84d44fa6c7732c1e6694a03c32f81b5d1f71e20bec02e3b8b4dc9",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/bloodsposion-sheet0.webp",
+      "path": "images/bloodsposion-sheet0.webp",
+      "sha256": "230830fe67da9a27f59e83eef96269218ee73541d64fe7df5fff1a6ed4ed3235",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/buttonboule-sheet0.webp",
+      "path": "images/buttonboule-sheet0.webp",
+      "sha256": "2214c85762d3d696028dd26ee2cb1e79dd8976a70c454706b4e23745ab80021a",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/buttonimpact-sheet0.webp",
+      "path": "images/buttonimpact-sheet0.webp",
+      "sha256": "124d9682d8804c83078da33b04e5edee0a7165e48cc318aaec88fccdfd3fae63",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/buttonmultidash-sheet0.webp",
+      "path": "images/buttonmultidash-sheet0.webp",
+      "sha256": "1cc7c4273837f0ea101819ab6428c4219520b10d209be27f6e801f8326583860",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/cursorr-sheet0.webp",
+      "path": "images/cursorr-sheet0.webp",
+      "sha256": "11a85bd850f21d15ec171cf427013ff86789924acb9d19be3c57354514242ed8",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/hero-sheet0.webp",
+      "path": "images/hero-sheet0.webp",
+      "sha256": "f0b93cfb27d9aa3f60f462eb372222e14ef60da09a9ab00649d9c976a9cbeba2",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/hero-sheet1.webp",
+      "path": "images/hero-sheet1.webp",
+      "sha256": "d28782db38180edfe1ba26b22a06636df6c7acf761b8bc58419db240c3a7a35b",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/menutitre-sheet0.webp",
+      "path": "images/menutitre-sheet0.webp",
+      "sha256": "81f9932e074ce987eabd25c945c641e7d011a3559068a222114c00debcb1839b",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/menutitre-sheet1.webp",
+      "path": "images/menutitre-sheet1.webp",
+      "sha256": "2fbe6817bc452123e0b3f12bf4a9194977fabe6d940499e4021cd989e86a5478",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/shared-0-sheet0.webp",
+      "path": "images/shared-0-sheet0.webp",
+      "sha256": "5cb2da3306b524e1912fd822f48d7be93f24a0e2c7869d8a1b3949e5ccb890cc",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/shared-0-sheet1.webp",
+      "path": "images/shared-0-sheet1.webp",
+      "sha256": "92f48d54cfa63d8392b627fdba064940a57d771ff7a12ec70de0dbf08cd4a12d",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/shared-0-sheet2.webp",
+      "path": "images/shared-0-sheet2.webp",
+      "sha256": "ca7550427ef325435af0508b5c29715880ea71d3284a51b353af68fa5501bd91",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/shared-0-sheet3.webp",
+      "path": "images/shared-0-sheet3.webp",
+      "sha256": "69a44029e31dc9b114205fda753a49957a5088671a239f32215a8ad24571d548",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/spell_popup-sheet0.webp",
+      "path": "images/spell_popup-sheet0.webp",
+      "sha256": "2b0816cb122a5cbf516b1fc992883f4d97a17e117d0a9b66c7d1d24ea3658a3f",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/spell_popup2-sheet0.webp",
+      "path": "images/spell_popup2-sheet0.webp",
+      "sha256": "a3356901867c0f1ac08a1afcc3c122d7c177b9ab834054d43e45401e83b5a854",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/sprite7-sheet0.webp",
+      "path": "images/sprite7-sheet0.webp",
+      "sha256": "3e05caca371bcad83e3fd2b52f3418141e0d4d1be062d5e4b947bb5612bf5220",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/volet-sheet0.webp",
+      "path": "images/volet-sheet0.webp",
+      "sha256": "4b49692ea68ebb8559447d02aef7cb417d1ce22a1f06558b110c03eb45fab705",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/volet-sheet1.webp",
+      "path": "images/volet-sheet1.webp",
+      "sha256": "34a25263c193ad41a1d2ffbf4dcfda00b12968b5bb9ac2b524153b7ec5237774",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/volet-sheet2.webp",
+      "path": "images/volet-sheet2.webp",
+      "sha256": "45ea4e8366c0f306b6928afa8759ad8f67e5bbb534d0e29ce3f4b040a34d5f16",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/volet-sheet3.webp",
+      "path": "images/volet-sheet3.webp",
+      "sha256": "629f938850e4387fffb9b666a2080d91fb37052a8065d154ecdeba5b52a855d6",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/volet-sheet4.webp",
+      "path": "images/volet-sheet4.webp",
+      "sha256": "47c7303ed462ff3558d476eb9ad5b97f121448e1397201d608a4a4366b45e61d",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/volet-sheet5.webp",
+      "path": "images/volet-sheet5.webp",
+      "sha256": "1c21050c328fd64c2d0b471fb3a06123d760f51531a5dbca5af15e3e7b8a8f63",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/volet-sheet6.webp",
+      "path": "images/volet-sheet6.webp",
+      "sha256": "00ee088d540fc540a525c65493fe6b89d976d5745a4985508b994a9b8e6ba4c2",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/volet2-sheet0.webp",
+      "path": "images/volet2-sheet0.webp",
+      "sha256": "4b49692ea68ebb8559447d02aef7cb417d1ce22a1f06558b110c03eb45fab705",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/volet2-sheet1.webp",
+      "path": "images/volet2-sheet1.webp",
+      "sha256": "34a25263c193ad41a1d2ffbf4dcfda00b12968b5bb9ac2b524153b7ec5237774",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/volet2-sheet2.webp",
+      "path": "images/volet2-sheet2.webp",
+      "sha256": "45ea4e8366c0f306b6928afa8759ad8f67e5bbb534d0e29ce3f4b040a34d5f16",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/images/volet2-sheet3.webp",
+      "path": "images/volet2-sheet3.webp",
+      "sha256": "bf7b91a559c5a289b2d86b9b54634d7c68ee50e119f963d75284314ff503f2d5",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/index.html",
+      "path": "index.html",
+      "sha256": "624d628f57a5b3bc9cd9ce950dadde04ecdeb5fdc99a4680155e9f887fcd41a9",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/air%20strik%20chute.m4a",
+      "path": "media/air strik chute.m4a",
+      "sha256": "b1bcb505860fdc916bbbee0b9456e6cce532f204b42877ad725bcc6013ed47e0",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/air%20strik%20chute.ogg",
+      "path": "media/air strik chute.ogg",
+      "sha256": "05b8b3730aec96c2ecaddebe8a7f28bd5faf8a472928894e75f9725dcfbdbb24",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/air%20strik%20decollage.m4a",
+      "path": "media/air strik decollage.m4a",
+      "sha256": "77067428342ebbf2ffc1feaba3bd658a1993ddd5534679829409ec048ac18ea1",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/air%20strik%20decollage.ogg",
+      "path": "media/air strik decollage.ogg",
+      "sha256": "e8cb8e52c0785a0f7f18e1985f345476a86517bdc13bc50702847d14b513dac2",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/archer%20tir.m4a",
+      "path": "media/archer tir.m4a",
+      "sha256": "e3b8f9e38a3a2aa4cd34e6ffcfba7f3abb23dfd13a47bbcbee0b02dad986afd7",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/archer%20tir.ogg",
+      "path": "media/archer tir.ogg",
+      "sha256": "4447553c18f1ebadacf61f4b2641c49b0ca0d50874912cbec59d30f9f52430e4",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/boule%20rebond.m4a",
+      "path": "media/boule rebond.m4a",
+      "sha256": "975919a2a1b9607a817a6c377b7798625c064e616c3173ea8b459c1b65da524e",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/boule%20rebond.ogg",
+      "path": "media/boule rebond.ogg",
+      "sha256": "8036df10e0901208c885a453937f6f96491db627720e0ef1339ba08e152e42cd",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/bouton.m4a",
+      "path": "media/bouton.m4a",
+      "sha256": "c148e4018423433ba12a05bc5797ed5b354f35d70881e2938842c6f433ea7278",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/bouton.ogg",
+      "path": "media/bouton.ogg",
+      "sha256": "0095c151a057539186977afd61b42099ae354465a60aa264f6bf7857ecd91e39",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/dash%20le%205eme%20dash.m4a",
+      "path": "media/dash le 5eme dash.m4a",
+      "sha256": "1e94861c3934f6be1b630fbab64b5a580acbb224621dbe64b024ee3f45995733",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/dash%20le%205eme%20dash.ogg",
+      "path": "media/dash le 5eme dash.ogg",
+      "sha256": "eb91c1c6818453e2305f0c0b196c5ec4ebf0ba097bde3cc200846005f200e700",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/dash.m4a",
+      "path": "media/dash.m4a",
+      "sha256": "2cbf210470cf168aff65a58f43a96a459bbf683c803cf3656d1905a20e42ba95",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/dash.ogg",
+      "path": "media/dash.ogg",
+      "sha256": "973af7ce30278c17e46e6e4b9d3eaa70a59cd0f95a925c9e017b8f43c5fcdc82",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/fired4.m4a",
+      "path": "media/fired4.m4a",
+      "sha256": "5f8aca74f91e4bec063f608595fb0d63693ae60612d3551d51b3c5843a060a39",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/fired4.ogg",
+      "path": "media/fired4.ogg",
+      "sha256": "ec20369fbaac9ad6ad93bd1583104017c72f8e6a018aeebe5e3bd4109533048f",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/heros%20mort1.m4a",
+      "path": "media/heros mort1.m4a",
+      "sha256": "027af4ba173e46676ac1a2cb0c2071fb28809fba8b6640fdf0d478e658e95717",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/heros%20mort1.ogg",
+      "path": "media/heros mort1.ogg",
+      "sha256": "e780be02bb88d79510c2601a6ee50824319858cd2ae92da3bfed77ae3f4a1cb7",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/heros%20mort2.m4a",
+      "path": "media/heros mort2.m4a",
+      "sha256": "6ae0ddcd2bd8b49ccf883b3acc2ff73bf784828fac62dd8ac3aea4955e251c48",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/heros%20mort2.ogg",
+      "path": "media/heros mort2.ogg",
+      "sha256": "383b79885ce8fc8ad5a599dab9594bc835c53116c91b986813ddb9a9299ece0e",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/heros%20mort3.m4a",
+      "path": "media/heros mort3.m4a",
+      "sha256": "b5c8374c7b053992c24d107653949985d90831e168ea0f6e3ca1642ff39ef1a5",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/heros%20mort3.ogg",
+      "path": "media/heros mort3.ogg",
+      "sha256": "c4a794d5e3ceda1a97749fc297fcc622924ecf4d183d470d3bd604de5fe4206e",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/knight%20attack.m4a",
+      "path": "media/knight attack.m4a",
+      "sha256": "341f31c923071cd27b802383652db13cb79b2113e2e1791c75de03ef6847e545",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/knight%20attack.ogg",
+      "path": "media/knight attack.ogg",
+      "sha256": "d3bf02a17a4e4a2eced3fbb31f3c3213de4a129f5a52d689a4a8c3361fdcbdcc",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/mob%20mort.m4a",
+      "path": "media/mob mort.m4a",
+      "sha256": "6cfb4cb2504d512b7958ee832d38105f3d066f3290b58db2f68e329b9ed1b810",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/mob%20mort.ogg",
+      "path": "media/mob mort.ogg",
+      "sha256": "5589e1b86e1e05375666c0da79dc76647c391f650ce0aeba87b687c907e8bb2e",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/music%20ingame.m4a",
+      "path": "media/music ingame.m4a",
+      "sha256": "6868af19a99317d76393511a4b9a6b041a05d84acc5c493f4a069c67cf2acc8b",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/music%20ingame.ogg",
+      "path": "media/music ingame.ogg",
+      "sha256": "d4d5e2714b47a6b21533c5f9f9d98c0cc6e85461fef91500f8e5835752398ffd",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/music%20menu.m4a",
+      "path": "media/music menu.m4a",
+      "sha256": "60f077a3f5266a1710050094d0681844d89a215c9e4c569ff08785e41e88939b",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/music%20menu.ogg",
+      "path": "media/music menu.ogg",
+      "sha256": "194089749d8a0dc4651ed906eefce679d95f5b3c0e8e75be7f913ca1db77f662",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/music%20salle%20attente.m4a",
+      "path": "media/music salle attente.m4a",
+      "sha256": "7961f44bf1ed8f6d1466b52076e073a68a13178fa2fe799aea272a247bf665b8",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/music%20salle%20attente.ogg",
+      "path": "media/music salle attente.ogg",
+      "sha256": "614e29e5182977fc30d649642bc43f68d4a76e4b98f0d5f079d5a1054c2bc45b",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/promotioon.m4a",
+      "path": "media/promotioon.m4a",
+      "sha256": "9e410420ff2ae9f090dff084b13f708c424b55b7af03ae066e9b87599c5ace58",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/promotioon.ogg",
+      "path": "media/promotioon.ogg",
+      "sha256": "40cbcfa45e00b60d469620c8fefaad354aae79ce4ac621c0f4a4d50eebc9ea8f",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/ralenti.m4a",
+      "path": "media/ralenti.m4a",
+      "sha256": "c08803a66c0115a1913c22e147630ca178337833217d2dbac838ac0d12429f36",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/ralenti.ogg",
+      "path": "media/ralenti.ogg",
+      "sha256": "364ab7a2ce6b715fd47859994634dc9d37cbc8b04613105f419bec81ef444616",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/viking%20attack1.m4a",
+      "path": "media/viking attack1.m4a",
+      "sha256": "cafd4c43e69e8d307748f7cbb91f4b044267292e145b32344fae3d3d6a38dcaa",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/viking%20attack1.ogg",
+      "path": "media/viking attack1.ogg",
+      "sha256": "3a495bbabf9fa148331314c5174b67885dc13b315b17119def67ef27abd992f7",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/viking%20attack2.m4a",
+      "path": "media/viking attack2.m4a",
+      "sha256": "5c08c4e7727314b7ed08e66da7311a5f83df6867657499419079126e3a7e855f",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/viking%20attack2.ogg",
+      "path": "media/viking attack2.ogg",
+      "sha256": "1d64bebf9359029ec247fcaf3ba9bb8758713c9772b8606ac58c224af39b45dd",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/viking%20attack3.m4a",
+      "path": "media/viking attack3.m4a",
+      "sha256": "943671f7d2f49c7c08a8b7b91e8547617b38332c47ffadf86a0443d440413db5",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/viking%20attack3.ogg",
+      "path": "media/viking attack3.ogg",
+      "sha256": "97aa95265b1a15d6fb106b59d33fa6ff49a81e5ae8fba754818696428c8399a2",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/viking%20attack4.m4a",
+      "path": "media/viking attack4.m4a",
+      "sha256": "860566bb85ca08135a6e7fc93dad8462e195ef9639cd258abdb97c40c6ef9a41",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/viking%20attack4.ogg",
+      "path": "media/viking attack4.ogg",
+      "sha256": "3388ce747c90a3988802be7c75ab8b5499f22b8e9fe02a60517c32332a27ad0f",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/volets%20fermeture.m4a",
+      "path": "media/volets fermeture.m4a",
+      "sha256": "0d815421208c2b6caa2ce057a03592ffb7fa1b2535660353a52a1d2919a7e492",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/volets%20fermeture.ogg",
+      "path": "media/volets fermeture.ogg",
+      "sha256": "78faf258e41117fdaa856ee9d1ea23ee1e5bb419fd3072fe4b5ecaaf500baa08",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/volets%20ouverture.m4a",
+      "path": "media/volets ouverture.m4a",
+      "sha256": "613bc0c5d38b17a330a7b18b7eea0a3d4cdb31f9284ffd959e87fff3cd6c4fb7",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/volets%20ouverture.ogg",
+      "path": "media/volets ouverture.ogg",
+      "sha256": "ca646133b3b29d2261039783c56f0f86ce29c77a142a376fa00b1a9c8d9369d3",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/volets.m4a",
+      "path": "media/volets.m4a",
+      "sha256": "f6742d847a20138993a9f563c10cafe31273cefca534ad4e43cdb6a93e77467c",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/volets.ogg",
+      "path": "media/volets.ogg",
+      "sha256": "0bdce140a197b68c78189b382359eabbdac2d0faca6cde0b5404bc936a1d1b5e",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/xp%20lvl%20up.m4a",
+      "path": "media/xp lvl up.m4a",
+      "sha256": "91c7e6430fb84822ca02ac252f450d68679a1ef5083274644836714f26acc246",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/xp%20lvl%20up.ogg",
+      "path": "media/xp lvl up.ogg",
+      "sha256": "684f7985be037736be7e5c0ebd15fa990e732496678b5de829f6b08fb643f204",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/xp%20promotion.m4a",
+      "path": "media/xp promotion.m4a",
+      "sha256": "e9f75fb481a726e1ecfad7644bc9089e0d731ebd972131c5b9342293fb43297c",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/media/xp%20promotion.ogg",
+      "path": "media/xp promotion.ogg",
+      "sha256": "352306fe63ad234da2913fedbe77356258659baee4074c8fbb272c35372fb102",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/scripts/c3main.js",
+      "path": "scripts/c3main.js",
+      "sha256": "51774b8eb8ae7020cb01b1c7e1306df6f16071d67807fef314deb9d2e35a5757",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/scripts/c3runtime.js",
+      "path": "scripts/c3runtime.js",
+      "sha256": "9b2eb741c93f32a1f32d0c181c38ebee8645fd6d94da91c6d8d9d553965cedcd",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/scripts/dispatchworker.js",
+      "path": "scripts/dispatchworker.js",
+      "sha256": "3e2e4ef222a408ec8d22d34064796796f4301452149e456e8a35efd58e4a103f",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/scripts/jobworker.js",
+      "path": "scripts/jobworker.js",
+      "sha256": "ee0ac75ccbcc30038805fb739aa9b1c4604deaea7ee1798e5fa3d72a19bbc55a",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/scripts/main.js",
+      "path": "scripts/main.js",
+      "sha256": "d78ae77f2000f06495326c7387d71db321e1538ee8691a69188ad3d7c39cfbb5",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/scripts/modernjscheck.js",
+      "path": "scripts/modernjscheck.js",
+      "sha256": "914af3dc0bb16c71e2be8fec8b8353fde0b4f8c49bcfd7c978020d7cf297ee23",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/scripts/objRefTable.js",
+      "path": "scripts/objRefTable.js",
+      "sha256": "1dfbc85934ddda5f77f1d2675ffa1b145005df89f626c9aeea7653bee41b99e9",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/scripts/supportcheck.js",
+      "path": "scripts/supportcheck.js",
+      "sha256": "913bfe452cf58571db8675f14b47529e5d74ab5236cd7f0b8c1c603b35edd9a7",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/style.css",
+      "path": "style.css",
+      "sha256": "ca1c165df67547f9daabb5541c394d47e846fe21fd516036b12510d05cb2555d",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/14482431/workermain.js",
+      "path": "workermain.js",
+      "sha256": "ea3daf9bbbc524956113f8b1e02efe697af465738516aef0e82d6f33adaefd82",
+      "headers": {
+        "Referer": "https://overboy.itch.io/mobs-inc"
+      }
+    }
+  ]
+}

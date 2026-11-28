@@ -1,0 +1,165 @@
+schema_version: 1
+game_id: 495_debbie-s-diner-derby
+runtime:
+  pointer_size: 4
+  class_static_fields_offset: 92
+  allow_method_calls: true
+state:
+  fields:
+    game_state.native.level:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base: &id001
+          kind: method
+          table_index: 15711
+          args: []
+          expected_type_info: 4455288
+        steps:
+        - offset: 16
+    game_state.native.elapsed_seconds:
+      kind: memory
+      type: f32
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 56
+    game_state.native.won:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 60
+    game_state.native.wave:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 64
+    game_state.native.stars:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 76
+    game_state.native.customers_total:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 84
+    game_state.native.customers_served:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 88
+    game_state.native.world_level:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 24
+          dereference: true
+        - offset: 12
+    game_state.native.level_name:
+      kind: memory
+      type: string
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 24
+          dereference: true
+        - offset: 24
+    game_state.native.stunned:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 20
+          dereference: true
+        - offset: 48
+    game_state.native.in_kitchen:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 20
+          dereference: true
+        - offset: 50
+    game_state.native.speed:
+      kind: memory
+      type: f32
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 20
+          dereference: true
+        - offset: 56
+    game_state.native.controls_locked:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 20
+          dereference: true
+        - offset: 60
+    game_state.native.braking:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 20
+          dereference: true
+        - offset: 61
+    game_state.native.at_rest:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base: *id001
+        steps:
+        - offset: 20
+          dereference: true
+        - offset: 62
+  status:
+    field: game_state.native.won
+    mapping:
+      'false': playing
+      'true': terminal
+    default: loading
+  actionable_statuses: []
+actions:
+  reset:
+    kind: reload
+capabilities:
+  supports_seed: true
+  supports_level_select: true
+  supports_inplace_reset: true
+  supports_reload_reset: true
+  supports_task_autostart: true
+  provides_actionable_flag: true

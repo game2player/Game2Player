@@ -1,0 +1,143 @@
+{
+  "game_id": "491_bright-lancer",
+  "source_url": "https://slo-nod.itch.io/bright-lancer",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/Build/Bright%20Lancer%20Web%20Experimental.data.unityweb",
+      "path": "Build/Bright Lancer Web Experimental.data.unityweb",
+      "sha256": "be9183e214240aa1686b303203d269bdde8db7ab0057d20b0628624e1d60aca0",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/Build/Bright%20Lancer%20Web%20Experimental.json",
+      "path": "Build/Bright Lancer Web Experimental.json",
+      "sha256": "03f174d93a4af0455d57f073853dd646879e92673f9fc3fe548df36961b8a5cb",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/Build/Bright%20Lancer%20Web%20Experimental.wasm.code.unityweb",
+      "path": "Build/Bright Lancer Web Experimental.wasm.code.unityweb",
+      "sha256": "864ea21e45c08af57d646a269e1427dd6f88c5a97168dd7ee85bcb2c203f31ba",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/Build/Bright%20Lancer%20Web%20Experimental.wasm.framework.unityweb",
+      "path": "Build/Bright Lancer Web Experimental.wasm.framework.unityweb",
+      "sha256": "1f6e91729d576b477b8e205effde13d17522284914bbb715d7eb00a0419cdb2a",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/Build/UnityLoader.js",
+      "path": "Build/UnityLoader.js",
+      "sha256": "832dda725022a8f51703b96b182277e9cb7b5345bcd236d21f31007c6edb6fc1",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/TemplateData/UnityProgress.js",
+      "path": "TemplateData/UnityProgress.js",
+      "sha256": "1e542a888b53f5e811ab967e08e95c629c18a3baa94d46d42fd859bd4dc13777",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/TemplateData/favicon.ico",
+      "path": "TemplateData/favicon.ico",
+      "sha256": "03bc9b4583617dbe8d17c64ea51c7942c0e396011d6e0b820c247626b30e76ee",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/TemplateData/fullscreen.png",
+      "path": "TemplateData/fullscreen.png",
+      "sha256": "922b2a609219c96962e2e7af9d27c1f1935881de617c9d5cb08fdb0d034cafdc",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/TemplateData/progressEmpty.Dark.png",
+      "path": "TemplateData/progressEmpty.Dark.png",
+      "sha256": "3c901e72986f57b3dd474c5b8db981da26ec1d9ad92af9edc722172678c07d44",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/TemplateData/progressEmpty.Light.png",
+      "path": "TemplateData/progressEmpty.Light.png",
+      "sha256": "efbfdb9313bdc0489d96339cf4352c1a80bc953050cf9a6c06a7ced0c0f1a4e2",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/TemplateData/progressFull.Dark.png",
+      "path": "TemplateData/progressFull.Dark.png",
+      "sha256": "2832fafec86b420ee29e0e2126b95767a22bff85d30dc90ed8de36246b395fd8",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/TemplateData/progressFull.Light.png",
+      "path": "TemplateData/progressFull.Light.png",
+      "sha256": "706765aced698c9790bb31eafd12b8161fadc46a62214926788a7a84cdc5fb51",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/TemplateData/progressLogo.Dark.png",
+      "path": "TemplateData/progressLogo.Dark.png",
+      "sha256": "b95da4db2adc10af8bee6bfccb5246cc356b3164ce7caf6c7581c1002d64b71b",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/TemplateData/progressLogo.Light.png",
+      "path": "TemplateData/progressLogo.Light.png",
+      "sha256": "270d4f3c53ec8acbef1657520116e9bbd5efe074e4fc12db05fdb9a745ae96bb",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/TemplateData/style.css",
+      "path": "TemplateData/style.css",
+      "sha256": "164c7f8cb3cbbbc7ff04bb9497dbcccaa535c43a46e7178ae53e6b46058bb9b4",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/TemplateData/webgl-logo.png",
+      "path": "TemplateData/webgl-logo.png",
+      "sha256": "f02bcd2abdd299a100ab8e2a339b3f414727816901ecda211d68cb7ba0705da0",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3228468/Bright%20Lancer%20Web%20Experimental/index.html",
+      "path": "index.html",
+      "sha256": "2058ec80618fcb08a16436835352d31605f93918198a8fcfa1cdc209f9fdbe18",
+      "headers": {
+        "Referer": "https://slo-nod.itch.io/bright-lancer"
+      }
+    }
+  ]
+}

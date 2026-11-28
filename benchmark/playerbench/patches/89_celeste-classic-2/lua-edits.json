@@ -1,0 +1,66 @@
+{
+  "input_sha256": "264adcac68e2e706b04f3f1e751d1a28e91068d3412f12be11eb231ecf53d5ba",
+  "output_sha256": "ca921236d93ad1f1289d7ccff58e4c87843f8a1f8e834edc8c0272d27ae000b2",
+  "edits": [
+    {
+      "start": 43,
+      "end": 59,
+      "text": ""
+    },
+    {
+      "start": 454,
+      "end": 591,
+      "text": "\t-- skip title; first map already running\n\tgoto_level(1)\n"
+    },
+    {
+      "start": 652,
+      "end": 1019,
+      "text": ""
+    },
+    {
+      "start": 1535,
+      "end": 1540,
+      "text": ""
+    },
+    {
+      "start": 1562,
+      "end": 1563,
+      "text": "\t-- gpio: berries, map, time, hook; 0x5f30 blocks the pico-8 pause menu\n\tpoke(0x5f30,1)\n\tpoke(0x5fe4,berry_count)\n\tpoke(0x5fe5,level_index)\n\tpoke2(0x5fe6,seconds+minutes*60)\n\tpoke(0x5fe8,have_grapple and 1 or 0)\n\tgw_obs()\n"
+    },
+    {
+      "start": 1570,
+      "end": 2377,
+      "text": ""
+    },
+    {
+      "start": 5910,
+      "end": 5999,
+      "text": ""
+    },
+    {
+      "start": 7610,
+      "end": 7637,
+      "text": ""
+    },
+    {
+      "start": 7812,
+      "end": 7839,
+      "text": ""
+    },
+    {
+      "start": 8428,
+      "end": 8453,
+      "text": ""
+    },
+    {
+      "start": 11711,
+      "end": 11776,
+      "text": "\t\n"
+    },
+    {
+      "start": 45733,
+      "end": 45733,
+      "text": "-- gw: policy observation publisher for 89_celeste-classic-2. Called once per _draw();\n-- decoded by window.__gameworldObservation in game_api.js. Pins 0x5f89 onward =\n-- pins 9.. ; pins 0/1 are the shell bank protocol and 100..104 the cart's own\n-- berries/level/time/hook row, so neither is touched. Raw scalars only: the adapter\n-- derives booleans, and reads ground/wall contact and all static geometry from the\n-- level grid in RAM instead of spending cartridge tokens on it.\n--   0x5f89 magic 89\n--   0x5f8a x*8, 0x5f8c y*8, 0x5f8e speed_x*16, 0x5f90 speed_y*16,\n--   0x5f92 grapple_x*8, 0x5f94 grapple_y*8   (int16, little-endian)\n--   0x5f96 player.state      0x5f97 t_jump_grace (4 while grounded)\n--   0x5f98 t_var_jump        0x5f9a frame counter\n--   0x5f99 flags: 1 jump held, 2 has the grapple, 4 at a checkpoint,\n--          8 carrying a berry, 16 facing right, 32 holding an object\n--   0x5f9c int16 ids of the berries still in the map (draw time), terminated by\n--          a zero pair; at most 6\nfunction gw_obs()\n\tlocal p,c\n\tfor o in all(objects) do\n\t\tif o.base==player then p=o end\n\t\tif o.base==berry and o.player and not o.collected then c=1 end\n\tend\n\tif not p then return end\n\tpoke(0x5f89,89)\n\tpoke2(0x5f8a,flr(p.x*8))\n\tpoke2(0x5f8c,flr(p.y*8))\n\tpoke2(0x5f8e,flr(p.speed_x*16))\n\tpoke2(0x5f90,flr(p.speed_y*16))\n\tpoke2(0x5f92,flr(p.grapple_x*8))\n\tpoke2(0x5f94,flr(p.grapple_y*8))\n\tpoke(0x5f96,flr(p.state))\n\tpoke(0x5f97,p.t_jump_grace)\n\tpoke(0x5f98,p.t_var_jump)\n\tpoke(0x5f99,(input_jump and 1 or 0)+(have_grapple and 2 or 0)+(level_checkpoint and 4 or 0)+(c and 8 or 0)+(p.facing>0 and 16 or 0)+(p.holding and 32 or 0))\n\tgw_n=(gw_n or 0)+1\n\tpoke(0x5f9a,gw_n%256)\n\tlocal b=0\n\tfor o in all(objects) do\n\t\tif b<6 and o.base==berry and not o.player and not o.collected then\n\t\t\tpoke2(0x5f9c+b*2,o.id)\n\t\t\tb+=1\n\t\tend\n\tend\n\tpoke2(0x5f9c+b*2,0)\nend\n"
+    }
+  ]
+}

@@ -1,40 +1,32 @@
 # PlayerBench
 
-PlayerBench contains 50 games and 287 tasks for evaluating gameplay agents. Use
-the commands below to build the game environments and evaluate a model. The table
-at the end links to each game's source and task definitions.
+PlayerBench contains 50 browser games and 287 tasks. The [game list](#games-and-tasks) links to the original games and their task definitions.
 
-## Build the environments
+## Install the games
 
-Follow the [installation and setup instructions](../../README.md#getting-started)
-to install Game2Player and configure your coding agent and VLM Player.
-
-From the repository root, run:
+Follow the [installation steps](../../README.md#install) on Linux x86-64. From the repository root, run
 
 ```bash
-python -m tools.game_pipeline benchmark/playerbench/campaign.yaml --jobs 2 --until policy
+python benchmark/playerbench/install.py
 ```
 
-The pipeline downloads each game, prepares it for the shared runtime, tests it
-through play and creates a code policy. Memory Match and Simon Sequence are loaded
-from the source code included in `originals/`. Run the same command again to resume
-unfinished work.
+The installer downloads each original, checks its SHA-256 and applies the game's adapter locally. Memory Match and Simon Sequence use the source included in this repository. Games are installed in `games/benchmark/` and their tasks in `catalog/tasks/`. Allow about 4 GiB for the installed games and download cache. Installation requires no model or API key.
 
-The default campaign uses Codex. To use Claude Code, set `agent: claude` and
-`vlm_check.model: claude-player` in [campaign.yaml](campaign.yaml).
+To try a single game first, install Give Up and play its first task. Guide the runner to the exit on each of the first five floors.
 
-You can find the generated files in these directories:
+```bash
+python benchmark/playerbench/install.py 457_give-up
+python play.py run --game 457_give-up --task 457_01
+```
 
-| Output | Location |
-| --- | --- |
-| Local game builds | `games/benchmark/` |
-| Generated game and task catalogs | `catalog/games/` and `catalog/tasks/` |
-| Generated code policies | `harnesses/policy/policies/` |
-| Campaign progress and logs | `.cache/game-pipeline/playerbench/` |
+If a game fails to install, the installer prints the reason, continues with the next game and lists the IDs to retry. Rerun the command to pick up where you left off. To replace an existing local copy, run `python benchmark/playerbench/install.py --replace GAME_ID`.
+
+> [!NOTE]
+> Game hosts sometimes move or update their files. If a download link breaks or a checksum changes, [open an issue](https://github.com/game2player/Game2Player/issues) with the game ID and the installer message.
 
 ## Evaluate a model
 
-After building the environments, run:
+After installing all 50 games, choose a [player profile](../../README.md#configure-models) and run
 
 ```bash
 python -m tools.rollout run benchmark/playerbench/evaluation.yaml \
@@ -43,7 +35,7 @@ python -m tools.rollout run benchmark/playerbench/evaluation.yaml \
 
 Replace `codex-player` with the player profile you want to evaluate. Use `--workers`
 to choose how many episodes run at once and `--thinking` to set the model's thinking
-level. Other evaluation settings are in [evaluation.yaml](evaluation.yaml).
+level. To evaluate a partial installation, copy [evaluation.yaml](evaluation.yaml) and keep only the installed game IDs under `games.test`. Pass that copy to the same command.
 
 Recordings and episode results are saved in `data/trajs/playerbench/`. Run the same
 command again to resume an interrupted evaluation.

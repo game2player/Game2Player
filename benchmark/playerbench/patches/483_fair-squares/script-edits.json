@@ -1,0 +1,214 @@
+[
+  {
+    "path": "scenes/boss/boss_final.gdc",
+    "source_sha256": "79cc21b5fbe68db82a4227c71c8015f0b82d3e2316f4eaa57cc4c72d1d7a1a0f",
+    "patched_source_sha256": "98c31bff470185bb0f0c155c75bc3c7f2b0559cc8143e3680d1065978f699929",
+    "edits": [
+      {
+        "start": 45,
+        "end": 45,
+        "text": "\tGlobals.gw_event(\"boss_died\", {\"id\":str(get_instance_id())})\n"
+      },
+      {
+        "start": 55,
+        "end": 55,
+        "text": "\tGlobals.gw_event(\"enemy_hp\", {\"id\":str(get_instance_id()),\"hp\":hp})\n"
+      }
+    ]
+  },
+  {
+    "path": "scenes/boss/boss_orbit.gdc",
+    "source_sha256": "c39cbbda9fef08c9d4817e1359be1b5c0290b9190dba535bceef04b9c5a71ac7",
+    "patched_source_sha256": "3bdba3284721bff4d6e27c6568ea4a82447e9bd790f5a44c76eec5ecebe30325",
+    "edits": [
+      {
+        "start": 26,
+        "end": 27,
+        "text": ""
+      },
+      {
+        "start": 56,
+        "end": 56,
+        "text": "\tGlobals.gw_event(\"boss_died\", {\"id\":str(get_instance_id())})\n"
+      },
+      {
+        "start": 66,
+        "end": 66,
+        "text": "\tGlobals.gw_event(\"enemy_hp\", {\"id\":str(get_instance_id()),\"hp\":hp})\n"
+      }
+    ]
+  },
+  {
+    "path": "scenes/boss/boss_orbit_bullet.gdc",
+    "source_sha256": "92fef9ffa81fdbb78d0bbca66d1ed56d2b8569a09f9177e3073cb347ec9383fa",
+    "patched_source_sha256": "05f6c24a3dac174ecbf84442058ed87235823bcd560f57b0249c3aa6c326ada4",
+    "edits": [
+      {
+        "start": 29,
+        "end": 30,
+        "text": ""
+      }
+    ]
+  },
+  {
+    "path": "scenes/boss/boss_saw.gdc",
+    "source_sha256": "02867ca2fa8a0fd720e6d71d63beed794e96aa7aeb7d21884919c79826953908",
+    "patched_source_sha256": "c05a5101a819ed8baa7a266aa4885f1d685aebc0d798cecf076a081b1c6afea2",
+    "edits": [
+      {
+        "start": 16,
+        "end": 17,
+        "text": ""
+      },
+      {
+        "start": 34,
+        "end": 34,
+        "text": "\tGlobals.gw_event(\"boss_died\", {\"id\":str(get_instance_id())})\n"
+      },
+      {
+        "start": 44,
+        "end": 44,
+        "text": "\tGlobals.gw_event(\"enemy_hp\", {\"id\":str(get_instance_id()),\"hp\":hp})\n"
+      }
+    ]
+  },
+  {
+    "path": "scenes/camera/camera.gdc",
+    "source_sha256": "29eb7bc95723c589a8e8ef27258bee34133768d02b55ce3388efa2f678c9fd0b",
+    "patched_source_sha256": "b9ba73fbb344272da771d5cf830f9e85fe2ff927332d7ffa3f56798f1135b168",
+    "edits": [
+      {
+        "start": 2,
+        "end": 2,
+        "text": "var gw_rng = RandomNumberGenerator.new()\n"
+      },
+      {
+        "start": 15,
+        "end": 16,
+        "text": "\toffset = Vector2(shake * power, 0).rotated(gw_rng.randf() * 2 * PI)\n"
+      }
+    ]
+  },
+  {
+    "path": "scenes/level/level.gdc",
+    "source_sha256": "fb9d6980a8d63e88e08cf72838295fcb2357c9ab44c22fa7e07e07578fe0fcb9",
+    "patched_source_sha256": "436cd363c29c8951ff5b50a55521a6a510553e629106ad7147dcc8e6b578a4b9",
+    "edits": [
+      {
+        "start": 69,
+        "end": 69,
+        "text": "\t\tGlobals.gw_event(\"round_clear\", Globals.gw_context(self))\n"
+      },
+      {
+        "start": 71,
+        "end": 71,
+        "text": "\t\t\tGlobals.gw_event(\"arena_clear\", Globals.gw_context(self))\n"
+      },
+      {
+        "start": 132,
+        "end": 132,
+        "text": "\tvar config = Globals.gw_config()\n\tseed(int(config.seed))\n\tUpgrades.populate_ups()\n\tGlobals.gw_event(\"attempt_start\", config)\n"
+      },
+      {
+        "start": 161,
+        "end": 161,
+        "text": "\tworld = int(config.world)\n\ttype = int(config.kind)\n\tlevel_ind = int(config.arena)\n\trounds_left = 3 if type == Globals.Level.FIGHT else 1\n\t$BG / TutorialIcons.visible = false\n\tget_node(\"/root/Main/Top/WorldUI\").player_ind = 0 if config.choice else level_ind\n\tSignals.emit_signal(\"world_changed\", world)\n\tif config.choice:\n\t\tplayer.drop_in(1.0)\n\t\tSignals.emit_signal(\"wipe_off\", Vector2(320, 240) / 2, 0)\n\t\tspawn_portal()\n\telse:\n\t\tload_level()\n\treturn\n"
+      },
+      {
+        "start": 318,
+        "end": 318,
+        "text": "\tGlobals.gw_round_ready(self)\n"
+      }
+    ]
+  },
+  {
+    "path": "scenes/portal/portal.gdc",
+    "source_sha256": "d98024eccc8878be7ebc39ed0bc00d11ce4fba0354607a846d5060688cf2ee46",
+    "patched_source_sha256": "581cc43fa9391c605e2c6e2b215bd9adb7a4d0effa0c6c832707330b3b4456ee",
+    "edits": [
+      {
+        "start": 23,
+        "end": 23,
+        "text": "\t\t\tGlobals.gw_event(\"portal_declined\", {\"custom\":custom})\n"
+      }
+    ]
+  },
+  {
+    "path": "scenes/unit/unit.gdc",
+    "source_sha256": "43d6b299127bc5f4d3fc626af20cdd5e51b501df2e0b4e8b0964d822fd436b3a",
+    "patched_source_sha256": "2b30057364ffd6b6696fadb3a97e35052f3726ad89ed9ae7be01887b597d71fc",
+    "edits": [
+      {
+        "start": 28,
+        "end": 29,
+        "text": ""
+      },
+      {
+        "start": 103,
+        "end": 103,
+        "text": "\tif not data.player:\n\t\tGlobals.gw_event(\"enemy_died\", {\"id\":str(get_instance_id())})\n"
+      },
+      {
+        "start": 118,
+        "end": 118,
+        "text": "\tGlobals.gw_event(\"enemy_hp\", {\"id\":str(get_instance_id()),\"hp\":hp})\n"
+      }
+    ]
+  },
+  {
+    "path": "scenes/upgrade/upgrade.gdc",
+    "source_sha256": "7f89b78ee9c46b91eda73d33fadfb035d168fde97b340f2163f9c8aca15fb1e4",
+    "patched_source_sha256": "956caf5736a76a23cf25ba377d66c6840bc362711b67d646d840d285dee89bc4",
+    "edits": [
+      {
+        "start": 29,
+        "end": 29,
+        "text": "\tvar player_text = Upgrades.get_player_up_text(player_up)\n\tvar enemy_text = Upgrades.get_enemy_up_text(enemy_up)\n"
+      },
+      {
+        "start": 32,
+        "end": 32,
+        "text": "\tGlobals.gw_event(\"upgrade_applied\", {\"player\":player_text,\"enemy\":enemy_text})\n"
+      }
+    ]
+  },
+  {
+    "path": "scripts/globals.gdc",
+    "source_sha256": "e3a7d421c7f9747d6d753bccc895c9b0f79f40ddf87f340defcae7fe377d0ef0",
+    "patched_source_sha256": "815d2448578df9c762ffb6178fa67fd0835d47da130e92c880b9add70fd8c6fa",
+    "edits": [
+      {
+        "start": 15,
+        "end": 15,
+        "text": "\tSignals.connect(\"player_died\", self, \"gw_player_died\")\n\nvar gw_time_ms = 0.0\n\nfunc gw_config():\n\treturn JSON.parse(JavaScript.eval(\"JSON.stringify(window.__fairSquares.config())\", true)).result\n\nfunc gw_event(event, payload = {}):\n\tif OS.has_feature(\"JavaScript\"):\n\t\tJavaScript.eval(\"window.__fairSquares.event(\" + JSON.print(event) + \",\" + JSON.print(payload) + \")\", true)\n\nfunc gw_unit_info(unit):\n\tvar max_health = unit.data.max_hp if \"data\" in unit else unit.max_hp\n\treturn {\"id\":str(unit.get_instance_id()), \"name\":unit.name, \"hp\":unit.hp, \"max_hp\":max_health, \"x\":unit.global_position.x, \"y\":unit.global_position.y, \"cutscene\":unit.get(\"in_cutscene\") == true, \"boss\":not (\"data\" in unit)}\n\nfunc gw_context(level):\n\treturn {\"world\":level.world,\"kind\":level.type,\"arena\":level.level_ind}\n\nfunc gw_round_ready(level):\n\tvar info = gw_context(level)\n\tinfo[\"enemies\"] = []\n\tfor unit in level.get_node(\"Units\").get_children():\n\t\tif \"hp\" in unit and not unit.is_queued_for_deletion():\n\t\t\tinfo.enemies.append(gw_unit_info(unit))\n\tgw_event(\"round_ready\", info)\n\nfunc gw_player_died(_pos):\n\tgw_event(\"player_died\")\n"
+      },
+      {
+        "start": 17,
+        "end": 18,
+        "text": "\tgw_time_ms += delta * 1000.0\n\tvar level = get_node_or_null(\"/root/Main/Level\")\n\tif not level:\n"
+      },
+      {
+        "start": 19,
+        "end": 24,
+        "text": "\tvar info = gw_context(level)\n\tinfo[\"game_time_ms\"] = gw_time_ms\n\tinfo[\"rounds_left\"] = level.rounds_left\n\tinfo[\"fighting\"] = level.fighting\n\tinfo[\"resetting\"] = level.reset\n\tinfo[\"layout\"] = level.fname\n\tinfo[\"player\"] = null\n\tinfo[\"gun\"] = null\n\tif player and is_instance_valid(player):\n\t\tinfo.player = {\"hp\":player.hp,\"max_hp\":player.data.max_hp,\"x\":player.global_position.x,\"y\":player.global_position.y,\"cutscene\":player.in_cutscene}\n\tif gun and is_instance_valid(gun):\n\t\tinfo.gun = {\"ammo\":gun.ammo,\"max_ammo\":gun.max_ammo,\"reloading\":gun.get_node(\"ReloadAnim\").is_playing(),\"enabled\":gun.enabled}\n\tinfo[\"enemies\"] = []\n\tfor unit in level.get_node(\"Units\").get_children():\n\t\tif \"hp\" in unit and not unit.is_queued_for_deletion():\n\t\t\tinfo.enemies.append(gw_unit_info(unit))\n\tinfo[\"portals\"] = []\n\tfor portal in level.get_node(\"Spawns\").get_children():\n\t\tif \"upgrade\" in portal and not portal.is_queued_for_deletion():\n\t\t\tinfo.portals.append({\"upgrade\":portal.upgrade,\"custom\":portal.custom,\"ready\":portal.monitoring,\"x\":portal.global_position.x,\"y\":portal.global_position.y})\n\tJavaScript.eval(\"window.__fairSquares.snapshot(\" + JSON.print(info) + \")\", true)\n"
+      },
+      {
+        "start": 54,
+        "end": 54,
+        "text": "\tout.sort()\n"
+      }
+    ]
+  },
+  {
+    "path": "scripts/upgrades.gdc",
+    "source_sha256": "e5761541809267e6c421256c8652529fd238244806e7966517d2dbb2ea7b4d29",
+    "patched_source_sha256": "f0145ad022fbb0954e037ed41f97142f681c0dc0f48e7a5e894fb5f7c287ac81",
+    "edits": [
+      {
+        "start": 9,
+        "end": 10,
+        "text": ""
+      }
+    ]
+  }
+]

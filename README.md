@@ -28,6 +28,10 @@ Yushan Li<sup>1</sup>, Han Wang<sup>1</sup>, Manling Li<sup>4</sup>, Yang Zhang<
 
 </div>
 
+## Updates
+
+- **[Nov 28, 2026]** The [PlayerBench installer](benchmark/playerbench/README.md#install-the-games) sets up all 50 games and 287 tasks with one command.
+
 ## Overview
 
 Game2Player co-develops verifiable game environments with a Coding Player and a VLM
@@ -101,21 +105,35 @@ recent API models on PlayerBench and with the published GameWorld results.
 
 ### Install
 
-You need Python 3.12 and Codex CLI or Claude Code.
+Run these commands from a Game2Player checkout. To install all of PlayerBench, use Linux x86-64.
 
 ```bash
-conda create -n game2player -c conda-forge python=3.12 pip ffmpeg nodejs
+conda create -n game2player -c conda-forge python=3.12 pip ffmpeg nodejs patch
 conda activate game2player
 python -m pip install -r requirements.txt
 python -m playwright install chromium
 ```
 
-To run the agents with Claude Code, save the token printed by `claude setup-token`
+### Install PlayerBench
+
+```bash
+python benchmark/playerbench/install.py
+```
+
+Try Give Up's first task and guide the runner through five floors.
+
+```bash
+python play.py run --game 457_give-up --task 457_01
+```
+
+To run a model on the benchmark, follow the [evaluation instructions](benchmark/playerbench/README.md#evaluate-a-model).
+
+### Configure models
+
+To generate new environments, install Codex CLI or Claude Code. To run the agents with Claude Code, save the token printed by `claude setup-token`
 to `~/.config/game2player/claude.token` and make the file private with
 `chmod 600 ~/.config/game2player/claude.token`. Codex uses its own login.
 Unity and Flash games need .NET or Java for their [engine tools](tools/engine_inspect/README.md).
-
-### Configure models
 
 | Role | Codex | Claude |
 | --- | --- | --- |
@@ -174,23 +192,6 @@ For example, `--jobs 4 --workers 1` processes up to four games with one VLM
 episode per game. To use both coding agents, pass `--agents codex=2,claude=2`
 instead of `--jobs`. `target_per_task` in the collection plans sets how many
 episodes each task records.
-
-### Reconstruct PlayerBench
-
-[PlayerBench](benchmark/playerbench/README.md) specifies 50 games and 287 tasks.
-It includes original source references, task definitions and two games authored
-by our team. Third-party game builds and assets are not included.
-
-After configuring the agent and player models above, reconstruct the environments
-and run the playtesting loop:
-
-```bash
-python -m tools.game_pipeline benchmark/playerbench/campaign.yaml --jobs 2 --until policy
-```
-
-The Builder implements the published tasks without changing their goals or
-scoring rules. All generated environments and policies stay in the local output
-directories. See the benchmark guide for evaluation commands.
 
 ### Play a generated game
 

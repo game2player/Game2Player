@@ -1,0 +1,18 @@
+{
+  "game_id": "64_kingdom-rush",
+  "source_url": "https://www.newgrounds.com/portal/view/587194",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://uploads.ungrounded.net/587000/587194_KingdomRush_v1.072_s_publi.swf?1325530713",
+      "path": "game.swf",
+      "sha256": "028ecf43b4bd40399823e0478d6c62bba935c7d826ad6e1a195ebf43cf474767"
+    },
+    {
+      "url": "https://github.com/ruffle-rs/ruffle/releases/download/v0.4.1/ruffle-0.4.1-web-selfhosted.zip",
+      "path": "ruffle",
+      "sha256": "d33c135beea75c83183da1938a49ee3f08c2f7a2eb2ae8f3ce43de842412aae6",
+      "unpack": "zip"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "/Build/Frequencies_html5.wasm.code.unityweb": {
+    "Content-Type": "application/wasm"
+  },
+  "/Build/Frequencies_html5.wasm.framework.unityweb": {
+    "Content-Type": "application/javascript"
+  },
+  "/Build/Frequencies_html5.data.unityweb": {
+    "Content-Type": "application/octet-stream"
+  }
+}

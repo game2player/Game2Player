@@ -1,0 +1,31 @@
+{
+  "input_sha256": "295faefc4ba531af9b3e58103db8aaaff9c1527cc5c71939b894d9a98a7c2770",
+  "output_sha256": "7c3902a65e7e21be6e3ecf08d17fae3bd24c82b5768739d3342fe4afb80dd96a",
+  "edits": [
+    {
+      "start": 2787,
+      "end": 2787,
+      "text": "    gw_boot()\n"
+    },
+    {
+      "start": 11415,
+      "end": 11415,
+      "text": "    if level >= gw_start and not gw_done[level] then\n        gw_done[level] = true\n        gw_solved += 1\n    end\n"
+    },
+    {
+      "start": 12927,
+      "end": 12971,
+      "text": "    if did_change then\n        add(history, last_step)\n        gw_moves += 1\n    end\n"
+    },
+    {
+      "start": 14505,
+      "end": 14505,
+      "text": "    gw_pub()\n"
+    },
+    {
+      "start": 20931,
+      "end": 20931,
+      "text": "\n-- gameworld instrumentation (see game_api.js for the pin map)\ngw_solved, gw_moves, gw_start, gw_f, gw_done = 0, 0, 0, 0, {}\n\nfunction gw_boot()\n    local n = peek(0x5f80)\n    if n > 0 and n <= 22 and peek(0x5f81) == n + 100 then\n        n -= 1\n        gw_start = n\n        screen = \"level\"\n        level = n\n        dset(0, n)\n        menu_selected = 1\n        load_level()\n    end\nend\n\nfunction gw_pub()\n    gw_f += 1\n    local acts = actors or {}\n    local cnt, slots, aligned = {}, 0, 0\n    for a in all(acts) do\n        local k = a.x..a.y..a.s\n        if cnt[k] then\n            cnt[k] += 1\n        else\n            cnt[k] = 1\n            slots += 1\n        end\n    end\n    for k, v in pairs(cnt) do\n        if (v == 3) aligned += 1\n    end\n    poke(0x5f88, 83)\n    poke(0x5f89, gw_f % 256)\n    poke(0x5f8a, screen == \"title\" and 0 or (screen == \"level_select\" and 1 or 2))\n    poke(0x5f8b, min(level, 255))\n    poke(0x5f8c, min(dget(0), 255))\n    poke(0x5f8d, min(gw_solved, 255))\n    poke(0x5f8e, min(aligned, 255))\n    poke(0x5f8f, min(slots, 255))\n    poke(0x5f90, min(#history, 255))\n    poke2(0x5f91, gw_moves)\n    poke(0x5f93, (dialogue > 0 and 1 or 0) + (((entering or 0) + (exiting or 0) > 0 or (glitch > 0 and glitch < 160)) and 2 or 0) + (level > level_count and 4 or 0) + (palette == 2 and 8 or 0) + (dialogue == 1 and 16 or 0))\n    poke(0x5f94, lvl_w or 0)\n    poke(0x5f95, lvl_h or 0)\n    poke(0x5f96, min(#acts, 48))\n    for i = 1, min(#acts, 48) do\n        local a = acts[i]\n        poke(0x5f98 + i * 2 - 2, a.x + a.y * 8 + (a.c - 1) * 64)\n        poke(0x5f98 + i * 2 - 1, a.s)\n    end\nend\n"
+    }
+  ]
+}

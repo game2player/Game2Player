@@ -1,0 +1,532 @@
+{
+  "game_id": "222_mindustry-classic",
+  "source_url": "https://anuke.itch.io/mindustry-classic",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/index.html",
+      "path": "index.html",
+      "sha256": "ec44636bd4a6e01711c05abeb6075c94facbbd25061fda937d9356c448c30184"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/soundmanager2-jsmin.js",
+      "path": "soundmanager2-jsmin.js",
+      "sha256": "f6240354df08209dc79101ffc4c2e7c3ef5ce83f7615464b41961a3199754b17"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/soundmanager2-setup.js",
+      "path": "soundmanager2-setup.js",
+      "sha256": "bbd7d2d28a6c69390fe960075aa590ae1e1f93a86d1e607b811b1c760e1c22f2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/styles.css",
+      "path": "styles.css",
+      "sha256": "afd59a6bf90e7ed05711d441944f6ae8971ac93443b7691eeb42e2c0ce12f658"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/assets.txt",
+      "path": "assets/assets.txt",
+      "sha256": "612044149d7ce866b1b23dc249672dd8c4e2a476106152c8837c5055e1bc8a2e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/version.properties",
+      "path": "assets/version.properties",
+      "sha256": "a744a4550f6ecb8e4a9b631121f886e91d0633bae0bcc868f02c07707312bbe7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/html/html.nocache.js",
+      "path": "html/html.nocache.js",
+      "sha256": "8097017618a6bb3ab2046d867c10a5f5a13da78ba5b813194780279308df4d23"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/html/logo.png",
+      "path": "html/logo.png",
+      "sha256": "cb507ab55b75027ee1f30f7e5f385f6281f82664a9f662838dd0a5a69e680e00"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/html/6B7B6BB8AC29E8E3952F79D5483498AA.cache.js",
+      "path": "html/6B7B6BB8AC29E8E3952F79D5483498AA.cache.js",
+      "sha256": "ce2ff8d390c0902dbefbd57822ee43d6563d052602f9dae70ba6d7bab81c9fef"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle_uk_UA.properties",
+      "path": "assets/bundles/bundle_uk_UA.properties",
+      "sha256": "5adb3e7d3beee5aadcf28addfea422b82c71840bf22d80d3a99038822758d5b3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle_in_ID.properties",
+      "path": "assets/bundles/bundle_in_ID.properties",
+      "sha256": "495ad25a45294c7331786ad3d3f9952fcaa4d61875fe9dfc1b194d9d4f0ed572"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle_de.properties",
+      "path": "assets/bundles/bundle_de.properties",
+      "sha256": "4a4b42f303fb420d312311d47729876512a28689819c854091f3491ed5b0aaf3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle_ru.properties",
+      "path": "assets/bundles/bundle_ru.properties",
+      "sha256": "91e0c1d1927c5dd84719875d77a315bc7998b40888239e50634f47b79adbbc43"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle_pt_BR.properties",
+      "path": "assets/bundles/bundle_pt_BR.properties",
+      "sha256": "7e8ae840ff054651bd5146bbdd3e0184f03ed2ac7be7120bdac80327a689e507"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle_ita.properties",
+      "path": "assets/bundles/bundle_ita.properties",
+      "sha256": "41a537f4f61a526efce3fd7548ca00bf133f2db9b5c7db28c177f6f32d1f7bfb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle_pl.properties",
+      "path": "assets/bundles/bundle_pl.properties",
+      "sha256": "e9199c1b11a0cc4995722af28fbd2e7587882f410aa5b6d55c3d5e6cb8f65781"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle_es.properties",
+      "path": "assets/bundles/bundle_es.properties",
+      "sha256": "91a6daeaa5d70cd12f1fb830a1b7c05b307b44724cfe9075076c57ac691d43c5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle_ko.properties",
+      "path": "assets/bundles/bundle_ko.properties",
+      "sha256": "6f8396ef9220eb7144fda6a5d40cedc0f5c8ed63b14aebf12f750ea2d9823329"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle.properties",
+      "path": "assets/bundles/bundle.properties",
+      "sha256": "24b779727575fbbec6ef573ed33b66ec81cbaa6562b002be26a029c2d91606b0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle_fr.properties",
+      "path": "assets/bundles/bundle_fr.properties",
+      "sha256": "861143200f926a00e4961514118c7b4b0c9e6153274de170cfad9d9ff9e29043"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/bundles/bundle_tk.properties",
+      "path": "assets/bundles/bundle_tk.properties",
+      "sha256": "28453836c9a50f08a46118ff642fc00ecb55633cba860b81516ae69a85778846"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/shaders/shield.fragment",
+      "path": "assets/shaders/shield.fragment",
+      "sha256": "70a34cc892136892057f66021923518f0c194bea7992767c9ec387fd82c3d2da"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/shaders/pattern.fragment",
+      "path": "assets/shaders/pattern.fragment",
+      "sha256": "57ee9eada26914953cf8cf7ea3cb224ace819266c518383409f6eb4c466ce9df"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/shaders/outline.fragment",
+      "path": "assets/shaders/outline.fragment",
+      "sha256": "148d9153a055970fa2792e4baf23ace1e55744290570eafc85e5fa4a5dd3710c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/shaders/default.vertex",
+      "path": "assets/shaders/default.vertex",
+      "sha256": "a9cbcb41802972e0f0b483f00139757772e3e8bda1dc7f88ec5a10ac48e9851a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sprites/icon.png",
+      "path": "assets/sprites/icon.png",
+      "sha256": "a00a0bfc141c14f8ba8ec7f6dfa602e5ecebff4cdcc3d530b4e81248d666a8a2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sprites/sprites.atlas",
+      "path": "assets/sprites/sprites.atlas",
+      "sha256": "2129e9510052c05b8e2839a956707ec92f7332757ad4159dc6a2c3893589b073"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sprites/sprites.png",
+      "path": "assets/sprites/sprites.png",
+      "sha256": "181d7d11d5a86f252d51be49c66748ee35a0ff4023a3c523b7a2727a3acddbe8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sprites/icon.icns",
+      "path": "assets/sprites/icon.icns",
+      "sha256": "bc7f4822bd7a983814be83fed58442b95277b135ab73171a38c4376eedd5c2e9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sprites/background.png",
+      "path": "assets/sprites/background.png",
+      "sha256": "7a9dfb0d961e0d302ec2bc9afe543cb3e3449af033b456d1f754acdd3a275b7c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/scorch.png",
+      "path": "assets/maps/scorch.png",
+      "sha256": "77730670da94ce4dbdebd07c1a8463c9468ba59d26478a1afa0a8595185b6ea7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/island.png",
+      "path": "assets/maps/island.png",
+      "sha256": "ab64282cb57e3aeba01683e284c6fdd2f4b9058f6f5082c2ed1431f7ab4f239f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/desert.png",
+      "path": "assets/maps/desert.png",
+      "sha256": "2fb13cfecaa67ca23434a15bcddd9bcda20a1e72ffc4304bfdcde2c031cdb3e1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/grassland.png",
+      "path": "assets/maps/grassland.png",
+      "sha256": "966e4f6ea1f38e0241b0332bf514fb61cd63869c105004dd1a8c8bbfb334d99c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/test3.png",
+      "path": "assets/maps/test3.png",
+      "sha256": "3326951b3b2d2b976ed1b1843d52003bc32c07e97c4cbb05e7821204861d94ee"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/maps.json",
+      "path": "assets/maps/maps.json",
+      "sha256": "dba96e10c32b792c1fa4746bc716b3d47fd5fc8de0387cf24a778317fc1b9a99"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/test1.png",
+      "path": "assets/maps/test1.png",
+      "sha256": "e264dcd875bfaa2c2b9e912b2169fbfb0cf200554fc718b9acbcedc498f08435"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/caves.png",
+      "path": "assets/maps/caves.png",
+      "sha256": "eaac518d91179726cdc516dd3a9f8ff68ec36fadd656fe4b8a3285f3cb6a7640"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/fortress.png",
+      "path": "assets/maps/fortress.png",
+      "sha256": "31b348f0e2e0efe22b997efb2b9561e35131e535a1fc99f9b0a58f6dda08c2ef"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/volcano.png",
+      "path": "assets/maps/volcano.png",
+      "sha256": "477766fbcb4b6c0540b8179daa91722c900db337b4889cbbe43c480cb9fd704e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/maze.png",
+      "path": "assets/maps/maze.png",
+      "sha256": "f8029cf31d34b32db9c1b05245577618288d87f10b7350f8f084e4e4c73771f7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/pit.png",
+      "path": "assets/maps/pit.png",
+      "sha256": "e5bdac881410e7f6a47ecc3c696049ec1c9808e072d263956a2d2224235e4f3f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/delta.png",
+      "path": "assets/maps/delta.png",
+      "sha256": "d6884800b40f338443c64399d7a0d5d9824eafaf5187e629971695c4b28036f9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/sinkhole.png",
+      "path": "assets/maps/sinkhole.png",
+      "sha256": "5f876f917ae863d84b665c9d3174126b2127e97681ac7650bddc66cd8f8d74e3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/arena.png",
+      "path": "assets/maps/arena.png",
+      "sha256": "febcba82b92374569ec2b629e4ed3a7487deb8aeac7b478dc5c4d1060dfdc2fa"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/oilrush.png",
+      "path": "assets/maps/oilrush.png",
+      "sha256": "b1c315fb9c64ec70863d8ec0b86caebdfeaf4ac87cdc28a146dbcb6facda091b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/caldera.png",
+      "path": "assets/maps/caldera.png",
+      "sha256": "580d2efe6774c62f1e2b4ce071e284a92d4fb135b4e2e0818d12e2c6435a5288"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/spiral.png",
+      "path": "assets/maps/spiral.png",
+      "sha256": "4dee0be10d6e0fbe5b671a894a9b1d38e429426dfd8271d44791bc06b9962fb3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/blankmap.png",
+      "path": "assets/maps/blankmap.png",
+      "sha256": "3a572ba6a3ae104535549c19fe28ded7de492383bcf9b3dbc91ffdc291473a36"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/tundra.png",
+      "path": "assets/maps/tundra.png",
+      "sha256": "fa10998973239bc8d59ce34b3feb4950070e8526616be8bcdae8f084c2c93533"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/tutorial.png",
+      "path": "assets/maps/tutorial.png",
+      "sha256": "29f573c6a58c7ca9b1777382f04e8e4228d9d6588783cbdb58574f5e98cd0e5d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/test2.png",
+      "path": "assets/maps/test2.png",
+      "sha256": "b4ebe94faa717daeb2638fa767f98f5aa0a13c79401c6f30550233390295c090"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/maps/canyon.png",
+      "path": "assets/maps/canyon.png",
+      "sha256": "9ac70dad8d00dd6866e79901da2c675246c4a7da63c9b6da637e275ef578c645"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/cursors/cursor.png",
+      "path": "assets/cursors/cursor.png",
+      "sha256": "9b485974c0249ddb598ff90e7f6bc7cf4c4c61ca43b58c7ea44fc763bd053f18"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/cursors/hand.png",
+      "path": "assets/cursors/hand.png",
+      "sha256": "ced28416ffcdf48d799c34b1ff5125c8f936398313c1325d22ec17094a99f7c2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/cursors/ibar.png",
+      "path": "assets/cursors/ibar.png",
+      "sha256": "714f6ddf9bc3482af54fdf138a9af8fdcb55559a2bcf83e6d8111f8a1bf40d27"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/ui/uiskin.json",
+      "path": "assets/ui/uiskin.json",
+      "sha256": "04deebecf713127ad1f91bb8433672c2949872885f9193aa651ef45f74a55b6e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/ui/title.fnt",
+      "path": "assets/ui/title.fnt",
+      "sha256": "84d95992818ccb5bf14dea60b251d94ede957f6acb0de8f96a96a0f97f021e9c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/ui/square.png",
+      "path": "assets/ui/square.png",
+      "sha256": "a9ab859114ad43667b0e5f2474a2ac2ddf149655c780e242049cbfd0a1746b4c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/ui/korean.png",
+      "path": "assets/ui/korean.png",
+      "sha256": "cbdc39959bfafa63adb4ad0021d974e7fb9940a0882c2968d8b3955ba4136381"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/ui/square.fnt",
+      "path": "assets/ui/square.fnt",
+      "sha256": "91cb7e037115170db8ad9e50b6c441d83dc52d9f07530a8522f6f4812dc6a8bf"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/ui/title.png",
+      "path": "assets/ui/title.png",
+      "sha256": "f5a245633156c663572d3d7d7430b12f327e97a358879318aacb71fd4eea4e8f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/ui/uiskin.atlas",
+      "path": "assets/ui/uiskin.atlas",
+      "sha256": "700cfb1a743860cab433160008bcc8523b48db1fce1cdbac715099aef0c61f55"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/ui/korean.fnt",
+      "path": "assets/ui/korean.fnt",
+      "sha256": "ed856b10742eac9d0de9f25f5105c9286f4afe2b4b4fbaff59d88d7952f30376"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/music/1.mp3",
+      "path": "assets/music/1.mp3",
+      "sha256": "3c867882d4cdc10c835ee07aef44759e2bd90e05e3b36b37867bfed0b3e3881a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/music/5.mp3",
+      "path": "assets/music/5.mp3",
+      "sha256": "925802729d2cd6b95ba0757566296cc10724468cfb34bb342d64de2c82d1b2d9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/music/6.mp3",
+      "path": "assets/music/6.mp3",
+      "sha256": "81368844338c5ef1aa38e0cdbe85c435f3e1a027718d1afdfee0a9507a116b45"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/music/2.mp3",
+      "path": "assets/music/2.mp3",
+      "sha256": "52c07d05ce33264ba508e68ab3c5f0d28b24cf22dc5ab67ba1eee957f9c26950"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/music/4.mp3",
+      "path": "assets/music/4.mp3",
+      "sha256": "c1d83ab5c8802cc6f3243db830e788a7b826d7b21531f60a7fad668b72ae63da"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/music/3.mp3",
+      "path": "assets/music/3.mp3",
+      "sha256": "749f3759890de1abb6d12fd55c2a45774bc22155031227a64602adfd61d3bf7b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/railgun.mp3",
+      "path": "assets/sounds/railgun.mp3",
+      "sha256": "966b2d18b9eeca0be5aa486f07ed7b8b71fce1a4e67441734b4e3a2f68302d87"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/bang2.mp3",
+      "path": "assets/sounds/bang2.mp3",
+      "sha256": "eed71f1606de0775c3de21b55181c7fc3ae29876a139a2f4647cfe4b9c738f34"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/shoot.mp3",
+      "path": "assets/sounds/shoot.mp3",
+      "sha256": "a93bd0e06cf5a624e54e95353baf0ffc49050022f072f4c110dff83fe59723af"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/blast.mp3",
+      "path": "assets/sounds/blast.mp3",
+      "sha256": "fadc78182bc7fda359c51fff103bb9f8ce21fad41a1ebe4d71bd1b2361595763"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/tesla.mp3",
+      "path": "assets/sounds/tesla.mp3",
+      "sha256": "8663aedd0c4102d0e01c52197f190c9b6de84bbb6d1cb56939a1b7a4e950314e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/corexplode.mp3",
+      "path": "assets/sounds/corexplode.mp3",
+      "sha256": "d6fd7d588e799ebd370fc1344300607c85e82d4aa58f81530c3a6fa6facc4764"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/purchase.mp3",
+      "path": "assets/sounds/purchase.mp3",
+      "sha256": "b1a12dc2532ae74aab0ee60da27f63065a13d25076a38d8105d6914b8ad8d9bb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/lasershot.mp3",
+      "path": "assets/sounds/lasershot.mp3",
+      "sha256": "7e061ae0253c50e0b71342f97390cff91c2c1a9e441b746250e7ab306e325ad9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/bloop.mp3",
+      "path": "assets/sounds/bloop.mp3",
+      "sha256": "2094c820ae06a22fbe52f26d380888fb33bfffa160a43ea329785726a3aeb859"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/explosion.mp3",
+      "path": "assets/sounds/explosion.mp3",
+      "sha256": "121f6a598a146b6170a95ebf1d78d1d0ceab8426d3cbbc2ec3e881ba3482bc62"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/shoot_old.mp3",
+      "path": "assets/sounds/shoot_old.mp3",
+      "sha256": "50db02485f6eeabbea63a3cc6d49599f958c5fad40094522fa90cc5f719e9ec8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/flame.mp3",
+      "path": "assets/sounds/flame.mp3",
+      "sha256": "e0cd331175352c335816efdd7edf1713952d40fd8c55e22b26f4e278fc452e48"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/bigshot.mp3",
+      "path": "assets/sounds/bigshot.mp3",
+      "sha256": "2b07b17cd7eb00be0079da3c16524759b7107d44fde08ae738c52b2594d9716e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/spawn.mp3",
+      "path": "assets/sounds/spawn.mp3",
+      "sha256": "a619fddb8d3865987358e8e2f01de448700b6c507e3ac1c3546842ad10ed5ace"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/die.mp3",
+      "path": "assets/sounds/die.mp3",
+      "sha256": "bc16e9d4906e39c667e522f980ece6950b23743aa193fa6c72fb1ea46e864b90"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/flame2.mp3",
+      "path": "assets/sounds/flame2.mp3",
+      "sha256": "71c4a93ee74dba061d2f374babdbe91aa3d989532885b20d405f655a203f446d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/break.mp3",
+      "path": "assets/sounds/break.mp3",
+      "sha256": "75d11cd9d0ccb1b608cd8d2e0e564c0dbf32ad73956d86d01749241a9b22c6a0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/laser.mp3",
+      "path": "assets/sounds/laser.mp3",
+      "sha256": "55810088b451211d2ab75f4a881e350f0338e72043358fbb7a580b10a0ef10a1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/place.mp3",
+      "path": "assets/sounds/place.mp3",
+      "sha256": "9f5d47f798cc49a2465688a321d1b2affe0a430a149a3e4638d402e118d03662"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/missile.mp3",
+      "path": "assets/sounds/missile.mp3",
+      "sha256": "9961ccb669d79561638153d44a7c65fbd81b6cc4cc4a3bce2b87d73205f2ba22"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/resonate.mp3",
+      "path": "assets/sounds/resonate.mp3",
+      "sha256": "f202376aae2fbe5f54e66e411d7e3e3f1abcaaf844a87dc1aa49a7e21bbe279f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/respawn.mp3",
+      "path": "assets/sounds/respawn.mp3",
+      "sha256": "5911e05403142f2b70120d32347599ac35c881b6fbeaa58b1819f9ab26912b79"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/bang.mp3",
+      "path": "assets/sounds/bang.mp3",
+      "sha256": "5da79196add0572d362065d914f35fe57e46e40f0e763b85faf082ac169e6f05"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/ping.mp3",
+      "path": "assets/sounds/ping.mp3",
+      "sha256": "98e97c094131716ab993282e3b35ceccc80bdfdd4f945ededa8df16790e08592"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/waveend.mp3",
+      "path": "assets/sounds/waveend.mp3",
+      "sha256": "b5bd5450a796d93c392d7ddcc0cc56011423c8f3355f24cd652ddd1a4e57c32f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/sounds/enemyshoot.mp3",
+      "path": "assets/sounds/enemyshoot.mp3",
+      "sha256": "a10e10f9c0682ec184989dea6bef0b06038520927e4d3b86141f21aabfe978c7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/com/badlogic/gdx/utils/arial-15.fnt",
+      "path": "assets/com/badlogic/gdx/utils/arial-15.fnt",
+      "sha256": "399b448898a2438991b32937d48a6c1a1c3caa78491bf5a714e9240437ae4439"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/com/badlogic/gdx/utils/arial-15.png",
+      "path": "assets/com/badlogic/gdx/utils/arial-15.png",
+      "sha256": "e34e9e8ad6dd2d0d073c07391047af022f6b44992e9a2d3e51f508d9211a5154"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/com/badlogic/gdx/graphics/g3d/shaders/depth.vertex.glsl",
+      "path": "assets/com/badlogic/gdx/graphics/g3d/shaders/depth.vertex.glsl",
+      "sha256": "eedd2994d9f4c0f6ad2269b36edda7b22a4280e28b7b763d23d517c99f088363"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/com/badlogic/gdx/graphics/g3d/shaders/default.fragment.glsl",
+      "path": "assets/com/badlogic/gdx/graphics/g3d/shaders/default.fragment.glsl",
+      "sha256": "e9837a1b44ef35ccbf104f8e5a133c0f6622bfdf2fdbb9fcac679e6267ac8e91"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/com/badlogic/gdx/graphics/g3d/shaders/depth.fragment.glsl",
+      "path": "assets/com/badlogic/gdx/graphics/g3d/shaders/depth.fragment.glsl",
+      "sha256": "88e26a24b82d2059dec14b1fc4537a4eb175a99a28d57a6214460d53e232621a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/com/badlogic/gdx/graphics/g3d/shaders/default.vertex.glsl",
+      "path": "assets/com/badlogic/gdx/graphics/g3d/shaders/default.vertex.glsl",
+      "sha256": "99e858d5d895018fb47fa12a147ac9bcf5a413a33d7feaa9fdaedfea17b2ef3f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/com/badlogic/gdx/graphics/g3d/particles/particles.vertex.glsl",
+      "path": "assets/com/badlogic/gdx/graphics/g3d/particles/particles.vertex.glsl",
+      "sha256": "c91a0b8414d4a52f774b5a4ef0e3dd8cc653c8c0e1e3931b9fb9dbf192d52842"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/assets/com/badlogic/gdx/graphics/g3d/particles/particles.fragment.glsl",
+      "path": "assets/com/badlogic/gdx/graphics/g3d/particles/particles.fragment.glsl",
+      "sha256": "80a8c2277136452e36e8628c95c26e8afc8ed5d3fe1059e766f769018f638f15"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1597847/html/gwt/chrome/chrome.css",
+      "path": "html/gwt/chrome/chrome.css",
+      "sha256": "088ef67b1e2bb2f4b84a8c6ff6798bdb3cc94c5af2439c7ae3837e0776f83eee"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frogfall</title>
+  <style>
+    html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#000; }
+    #canvas { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+      width:100vmin!important; height:100vmin!important; image-rendering:pixelated; outline:none; }
+    #room-info { position:fixed; top:4px; left:6px; right:6px; z-index:5; pointer-events:none;
+      color:#fff7df; background:#000c; padding:3px 5px; font:16px monospace;
+      display:flex; justify-content:space-between; gap:10px; visibility:hidden; }
+  </style>
+</head>
+<body>
+  <div id="gm4html5_div_id" class="gm4html5_div_class">
+    <canvas id="canvas" width="192" height="192" tabindex="0"></canvas>
+  </div>
+  <div id="room-info" aria-live="polite"><span id="room-name"></span><span id="room-hits"></span></div>
+  <script src="Frogfall/Frogfall.js"></script>
+  <script src="game_api.js"></script>
+  <script>window.onload = GameMaker_Init;</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+[
+  {
+    "old": "    self:_clear_note_display()\n    if (not self:set_sprt(SPRT_DOG_SING, color.player_sfx_sing)) return\n    self:_create_note(color)\n    G_room:on_sing(color)\n    self.sing_state_start=G_time+9\n  end\n",
+    "new": "    self:_clear_note_display()\n    if (not self:set_sprt(SPRT_DOG_SING, color.player_sfx_sing)) return\n    self:_create_note(color)\n    G_gw_note=color.index\n    G_gw_songs+=1\n    G_room:on_sing(color)\n    self.sing_state_start=G_time+9\n  end\n"
+  },
+  {
+    "old": "end\n\nfunction init_bark()\n  bark=ActorFactory_create(\n    0,\n    G_player.x+(G_player.flip_x and -6 or 6),\n",
+    "new": "end\n\nfunction init_bark()\n  G_gw_barks+=1\n  bark=ActorFactory_create(\n    0,\n    G_player.x+(G_player.flip_x and -6 or 6),\n"
+  },
+  {
+    "old": "\n-- INIT\nfunction _init()\n  f(\"0x1000, 0x1000, 0x2000\",reload)\n  poke(0x5f5c, 255) -- disable btnp repeat\n\n",
+    "new": "\n-- INIT\nfunction _init()\n  srand(1)\n  G_gw_epoch=(G_gw_epoch or 0)%255+1\n  G_gw_flower=false\n  G_gw_note=0\n  G_gw_barks=0\n  G_gw_songs=0\n  f(\"0x1000, 0x1000, 0x2000\",reload)\n  poke(0x5f5c, 255) -- disable btnp repeat\n\n"
+  },
+  {
+    "old": "\n-- UPDATE\nfunction _update()\n  G_time+=1\n  G_room:remove_expired_entities()\n  -- Update all actors\n",
+    "new": "\n-- UPDATE\nfunction _update()\n  gw_control()\n  G_time+=1\n  G_room:remove_expired_entities()\n  -- Update all actors\n"
+  },
+  {
+    "old": "  foreach(G_room.actors, commit_move)\n  -- Handle any room change before drawing\n  Map_update()\nend\n\nfunction update_actor(actor)\n",
+    "new": "  foreach(G_room.actors, commit_move)\n  -- Handle any room change before drawing\n  Map_update()\n  gw_publish()\nend\n\nfunction update_actor(actor)\n"
+  },
+  {
+    "old": "\nfunction noop() end\n\n",
+    "new": "\nfunction noop() end\n\n\n\n-- GPIO bridge: only native fresh-start/reset entry, no debug checkpoints.\nfunction gw_control()\n local cmd=peek(0x5fff)\n if cmd==0 then return end\n poke(0x5fff,0)\n if cmd==2 then _init() end\n if cmd==2 or (cmd==1 and G_room.index==29) then\n  sfx(0)\n  G_player.x,G_player.y,G_player.is_hidden=432,446,false\n  G_dark=30\n  Map_update()\n end\nend\nfunction gw_publish()\n local bank=G_rooms[20]\n G_gw_flower=G_gw_flower or G_player.flower or G_win\n poke(0x5f80,246,G_room.index,#G_player.birds,#bank.birds,\n  G_gw_flower and 1 or 0,G_win and 1 or 0,\n  bank.secret_found and 1 or 0,G_player.has_bow and 1 or 0,\n  G_player.state or 0,G_player.sprt.key,bank.is_solved and 1 or 0,\n  (G_dark or 0)<=0 and not G_player.is_hidden and 1 or 0)\n poke2(0x5f8c,G_player.x,G_player.y)\n poke(0x5f90,G_gw_epoch,G_player.flower and 1 or 0,G_gw_note)\n poke2(0x5f93,G_gw_barks,G_gw_songs)\nend\n"
+  }
+]

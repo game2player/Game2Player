@@ -1,0 +1,297 @@
+{
+  "game_id": "311_sulka",
+  "source_url": "https://kultisti.itch.io/sulka",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/index.html",
+      "path": "index.html",
+      "sha256": "ade784bba1b71c4f53ca028e815778e8677a2f09f61d5c9d3c31de69f7054920"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/Sulka.js",
+      "path": "html5game/Sulka.js",
+      "sha256": "a8e01bcc41c90b992609e4352f89196858836776793cf28890cd1a6e4bbc5b39"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/Sulka_texture_0.png",
+      "path": "html5game/Sulka_texture_0.png",
+      "sha256": "3fabd9fc0239b09b58f41c68c01bf2ecce983ceed60ba89a4c13d448dc7ca6e5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/muMenu.mp3",
+      "path": "html5game/muMenu.mp3",
+      "sha256": "5d343c7a1a568b16fcf4c1b2bf6cbc2b56d418262f55837eafacb150c9a9448d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/muMenu.ogg",
+      "path": "html5game/muMenu.ogg",
+      "sha256": "f2ce1e2d2975c2f6bb5a53e76e867d8d07252fb8c11e36cc25473c4623ea7760"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/muMusic.mp3",
+      "path": "html5game/muMusic.mp3",
+      "sha256": "83ccebf8dc1a5e6aa5fa349c53e31db0310798d7d1185eaeea704854b4645738"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/muMusic.ogg",
+      "path": "html5game/muMusic.ogg",
+      "sha256": "045e81ce02f78d04c223c028fcbc76ab9d8fb133e323449f9357b9d8df3e1eff"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF10.png",
+      "path": "html5game/particles/IDR_GIF10.png",
+      "sha256": "e7fd6462f01fa6621a2cf567a4c9c22422e3b16a19958f39bd90f56b10ce9529"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF11.png",
+      "path": "html5game/particles/IDR_GIF11.png",
+      "sha256": "6e3df19b82e07ff18236138ff77c3b211cb0a8d8dc1e0071f641c1ff2bae03d4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF12.png",
+      "path": "html5game/particles/IDR_GIF12.png",
+      "sha256": "a4821edb2d01bb18aa3f5ab4bbd40c229ecb252e160b8c42f123a6bf4f000538"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF13.png",
+      "path": "html5game/particles/IDR_GIF13.png",
+      "sha256": "d45beaceadae53b074ca410e20b838a4f38640f1bebe70e0024b1c8ffb5d67fe"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF14.png",
+      "path": "html5game/particles/IDR_GIF14.png",
+      "sha256": "d2a42ac85c8dec85005ee2c0557d183430805852070f4f9c2d5c6cc680064852"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF15.png",
+      "path": "html5game/particles/IDR_GIF15.png",
+      "sha256": "a3562aece7bad69e3e657b315a0e4ed9fb4a76981b4ec4a96e7273b84ce0a1ef"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF2.png",
+      "path": "html5game/particles/IDR_GIF2.png",
+      "sha256": "c92ae7f4a00fe225c63f16e038ad90d4429365df4a1faa1fce45f2a7d00d0772"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF3.png",
+      "path": "html5game/particles/IDR_GIF3.png",
+      "sha256": "1be677c71ff767673a7d2f0f90a4ced9d1cd04b4c93dbab2c5ab7a18ae733a79"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF4.png",
+      "path": "html5game/particles/IDR_GIF4.png",
+      "sha256": "ed2e5aa62ee8ce13637d7ce7d064bf6fe6869b0e197ca989bfec85f879895d11"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF5.png",
+      "path": "html5game/particles/IDR_GIF5.png",
+      "sha256": "bda261b5c3cc50d7395da90f2f54838bc1d2ecae959124621940ab4252a6d9ec"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF6.png",
+      "path": "html5game/particles/IDR_GIF6.png",
+      "sha256": "69b923bb2c222744fdad06e28ca97a4d0206d70036d9594d7298a6dd060da237"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF7.png",
+      "path": "html5game/particles/IDR_GIF7.png",
+      "sha256": "064cda06c0af0c896325bfe0cff56f686c6a1a56da5e3c0f27b7a5eb9e27c95d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF8.png",
+      "path": "html5game/particles/IDR_GIF8.png",
+      "sha256": "252e030f1c49224018dfcf9f70626dfa4e5c7bc39c6e3fd77b590278a4dd9729"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/particles/IDR_GIF9.png",
+      "path": "html5game/particles/IDR_GIF9.png",
+      "sha256": "edb29fe3842f978a6b380c295fbff4c384c2e35f9505f0bcd22ee606868a2764"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soBIRD.mp3",
+      "path": "html5game/soBIRD.mp3",
+      "sha256": "1a7b3eb7456c24ee1ca429854ff2fa3ae78e319c616cf7a659595c343bf398c4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soBIRD.ogg",
+      "path": "html5game/soBIRD.ogg",
+      "sha256": "19a64403b6f9f0b43c90343ea52c6ae5af01aef26d57dccd677738452ac434dd"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soCONTINUE.mp3",
+      "path": "html5game/soCONTINUE.mp3",
+      "sha256": "4ad9af8bae66fb7786f0d453aa3a09d509ba3efb64f6e4ae83e22947c1883c85"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soCONTINUE.ogg",
+      "path": "html5game/soCONTINUE.ogg",
+      "sha256": "40fc03cafe16cf27584e896cadf4215ad75b71daba3129f920c6f0cd9241b544"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soDOORCLOSE.mp3",
+      "path": "html5game/soDOORCLOSE.mp3",
+      "sha256": "743e94839ea94366bbc0d68024e613191ffe8e51121c954dfc633897ca3b6ea5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soDOORCLOSE.ogg",
+      "path": "html5game/soDOORCLOSE.ogg",
+      "sha256": "213bb3124726177092c13d7a4d50fb209bc2bbd3cb1515c3eecffc599069b5ff"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soDOOROPEN.mp3",
+      "path": "html5game/soDOOROPEN.mp3",
+      "sha256": "0a06709faf90ee0484f51ef03c0515bb9ebfbf08cd0e871ae0ff0c2ff88a2331"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soDOOROPEN.ogg",
+      "path": "html5game/soDOOROPEN.ogg",
+      "sha256": "c13f4333c823448022ff2dd8183ed011f46328e8a4583fe3297d9666adbf34bb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soEXPLOSION.mp3",
+      "path": "html5game/soEXPLOSION.mp3",
+      "sha256": "3c35664f9870facd553a0f9c723fc7e13640b34bcadea43bd601e5cd588c652a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soEXPLOSION.ogg",
+      "path": "html5game/soEXPLOSION.ogg",
+      "sha256": "98a13458bb2be0283fccd3dcbbbdbc781c392ec160fd9d84cd021195219a421e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soFALLING.mp3",
+      "path": "html5game/soFALLING.mp3",
+      "sha256": "0edeaac300f016c8f470ad8d6200e8910f2374293df9d1e921202eefd205d161"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soFALLING.ogg",
+      "path": "html5game/soFALLING.ogg",
+      "sha256": "d078573d945003b175e10e1c14973aed7d87642ff7c62ebe9948aeff4a198c2c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soGAMEOVER.mp3",
+      "path": "html5game/soGAMEOVER.mp3",
+      "sha256": "7faf73aefd71a4fd67728cc52826ccaad38a89bfb12ad9f7ffc4e5c82e78f018"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soGAMEOVER.ogg",
+      "path": "html5game/soGAMEOVER.ogg",
+      "sha256": "daf7c312287d7f931f200a65916c6ff9b1459b8723b75d1f3e15d94d752c6eae"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soHITGROUND.mp3",
+      "path": "html5game/soHITGROUND.mp3",
+      "sha256": "a2839a24ca566223a58cc89495b194bc537773e6df1c919ccf0a94b78c4df5ee"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soHITGROUND.ogg",
+      "path": "html5game/soHITGROUND.ogg",
+      "sha256": "eaf62dc1b6c8202b8756b36e12b4d2d3eb1b6e31eb0a01b98bfa97709bd70702"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soJUMP.mp3",
+      "path": "html5game/soJUMP.mp3",
+      "sha256": "11dd2df1a085586e7f693e0bd726e2c7a2906b75294458028385658fe1919557"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soJUMP.ogg",
+      "path": "html5game/soJUMP.ogg",
+      "sha256": "4a126e6021a309b39129a8054418a7e89fd9d5ff5a96be4a74f0fbc9b9323c6c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soKEY.mp3",
+      "path": "html5game/soKEY.mp3",
+      "sha256": "fe32ab61b6c4737dabc4803e71396bf4b14df7cb87886fd5fd0602416c59d128"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soKEY.ogg",
+      "path": "html5game/soKEY.ogg",
+      "sha256": "b61bd8ef1cd070607a0dbafc14e09ef74da4e949475e4b650a09c21291e7c432"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soLAND.mp3",
+      "path": "html5game/soLAND.mp3",
+      "sha256": "7160ea25927420cb849e363e4fc4b835939186db27b2b54ddc760ebfdb9c1320"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soLAND.ogg",
+      "path": "html5game/soLAND.ogg",
+      "sha256": "c51b7c5e75baf424988ab5af8b3b06072b6ba5c5238cd637356612d450c1c5a3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soLINE_OFF.mp3",
+      "path": "html5game/soLINE_OFF.mp3",
+      "sha256": "15b2f296806abbab6c88c1f6c281c97fcd9bfdb9646d4996fc05cc36065f5654"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soLINE_OFF.ogg",
+      "path": "html5game/soLINE_OFF.ogg",
+      "sha256": "e35c5305caeb9352c88fc0bcbde1046ec4ff7445934ff41603c7fe58ff9ae0b1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soLINE_ON.mp3",
+      "path": "html5game/soLINE_ON.mp3",
+      "sha256": "0a03dfcca18f78ef17e9598f266977cab19ebb095658e3d992d994fa73976846"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soLINE_ON.ogg",
+      "path": "html5game/soLINE_ON.ogg",
+      "sha256": "5a34d3a8df93b076e4a8ebab81389312cd224a3c223dbad58b5bb1d5432b35da"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soMENUMOVE.mp3",
+      "path": "html5game/soMENUMOVE.mp3",
+      "sha256": "ecdeaa007d625b9727e0a18a9461a47cd02455d8136339bfb7ac9518b47df713"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soMENUMOVE.ogg",
+      "path": "html5game/soMENUMOVE.ogg",
+      "sha256": "41c59c7790f34aab0d58e970948fdea19f9a812593724a4b7f349d954684ad24"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soMENUSELECT.mp3",
+      "path": "html5game/soMENUSELECT.mp3",
+      "sha256": "ecd2a0e13b3f980ea92522fdf30d743b63b2e2441249463fea86daa1fb6700c3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soMENUSELECT.ogg",
+      "path": "html5game/soMENUSELECT.ogg",
+      "sha256": "bd29b1cda686915f6bd57b9bd2d907da6b6c341e1f2a749f695f3e9b526a9ea2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soPAUSE.mp3",
+      "path": "html5game/soPAUSE.mp3",
+      "sha256": "c00067bee7d4d0d791c18e9b59713eea077a98281882ea0a72bf32102d77eb8f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soPAUSE.ogg",
+      "path": "html5game/soPAUSE.ogg",
+      "sha256": "4ad284655c050c08f9720b5c394dfbf2b94f0567474d8a9275c8d8aee9a993b8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soWALK.mp3",
+      "path": "html5game/soWALK.mp3",
+      "sha256": "5262cb8e2b07d4d524073e8fe25ceb5ca83896616ea83399ef3b36e1f799452e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soWALK.ogg",
+      "path": "html5game/soWALK.ogg",
+      "sha256": "de680b204800be9203992d57ad94822cbd334f3455f61a98e8d836e71578d912"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soWIN.mp3",
+      "path": "html5game/soWIN.mp3",
+      "sha256": "c132415c6a8f3433a9e39c838b1c15b33a2b4ea07143bf690b05d131944f8baf"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/soWIN.ogg",
+      "path": "html5game/soWIN.ogg",
+      "sha256": "eb0ac2aed5fe3fdc06752780ad7985a86ec163acbdae73465fe7efaf4a9a4d8f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/4771292/html5game/tph_fixwindow.js",
+      "path": "html5game/tph_fixwindow.js",
+      "sha256": "102f2526001daa32065912d392b89d3477b4738c88212f28010c7f19292fb637"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "game_id": "357_snug",
+  "source_url": "https://cookiecrayon.itch.io/snug",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/13017604/Snug/index.html",
+      "path": "index.html",
+      "sha256": "13a9c66a6648da07956406c7b9acfeb41c7b2190bc00332bc7d941e07979a664",
+      "headers": {
+        "Referer": "https://cookiecrayon.itch.io/snug"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13017604/Snug/Build/Snug.loader.js",
+      "path": "Build/Snug.loader.js",
+      "sha256": "ce502ea95c6122112087e737f17c4ecc85abe5520bd3b06d3b1164b16b6b8242",
+      "headers": {
+        "Referer": "https://cookiecrayon.itch.io/snug"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13017604/Snug/Build/Snug.data.br",
+      "path": "Build/Snug.data",
+      "sha256": "10d930c137a4e964d5ef53acabb4b376cb00a81599ff04ebb09dc95183b44ead",
+      "headers": {
+        "Referer": "https://cookiecrayon.itch.io/snug"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13017604/Snug/Build/Snug.framework.js.br",
+      "path": "Build/Snug.framework.js",
+      "sha256": "54c27e67c3ac564e34e08ecb831a06e06db7b59a2d33d00936938d5296a80b2b",
+      "headers": {
+        "Referer": "https://cookiecrayon.itch.io/snug"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13017604/Snug/Build/Snug.wasm.br",
+      "path": "Build/Snug.wasm",
+      "sha256": "e28460dca1c08ae869465b6f0a030069c042dc4724f9a6d339aec1c4b0cdd77d",
+      "headers": {
+        "Referer": "https://cookiecrayon.itch.io/snug"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13017604/Snug/StreamingAssets/CCLogoBlack.mp4",
+      "path": "StreamingAssets/CCLogoBlack.mp4",
+      "sha256": "1d01d54097614bb7a29b3c421613e4e389d2c4a997a253f153b0f30b241b3dd0",
+      "headers": {
+        "Referer": "https://cookiecrayon.itch.io/snug"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/13017604/Snug/TemplateData/favicon.ico",
+      "path": "favicon.ico",
+      "sha256": "9c13beb90ee8f70580d52a21d5233970d1c89e71e4a34a462c22610941c3c77f",
+      "headers": {
+        "Referer": "https://cookiecrayon.itch.io/snug"
+      }
+    }
+  ]
+}

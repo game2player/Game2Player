@@ -1,0 +1,82 @@
+{
+  "game_id": "134_nom-nom-great-autumn-jam",
+  "source_url": "https://anaissalla.itch.io/nomnom",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/Build/Web_Build_01_2024_v2.data.unityweb",
+      "path": "Build/Web_Build_01_2024_v2.data.unityweb",
+      "sha256": "c84b3638741e4e3609763ac00a358ff7cd5095d023fd794cc1c5a14f011451ba"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/Build/Web_Build_01_2024_v2.framework.js.unityweb",
+      "path": "Build/Web_Build_01_2024_v2.framework.js.unityweb",
+      "sha256": "f11e0ad975098031c4b6819c4bba822340276a4615f47aae003b34c8744d7f08"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/Build/Web_Build_01_2024_v2.loader.js",
+      "path": "Build/Web_Build_01_2024_v2.loader.js",
+      "sha256": "4841ee234bc4a84e04bf2e77b76c68a3025fe88a12ad45136de44857ca5ea76b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/Build/Web_Build_01_2024_v2.wasm.unityweb",
+      "path": "Build/Web_Build_01_2024_v2.wasm.unityweb",
+      "sha256": "706cf80a4b2dd440d2ec81dc45108051038b3c22a049bca333eefb328d10ad1e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/StreamingAssets/aa/WebGL/localization-asset-tables-english(en)_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-asset-tables-english(en)_assets_all.bundle",
+      "sha256": "a5c83bfb76fb5e5c55d6be3edf8d5cad86a918795b49650d106c90bc712ba191"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/StreamingAssets/aa/WebGL/localization-asset-tables-spanish(es)_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-asset-tables-spanish(es)_assets_all.bundle",
+      "sha256": "19e764c2852df6b067db55a896e69af526e674a217984c2a9fe35bdb306f7163"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/StreamingAssets/aa/WebGL/localization-assets-english(en)_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-assets-english(en)_assets_all.bundle",
+      "sha256": "7488875474c0f69e8c9c9b5b70f3997db4cc0af77b91b638fe45624257bdbe7c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/StreamingAssets/aa/WebGL/localization-assets-shared_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-assets-shared_assets_all.bundle",
+      "sha256": "1e01064ca9928b69f70c01af7be21d6865591d9114c6f684ffaaf04e32d4faa4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/StreamingAssets/aa/WebGL/localization-assets-spanish(es)_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-assets-spanish(es)_assets_all.bundle",
+      "sha256": "39d0e2746070fec9cc55300c7414fa04401e90d0698d15c419280f9fb5b482e1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/StreamingAssets/aa/WebGL/localization-locales_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-locales_assets_all.bundle",
+      "sha256": "925f4f3b356d5ec95d633abe2abed533dd6c6482f4b143eae66edb815d85f926"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/StreamingAssets/aa/WebGL/localization-string-tables-english(en)_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-english(en)_assets_all.bundle",
+      "sha256": "33ea969373fdccd0fca652cdc93accfe196248a0588e668bfe58c631e6de6b09"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/StreamingAssets/aa/WebGL/localization-string-tables-spanish(es)_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-spanish(es)_assets_all.bundle",
+      "sha256": "23baf4c917a5fe2457695ec2ab7a77fb5c3b92f353352632cd0fed674c8b697c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/StreamingAssets/aa/catalog.json",
+      "path": "StreamingAssets/aa/catalog.json",
+      "sha256": "255e4b190967555422162d4d7332d339c9d249b982b9c3f2b495322b5a51b204"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/StreamingAssets/aa/settings.json",
+      "path": "StreamingAssets/aa/settings.json",
+      "sha256": "c49887ed32d848ab19e1eea832c974ffa3f23d58e299da53e34ce513c18490b9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/9503589/Web_Build_01_2024_v2/index.html",
+      "path": "index.html",
+      "sha256": "e9641abfdfd57ba8ab419ff92f4f327a48f0418b69690d8a6281948f3a4d6513"
+    }
+  ]
+}

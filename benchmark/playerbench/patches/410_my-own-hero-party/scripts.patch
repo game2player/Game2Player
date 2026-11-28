@@ -1,0 +1,311 @@
+--- a/MainScene.gd
++++ b/MainScene.gd
+@@ -27,6 +27,13 @@
+ var _native_scene_ui: CanvasLayer
+ var _native_scene_ui_owner: Node
+ var _native_scene_ui_process_mode: = Node.PROCESS_MODE_INHERIT
++var _builder_task_id: = ""
++var _builder_start_ready: = false
++var _builder_task_start_matches: = false
++var _builder_best_room: = 0
++var _builder_best_run_gold: = 0
++var _builder_game_time_ms: = 0.0
++var _builder_publish_elapsed: = 0.0
+ 
+ 
+ func _ready() -> void :
+@@ -52,11 +59,254 @@
+ 	Globals.mouse_blocker = %MouseBlocker
+ 	OptionData.apply_option("crt_effect", OptionData.get_option("crt_effect"))
+ 
+-	if Saver.has_save():
+-		Saver.load_game()
+-	_run_startup_flow.call_deferred()
++	_builder_task_id = str(JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('task') || ''"))
++	if _builder_task_id in ["410_01", "410_02", "410_03", "410_04", "410_05", "410_06"]:
++		_builder_start_task.call_deferred()
++	else:
++		if Saver.has_save():
++			Saver.load_game()
++		_run_startup_flow.call_deferred()
+ 	sync_window_layout()
+ 	_sync_window_layout_after_boot.call_deferred()
++
++
++func _process(delta: float) -> void :
++	_builder_game_time_ms += delta * 1000.0
++	_builder_publish_elapsed += delta
++	if _builder_publish_elapsed < 0.1:
++		return
++	_builder_publish_elapsed = 0.0
++	_builder_publish_game_state()
++
++
++func _builder_start_task() -> void :
++
++
++	Saver.create_new_save()
++	_builder_best_room = 0
++	_builder_best_run_gold = 0
++	_builder_start_ready = false
++	_builder_task_start_matches = false
++	await enter_expedition({"dungeon_id": "goblins_dungeon", "layout_mode": "rooms"})
++	var expedition: ExpeditionScene = curr_scn as ExpeditionScene
++	if expedition == null or str(expedition.active_run_selection.get("dungeon_id", "")) != "goblins_dungeon":
++		return
++	_builder_task_start_matches = expedition.room_index == 0 and int(State.get("gold")) == 0 and int(State.get("best_room")) == 0 and int(ExpeditionSkillStore.get_level("start_stamina")) == 0
++
++
++	await RenderingServer.frame_post_draw
++	_builder_start_ready = true
++	_builder_publish_game_state()
++
++
++func builder_task_start_pending() -> bool:
++	return _builder_task_id in ["410_01", "410_02", "410_03", "410_04", "410_05", "410_06"] and not _builder_start_ready
++
++
++func _builder_capture_current_run() -> void :
++	var expedition: ExpeditionScene = curr_scn as ExpeditionScene
++	if expedition == null or str(expedition.active_run_selection.get("dungeon_id", "")) != "goblins_dungeon":
++		return
++	_builder_best_room = maxi(_builder_best_room, int(State.get("best_room")))
++	if expedition.run_summary != null:
++		var current_run_gold: = maxi(0, int(State.get("gold")) - expedition.run_summary.starting_gold)
++		_builder_best_run_gold = maxi(_builder_best_run_gold, current_run_gold)
++
++
++func _builder_publish_game_state() -> void :
++	var expedition: ExpeditionScene = curr_scn as ExpeditionScene
++	var in_goblin_expedition: = expedition != null and str(expedition.active_run_selection.get("dungeon_id", "")) == "goblins_dungeon"
++	var current_room: = expedition.room_index + 1 if in_goblin_expedition else 0
++	var current_run_gold: = 0
++	var run_goblin_kills: = 0
++	if in_goblin_expedition:
++		_builder_capture_current_run()
++		if expedition.run_summary != null:
++			current_run_gold = maxi(0, int(State.get("gold")) - expedition.run_summary.starting_gold)
++			var room_kills: Dictionary = expedition.run_summary._current_room.get("kills_by_type", {})
++			if current_room == 2:
++				run_goblin_kills = int(room_kills.get("goblin", 0))
++			for room_record: Dictionary in expedition.run_summary.room_telemetry:
++				if int(room_record.get("room", 0)) == 2:
++					run_goblin_kills = int(room_record.get("kills_by_type", {}).get("goblin", run_goblin_kills))
++	var game_state: = {
++		"task_id": _builder_task_id, 
++		"task_start_ready": _builder_start_ready, 
++		"task_start_matches": _builder_task_start_matches, 
++		"dungeon_id": str(expedition.active_run_selection.get("dungeon_id", "")) if in_goblin_expedition else "", 
++		"room": current_room, 
++		"best_room": _builder_best_room, 
++		"run_goblin_kills": run_goblin_kills, 
++		"gold": int(State.get("gold")), 
++		"run_gold": current_run_gold, 
++		"best_run_gold": _builder_best_run_gold, 
++		"upgrades": {"start_stamina": int(ExpeditionSkillStore.get_level("start_stamina"))}, 
++	}
++	var state: = {
++		"schemaVersion": "1.0.0", 
++		"gameId": "410_my-own-hero-party", 
++		"timestampMs": Time.get_ticks_msec(), 
++		"gameTimeMs": _builder_game_time_ms, 
++		"status": "playing" if _builder_start_ready else "loading", 
++		"is_actionable": _builder_start_ready, 
++		"terminal": {"isTerminal": false, "outcome": null}, 
++		"game_state": game_state, 
++		"metrics": {
++			"run_goblin_kills": run_goblin_kills, 
++			"best_room": _builder_best_room, 
++			"best_run_gold": _builder_best_run_gold, 
++			"start_stamina_level": game_state.upgrades.start_stamina, 
++		}, 
++		"provenance": {
++			"game_state.task_start_ready": "engine_hook", 
++			"game_state.task_start_matches": "engine_hook", 
++			"game_state.dungeon_id": "engine_hook", 
++			"game_state.room": "engine_hook", 
++			"game_state.best_room": "engine_hook", 
++			"game_state.run_goblin_kills": "engine_hook", 
++			"game_state.gold": "engine_hook", 
++			"game_state.run_gold": "engine_hook", 
++			"game_state.best_run_gold": "engine_hook", 
++			"game_state.upgrades.start_stamina": "engine_hook", 
++		}, 
++	}
++	JavaScriptBridge.eval("window.__heroPartySetState(" + JSON.stringify(state) + ");")
++	_builder_publish_policy_observation()
++
++
++func _builder_policy_scene_phase() -> Variant:
++	var dialogue: DialogueManager = Refs.dialogue as DialogueManager
++	if dialogue != null and is_instance_valid(dialogue) and dialogue.is_active() and dialogue.is_visible_in_tree():
++		return "dialogue"
++	if _builder_get_summary_popup() != null:
++		return "run_summary"
++	if is_switching_scene:
++		return "transition"
++	if curr_scn == null or not is_instance_valid(curr_scn):
++		return null
++	if curr_scn is ExpeditionScene:
++		return "transition" if (curr_scn as ExpeditionScene).is_transitioning else "expedition"
++	if curr_scn is TavernScene:
++		return "tavern"
++	if curr_scn.scene_file_path == MAIN_MENU_PATH:
++		return "main_menu"
++	return "other"
++
++
++func _builder_get_summary_popup() -> ExpeditionVictoryPopup:
++	var popup_manager: PopupManager = Refs.popups as PopupManager
++	if popup_manager == null or not is_instance_valid(popup_manager) or popup_manager.stack.is_empty():
++		return null
++	var popup: Control = popup_manager.stack.back()
++	if popup is ExpeditionVictoryPopup and popup.is_visible_in_tree():
++		return popup as ExpeditionVictoryPopup
++	return null
++
++
++func _builder_publish_policy_observation() -> void :
++	var scene_phase: Variant = _builder_policy_scene_phase()
++	var visible_gold_pickups: Variant = null
++	var visible_action_targets: Variant = null
++	if scene_phase != null:
++		visible_gold_pickups = []
++		visible_action_targets = []
++		if scene_phase == "expedition" and curr_scn is ExpeditionScene:
++			var expedition: ExpeditionScene = curr_scn as ExpeditionScene
++			var room: ExpeditionRoom = expedition.curr_room
++			if room != null and is_instance_valid(room) and room.gold_manager != null and is_instance_valid(room.gold_manager):
++				var gold_manager: ExpeditionGoldManager = room.gold_manager
++				var coin_count: int = mini(gold_manager._positions.size(), mini(gold_manager._states.size(), mini(gold_manager._scales.size(), gold_manager._coin_currencies.size())))
++				var viewport_bounds: = Rect2(Vector2.ZERO, Vector2(BASE_VIEWPORT_SIZE))
++				for index: int in range(coin_count):
++					if gold_manager._states[index] != ExpeditionGoldManager.CoinState.LANDED:
++						continue
++					if gold_manager._coin_currencies[index] != "yellow" or gold_manager._scales[index] <= 0.0:
++						continue
++					var local_position: Vector2 = gold_manager.to_local(gold_manager._positions[index])
++					var logical_position: Vector2 = _builder_policy_canvas_point(gold_manager, local_position)
++					if viewport_bounds.has_point(logical_position):
++						visible_gold_pickups.append({"x": logical_position.x, "y": logical_position.y})
++		match scene_phase:
++			"run_summary":
++				var summary: ExpeditionVictoryPopup = _builder_get_summary_popup()
++				if summary != null:
++					_builder_append_policy_target(visible_action_targets, "summary_return_to_tavern", summary.home_btn, _builder_policy_control_available(summary.home_btn))
++					_builder_append_policy_target(visible_action_targets, "summary_rerun", summary.run_again_btn, _builder_policy_control_available(summary.run_again_btn))
++			"dialogue":
++				var dialogue: DialogueManager = Refs.dialogue as DialogueManager
++				if dialogue != null and is_instance_valid(dialogue):
++					_builder_append_policy_target(visible_action_targets, "dialogue_advance", dialogue.dialogue_panel, dialogue.is_active())
++			"tavern":
++				var popup_manager: PopupManager = Refs.popups as PopupManager
++				if curr_scn is TavernScene and (popup_manager == null or not is_instance_valid(popup_manager) or not popup_manager.has_popup()):
++					var hub: TavernScene = curr_scn as TavernScene
++					if hub.skill_tree != null and is_instance_valid(hub.skill_tree):
++						var stamina_node: SkillNode = hub.skill_tree.nodes_by_id.get("start_stamina") as SkillNode
++						if stamina_node != null and is_instance_valid(stamina_node):
++							_builder_append_policy_target(visible_action_targets, "stamina_skill_node", stamina_node.button, _builder_policy_control_available(stamina_node.button))
++		var observation: = {
++			"scene_phase": scene_phase, 
++			"visible_gold_pickups": visible_gold_pickups, 
++			"visible_action_targets": visible_action_targets, 
++		}
++		JavaScriptBridge.eval("window.__heroPartySetPolicyObservation(" + JSON.stringify(observation) + ");")
++
++
++func _builder_policy_control_available(control: Control) -> bool:
++	if control == null or not is_instance_valid(control) or not control.is_visible_in_tree() or control.mouse_filter == Control.MOUSE_FILTER_IGNORE:
++		return false
++	if control is BaseButton:
++		return not (control as BaseButton).disabled
++	return true
++
++
++func _builder_append_policy_target(targets: Array, target_id: String, control: Control, available: bool) -> void :
++	if control == null or not is_instance_valid(control) or not control.is_visible_in_tree():
++		return
++	var hit_rect: Variant = _builder_policy_hit_rect(control)
++	if hit_rect == null:
++		return
++	var hit_area_available: = available and float(hit_rect.width) >= 1.0 and float(hit_rect.height) >= 1.0
++	targets.append({"id": target_id, "rect": hit_rect, "available": hit_area_available})
++
++
++func _builder_policy_hit_rect(control: Control) -> Variant:
++	if control.size.x <= 0.0 or control.size.y <= 0.0:
++		return null
++	var transform: Transform2D = control.get_global_transform_with_canvas()
++	var corners: Array[Vector2] = [
++		transform * Vector2.ZERO, 
++		transform * Vector2(control.size.x, 0.0), 
++		transform * control.size, 
++		transform * Vector2(0.0, control.size.y), 
++	]
++	var min_point: Vector2 = corners[0]
++	var max_point: Vector2 = corners[0]
++	for corner: Vector2 in corners:
++		min_point.x = minf(min_point.x, corner.x)
++		min_point.y = minf(min_point.y, corner.y)
++		max_point.x = maxf(max_point.x, corner.x)
++		max_point.y = maxf(max_point.y, corner.y)
++	var logical_scale: Vector2 = _builder_policy_logical_scale(control)
++	var rect: = Rect2(min_point * logical_scale, (max_point - min_point) * logical_scale)
++	var bounds: = Rect2(Vector2.ZERO, Vector2(BASE_VIEWPORT_SIZE))
++	if not bounds.intersects(rect):
++		return null
++	var clipped_rect: Rect2 = rect.intersection(bounds)
++	if clipped_rect.size.x <= 0.0 or clipped_rect.size.y <= 0.0:
++		return null
++	return {"x": clipped_rect.position.x, "y": clipped_rect.position.y, "width": clipped_rect.size.x, "height": clipped_rect.size.y}
++
++
++func _builder_policy_canvas_point(item: CanvasItem, local_point: Vector2) -> Vector2:
++	return (item.get_global_transform_with_canvas() * local_point) * _builder_policy_logical_scale(item)
++
++
++func _builder_policy_logical_scale(item: CanvasItem) -> Vector2:
++	var viewport_size: Vector2 = Vector2(item.get_viewport().get_visible_rect().size)
++	if viewport_size.x <= 0.0 or viewport_size.y <= 0.0:
++		return Vector2.ONE
++	return Vector2(BASE_VIEWPORT_SIZE) / viewport_size
+ 
+ 
+ func _run_startup_flow() -> void :
+@@ -271,6 +521,7 @@
+ func enter_tavern(transition_text: String = TAVERN_TRANSITION_TEXT) -> void :
+ 	if is_switching_scene:
+ 		return
++	_builder_capture_current_run()
+ 	is_switching_scene = true
+ 
+ 	await _begin_scene_transition(true, transition_text)
+@@ -299,6 +550,7 @@
+ func enter_expedition(selection: Dictionary = {}) -> void :
+ 	if is_switching_scene:
+ 		return
++	_builder_capture_current_run()
+ 	is_switching_scene = true
+ 
+ 	await _begin_scene_transition(true, EXPEDITION_TRANSITION_TEXT)
+--- a/ExpeditionScene.gd
++++ b/ExpeditionScene.gd
+@@ -1123,13 +1123,16 @@
+ 
+ 
+ func _capture_current_arena() -> Node2D:
+-	ui_layer.visible = false
++	var keep_start_hud: bool = Refs.main_scn != null and Refs.main_scn.has_method("builder_task_start_pending") and bool(Refs.main_scn.call("builder_task_start_pending"))
++	if not keep_start_hud:
++		ui_layer.visible = false
+ 	await get_tree().process_frame
+ 	var viewport_texture: = get_viewport().get_texture()
+ 	var image: Image = null
+ 	if viewport_texture != null and DisplayServer.get_name() != "headless":
+ 		image = viewport_texture.get_image()
+-	ui_layer.visible = true
++	if not keep_start_hud:
++		ui_layer.visible = true
+ 
+ 	var snapshot: = Node2D.new()
+ 	snapshot.position = Vector2.ZERO

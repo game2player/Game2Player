@@ -1,0 +1,29 @@
+{
+  "/Build/Zombotron.data.unityweb": {
+    "Content-Type": "application/octet-stream"
+  },
+  "/Build/Zombotron.framework.js.unityweb": {
+    "Content-Type": "application/octet-stream"
+  },
+  "/Build/Zombotron.loader.js": {
+    "Content-Type": "text/javascript; charset=utf-8"
+  },
+  "/Build/Zombotron.wasm.unityweb": {
+    "Content-Type": "application/octet-stream"
+  },
+  "/TemplateData/progress-bar-empty-dark.png": {
+    "Content-Type": "image/png"
+  },
+  "/TemplateData/progress-bar-full-dark.png": {
+    "Content-Type": "image/png"
+  },
+  "/TemplateData/style.css": {
+    "Content-Type": "text/css; charset=utf-8"
+  },
+  "/TemplateData/unity-logo-dark.png": {
+    "Content-Type": "image/png"
+  },
+  "/index.html": {
+    "Content-Type": "text/html; charset=utf-8"
+  }
+}

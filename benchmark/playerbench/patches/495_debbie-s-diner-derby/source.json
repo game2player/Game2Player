@@ -1,0 +1,32 @@
+{
+  "game_id": "495_debbie-s-diner-derby",
+  "source_url": "https://team-bugulon.itch.io/debbies-diner-derby",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/7828261/index.html",
+      "path": "index.html",
+      "sha256": "e8ab49229707a91f6c3c4286240476ed9b785525d0cf1fa25d2321c9618a27a5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/7828261/Build/Debbie%27s%20Diner%20Derby.loader.js",
+      "path": "Build/Debbie's Diner Derby.loader.js",
+      "sha256": "aea481823e8789b27dee0aa40c0acdfa3764ebbe9080f7f7efa1149b3382db0d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/7828261/Build/Debbie%27s%20Diner%20Derby.data.unityweb",
+      "path": "Build/Debbie's Diner Derby.data.unityweb",
+      "sha256": "bdad712146460ef45e86686fe3c82364208afd5e0f1a109d9fa9aa3d241bf667"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/7828261/Build/Debbie%27s%20Diner%20Derby.framework.js.unityweb",
+      "path": "Build/Debbie's Diner Derby.framework.js.unityweb",
+      "sha256": "335c60aa1fb8b5131750ba1bc8cb28570e5de6794efb71c6396b374915bf58f6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/7828261/Build/Debbie%27s%20Diner%20Derby.wasm.unityweb",
+      "path": "Build/Debbie's Diner Derby.wasm.unityweb",
+      "sha256": "f73712766886cd01937f4b9a0fea14b7717de093fb1d4323ff9329e561cab077"
+    }
+  ]
+}

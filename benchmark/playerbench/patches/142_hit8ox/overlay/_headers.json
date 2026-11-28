@@ -1,0 +1,11 @@
+{
+  "/index.html": {
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "/hit8ox.js": {
+    "Content-Type": "text/javascript; charset=utf-8"
+  },
+  "/game_api.js": {
+    "Content-Type": "text/javascript; charset=utf-8"
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "game_id": "496_rhythm-quest-demo",
+  "source_url": "https://ddrkirbyisq.itch.io/rhythm-quest",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/Build/Rhythm%20Quest%20Demo.data.gz",
+      "path": "Build/Rhythm Quest Demo.data",
+      "sha256": "62e0f70144cd42c3fd455efc72ba365acbddc9a6ef27d5899542b8ca11064b2e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/Build/Rhythm%20Quest%20Demo.framework.js.gz",
+      "path": "Build/Rhythm Quest Demo.framework.js",
+      "sha256": "eee68421e0db74684ee0f2566ff58622a34f8b140364c141fbeadbeafa0f6b14"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/Build/Rhythm%20Quest%20Demo.loader.js",
+      "path": "Build/Rhythm Quest Demo.loader.js",
+      "sha256": "310deb9ab1275f5398722660c2cc0e559ce7d41f11c7804e41cb479ac33e70fe"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/Build/Rhythm%20Quest%20Demo.wasm.gz",
+      "path": "Build/Rhythm Quest Demo.wasm",
+      "sha256": "1d26ab1939cde33d41f2d4960b8b4883225905b477b82ff168e35640038aa930"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/5335161e083dc925fa71dc0212ae6adc_monoscripts.bundle",
+      "path": "StreamingAssets/aa/WebGL/5335161e083dc925fa71dc0212ae6adc_monoscripts.bundle",
+      "sha256": "12c15e4118a19e245a94c09f4676922b1dd11333853343d26704876a133ac956"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/5335161e083dc925fa71dc0212ae6adc_unitybuiltinassets.bundle",
+      "path": "StreamingAssets/aa/WebGL/5335161e083dc925fa71dc0212ae6adc_unitybuiltinassets.bundle",
+      "sha256": "e6b3810c96bd97d5448187553950aae130643571aa76a8a903a2e2951da04359"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/backdroppreviews_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/backdroppreviews_assets_all.bundle",
+      "sha256": "ad7f70abccfa6622c59459e08fef8940e927ff40b21de83fb0787e26dc96a301"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_input_inputactions.inputactions.bundle",
+      "path": "StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_input_inputactions.inputactions.bundle",
+      "sha256": "24cda9276994ccc99638422b51be5245cc102a7fa196ba5820db4aca5926cc94"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_materials.bundle",
+      "path": "StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_materials.bundle",
+      "sha256": "0bd67504d473880ed8bbf31c27d872fb6bdff3e9feb8f1df74f59f89293e444c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_mixer.mixer.bundle",
+      "path": "StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_mixer.mixer.bundle",
+      "sha256": "98154c8d2d32d362be42755e8b9ce232ea71fe03ae6fb6cfb702e2d1e2a3d71f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_music_other_paused.wav.bundle",
+      "path": "StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_music_other_paused.wav.bundle",
+      "sha256": "a60cc72fd5ac296a33260f089fcd515b24218ceba0e66799a0560747c7790d6d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_shaders.bundle",
+      "path": "StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_shaders.bundle",
+      "sha256": "f48316ced1cbe99908e9950da4be51232146228c1d1eada10264eff413a3b1c6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_staticaddressables_t02_tap2.bnvib.txt.bundle",
+      "path": "StreamingAssets/aa/WebGL/defaultlocalgroup_assets_assets_staticaddressables_t02_tap2.bnvib.txt.bundle",
+      "sha256": "9f8d2d8f4f7e58a5bafbec1d6d62091f9b40d6824b552d6f6f72536155eabe0d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/defaultlocalgroup_scenes_mainscene.bundle",
+      "path": "StreamingAssets/aa/WebGL/defaultlocalgroup_scenes_mainscene.bundle",
+      "sha256": "5d2acfbb7318c7ee838871a6723be7e7f4b6d26959349049e95f4a3b51b66805"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/demoleveldata_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/demoleveldata_assets_all.bundle",
+      "sha256": "7e8d1659c889a8687916d974a50edc3a619a3715e6de1bbf31aea8cfd70f292a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/demolevels_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/demolevels_assets_all.bundle",
+      "sha256": "3fe59a7704876d73d5bb4cff7375022992b09aa09f73a42fb86913236bdb9d95"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/effects_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/effects_assets_all.bundle",
+      "sha256": "22ad4dfd02708ab8ea58c76436e1a8a149beb67d0896bdcf601e8ce4f31ad592"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/fonts_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/fonts_assets_all.bundle",
+      "sha256": "ba87dcc60f122c85801beaf59c6c33190c1f4a003aee52009a4fa6cdacd9b201"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/harmonicunity_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/harmonicunity_assets_all.bundle",
+      "sha256": "83b16d853a4ebf51725baa783d54974f139d2503fb952166f80edeb130980752"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/levelgeneration_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/levelgeneration_assets_all.bundle",
+      "sha256": "7ff6a5369d98811e607a02852682e59d4d2918db79f9c8b49df1fed01198df7a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-assets-shared_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-assets-shared_assets_all.bundle",
+      "sha256": "3ae896bfba14bc3883fe534abc1f06f0f8de12aa5e944cced9bf7b9668b7ce17"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-locales_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-locales_assets_all.bundle",
+      "sha256": "108f40e5fce9c7b7f03fd757a028401b62b33e0989c6bdad370024c6cb15e4ab"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-chinese%28simplified%29%28zh-cn%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-chinese(simplified)(zh-cn)_assets_all.bundle",
+      "sha256": "b92deec3cde412157d1f350335d6f5f82b9bfef85774aeb71fad0ffa3be82301"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-chinese%28traditional%29%28zh-tw%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-chinese(traditional)(zh-tw)_assets_all.bundle",
+      "sha256": "452f0b57b0efb8a565cc38e7ab78f2d16faa58f4c377b0af66112e4276e9b45f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-czech%28cs%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-czech(cs)_assets_all.bundle",
+      "sha256": "a5d40e6352eaebb7c8163102bcd56f4a68d9314bd101a4013361c4c198a73df7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-english%28en%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-english(en)_assets_all.bundle",
+      "sha256": "2ea9d867be5db6aa716f2ff062d9d4614c78261202dbe5cd97d101e5407baca0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-finnish%28fi%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-finnish(fi)_assets_all.bundle",
+      "sha256": "c27f4df3bef34aa5323bc9203cabc24e2c8764f7ce00626c3960d98c5f906660"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-french%28fr%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-french(fr)_assets_all.bundle",
+      "sha256": "c076b4792768e76919619cbbc6e7e2309a3192ab1e5a8300cb3e864e57164e5c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-german%28de%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-german(de)_assets_all.bundle",
+      "sha256": "6efc118ecdd30e80266eb2a6e62e521d6dd0343e9bbe3b1f4a4749cdc3f87f8d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-greek%28el%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-greek(el)_assets_all.bundle",
+      "sha256": "a15772f98af1c8bfc485323f5844c3367855eb2fb8246ee3007b49cd32aa5591"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-indonesian%28id%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-indonesian(id)_assets_all.bundle",
+      "sha256": "4baeca9ef65bdcf68d3ca754971f16c5792c1a1e51fcb33c3f5b977b0415d1ed"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-italian%28it%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-italian(it)_assets_all.bundle",
+      "sha256": "dc10cd2f296043b3a993ca5c1e8e214909a48f5b0d581687ae81f25c4e98008f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-japanese%28ja%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-japanese(ja)_assets_all.bundle",
+      "sha256": "0e45d7021a0c5734bf44adbe23971eb5f36f3d583ba9c5ba67caf1ed7f0d9250"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-korean%28ko%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-korean(ko)_assets_all.bundle",
+      "sha256": "a4186a71f4bfb41f250b0b9adcf8ec7778501930b9a91b0f00d8e29155e1951b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-lithuanian%28lt%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-lithuanian(lt)_assets_all.bundle",
+      "sha256": "43a746167bbe433ce02855aef20e43a6d6bd0ffcff23a11d674754f8f234efc9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-polish%28pl%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-polish(pl)_assets_all.bundle",
+      "sha256": "331e04ce5a86abf47b985f766f87ad9893a8ab525d5f184df00d2165fe2d95f4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-portuguese%28brazil%29%28pt-br%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-portuguese(brazil)(pt-br)_assets_all.bundle",
+      "sha256": "09262cde7315f1f1bd9c1ece2c3b14e91c34f5a9e47157f0d3b71ddb0af2d01f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-russian%28ru%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-russian(ru)_assets_all.bundle",
+      "sha256": "890927f41f340cfb705d76f1b5da8ce02d5b3ea4793c4a12dd09fa75777cfcf1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-spanish%28es-es%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-spanish(es-es)_assets_all.bundle",
+      "sha256": "fd7656a6c192f6eae34b482d0551b5a08b89a977735fa3c7437e7d9543907f82"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-swedish%28sv-se%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-swedish(sv-se)_assets_all.bundle",
+      "sha256": "ffa7969c5a97c43c1a1d6fd5f4cdd7f844517f5938e86407d1804ac4addbd49d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-turkish%28tr%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-turkish(tr)_assets_all.bundle",
+      "sha256": "4a6e40fe75274f1368a7667dd72dee08c6a8ed2b2a1cab3c45f0b98a4c6185de"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-ukrainian%28uk%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-ukrainian(uk)_assets_all.bundle",
+      "sha256": "676c6132bf5d6bf9d642e4fd06e7aaf2ac57a549c9ed02c155aa3ba11f289a83"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/localization-string-tables-vietnamese%28vi%29_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/localization-string-tables-vietnamese(vi)_assets_all.bundle",
+      "sha256": "915ab3681de7df92b2800725acfae8b3a4a409660112333cfca8d416b36dd9e9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/menuscenes_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/menuscenes_assets_all.bundle",
+      "sha256": "dff2553de46b018de0e64dfb4a74a51e1f7e1a29a37877a011bff79452385112"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/menuscenes_scenes_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/menuscenes_scenes_all.bundle",
+      "sha256": "3d11156a1eb0409f34af6f27ffb8878209f9fcc93a1df80be393a4b8117b7759"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/metadata_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/metadata_assets_all.bundle",
+      "sha256": "69b8a4e6dea6ecde8f478bee6389488d9ebd70493f66377c2bd53494c155d713"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/particles_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/particles_assets_all.bundle",
+      "sha256": "b52fff2188fe5e5257d9046afcb61d5a56cd9f8278db47fb279c92f85c44f028"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/previews_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/previews_assets_all.bundle",
+      "sha256": "1843650758581e21e24347608bc0f4385ecdf4d5d89d2f5162684adf48bc4a1d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/sfx_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/sfx_assets_all.bundle",
+      "sha256": "4978f3c604714cfe6cc4ce84e0476b6ddf2d680cad1eb444909b0ca82396bcb9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/WebGL/sprites_assets_all.bundle",
+      "path": "StreamingAssets/aa/WebGL/sprites_assets_all.bundle",
+      "sha256": "c11010a50cc30403f8822e1cdafafe11725d6b29f3fc83bda1dead9105521cbc"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/catalog.bin",
+      "path": "StreamingAssets/aa/catalog.bin",
+      "sha256": "c3eb601efbd468094944cfc3f8e203adbb2e68a86fe72de84ff84750c005b6b6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/StreamingAssets/aa/settings.json",
+      "path": "StreamingAssets/aa/settings.json",
+      "sha256": "a6c1a32be64b7323170a994e743406430afdb47cec3baf9c2f89e4d87a26a1c1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/TemplateData/favicon.ico",
+      "path": "TemplateData/favicon.ico",
+      "sha256": "7aebeb8783c554bdef44c517409fb786d72183dab9e3fdc6edb85b9520acda44"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/TemplateData/style.css",
+      "path": "TemplateData/style.css",
+      "sha256": "088873a7571c8bea09d14a041a60689c465a91b0c3790e322b4b41cd7e8d67b1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6253474-2080219/index.html",
+      "path": "index.html",
+      "sha256": "ac8bf85f1e8cf91008856b9e13ca9f3f5e516abc1695d474cb94341973d0ec1a"
+    }
+  ]
+}

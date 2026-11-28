@@ -1,0 +1,16 @@
+[
+  {
+    "tag_index": 70,
+    "original_sha256": "0651257b567171ef587561022ab001eb83416fbbe621ccc44e9ba1e09311061d",
+    "result_sha256": "deaecdd9b9841d39b359b27cd92af89eb9a6faac128717197a30996311d05a0b",
+    "result_length": 236903,
+    "patch": "70.bsdiff"
+  },
+  {
+    "tag_index": 3908,
+    "original_sha256": "369f3549a16a1e0524456778c671b1fbe9ce36e04845e0793cabdc879d39ca06",
+    "result_sha256": "41982955c52a085e9fba3dd2678f4a012dd0e068f42f4057bbc91d48550554a6",
+    "result_length": 828178,
+    "patch": "3908.bsdiff"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "game_id": "190_bonnies-bakery",
+  "source_url": "https://aislebsoupid.itch.io/bonnies-bakery",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/7748300/Bonnie's%20Bakery%20v1.8%20(WebGL)/index.html",
+      "path": "index.html",
+      "sha256": "4aeb0aa8cd35968bb32ea2cbce29aeaa6d82af0d8272ee54663589562174ad7b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/7748300/Bonnie's%20Bakery%20v1.8%20(WebGL)/Build/Bonnie's%20Bakery%20v1.8%20(WebGL).loader.js",
+      "path": "Build/Bonnie's Bakery v1.8 (WebGL).loader.js",
+      "sha256": "d03b970577f78d380e00285eb21d4c0a7e0e40904821f7c535d8e927ddc62621"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/7748300/Bonnie's%20Bakery%20v1.8%20(WebGL)/Build/Bonnie's%20Bakery%20v1.8%20(WebGL).framework.js.gz",
+      "path": "Build/Bonnie's Bakery v1.8 (WebGL).framework.js.gz",
+      "sha256": "9f44d47f341e0dd09249c977ee0e48866c63c6dcfcc7fcb6202d2fbb725922c8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/7748300/Bonnie's%20Bakery%20v1.8%20(WebGL)/Build/Bonnie's%20Bakery%20v1.8%20(WebGL).data.gz",
+      "path": "Build/Bonnie's Bakery v1.8 (WebGL).data.gz",
+      "sha256": "f6645cdd510cf22c91f35d4152bf1f73a03e567ec4b1cf6bff22e0f6889d6ba8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/7748300/Bonnie's%20Bakery%20v1.8%20(WebGL)/Build/Bonnie's%20Bakery%20v1.8%20(WebGL).wasm.gz",
+      "path": "Build/Bonnie's Bakery v1.8 (WebGL).wasm.gz",
+      "sha256": "1bfb1889b9e720a518ab3a36069a53069c80ad3147d286dea34b3e55edf467a5"
+    }
+  ]
+}

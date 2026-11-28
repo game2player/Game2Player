@@ -1,0 +1,152 @@
+[
+  {
+    "src": "sharedassets0.resource",
+    "off": 0,
+    "size": 3631,
+    "len": 0.11342403292655945
+  },
+  {
+    "src": "sharedassets0.resource",
+    "off": 3631,
+    "size": 32174,
+    "len": 1.906303882598877
+  },
+  {
+    "src": "sharedassets0.resource",
+    "off": 35805,
+    "size": 27362,
+    "len": 1.690566897392273
+  },
+  {
+    "src": "sharedassets0.resource",
+    "off": 63167,
+    "size": 1345708,
+    "len": 81.63265228271484
+  },
+  {
+    "src": "sharedassets2.resource",
+    "off": 0,
+    "size": 126468,
+    "len": 8.176326751708984
+  },
+  {
+    "src": "sharedassets3.resource",
+    "off": 0,
+    "size": 183896,
+    "len": 11.624489784240723
+  },
+  {
+    "src": "sharedassets4.resource",
+    "off": 0,
+    "size": 183847,
+    "len": 11.624489784240723
+  },
+  {
+    "src": "sharedassets5.resource",
+    "off": 0,
+    "size": 183714,
+    "len": 11.624489784240723
+  },
+  {
+    "src": "sharedassets6.resource",
+    "off": 0,
+    "size": 179643,
+    "len": 11.624489784240723
+  },
+  {
+    "src": "sharedassets7.resource",
+    "off": 0,
+    "size": 292517,
+    "len": 13.10299301147461
+  },
+  {
+    "src": "sharedassets9.resource",
+    "off": 0,
+    "size": 178053,
+    "len": 11.049796104431152
+  },
+  {
+    "src": "sharedassets10.resource",
+    "off": 0,
+    "size": 193825,
+    "len": 12.042448997497559
+  },
+  {
+    "src": "sharedassets11.resource",
+    "off": 0,
+    "size": 193697,
+    "len": 12.042448997497559
+  },
+  {
+    "src": "sharedassets12.resource",
+    "off": 0,
+    "size": 1093703,
+    "len": 65.59346771240234
+  },
+  {
+    "src": "sharedassets13.resource",
+    "off": 0,
+    "size": 215298,
+    "len": 13.14684772491455
+  },
+  {
+    "src": "sharedassets14.resource",
+    "off": 0,
+    "size": 221642,
+    "len": 13.715737342834473
+  },
+  {
+    "src": "sharedassets15.resource",
+    "off": 0,
+    "size": 342550,
+    "len": 20.794919967651367
+  },
+  {
+    "src": "sharedassets16.resource",
+    "off": 0,
+    "size": 276833,
+    "len": 17.602176666259766
+  },
+  {
+    "src": "sharedassets17.resource",
+    "off": 0,
+    "size": 271075,
+    "len": 17.568798065185547
+  },
+  {
+    "src": "sharedassets18.resource",
+    "off": 0,
+    "size": 1237592,
+    "len": 75.61433410644531
+  },
+  {
+    "src": "sharedassets19.resource",
+    "off": 0,
+    "size": 80498,
+    "len": 4.738525867462158
+  },
+  {
+    "src": "sharedassets19.resource",
+    "off": 80498,
+    "size": 248118,
+    "len": 14.7692289352417
+  },
+  {
+    "src": "resources.resource",
+    "off": 0,
+    "size": 7510,
+    "len": 0.44999998807907104
+  },
+  {
+    "src": "resources.resource",
+    "off": 7510,
+    "size": 3155,
+    "len": 0.10448979586362839
+  },
+  {
+    "src": "resources.resource",
+    "off": 10665,
+    "size": 3149,
+    "len": 0.07836734503507614
+  }
+]

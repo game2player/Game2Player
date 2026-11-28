@@ -1,0 +1,52 @@
+{
+  "game_id": "410_my-own-hero-party",
+  "source_url": "https://viniflores.itch.io/my-own-hero-party",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/17938372-2282003/index.html",
+      "path": "index.html",
+      "sha256": "6a8d1a399f8ebedec2e7c75fbf5346822f47e2109fdbb05e0f38fe39526c8f1b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17938372-2282003/index.js",
+      "path": "index.js",
+      "sha256": "68586d6daafc93c6e697b3fb258976874aa7459b8931165ebb1dc3c9614cc42c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17938372-2282003/index.wasm",
+      "path": "index.wasm",
+      "sha256": "7eda98958eb09135a1acb54a4323a00b1a55af1997f15fa1cdc2b93e3df46656"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17938372-2282003/index.pck",
+      "path": "index.pck",
+      "sha256": "c2b57713a1d0b1152db29df5f97818c43db2e7ac5f6251756489fbcb3fbd2064"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17938372-2282003/index.png",
+      "path": "index.png",
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17938372-2282003/index.icon.png",
+      "path": "index.icon.png",
+      "sha256": "9d029ff6a100e48e4f1993e8076da06de745474313e4a787f578a77cd7e656a7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17938372-2282003/index.apple-touch-icon.png",
+      "path": "index.apple-touch-icon.png",
+      "sha256": "803b64a54edc7cc35681784be1510fc307d0e2badab0d7414e05ee31883533c1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17938372-2282003/index.audio.worklet.js",
+      "path": "index.audio.worklet.js",
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17938372-2282003/index.audio.position.worklet.js",
+      "path": "index.audio.position.worklet.js",
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    }
+  ]
+}

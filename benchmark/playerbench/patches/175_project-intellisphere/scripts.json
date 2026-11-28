@@ -1,0 +1,11 @@
+[
+  "Aircraft/TrailContainer.gdc",
+  "Debug.gdc",
+  "Global.gdc",
+  "Hud/Hud.gdc",
+  "Hud/HudMinimap.gdc",
+  "Math.gdc",
+  "Mission.gdc",
+  "Radar.gdc",
+  "Target.gdc"
+]

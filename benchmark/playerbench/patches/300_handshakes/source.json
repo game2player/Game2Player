@@ -1,0 +1,47 @@
+{
+  "game_id": "300_handshakes",
+  "source_url": "https://petpumpkin.itch.io/handshakes",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/6448722/index.html",
+      "path": "index.html",
+      "sha256": "08468e2fbe8c007b661639dc53c794ef904ea5b08233b94efd6ad77b929d85d8",
+      "headers": {
+        "Referer": "https://petpumpkin.itch.io/handshakes"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6448722/Build/WebGL.loader.js",
+      "path": "Build/WebGL.loader.js",
+      "sha256": "e7171e3e34368371c3982acf3311f328d6675d0885f7c82ab98111fe85c90d81",
+      "headers": {
+        "Referer": "https://petpumpkin.itch.io/handshakes"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6448722/Build/WebGL.framework.js",
+      "path": "Build/WebGL.framework.js",
+      "sha256": "d5a150bdf028d1d9014046c3c06630e3e59049bffb7484ce21ce0416f1dd3a7f",
+      "headers": {
+        "Referer": "https://petpumpkin.itch.io/handshakes"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6448722/Build/WebGL.data",
+      "path": "Build/WebGL.data",
+      "sha256": "735c4660a32d163faea3fed22c5034903eebc463b282639028afd3502db4d191",
+      "headers": {
+        "Referer": "https://petpumpkin.itch.io/handshakes"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6448722/Build/WebGL.wasm",
+      "path": "Build/WebGL.wasm",
+      "sha256": "0197de38f791f4efdd33a6e3076fd7c1a2d877e86bed02c7daf3f0919664abf2",
+      "headers": {
+        "Referer": "https://petpumpkin.itch.io/handshakes"
+      }
+    }
+  ]
+}

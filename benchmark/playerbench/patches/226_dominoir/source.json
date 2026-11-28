@@ -1,0 +1,47 @@
+{
+  "game_id": "226_dominoir",
+  "source_url": "https://kawakubo.itch.io/dominoir",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/16298267/index.html",
+      "path": "index.html",
+      "sha256": "b6f3c59bc1cfaf9597d55c46e73d9dd87f3e245bb73e1d9f3afa36243f53862e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/16298267/index.js",
+      "path": "index.js",
+      "sha256": "123651c35cbaaad10f02630aa8eeb46ad3c488d75eb1ddba5e234e5e3d531ce8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/16298267/index.pck",
+      "path": "index.pck",
+      "sha256": "9fe3bd2c8e3b69ba456f792e521d63432e186f631efdddab1c4d1f810cf2ae26"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/16298267/index.wasm",
+      "path": "index.wasm",
+      "sha256": "91952c4fcdc3a407b2cc97ca953591c8df136019da983d75b29d456ca736038d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/16298267/index.png",
+      "path": "index.png",
+      "sha256": "3cb4495c0b98dfbe4b663cbf2b6836473572339beb66d902367893162a70be0e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/16298267/index.audio.position.worklet.js",
+      "path": "index.audio.position.worklet.js",
+      "sha256": "be33985bc7160d6bf9646f259cd86b259cd67b02ccb297ee5c44f8ac84327bc8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/16298267/index.audio.worklet.js",
+      "path": "index.audio.worklet.js",
+      "sha256": "5b476a9c9ce642c0ee4256436d1bc31d9c38f868aca0f9a8e2a57c18d2dec2a3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/16298267/index.service.worker.js",
+      "path": "index.service.worker.js",
+      "sha256": "95cc77131ae0dbbb5a1e72d8db62b4cfc77cfd0a484bb287dd0f26c752d7c927"
+    }
+  ]
+}

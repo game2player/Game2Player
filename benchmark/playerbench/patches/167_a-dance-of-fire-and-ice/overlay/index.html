@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Dance of Fire and Ice</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#231F20}
+/* The game forces an 800x400 canvas; scale it as a whole so its size stays consistent. */
+#gameContainer{position:absolute;left:0;top:0;width:800px;height:400px;transform-origin:0 0}
+#gameContainer canvas{display:block;outline:none}
+#loading{position:fixed;top:45%;width:100%;text-align:center;font:20px monospace;color:#fff;pointer-events:none}
+#task-hud{position:fixed;left:8px;bottom:6px;padding:3px 8px;background:#000a;color:#fff;font:14px/1.35 monospace;white-space:pre-line;pointer-events:none}
+#task-hud:empty{display:none}
+</style>
+<script src="unity_bridge.js"></script><script src="game_api.js"></script>
+<script src="Build/UnityLoader.js"></script></head>
+<body><div id="gameContainer"></div><div id="loading">Loading A Dance of Fire and Ice…</div><div id="task-hud"></div>
+<script>
+var gameInstance=UnityLoader.instantiate('gameContainer','Build/adofaiii4.json',{
+ onProgress:function(instance,p){if(p<1)document.getElementById('loading').textContent='Loading A Dance of Fire and Ice… '+Math.round(p*100)+'%';}
+});
+function fitGame(){var c=document.getElementById('gameContainer'),k=Math.min(innerWidth/800,innerHeight/400);c.style.transform='scale('+k+')';c.style.left=(innerWidth-800*k)/2+'px';c.style.top=(innerHeight-400*k)/2+'px';}
+fitGame();addEventListener('resize',fitGame);
+document.addEventListener('contextmenu',function(event){event.preventDefault();});
+</script></body></html>

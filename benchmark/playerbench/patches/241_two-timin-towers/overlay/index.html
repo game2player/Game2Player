@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Two-Timin' Towers</title>
+    <style>
+      html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+      #unity-canvas { position: absolute; left: 0; top: 0; width: 100vw; height: 100vh; display: block; background: #000; }
+    </style>
+  </head>
+  <body>
+    <canvas id="unity-canvas" tabindex="-1"></canvas>
+    <script src="game_api.js"></script>
+    <script src="Build/Web.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/Web.data",
+        frameworkUrl: "Build/Web.framework.js",
+        codeUrl: "Build/Web.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Two-Timin' Team",
+        productName: "Two-Timin' Towers",
+        productVersion: "1.2",
+      }).catch(function (message) { console.error(message); });
+    </script>
+  </body>
+</html>

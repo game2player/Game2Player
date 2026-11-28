@@ -1,0 +1,17 @@
+{
+  "game_id": "89_celeste-classic-2",
+  "source_url": "https://maddymakesgamesinc.itch.io/celeste-classic-2",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/3276960/index.html",
+      "path": "index.html",
+      "sha256": "c919029c0dfea852201ac81f52e137271d8b8c83210c438f8cbec3213a209e8e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/3276960/index.js",
+      "path": "index.js",
+      "sha256": "388768fa8dfdd05c63a62e457127a3ab21933f53c509c3892a2b9482c00a6d65"
+    }
+  ]
+}

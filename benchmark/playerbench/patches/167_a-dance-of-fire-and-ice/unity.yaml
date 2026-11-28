@@ -1,0 +1,22 @@
+# Metadata v24, 32-bit IL2CPP. TypeInfo root verified against this web build.
+# game_api.js reads the level state through the bridge and starts tasks with
+# SceneManager.LoadScene(int); this profile only pins the cumulative miss counter.
+schema_version: 1
+game_id: 167_a-dance-of-fire-and-ice
+runtime:
+  pointer_size: 4
+  class_static_fields_offset: 92
+  allow_method_calls: false
+state:
+  fields:
+    # scrController.deaths: static int, incremented by each failed attempt.
+    game_state.native.total_misses:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 2063624
+        steps:
+        - offset: 16

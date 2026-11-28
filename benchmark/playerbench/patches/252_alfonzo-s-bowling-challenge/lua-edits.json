@@ -1,0 +1,51 @@
+{
+  "input_sha256": "e037ae776018426da89213ff8894004799779d048ba5c8f58bf15f5182eb51b5",
+  "output_sha256": "3b20fa57b260f904c227681e10c365ea29c8f1ae8922f1accf6d3a6afe0772ce",
+  "edits": [
+    {
+      "start": 1063,
+      "end": 1063,
+      "text": " gw_started=false gw_ready=false gw_ended=false\n gw_points=0 gw_damage=0 gw_level=0\n\n"
+    },
+    {
+      "start": 4539,
+      "end": 4539,
+      "text": " if gw_started and level==gw_level then gw_ended=true end\n"
+    },
+    {
+      "start": 7882,
+      "end": 7882,
+      "text": "     if gw_started and level==gw_level then gw_damage=100-f.hp end\n"
+    },
+    {
+      "start": 11816,
+      "end": 11816,
+      "text": " if gw_started and level==gw_level and not gw_ended then\n  gw_points+=n\n end\n"
+    },
+    {
+      "start": 12770,
+      "end": 12793,
+      "text": "\t\tmode = gw_request and max(1,gw_request-2) or choose_mode()\n  gw_request=nil\n"
+    },
+    {
+      "start": 14257,
+      "end": 14257,
+      "text": "\t\tgi = ((y - 8) \\ 4) * 5 + (x - 35) \\ 12,\n"
+    },
+    {
+      "start": 15923,
+      "end": 15923,
+      "text": " gw_start()\n\n"
+    },
+    {
+      "start": 17418,
+      "end": 17418,
+      "text": " gw_publish()\n"
+    },
+    {
+      "start": 39152,
+      "end": 39152,
+      "text": "\n\n-- environment: native minigame entry and narrow semantic gpio transport\nfunction gw_start()\n local req=peek(0x5f80)\n if not gw_started and req>0 then\n  gw_started=true gw_level=req gw_request=req\n  srand(peek2(0x5fa0))\n  level=req-1 mode=nil\n  add_player(0)\n  coroutines={}\n  add_cr(function()\n   state=state_coach yield() state=state_pinbot\n   while state~=state_play do yield() end\n   add_cr(run_coach)\n  end)\n  add_cr(run_pinbot)\n  add_cr(run_platforms)\n end\nend\nfunction gw_publish()\n if gw_started and level==gw_level and state==state_play\n   and pbstate==pbstate_move then gw_ready=true end\n poke(0x5f81,state) poke(0x5f82,level)\n poke(0x5f83,mode or 0) poke(0x5f84,playercount)\n poke2(0x5f85,score)\n if players[0] then\n  poke2(0x5f87,players[0].pos.x*100)\n  poke2(0x5f89,players[0].pos.y*100)\n end\n poke(0x5f8b,boss and boss.hp or 0)\n poke(0x5f8c,gw_ready and 1 or 0)\n poke(0x5f8d,gw_ended and 1 or 0)\n poke(0x5f8e,promptvisible and 1 or 0)\n poke(0x5f8f,gw_level)\n poke2(0x5f90,gw_points)\n poke(0x5f92,gw_damage)\n poke(0x5f93,dialog and 1 or 0)\n poke(0x5f94,tutorialon and 1 or 0)\n poke(0x5f95,pbstate or 0)\n poke(0x5f96,#targets)\n gw_obs()\nend\n-- policy observation block: pins 23..31 and 34..127 (read-only to the game)\nfunction gw_pk(a,x,y)\n local u=mid(0,flr(x*8)+2048,4095)\n local v=mid(0,flr(y*8)+2048,4095)\n poke(a,u%256) poke(a+1,u\\256+v%16*16) poke(a+2,v\\16)\nend\nfunction gw_vb(a,v,k)\n poke(a,mid(1,flr(v*k)+128,255))\nend\nfunction gw_p2(a,v,k)\n poke2(a,mid(0,flr(v*k)+16384,32767))\nend\nfunction gw_obs()\n local b,f,n,k,m,a=players[0],0,0,0,mode,0x5fb0\n if b then\n  gw_p2(0x5f97,b.pos.x-b.prev.x,256)\n  gw_p2(0x5f99,b.pos.y-b.prev.y,256)\n end\n local d=dialog\n if d and (d.len>=#d.txt or promptvisible) then f+=1 end\n if m==mode_bro and bro and bro.hit then f+=2 end\n if brointerrupt then f+=4 end\n for i=1,2 do\n  local p,q=platforms[i],0x5fa2+i*7-7\n  if p.enabled then f+=4<<i end\n  poke(q,p.x) poke(q+1,p.w) poke(q+2,p.h)\n  gw_p2(q+3,p.y,64) gw_p2(q+5,p.vy,256)\n end\n memset(0x5fb0,0,80)\n if m==mode_bowl or m==mode_boss then\n  n=min(#pins,10)\n  for i=1,n do\n   local p=pins[i]\n   gw_pk(a,p.x,p.y) poke(a+3,p.w) poke(a+4,p.h) a+=5\n   if p.isknocked then k+=1<<(i-1) end\n  end\n  if m==mode_boss and boss then\n   gw_pk(0x5fe2,boss.x,boss.y)\n   poke(0x5fe5,boss.w) poke(0x5fe6,boss.h)\n   poke(0x5fe7,boss.hp) poke(0x5fe8,mid(0,flr(boss.shake*32),255))\n  end\n elseif m==mode_breakfast then\n  n=min(#eggs,10)\n  if n>0 then poke(a,eggs[1].w) poke(a+1,eggs[1].h) end\n  a+=2\n  for i=1,n do\n   local e=eggs[i]\n   gw_pk(a,e.x,e.y) gw_vb(a+3,e.vx,8) gw_vb(a+4,e.vy,8) a+=5\n   if e.isknocked then k+=1<<(i-1) end\n  end\n  if pan then\n   gw_pk(0x5fe4,pan.x,pan.y) poke(0x5fe7,pan.w) poke(0x5fe8,pan.h)\n   gw_vb(0x5fe9,pan.x-(gw_px or pan.x),32) gw_px=pan.x\n  end\n  poke(0x5f9d,min(#yolks,255))\n  if yolks[1] then poke(0x5fea,yolks[1].w) poke(0x5feb,yolks[1].h) end\n  for i=1,min(#yolks,4) do\n   local y=yolks[i]\n   a=0x5fec+i*5-5\n   gw_pk(a,y.x,y.y) gw_vb(a+3,y.vx,16) gw_vb(a+4,y.vy,16)\n  end\n elseif m==mode_breakout then\n  n=#bricks\n  for r in all(bricks) do\n   local g=r.gi\n   if g then\n    local o=a+g\\8\n    poke(o,peek(o)|(1<<(g%8)))\n    gw_p2(a+5+g\\5*2,r.y,64)\n    poke(a+21+g%5,r.x) poke(a+26,r.w) poke(a+27,r.h)\n   end\n  end\n elseif m==mode_bb and hoop then\n  b=balls[1]\n  gw_pk(a,hoop.x,hoop.y) poke(a+3,hoop.h) poke(a+4,netw)\n  poke(a+5,hoop.flash and 1 or 0)\n  poke(a+6,b and b.bbstate or 0)\n  gw_p2(a+7,hoop.y-(gw_hy or hoop.y),256) gw_hy=hoop.y\n elseif m==mode_barber then\n  n=min(#targets,7)\n  for i=1,n do\n   local t=targets[i]\n   gw_pk(a,t.x,t.y) poke(a+3,t.w) poke(a+4,t.h) a+=5\n   if t.isknocked then k+=1<<(i-1) end\n  end\n end\n if m~=mode_bb then gw_hy=nil end\n if m~=mode_breakfast then gw_px=nil end\n poke(0x5f9b,f) poke(0x5f9c,n)\n poke(0x5f9e,k%256) poke(0x5f9f,k\\256)\nend\n"
+    }
+  ]
+}

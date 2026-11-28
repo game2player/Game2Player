@@ -1,0 +1,255 @@
+--- a/RunManager.gd
++++ b/RunManager.gd
+@@ -38,4 +38,5 @@
+ func _ready() -> void :
+ 	randomize()
++	_gw_init()
+ 
+ func start_new_run(deck_id: String = "classic") -> void :
+@@ -51,4 +52,7 @@
+ 
+ 	player_deck = _create_standard_deck()
++	gw_cleared = 0
++	gw_purchases = 0
++	gw_shop_entered = false
+ 
+ 	_generate_opponents()
+@@ -244,2 +248,196 @@
+ 	delete_save_file()
+ 	print("RunManager: Run reset.")
++
++
++
++
++
++
++
++
++var gw_task: String = ""
++var gw_cleared: int = 0
++var gw_purchases: int = 0
++var gw_shop_entered: bool = false
++var gw_lost: bool = false
++var gw_best: float = 0.0
++var gw_start_pending: bool = false
++var gw_scene_id: int = 0
++var gw_scene_frames: int = 0
++var gw_counted_scene: int = 0
++var gw_acc: float = 0.0
++var gw_window = null
++
++func _gw_init() -> void :
++	if not OS.has_feature("web"):
++		return
++	gw_window = JavaScriptBridge.get_interface("window")
++	var task = str(JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('task') || ''"))
++	if task != "":
++		gw_task = task
++		var seed_text = str(JavaScriptBridge.eval("new URLSearchParams(window.location.search).get('seed') || ''"))
++		seed(int(seed_text) if seed_text != "" else 226)
++		delete_save_file()
++		start_new_run("classic")
++		gw_start_pending = true
++
++func _gw_scene_name(scene: Node) -> String:
++	if scene == null:
++		return "none"
++	var path = scene.scene_file_path
++	if path == "":
++		return scene.name
++	return path.get_file().get_basename()
++
++func _process(delta: float) -> void :
++	if gw_window == null:
++		return
++	var scene = get_tree().current_scene
++	if gw_start_pending and scene != null:
++		gw_start_pending = false
++		get_tree().change_scene_to_file("res://Scenes/Game.tscn")
++		return
++	if scene == null:
++		return
++	if scene.get_instance_id() != gw_scene_id:
++		gw_scene_id = scene.get_instance_id()
++		gw_scene_frames = 0
++	gw_scene_frames += 1
++	gw_acc += delta
++	if gw_acc < 0.1:
++		return
++	gw_acc = 0.0
++	_gw_publish(scene)
++
++func _gw_domino_info(d) -> Dictionary:
++	var pos = d.get_global_transform_with_canvas().origin
++	return {
++		"top": d.data.top_value, 
++		"bottom": d.data.bottom_value, 
++		"selected": d.is_selected, 
++		"x": int(pos.x), 
++		"y": int(pos.y)
++	}
++
++func _gw_publish(scene: Node) -> void :
++	var name = _gw_scene_name(scene)
++	var gs: Dictionary = {
++		"scene": name, 
++		"rank": current_rank, 
++		"run_active": is_run_active, 
++		"money": current_money, 
++		"round_goal": get_current_round_goal(), 
++		"round_score": 0, 
++		"turns_remaining": 0, 
++		"discards_remaining": 0, 
++		"round_state": "none", 
++		"hand": [], 
++		"board_dominoes": 0, 
++		"boneyard": 0, 
++		"artifacts": [], 
++		"items": player_items.size(), 
++		"deck_size": player_deck.size(), 
++		"shop": []
++	}
++	var won = false
++	var actionable = gw_scene_frames >= 20
++	if name == "Game":
++		var score = int(scene.get("round_score"))
++		var goal = int(scene.get("round_goal"))
++		var active = bool(scene.get("is_game_active"))
++		won = ( not active) and score >= goal
++		var lost = ( not active) and score < goal
++		gs["round_score"] = score
++		gs["round_goal"] = goal
++		gs["money"] = int(scene.get("player_money"))
++		gs["turns_remaining"] = int(scene.get("turns_remaining"))
++		gs["discards_remaining"] = int(scene.get("discards_remaining"))
++		gs["turn_index"] = int(scene.get("current_turn_index"))
++		gs["round_state"] = "won" if won else ("lost" if lost else "playing")
++		var hand = scene.get("hand")
++		var hand_list: Array = []
++		if hand != null:
++			for d in hand.held_dominoes:
++				hand_list.append(_gw_domino_info(d))
++		gs["hand"] = hand_list
++		var grid = scene.get("grid")
++		if grid != null:
++			var seen: Dictionary = {}
++			for d in grid.grid_cells.values():
++				seen[d.get_instance_id()] = true
++			gs["board_dominoes"] = seen.size()
++		var yard = scene.get("boneyard")
++		if yard != null:
++			gs["boneyard"] = yard.current_pool.size()
++		var am = scene.get("artifact_manager")
++		if am != null:
++			var names: Array = []
++			for a in am.active_artifacts:
++				names.append(a.display_name)
++			gs["artifacts"] = names
++		if won and gw_counted_scene != gw_scene_id:
++			gw_counted_scene = gw_scene_id
++			gw_cleared += 1
++		if lost:
++			gw_lost = true
++		actionable = actionable and (hand_list.size() > 0 or won or lost)
++	elif name == "Shop":
++		gw_shop_entered = true
++		gs["money"] = current_money
++		var slots: Array = []
++		var container = scene.get("slot_container")
++		if container != null:
++			for s in container.get_children():
++				if s.get("item_data") != null:
++					var r = s.get_global_rect()
++					slots.append({
++						"name": s.item_data.get("name", ""), 
++						"type": s.item_data.get("type", ""), 
++						"price": s.item_data.get("price", 0), 
++						"x": int(r.get_center().x), 
++						"y": int(r.get_center().y)
++					})
++		gs["shop"] = slots
++		var anames: Array = []
++		for p in player_artifacts:
++			anames.append(p.get_file().get_basename())
++		gs["artifacts"] = anames
++	else:
++		var anames2: Array = []
++		for p2 in player_artifacts:
++			anames2.append(p2.get_file().get_basename())
++		gs["artifacts"] = anames2
++	var ladder = float(gw_cleared)
++	if name == "Game" and not won:
++		var g = max(int(gs["round_goal"]), 1)
++		ladder += min(float(gs["round_score"]) / float(g), 0.99)
++	gw_best = max(gw_best, ladder)
++	var shop_progress = 0
++	if gw_purchases > 0:
++		shop_progress = 3
++	elif gw_shop_entered:
++		shop_progress = 2
++	elif gw_cleared >= 1:
++		shop_progress = 1
++	gs["rounds_cleared"] = gw_cleared
++	gs["ladder_progress"] = gw_best
++	gs["shop_progress"] = shop_progress
++	gs["purchases"] = gw_purchases
++	var status = name
++	if name == "Game":
++		status = gs["round_state"]
++	var out = {
++		"gameTimeMs": Time.get_ticks_msec(), 
++		"status": status, 
++		"is_actionable": actionable, 
++		"terminal": {"isTerminal": gw_lost, "outcome": "fail" if gw_lost else null}, 
++		"game_state": gs, 
++		"metrics": {
++			"ladder_progress": gw_best, 
++			"shop_progress": shop_progress, 
++			"rounds_cleared": gw_cleared, 
++			"round_score": gs["round_score"], 
++			"money": gs["money"]
++		}
++	}
++	gw_window.__gwPublish(JSON.stringify(out))
+--- a/Game.gd
++++ b/Game.gd
+@@ -532,4 +532,11 @@
+ 	domino_original_pos = domino.position
+ 
++
++	if gw_release_ms >= gw_press_ms and gw_release_ms - gw_press_ms < 300 and Time.get_ticks_msec() - gw_release_ms < 500:
++		gw_release_ms = -100000
++		_handle_click_action(domino)
++		drag_domino = null
++		is_dragging_active = false
++
+ func _on_domino_hovered(domino: DominoVisual):
+ 
+@@ -547,6 +554,18 @@
+ 		domino_tooltip.hide_tooltip()
+ 
++var gw_press_ms: int = -100000
++var gw_release_ms: int = -100000
++
+ func _unhandled_input(event: InputEvent) -> void :
+-	if not drag_domino: return
++
++
++
++	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
++		if event.pressed:
++			gw_press_ms = Time.get_ticks_msec()
++		elif not drag_domino:
++			gw_release_ms = Time.get_ticks_msec()
++	if not drag_domino:
++		return
+ 
+ 	if event is InputEventMouseMotion:
+--- a/Shop.gd
++++ b/Shop.gd
+@@ -580,4 +580,5 @@
+ 		AudioManager.play_pickup()
+ 		RunManager.current_money -= price
++		RunManager.gw_purchases += 1
+ 
+ 

@@ -1,0 +1,45 @@
+{
+  "game_id": "483_fair-squares",
+  "source_url": "https://kindanice.itch.io/fair-squares",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/6927792/export/index.html",
+      "path": "index.html",
+      "sha256": "96a654841af138ccd4328f0625bfc8d3dbdb42142f4cddce8aa294c9f39c64d6",
+      "headers": {
+        "Referer": "https://kindanice.itch.io/fair-squares"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6927792/export/index.js",
+      "path": "index.js",
+      "sha256": "9d2bb77918c108356cf626592260eb727597ab496765202d4651eaca84566a25",
+      "headers": {
+        "Referer": "https://kindanice.itch.io/fair-squares"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6927792/export/index.pck",
+      "path": "index.pck",
+      "sha256": "b953275c17576d673f8e1465df80b0f29335394520ebda40814b0f2735efd184",
+      "headers": {
+        "Referer": "https://kindanice.itch.io/fair-squares"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/6927792/export/index.wasm",
+      "path": "index.wasm",
+      "sha256": "d6144c802eb84a93884ecd172670f4ce5036b85dec45a0230ce8e3f78d5f02bc",
+      "headers": {
+        "Referer": "https://kindanice.itch.io/fair-squares"
+      }
+    },
+    {
+      "url": "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.4/GDRE_tools-v2.7.4-linux.zip",
+      "path": "_patch_tools",
+      "unpack": "zip",
+      "sha256": "3dc4f1244dda62e41e0c952ac00a69e60e07f3b0d5a211164806bf9d41a54758"
+    }
+  ]
+}

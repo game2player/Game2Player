@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>Snug</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+    #unity-canvas { width: 100%; height: 100%; display: block; }
+  </style>
+</head>
+<body>
+  <canvas id="unity-canvas" width="1280" height="800" tabindex="0"></canvas>
+  <script src="unity_bridge.js"></script>
+  <script src="game_api.js"></script>
+  <script src="Build/Snug.loader.js"></script>
+  <script>
+    createUnityInstance(document.getElementById('unity-canvas'), {
+      dataUrl: 'Build/Snug.data',
+      frameworkUrl: 'Build/Snug.framework.js',
+      codeUrl: 'Build/Snug.wasm',
+      streamingAssetsUrl: 'StreamingAssets',
+      companyName: 'Cookiecrayon', productName: 'Snug', productVersion: '1.0.2'
+    }).then(instance => {
+      window.unityInstance = instance;
+      document.getElementById('unity-canvas').focus();
+    }).catch(error => console.error('Snug load failed:', error));
+  </script>
+</body>
+</html>

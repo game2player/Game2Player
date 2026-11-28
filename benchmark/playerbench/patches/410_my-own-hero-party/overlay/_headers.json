@@ -1,0 +1,17 @@
+{
+  "/index.wasm": {
+    "Content-Type": "application/wasm"
+  },
+  "/index.pck": {
+    "Content-Type": "application/octet-stream"
+  },
+  "/index.js": {
+    "Content-Type": "text/javascript; charset=utf-8"
+  },
+  "/game_api.js": {
+    "Content-Type": "text/javascript; charset=utf-8"
+  },
+  "/index.png": {
+    "Content-Type": "image/png"
+  }
+}

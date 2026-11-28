@@ -1,0 +1,11 @@
+{
+  "/Build/adofaiii4.wasm.code.unityweb": {
+    "Content-Type": "application/wasm"
+  },
+  "/Build/adofaiii4.data.unityweb": {
+    "Content-Type": "application/octet-stream"
+  },
+  "/Build/adofaiii4.wasm.framework.unityweb": {
+    "Content-Type": "application/javascript"
+  }
+}

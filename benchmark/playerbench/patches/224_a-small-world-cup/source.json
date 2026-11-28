@@ -1,0 +1,703 @@
+{
+  "game_id": "224_a-small-world-cup",
+  "source_url": "https://rujogames.itch.io/a-small-world-cup",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/appmanifest.json",
+      "path": "appmanifest.json",
+      "sha256": "aeb6036d554b4c54449cf513df8d25a670c11dfc1f78df2264ce1f25b8ce5769",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/c2runtime.js",
+      "path": "c2runtime.js",
+      "sha256": "21fbb7e1dd13f144866b8e4585dd31006debec3cee7656f178c1095fcf5e3dee",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/data.js",
+      "path": "data.js",
+      "sha256": "57a5cbce89de9284c79fbd32e20a069b6540738c837e2d84853a1703312c08a1",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/icon-114.png",
+      "path": "icon-114.png",
+      "sha256": "41270fbfc7237aa2ac92463bdd892b7b635d92b8b0f00e8ee511020ab9994f04",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/icon-128.png",
+      "path": "icon-128.png",
+      "sha256": "461a4533a5ba1315f8a44fb5df2895fc78cf4eaaead5c2949a34bc64e8e88073",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/icon-16.png",
+      "path": "icon-16.png",
+      "sha256": "0ffb67c368596200ebafd46900a51cf92c016b0aaabda264e2d6394c73c94a34",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/icon-256.png",
+      "path": "icon-256.png",
+      "sha256": "f2c7ddf1cca87f9cf90a2159c6c571c190a016faddf14f6af6980ba5ad031f7c",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/icon-32.png",
+      "path": "icon-32.png",
+      "sha256": "9e98d90aac210e5dbdb52ade87fab877ad81c1156a5770523ed031042bddda8e",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/ball-sheet0.png",
+      "path": "images/ball-sheet0.png",
+      "sha256": "6e11c7a0ecca14544c404c1cb91a53a9436b744c98bfa3a3ccbec0fe297781c9",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/borders.png",
+      "path": "images/borders.png",
+      "sha256": "761821a86f7c021b3fe0467dcd340c24efaa17807d7bbc4634570f990c2fbc97",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/charger-sheet0.png",
+      "path": "images/charger-sheet0.png",
+      "sha256": "1523b5e22f11e965df4e5823a29c61cf9a8b04b2869143c801f4288d38988e20",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/finaletxt.png",
+      "path": "images/finaletxt.png",
+      "sha256": "62ff9ba7bf5fa89036046efac74c6feb410c71f33d96b1bec2860f437a3adb64",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/goal-sheet0.png",
+      "path": "images/goal-sheet0.png",
+      "sha256": "fa2009ec93eda2703ddab2ca0531ab7145e98cc7aa317f41fd52def0adb2e2a4",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/goalblocker0.png",
+      "path": "images/goalblocker0.png",
+      "sha256": "a8c8acddd8a0863700681f5ae3ec6ec0f3501977ebc3a05ea60e7060c46e7e68",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/goaldetector0-sheet0.png",
+      "path": "images/goaldetector0-sheet0.png",
+      "sha256": "c06b9b40dd35f59a59caf67fa41b21f6673fc4c3074ea0c9d4dddfcc1d378764",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/hand-sheet0.png",
+      "path": "images/hand-sheet0.png",
+      "sha256": "7e889397eaedb6ec74b73ef7daf4351cffb86521edde6b1880cc01e27a72508f",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/ombra-sheet0.png",
+      "path": "images/ombra-sheet0.png",
+      "sha256": "45ff207ed49865bf7f01d1153665845ae472167bb20b83e90a4b20c1b2aa24d9",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/pl_brsx-sheet0.png",
+      "path": "images/pl_brsx-sheet0.png",
+      "sha256": "0bb9f2fed4b9520cfbf601cbb5934d26bae24ba98bee80f22cc71fa341c7cf72",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/pl_capelli_pin-sheet0.png",
+      "path": "images/pl_capelli_pin-sheet0.png",
+      "sha256": "4edcc4cb5df5c84e47138e4ad84bbfb172ebf924e1c03968878c8699caab42cf",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/pl_collider_0-sheet0.png",
+      "path": "images/pl_collider_0-sheet0.png",
+      "sha256": "df24f54f04014be27e96cdfe6e17fc857a51db3559e10243cec1eccad3c9af1d",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/pl_collider_1-sheet0.png",
+      "path": "images/pl_collider_1-sheet0.png",
+      "sha256": "1a41797bd38ee2af31422d101c4febd00c5d261e686c719c5a926b6b0fdc83bb",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/pl_corpo-sheet0.png",
+      "path": "images/pl_corpo-sheet0.png",
+      "sha256": "56ffbb23e9ae6a35d20b90ef2095e714f7bf78755737f1511638e767851c3b91",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/pl_gmsx-sheet0.png",
+      "path": "images/pl_gmsx-sheet0.png",
+      "sha256": "1f4c4df7382be8283210de52be637d311278dcb19b07d4ee4d7ee6af05e599cc",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/pl_testa-sheet0.png",
+      "path": "images/pl_testa-sheet0.png",
+      "sha256": "b12a358705ced8e05ce9552226a11909087a5d9aecb95a4fa3e52a53d5dd0a63",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/porta0-sheet0.png",
+      "path": "images/porta0-sheet0.png",
+      "sha256": "d86961277ee899c08cfbb797acf1f76da07e0718345449b1ae969871b203979d",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/porta1-sheet0.png",
+      "path": "images/porta1-sheet0.png",
+      "sha256": "0a79a893a0f920e9c930e5de3558d8e15f1991160b1a8efb651b2c7c42121fe4",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/rgtrademark-sheet0.png",
+      "path": "images/rgtrademark-sheet0.png",
+      "sha256": "934efbd6d2c794d31855101e45f5e21a075c6a47302d591181f0bfd6f5a4da7e",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/rujogameslogo-sheet0.png",
+      "path": "images/rujogameslogo-sheet0.png",
+      "sha256": "9d32dc2ecb13965ba44e471c6e6395748b63a1c9e2fc61b544a82de6f154778f",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/sample-sheet0.png",
+      "path": "images/sample-sheet0.png",
+      "sha256": "fca953983afe39cd7e1383f37b430406d90598f8f13b72a5fde34482c2a55712",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/scanlines.png",
+      "path": "images/scanlines.png",
+      "sha256": "cac592db9a38ded159f110e750547ef4d34d05ff3aa358232e61c133d0ed70fc",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/score0.png",
+      "path": "images/score0.png",
+      "sha256": "6201d2d91e75f5ab487d8e85aca8ee216367a08018ba5b76326f0ee62fd81c4f",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/scuritore.png",
+      "path": "images/scuritore.png",
+      "sha256": "22ff684d33910ac298073a6182aea57a3c29a8e723baa73d58550e1112873a6f",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/selecao_back-sheet0.png",
+      "path": "images/selecao_back-sheet0.png",
+      "sha256": "160d474ae862c966d550c4ee0446f79b0b3a930350a798151a2e87a1a9c6735f",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/selecao_block-sheet0.png",
+      "path": "images/selecao_block-sheet0.png",
+      "sha256": "724187bb7eed43079796d742d23f6129de3e71357d939fa7146c3914c65d62b6",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/selecao_block-sheet1.png",
+      "path": "images/selecao_block-sheet1.png",
+      "sha256": "a8f560dff6e0ef729e3a8368c9b491588afecd8379b633efbbfc671b5ad5ad9f",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/selecao_block-sheet2.png",
+      "path": "images/selecao_block-sheet2.png",
+      "sha256": "89bbad3b2900a57245c597e7757c606a45a3d530d94a0efe01289de8fb593da6",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/selecao_flag-sheet0.png",
+      "path": "images/selecao_flag-sheet0.png",
+      "sha256": "c2c75eab2c576e2f02c746e3957d88277c0a7f7e60b27c0fdf3026e535bac38c",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/selecao_font.png",
+      "path": "images/selecao_font.png",
+      "sha256": "3d6761909c0f98fc7c2e09b1bae1d68e8a6d78323b84fcbb802894b5223a927f",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/selecao_selector-sheet0.png",
+      "path": "images/selecao_selector-sheet0.png",
+      "sha256": "297b03440367c5f102d9398869b85ebb4397d39473447d453b6866fc84a0d2ef",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/selecao_selector-sheet1.png",
+      "path": "images/selecao_selector-sheet1.png",
+      "sha256": "e39c6aa442b1985cd0e7d4ad3e21ec0512ecbaabc550eb12a8f86b55881ff80b",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/selecao_selector-sheet2.png",
+      "path": "images/selecao_selector-sheet2.png",
+      "sha256": "c9f60ea363637a9c8bbb6b8ba39374f0eff6fd583223e6913fb16591d4de46a6",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/selecao_timer-sheet0.png",
+      "path": "images/selecao_timer-sheet0.png",
+      "sha256": "dee5ab4dc75fbf60c45ed3aab489e48465dbb7c063802f86ca453ff518ed7448",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/sf_3x5_a.png",
+      "path": "images/sf_3x5_a.png",
+      "sha256": "b36d01c0c3998a76ac82d131f66b590a2088a97e18c66a276b045fa196ef55f2",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/sf_8x8_a.png",
+      "path": "images/sf_8x8_a.png",
+      "sha256": "e7ad305f12a4b14d90187059919f60b376a40c992753b4bfad6700c887a6615e",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/smallcup-sheet0.png",
+      "path": "images/smallcup-sheet0.png",
+      "sha256": "f268dabf7c3efc701cdc1e69c9475907f2574a7d0e9a0216323285985a973ae5",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/stadiumbackground-sheet0.png",
+      "path": "images/stadiumbackground-sheet0.png",
+      "sha256": "47d7668d205f62e23f586d7d1e46adc1bbe3ee1b7c1a6d49229bb56ace3d377d",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/stadiumbackground-sheet1.png",
+      "path": "images/stadiumbackground-sheet1.png",
+      "sha256": "a73b94c1acf4d3a77d7740b1aeb33b21966ad2eae557ef3443521fbbcf021b0e",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/stadiumbackground-sheet2.png",
+      "path": "images/stadiumbackground-sheet2.png",
+      "sha256": "2ef734345bcbbe93da3be5a88bbafc7ba4fa142f029559f9df1bf759441fb18f",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/storelink-sheet0.png",
+      "path": "images/storelink-sheet0.png",
+      "sha256": "1c42d8a6b4159f0a4cdac38d44375e41c35cccf01a158762f27bc2f4f3a7a886",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/tempo.png",
+      "path": "images/tempo.png",
+      "sha256": "884016c610755092f18912b3570df92af936888ba1816354d2dd479e3094b03b",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/tit-sheet0.png",
+      "path": "images/tit-sheet0.png",
+      "sha256": "1c532c4451ebfeb6a2070bd5532e549177b956a297e992f438801b035e3d393a",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/title_playbtn-sheet0.png",
+      "path": "images/title_playbtn-sheet0.png",
+      "sha256": "e681278253224bae89d85db129a21257af32f7b497dcfd2c4302ab96f674d833",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/toucher-sheet0.png",
+      "path": "images/toucher-sheet0.png",
+      "sha256": "073a6ba7761430e3c6754d22419c6c9cc35e5080c464944d29d65bda6108e440",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/widescreenpattern.png",
+      "path": "images/widescreenpattern.png",
+      "sha256": "30249cec34895d42198cc799d623d6e77debeca5acbe6ba65a29e0800c7ae0d4",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/images/win-sheet0.png",
+      "path": "images/win-sheet0.png",
+      "sha256": "67d1f182f8bcbcaaf2445258db9676c1af1fa4d418d8ea90e58a648eb760ec1e",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/index.html",
+      "path": "index.html",
+      "sha256": "56171a79160fb7c84e733e3438614f5940960f118ed8e69cc2b1a6101b0154bc",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/jquery-2.1.1.min.js",
+      "path": "jquery-2.1.1.min.js",
+      "sha256": "9451ed8fd4c4fd0d216a5f3e80409c0f8759a404fb1dda1f9b8b27aa39d74a6f",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/loading-logo.png",
+      "path": "loading-logo.png",
+      "sha256": "690017aca7e77416f60d8ee7e8ce4095830cea6a0ce71307ed738d33d9edebc9",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/171697__nenadsimic__menu-selection-click.m4a",
+      "path": "media/171697__nenadsimic__menu-selection-click.m4a",
+      "sha256": "3fe181c5445babc6bb606b504785d855f24db8026be692b81e6d1961dfe07fe4",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/171697__nenadsimic__menu-selection-click.ogg",
+      "path": "media/171697__nenadsimic__menu-selection-click.ogg",
+      "sha256": "8cb7fd1856f8e3f8deefcd152ae1be7fa8262a183db0e9dddb51faacb44f4f35",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/applauseend.m4a",
+      "path": "media/applauseend.m4a",
+      "sha256": "0fc1f481d4f0c0e36fafb761617eaf713f776ab124bf98009dd8165ea006344c",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/applauseend.ogg",
+      "path": "media/applauseend.ogg",
+      "sha256": "a3f251822654348e6e10c47ace49498a0d5b96b7ea190ce94094e656d743be51",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/backgroundmilan.m4a",
+      "path": "media/backgroundmilan.m4a",
+      "sha256": "a6146b9078ba0b9ab0bb0523155434010db9b437b85d2e709523377786eefbf9",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/backgroundmilan.ogg",
+      "path": "media/backgroundmilan.ogg",
+      "sha256": "0b16d0621908fa754f3913cd3d49d9e84dc8a6923b0b0d442701088779a07a44",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/body_hit.m4a",
+      "path": "media/body_hit.m4a",
+      "sha256": "f2201a42b9f15a5bd1f46e9d85826727eaca659be909b5ecc25e4790fa17ebac",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/body_hit.ogg",
+      "path": "media/body_hit.ogg",
+      "sha256": "52239d682303456df90823125763d2d71d5f1e04d418d7725b4813a263dd6ddc",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/drum-roll.m4a",
+      "path": "media/drum-roll.m4a",
+      "sha256": "9b5bd5e74f93d4601dd667d9d1bf18ab8571c01792c3485bf12039b3bb350aa2",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/drum-roll.ogg",
+      "path": "media/drum-roll.ogg",
+      "sha256": "abd2c8b5ee669aee17e27670c2641d348e9bacf560958ead9972e98fe628670f",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/fischio_end.m4a",
+      "path": "media/fischio_end.m4a",
+      "sha256": "8f98aaaf8cf49e9597c5a25df9e8156115f1b5a2a6f9f900b69b9ebe007f2e7d",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/fischio_end.ogg",
+      "path": "media/fischio_end.ogg",
+      "sha256": "b9d96c7dbad59e63b1b0271aa0c09fec066a5f6a57d688e6f582c1dc34a002b0",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/fischio_start.m4a",
+      "path": "media/fischio_start.m4a",
+      "sha256": "90813d7767d9d651692ee2ec6219ff838a6d842a6d2566ac02dd3945c92836d5",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/fischio_start.ogg",
+      "path": "media/fischio_start.ogg",
+      "sha256": "58cd78f05c989956190a5e620ab4a9f311a0ea8deb4538d52132068a843ef994",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/goal_uaaah.m4a",
+      "path": "media/goal_uaaah.m4a",
+      "sha256": "fe13b19453334076864650b52fa8a1305836d324074787166d20e45ecf50a176",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/goal_uaaah.ogg",
+      "path": "media/goal_uaaah.ogg",
+      "sha256": "6fc5ace0d88f846d8862467ed2258f11125bb54f77bf5966a97aa034352a5864",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/myself_loop.m4a",
+      "path": "media/myself_loop.m4a",
+      "sha256": "ab1f5f1ce422b819215ab0372fcd2d616efcc2b4ee4647b08771ca8b98ebda10",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/myself_loop.ogg",
+      "path": "media/myself_loop.ogg",
+      "sha256": "37f38ebda60669c7ff333bd523b7cf957d2d2dde593a619e7225b918ee386a04",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/net-sound.m4a",
+      "path": "media/net-sound.m4a",
+      "sha256": "ed1b19c7c819a2dd2f8c87f79b2d697702af71509154d8a45abb49bcea98df4d",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/net-sound.ogg",
+      "path": "media/net-sound.ogg",
+      "sha256": "4ccea105515dafc9dfdb62103f34ae22ac66af5ae5d09d00507e854ebe548cbd",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/realballhit.m4a",
+      "path": "media/realballhit.m4a",
+      "sha256": "f8d56e10bc427647f49b594632bdd1c289a4406fb5b4c074748a3760fcfbf94e",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/realballhit.ogg",
+      "path": "media/realballhit.ogg",
+      "sha256": "4dfbfd37e4bfc24d671430e5127254908855695903bdad258cc88ebcded7f444",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/song_menu_drum.m4a",
+      "path": "media/song_menu_drum.m4a",
+      "sha256": "4d3c09f50f04b75842f5ea4b47884edaf86197760b05bcd8a8094a3e10e35eca",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/song_menu_drum.ogg",
+      "path": "media/song_menu_drum.ogg",
+      "sha256": "4e1d4694643fcd8e439d8be973fcb995bf2a34deff2d55eb3f1eb055aa37762a",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/thud1.m4a",
+      "path": "media/thud1.m4a",
+      "sha256": "e3ef24c628c6fbcd41f3b7cfe1ec7bea8cee26c24a7acfd234919823fcc0aa81",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/media/thud1.ogg",
+      "path": "media/thud1.ogg",
+      "sha256": "968378aab568dde20b12758684e97556e05a87044309c4a7c6d4fa0e6a905e83",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/offline.js",
+      "path": "offline.js",
+      "sha256": "c32e051312b728de5445b8488a341c6f1267cbced4a0f8f2aa96e708183cc1e4",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/offlineClient.js",
+      "path": "offlineClient.js",
+      "sha256": "68e0bcd6d56e3756b0ca2739642810447609fcd395f17c21cd748798898884e5",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1643267/sw.js",
+      "path": "sw.js",
+      "sha256": "763c1a959dca7d19564453a1e6b410245ac0accc36d2a1fbc6c97786f30c5dd9",
+      "headers": {
+        "Referer": "https://rujogames.itch.io/a-small-world-cup"
+      }
+    }
+  ]
+}

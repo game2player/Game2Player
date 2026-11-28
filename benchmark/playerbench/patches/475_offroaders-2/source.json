@@ -1,0 +1,22 @@
+{
+  "game_id": "475_offroaders-2",
+  "source_url": "https://armorgames.com/play/15403/offroaders-2",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://cache.armorgames.com/files/games/offroaders-2-15403.swf?v=1373587529",
+      "path": "game.swf",
+      "sha256": "faf4ef0d8ba948a0d56a685761881c9053ea7b7dea2d24ad4d25a3a108cc4df6",
+      "headers": {
+        "Referer": "https://armorgames.com/play/15403/offroaders-2",
+        "User-Agent": "Mozilla/5.0"
+      }
+    },
+    {
+      "url": "https://github.com/ruffle-rs/ruffle/releases/download/v0.4.1/ruffle-0.4.1-web-selfhosted.zip",
+      "path": "ruffle",
+      "sha256": "d33c135beea75c83183da1938a49ee3f08c2f7a2eb2ae8f3ce43de842412aae6",
+      "unpack": "zip"
+    }
+  ]
+}

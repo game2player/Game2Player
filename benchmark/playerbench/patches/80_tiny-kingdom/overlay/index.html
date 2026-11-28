@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tiny Kingdom</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#a0d9cf}
+#unity-canvas{display:block;width:100vw;height:100vh;image-rendering:pixelated;outline:none}
+#loading{position:fixed;inset:0;display:grid;place-items:center;color:#492d3e;font:24px serif;pointer-events:none}
+</style>
+<script src="game_api.js"></script>
+</head>
+<body>
+<canvas id="unity-canvas" width="1280" height="800" tabindex="0"></canvas>
+<div id="loading">Loading Tiny Kingdom…</div>
+<script src="Build/WebGL.loader.js"></script>
+<script>
+createUnityInstance(document.getElementById('unity-canvas'), {
+  dataUrl:'Build/WebGL.data.br', frameworkUrl:'Build/WebGL.framework.js.br',
+  codeUrl:'Build/WebGL.wasm.br', streamingAssetsUrl:'StreamingAssets',
+  companyName:'Neltile', productName:'Tiny Kingdom', productVersion:'0.4.10',
+  devicePixelRatio:1
+}, progress => {document.getElementById('loading').textContent='Loading Tiny Kingdom… '+Math.round(progress*100)+'%';})
+.then(instance => {
+  window.unityInstance=instance;
+  document.getElementById('loading').remove();
+  document.getElementById('unity-canvas').focus();
+}).catch(error => {document.getElementById('loading').textContent=String(error);});
+</script>
+</body>
+</html>

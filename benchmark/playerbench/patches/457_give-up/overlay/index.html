@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Give Up</title>
+  <style>
+    html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#003333; }
+    ruffle-player { display:block; width:100%; height:100%; }
+    #loading { position:absolute; inset:0; display:grid; place-items:center;
+      background:#15191d; color:white; font:18px sans-serif; pointer-events:none; }
+    #loading[hidden] { display:none; }
+  </style>
+  <script>
+    window.RufflePlayer={config:{autoplay:"on",unmuteOverlay:"hidden",
+      splashScreen:false,contextMenu:"off",allowScriptAccess:true,
+      openUrlMode:"deny",logLevel:"error",letterbox:"on"}};
+  </script>
+  <script src="ruffle/ruffle.js"></script>
+  <script src="game_api.js"></script>
+</head>
+<body><div id="loading">Loading Give Up…</div></body>
+</html>

@@ -1,0 +1,1079 @@
+{
+  "game_id": "414_last-seen-online",
+  "source_url": "https://qwook.itch.io/last-seen-online",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/index.html",
+      "path": "index.html",
+      "sha256": "a46214953a97ac15ca48e9633b67a2489ff725f4a4b5bdbf341ec1f96ebb3e14",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets.js",
+      "path": "assets.js",
+      "sha256": "e48376868143ffb4d5383b4532b3c58f0073cc7d3f5bba722daf98cdb108012d",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/index-DJvlyFN9.js",
+      "path": "assets/index-DJvlyFN9.js",
+      "sha256": "177ed1e255caad697aa6d66fafdc0af12439796af2147e84a233b510d36e9647",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/index-siKNVgmo.css",
+      "path": "assets/index-siKNVgmo.css",
+      "sha256": "d342eb0865a5cd07dc5cb3403d662ee5fa06b0291cf201d32630db96d9dc1692",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/DejaVuSans11Pixel-BdaTyPO3.otf",
+      "path": "assets/DejaVuSans11Pixel-BdaTyPO3.otf",
+      "sha256": "fad2eb2151e280483513a373ce29d18ba8f66f47d62a3068884b0b5dd51a2139",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/DejaVuSans11Pixel-Bold-ho4T9Zat.otf",
+      "path": "assets/DejaVuSans11Pixel-Bold-ho4T9Zat.otf",
+      "sha256": "1b2077a50abe64fab61cd3afd13e5d44ddfc4b135e57fcf5e861014900a22617",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/PixeloidSans-B2c2el71.otf",
+      "path": "assets/PixeloidSans-B2c2el71.otf",
+      "sha256": "1937f6067847d0fcdcdc16debe677e980eadf25645314c57f70912a9689cb927",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/PixeloidSans-Bold-Cd9dBd8N.otf",
+      "path": "assets/PixeloidSans-Bold-Cd9dBd8N.otf",
+      "sha256": "dd3da668d7a169151c3dace6d1d8e9ea299b6c8d63d4c5f434ca088c0fe4948d",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/aum_single-FKlGoNz4.mp3",
+      "path": "assets/aum_single-FKlGoNz4.mp3",
+      "sha256": "e6efe35f6493af5b7f31eb4734585a3418534b9f8487aef7aa02e74c2a18beff",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/back_up_arrow-Crgi4yL5.png",
+      "path": "assets/back_up_arrow-Crgi4yL5.png",
+      "sha256": "956c36f1eddde3721281db791d6eb41e2872afecb1fd02e01d462665ad1bdc01",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bird-Y8ytP64_.gif",
+      "path": "assets/bird-Y8ytP64_.gif",
+      "sha256": "3d301ab9db14f3bc907089e1268be3b029c24c74d5268f4143ae3d0f81c6a825",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/birthday_wallpaper-AYfw-oCo.gif",
+      "path": "assets/birthday_wallpaper-AYfw-oCo.gif",
+      "sha256": "79b12803c7a278a8d98a4e47c8e12a2a5c3c0fb02d723a446c4325710283f342",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bookglow-Yxv7LaHt.png",
+      "path": "assets/bookglow-Yxv7LaHt.png",
+      "sha256": "a9d5212ac36f902bf191b0716dbf670d848ccd6e4eba1d2a12bb5bedf97b1972",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bts1-B5gwGM9i.gif",
+      "path": "assets/bts1-B5gwGM9i.gif",
+      "sha256": "1bc5ab022dc23eccfa20ccc8551abfb09fd59a668933b61ec05e81584d01fc9f",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bts2-DcHUsWQ_.gif",
+      "path": "assets/bts2-DcHUsWQ_.gif",
+      "sha256": "92b956eb8599fb26019b0d015691126a3acffe1ba4a2f6df8ebe664955b32bff",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bts3-CorP0t70.gif",
+      "path": "assets/bts3-CorP0t70.gif",
+      "sha256": "6b190ce3425f92fba4cb103e7156770e8462256f804eff53a6b23c6e7a3870aa",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bts4-BRFD8c_n.gif",
+      "path": "assets/bts4-BRFD8c_n.gif",
+      "sha256": "5bb6c1ef9cf32dca9c888b244da54f1ffb2de703fdc1eb52622e26ab235df223",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bts5-SOVBFoSm.gif",
+      "path": "assets/bts5-SOVBFoSm.gif",
+      "sha256": "8fa746594fa26564698539871e49f6f639d00ebc9d9e7458bb49c28c7ff95156",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bts6-4fbitDL7.gif",
+      "path": "assets/bts6-4fbitDL7.gif",
+      "sha256": "d93db580ce830d1aa6f49cfb3377ee36832be995cd6bd024d36ee97fc25577b8",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bts_bg-z2e8Bqa7.gif",
+      "path": "assets/bts_bg-z2e8Bqa7.gif",
+      "sha256": "76c099bde8deb9c29274b9435b434f4bfd9eca223b590c791c1faaf0a7f4b4a8",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bts_fountain-Cit7pUjx.gif",
+      "path": "assets/bts_fountain-Cit7pUjx.gif",
+      "sha256": "360b462c4cf6a13e3be0e524c46d5a9b34406bdc619da66280d003b61ab0a000",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bts_isabel-B1ZIypJE.gif",
+      "path": "assets/bts_isabel-B1ZIypJE.gif",
+      "sha256": "fa21d26f2e33251ae4da91f40e8d9371f69eb2186af21db710725a609afe610e",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/bts_jenna-D09hgaHe.gif",
+      "path": "assets/bts_jenna-D09hgaHe.gif",
+      "sha256": "9c8998e47d4178aa003755bbd56b621a3c2fdfb932bdbfe08eb1a49b29efc7e9",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/buddylist-BydAGnlp.gif",
+      "path": "assets/buddylist-BydAGnlp.gif",
+      "sha256": "c904cb81defca7b3f5ecaed16c5cb33ede727583776e343c3ce0c5e83975fb07",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/candle-C2LepXZ8.png",
+      "path": "assets/candle-C2LepXZ8.png",
+      "sha256": "895e88ebbd7ccc4b4b8f55fa4f223ac8938dbea6f44fa4c8c82725c7894c539b",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/candle-CzGW0Cfa.mp3",
+      "path": "assets/candle-CzGW0Cfa.mp3",
+      "sha256": "15a1d38534852c6ff267f9bea3f0beee453627f6a65a774899628bb2ec61c2d2",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/candle_unlit-JR5RlAEo.png",
+      "path": "assets/candle_unlit-JR5RlAEo.png",
+      "sha256": "dcf36d3c4d7f285a58ccd4ed8c3490450602e0cda62fee4577be992f41272376",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/cn_simplified-B-2ik6xx.jsonc",
+      "path": "assets/cn_simplified-B-2ik6xx.jsonc",
+      "sha256": "f0d5efa8d570b3f9e92df903ce25fb1055ff6892153ff57890ceec5a01b160d9",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/comic_sans_ms_pixel_rus_eng-d8jtKIP_.otf",
+      "path": "assets/comic_sans_ms_pixel_rus_eng-d8jtKIP_.otf",
+      "sha256": "f872efc1e54f218c34cfdc071e598ebcec0f383cccc03d5435537572cd99cc8f",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/congratulations-B3jfSYpN.gif",
+      "path": "assets/congratulations-B3jfSYpN.gif",
+      "sha256": "07b359fa602129ea44c32dad5fbe2441a1898e71cc44f41d5134ec65579f7e18",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/cow-CYsla1iL.gif",
+      "path": "assets/cow-CYsla1iL.gif",
+      "sha256": "05a0a95c2fc3d4b1a88486d9582fcc633a689ca8c2a7af7b04f68f7425277824",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/credits-CuTyXrV_.mp3",
+      "path": "assets/credits-CuTyXrV_.mp3",
+      "sha256": "980630ee9da458fa1f4ce4b13bc2b6cf4e67722d9b0d36081afe81b4ecabea2a",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/creepyvid2-CCfA7jPv.mp4",
+      "path": "assets/creepyvid2-CCfA7jPv.mp4",
+      "sha256": "3286b156f035c81a3ddddac0219f8a577946d0756c94291e23dc739a3cee1a63",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/cz-C2ECN52E.jsonc",
+      "path": "assets/cz-C2ECN52E.jsonc",
+      "sha256": "7e7cfeb585c46a35d211a57d3b2c72d674db6da504b11785f943047aa840b34b",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/de-Y1bu74mL.jsonc",
+      "path": "assets/de-Y1bu74mL.jsonc",
+      "sha256": "a9f6093328860c67b7c9b30534fb282a698286d4974d1d56fed60aeb7db0534a",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/desk-DVYRdyLJ.gif",
+      "path": "assets/desk-DVYRdyLJ.gif",
+      "sha256": "f4931ad023f46f27281d1c197165aac13164fd798259384a3b0828a66d26e5d5",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/dialup-BBv0nrx4.mp3",
+      "path": "assets/dialup-BBv0nrx4.mp3",
+      "sha256": "d805cec3c59760da2325cbf294378d43ededaf7c3140c19fea277fe0f270801d",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/disco-BRPAbkX9.png",
+      "path": "assets/disco-BRPAbkX9.png",
+      "sha256": "c6a373439ff58cc4fb78e87a2bb27f92f40d7707a044f92beb11e9677c5486bd",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/disco-a2s21PCY.mp3",
+      "path": "assets/disco-a2s21PCY.mp3",
+      "sha256": "a322e8acf5c44301992d9770e0687e17908974d07bb3ea24b2d6dca7ccc86ca8",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/door_open-BkBSTotW.mp3",
+      "path": "assets/door_open-BkBSTotW.mp3",
+      "sha256": "a1842b83040880659493faea91c542c4bd4c90ca83f23b805cc6b3931e32df08",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/eagle-q5UiDdEM.gif",
+      "path": "assets/eagle-q5UiDdEM.gif",
+      "sha256": "6df8915b4f555cc7bd1710547c0dc53bdd6b9219a77b4b29ad55fce5434af996",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/en-DqJ3Tvja.jsonc",
+      "path": "assets/en-DqJ3Tvja.jsonc",
+      "sha256": "54a2ab10f8863f39e44dbe7b9729d0fcdb759fcdfb30387f4d752ccdc85f36a0",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/ending2-CSNhijD_.mp3",
+      "path": "assets/ending2-CSNhijD_.mp3",
+      "sha256": "e0a5b3cbd14b87648502ce49d67d1bd06de4d07d6f2206cea2ee92b0b0d38a21",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/eo-BFvQfxaT.jsonc",
+      "path": "assets/eo-BFvQfxaT.jsonc",
+      "sha256": "379d76a35525b17b18a67b89d833eba56c7098d2e2ff8c7b724fd6618fe69043",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/es-Bn4I2GdY.jsonc",
+      "path": "assets/es-Bn4I2GdY.jsonc",
+      "sha256": "07cbda445e8cf617c417491a7493a1dca6df35ba1c7d7ec8b50da00c96b88936",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/fake_camera-CIrbMopi.png",
+      "path": "assets/fake_camera-CIrbMopi.png",
+      "sha256": "f383ef305b59a8a60f762a547cce2fdb4e019505cdd1aea7fab6ccb835ba489c",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/fountain-BUObOD2U.gif",
+      "path": "assets/fountain-BUObOD2U.gif",
+      "sha256": "5465dc262dde603bc65eb0bce1be0f773c95aa910d3869b09fde5bf84c0069bc",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/fountain-DTJCnTFH.mp3",
+      "path": "assets/fountain-DTJCnTFH.mp3",
+      "sha256": "42335043cfce434ac53c826d31fd68ae7761b7162d9cee82b6d530c19c3ccdfa",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/fountain_loop-C0ulV6yY.mp3",
+      "path": "assets/fountain_loop-C0ulV6yY.mp3",
+      "sha256": "199fab4d9b9f49000536815306e66f2db0b2ad409d5f9df52d91fdcdbb49839c",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/fr-Djvm1r9v.jsonc",
+      "path": "assets/fr-Djvm1r9v.jsonc",
+      "sha256": "4334a8612b5149770a09c1d53b8957b26daf4391f360181e521fd2c527b71769",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/frame1-FaGGzr8X.png",
+      "path": "assets/frame1-FaGGzr8X.png",
+      "sha256": "7d23abea147e5271837cd461159c916adaa4919ecc943fe5b67d3d9cc4a91553",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/frame2-B-kjEC3G.png",
+      "path": "assets/frame2-B-kjEC3G.png",
+      "sha256": "0c57ac28970430437ac6f8966c8bddf372e0eda45293043672afc6656bb636c5",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/frame3--yk4u9BQ.png",
+      "path": "assets/frame3--yk4u9BQ.png",
+      "sha256": "b11fd562ae422077f2b48f6be9514c0f4b910fb6a0598d638d3e5b26a36c48d2",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/fullscreen-B76EPBKV.png",
+      "path": "assets/fullscreen-B76EPBKV.png",
+      "sha256": "26bf5675d3fad8c8a93c93144031f65db0637c82c857d2c9c2cb41a8b6843fb6",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/fusion-pixel-12px-proportional-ja-Bz2lGsxG.otf",
+      "path": "assets/fusion-pixel-12px-proportional-ja-Bz2lGsxG.otf",
+      "sha256": "63b18bc692599faca1ac0ac910c813ce9066386d7d15ee1133f2d854ba051ced",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/fusion-pixel-12px-proportional-ko-kI8PN1II.otf",
+      "path": "assets/fusion-pixel-12px-proportional-ko-kI8PN1II.otf",
+      "sha256": "dd66ec71723472deeb600448d7253a3c4abbf55a467787262b0171e01dd67cc3",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/fusion-pixel-12px-proportional-latin-3jTQS8xT.otf",
+      "path": "assets/fusion-pixel-12px-proportional-latin-3jTQS8xT.otf",
+      "sha256": "131ae7cee5d687d0ff3fcf515bce38a0ce445cd05f94bd44e01bfa96aee8323d",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/fusion-pixel-12px-proportional-zh_hans-B_i4nG9f.otf",
+      "path": "assets/fusion-pixel-12px-proportional-zh_hans-B_i4nG9f.otf",
+      "sha256": "412f6560cf5615bf9aa9bcf155bf5131b13dd83211980428f0f93429b196be64",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/fusion-pixel-12px-proportional-zh_hant-Cw1maJVh.otf",
+      "path": "assets/fusion-pixel-12px-proportional-zh_hant-Cw1maJVh.otf",
+      "sha256": "254ddaabd8b839b150830df24b66801c5594219bb125d1aae01c64333911128c",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/game_2_hands-B4LFLgLf.mp3",
+      "path": "assets/game_2_hands-B4LFLgLf.mp3",
+      "sha256": "cb333165d415b1db39fc5ca36ef514c91efd11dcca86457e544909336a64bf2b",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/gear-B-kKLjE6.png",
+      "path": "assets/gear-B-kKLjE6.png",
+      "sha256": "8502a18a09e93d0542e033b6e9dff6a18e7ac8a1444c90f86af3fefec825d096",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/glow-WAC0AEFV.png",
+      "path": "assets/glow-WAC0AEFV.png",
+      "sha256": "594ff2abc85b3f99ce5cc071ae617910a56bd8303cfffac5b21e5c1b1321be1a",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/glow_cow-Bl1cPVez.png",
+      "path": "assets/glow_cow-Bl1cPVez.png",
+      "sha256": "9c74bdfed62a935f5aaebc58bb13749d39f67a0c406bbb2a95a4379c28248a06",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/glow_goat-DCOVgk5Y.png",
+      "path": "assets/glow_goat-DCOVgk5Y.png",
+      "sha256": "c07fb2c03a6dbab8e5deb8903d9a1bacbe6666165deab67714d33b0a8859240f",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/glow_lion-DvusEDEs.png",
+      "path": "assets/glow_lion-DvusEDEs.png",
+      "sha256": "940e1e689acc2e74bd837ab92b0341a34d069357087f5846b41c3a0650dded40",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/goat-DXxHfxvm.gif",
+      "path": "assets/goat-DXxHfxvm.gif",
+      "sha256": "e08de9d1dc0cee73b8354dd2e54fef608e7e7e524ecc352f95b4375cb2a937c8",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/gr-CWYfXSFO.jsonc",
+      "path": "assets/gr-CWYfXSFO.jsonc",
+      "sha256": "5684fedb0dccad191492551c3885ac926f326b93b3a7c72ec529a063b9ae35ba",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/grass-IIh9Gni9.png",
+      "path": "assets/grass-IIh9Gni9.png",
+      "sha256": "5cabb5c5d7cca2ae4c955649b710ae92ef8972cfdda11a9d5cde985f13e3080d",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/hell-NfzTGhw_.png",
+      "path": "assets/hell-NfzTGhw_.png",
+      "sha256": "ae321445ec356d14fe124a3eeefc7417a545d1fd0254a697439febfc0a39a15c",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/hints-CecGXZVn.png",
+      "path": "assets/hints-CecGXZVn.png",
+      "sha256": "5d8fcd17b15db6c6b9deaf54efa76ac944f541a697230d81be4bae4f25ca57b5",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/house1_wind-GpK4O9aj.mp3",
+      "path": "assets/house1_wind-GpK4O9aj.mp3",
+      "sha256": "2077e5562e241a5148515974a2706832aa3de370cc039538fe9c6c507faa649d",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/house_statue-CffI-YDI.mp3",
+      "path": "assets/house_statue-CffI-YDI.mp3",
+      "sha256": "a628bacaf54e69f2b001e6abae1bcdd39c0931a7daede7255ba7d24cbc68e7b9",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/icon-CAkdt6N2.png",
+      "path": "assets/icon-CAkdt6N2.png",
+      "sha256": "13450d1fb3576d1be875a0e1ae5e12038c0f02f6c40803480310e212d7ce0b47",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/id-aiSta4Yx.jsonc",
+      "path": "assets/id-aiSta4Yx.jsonc",
+      "sha256": "97a3cfbed2c51faaa05a27d670955692d0ccb4f8f9bd85d79d4591c686c2e2de",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/im_receive_echo-yw7FBwX4.mp3",
+      "path": "assets/im_receive_echo-yw7FBwX4.mp3",
+      "sha256": "d21f433b3197aeeb8c331b4c11970d163183dcce458063eab4901990113fd536",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/it-Dh3HpiHn.jsonc",
+      "path": "assets/it-Dh3HpiHn.jsonc",
+      "sha256": "9d6d6e87ab07a0d3899950b73f1d607ea6cba2a19f42aee349f06d041dd2cfa7",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/jp-mDHUlK2v.jsonc",
+      "path": "assets/jp-mDHUlK2v.jsonc",
+      "sha256": "7da7ff54b8a9e536f388662531ff9babe0ac5c791dc7c9daa8581686845ce967",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/knock-DyKBhomA.mp3",
+      "path": "assets/knock-DyKBhomA.mp3",
+      "sha256": "fbb399bf395882c11017572dffeedf5b9ccf7ce04c5035df2b13eb628c265645",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/knock_echo-DvwMzMZZ.mp3",
+      "path": "assets/knock_echo-DvwMzMZZ.mp3",
+      "sha256": "3be61a1a9f9cfeffc4c649612dba47a3ab7bf2dca870ecf3864781368457cb7a",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/kr-BhAUSW9Q.jsonc",
+      "path": "assets/kr-BhAUSW9Q.jsonc",
+      "sha256": "4193507e4955984c5b07547757b8483de123e7e72799659bf299efcea2629537",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/lawson-BhGe-3ZP.gif",
+      "path": "assets/lawson-BhGe-3ZP.gif",
+      "sha256": "257932aa30bbda15fd313f810cf06ad566b130cb956e544c860d7b5040fe2886",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/lion-_TdS5Dgz.gif",
+      "path": "assets/lion-_TdS5Dgz.gif",
+      "sha256": "3893e8f18899ec5b1a04dea5e0014faf908c234dbecedcf61ee060f3e637435b",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/liz-G1rCJR3c.gif",
+      "path": "assets/liz-G1rCJR3c.gif",
+      "sha256": "ff3cf05a095e336ecb0c35cebe7b5d15d8aab1f4795a46680b6870984a174465",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/liz_em_desktop-BE8HmdH6.gif",
+      "path": "assets/liz_em_desktop-BE8HmdH6.gif",
+      "sha256": "ffb455dbc620d35a2d4a2a4a58e854b0281477ab9bb14c3b3b0d5fd6e8883bd5",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/liz_em_desktop_cropped-Dj5kLZaw.gif",
+      "path": "assets/liz_em_desktop_cropped-Dj5kLZaw.gif",
+      "sha256": "bd975a6e57127e9209edf504c7509d9bb321336ef9451579c76b5f37fc2ecc89",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/liz_glow-iKy1Doea.png",
+      "path": "assets/liz_glow-iKy1Doea.png",
+      "sha256": "65992ee6a49a07f4d4f53f170e5240fa3462d620fbb8d41404f6c86eec84ddd5",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/liz_j-BdxdvZEa.png",
+      "path": "assets/liz_j-BdxdvZEa.png",
+      "sha256": "ff706ad3c1b33fd48339fa96e8466462666fa12422960655b2d4305c0242acb9",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/login-Bwrlr7Yg.mp3",
+      "path": "assets/login-Bwrlr7Yg.mp3",
+      "sha256": "47099f12f658860a0ecd4e0df3b609678e9435cfd4364ee1f9d29f0ac2108338",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/ms-DxsOM3bU.jsonc",
+      "path": "assets/ms-DxsOM3bU.jsonc",
+      "sha256": "4e07d6013b8b4e181a2d52b5e421087f8bcfaf999c51927e31b5f134c994ce6d",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/noise_black_transparent-D_LQJSKp.png",
+      "path": "assets/noise_black_transparent-D_LQJSKp.png",
+      "sha256": "599efbf83f0119ec2b5485dfbe1dc53842c5249f1bac4c72fa72b38e7bce63d0",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/password_help-DpKbPe8v.png",
+      "path": "assets/password_help-DpKbPe8v.png",
+      "sha256": "ff6225ba6765cc1f08894c44e7fbfca98006296fe546018e18eecaf5016f03fc",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/pc_horror-6ZgEWia5.png",
+      "path": "assets/pc_horror-6ZgEWia5.png",
+      "sha256": "c050bbf32da363cb80eb10c2ddaa81c13f9e76889de1f859a26d4d68cebc06f9",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/phone-DtR99dSK.mp3",
+      "path": "assets/phone-DtR99dSK.mp3",
+      "sha256": "dc91ebd946671574cac3029fc6edbff972a6775bd039c377178cd8b96817e6ce",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/phonecall-CeVtqn0k.mp3",
+      "path": "assets/phonecall-CeVtqn0k.mp3",
+      "sha256": "8cc37a460483701db6b3299d9d6bddeeac39332706020aa623cea22454b6f801",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/pixel_arial_11_bold-BIzMxsfk.ttf",
+      "path": "assets/pixel_arial_11_bold-BIzMxsfk.ttf",
+      "sha256": "10de4ff0421c3d497c24e514d8f8f2ab72e7aba7f5c5f1a6ab8952409f570425",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/pixel_arial_11_regular-IxSvvpDY.ttf",
+      "path": "assets/pixel_arial_11_regular-IxSvvpDY.ttf",
+      "sha256": "d4f4e33f029804641e72e06c98d81aa6919ba16cd2287754d1f8eab2b7337939",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/pl-CWlVUl20.jsonc",
+      "path": "assets/pl-CWlVUl20.jsonc",
+      "sha256": "93d4db27c1d40505cb9084824f1c66237c1f4afbe067f073947b9dd0c3859838",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/plaster-LaKWVcvT.png",
+      "path": "assets/plaster-LaKWVcvT.png",
+      "sha256": "861fdb4ff0380d6830afe8273fd9b23a6790819a898331007b06b8e281e870ac",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/portrait1-C09lcJ1v.gif",
+      "path": "assets/portrait1-C09lcJ1v.gif",
+      "sha256": "d8525fa931bf3c6df2153efc1c5102ae95653b6803c42d3a0e5a53c5e1ecea77",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/portrait2-C10xVE9K.gif",
+      "path": "assets/portrait2-C10xVE9K.gif",
+      "sha256": "eee5dcd66a94ce3155f029e8a25d84f48c729a1838dfd06a79b359d81ec4f055",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/portrait3-DGWW0_CV.gif",
+      "path": "assets/portrait3-DGWW0_CV.gif",
+      "sha256": "d015308cd7296aafb7b42397001bb879d0a94df82c95d01d110a9ed9a176fc1e",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/portrait4-Cq6AfdmJ.gif",
+      "path": "assets/portrait4-Cq6AfdmJ.gif",
+      "sha256": "8f4f48866bba8a226a48d298a87ba9eea6fed66154cb18333964b4ffda9a68d9",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/pt-BknQSOB-.jsonc",
+      "path": "assets/pt-BknQSOB-.jsonc",
+      "sha256": "fb387a97569f51d41c1f97bf5ff38e90db9455ee21623bc488cabff8598c6423",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/rain-BYsZ6IiL.gif",
+      "path": "assets/rain-BYsZ6IiL.gif",
+      "sha256": "61273527a94d00cbe420ed91710fd349b181d8f1ec536c544d55765b561ec006",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/retribution-FCL03VLt.mp3",
+      "path": "assets/retribution-FCL03VLt.mp3",
+      "sha256": "253be116a96dd206c46239b3e88aefa94b20baf3ea363a1975896608027a7253",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/ritual1-BvkaULzO.gif",
+      "path": "assets/ritual1-BvkaULzO.gif",
+      "sha256": "ed7cec36e5a1307dabbd58846a9e9c3db2b239f17267f308157161aa6d4f352b",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/ritual2-tqv3EIlZ.gif",
+      "path": "assets/ritual2-tqv3EIlZ.gif",
+      "sha256": "25e025eb5e81e7af24a12ad254bd04caa9d9d81fcd9d7638599ea4ce308c5280",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/ritual3-BI0JvHvG.gif",
+      "path": "assets/ritual3-BI0JvHvG.gif",
+      "sha256": "7e3e60758025890e226fe051d35a90763b7363100e184c7d0529227890646bee",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/ritual4-CXpYUEgk.gif",
+      "path": "assets/ritual4-CXpYUEgk.gif",
+      "sha256": "9b118a0b06095b9be6691810c74db2cf6309c6b3bf3df6882ce734ff1ca0baa0",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/ru-DAj9bi_o.jsonc",
+      "path": "assets/ru-DAj9bi_o.jsonc",
+      "sha256": "7f0ae64f1818abe44cf1d8e99d7dc16ed6c216bf03785eea5ef91f3538c148c2",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/rumble-C6cDqkKy.mp3",
+      "path": "assets/rumble-C6cDqkKy.mp3",
+      "sha256": "8a66bdce52ad817024a69ddbf06efa593d37b75cb0e02f95041f9437036f665b",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/run-COyWqAjE.gif",
+      "path": "assets/run-COyWqAjE.gif",
+      "sha256": "fe97567accdd49ca4521a74f4e647f9dfaac05576cece60b64fbecc30be030e5",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/scan1-C5xoPr_B.gif",
+      "path": "assets/scan1-C5xoPr_B.gif",
+      "sha256": "246afb61d2671239ca8744db730f3fa7065f185985eba2d95ad3b6ffeab3dcd5",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/send-BrYnAb3i.mp3",
+      "path": "assets/send-BrYnAb3i.mp3",
+      "sha256": "8b36f0fdb3810dd017847259d05a339ae9b97049d51305471d060d8822b440b0",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/shape1-XZtD7lxG.png",
+      "path": "assets/shape1-XZtD7lxG.png",
+      "sha256": "856774c1e9c217672870e65049d967aadbbb44e6f3d58262dd2c51c06e89f94e",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/skybox-2mCwQAov.png",
+      "path": "assets/skybox-2mCwQAov.png",
+      "sha256": "89162763a46646cc523d9f787daf6b80b0275a6a2a84f8625f296810236a78d1",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/song_1_2-c2HhAUed.mp3",
+      "path": "assets/song_1_2-c2HhAUed.mp3",
+      "sha256": "0de55128a1ac765b04623db33ecb7807aa703bac33f4a4ef004b7b7323734bfb",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/song_3_2-Cn-8mRCQ.mp3",
+      "path": "assets/song_3_2-Cn-8mRCQ.mp3",
+      "sha256": "3c6ecf1598be9114fc209754659c29dc7cac2aa9234ecd5e5502002b7b64352e",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/song_4-DmkpDx5D.mp3",
+      "path": "assets/song_4-DmkpDx5D.mp3",
+      "sha256": "f3255ab8fac02a560e9f9d204d9d1433330fa3832c751ded620edd8a5d8714bd",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/song_5_2-BntFa_Li.mp3",
+      "path": "assets/song_5_2-BntFa_Li.mp3",
+      "sha256": "b89064bf69786f5e8cccac2815a6871bd360141636f772a23ab8d23debd888b5",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/song_6_2-DR6XniRx.mp3",
+      "path": "assets/song_6_2-DR6XniRx.mp3",
+      "sha256": "dc39185aedef3e910f240bfdbbad2de2d2b948e3ad642ca4838308d44062e1c1",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/song_7-BNWqNCgy.mp3",
+      "path": "assets/song_7-BNWqNCgy.mp3",
+      "sha256": "ec0d69c5788a15d1adfbb3ba62acbeb4ce8fab47e27b647e19835a6c5a2bfbc7",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/song_8-DF9fnjEi.mp3",
+      "path": "assets/song_8-DF9fnjEi.mp3",
+      "sha256": "b7a366537965307ac7438da6323dcc5dc206e1c6ba2b5ee768473ec0d9f7455f",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/stonebutton-Ctt6vDP1.mp3",
+      "path": "assets/stonebutton-Ctt6vDP1.mp3",
+      "sha256": "5429ac222bf1e3eebed6ae76e7dd35e711d34e519e851a5a4dbbf73fc5a2f69e",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/tr-CiK5FzsA.jsonc",
+      "path": "assets/tr-CiK5FzsA.jsonc",
+      "sha256": "acc7e6e3c86edf9d47cf813fe2251287eb5ba0051d341ad067d0b9123eaa3257",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/train-bxj726aq.gif",
+      "path": "assets/train-bxj726aq.gif",
+      "sha256": "c4a3caea94e5074dd245e42efb9c46fe29bd6ae15128ad55ed24b34016579c5d",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/tribute_2-8K9RmLWz.mp3",
+      "path": "assets/tribute_2-8K9RmLWz.mp3",
+      "sha256": "0890325fb8f9c61418241c36e16301500259287a357c7dbcfcb309858c4ce02c",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/tutorial-AwvY32p3.mp3",
+      "path": "assets/tutorial-AwvY32p3.mp3",
+      "sha256": "4c76a62989bdfe0aa7447aa064d08db903be3487289822b871f532baddc73a44",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/twinkle1--lnrBsgJ.mp3",
+      "path": "assets/twinkle1--lnrBsgJ.mp3",
+      "sha256": "040b80269eccbbde4e0f38c60743f517fc6a0ab967b22190343b96ba27ca4023",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/twinkle2-BkOG5JIM.mp3",
+      "path": "assets/twinkle2-BkOG5JIM.mp3",
+      "sha256": "c2aed59d20f6844f88562336725b3f4a8073e3ac738c971d369f306a3b0f28d9",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/ua-uk-Cmct0aLC.jsonc",
+      "path": "assets/ua-uk-Cmct0aLC.jsonc",
+      "sha256": "ed24721991a3ecc5242d90839eff6938a300cbd151281c91a9bd099f267a6a1f",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/vignette-Bc4WNplj.png",
+      "path": "assets/vignette-Bc4WNplj.png",
+      "sha256": "11a4f573fe79989bcc42028eff57f0a95575125a09b4727578cead8a9825eaa0",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/vn-C3Pa9OaT.jsonc",
+      "path": "assets/vn-C3Pa9OaT.jsonc",
+      "sha256": "f51bba56ce0b71db946ff022df8439aed8f41bc9ec7102d4a75abb17d58edaba",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/19480086-2047391/assets/wood-DcxyYXyy.gif",
+      "path": "assets/wood-DcxyYXyy.gif",
+      "sha256": "f17db5d3f1255fc1b87e471c225bfb96bf909429b5cc1cbb59644677e4cdc8e8",
+      "headers": {
+        "Referer": "https://qwook.itch.io/last-seen-online"
+      }
+    }
+  ]
+}

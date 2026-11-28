@@ -1,0 +1,8 @@
+{
+  "/Build/WebGL.wasm": {
+    "Content-Type": "application/wasm"
+  },
+  "/Build/WebGL.data": {
+    "Content-Type": "application/octet-stream"
+  }
+}

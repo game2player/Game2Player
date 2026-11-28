@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rhythm Quest (Demo)</title>
+  <style>
+    html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#140925; }
+    #unity-canvas { display:block; width:100%; height:100%; outline:none; }
+    #loading { position:fixed; inset:0; display:grid; place-content:center; color:#fff;
+      background:#140925; font:22px sans-serif; text-align:center; pointer-events:none; }
+    #loading progress { width:260px; margin:15px auto; }
+  </style>
+  <script src="audio_compat.js"></script>
+  <script src="game_api.js"></script>
+</head>
+<body>
+  <canvas id="unity-canvas" tabindex="0"></canvas>
+  <div id="loading">Rhythm Quest<progress max="1" value="0"></progress></div>
+  <script src="Build/Rhythm Quest Demo.loader.js"></script>
+  <script>
+    createUnityInstance(document.getElementById('unity-canvas'), {
+      dataUrl:'Build/Rhythm Quest Demo.data',
+      frameworkUrl:'Build/Rhythm Quest Demo.framework.js',
+      codeUrl:'Build/Rhythm Quest Demo.wasm',
+      streamingAssetsUrl:'StreamingAssets',
+      companyName:'DDRKirby(ISQ)',productName:'Rhythm Quest',productVersion:'0.43.0',
+      showBanner:message => console.warn(message)
+    }, progress => document.querySelector('progress').value=progress).then(instance => {
+      window.rhythmQuestInstance=instance;
+      window.rhythmQuestLoaded=true;
+      document.getElementById('loading').remove();
+      if (window.gameAPI) window.gameAPI.init();
+    }).catch(error => {
+      window.rhythmQuestLoadError=String(error);
+      document.getElementById('loading').textContent=String(error);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "/": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  },
+  "/game_api.js": {
+    "Content-Type": "text/javascript; charset=utf-8",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  },
+  "/index.apple-touch-icon.png": {
+    "Content-Type": "image/png",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  },
+  "/index.audio.worklet.js": {
+    "Content-Type": "text/javascript; charset=utf-8",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  },
+  "/index.html": {
+    "Content-Type": "text/html; charset=utf-8",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  },
+  "/index.icon.png": {
+    "Content-Type": "image/png",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  },
+  "/index.js": {
+    "Content-Type": "text/javascript; charset=utf-8",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  },
+  "/index.pck": {
+    "Content-Type": "application/octet-stream",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  },
+  "/index.side.wasm": {
+    "Content-Type": "application/wasm",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  },
+  "/index.wasm": {
+    "Content-Type": "application/wasm",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  },
+  "/index.worker.js": {
+    "Content-Type": "text/javascript; charset=utf-8",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  },
+  "/libgdsqlite.web.template_release.wasm32.wasm": {
+    "Content-Type": "application/wasm",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+    "Cross-Origin-Resource-Policy": "same-origin"
+  }
+}

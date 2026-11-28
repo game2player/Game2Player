@@ -1,0 +1,2192 @@
+{
+  "game_id": "431_humanconstructionsite",
+  "source_url": "https://faesu.itch.io/humanconstructionsite",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgm/Ending.ogg",
+      "path": "audio/bgm/Ending.ogg",
+      "sha256": "614ed1f40866b119b3a43cd4afd861ae83c7ad442e7203e68efc83fa954536b0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgm/Giant%20Wyrm.ogg",
+      "path": "audio/bgm/Giant Wyrm.ogg",
+      "sha256": "9d5eccd27eae2140ccd50aa16ef1934066598a799954b710157a4f7ca202542f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgm/Hell.ogg",
+      "path": "audio/bgm/Hell.ogg",
+      "sha256": "7da3a57d08ec8e84a58f89d0726cccc80032a7abf183ebc9717892c617b1ac3a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgm/Nervous.ogg",
+      "path": "audio/bgm/Nervous.ogg",
+      "sha256": "474824f3346f11ea868dfc3cff1382d3f473d90f2240b54f68a1e0e8a3835879"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgm/Pit.ogg",
+      "path": "audio/bgm/Pit.ogg",
+      "sha256": "392ccc65f7ddc51d84ddf9e4634ddc19085d919270624de51cc07ecf966c083d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgm/Relaxed.ogg",
+      "path": "audio/bgm/Relaxed.ogg",
+      "sha256": "948c6dc7511d8f58ed64b58c70c9ebfc0fa4ea8709a2a9af03645dc6f9fdfef3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgm/SCP-x2x.ogg",
+      "path": "audio/bgm/SCP-x2x.ogg",
+      "sha256": "a00fd3d4f92e0c400b5e93059fb1d28e68b4178102e971f94d690ba614914c21"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgm/SCP-x4x.ogg",
+      "path": "audio/bgm/SCP-x4x.ogg",
+      "sha256": "be82d3be1b620aa7a49e07825b39f3bb88139eec69daa90332afa19b7bc8dc24"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgm/Shadowlands-5-Antechamber.ogg",
+      "path": "audio/bgm/Shadowlands-5-Antechamber.ogg",
+      "sha256": "b12eab31068f8c7b9bc7c85170ec8bc688f052aa7257b7b148dded8820c466fb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgm/Steps.ogg",
+      "path": "audio/bgm/Steps.ogg",
+      "sha256": "ef1bd68f191e4a7118c5f029f6bba0ebc0680d7483d20a899ac0c4019c7fb7d0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgm/Underground.ogg",
+      "path": "audio/bgm/Underground.ogg",
+      "sha256": "19810b7fa4d5f8ef30932cdd046b887b0c0ead46df3d8e5436b4e2e56bee0d8e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgs/Darkness.ogg",
+      "path": "audio/bgs/Darkness.ogg",
+      "sha256": "8b3b2186ef0f67139310ee83f81edf2924becf2f94a77761d12dd89444a82b6c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgs/Drips.ogg",
+      "path": "audio/bgs/Drips.ogg",
+      "sha256": "6ac4fd8d4b37688c08b7a24ca511fc78c155ae78c1fc43a285985a2fc2595bca"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgs/Hi.ogg",
+      "path": "audio/bgs/Hi.ogg",
+      "sha256": "d7dcfa054b818f32e045427fa3d7cb69a5848ba357a68607b7e4c0fe5859a591"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgs/Storm1.ogg",
+      "path": "audio/bgs/Storm1.ogg",
+      "sha256": "da7f78609ecc38cb456bdb5e51492676f80fa3bb6e609386d8df6c6d6e75e1cd"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgs/Wind.ogg",
+      "path": "audio/bgs/Wind.ogg",
+      "sha256": "d46351405df379e2d720171ae2b6cfe0be891f8c97c16a5a5a60cf819ecad471"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/bgs/%E7%81%BD%E5%AE%B3%E3%83%BB%E7%81%AB%E7%81%BD.ogg",
+      "path": "audio/bgs/\u707d\u5bb3\u30fb\u706b\u707d.ogg",
+      "sha256": "0d885b0ffb02a2b51ae582607bc2ff80af48336f8058b779f2eaa604505a7404"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/me/Gameover1.ogg",
+      "path": "audio/me/Gameover1.ogg",
+      "sha256": "44a3d7e7fd293c812b60e37f52d748530eb920e3c56c5b4be675ddc88b4c65a4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/me/Victory1.ogg",
+      "path": "audio/me/Victory1.ogg",
+      "sha256": "68e55f460a162e458f5e114604920f00f010d601cc5a1cb1770d7a5857b33b70"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Attack2.ogg",
+      "path": "audio/se/Attack2.ogg",
+      "sha256": "6070f79c8b5b440c16cd5eeaedda25a247b0720cc923a2e967d4393d245404fa"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Attack3.ogg",
+      "path": "audio/se/Attack3.ogg",
+      "sha256": "541dcd4a03cfcdc02e6b21806a4ef5b816e5e710c8acef21bf2ad0ccda1d898b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Battle1.ogg",
+      "path": "audio/se/Battle1.ogg",
+      "sha256": "44d2c977cc172c351e21a595a5010759c0516539360a55df7345b80a6600d99b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/BloodSplatter.ogg",
+      "path": "audio/se/BloodSplatter.ogg",
+      "sha256": "89b86d7d485111c820aa545a4c72ac95639b2bdeebe9c7e03a0159e879415b5c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Blow1.ogg",
+      "path": "audio/se/Blow1.ogg",
+      "sha256": "c03f27b4279fb13477d5bd231b4ebf273358ffffb9289a081680d46e328babff"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Blow2.ogg",
+      "path": "audio/se/Blow2.ogg",
+      "sha256": "470af580ab7f06a1c375230ee70ab66e9c9cbea7cfb2832b3ec136ad5dbdc2d7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Blow3.ogg",
+      "path": "audio/se/Blow3.ogg",
+      "sha256": "e4189b561cd7ba307ab2c41de4faa2d66dac9e13742ee361bc23187d60b12876"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Book1.ogg",
+      "path": "audio/se/Book1.ogg",
+      "sha256": "a4521cd5217dde7d4295c83412554e60eba12462c6267d14e1203b7d73adb89a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Book2.ogg",
+      "path": "audio/se/Book2.ogg",
+      "sha256": "0eca600f4770d4b3cb801830ab639c72e074b6cb385bbd285137666463d22601"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Break.ogg",
+      "path": "audio/se/Break.ogg",
+      "sha256": "3939441824e8ed69d46ec783a989245a7c3138d5b9ff70c6f7092db2c0d2880b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Buzzer1.ogg",
+      "path": "audio/se/Buzzer1.ogg",
+      "sha256": "7004e1746bb75d59561c6bdaa32c18bad18d03fe68a0fdd0e750c91eb96aacf9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Chest1.ogg",
+      "path": "audio/se/Chest1.ogg",
+      "sha256": "f68867777793659bd1714fb4b52747de3e895fe69d940d15ccb5b9a84c8bb23c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Close1.ogg",
+      "path": "audio/se/Close1.ogg",
+      "sha256": "36f5390652737884f065e0839ad5e8b945081f05dc746f54438b60868ab6b577"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Close2.ogg",
+      "path": "audio/se/Close2.ogg",
+      "sha256": "a071fcf3d0702b6bce7aff3552a1da278538043a94fd64150097691599094c52"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Close3.ogg",
+      "path": "audio/se/Close3.ogg",
+      "sha256": "31f326d56fc921326cb1feaefe2267cbc91cb36289347da32099663bb3dde5a1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Coin.ogg",
+      "path": "audio/se/Coin.ogg",
+      "sha256": "49483f85aa69ea7fcec0d87b5042a205b89de6605cd80ba1599d74bed1def095"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Collapse1.ogg",
+      "path": "audio/se/Collapse1.ogg",
+      "sha256": "8da4fb13d5168392103fdeeb891572ee6d5340dc3f1acb19873321c0378fde3d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Collapse2.ogg",
+      "path": "audio/se/Collapse2.ogg",
+      "sha256": "eff9445b1bd796a2fc532ce47e3638cd2ff89fdcd4d7645023c8ece9c7ceee8b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Collapse3.ogg",
+      "path": "audio/se/Collapse3.ogg",
+      "sha256": "49338446bd52198d58b7fd9dd13bc7e606f46088f4848086548fe47614cbcc90"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Collapse4.ogg",
+      "path": "audio/se/Collapse4.ogg",
+      "sha256": "24ffa44e013eb803bd5fdede886c7fd5cb8aedcc05833a462def4a64e91a8982"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Computer.ogg",
+      "path": "audio/se/Computer.ogg",
+      "sha256": "f0d2c4a0f507a8df3a360cbe28ed6186b06ae6192adafc3c1c321e2cf066b184"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Crash.ogg",
+      "path": "audio/se/Crash.ogg",
+      "sha256": "30659a8c1055a7bd9a927557744c7e615ec75aaf109c5f98b0ee5c0ec390a490"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Crossbow.ogg",
+      "path": "audio/se/Crossbow.ogg",
+      "sha256": "9437a71db50014efd28ae069a1792a5daab3bafea33e894dc24b7fe5a128f738"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Cursor2.ogg",
+      "path": "audio/se/Cursor2.ogg",
+      "sha256": "8f4b49a0a5907d830b6ff4467a4132bb9df2cfa78d33f099948ca275ed9d89cf"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Damage3.ogg",
+      "path": "audio/se/Damage3.ogg",
+      "sha256": "53ad056b6ce4f933c873b91d918f1326b55f8aef8c4710523529c8af4e306049"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Damage4.ogg",
+      "path": "audio/se/Damage4.ogg",
+      "sha256": "01de2e88a416864c54e6273d17aa9f7fd8713d0b548c4330139178945db4dee5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Damage5.ogg",
+      "path": "audio/se/Damage5.ogg",
+      "sha256": "9b64317ba1d3824411ed3a19e102c2ebfab26eedd723ddaae534d4369a916fbc"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Darkness1.ogg",
+      "path": "audio/se/Darkness1.ogg",
+      "sha256": "7c5c5574c1f84f86362e157a0e83c05682264dc6a1f521aee0958eb6b69e4079"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Dive.ogg",
+      "path": "audio/se/Dive.ogg",
+      "sha256": "da0cbff263307cfd327b7001d928d319c4fe0115b666f4c34a54f69b67f7e6bc"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Door1.ogg",
+      "path": "audio/se/Door1.ogg",
+      "sha256": "59af0dbee4814e1743bb3d5ae78aa9943a0625a3518a0c08f241d555445d7605"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Door2.ogg",
+      "path": "audio/se/Door2.ogg",
+      "sha256": "87a5ff13008347b651f5e4f3a18248716e5f7e2fee308ed9593cf2d6d473238c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Door3.ogg",
+      "path": "audio/se/Door3.ogg",
+      "sha256": "fed443880718d22523e9afd12e483515fe8da0d9969cfa90361e54c9f4089f4f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Door4.ogg",
+      "path": "audio/se/Door4.ogg",
+      "sha256": "5b3fb6ed1a8b68b563fae1d334f102b724c610da3893aa88d9e8c918f78024a8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Earth1.ogg",
+      "path": "audio/se/Earth1.ogg",
+      "sha256": "e544f73cd608fb28c00891ad355c8775dedf597a3a88027aa0d6d6f816f1366a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Earth2.ogg",
+      "path": "audio/se/Earth2.ogg",
+      "sha256": "e8ffb0c22b70963d836c5aaad21ac09a97ec19c21637caa7e1da8c0b758c4fbf"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Earth4.ogg",
+      "path": "audio/se/Earth4.ogg",
+      "sha256": "86c5d8e3868dcc3b9ee13964dd415ef2a172287cadee75b93e44c5d2bb78b973"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Earth5.ogg",
+      "path": "audio/se/Earth5.ogg",
+      "sha256": "f6ede40d716c63d8dac9c37dadab50bf3d809aea872da2353299ee6eaef7571b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Electrocardiogram.ogg",
+      "path": "audio/se/Electrocardiogram.ogg",
+      "sha256": "1c6facdff8295cecae77408734ff1c53c27b38bd13a443fefeaabb2d0dc142ea"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Equip1.ogg",
+      "path": "audio/se/Equip1.ogg",
+      "sha256": "ef32f5008c963a412f3c8b48be2d80fb39c64506d87f670a91ffbb348dafecc8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Equip2.ogg",
+      "path": "audio/se/Equip2.ogg",
+      "sha256": "1c842ccd3f70bde79dbae20e317a521d495d256144c4b49891639a74c3f668de"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Evasion1.ogg",
+      "path": "audio/se/Evasion1.ogg",
+      "sha256": "694b60fad6d87696d6abdf6970907a319ceb6091957be3fb3c24755b56dc93ef"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Evasion2.ogg",
+      "path": "audio/se/Evasion2.ogg",
+      "sha256": "b0a1dd1c18a3108a8ec564c00ad5cbe9fb84874907d9b26aeef28e9162007738"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Explosion2.ogg",
+      "path": "audio/se/Explosion2.ogg",
+      "sha256": "52708821585e3ce252a2118ebe0d04c4c2db5a5adbf52754bcc587c5ee4110ec"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Fire2.ogg",
+      "path": "audio/se/Fire2.ogg",
+      "sha256": "d37b4c13afa50198f1c0748542b25809add5e7a9e3d6d6c0cec3d8ad6ebf85ad"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Fire3.ogg",
+      "path": "audio/se/Fire3.ogg",
+      "sha256": "64ed5671b99aee6fc3e2bc44f7bbca073f6afd957572cdac2d65b61d501b6bf8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Growl.ogg",
+      "path": "audio/se/Growl.ogg",
+      "sha256": "015567d1f08a7b0f3ec070912c2fa8deb92bdd5099d05b7980e59adc0ae6d99a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Gun1.ogg",
+      "path": "audio/se/Gun1.ogg",
+      "sha256": "4a1e6f69054762c7418f0a4baba89e8a37cbc9779fd285db3fc23c2f0ce5f6a2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Gun2.ogg",
+      "path": "audio/se/Gun2.ogg",
+      "sha256": "0eee64576dde2a109440da079b59f335748a75127af3faf9e55d97b911e036d8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Hammer.ogg",
+      "path": "audio/se/Hammer.ogg",
+      "sha256": "ebbe84078a659cd02ad8ba27ff4f0d4b233b776806f61b73d94a265863c2b937"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Ice1.ogg",
+      "path": "audio/se/Ice1.ogg",
+      "sha256": "df4fbed9180888af014b93b89e9929912a6688e5c356bdf2d7879fc5082f205d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Ice2.ogg",
+      "path": "audio/se/Ice2.ogg",
+      "sha256": "8ba30e76325faf768360ee83282f499a6bedab2bb2d69f2e67dc11f76f9dfc81"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Item3.ogg",
+      "path": "audio/se/Item3.ogg",
+      "sha256": "f97f7fb5f149041279d8e7536f832a7e26aedd9acf17a79a814ef368ea43d95e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Key.ogg",
+      "path": "audio/se/Key.ogg",
+      "sha256": "e6b098757e64c934345bb9c223d7795d3680d1cc3d13d8c1aae5a615346a7d95"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Knock.ogg",
+      "path": "audio/se/Knock.ogg",
+      "sha256": "bfd210d794bc490750692fc501ccc00fbb07fd49cd7b51d343ca69582a0cdc45"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Launch.ogg",
+      "path": "audio/se/Launch.ogg",
+      "sha256": "88826c066fd97bf4fec065e37a8416ff835eb15df1b4baa66bf776b2e9152039"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Leakage.ogg",
+      "path": "audio/se/Leakage.ogg",
+      "sha256": "bd99681cad741201b789dff695f623a2b8f23116543e5eb5d171b360a4aa938a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Liquid.ogg",
+      "path": "audio/se/Liquid.ogg",
+      "sha256": "d04f50c53408d0bc96782f9aa8fef57d0f0480121c36a2cc1024809e27aaff35"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Liquid_Droplet.ogg",
+      "path": "audio/se/Liquid_Droplet.ogg",
+      "sha256": "aa6004e817c62445163eae07f4d372c3ac303e111014b53f10ed1abbd4c50153"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Liquid_Splash.ogg",
+      "path": "audio/se/Liquid_Splash.ogg",
+      "sha256": "460bfd2ad472234a2da1d93d65266e35b3d47c6b112751a988a1071a0377e09b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Machine.ogg",
+      "path": "audio/se/Machine.ogg",
+      "sha256": "1b4f58945f91cea056cb3af921d863670355e5fa67d08d579e91993d2439e199"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Miss.ogg",
+      "path": "audio/se/Miss.ogg",
+      "sha256": "06238d06dd6081ab18867c911e58508be05f7abc093454315235926ed17c2b66"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Monster5.ogg",
+      "path": "audio/se/Monster5.ogg",
+      "sha256": "c2c5eedaad5d9fd3a0adef103779b9175f9d5ca0a4f91d849b5e6ea828036900"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Move1.ogg",
+      "path": "audio/se/Move1.ogg",
+      "sha256": "f4076f7050dd7cc1da6ec59f1769029c5bd8f6430ae32b63d2a77b5817fad573"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Move2.ogg",
+      "path": "audio/se/Move2.ogg",
+      "sha256": "ee53f28fedbb3c48aa1b843658d3b8e0c4e7aeac0bd2cfcd767c236b283a5db5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Move3.ogg",
+      "path": "audio/se/Move3.ogg",
+      "sha256": "12729ff74077686025193be6f6014beafb48842a028b0101f94a9612b54df3d3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Move4.ogg",
+      "path": "audio/se/Move4.ogg",
+      "sha256": "eab0e796701aaacdf5fec610a8e633d510c9ea796ea2106198578123cf97b09f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Move5.ogg",
+      "path": "audio/se/Move5.ogg",
+      "sha256": "316239a0592efa842656933bfc67424eda156876f591268a01d12b62998bbaa4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Neon.ogg",
+      "path": "audio/se/Neon.ogg",
+      "sha256": "758fc116fa61ff27127ef7702b81fcbe39a7b02c3ea30a2d6f984798e9fda84c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Noise.ogg",
+      "path": "audio/se/Noise.ogg",
+      "sha256": "f5b2e034114e23015cd45dbf5d19289e23f78eaca98f732f21b00dc8db730a15"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Open1.ogg",
+      "path": "audio/se/Open1.ogg",
+      "sha256": "a32f67eb108ec618a98c04cfe6a207529f3310dff6310480bda7864aa4d781c5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Open2.ogg",
+      "path": "audio/se/Open2.ogg",
+      "sha256": "055f83713c3f4440d59ee5d9a59abcffa4aa68e739a0ba99f91c28dd0a77ab54"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Open3.ogg",
+      "path": "audio/se/Open3.ogg",
+      "sha256": "ddf590f25b0ea91fe07a47582082e2056b6c8a33f3cfa47b1a4d9a5138789b67"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Open4.ogg",
+      "path": "audio/se/Open4.ogg",
+      "sha256": "d1363f6ceda9682c89715290b3098386902d7d91d64d11cc2678fcb4029f5784"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Open5.ogg",
+      "path": "audio/se/Open5.ogg",
+      "sha256": "c36e4ff35348a4dea395dbcfae8860b331e77478443e2777f89e266b6394d113"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Paralyze1.ogg",
+      "path": "audio/se/Paralyze1.ogg",
+      "sha256": "a6c8b43044b9651f694fb702b48dcfc5a373011e2b774509da5e519bc74a09bc"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Paralyze2.ogg",
+      "path": "audio/se/Paralyze2.ogg",
+      "sha256": "b4cf6f6957ae48f3cabb531ee7913a2faaa756de3e53c36e49d1eee3520147ba"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Paralyze3.ogg",
+      "path": "audio/se/Paralyze3.ogg",
+      "sha256": "0dc8c1b167631ba099af5b42a5119a4b85db647d212a5c944887589a74cd2a07"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Poison.ogg",
+      "path": "audio/se/Poison.ogg",
+      "sha256": "8aff454571a9c2ad210491c6b8e2313d0b97b5d805b50d0000ea24f749789ee8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Push.ogg",
+      "path": "audio/se/Push.ogg",
+      "sha256": "f5850800f8f23bcbc69a3ff2818d207e377b9d7e9f7ecebbb31dd802f206f306"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Recovery.ogg",
+      "path": "audio/se/Recovery.ogg",
+      "sha256": "9ffece2f952ac2a4d658c722779cf7ac095354bbb2ac850a862ae0bbd8fc1545"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Reflection.ogg",
+      "path": "audio/se/Reflection.ogg",
+      "sha256": "cfb073d449b19a94f5f2c48a025278e09140156e7f89c239f0696eadc7fdbafe"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Run.ogg",
+      "path": "audio/se/Run.ogg",
+      "sha256": "82f61e4fddbff89891f2b56f2adab7b983d9eb95a6013d64696a96bf11114d9a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Sand.ogg",
+      "path": "audio/se/Sand.ogg",
+      "sha256": "9fd67649dae0cad596d15de2b8a4c81c2ca0dd3ffba1fe99b4db97b652f03012"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Shop1.ogg",
+      "path": "audio/se/Shop1.ogg",
+      "sha256": "5e72854ebab6d7010158feb2a1ea7b6e16fa82f598c70ebd4b9c33ea77539c06"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Siren.ogg",
+      "path": "audio/se/Siren.ogg",
+      "sha256": "993f40f90b16edb81cfda5e646721c008f1dde925f18deaf41f28e71db222e0c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Slash2.ogg",
+      "path": "audio/se/Slash2.ogg",
+      "sha256": "31d0d379dc65a2b85f1654ea4a9f8c2888994377dc7eadbb8a3b702184299d2b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Splash.ogg",
+      "path": "audio/se/Splash.ogg",
+      "sha256": "2cb08dcf6bcb93eefdfa1c751aa6c5268776fe46db298b43b3d335c01d1321d8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Thunder1.ogg",
+      "path": "audio/se/Thunder1.ogg",
+      "sha256": "4502e678311e372d48318b7b04a6f2c32f7b9a0c3923b1ed7abf663579815e13"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Transceiver.ogg",
+      "path": "audio/se/Transceiver.ogg",
+      "sha256": "a06ea376b6a9cfb2722da4b9e5d4be6645925161af1e8109f3e09d29fbebd4bc"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Water1.ogg",
+      "path": "audio/se/Water1.ogg",
+      "sha256": "e429c9602411cd59edcd2ef7c3d98682144a385b47b55adae4c770856b5c9445"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Wind1.ogg",
+      "path": "audio/se/Wind1.ogg",
+      "sha256": "a90c3568b6434a11d5382a63740244ca541281412ab80de8e3fc9a028e89546c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Wind4.ogg",
+      "path": "audio/se/Wind4.ogg",
+      "sha256": "bc95aab88e8a5b9edc8c7eb62120fc3d4cedb9b8a419f5e1ae0acf6e476af7c8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/Wind7.ogg",
+      "path": "audio/se/Wind7.ogg",
+      "sha256": "660dff3d38ae7dbdd5ab507084376174088cedc4224f99e67ee35f63ea87d43d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/%E3%82%B4%E3%82%AD%E3%81%8C%E3%82%AB%E3%82%B5%E3%82%AB%E3%82%B5%E3%83%BB%E3%83%BB%E3%83%BB.ogg",
+      "path": "audio/se/\u30b4\u30ad\u304c\u30ab\u30b5\u30ab\u30b5\u30fb\u30fb\u30fb.ogg",
+      "sha256": "57db6b813d7948e6e101ea3bbf59caf57da31cb0d8158e71c56a62e047c2003f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/%E3%83%9C%E3%82%BF%E3%83%B3%E9%9F%B303.ogg",
+      "path": "audio/se/\u30dc\u30bf\u30f3\u97f303.ogg",
+      "sha256": "af638cc31b58434845cc63696ee1247f7d795673204ce93bd67b096e7c0aa9b0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/%E3%83%9C%E3%82%BF%E3%83%B3%E9%9F%B313.ogg",
+      "path": "audio/se/\u30dc\u30bf\u30f3\u97f313.ogg",
+      "sha256": "f25a317aca0b42f1096672505fa2e3da30f7449c37e3de7f3513c5e6fe493e8c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/%E5%88%80%E5%89%A3%E3%83%BB%E5%88%BA%E3%81%99.ogg",
+      "path": "audio/se/\u5200\u5263\u30fb\u523a\u3059.ogg",
+      "sha256": "db6843778e82b52240a98019a60bebf2a458b1397377da5bc45b14173fd84f7d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/%E5%99%9B%E3%81%BF%E3%81%A4%E3%81%8F%E3%83%BB%E3%81%8B%E3%81%B6%E3%82%8A%E3%81%A4%E3%81%8F01.ogg",
+      "path": "audio/se/\u565b\u307f\u3064\u304f\u30fb\u304b\u3076\u308a\u3064\u304f01.ogg",
+      "sha256": "a801662354ce8dacbc6cbd8ae1d0925df8320e762f0ee56205e72d70b4b847e0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/%E5%99%9B%E3%81%BF%E3%81%A4%E3%81%8F%E3%83%BB%E3%81%8B%E3%81%B6%E3%82%8A%E3%81%A4%E3%81%8F03.ogg",
+      "path": "audio/se/\u565b\u307f\u3064\u304f\u30fb\u304b\u3076\u308a\u3064\u304f03.ogg",
+      "sha256": "3cf41368326238651376d33c9347b683e64af8e91cd46cdb73be4104c452c1b5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/%E5%BC%93%E7%9F%A2%E3%83%BB%E7%9F%A2%E3%81%8C%E7%94%9F%E3%81%8D%E7%89%A9%E3%81%AB%E5%88%BA%E3%81%95%E3%82%8B01.ogg",
+      "path": "audio/se/\u5f13\u77e2\u30fb\u77e2\u304c\u751f\u304d\u7269\u306b\u523a\u3055\u308b01.ogg",
+      "sha256": "180be6732eff3d4c20e67c00c5d471df161a0f95d58973637a528dea0cf23f54"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/%E6%89%8B%E8%B6%B3%E3%83%BB%E6%AE%B4%E3%82%8B%E3%80%81%E8%B9%B4%E3%82%8B12.ogg",
+      "path": "audio/se/\u624b\u8db3\u30fb\u6bb4\u308b\u3001\u8e74\u308b12.ogg",
+      "sha256": "5b0bfeb759548ec29f858ea961c87e8f8930870eaf648414e62a6b63b939083f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/%E6%B0%B4%E3%83%BB%E3%81%B4%E3%81%97%E3%82%83%E3%81%A3.ogg",
+      "path": "audio/se/\u6c34\u30fb\u3074\u3057\u3083\u3063.ogg",
+      "sha256": "4dcec7536df4812d9ff36e89b93d81d34c22e7a137d16c4fa5a24b307e415c91"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/audio/se/%E6%B3%A5%E3%83%BB%E3%81%AC%E3%81%8B%E3%82%8B%E3%81%BF.ogg",
+      "path": "audio/se/\u6ce5\u30fb\u306c\u304b\u308b\u307f.ogg",
+      "sha256": "b62e9e00bc4cfe2cb3da279d5b8884432d13200bb371c3577da09ee91b077f2e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Actors.json",
+      "path": "data/Actors.json",
+      "sha256": "4fd49d543625b4bcda2f36c67a1eb28c7ccb8899091371f0984c6e986cec849b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Animations.json",
+      "path": "data/Animations.json",
+      "sha256": "692977c83964007d727076a0981682961c3a91225c3dd5ac7ffb9c83edf3981f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Armors.json",
+      "path": "data/Armors.json",
+      "sha256": "a86d4a8f1698077b29c10051709f9d896c46e3d8c185b765e141895be5876830"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Classes.json",
+      "path": "data/Classes.json",
+      "sha256": "b1c50082c626efe2dc53f145a3faae201604556aef22e7c63205b63ea1b0de4b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/CommonEvents.json",
+      "path": "data/CommonEvents.json",
+      "sha256": "b5620390862b5dd767c5822ec221428d34d703cf75d82d6fdd07efc6ec9cca60"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Enemies.json",
+      "path": "data/Enemies.json",
+      "sha256": "419470abe7543cce2f431c075f98f2ec42e5b9e8a267da2e77e98827a8378728"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Items.json",
+      "path": "data/Items.json",
+      "sha256": "411b3b6d71a08ae58cba10ad7209a6e24e59bf6c5e6b5c749982d10d646e6e2d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map001.json",
+      "path": "data/Map001.json",
+      "sha256": "d07f92b0a868c5c0842addfc148b0a701135c1a9580db7961ee43ab7694840e1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map002.json",
+      "path": "data/Map002.json",
+      "sha256": "ec95b624615fe747234ec2cd68eabe1f75c44d368ec2a8a4991b7daa2e1f1d8f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map003.json",
+      "path": "data/Map003.json",
+      "sha256": "4903b34418a96c593c3187ae7900060d4777875d6858d53e08cc9398274798a4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map004.json",
+      "path": "data/Map004.json",
+      "sha256": "470349a4086c4048c6efc46b74598af0afc82bf835df6d5cc676e1705e8e2bbc"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map005.json",
+      "path": "data/Map005.json",
+      "sha256": "0cf2dea837582853d164b6e434d7426ce5eab0ce43e7751daf124db42b6d568a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map006.json",
+      "path": "data/Map006.json",
+      "sha256": "9649f818548e3ff7e33527bbd7ad58b074882dc1fb30fc0a8ca2b0df2662cbbb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map007.json",
+      "path": "data/Map007.json",
+      "sha256": "3482aabdf9469732087e9641f747bdbf04800eafb34d60dec32c3aad9d678b3f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map008.json",
+      "path": "data/Map008.json",
+      "sha256": "bf398bf5db9fae243f5c1363f8cd9d6e0cb7a0e736e856d5d0b49d3951aec125"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map009.json",
+      "path": "data/Map009.json",
+      "sha256": "5a835086f071494595298e97f4d438540ab711156f596ae45009662b9c2496fb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map010.json",
+      "path": "data/Map010.json",
+      "sha256": "ccced1a2960c320e7d63721e9ba83307856d79748bfae25ea519cfa8f6523c0d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map011.json",
+      "path": "data/Map011.json",
+      "sha256": "dd58cd564aa7ed6bbe05ca740576431669420e80f938f4f04603406f32fd4d2d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map012.json",
+      "path": "data/Map012.json",
+      "sha256": "197471bca88cfea48182523d4d7dfd035b87a50512852d9f9a6be8854c6dde9a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map013.json",
+      "path": "data/Map013.json",
+      "sha256": "c2a8be42c5a748f325d94261af6edf44a2361b1a5aa7fc58d218624ff6292079"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map014.json",
+      "path": "data/Map014.json",
+      "sha256": "1f77a27fca9d7b386a08cf713e9323eb85fabb7d0d0bb45cce2ccc459a87a78e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map015.json",
+      "path": "data/Map015.json",
+      "sha256": "980c5317085a3ee3ec6586275e2dfdd3aceadc5c047a4726ec1a535d8c0f14fa"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map016.json",
+      "path": "data/Map016.json",
+      "sha256": "d4a2ba2ae9ae73c73bb52510c1833d9a64cce5ff69038b3e4915be4a721ed911"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map017.json",
+      "path": "data/Map017.json",
+      "sha256": "dfab8e3ef95409d43683a69becafb08659061e1ee3fdbb13d8947f25c549afc7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map018.json",
+      "path": "data/Map018.json",
+      "sha256": "108bb1ee446216f4c5ea5f09c910bd3ded7a6de77f02fc8755c95ee4addc24d5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map019.json",
+      "path": "data/Map019.json",
+      "sha256": "0649753313de40592429e60dfe3b5b57f42862c112e3c9feba0aba4aaa1d7f7e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map020.json",
+      "path": "data/Map020.json",
+      "sha256": "0639be454cb2bef3a14d5b710a0c3c9483e00cda3722a95b6a3a8889e7c93841"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map021.json",
+      "path": "data/Map021.json",
+      "sha256": "44be483944069839a6e8cb585b00ee352d8ecacb4a6b6558b5420df470b38adb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map022.json",
+      "path": "data/Map022.json",
+      "sha256": "5c89bbbefb06dc45d3883373bec9f97dc97f6d3047af8e5ffd2154f8b604e6a2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map023.json",
+      "path": "data/Map023.json",
+      "sha256": "a65c9dcc26b489a6f9b96a830f4fa520f407e2e3336b86eab9007c4d9ffc19c9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map024.json",
+      "path": "data/Map024.json",
+      "sha256": "44a0135b7028cd9cab1373d50d59273ddf40f32fe5c88a5bc206cc54d460c6e4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map025.json",
+      "path": "data/Map025.json",
+      "sha256": "0d54db4e22c24cf0274499e71b1ab9ce0ab761c127d6ce2255f661bba17ce610"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map026.json",
+      "path": "data/Map026.json",
+      "sha256": "696ff3c5655602e1d68bdb26e398b3c1a0ccd6d0255bb8dcd06df506309ceaf5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map027.json",
+      "path": "data/Map027.json",
+      "sha256": "6ed49a8f0acee1b43e9468c0b43f88ecd45b029365ac7bfdb04f18bd3142de79"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map028.json",
+      "path": "data/Map028.json",
+      "sha256": "d3a46520361e8314724aa0e7a9d0bbda872409e4af953be0c9b8d2a08b98adb5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map029.json",
+      "path": "data/Map029.json",
+      "sha256": "425f19219f9c41daaf538d53e957a796da153601fdc0dede128ee50951161ef9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map030.json",
+      "path": "data/Map030.json",
+      "sha256": "edf2816f31200fec3b6ab4925e7b86f2d3dec93e9ecfb2b319bc45a950aae7e5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map031.json",
+      "path": "data/Map031.json",
+      "sha256": "fb1c8384febc4cfc5ee91b9586285a62c5f7d812278ddd5526f5a80847fb187a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map032.json",
+      "path": "data/Map032.json",
+      "sha256": "7861295312f45133e247141f79797fc194bc92e886d08e123be2adf37a3ec51c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map033.json",
+      "path": "data/Map033.json",
+      "sha256": "ff4b59fd0a3398b4daf76583a59966c1d65cd786e2e4305f6d62d12d5b00c7d6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map034.json",
+      "path": "data/Map034.json",
+      "sha256": "7af05ea6e9902ac864d3f14660949d8c612ff3b11c4688bc86f6d34e33827f64"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map035.json",
+      "path": "data/Map035.json",
+      "sha256": "f2563576faf0dd31b78b265f51bbce11ebd37011530c2862e48a5c4e7ab55512"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map036.json",
+      "path": "data/Map036.json",
+      "sha256": "be18ea9218a4a818aa920a23cd3987b587a5333caf450fa62934c158e7e85076"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map037.json",
+      "path": "data/Map037.json",
+      "sha256": "c2edb33a9a1fe0dcc8ade16507a142c1ca03dc9a9a24392a04b40292b474f3f4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map038.json",
+      "path": "data/Map038.json",
+      "sha256": "f4d8cbf241cfca9432b99d742de9e0bea2aaf3463a2efb77ddf3c48c22122830"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map039.json",
+      "path": "data/Map039.json",
+      "sha256": "01bfd2f5838579cb4467b0c7891e3f30ad4d27e64c564ff628def211bf03c86d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map040.json",
+      "path": "data/Map040.json",
+      "sha256": "6a308963239d15747e802ca361f089fa4683e645384b06e083d3419868fd7d00"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map041.json",
+      "path": "data/Map041.json",
+      "sha256": "b17624979f29584c7cf4a7e08c508fb864f4341a0e481caf3c2179d115663472"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map042.json",
+      "path": "data/Map042.json",
+      "sha256": "3bcce357ac2d49c407b56779492dac8e735e5d296ac6ef18519b42481c78eae0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map043.json",
+      "path": "data/Map043.json",
+      "sha256": "1ba604537e6b01b2132657cb77c68aecf8e5dd52a78bb789ada0cfaf2cafdf27"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map044.json",
+      "path": "data/Map044.json",
+      "sha256": "71845d796f3f49a60393bc43f65b5df987b599e77dee28b7c88113b7275cc386"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map045.json",
+      "path": "data/Map045.json",
+      "sha256": "75813ae293fea4e36297b7aecf8cb4dd855a20f2edb44f8c4f9eea3af796b153"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map046.json",
+      "path": "data/Map046.json",
+      "sha256": "d92575c29f3f614f351b60a31ba0d1aaa6824d44ee5e07ea5157b4bc0ca791fe"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map047.json",
+      "path": "data/Map047.json",
+      "sha256": "77b9a2ecf42b0d15c6775b6484023da93428523f89fdc5fe18ce87b3b3d8cee4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map048.json",
+      "path": "data/Map048.json",
+      "sha256": "78e6019547dd07046ee10e5c9069b9fa0540dd61ca2911561e325ecc6f310f12"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map049.json",
+      "path": "data/Map049.json",
+      "sha256": "e498e0bdcd05eed2d24a0ae320a9493584e2abe795d4f848cdad54f661a44531"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map050.json",
+      "path": "data/Map050.json",
+      "sha256": "4057bb3175d5cd119326dd6694a08b33238dd597a67697d12926e17ba1bf248c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map051.json",
+      "path": "data/Map051.json",
+      "sha256": "0b13cc262f0ae8c9b7f423aaa362d29fd50457389644a2bfbf8436c6f63494a2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map052.json",
+      "path": "data/Map052.json",
+      "sha256": "4364aecdfabbbcf4ca8be98df5bef0832bcf3d3ceb09f8735b8bf0a0223dae3c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map053.json",
+      "path": "data/Map053.json",
+      "sha256": "2755894eabdc8aa6984d00d0452037c0c79f27d7293b9d4bdfd6272e8d9ea50f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map054.json",
+      "path": "data/Map054.json",
+      "sha256": "b5ba773089beada67f2fe7d0eb36ad346a2e37d0825b77266535426a0a0a4d9b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map055.json",
+      "path": "data/Map055.json",
+      "sha256": "a6eb73dcd5fd08e2baba36e3b72911fd8dfe354dbb4368997e5f1ee5709cce6c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map056.json",
+      "path": "data/Map056.json",
+      "sha256": "d9423a3eb8c7b8bd3406b0327e8181063c3549dfcc1b9e84ca3a052d9b96231c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map057.json",
+      "path": "data/Map057.json",
+      "sha256": "41a48f0aca9f15be28ffb87a9d8d62ed52eb02ecd694f6025512068686ebec60"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map058.json",
+      "path": "data/Map058.json",
+      "sha256": "b3b613811e523f055b597f77846f4ea604979a8d2d9f6685ecb6efc00fb45177"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map059.json",
+      "path": "data/Map059.json",
+      "sha256": "a7cd76577f618a59e53979931dde6c57e8f1f7e2bb72e5f5d8a5e87438826297"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map060.json",
+      "path": "data/Map060.json",
+      "sha256": "91d6311aa981f8c4754798caff032a152bf7898ab9b9f871d4e6da5e19257b42"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map061.json",
+      "path": "data/Map061.json",
+      "sha256": "ce7b73cc75f0002244c5e6d63f78ce20f736d4085985efa3b4b3475a5dd46500"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map062.json",
+      "path": "data/Map062.json",
+      "sha256": "f7e2435c457ee4870b7a299e017df53ed8f68665eb2484bfc5feb4645c120e27"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map063.json",
+      "path": "data/Map063.json",
+      "sha256": "b51824bb9c419bc69126f28bab7d4dde82cae62d432da29e34a7dc7c7ca5fdde"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map064.json",
+      "path": "data/Map064.json",
+      "sha256": "c9724918c843c083cecc3c6111d73e4f0580e2c5859eb95038a1ef0a639d74b7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map065.json",
+      "path": "data/Map065.json",
+      "sha256": "76cd7c17aa079655f76a4f6f87aa3e5b0418b7e57e3a95d9a0b2eff448bc16d5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map066.json",
+      "path": "data/Map066.json",
+      "sha256": "a36c96b70c839d7ba2f8afe963b1095a4afcdf041bc74814fb087dce5d3a3637"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map067.json",
+      "path": "data/Map067.json",
+      "sha256": "55be3676d2cd07b5bc365427d744724adb8384a21f51b36094f1440ef5e2910b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map068.json",
+      "path": "data/Map068.json",
+      "sha256": "e9bae66252e419f378008af9a71c1d7d73bac26c9b1555bc1766689b7bb10d44"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map069.json",
+      "path": "data/Map069.json",
+      "sha256": "743bcee574e8cbcfb5232bd20246029e66dfc9f8d5750e1b08d242c97768395d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map070.json",
+      "path": "data/Map070.json",
+      "sha256": "b438a6ba1993beceb123c35788a44c844ecb4bb6bb1d609cca1a8e4363cd997d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map071.json",
+      "path": "data/Map071.json",
+      "sha256": "7e4b31a91a39b59e16fcd1f9838b28744e28da94a1cc0a0db4aaf61fe5bed8bf"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map072.json",
+      "path": "data/Map072.json",
+      "sha256": "ede28f5f43d725f618b740465088fd323cb170570d3ed8734e1b3749558364be"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map073.json",
+      "path": "data/Map073.json",
+      "sha256": "30f2ef805f8bc78230c33b487580b5e6d3a075451adbd06efe714deeb9741eb7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map074.json",
+      "path": "data/Map074.json",
+      "sha256": "7043e6d5895c2d408f56104848d0ba6d6f5daf5e81e1b86625d6fa2f6585dccb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map075.json",
+      "path": "data/Map075.json",
+      "sha256": "a4abedd6e3986d1ad627def89b9832f251d27d79882abb9121a6f56ec5346ab1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map076.json",
+      "path": "data/Map076.json",
+      "sha256": "4821347df7b84619f01b2a6abfd2d06ec595bd5600d283df319cdcf90a8310af"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map077.json",
+      "path": "data/Map077.json",
+      "sha256": "2c62b17a262f33ce5ac586ca1a8dfa4303ebda09d92221869d831041c6a57184"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map078.json",
+      "path": "data/Map078.json",
+      "sha256": "918d3ac23280a5f1f618785fcbd86789735b8d19feb3c1279fb77ea2f1aa3b0e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map079.json",
+      "path": "data/Map079.json",
+      "sha256": "84d1789db4d0150b8ef5b65573aacc933f2d862a2e02f7b0b39c072fd640cf9a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map080.json",
+      "path": "data/Map080.json",
+      "sha256": "1d3d8814147bf62e6d099f5b3214bdde82369a312b6d29800d4e9f166cc76a5a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map081.json",
+      "path": "data/Map081.json",
+      "sha256": "f6579a1c2aba79c0e3d67eefbb5cb9617a0ea987a854f0f28aa4ece17eed6dcb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map082.json",
+      "path": "data/Map082.json",
+      "sha256": "7910189658bcfe8380b49c2c387f508709ba8250dd87ca294d3c147a6d629a3e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map083.json",
+      "path": "data/Map083.json",
+      "sha256": "aff313fb0bc0c9f766de321ced1721ef0cd2ed221f15da41e217d4b07254ece1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map084.json",
+      "path": "data/Map084.json",
+      "sha256": "3c32c3c9d8caa39077343352bdbc20fa070868faf1e6054d4d3a862980fa9668"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map085.json",
+      "path": "data/Map085.json",
+      "sha256": "81e73a14b04daeaa82e1f159be1ebdcac7972de15a2292a1ebbf36cf5c388064"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map086.json",
+      "path": "data/Map086.json",
+      "sha256": "4963fd74e0f656f8886e963ca81516512945d1346342a451ab072fe35621e580"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map087.json",
+      "path": "data/Map087.json",
+      "sha256": "3cec4482c538b840c4d81b90c89a161666b4c9e8b657d951beb285aa0219452e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map088.json",
+      "path": "data/Map088.json",
+      "sha256": "527809f75cdf6377cf0d972d08af626ecf522d6a02312978597b8f4c4351b9bc"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map089.json",
+      "path": "data/Map089.json",
+      "sha256": "bbba41f77063de6e5d43d90043aa40318c6e40edd9c273c2d39b45264ba6d25b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map090.json",
+      "path": "data/Map090.json",
+      "sha256": "1436c57affb35f0e0759cd6185644f04282bc84689369e0d2eec8ca6fc787671"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map091.json",
+      "path": "data/Map091.json",
+      "sha256": "e39fe157094c31f3e0cd0075fab92e1c227434d6fed6632dfe8873950432ae8a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map092.json",
+      "path": "data/Map092.json",
+      "sha256": "02bcdb6f138fd2c40e76b596b52ef338fced691d104fef4576fd137a0d04a5b2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map093.json",
+      "path": "data/Map093.json",
+      "sha256": "a9516b4b83ac07bf6c3bef28493bb0f26bad049b70c14d0ff19dcdd73849097f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map094.json",
+      "path": "data/Map094.json",
+      "sha256": "4ea4dd656062c8fa3a25d49605521a67b6279bb94c69b945951e78a2e91fcf9d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map095.json",
+      "path": "data/Map095.json",
+      "sha256": "0519dd5ccc9e8acc06d7921604e8d54c89642f5e5b4f39b3e65ca7990e42bb1f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map096.json",
+      "path": "data/Map096.json",
+      "sha256": "39ad29ba76cbcc8971c9337c3a27fd5255da65182467ab9a5ddcd340e6d67de6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map097.json",
+      "path": "data/Map097.json",
+      "sha256": "275536151718c962cd41b13f702a0ca383a6721b625528a45588c1e11d3b3d2c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map098.json",
+      "path": "data/Map098.json",
+      "sha256": "c5a3ab998691e11a01f2fa3b25d10975ccef585f86d6cd2d468ea2343f4e5e43"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map099.json",
+      "path": "data/Map099.json",
+      "sha256": "4755b04baf69f1145ad0899bdea8a47726110881ce551ad6c94be2a5b7e5db23"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map100.json",
+      "path": "data/Map100.json",
+      "sha256": "edc16300e974bb8d330a1f985bf1b7d0baee3a8b09dc4b6f72f7ba63c4e750d3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map101.json",
+      "path": "data/Map101.json",
+      "sha256": "514690a2fe800572a1d898c924546ea9ffd51b80b7744f8f063b9473775240da"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map102.json",
+      "path": "data/Map102.json",
+      "sha256": "e68d34c77848eee60e88debc51f58267cc5b058cc50b3ed1968d2cc9abf42dc8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map103.json",
+      "path": "data/Map103.json",
+      "sha256": "458dd2fcc127b3736e14cfa4a138c84e7d5ceceeb775294e552f3e4524703f54"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map104.json",
+      "path": "data/Map104.json",
+      "sha256": "41a7b593c3118bf6febb8a9ede746416964992520f0981d595ca0c9c3e4fd98a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map105.json",
+      "path": "data/Map105.json",
+      "sha256": "d72a7b22abf8fe7548f5c61c0e82af680894fe02ccf4f54fe9727222c53873af"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map106.json",
+      "path": "data/Map106.json",
+      "sha256": "1f658af9c38d18f3fe82f419513393bf4888398f18a28ac992a7a51ca8177e9d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map107.json",
+      "path": "data/Map107.json",
+      "sha256": "9b3f6dfe41890a5ac4e1e7ab6f52f3b5d8f65297cf353908cdf22c5eff4b0cae"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map108.json",
+      "path": "data/Map108.json",
+      "sha256": "0c8b18da64ae5c5d8feabbf1fc38ad25abd6acac5119bea1cf6f9920f5f75ab6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map109.json",
+      "path": "data/Map109.json",
+      "sha256": "50cee3edeaa7dff3db5a81d2d36107bea7ca03be3d10f4655627509eaffbe2d8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map110.json",
+      "path": "data/Map110.json",
+      "sha256": "2d00fcddf66b86b0296a43f871bce44c4b9b529d2519f225e7a7800a612d9b07"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map111.json",
+      "path": "data/Map111.json",
+      "sha256": "b559639c21a0c71880731e631eb8ee0bf46242bbb88209edfe2199c390a2e369"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map112.json",
+      "path": "data/Map112.json",
+      "sha256": "a91869d075f037789b87545dd2a98952820afb8bc402ae6dc7bdcd8e2ef27b5d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map113.json",
+      "path": "data/Map113.json",
+      "sha256": "91625e9bf74b62fa2d4abd4b51ae5f568a87abc80b8a065fbab9300041d7f9bb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map114.json",
+      "path": "data/Map114.json",
+      "sha256": "1f0fa3542136fdaaa6f4135da3ed5e6631ba23d9552e088ef78f3a67598df4c2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map115.json",
+      "path": "data/Map115.json",
+      "sha256": "839b08b71469c6a225d7078be772b19de3b4eee0a050de7e1af1c3ff3bedb4c4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map116.json",
+      "path": "data/Map116.json",
+      "sha256": "25a7a8eea20d46315ca6a69fa3e9e98a4cfe9f0d16af9cc726b692b4008b50d3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map117.json",
+      "path": "data/Map117.json",
+      "sha256": "adb6332529d14cf3b7f1daf3b0c6d3833f65714f56c65b5ef74995a1d3112e7a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map118.json",
+      "path": "data/Map118.json",
+      "sha256": "3080f35de6af371d01b68978924cd2ccf3eda06a4cb4d27d66d56f4650fd92ea"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map119.json",
+      "path": "data/Map119.json",
+      "sha256": "8350349a2b1a1f021525f74a379c98de189cd15df590048d50fdf7c19c84af25"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map120.json",
+      "path": "data/Map120.json",
+      "sha256": "521b1fde81a25560b0a73bb8e0664c698bb6d2a44a8e63d851b4ba5b1e8fc1f2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map121.json",
+      "path": "data/Map121.json",
+      "sha256": "f66a9f8e3ca16dab0c10054cbf8da3c1c8be88819dca7883655319b91ba29eb8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map122.json",
+      "path": "data/Map122.json",
+      "sha256": "e4df209af70f0023d9b5773b27f2d7be80da840839ecee2e84d238f4316aef1c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map123.json",
+      "path": "data/Map123.json",
+      "sha256": "730e4a856a1861e2b9bdd00ca617a8579d859ef9de065d66f0a00ab639f7410c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map124.json",
+      "path": "data/Map124.json",
+      "sha256": "5d25febc20c8cb1bf46e3c4d0698814c557c3b5134326bef80456bb2873f9179"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map125.json",
+      "path": "data/Map125.json",
+      "sha256": "ed00480b1f045c36b75015d1e147c13d3d238620ffd8fc8d90fba3e82175cbb9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map126.json",
+      "path": "data/Map126.json",
+      "sha256": "2f6c20c267dc5e00ad039386d9f4ed14f7e2a24a03c9ff51d18b47d2d0370615"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map127.json",
+      "path": "data/Map127.json",
+      "sha256": "cfc2cc5f5e04304a058089edeb3bcc989efe31c89970be42461f6ef26d47866b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Map128.json",
+      "path": "data/Map128.json",
+      "sha256": "abb95a1a82b14c736a8fac3768970b68288fa428d36d3a21d1ffb7a00c5af20f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/MapInfos.json",
+      "path": "data/MapInfos.json",
+      "sha256": "6f64e9a40d3a776e1a78c01f41fbeb0c3bf4a22a4f4023be8ede9418d7cd707c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Skills.json",
+      "path": "data/Skills.json",
+      "sha256": "ca144414673fb52bd513a64d1814b9fe4e9c2ffe28365443f867e738c697c4dc"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/States.json",
+      "path": "data/States.json",
+      "sha256": "52f30a8887e018012970523707b376ee421436386db8ec0dd069b592bdc1c818"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/System.json",
+      "path": "data/System.json",
+      "sha256": "58cbbbf8d21281804323d7ce4a4deeb78e9a9d8985adf36bd8a67232cd08c37f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Tilesets.json",
+      "path": "data/Tilesets.json",
+      "sha256": "87242cfacb96406b028986548289be6e86afc0f258d485089154e898ef076552"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Troops.json",
+      "path": "data/Troops.json",
+      "sha256": "2395339c51a9333475669558e034badf9a7a62b23f9bdb0b25b96d427c74fd54"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/data/Weapons.json",
+      "path": "data/Weapons.json",
+      "sha256": "750ce10e014928be8c90408a0f01d1fc12de70dae39d2b79f7c8a52ea6506dff"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/fonts/gamefont.css",
+      "path": "fonts/gamefont.css",
+      "sha256": "75e4e7577b837aefbc959ec6355301e163910fd62367217cd23731fc0d5b8792"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/fonts/mplus-1m-regular.ttf",
+      "path": "fonts/mplus-1m-regular.ttf",
+      "sha256": "7f2096495dab49c7150cd0609f2f8d6b03ebf2fa7561ea34b3cca1e09eb0bae5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/icon/icon.png",
+      "path": "icon/icon.png",
+      "sha256": "1d31d63e1c3e0c4fe048bd7abffdd4a3168c6d2d3f0f8860765326f5d69910aa"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Blood_Explosion.png",
+      "path": "img/animations/Blood_Explosion.png",
+      "sha256": "7b6ed08adff38bb20f8ae68eb433e41ff2b514fecd7d6b8bfec7f93b51200613"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Claw.png",
+      "path": "img/animations/Claw.png",
+      "sha256": "90170392cbe3badd7e738c85a4f4cec33ba3dbb011ebe67606b21ffcc304bddf"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Cure1.png",
+      "path": "img/animations/Cure1.png",
+      "sha256": "0bb9dc64f7b1a2657d2751d102d8c8418a744e62a46b7c4e32ca6c4d0923aba9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Darkness3.png",
+      "path": "img/animations/Darkness3.png",
+      "sha256": "23d29557f9f9d97d12447353a1a5bc3ac8452764cf26a1870d8ab4816a69d57f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Explosion1.png",
+      "path": "img/animations/Explosion1.png",
+      "sha256": "730d433a37e772361e190cbbece43d8feb754bcce7c99a2f505baee059f211ef"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Fire1.png",
+      "path": "img/animations/Fire1.png",
+      "sha256": "382a4fa10fe9df486a7e77c7772398176620f7f288e2a9aa7a12c2be89ffa1aa"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Hit1.png",
+      "path": "img/animations/Hit1.png",
+      "sha256": "22f820665fdb172d843e47f52abdeee96ffa42c304b0b1a3f5eeb09ab194412f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/JailBlood_Explode.png",
+      "path": "img/animations/JailBlood_Explode.png",
+      "sha256": "1c8bb5c48e3897631240a5d44bc634b5a2052af4dcfc14b0d8ac22aeed098cc4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/JailBlood_Worms.png",
+      "path": "img/animations/JailBlood_Worms.png",
+      "sha256": "b71bfda1d03cb68a13ad37e178980b85e41b67b07f90fb46f1210e776f04bcfd"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Magic2.png",
+      "path": "img/animations/Magic2.png",
+      "sha256": "7f7dfccc496bb9e4bc2c591682df92fc3ead598747da61945bb91603fec6965f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Recovery1.png",
+      "path": "img/animations/Recovery1.png",
+      "sha256": "6b9385381938b512fd4de8ae4d2bb399e770fbadcb5a1a1f526af7afdb5c1f76"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Revival1.png",
+      "path": "img/animations/Revival1.png",
+      "sha256": "3daad3fd964c95f1b765c5966ac3fa0613fc7cdaabf649d420a9d4b11b7723eb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Slash.png",
+      "path": "img/animations/Slash.png",
+      "sha256": "24df82c4f84521266f87cadbbb83e0db74200fcd82a0064292363923a738fd0e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Stick.png",
+      "path": "img/animations/Stick.png",
+      "sha256": "bf4bd7c8afdc806bbc1a2e2317e724f2f48e5fad5bee47799052e40073cc5ec8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/animations/Thunder1.png",
+      "path": "img/animations/Thunder1.png",
+      "sha256": "b8e44dcf96333b2661f41ceb11beaa9236aaca029b71a8b5c00f06c1b8a7b2f4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/%21%24Gate1.png",
+      "path": "img/characters/!$Gate1.png",
+      "sha256": "73bb1f43ccc5860a5473ba1fccb4741296550b73926ef291390ce653947c94c4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/%21Crystal.png",
+      "path": "img/characters/!Crystal.png",
+      "sha256": "6a60837df69a8a18733382c9f4c5b79ea6967882cdfab320d4301ab6282e54f5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/%21Flame.png",
+      "path": "img/characters/!Flame.png",
+      "sha256": "f3a158b79e134229f78110cc21c87624ecef0a6781f315a52b031052245a2134"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/%21Other1.png",
+      "path": "img/characters/!Other1.png",
+      "sha256": "d2869ff7631197afaf242b5d075a0548ca9d71d95a410605ba0ff019c791e817"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/%21SF_Door2.png",
+      "path": "img/characters/!SF_Door2.png",
+      "sha256": "cb526d41a14361b67107805411f5cad60172cb855dcd27ce94796cf62d722735"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/%24BigMonster1.png",
+      "path": "img/characters/$BigMonster1.png",
+      "sha256": "ccc98a4de901992fb1c1cf297911be1f4f031bd8cc389f7d12dd0c931323f16c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/%24BigMonster2.png",
+      "path": "img/characters/$BigMonster2.png",
+      "sha256": "902d0b55128ed3ead6f09dbb4242649a9a75519e95faff3ee9f5a115361e7426"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/%24Forklift_Eva.png",
+      "path": "img/characters/$Forklift_Eva.png",
+      "sha256": "dba1be9b79841fd1b57f06a72848f434bcbb987e8ca95f5a17d69d0482975ad0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/%24Pipe_Swing.png",
+      "path": "img/characters/$Pipe_Swing.png",
+      "sha256": "51f5dc1c71988cb2c15cada41cf1d82e54c4e69dea6de0d32165ee1b15c8659b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/Actor1.png",
+      "path": "img/characters/Actor1.png",
+      "sha256": "b03d04a4a5662aa5ae25d635e0bd13349676dfa8809906d4f3b29b9f41243a2d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/Actor2.png",
+      "path": "img/characters/Actor2.png",
+      "sha256": "4bc3ac24c6ec7d09e7abc6b3b58c7794acaff284eead2201aa82bfa45387a701"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/Characters_Factory.png",
+      "path": "img/characters/Characters_Factory.png",
+      "sha256": "e480752b2a1beaefaa80a379fecfb0f0ebc110af30a23d6795a576af07ff27cd"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/Evil.png",
+      "path": "img/characters/Evil.png",
+      "sha256": "1f315c15a725beb365845724fba5b2542e0a18cf0b8951b2e9f83c41539b38d7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/Monster.png",
+      "path": "img/characters/Monster.png",
+      "sha256": "04ea8a6594a0bda7ee94411f91db518f8347a2f63f7523a6db7d5a33be9b1074"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/People2.png",
+      "path": "img/characters/People2.png",
+      "sha256": "3101d61654e8474069370a9b688f797098fd1ebd51b893918f262f516ade091e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/Sprites.png",
+      "path": "img/characters/Sprites.png",
+      "sha256": "3b2ac1af4f47c04449ca011325479b7c5dcb83f0115ee03b4f1af56714da958e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/TallSprites%20-%20Copy.png",
+      "path": "img/characters/TallSprites - Copy.png",
+      "sha256": "284b232036bebd8a049bafbc2b5f17debf39d5a9ef142ccfc374a48766d1f33a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/TallSprites.png",
+      "path": "img/characters/TallSprites.png",
+      "sha256": "c8aa53f814f7c6d2e944d1f4e8c8dd740f09b1fddc0f5a1a255ff66ff6fccb7d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/Vehicle.png",
+      "path": "img/characters/Vehicle.png",
+      "sha256": "617b4294929a6fc4ae71107445eed14975eea89ecc4b6d03b22b93787e8e16dd"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/characters/biggermonsters.png",
+      "path": "img/characters/biggermonsters.png",
+      "sha256": "e793a50e2960aa9f8bf22a26efebedfc17b3a90905f0cc3ace7ecfb36efb762c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/00.png",
+      "path": "img/faces/00.png",
+      "sha256": "d89077eb2ee7d66f3d3f2590a650a02b88493a83e5f1dd29efd907b22c4546f6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/002.png",
+      "path": "img/faces/002.png",
+      "sha256": "ecd76af98f9a2728fe29b4140e0fc5fd40eb9a6ca57245f68679a1e7093780e6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/01.png",
+      "path": "img/faces/01.png",
+      "sha256": "15b3cdd138e7f1d99a228b54d7320742d53826f22cf49dddba4a15d6fd50733f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/02.png",
+      "path": "img/faces/02.png",
+      "sha256": "ee28358d956b57cd1d60ba3330217a9b817d401d7d31f36db5a8c2c94861bf9e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/03.png",
+      "path": "img/faces/03.png",
+      "sha256": "c252c06c55605c6abcc1b237b5ad65a4333f9ed3dd757d876dc8a5f40d183120"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/04.png",
+      "path": "img/faces/04.png",
+      "sha256": "aa339d06bde9aeef85d385b591cd7f8faf9c30d375d6bc900ec8072dd54a2c95"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/Eva_Crying.png",
+      "path": "img/faces/Eva_Crying.png",
+      "sha256": "a9a642b8f693461dea8e54e9beff6a829dc9d8e0411d3ac4f73bb89de099dbac"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/Intern_Factory.png",
+      "path": "img/faces/Intern_Factory.png",
+      "sha256": "9195449d41fe3dd019b10113fca772ec4f0e44ef700739ea72ea231a5ef8cfb0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/Intern_Factory_worried.png",
+      "path": "img/faces/Intern_Factory_worried.png",
+      "sha256": "08ee9ea24b7d50d88a4f9ee7b2c22e72ea584bc4c30e599099f171e451897c2a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/Moku.png",
+      "path": "img/faces/Moku.png",
+      "sha256": "24a2503dc06f39e38159ca8b0aab5c83cf1ed7bebcb948ec94c3e75f9594354c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/Moku_Naked.png",
+      "path": "img/faces/Moku_Naked.png",
+      "sha256": "ec08c1368bba7272a6fd454bd8f5084a42e8d0ecf68e00cc7cf13a45273183f5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/Nou_Bloody.png",
+      "path": "img/faces/Nou_Bloody.png",
+      "sha256": "dd180bb923b75ee4448431fafb7d8151ac8f9b1362a70b8ab3123ab898665fc4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/faces/gwama.png",
+      "path": "img/faces/gwama.png",
+      "sha256": "53061551240b3e69fa7a96abc255badbca6be3dd424fb78dd3905d169e9cc7ab"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/blue.png",
+      "path": "img/lights/blue.png",
+      "sha256": "29e7a246872e06cc3f83f3fabe93fff0e73f3bf3f7d5257a8dbcf83c3b87942a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/candle.png",
+      "path": "img/lights/candle.png",
+      "sha256": "ac369a598f1ae02935eefc044a9b494de7d43efe8e1ddfa8b5c43a8dbadc453f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/cyan.png",
+      "path": "img/lights/cyan.png",
+      "sha256": "0986ec542181b3b4287069162d30bef45575a38f8b8c9718de27b1183ac3b2a6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/flashlight_2.png",
+      "path": "img/lights/flashlight_2.png",
+      "sha256": "f204805e03deb12cd0c4cec0224af14537c9ae42d3c1cd4e3391fd4bdb1f43a1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/flashlight_4.png",
+      "path": "img/lights/flashlight_4.png",
+      "sha256": "62e3f9d0feb74b9f4692e6dcc3da3c3386fab5dca3d823256dd28b6dddd65394"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/flashlight_6.png",
+      "path": "img/lights/flashlight_6.png",
+      "sha256": "003414fc8e9b6a7051a2a0da41161f9069abcdc2c7b5e7dcf123314103f04aaa"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/flashlight_8.png",
+      "path": "img/lights/flashlight_8.png",
+      "sha256": "0920b00e476b4339dcf5fe2e3f5b537333ec69e27e6e36a539dae0d6722aed07"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/fluorescent.png",
+      "path": "img/lights/fluorescent.png",
+      "sha256": "bb6e87ab26e436a45fb3147fd202062c680f47ecb01294b71ed4201161fc3936"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/green.png",
+      "path": "img/lights/green.png",
+      "sha256": "f46c5f88836730dbf2684324436535ce71f669d3742d38146349f5c3eaf64d49"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/halogen.png",
+      "path": "img/lights/halogen.png",
+      "sha256": "4ede3c478bf5f84033d726d5aa5349b7c19ddb7a3ac19a339c8c1ce9557f8350"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/pink.png",
+      "path": "img/lights/pink.png",
+      "sha256": "e76132d046515430de9ca91b1d302e71815b06f0efa44476e4d9ece697197e79"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/purple.png",
+      "path": "img/lights/purple.png",
+      "sha256": "4dc3165b6e4ae7950fcdbde1b80f25c090139686c8cf0d2dc86d5825b4de3eb8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/red.png",
+      "path": "img/lights/red.png",
+      "sha256": "83df54e5dd17b233fcff58a8b9fd479b8ccca04feb3625144b7a96afd252f79a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/test.png",
+      "path": "img/lights/test.png",
+      "sha256": "5ca29c6a477d763b52585b77b627054dd7263cc6bea9b58aa42a1014e1d6fbbb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/torch.png",
+      "path": "img/lights/torch.png",
+      "sha256": "39a38c70074ee0543135061ddd61491778cc956ae042d24c3ca569c4184a56fa"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/tungsten.png",
+      "path": "img/lights/tungsten.png",
+      "sha256": "8c5f900d7dd814a78c2735cdfdb2db375624c290e10b22e2db49b5e37d6e39b7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/white.png",
+      "path": "img/lights/white.png",
+      "sha256": "a14a640b8da93c60abf3493c963299e018fc5decd183bf97fec6bff00ac100cd"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/lights/yellow.png",
+      "path": "img/lights/yellow.png",
+      "sha256": "e818bce4527bbfe199c6698887acc58d3b80bdf0d7a447f46d494d2959773609"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/parallaxes/Road.png",
+      "path": "img/parallaxes/Road.png",
+      "sha256": "1dddbd2497046343faaa4d5c1308dba6a1807fc172f6679c809f9e177bbbccad"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/parallaxes/StarlitSky.png",
+      "path": "img/parallaxes/StarlitSky.png",
+      "sha256": "cdb09a6f77a4f95d462ee1dd652883aaed1cbcf45a85b3a5511c439ddfb8a093"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/Eva_ENd.png",
+      "path": "img/pictures/Eva_ENd.png",
+      "sha256": "e8591861577edbd2a87a9c1a240987215c357d437b4131f0b213f73067594742"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/Eva_eye.png",
+      "path": "img/pictures/Eva_eye.png",
+      "sha256": "59cba352b67400b2dbe3be3de08565808300b01300040c1d877f2203974f09ae"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/Eva_eye_error.png",
+      "path": "img/pictures/Eva_eye_error.png",
+      "sha256": "9565882beec10a26baa2bb9ec6f863a772f49782bb599af75c6822fb3672aa5b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/Eva_testtube_0.png",
+      "path": "img/pictures/Eva_testtube_0.png",
+      "sha256": "f62e7bdb5ea1ec7750d560b21d3550d2267070dc67d081191c5b0ec4c06d0d6b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/Eva_testtube_1.png",
+      "path": "img/pictures/Eva_testtube_1.png",
+      "sha256": "fe49f6cabc9e99ad7b84f31702f3e93d21956604468fb982d952b3886982a40f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/Eva_testtube_2.png",
+      "path": "img/pictures/Eva_testtube_2.png",
+      "sha256": "63dc5fa80a6b933a3a55ac64e2bae0d3d946cea326f787670864ee94b27f742b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/Eva_testtube_3.png",
+      "path": "img/pictures/Eva_testtube_3.png",
+      "sha256": "14a36f7d6764072e4243f503ae38ad02247b3398b439fa47147529899d5455d6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/Noh_Ending1.png",
+      "path": "img/pictures/Noh_Ending1.png",
+      "sha256": "dfc6514f547909f3e5984131b204b7da9cd65d144ef2452203a6f2ab0eae2623"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/Noh_Ending2.png",
+      "path": "img/pictures/Noh_Ending2.png",
+      "sha256": "bd10029535db66f8fd0934d375ea1335cd44533dd1f07a4cff23a567f0731dd3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/Noh_Ending3.png",
+      "path": "img/pictures/Noh_Ending3.png",
+      "sha256": "3caeec9daf6a67f0d93127a900b16bce7cd5bc4d49ba99a71d4e5ef86c04d266"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/Noh_Ending4.png",
+      "path": "img/pictures/Noh_Ending4.png",
+      "sha256": "88de61a8dc7f50b1971aefca0c781beadf92722d10345957928d563079b57cd6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/credits.png",
+      "path": "img/pictures/credits.png",
+      "sha256": "196892185ac39a905bb19cabc59d9b84c6cb8be452a20bf2ca72419a66c9fab8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/hands01.png",
+      "path": "img/pictures/hands01.png",
+      "sha256": "9654580daff16902a3015098854ba7019a2f950e8827b84885e57a4fbdc4d7a3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/hands02.png",
+      "path": "img/pictures/hands02.png",
+      "sha256": "a7a4e046f7a1220551e7f53c6de98b6c7cb5220847a112d5859bc2d34d06b511"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/hands03.png",
+      "path": "img/pictures/hands03.png",
+      "sha256": "9f3f2875e2b7007bc3b7f86930e41f5856ed195433f9fca4ec9d19079f6ab2f2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/hands04.png",
+      "path": "img/pictures/hands04.png",
+      "sha256": "96d396839dabd5c7be42e03104d1252a6fd04743530e02fa369af73bfa56239b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/hands05.png",
+      "path": "img/pictures/hands05.png",
+      "sha256": "054c2a2dce25d5e023010978846204dfb3e5234d0fbb0eca8daab2f65e9fa701"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/heart100.png",
+      "path": "img/pictures/heart100.png",
+      "sha256": "59483d8b3580931272a708a03d51c043b9314e8c6cd6d2f9fb84600b4dd85805"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/heart20.png",
+      "path": "img/pictures/heart20.png",
+      "sha256": "7acc27710bf8372b16357f0997886c92501abe3bcf83190e465bbd5edd098370"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/heart50.png",
+      "path": "img/pictures/heart50.png",
+      "sha256": "a84d52911b4bd6453732ad5ba748c655b3fed127edec4e30812e875385641e8b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/heart70.png",
+      "path": "img/pictures/heart70.png",
+      "sha256": "2131c366512798e06dfea9455071dfe5e58aaad36556b04bc61abeba036492e8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/mirror_00.png",
+      "path": "img/pictures/mirror_00.png",
+      "sha256": "7c7b83e71f3612c58a5980a34c68720dcc1ff278847878d98c891b26cef2aa4c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/mirror_01.png",
+      "path": "img/pictures/mirror_01.png",
+      "sha256": "29606ed20fe97e17b55399dd22faf3047f909599f09efc438d51d80dc96d09b6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/mirror_02.png",
+      "path": "img/pictures/mirror_02.png",
+      "sha256": "96d2ef5c97b41828fbdfbef936ad90d3c486ee5ef27783b1b369fefdd102e441"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/mirror_03.png",
+      "path": "img/pictures/mirror_03.png",
+      "sha256": "fd7ecd6aa56788a90b4db0ddba90afb289f086eb91cf544db5c98e57c1da41e2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/mirror_04.png",
+      "path": "img/pictures/mirror_04.png",
+      "sha256": "8a5c0881df2a1a541b4ee21fb339014db00cf61abb5144c211de39fb540b08fe"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/mirror_05.png",
+      "path": "img/pictures/mirror_05.png",
+      "sha256": "e3188049f9c492266d88196fb2fce427ac49d74d032ad5aa5be2fd19967b896d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/testtube_1.png",
+      "path": "img/pictures/testtube_1.png",
+      "sha256": "318c52a1750f8983398fbf4bd198d4caf1f18b376f1b4036c8b30d13e710f899"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/testtube_2.png",
+      "path": "img/pictures/testtube_2.png",
+      "sha256": "551365d0d7b3f25952cfdeeec94145983ffe8d58b5ccefbffa2e13f54ab2a315"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/testtube_3.png",
+      "path": "img/pictures/testtube_3.png",
+      "sha256": "012702395bf631d4415e1d5cb33964f4f860a71230ea1694bf36d47c4a2e9cf7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/pictures/testtube_4.png",
+      "path": "img/pictures/testtube_4.png",
+      "sha256": "40abee917cb0ef0be9b2308d0a176bf779a81c7dbebbdc3425d3af4cb08a5830"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/Balloon.png",
+      "path": "img/system/Balloon.png",
+      "sha256": "ecd8441d826929fea6b4ce8425c838d2208432fe9b8fe9d1f4b3dcbda7cb04eb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/ButtonSet.png",
+      "path": "img/system/ButtonSet.png",
+      "sha256": "46c37978702df116a3baa414a47d060a9b9c049670541b5156cadca818b55549"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/Damage.png",
+      "path": "img/system/Damage.png",
+      "sha256": "75050d625250c9bbcd2aa5a325ddc98659e4486a0a16a25a6e69cd5342f265e1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/GameOver.png",
+      "path": "img/system/GameOver.png",
+      "sha256": "d6b4f13af5ddcdeb693a598a3fcfa3a9b12abb6aeffef4f4dfeb7a26ee0d96ba"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/IconSet.png",
+      "path": "img/system/IconSet.png",
+      "sha256": "b9de9ce352c7ffaabb6d320149c47789042f4b8fd3a9155b1b7ae7e6757afd73"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/Loading.png",
+      "path": "img/system/Loading.png",
+      "sha256": "9baddf397d0751794e6024ce0b4c38e82820846efaf7022aff511ae99e731801"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/Shadow1.png",
+      "path": "img/system/Shadow1.png",
+      "sha256": "a5de3eaaf724ea4bc350e3b1ca67afe84d2d75e0284fa779a44c62e13c6affd1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/Shadow2.png",
+      "path": "img/system/Shadow2.png",
+      "sha256": "e09efefa748fdd9ccf400d47d177ad89754673866428db92226693137c54b18c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/States.png",
+      "path": "img/system/States.png",
+      "sha256": "da00482aaf63183ecf083fe93e48c2b6673f3c32c032ddeed27f50aa46a84a57"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/Weapons1.png",
+      "path": "img/system/Weapons1.png",
+      "sha256": "69bf25cdbfa92e92075cc8be655889507075304db741e76c8fb3636561d1c2f0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/Weapons2.png",
+      "path": "img/system/Weapons2.png",
+      "sha256": "2f5e551cda86f0df35682ccb8b306f05ae3207cf4c2d9c934aa9dbe8b1d9d935"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/Weapons3.png",
+      "path": "img/system/Weapons3.png",
+      "sha256": "33562318b807d1dc509e6eefe3661d7b8e92aee2f25f1e7d1728d2b636f058c3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/system/Window.png",
+      "path": "img/system/Window.png",
+      "sha256": "8ac45e3591cc4161b2aabdb3566f1b963580f9ebcaedc3bf5cfe89b0d71e64d2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/0Inside_01.png",
+      "path": "img/tilesets/0Inside_01.png",
+      "sha256": "858243051f72964806e23347153882fed19593cecca28e064bb7e511e8466425"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Dungeon_A1.png",
+      "path": "img/tilesets/Dungeon_A1.png",
+      "sha256": "a35c6a3221256c42149309251b1f324f292ea777b7c61dbc3990450e1044a759"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Dungeon_A2.png",
+      "path": "img/tilesets/Dungeon_A2.png",
+      "sha256": "d272dfb3d8af46288cf23aa384d4e544036847db714c782fd7a2a46d8b23b36c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Dungeon_A4.png",
+      "path": "img/tilesets/Dungeon_A4.png",
+      "sha256": "7d54acbb8a053a268b7198e8b3c32c011ac07feefc920bcd57cf138e9665cfb1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Dungeon_A5.png",
+      "path": "img/tilesets/Dungeon_A5.png",
+      "sha256": "5fef61b9cce5e972dfd7d40221c68f4e7fde52bc132a482f15c5312944238a13"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Dungeon_B.png",
+      "path": "img/tilesets/Dungeon_B.png",
+      "sha256": "95a1830aaa9dd12706831e701f374e2a85e9b842daca7686535b357ebcbef804"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Dungeon_C.png",
+      "path": "img/tilesets/Dungeon_C.png",
+      "sha256": "3f91264f641e364dfbb14e884aeb5ae9a76ab53a6d774a0b65a613b397493112"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Factory_Inside1.png",
+      "path": "img/tilesets/Factory_Inside1.png",
+      "sha256": "332c4d8c579b57226dcba75a15ea82632a4fb573bb154f5a7cb470e8f53ca677"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Factory_Inside_C.png",
+      "path": "img/tilesets/Factory_Inside_C.png",
+      "sha256": "02b8489f963b40400c5f4c047b344392a7acdf00cc2f2908718c10202d04787c"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Flesh_Trees.png",
+      "path": "img/tilesets/Flesh_Trees.png",
+      "sha256": "44c742f89be540668b53a2851d44f97bbb45dd4d5b9c1f3c303d4676f2b70a2d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Inside_A1.png",
+      "path": "img/tilesets/Inside_A1.png",
+      "sha256": "d5a4f4876468e920988e73dad1003bcaad4c9d9d5d3769a04351106cbca79394"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Inside_A2.png",
+      "path": "img/tilesets/Inside_A2.png",
+      "sha256": "5404d7087a6f824095da9a77d339e203a426eaf4202ea7697afadb589ad943f2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Inside_A4.png",
+      "path": "img/tilesets/Inside_A4.png",
+      "sha256": "85f15d7ce9adf0147aaab5187fc233be8eea1b03f37808ac42e30c5b7be9200f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Inside_A5.png",
+      "path": "img/tilesets/Inside_A5.png",
+      "sha256": "2a417cf9ba39061c257e278bde1715152328479c6db89a1858d06451c7d6245f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Inside_B.png",
+      "path": "img/tilesets/Inside_B.png",
+      "sha256": "14ed95d9f3fd89f626812719152be320a591e7963c1a30a08bde79a6512bacd1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Inside_C.png",
+      "path": "img/tilesets/Inside_C.png",
+      "sha256": "bf963ce396466f3e399c52aca9bcdc922523205ab4661fb128a2a6a431849212"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Outside_A1.png",
+      "path": "img/tilesets/Outside_A1.png",
+      "sha256": "82223a25498bb288131d7fdcc6ab21196de0460b768d01b0655964b96eefb21d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Outside_A2.png",
+      "path": "img/tilesets/Outside_A2.png",
+      "sha256": "382910680e21953b1fd6cd95ee6a53780a55951e70c1abaaeac8c62df592df6d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Outside_A3.png",
+      "path": "img/tilesets/Outside_A3.png",
+      "sha256": "b9c8e56c3e02ae8b3f593171c84cfdb2a61ef3d87b7beebf25edba2014af64c5"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Outside_A4.png",
+      "path": "img/tilesets/Outside_A4.png",
+      "sha256": "e4b9f7de5e88b0d7a1922999a64054792f12b5a0c198df527aabd99b37f7190a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Outside_A5.png",
+      "path": "img/tilesets/Outside_A5.png",
+      "sha256": "d8039c985bc745e9ddc15d7eccd9d09b68dce9ad8db58b11d889afa513a289e2"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Outside_B.png",
+      "path": "img/tilesets/Outside_B.png",
+      "sha256": "82051b46105a9ea87c72f5f80c19b72abdd12cd8d78ea70784c0ebe049649a34"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Outside_C.png",
+      "path": "img/tilesets/Outside_C.png",
+      "sha256": "88c79c81cc1f478192f8c4c5a6d5b50b57fd4cfa344db9649b1a36c30354af5d"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/SF_Inside_A4.png",
+      "path": "img/tilesets/SF_Inside_A4.png",
+      "sha256": "dbf564be42aab2dcbd21379c8dadf175745954b5f23e3e6414c6b9f8f26017e8"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/SF_Inside_B.png",
+      "path": "img/tilesets/SF_Inside_B.png",
+      "sha256": "c8d61c39d41ccbcbb0b2cbb318f3100febcb21452f5079f06efba1758cf2e92f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/SF_Inside_C.png",
+      "path": "img/tilesets/SF_Inside_C.png",
+      "sha256": "81c3f12d2f735ee83312d60aae814c72282415cff366f8c2c757d6c6df58bc6f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/SF_Inside_D.png",
+      "path": "img/tilesets/SF_Inside_D.png",
+      "sha256": "ef14698e098925cd2d1d566f7837b0b3d772fffa1a19c609fe5c22d1d0c4f921"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/SF_Outside_A3.png",
+      "path": "img/tilesets/SF_Outside_A3.png",
+      "sha256": "c52e9e0790cf6c72ee1d9e19cc070772ab7b51f57b9aeca5d6c20a30effec7a0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/SF_Outside_A4.png",
+      "path": "img/tilesets/SF_Outside_A4.png",
+      "sha256": "d701dffa3d596706bace8c122f705bbec359fbb78dbc1fb36ba5bc81c4eb10ca"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/SF_Outside_A5.png",
+      "path": "img/tilesets/SF_Outside_A5.png",
+      "sha256": "6cab0b9ce200a872dea842f393e588ae1e7035c688fdb929c8804cd7c6096af7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/SF_Outside_B.png",
+      "path": "img/tilesets/SF_Outside_B.png",
+      "sha256": "a91aa273782b85eaebbd4d13b3f4e70aeec68f930c57a68deda165c54b3cdcfb"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/SF_Outside_C.png",
+      "path": "img/tilesets/SF_Outside_C.png",
+      "sha256": "1211b3d5d0189695445b31fe933a791b4254eb7ccf44de13ddad363747ae24cf"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Tileset_Laboratory_D.png",
+      "path": "img/tilesets/Tileset_Laboratory_D.png",
+      "sha256": "c322cd2b2a2741e15f7d2118c429512890b30d0a38201fe330bb8a5e4c45e1b4"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/Tileset_Laboratory_E.png",
+      "path": "img/tilesets/Tileset_Laboratory_E.png",
+      "sha256": "6e9f8a59f3803f99e7aac49fc782e78ddce068c01a13b79c81fc776f588bd586"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/World_A1.png",
+      "path": "img/tilesets/World_A1.png",
+      "sha256": "80e86162d2a7961f852ecd45fbc4b1ddbc1864d1553bf9b19e40f7fe4ef09070"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/World_A2.png",
+      "path": "img/tilesets/World_A2.png",
+      "sha256": "beaff5f5fcf47cf61fb454033456840178ee117bf0fcc79ae566f4702252eeed"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/World_B.png",
+      "path": "img/tilesets/World_B.png",
+      "sha256": "ec58b4999be39fb2aabd9e903ae637e60cf3e7c93e3b7326d35132770da3b574"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/tilesets/World_C.png",
+      "path": "img/tilesets/World_C.png",
+      "sha256": "ca21733537766c8eeda5442f9803a2af9f752a7a9e8e5c294a8bf5c25954f8cd"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/img/titles1/title.png",
+      "path": "img/titles1/title.png",
+      "sha256": "75dafa1fad7867755536e5bb1f6939a15ff81b403e66537b74635604560cf09b"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/index.html",
+      "path": "index.html",
+      "sha256": "8b6be86d12370bc60ad0f784a775a43a824975213067d17f8e0d07d974648552"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/libs/fpsmeter.js",
+      "path": "js/libs/fpsmeter.js",
+      "sha256": "fec43a13a522dafe9c28c3d30635a275af350edf3423de0349fb6fb9c01e9450"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/libs/iphone-inline-video.browser.js",
+      "path": "js/libs/iphone-inline-video.browser.js",
+      "sha256": "68d7edfc56c4fc6a21de7d55107fd6a334e1a3ff72eb21c14a2553ab9c92eeba"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/libs/lz-string.js",
+      "path": "js/libs/lz-string.js",
+      "sha256": "7acc5ae524455fb67dee09375b4246386241f7dc4708dcdf8af0e78ca8267de7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/libs/pixi-picture.js",
+      "path": "js/libs/pixi-picture.js",
+      "sha256": "93fd8355e6847e791f363718c400aa7087c153123cea4b3186f325e2b1976075"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/libs/pixi-tilemap.js",
+      "path": "js/libs/pixi-tilemap.js",
+      "sha256": "18e1f1d138643392733998fb428d1134eb35a645db57d336baa7fe5e5b996405"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/libs/pixi.js",
+      "path": "js/libs/pixi.js",
+      "sha256": "e8c3aba19cbdb6bfdfe7e9e06753329171731d1a05d5c49b750cc6656a31444a"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/main.js",
+      "path": "js/main.js",
+      "sha256": "dcab1427f95c4bcedf1ed595b828d0c423d4c8d1767452c9a4e651a9c07a3ab9"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/plugins.js",
+      "path": "js/plugins.js",
+      "sha256": "a28ffa0814852cfcf0c98c5aac7b6cf2402484451fa29b23bb82e6245bd45ad1"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/plugins/Community_Basic.js",
+      "path": "js/plugins/Community_Basic.js",
+      "sha256": "93d25e8b1a9154da02685472c596ec9baa5a6ae2abc29ca1b8f85c5d651f0ad6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/plugins/KhasCore.js",
+      "path": "js/plugins/KhasCore.js",
+      "sha256": "4058c0412da9a0169168b3e4ea20b0db5ef6693552ea233e6c38b52652e73f8f"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/plugins/KhasGraphics.js",
+      "path": "js/plugins/KhasGraphics.js",
+      "sha256": "26045d28d04801c572e37e39fca8357dbef0d1a3cf1835b0dd0a239f17b0d9c3"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/plugins/KhasUltraLighting.js",
+      "path": "js/plugins/KhasUltraLighting.js",
+      "sha256": "50719ba6b41ff9c83bd8d5be6aff97cd7542b81c84e5e43b306a82ed1ab69ebe"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/rpg_core.js",
+      "path": "js/rpg_core.js",
+      "sha256": "9ad9914cc421af6d054c3f01b022b7383863b047ec3f6f76aa897e6cfbf864c6"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/rpg_managers.js",
+      "path": "js/rpg_managers.js",
+      "sha256": "b3d5c746cf52234bdd34af746dbf3caecf96bb3477cc6d24121c4a1a11241114"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/rpg_objects.js",
+      "path": "js/rpg_objects.js",
+      "sha256": "2d43dd9d8974c88a1b82ffa493d6d8a02c4ce1d0dfc8f05e6c0ab731e3f0573e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/rpg_scenes.js",
+      "path": "js/rpg_scenes.js",
+      "sha256": "a76ea8c14ec7414a0e2bb488b19734603cc3d8aace3f163e3aa82fc3d0d20d20"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/rpg_sprites.js",
+      "path": "js/rpg_sprites.js",
+      "sha256": "f13e67ef4ed308afe71c8503dbe4da65b478cb772a7c0cea88d0e280a4e4fcb0"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/17593905/Human%20Construction%20Site_0.97/www/js/rpg_windows.js",
+      "path": "js/rpg_windows.js",
+      "sha256": "2501aea15906d84a2fb51de20e6dc006f847249674f14802ec2ac2dd5361bb99"
+    }
+  ]
+}

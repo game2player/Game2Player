@@ -1,0 +1,287 @@
+{
+  "game_id": "332_forward",
+  "source_url": "https://twotinydice.itch.io/forward",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/index.html",
+      "path": "index.html",
+      "sha256": "a5954e6405f95198e048e9c6ee2343928a77f28acb12684d58cc273e54279150",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/favicon.ico",
+      "path": "favicon.ico",
+      "sha256": "c1209882f16bd48bb22a16e4bbeb25ff5d642718db72487080a263c5755d070d",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/fonts/PearSoda.db5f19c6.ttf",
+      "path": "fonts/PearSoda.db5f19c6.ttf",
+      "sha256": "468e142ed317d8139386c659cfd8cda44b33d64a470f572143f0a0390263d639",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/fonts/Zepto-Regular.c15b7828.ttf",
+      "path": "fonts/Zepto-Regular.c15b7828.ttf",
+      "sha256": "da7f39bf8f73b4e769e2c924afecd406ea76bd9d028587cf2aa232a4de288140",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/media/deal-card.714ceeb6.mp3",
+      "path": "media/deal-card.714ceeb6.mp3",
+      "sha256": "185282dd1eae614a410e605bc79559087cc322dfd21dacd1d45803dff5852a38",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/media/lose.13b4de08.mp3",
+      "path": "media/lose.13b4de08.mp3",
+      "sha256": "983fa0ddae599aa9ce9a18d9a6a5cbff1b0430a8a642a1e725dc49e75bd69a89",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/media/hit.c0ba6411.mp3",
+      "path": "media/hit.c0ba6411.mp3",
+      "sha256": "a5bf389a820ebb15748e4e2e9004286d2078f736ebd8a90fbe48f841582f52d1",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/media/equip.9167155d.mp3",
+      "path": "media/equip.9167155d.mp3",
+      "sha256": "5916c6b5d40500d12332f3b8d3196ec089938704bbe66743822716da8ee0601f",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/media/win.ace8bf01.mp3",
+      "path": "media/win.ace8bf01.mp3",
+      "sha256": "ed1f8e533cdbeb34cd771fb0a9146754d5aa4bc79d1b2804fd28b1aea0004832",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/media/coins.25634c51.mp3",
+      "path": "media/coins.25634c51.mp3",
+      "sha256": "f2c59fe379ac65eb576dc2c3eb4950f103b5307830aaf77d2e108bb0499a99a6",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/media/shield.1a77a0be.mp3",
+      "path": "media/shield.1a77a0be.mp3",
+      "sha256": "4a8b42194567fd85c68bdaea1a207e1cafa531473cc8775fe0da5b7b67bc92ad",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/media/chest.03564440.mp3",
+      "path": "media/chest.03564440.mp3",
+      "sha256": "74e730be12a64d5412a85007d48d963dfbe269828684b48c74f83704b55648fd",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/pointer.599a107d.png",
+      "path": "img/pointer.599a107d.png",
+      "sha256": "17319b9cfd62a54f9a0d423e048543ccf01b16927484b04cb1b27683b0d9f6cc",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/light-frame.6136e0df.png",
+      "path": "img/light-frame.6136e0df.png",
+      "sha256": "aeb08d0b6136966dd987fd6dac511b6be4ba5914be6cfecabdcf26f5c83f7be5",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/icons.127ae97f.png",
+      "path": "img/icons.127ae97f.png",
+      "sha256": "4a1de1059b813946d7778b903f5365445965313f04b94d5176231f8c5278a710",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/biome-frame.2eee4ea0.png",
+      "path": "img/biome-frame.2eee4ea0.png",
+      "sha256": "7c838055e1569f3e4fbc17c2ba36af0f4de03552dd832d6eb7850c78f6c122f5",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/cards.d01553c4.png",
+      "path": "img/cards.d01553c4.png",
+      "sha256": "afa55e0f46ef66c1d91a448567879b0d63d90f1e2b6b6a273c48d5b8cdf1a5bb",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/card-frame-brown.2616bacf.png",
+      "path": "img/card-frame-brown.2616bacf.png",
+      "sha256": "f24f4cdeedb14ee7d216c6eb3814e40796e0c2313028de7c23da93cdf328ad8b",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/hero-frame.19b68820.png",
+      "path": "img/hero-frame.19b68820.png",
+      "sha256": "da0763b4e36f37ed15c195aa4f7ee7a751449904b004ab9af1855c6c62a5ae0a",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/card-frame-purple.c48f0157.png",
+      "path": "img/card-frame-purple.c48f0157.png",
+      "sha256": "65033a3457eec68eafffdf64b6c25f9f75b7fdd0b3226380be62280f97d645cb",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/chest-frame.9f4c5c1c.png",
+      "path": "img/chest-frame.9f4c5c1c.png",
+      "sha256": "ea523512c02f9e7d9f95e7b2e8b729bfdfd000014158a450ef50192ddb326f4a",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/card-frame-orange.9c1ab4da.png",
+      "path": "img/card-frame-orange.9c1ab4da.png",
+      "sha256": "1122e2255690db702c33bd2d82a2bc4a6736538f606d49c1fc884e0d94eb65e0",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/hit01.af32444a.png",
+      "path": "img/hit01.af32444a.png",
+      "sha256": "26dffa12a2b2d895040833b80fd9b8990536bc85741bc54c6c9378060a1d9c60",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/card-bg-deco-no-value-dark.806052e2.png",
+      "path": "img/card-bg-deco-no-value-dark.806052e2.png",
+      "sha256": "875bd7c182574fb61558e67791a7c9d8a888cdd418c2c856d4c3c62e65bb2b1e",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/card-frame-red.32c8a2d0.png",
+      "path": "img/card-frame-red.32c8a2d0.png",
+      "sha256": "a17599ad1ef7e64df046ae726939ffa1d18ed00b8b6149c04b04d139cf70443a",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/card-frame-gray.f3e7d8bc.png",
+      "path": "img/card-frame-gray.f3e7d8bc.png",
+      "sha256": "84254f2b414ac43de85839aed2c720a10cd7bbfb4dd00d232d67db01cff716b0",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/card-frame-yellow.e4129b3b.png",
+      "path": "img/card-frame-yellow.e4129b3b.png",
+      "sha256": "4ab583e77b4ec8a6bbaa82e42a2b3eb39e98c222b71af36c34cbd92057aaf135",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/click.673068c2.png",
+      "path": "img/click.673068c2.png",
+      "sha256": "0ec80f4e04b25b3161f66c9d97c1328562ac65c35ba84eb795a9032a1822fcd4",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/shards01.b167b88e.png",
+      "path": "img/shards01.b167b88e.png",
+      "sha256": "83ce22ac2a587dc9cd65b04528309c46de490d760f1f7c90c66756d20712ccf2",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/card-bg-deco-no-value.a46a9213.png",
+      "path": "img/card-bg-deco-no-value.a46a9213.png",
+      "sha256": "db7d6e58f3b0a2b60ad1ad55479d8e7c48d7a53dfe6e58a386300a69d589b565",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/card-bg-deco.a838fb58.png",
+      "path": "img/card-bg-deco.a838fb58.png",
+      "sha256": "51087c8ab65ff6c74378ce6c811fb15b9bff8c0a1bbff0a1e2ea95631c17e323",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/img/card-back.330ad928.png",
+      "path": "img/card-back.330ad928.png",
+      "sha256": "cde92c1be1f94a249d4be2e83b9fc2ce9de8517a66f53e4c1cf2cb0b100c4538",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/css/app.6c305730.css",
+      "path": "css/app.6c305730.css",
+      "sha256": "fff65676d5722a3ca035c21febac696318789faa096dc76eadb0e0c472a090e3",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/js/chunk-vendors.c5cc457a.js",
+      "path": "js/chunk-vendors.c5cc457a.js",
+      "sha256": "b431cfa5bb99966986dae36b11f17d49f4742a2da3cef692118383d651f1f5ae",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1314748/js/app.1f4b084b.js",
+      "path": "js/app.1f4b084b.js",
+      "sha256": "b10ab781ac3fbd4c59090e94690e73fce379424daef0bf57b10a910cc2a4dd4a",
+      "headers": {
+        "Referer": "https://twotinydice.itch.io/forward"
+      }
+    }
+  ]
+}

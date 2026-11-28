@@ -1,0 +1,88 @@
+[
+  {
+    "path": "scene/main.gdc",
+    "source_sha256": "bd150d49f48b9ff2c1fe5634b2480c0f8dc73bfdce44707ee745ecae179bd8b7",
+    "patched_source_sha256": "74e4385ee18bb3f62b5b358d5353a45e74f910d61d92eda9c412cc082343bf58",
+    "edits": [
+      {
+        "start": 17,
+        "end": 17,
+        "text": "\n\nvar gwPhase = \"loading\"\nvar gwQuick = false\nvar gwQuickPending = false\nvar gwQuickWorld = 1\nvar gwQuickDifficulty = \"medium\"\nvar gwQuickChar = 0\nvar skipTuto = false\nvar gwFrame = 0\nvar gwGame = null\nvar gwCamStartY = 123.0\nvar gwBossY = null\nvar gwBossLifeMax = 0.0\nvar gwBossSeen = false\nvar gwTries = 0\n"
+      },
+      {
+        "start": 49,
+        "end": 49,
+        "text": "\tgwPhase = \"logo\"\n"
+      },
+      {
+        "start": 53,
+        "end": 53,
+        "text": "\tgwPhase = \"language\"\n"
+      },
+      {
+        "start": 57,
+        "end": 57,
+        "text": "\tgwPhase = \"cinematic\"\n"
+      },
+      {
+        "start": 70,
+        "end": 71,
+        "text": "\tvar qp = gwParseQuery()\n\tif qp.has(\"world\") or qp.has(\"difficulty\"):\n\t\t\n\t\tgwQuick = true\n\t\tgwQuickPending = true\n\t\tgwQuickWorld = int(clamp(int(qp.get(\"world\", \"1\")), 1, 5))\n\t\tvar d = qp.get(\"difficulty\", \"medium\")\n\t\tgwQuickDifficulty = d if difficultyName.has(d) else \"medium\"\n\t\tgwQuickChar = int(clamp(int(qp.get(\"char\", \"0\")), 0, 8))\n\t\tskipTuto = true\n\t\tstart = \"title\"\n\t\tlaunchGame()\n\t\tcall_deferred(\"gwQuickStart\")\n\telif debug and quickStart:\n"
+      },
+      {
+        "start": 138,
+        "end": 138,
+        "text": "\tgwFrame += 1\n\tif gwFrame % 3 == 0:\n\t\tgwPublish()\n"
+      },
+      {
+        "start": 241,
+        "end": 241,
+        "text": "\nfunc gwParseQuery():\n\tvar out = {}\n\tif not OS.has_feature(\"JavaScript\"):\n\t\treturn out\n\tvar s = JavaScript.eval(\"window.location.search\")\n\tif typeof(s) != TYPE_STRING:\n\t\treturn out\n\tif s.begins_with(\"?\"):\n\t\ts = s.substr(1)\n\tfor part in s.split(\"&\"):\n\t\tvar kv = part.split(\"=\")\n\t\tif kv.size() == 2:\n\t\t\tout[kv[0]] = kv[1]\n\treturn out\n\nfunc gwQuickStart():\n\tvar titles = get_tree().get_nodes_in_group(\"title\")\n\tif titles.size() == 0 or game == null or not is_instance_valid(game):\n\t\tgwTries += 1\n\t\tif gwTries < 200:\n\t\t\tcall_deferred(\"gwQuickStart\")\n\t\treturn\n\ttitles[0].queue_free()\n\tlaunchChooseChar()\n\tgame.launchGame(1)\n\tself.difficulty = gwQuickDifficulty\n\tfor cc in get_tree().get_nodes_in_group(\"chooseChar\"):\n\t\tcc.queue_free()\n\tfor player in get_tree().get_nodes_in_group(\"player\"):\n\t\tif player.number == 1:\n\t\t\tplayer.character = gwQuickChar\n\tmyConst.on_menu = false\n\tgame.mapLevel = gwQuickWorld\n\tmyConst._updateChunck()\n\tgame.launchMap()\n\tgwQuickPending = false\n\nfunc gwOnLevelStarted():\n\tgwBossY = null\n\tgwBossLifeMax = 0.0\n\tgwBossSeen = false\n\tvar cams = get_tree().get_nodes_in_group(\"cam\")\n\tif cams.size():\n\t\tgwCamStartY = cams[0].get_global_position().y\n\nfunc gwScreen():\n\tif game == null or not is_instance_valid(game):\n\t\treturn gwPhase\n\tif get_tree().get_nodes_in_group(\"gameOver\").size():\n\t\treturn \"game_over\"\n\tif get_tree().get_nodes_in_group(\"endGame\").size() or get_tree().get_nodes_in_group(\"endCinematic\").size():\n\t\treturn \"ending\"\n\tif get_tree().get_nodes_in_group(\"title\").size():\n\t\treturn \"title\"\n\tif get_tree().get_nodes_in_group(\"chooseChar\").size():\n\t\treturn \"character_select\"\n\tif get_tree().get_nodes_in_group(\"tuto\").size() or get_tree().get_nodes_in_group(\"tutoCtrl\").size():\n\t\treturn \"tutorial\"\n\tif get_tree().get_nodes_in_group(\"shopMenu\").size():\n\t\treturn \"shop\"\n\tif get_tree().get_nodes_in_group(\"endLevel\").size():\n\t\treturn \"stage_clear\"\n\tvar pz = get_tree().get_nodes_in_group(\"pause\")\n\tif get_tree().paused and pz.size() and pz[0].visible:\n\t\treturn \"paused\"\n\tif get_tree().get_nodes_in_group(\"introLevel\").size():\n\t\treturn \"stage_intro\"\n\tif not get_tree().get_nodes_in_group(\"playerDeath\").size():\n\t\treturn \"loading\"\n\treturn \"playing\"\n\nfunc gwPublish():\n\tif not OS.has_feature(\"JavaScript\"):\n\t\treturn\n\tvar snap = {\"screen\": gwScreen(), \"quick_pending\": gwQuickPending, \"quick\": gwQuick}\n\tif game != null and is_instance_valid(game):\n\t\tif game != gwGame:\n\t\t\tgwGame = game\n\t\t\tgame.connect(\"level_started\", self, \"gwOnLevelStarted\")\n\t\tvar players = []\n\t\tvar kills = 0\n\t\tfor p in get_tree().get_nodes_in_group(\"playerDeath\"):\n\t\t\tif p.is_queued_for_deletion():\n\t\t\t\tcontinue\n\t\t\tvar life = p.life if p.life != null else 0\n\t\t\tplayers.append({\"number\": p.number, \"life\": life, \"sphere_max\": p.sphereMax, \n\t\t\t\t\"score\": p.score, \"deaths\": p.deathCount, \"character\": p.character, \n\t\t\t\t\"dead\": bool(p.death), \"shield\": p.shield, \"item_levels\": p.itemLevel, \n\t\t\t\t\"shots\": p.nbrPrecisionShoot, \"hits\": p.nbrPrecisionTouch})\n\t\t\tkills += p.score\n\t\tsnap[\"players\"] = players\n\t\tsnap[\"enemies_destroyed\"] = kills\n\t\t\n\t\tvar hb = get_tree().get_nodes_in_group(\"hudBar\")\n\t\tif hb.size() and hb[0].visible:\n\t\t\tvar lbl = hb[0].get_node(\"level\")\n\t\t\tvar want = \"STAGE: \" + str(game.mapLevel) + \"  KILLS: \" + str(kills)\n\t\t\tif lbl.text != want:\n\t\t\t\tlbl.set_text(want)\n\t\tsnap[\"world\"] = game.mapLevel\n\t\tsnap[\"credit\"] = game.credit\n\t\tsnap[\"run_time_s\"] = game.gameTime\n\t\tsnap[\"upgrades_bought\"] = game.upgradesBought\n\t\tsnap[\"worlds_cleared_list\"] = game.cleared.keys()\n\t\tsnap[\"paused\"] = get_tree().paused\n\t\t\n\t\tvar cams = get_tree().get_nodes_in_group(\"cam\")\n\t\tvar camY = gwCamStartY\n\t\tif cams.size():\n\t\t\tcamY = cams[0].get_global_position().y\n\t\tvar bossLife = 0.0\n\t\tvar bossNodes = 0\n\t\tfor e in get_tree().get_nodes_in_group(\"enemy\"):\n\t\t\tif e.boss and not e.bossPart and not e.is_queued_for_deletion():\n\t\t\t\tbossNodes += 1\n\t\t\t\tbossLife += max(e.life, 0.0)\n\t\t\t\tif gwBossY == null:\n\t\t\t\t\tgwBossY = e.get_global_position().y + 40\n\t\tif bossNodes:\n\t\t\tgwBossSeen = true\n\t\t\tgwBossLifeMax = max(gwBossLifeMax, bossLife)\n\t\tvar dmg = 0.0\n\t\tif gwBossSeen and gwBossLifeMax > 0:\n\t\t\tdmg = 1.0 - clamp(bossLife / gwBossLifeMax, 0.0, 1.0)\n\t\tvar pos = 0.0\n\t\tif gwBossY != null and gwCamStartY - gwBossY > 1:\n\t\t\tpos = clamp((gwCamStartY - camY) / (gwCamStartY - gwBossY), 0.0, 1.0)\n\t\tsnap[\"scroll_fraction\"] = pos\n\t\tsnap[\"boss_damage_fraction\"] = dmg\n\t\tsnap[\"boss_present\"] = bossNodes > 0\n\t\tsnap[\"boss_life\"] = bossLife\n\tsnap[\"difficulty\"] = difficulty\n\tsnap[\"obs\"] = gwObservation()\n\tJavaScript.eval(\"window.gwSnapshot && window.gwSnapshot(\" + to_json(snap) + \")\")\n\n\n\n\n\n\n\nvar gwPrev = {}\nvar gwSeen = {}\nconst GW_SCALE = 1.25\nconst GW_MAX = 64\nconst GW_FIELD_L = 170.0\nconst GW_FIELD_R = 470.0\n\nfunc gwR(v, step = 0.1):\n\treturn stepify(v, step)\n\nfunc gwFindShape(node):\n\tfor c in node.get_children():\n\t\tif (c is CollisionShape2D or c is CollisionPolygon2D) and not c.disabled:\n\t\t\treturn c\n\treturn null\n\nfunc gwShapeBox(n):\n\tif n == null:\n\t\treturn null\n\tvar pts = []\n\tif n is CollisionShape2D:\n\t\tvar s = n.shape\n\t\tvar ex = Vector2(0, 0)\n\t\tif s is RectangleShape2D:\n\t\t\tex = s.extents\n\t\telif s is CircleShape2D:\n\t\t\tex = Vector2(s.radius, s.radius)\n\t\telif s is CapsuleShape2D:\n\t\t\tex = Vector2(s.radius, s.radius + s.height / 2.0)\n\t\telse:\n\t\t\treturn null\n\t\tpts = [Vector2( - ex.x, - ex.y), Vector2(ex.x, - ex.y), Vector2(ex.x, ex.y), Vector2( - ex.x, ex.y)]\n\telif n is CollisionPolygon2D:\n\t\tpts = Array(n.polygon)\n\tif pts.size() == 0:\n\t\treturn null\n\tvar xf = game_node.get_canvas_transform() * n.get_global_transform()\n\tvar mn = Vector2(INF, INF)\n\tvar mx = Vector2( - INF, - INF)\n\tvar mean = Vector2(0, 0)\n\tvar spts = []\n\tfor p in pts:\n\t\tvar q = xf.xform(p)\n\t\tspts.append([gwR(q.x * GW_SCALE, 1.0), gwR(q.y * GW_SCALE, 1.0)])\n\t\tmn.x = min(mn.x, q.x)\n\t\tmn.y = min(mn.y, q.y)\n\t\tmx.x = max(mx.x, q.x)\n\t\tmx.y = max(mx.y, q.y)\n\t\tmean += q\n\tvar c = (mn + mx) / 2.0\n\tif n is CollisionPolygon2D:\n\t\tc = mean / pts.size()\n\treturn {\"c\": c * GW_SCALE, \"h\": (mx - mn) / 2.0 * GW_SCALE, \"poly\": spts if n is CollisionPolygon2D else null}\n\nfunc gwOnScreen(c, margin):\n\treturn c.x > GW_FIELD_L - margin and c.x < GW_FIELD_R + margin and c.y > - margin and c.y < 360 + margin\n\nfunc gwEntity(node, shape, extra, margin = 24):\n\tvar b = gwShapeBox(shape)\n\tif b == null:\n\t\treturn null\n\tvar c = b[\"c\"]\n\tvar h = b[\"h\"]\n\tif c.x + h.x < GW_FIELD_L - margin or c.x - h.x > GW_FIELD_R + margin or c.y + h.y < - margin or c.y - h.y > 360 + margin:\n\t\treturn null\n\tvar id = node.get_instance_id()\n\tvar ms = OS.get_ticks_msec()\n\tvar vx = 0.0\n\tvar vy = 0.0\n\tif gwPrev.has(id):\n\t\tvar pv = gwPrev[id]\n\t\tvar dt = (ms - pv[2]) / 1000.0\n\t\tif dt > 0.0 and dt <= 0.25:\n\t\t\tvx = (c.x - pv[0]) / dt\n\t\t\tvy = (c.y - pv[1]) / dt\n\tgwSeen[id] = [c.x, c.y, ms]\n\tvar d = {\"id\": id, \"x\": gwR(c.x), \"y\": gwR(c.y), \"vx\": gwR(vx, 0.01), \"vy\": gwR(vy, 0.01), \n\t\t\"hw\": gwR(h.x), \"hh\": gwR(h.y), \"r\": gwR((h.x + h.y) / 2.0)}\n\tif b[\"poly\"] != null and b[\"poly\"].size() <= 24:\n\t\td[\"poly\"] = b[\"poly\"]\n\tfor k in extra.keys():\n\t\td[k] = extra[k]\n\treturn d\n\nfunc gwPlayerEntry():\n\tfor p in get_tree().get_nodes_in_group(\"playerDeath\"):\n\t\tif p.is_queued_for_deletion() or not p.has_node(\"shape\"):\n\t\t\tcontinue\n\t\tif p.number != 1:\n\t\t\tcontinue\n\t\treturn gwEntity(p, p.get_node(\"shape\"), {\"dead\": bool(p.death), \n\t\t\t\"invincible\": p.get_node(\"invincibleTime\").time_left > 0}, 1000)\n\treturn null\n\nfunc gwEnemyEntries():\n\tvar out = []\n\tvar seen = {}\n\tfor e in get_tree().get_nodes_in_group(\"enemy\"):\n\t\tif out.size() >= GW_MAX:\n\t\t\tbreak\n\t\tif e.is_queued_for_deletion() or not e.is_visible_in_tree() or e.death or not e.has_node(\"shape\"):\n\t\t\tcontinue\n\t\tvar extra = {\"kind\": \"enemy\", \"name\": str(e.name), \"boss\": bool(e.boss), \"boss_part\": bool(e.bossPart), \n\t\t\t\"damageable\": bool(e.active) and e.life > 0 and not e.get_node(\"justCreate\").time_left, \n\t\t\t\"solid\": bool(e.solid)}\n\t\tvar d = gwEntity(e, e.get_node(\"shape\"), extra)\n\t\tif d == null:\n\t\t\tcontinue\n\t\tif e.has_node(\"playerHitArea\"):\n\t\t\tvar cb = gwShapeBox(gwFindShape(e.get_node(\"playerHitArea\")))\n\t\t\tif cb != null:\n\t\t\t\td[\"contact\"] = {\"x\": gwR(cb[\"c\"].x), \"y\": gwR(cb[\"c\"].y), \"hw\": gwR(cb[\"h\"].x), \"hh\": gwR(cb[\"h\"].y)}\n\t\tseen[e.get_instance_id()] = true\n\t\tout.append(d)\n\tfor group in [\"destructible\", \"wall\"]:\n\t\tfor w in get_tree().get_nodes_in_group(group):\n\t\t\tif out.size() >= GW_MAX:\n\t\t\t\tbreak\n\t\t\tif seen.has(w.get_instance_id()) or w.is_queued_for_deletion() or not w.is_visible_in_tree():\n\t\t\t\tcontinue\n\t\t\tvar destructible = w.is_in_group(\"destructible\")\n\t\t\tif destructible and w.life <= 0:\n\t\t\t\tcontinue\n\t\t\tvar d = gwEntity(w, gwFindShape(w), {\"kind\": \"destructible\" if destructible else \"wall\", \n\t\t\t\t\"name\": str(w.name), \"boss\": false, \"boss_part\": false, \"damageable\": destructible, \"solid\": true})\n\t\t\tif d != null:\n\t\t\t\tseen[w.get_instance_id()] = true\n\t\t\t\tout.append(d)\n\treturn out\n\nfunc gwProjectileEntries():\n\tvar out = []\n\tfor s in get_tree().get_nodes_in_group(\"shoot\"):\n\t\tif out.size() >= GW_MAX:\n\t\t\tbreak\n\t\tif s.team != \"enemy\" or s.is_queued_for_deletion() or not s.is_visible_in_tree() or not s.has_node(\"pos/area\"):\n\t\t\tcontinue\n\t\tvar d = gwEntity(s, gwFindShape(s.get_node(\"pos/area\")), {\"kind\": \"shot\", \"damage\": s.damage})\n\t\tif d != null:\n\t\t\tout.append(d)\n\tfor e in get_tree().get_nodes_in_group(\"enemy\"):\n\t\tif e.is_queued_for_deletion() or not e.is_visible_in_tree() or e.death:\n\t\t\tcontinue\n\t\tfor c in e.get_children():\n\t\t\tif c.has_node(\"laserReload\") and c.has_node(\"laser\") and c.has_node(\"area\") and c.get_node(\"laser\").visible and c.get_node(\"area\").monitoring:\n\t\t\t\tvar d = gwEntity(c, gwFindShape(c.get_node(\"area\")), {\"kind\": \"laser\", \"damage\": 1})\n\t\t\t\tif d != null:\n\t\t\t\t\tout.append(d)\n\treturn out\n\nfunc gwPickupEntries():\n\tvar out = []\n\tfor s in get_tree().get_nodes_in_group(\"sphere\"):\n\t\tif out.size() >= GW_MAX:\n\t\t\tbreak\n\t\tif s.is_queued_for_deletion() or not s.is_visible_in_tree() or not s.has_node(\"area\"):\n\t\t\tcontinue\n\t\tvar d = gwEntity(s, gwFindShape(s.get_node(\"area\")), {\"kind\": \"mega_sphere\" if s.megaSphere else \"sphere\", \n\t\t\t\"collectable\": not s.get_node(\"justCreate\").time_left})\n\t\tif d != null:\n\t\t\tout.append(d)\n\tfor s in get_tree().get_nodes_in_group(\"inGameItem\"):\n\t\tif out.size() >= GW_MAX:\n\t\t\tbreak\n\t\tif s.is_queued_for_deletion() or not s.is_visible_in_tree() or not s.has_node(\"area\"):\n\t\t\tcontinue\n\t\tvar d = gwEntity(s, gwFindShape(s.get_node(\"area\")), {\"kind\": \"special_item\", \n\t\t\t\"collectable\": not s.get_node(\"justCreate\").time_left})\n\t\tif d != null:\n\t\t\tout.append(d)\n\treturn out\n\nfunc gwShopUi():\n\tvar menus = get_tree().get_nodes_in_group(\"shopMenu\")\n\tif menus.size() == 0 or not menus[0].has_node(\"buyPanel\"):\n\t\treturn null\n\tvar m = menus[0]\n\tvar bp = m.get_node(\"buyPanel\")\n\tvar sel = bp.itemSelect\n\tvar life = 0\n\tif bp.myPlayer != null and is_instance_valid(bp.myPlayer):\n\t\tlife = bp.myPlayer.life\n\tvar items = []\n\tfor child in bp.get_node(\"itemCtnr\").get_children():\n\t\tif child.item == null:\n\t\t\tcontinue\n\t\tvar info = myConst.ITEM_LIST[child.item - 1]\n\t\tvar price = null\n\t\tvar afford = false\n\t\tif not child.outOfStock:\n\t\t\tprice = myConst.getPrice(ceil(info.get(\"price\") / game.priceSale), child.level)\n\t\t\tafford = price <= life\n\t\titems.append({\"index\": int(str(child.name)) - 1, \"effect\": info.get(\"effect\"), \"level\": child.level, \n\t\t\t\"price\": price, \"affordable\": afford, \"sold\": bool(child.outOfStock)})\n\treturn {\"cursor\": int(sel.x) + 2 * int(sel.y), \"spheres\": life, \"items\": items, \n\t\t\"purchase_popup\": {\"open\": bool(bp.buyMenu), \"selection\": \"yes\" if bp.yes else \"no\"}, \n\t\t\"leave_popup\": {\"open\": bool(m.askForQuit), \"selection\": \"yes\" if m.yes else \"no\"}}\n\nfunc gwLabDoor():\n\tvar door = null\n\tfor s in get_tree().get_nodes_in_group(\"shop\"):\n\t\tif s.is_queued_for_deletion() or not s.is_visible_in_tree() or not s.has_node(\"area\"):\n\t\t\tcontinue\n\t\tvar b = gwShapeBox(gwFindShape(s.get_node(\"area\")))\n\t\tif b != null and gwOnScreen(b[\"c\"], 0):\n\t\t\tdoor = {\"x\": gwR(b[\"c\"].x), \"y\": gwR(b[\"c\"].y), \"hw\": gwR(b[\"h\"].x), \"hh\": gwR(b[\"h\"].y), \n\t\t\t\t\"enterable\": bool(s.ready)}\n\t\t\tbreak\n\treturn {\"door\": door, \"shop\": gwShopUi()}\n\nfunc gwObservation():\n\tif game == null or not is_instance_valid(game) or not get_tree().get_nodes_in_group(\"playerDeath\").size():\n\t\tgwPrev = {}\n\t\treturn null\n\tgwSeen = {}\n\tvar obs = {\"player\": gwPlayerEntry(), \"enemies\": gwEnemyEntries(), \"enemy_projectiles\": gwProjectileEntries(), \n\t\t\"pickups\": gwPickupEntries(), \"lab_door\": gwLabDoor()}\n\tgwPrev = gwSeen\n\treturn obs\n\n"
+      }
+    ]
+  },
+  {
+    "path": "scene/game.gdc",
+    "source_sha256": "661c15657dfe3f8357bddbe45833c92688e874b50952fe8e3e6c163a9b2badf4",
+    "patched_source_sha256": "fa93b024601e41e22079f55c2f22e2c33fbe27405b0d3f99ff0b5fd8c68b7511",
+    "edits": [
+      {
+        "start": 19,
+        "end": 19,
+        "text": "var cleared = {}\nvar upgradesBought = 0\n"
+      },
+      {
+        "start": 49,
+        "end": 49,
+        "text": "\tif get_tree().get_nodes_in_group(\"main\")[0].skipTuto:\n\t\treturn\n"
+      },
+      {
+        "start": 180,
+        "end": 180,
+        "text": "\tcleared = {}\n\tupgradesBought = 0\n"
+      },
+      {
+        "start": 201,
+        "end": 201,
+        "text": "\tcleared = {}\n\tupgradesBought = 0\n"
+      },
+      {
+        "start": 359,
+        "end": 359,
+        "text": "\tcleared[mapLevel] = true\n"
+      }
+    ]
+  },
+  {
+    "path": "scene/hud/buyPanel.gdc",
+    "source_sha256": "2bb8566d3e7447de14e3e68c49de14337e614f387d2eab60d2ff864ec5190f1c",
+    "patched_source_sha256": "957c115e7c7520d5ced07fa39eec62ee5e45bd7c3a40abbbcd9a5c980b5c54c8",
+    "edits": [
+      {
+        "start": 178,
+        "end": 178,
+        "text": "\t\tget_tree().get_nodes_in_group(\"game\")[0].upgradesBought += 1\n"
+      }
+    ]
+  }
+]

@@ -1,0 +1,187 @@
+{
+  "game_id": "80_tiny-kingdom",
+  "source_url": "https://neltile.itch.io/tiny-kingdom",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/index.html",
+      "path": "index.html",
+      "sha256": "524cf873184e41857f8d905c7aa15bfa4d681141dbc756f269437b0fdeda5088",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/Build/WebGL.data.br",
+      "path": "Build/WebGL.data.br",
+      "sha256": "544b7cfa40e1529c1a0972369e6324e00d6d251c5fbee57745e8c91f73fc8d45",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/Build/WebGL.framework.js.br",
+      "path": "Build/WebGL.framework.js.br",
+      "sha256": "bf5f22a3bd9a067c85f732abec1af25bf5ea83410394f71fe999b2419c1836d9",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/Build/WebGL.loader.js",
+      "path": "Build/WebGL.loader.js",
+      "sha256": "86ea62283e54262ba471d7fccfd1af877ef7a09ec4d047afbd9ddbb6d315d169",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/Build/WebGL.wasm.br",
+      "path": "Build/WebGL.wasm.br",
+      "sha256": "36f50607106a40709c703299f4e6d07b89b4265b08999bde83e9a444fcf0d74a",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/StreamingAssets/Master.bank",
+      "path": "StreamingAssets/Master.bank",
+      "sha256": "19554dbef21b3dc7069307e8b32847b1060f60a7e498a35c6d5eb3a61f8b30e7",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/StreamingAssets/Master.strings.bank",
+      "path": "StreamingAssets/Master.strings.bank",
+      "sha256": "71a4b1510497efd0ceda2940b7eff40aab6970958eda5e81feb18d47c8d04b88",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/StreamingAssets/Music.bank",
+      "path": "StreamingAssets/Music.bank",
+      "sha256": "cf1bf921af4ac1fb8e91f30365e7047c64f4196562951c6e8eb066c86f32a3b2",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/StreamingAssets/SFX.bank",
+      "path": "StreamingAssets/SFX.bank",
+      "sha256": "e3fc4423de367448155c037e0345de92a1204c40f576bcc65e60d8b2d7ddbdfc",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/StreamingAssets/UI.bank",
+      "path": "StreamingAssets/UI.bank",
+      "sha256": "5e904606a2fc59a11ad90e055f01a27c18e66070d558df9415e93c7fbfe6877d",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/TemplateData/favicon.ico",
+      "path": "TemplateData/favicon.ico",
+      "sha256": "9c13beb90ee8f70580d52a21d5233970d1c89e71e4a34a462c22610941c3c77f",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/TemplateData/fullscreen-button.png",
+      "path": "TemplateData/fullscreen-button.png",
+      "sha256": "21221581673a54b8139d408d4a3f8d2b879e86827d4b6fc53b995ff7a99ee3e9",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/TemplateData/progress-bar-empty-dark.png",
+      "path": "TemplateData/progress-bar-empty-dark.png",
+      "sha256": "bbee7131afe8a3365906240d89184dc86234c119467f390bc4bc6802328fdb4d",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/TemplateData/progress-bar-full-dark.png",
+      "path": "TemplateData/progress-bar-full-dark.png",
+      "sha256": "3306a6244dcb3926fca38a28e3ced589df8ff1beed955eb17c0bbf01c918bc62",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/TemplateData/style.css",
+      "path": "TemplateData/style.css",
+      "sha256": "e6945d37bf13d82aa258491d3568bcf2ad6556e04e020d781e955f9d2346881b",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/TemplateData/unity-logo-dark.png",
+      "path": "TemplateData/unity-logo-dark.png",
+      "sha256": "c1b72d26c096487dabc948b54bc203f8dac7ed4e3f5733918798e858acb4b159",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/TemplateData/webgl-logo.png",
+      "path": "TemplateData/webgl-logo.png",
+      "sha256": "b30c3af2a4538c6edf5f2411953760641dfa257f2a4cc5b88d671aa243b1f12f",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/TemplateData/unity-logo-light.png",
+      "path": "TemplateData/unity-logo-light.png",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      },
+      "sha256": "002990aea0d946833cadc1519d5b7e50a4570bd537a0517dd79a59d3eec84da7"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/TemplateData/progress-bar-empty-light.png",
+      "path": "TemplateData/progress-bar-empty-light.png",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      },
+      "sha256": "143696c060ad43d6c30f19ff5f49000927a139a2a1e4c9f45fafaa2b90d7d2be"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/11205360/TemplateData/progress-bar-full-light.png",
+      "path": "TemplateData/progress-bar-full-light.png",
+      "headers": {
+        "Accept-Encoding": "identity",
+        "Referer": "https://neltile.itch.io/tiny-kingdom"
+      },
+      "sha256": "12395ea785480c5cdf12fade6e6cbf49666d5bb1cef7240c113dbcba6bdc5c87"
+    }
+  ]
+}

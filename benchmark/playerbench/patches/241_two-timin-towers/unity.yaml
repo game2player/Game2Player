@@ -1,0 +1,220 @@
+schema_version: 1
+game_id: 241_two-timin-towers
+
+runtime:
+  pointer_size: 4
+  class_static_fields_offset: 92
+  allow_method_calls: false
+
+state:
+  fields:
+    game_state.internal.waves_cleared:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453168
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453168
+          - offset: 12
+    game_state.internal.current_wave_object:
+      kind: memory
+      type: u32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453168
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453168
+          - offset: 84
+    game_state.internal.wave_in_effect:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453168
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453168
+          - offset: 40
+    game_state.internal.enemies_killed_this_wave:
+      kind: memory
+      type: f32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453168
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453168
+          - offset: 44
+    game_state.internal.enemies_alive:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453168
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453168
+          - offset: 56
+    game_state.internal.player_dead:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453168
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453168
+          - offset: 65
+    game_state.internal.player_hitpoints:
+      kind: memory
+      type: f32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453384
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453384
+          - offset: 28
+    game_state.internal.player_max_hitpoints:
+      kind: memory
+      type: f32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453384
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453384
+          - offset: 24
+    game_state.internal.total_collected_currency:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453384
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453384
+          - offset: 160
+    game_state.internal.resource_0:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453384
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453384
+          - offset: 76
+            dereference: true
+          - offset: 16
+    game_state.internal.resource_1:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453384
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453384
+          - offset: 76
+            dereference: true
+          - offset: 20
+    game_state.internal.resource_2:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453384
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453384
+          - offset: 76
+            dereference: true
+          - offset: 24
+    game_state.internal.resource_3:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453384
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453384
+          - offset: 76
+            dereference: true
+          - offset: 28
+    game_state.internal.resource_4:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3453384
+        steps:
+          - offset: 0
+            dereference: true
+            expected_type_info: 3453384
+          - offset: 76
+            dereference: true
+          - offset: 32
+  status:
+    default: loading
+  actionable_statuses: []
+
+actions:
+  reset:
+    kind: reload
+
+capabilities:
+  supports_seed: false
+  supports_level_select: false
+  supports_difficulty: false
+  supports_inplace_reset: false
+  supports_reload_reset: true
+  supports_pause_detection: false
+  supports_menu_detection: true
+  supports_task_autostart: true
+  provides_actionable_flag: true

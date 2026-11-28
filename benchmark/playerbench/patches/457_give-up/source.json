@@ -1,0 +1,18 @@
+{
+  "game_id": "457_give-up",
+  "source_url": "https://armorgames.com/play/13662/give-up",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://cache.armorgames.com/files/games/give-up-13662.swf?v=1379179500",
+      "path": "game.swf",
+      "sha256": "671e724ab7b2a9774b45944f8a303925605804e775adcc2d8e4d3adbbab187e4"
+    },
+    {
+      "url": "https://github.com/ruffle-rs/ruffle/releases/download/v0.4.1/ruffle-0.4.1-web-selfhosted.zip",
+      "path": "ruffle",
+      "sha256": "d33c135beea75c83183da1938a49ee3f08c2f7a2eb2ae8f3ce43de842412aae6",
+      "unpack": "zip"
+    }
+  ]
+}

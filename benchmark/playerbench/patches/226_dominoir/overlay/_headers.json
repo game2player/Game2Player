@@ -1,0 +1,4 @@
+{
+  "/index.wasm": {"Content-Type": "application/wasm"},
+  "/index.pck": {"Content-Type": "application/octet-stream"}
+}

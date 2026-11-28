@@ -1,0 +1,38 @@
+{
+  "game_id": "264_guardian-sphere",
+  "source_url": "https://pixel-boy.itch.io/guardian-sphere",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/2260147/index.html",
+      "path": "index.html",
+      "sha256": "9a7016fae54b1fccdeded39f41b60dde734cc9cc5806261fd9e160cf16abdc49"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/2260147/index.js",
+      "path": "index.js",
+      "sha256": "6718c674df396f4cf75a3c379574ff120d3497a45f7516dbad4fbefc841a9fca"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/2260147/index.pck",
+      "path": "index.pck",
+      "sha256": "68a96340dfb609ebac7afc5a2274ab11f242dca6fc12a2d06536048306ccae0e"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/2260147/index.wasm",
+      "path": "index.wasm",
+      "sha256": "e7a7c79dfa7b522b2dbefd56cd04689db58498a1e8c3b660eed2b559efaef204"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/2260147/favicon.png",
+      "path": "favicon.png",
+      "sha256": "643474048bf941f5aa1a39019bc2e6988a6783ecf5cc9d96cc5e5fea91d2dd0b"
+    },
+    {
+      "url": "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.4/GDRE_tools-v2.7.4-linux.zip",
+      "path": "_patch_tools",
+      "unpack": "zip",
+      "sha256": "3dc4f1244dda62e41e0c952ac00a69e60e07f3b0d5a211164806bf9d41a54758"
+    }
+  ]
+}

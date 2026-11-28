@@ -1,0 +1,72 @@
+{
+  "game_id": "100_chess-by-sparsh",
+  "source_url": "https://github.com/sparshsam/chess-by-sparsh/tree/ee19f22519a4afb3ec3800dac6b430e56eb8f9ab",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://chess-by-sparsh.vercel.app/",
+      "path": "index.html",
+      "sha256": "20d6d486af1a7433f7e517a18da7b0c9a5fee28c07576a1b59573ae9504de2e1"
+    },
+    {
+      "url": "https://chess-by-sparsh.vercel.app/assets/index-zM3THtlj.js",
+      "path": "assets/index-zM3THtlj.js",
+      "sha256": "fa24ea7656bf2518246f545bd9691da381a077518795a4bb447b4493d3309e10"
+    },
+    {
+      "url": "https://chess-by-sparsh.vercel.app/assets/index-CCUX57yx.css",
+      "path": "assets/index-CCUX57yx.css",
+      "sha256": "a504ab2e7d468551343acb6745c857cf8e89b7ef489e89fcf89500b5a5a66e36"
+    },
+    {
+      "url": "https://chess-by-sparsh.vercel.app/assets/carpet-texture-C_OWAVkt.png",
+      "path": "assets/carpet-texture-C_OWAVkt.png",
+      "sha256": "2bb1ed84f9101471a846ce217986c2951edf71be8de0cd1048331aaf158ed6b3"
+    },
+    {
+      "url": "https://chess-by-sparsh.vercel.app/favicon.svg",
+      "path": "favicon.svg",
+      "sha256": "4a2ffb291d80ea96717f360363f56391506d24746edb35eefdd423bf5dfc3b91"
+    },
+    {
+      "url": "https://chess-by-sparsh.vercel.app/manifest.json",
+      "path": "manifest.json",
+      "sha256": "4cd04b187c5f38ec183f3c086fe47d12495ede8d12434b4fe4b020fdf13ebe56"
+    },
+    {
+      "url": "https://chess-by-sparsh.vercel.app/icons/icon-192.svg",
+      "path": "icons/icon-192.svg",
+      "sha256": "3a236a4aa791ffedd8a46886342af96a2062315fdc471885d5cb3c46d246c77a"
+    },
+    {
+      "url": "https://chess-by-sparsh.vercel.app/icons/icon-512.svg",
+      "path": "icons/icon-512.svg",
+      "sha256": "f4ff09e763851de76d75ee31ffee77501fca1ee7bed668c8fbc0d4aeeafd76e6"
+    },
+    {
+      "url": "https://chess-by-sparsh.vercel.app/stockfish/stockfish.js",
+      "path": "stockfish/stockfish.js",
+      "sha256": "2440e3273099627639145aa489ca207edc25375a9b6d0ea4910c4f2e0443935b"
+    },
+    {
+      "url": "https://chess-by-sparsh.vercel.app/stockfish/stockfish.wasm",
+      "path": "stockfish/stockfish.wasm",
+      "sha256": "ad68ce5a5ebcbc838da680de003f3912bd12775cfbea7f1855b6c5128b75a79a"
+    },
+    {
+      "url": "https://chess-by-sparsh.vercel.app/stockfish/stockfish.worker.js",
+      "path": "stockfish/stockfish.worker.js",
+      "sha256": "f435a8e0569a485cf3d915522e1c3d7799d4d54d2d37539abd14923759c0b1c7"
+    },
+    {
+      "url": "https://chess-by-sparsh.vercel.app/sw.js",
+      "path": "sw.js",
+      "sha256": "ffcb8d092c562587bd580bda9c75c1b00380bff1d8b685508a0baf8c031991a7"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/sparshsam/chess-by-sparsh/ee19f22519a4afb3ec3800dac6b430e56eb8f9ab/LICENSE",
+      "path": "LICENSE",
+      "sha256": "9ba7074bcd807613d46778b65115dd766c34867b29d094ecdcfc07b43a522127"
+    }
+  ]
+}

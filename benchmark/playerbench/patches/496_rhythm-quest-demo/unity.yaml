@@ -1,0 +1,45 @@
+schema_version: 1
+game_id: 496_rhythm-quest-demo
+runtime:
+  pointer_size: 4
+  class_static_fields_offset: 92
+  allow_method_calls: true
+  include_diagnostics: true
+state:
+  fields:
+    game_state.native_exists:
+      kind: method
+      table_index: 27954
+      args: []
+      append_method_info: true
+      return: bool
+    game_state.checkpoint_index:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base: {kind: static_fields, type_info: 9314700}
+        steps:
+        - {offset: 12, dereference: true, expected_type_info: 9314700}
+        - {offset: 28}
+    game_state.chain:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base: {kind: static_fields, type_info: 9314700}
+        steps:
+        - {offset: 12, dereference: true, expected_type_info: 9314700}
+        - {offset: 32}
+    game_state.deaths:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base: {kind: static_fields, type_info: 9314700}
+        steps:
+        - {offset: 12, dereference: true, expected_type_info: 9314700}
+        - {offset: 36}
+  status:
+    default: loading
+  actionable_statuses: []

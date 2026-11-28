@@ -1,0 +1,623 @@
+{
+  "game_id": "174_auto-necrochess",
+  "source_url": "https://stopsignal.itch.io/auto-necrochess",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/index.html",
+      "path": "index.html",
+      "sha256": "8885f8ea1b96c2ceb8c1c62925c6aa326833b0b1d21b0711cd5805ae6f90d1a6",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/HalloweenArmyNewVersion.js",
+      "path": "html5game/HalloweenArmyNewVersion.js",
+      "sha256": "1fb615dd47346a063fccb3102ae530e00af72bbd209288839991f126f8b7dcb4",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/HalloweenArmyNewVersion_texture_0.png",
+      "path": "html5game/HalloweenArmyNewVersion_texture_0.png",
+      "sha256": "ed9db8ee0e744f730e2cce4d5f710982dee003eb03a71b40b7d75a313e8d3595",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/HalloweenArmyNewVersion_texture_1.png",
+      "path": "html5game/HalloweenArmyNewVersion_texture_1.png",
+      "sha256": "061d2d583b086522f80b7fd3849280a69c55302d48b65a69dd0383dc307bce05",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/HalloweenArmyNewVersion_texture_2.png",
+      "path": "html5game/HalloweenArmyNewVersion_texture_2.png",
+      "sha256": "061592b8536c89924e3ef8260d9d40931733c913a9002a710bbfdbf61ebb1fc5",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/splash.png",
+      "path": "html5game/splash.png",
+      "sha256": "84259cbf29361fd40f18bfede185677cc439589db39aff1668ddbb7a6f8b1555",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snCoin.ogg",
+      "path": "html5game/snCoin.ogg",
+      "sha256": "4ee469a2f2f6700287a6b9bb9b2908a19896bd1c3a6f00f0365b4b1b255adfbf",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snCoin.mp3",
+      "path": "html5game/snCoin.mp3",
+      "sha256": "01f0b4b214eaeca4124b4ef3ef75f8051082acd73aed7a37def4edd4d88b8adb",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snPunch.ogg",
+      "path": "html5game/snPunch.ogg",
+      "sha256": "11e4062468bb0f3335617472087171250d4be5332293a583be30f08878ea3500",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snPunch.mp3",
+      "path": "html5game/snPunch.mp3",
+      "sha256": "5eff63b9b69a5d606b4bec91ad34f76dc951368ee3a2b37cbcb6130b45123bb8",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snTurboPunch.ogg",
+      "path": "html5game/snTurboPunch.ogg",
+      "sha256": "1b85159ec8e8495899941fce9f8639393d56ae7b3982e6701ed23b46e1cc83e0",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snTurboPunch.mp3",
+      "path": "html5game/snTurboPunch.mp3",
+      "sha256": "a06728b577170cab3ae13ab4ff97ad54c2cbe61079103c04203acae907b5d434",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snCoinNew.ogg",
+      "path": "html5game/snCoinNew.ogg",
+      "sha256": "1d720311119db075352e9d0dd3224b484471243bea8c6cd074072881cd81bd2f",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snCoinNew.mp3",
+      "path": "html5game/snCoinNew.mp3",
+      "sha256": "5616be130681412c96d485294a398dad6651e5da2926dd67c44a600bcf646dd1",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snReloadMarket.ogg",
+      "path": "html5game/snReloadMarket.ogg",
+      "sha256": "eb81bb9cd759519e217853a1f5983d8ca243bafca797a67648cc1a4321e9297e",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snReloadMarket.mp3",
+      "path": "html5game/snReloadMarket.mp3",
+      "sha256": "8a5c02ab1162b302b3ed74e902bb0d0dc2d2725ca32ad34f20537fca9517f0f1",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snFreeze.ogg",
+      "path": "html5game/snFreeze.ogg",
+      "sha256": "c9a25112b9e854cca0d4d86d67ffceae766cf5478dfa84a7ac1674e23ff8899d",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snFreeze.mp3",
+      "path": "html5game/snFreeze.mp3",
+      "sha256": "00d1c895849793f162110d40737f75f5696741f2b5bd668d6ec0749018c38392",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/stopthehalloween2.ogg",
+      "path": "html5game/stopthehalloween2.ogg",
+      "sha256": "5b4b9a996216131f6d12622bc7c578d58093b248605ef05e27e90794b08cfa66",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/stopthehalloween2.mp3",
+      "path": "html5game/stopthehalloween2.mp3",
+      "sha256": "286d131409fd830036baf0337cf2bad5bd7d63428237bc2056fc836409379cfb",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snLifeZero.ogg",
+      "path": "html5game/snLifeZero.ogg",
+      "sha256": "9fb2fe583bdcda2b6f9daf19dcdb45b1c66e8014373a4856ea731dbab73ed2dc",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snLifeZero.mp3",
+      "path": "html5game/snLifeZero.mp3",
+      "sha256": "6c7fb01a0fc02b2011775486ff67c1b13d38c83e01e93fa24a6915b554d1a8a6",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBubbles.ogg",
+      "path": "html5game/snBubbles.ogg",
+      "sha256": "ec9dc297bb25798702e744604e0096710a6f3dddb31a4e75b0b50ea615a98643",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBubbles.mp3",
+      "path": "html5game/snBubbles.mp3",
+      "sha256": "0dbb86fc3a17aaa6ebb59044abf6a601fb315c2eb0f31b612e8d35880f1c1f6b",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snGrab.ogg",
+      "path": "html5game/snGrab.ogg",
+      "sha256": "04cf6989cbf2e4d51e2f12f2c79cef6d09ffd47231e40374eaf5285a4a284564",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snGrab.mp3",
+      "path": "html5game/snGrab.mp3",
+      "sha256": "a825bdb2c4988ecaab99cd626479986edebc9856d125a427947b198563a21672",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBattleStart.ogg",
+      "path": "html5game/snBattleStart.ogg",
+      "sha256": "53d53e67c90e03b6f40dbcc0e37f0994823b0d719d5fded39af4f708cc67b117",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBattleStart.mp3",
+      "path": "html5game/snBattleStart.mp3",
+      "sha256": "2444e55905ac060d809d7d0b2d2c4f2970a83094a99161de18534993a66a283a",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snPlace.ogg",
+      "path": "html5game/snPlace.ogg",
+      "sha256": "d49b89f59e4cddec416cdf98d87468f6b3c1528607e7f60af3d4e70317f2e037",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snPlace.mp3",
+      "path": "html5game/snPlace.mp3",
+      "sha256": "fcfa8e2ca60cd8c4d7da6a01a5425bc0d2ebf9cfc87022a240ae80901b8f8c03",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBuff.ogg",
+      "path": "html5game/snBuff.ogg",
+      "sha256": "9a88d1944be3a92d721c67771004698d1e7e6500c8d94e29b096c6c51a341329",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBuff.mp3",
+      "path": "html5game/snBuff.mp3",
+      "sha256": "bebbcb6ba9131df2df56c699f79c001aa417a773c08403cc3e704ea1ab121c96",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBookActive.ogg",
+      "path": "html5game/snBookActive.ogg",
+      "sha256": "4a7c99a23e3da54ef3cca3d4edd7eae524f8babf039f6093f9cbc19847db0b3a",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBookActive.mp3",
+      "path": "html5game/snBookActive.mp3",
+      "sha256": "9c72477e75fe5f33308f5d8805872bbf46c3374f0519c5b00172f5f17fcf5b81",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snSummon.ogg",
+      "path": "html5game/snSummon.ogg",
+      "sha256": "64de643546c680ed12172e87b7c82a2faeaa20284f4624af2045ea139441217b",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snSummon.mp3",
+      "path": "html5game/snSummon.mp3",
+      "sha256": "bc4c7b938533e2f2baf620528bd0568921c72c0fa735164c4b76a89949e55d6d",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBatDebuff.ogg",
+      "path": "html5game/snBatDebuff.ogg",
+      "sha256": "6a4ee123c400f3f910521fb98756237f60cd76613786f30730f1882b5e3a7456",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBatDebuff.mp3",
+      "path": "html5game/snBatDebuff.mp3",
+      "sha256": "2bf40cfdea8b206fab58bbea5e3d69a37f0bb0f4e084a9bf5460e0300e25c4b8",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBat.ogg",
+      "path": "html5game/snBat.ogg",
+      "sha256": "f045e69dc600f3867ce86e942c207392a2e422847deaee55672ecc7e06f893b9",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBat.mp3",
+      "path": "html5game/snBat.mp3",
+      "sha256": "2b506b2a66833f2446765e0c3da0ca64a58e4c4e75696f7186ca993a9d8f1c41",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBow.ogg",
+      "path": "html5game/snBow.ogg",
+      "sha256": "bed4b979235eec70fdb411243ad016124727f69593eecb53fa9e2870af39fe78",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBow.mp3",
+      "path": "html5game/snBow.mp3",
+      "sha256": "6aae0b0e532241bdf5d53aa602434df4b375c4bbab6b589d222231cae0ad294f",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snShot.ogg",
+      "path": "html5game/snShot.ogg",
+      "sha256": "165a586a3f4d29cc65bb1869905273edf803184a99eccbf6875f28255f0056b6",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snShot.mp3",
+      "path": "html5game/snShot.mp3",
+      "sha256": "dfbc25de778adac11d9292902daf84dff49e37247759d4525aa5febf266a6215",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBless.ogg",
+      "path": "html5game/snBless.ogg",
+      "sha256": "36580038543c8b4b22d18d45df5dcaf52703ed818e1b0310d078326c6f4db313",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snBless.mp3",
+      "path": "html5game/snBless.mp3",
+      "sha256": "cd63ef92ca8c64e1b9e520996f66a664dbad00461a0651560c7c0679da92c1fb",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/MenuLoop.ogg",
+      "path": "html5game/MenuLoop.ogg",
+      "sha256": "a29a2829a01fe19629879b3ecb76a2880377a9e82b61167b67d94b134d50982a",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/MenuLoop.mp3",
+      "path": "html5game/MenuLoop.mp3",
+      "sha256": "530267ecb1623668f78e57373484527f317aa7a33768b4d87ae349e3c9e4b17a",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snPig.ogg",
+      "path": "html5game/snPig.ogg",
+      "sha256": "31a3d8f79cf0e2f03cce3a42215f8b201f03a0597d289cbc24b99fcbd65e1824",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snPig.mp3",
+      "path": "html5game/snPig.mp3",
+      "sha256": "3ce1fe63c0b20a88437c4ee8f757a312b0b99dffd65cd233e4b3a8ef6cadd628",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snWoosh.ogg",
+      "path": "html5game/snWoosh.ogg",
+      "sha256": "30667626b3e9193f7a5f44f5aeb1e175e205bf6ef03a741f1f72e284f3ebed5e",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snWoosh.mp3",
+      "path": "html5game/snWoosh.mp3",
+      "sha256": "862bdc85e56b0984381ffc9ba80eed991803f9f4e7a19d0de39bfe5d75d719d3",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snMagic.ogg",
+      "path": "html5game/snMagic.ogg",
+      "sha256": "d35b90b58a2d10f9f3c7222687a2fe7ff5a4f7e66dc4ab6c41d017257e794915",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snMagic.mp3",
+      "path": "html5game/snMagic.mp3",
+      "sha256": "7753a7481c3cfb3249efde57a94bf8bb27c2b56e391ca99b6569d5db06a34844",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snLoss.ogg",
+      "path": "html5game/snLoss.ogg",
+      "sha256": "20529582e079b773ec5dd7556cdc991e1f23dce964850bf12c783db1e8934683",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snLoss.mp3",
+      "path": "html5game/snLoss.mp3",
+      "sha256": "bc31ac803f0dd1405f41bebe6deb19b76cf2f85d901ec29d93f4226eacfa72d2",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snLevelThree.ogg",
+      "path": "html5game/snLevelThree.ogg",
+      "sha256": "93cc3a7ad7d12cea174b976cd08e1dac8c5e7697e836548b16f8dc3aa306f73f",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/snLevelThree.mp3",
+      "path": "html5game/snLevelThree.mp3",
+      "sha256": "c425e748225ec16ea97ad35c5867102212e6f3c244b5541ca1dbfa182e0e0fe9",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/musicmain.ogg",
+      "path": "html5game/musicmain.ogg",
+      "sha256": "324294d2460d168f6a9b86138f4a6314e005ef098a2e5367b3955f1613a5a358",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/musicmain.mp3",
+      "path": "html5game/musicmain.mp3",
+      "sha256": "29c6ab05a9fe5b8acc8a6633dff39b307ce5bdec3beee88ee11863defc8db0c7",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/tph_newgroundsio.js",
+      "path": "html5game/tph_newgroundsio.js",
+      "sha256": "3ac21d9af2517eed8b0a1333eb955e6768f9e7a3a8b6101f182d6fb27c07b69b",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/uph_ng_library.js",
+      "path": "html5game/uph_ng_library.js",
+      "sha256": "e9f972778d65c7c5d5fd419676c99e9ef3fc6e3eb7bb0552b80da5b0e09b6f74",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/yph_ImageLoadBar.js",
+      "path": "html5game/yph_ImageLoadBar.js",
+      "sha256": "2fda54960f0d73718f2e3b2ea041816d3ec8b79e4c7bb1b397d3fdd862d7ec79",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF2.png",
+      "path": "html5game/particles/IDR_GIF2.png",
+      "sha256": "c92ae7f4a00fe225c63f16e038ad90d4429365df4a1faa1fce45f2a7d00d0772",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF3.png",
+      "path": "html5game/particles/IDR_GIF3.png",
+      "sha256": "1be677c71ff767673a7d2f0f90a4ced9d1cd04b4c93dbab2c5ab7a18ae733a79",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF4.png",
+      "path": "html5game/particles/IDR_GIF4.png",
+      "sha256": "ed2e5aa62ee8ce13637d7ce7d064bf6fe6869b0e197ca989bfec85f879895d11",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF5.png",
+      "path": "html5game/particles/IDR_GIF5.png",
+      "sha256": "bda261b5c3cc50d7395da90f2f54838bc1d2ecae959124621940ab4252a6d9ec",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF6.png",
+      "path": "html5game/particles/IDR_GIF6.png",
+      "sha256": "69b923bb2c222744fdad06e28ca97a4d0206d70036d9594d7298a6dd060da237",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF7.png",
+      "path": "html5game/particles/IDR_GIF7.png",
+      "sha256": "064cda06c0af0c896325bfe0cff56f686c6a1a56da5e3c0f27b7a5eb9e27c95d",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF8.png",
+      "path": "html5game/particles/IDR_GIF8.png",
+      "sha256": "252e030f1c49224018dfcf9f70626dfa4e5c7bc39c6e3fd77b590278a4dd9729",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF9.png",
+      "path": "html5game/particles/IDR_GIF9.png",
+      "sha256": "edb29fe3842f978a6b380c295fbff4c384c2e35f9505f0bcd22ee606868a2764",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF10.png",
+      "path": "html5game/particles/IDR_GIF10.png",
+      "sha256": "e7fd6462f01fa6621a2cf567a4c9c22422e3b16a19958f39bd90f56b10ce9529",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF11.png",
+      "path": "html5game/particles/IDR_GIF11.png",
+      "sha256": "6e3df19b82e07ff18236138ff77c3b211cb0a8d8dc1e0071f641c1ff2bae03d4",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF12.png",
+      "path": "html5game/particles/IDR_GIF12.png",
+      "sha256": "a4821edb2d01bb18aa3f5ab4bbd40c229ecb252e160b8c42f123a6bf4f000538",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF13.png",
+      "path": "html5game/particles/IDR_GIF13.png",
+      "sha256": "d45beaceadae53b074ca410e20b838a4f38640f1bebe70e0024b1c8ffb5d67fe",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF14.png",
+      "path": "html5game/particles/IDR_GIF14.png",
+      "sha256": "d2a42ac85c8dec85005ee2c0557d183430805852070f4f9c2d5c6cc680064852",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10815431/html5game/particles/IDR_GIF15.png",
+      "path": "html5game/particles/IDR_GIF15.png",
+      "sha256": "a3562aece7bad69e3e657b315a0e4ed9fb4a76981b4ec4a96e7273b84ce0a1ef",
+      "headers": {
+        "Referer": "https://html-classic.itch.zone/html/10815431/index.html"
+      }
+    }
+  ]
+}

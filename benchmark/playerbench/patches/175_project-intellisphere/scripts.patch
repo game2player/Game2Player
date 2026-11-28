@@ -1,0 +1,317 @@
+--- a/TrailContainer.gd
++++ b/TrailContainer.gd
+@@ -41,5 +41,3 @@
+ 				last_trail.set_meta("stopped_at", OS.get_ticks_msec())
+ 				last_trail.emit = false
+-				yield(get_tree().create_timer(last_trail.lifetime), "timeout")
+-				remove_child(last_trail)
+-				last_trail.queue_free()
++				get_tree().create_timer(last_trail.lifetime).connect("timeout", last_trail, "queue_free", [], CONNECT_ONESHOT)
+--- a/Debug.gd
++++ b/Debug.gd
+@@ -9,4 +9,6 @@
+ 
+ func _ready():
++		if OS.has_feature("JavaScript"):
++				seed(int(JavaScript.eval("window.__intellisphere.seed()", true)))
+ 		var mat = SpatialMaterial.new()
+ 		mat.flags_unshaded = true
+--- a/Global.gd
++++ b/Global.gd
+@@ -68,5 +68,5 @@
+ 		position: = Vector3.ZERO
+ ) -> float:
+-		if not is_instance_valid(body):
++		if not is_instance_valid(body) or not body.is_inside_tree():
+ 				return 0.0
+ 		var world: = body.get_world()
+--- a/Hud.gd
++++ b/Hud.gd
+@@ -20,4 +20,5 @@
+ var enemy_locks: = 0
+ var enemy_missiles: = []
++var _policy_warning = {"level": "none", "urgency": 0.0}
+ 
+ onready var mission: Mission = get_node_or_null("../Mission")
+@@ -87,4 +88,5 @@
+ 		_process_mission_indicators(delta)
+ 		_process_alerts(delta)
++		_policy_publish()
+ 
+ 
+@@ -157,5 +159,5 @@
+ 		if not player:
+ 				
+-				for target in target_boxes:
++				for target in target_boxes.keys():
+ 						var target_box: HudTargetBox = target_boxes[target]
+ 						remove_child(target_box)
+@@ -182,5 +184,5 @@
+ 						target_boxes[target] = node
+ 		
+-		for target in target_boxes:
++		for target in target_boxes.keys():
+ 				var target_box: HudTargetBox = target_boxes[target]
+ 				if not targets.has(target):
+@@ -233,4 +235,5 @@
+ 
+ func _process_alerts(delta: float) -> void :
++		_policy_warning = {"level": "none", "urgency": 0.0}
+ 		if not player:
+ 				hud_alert_top.visible = false
+@@ -243,4 +246,5 @@
+ 				for missile in enemy_missiles:
+ 						max_danger = max(max_danger, missile.get_danger_level_for_alert())
++				_policy_warning = {"level": "caution" if max_danger <= 0.25 else "missile alert", "urgency": max_danger}
+ 				if max_danger <= 0.25:
+ 						hud_alert_top.visible = true
+@@ -324,2 +328,34 @@
+ 				return Global.HUD_COLOR_RED
+ 		return default_color
++
++
++
++
++func _policy_target_record(target: Target) -> Dictionary:
++	var position = target.get_position()
++	var velocity = target.get_velocity()
++	return {
++		"id": target._gw_id, 
++		"position": [position.x, position.y, position.z], 
++		"velocity": [velocity.x, velocity.y, velocity.z]
++	}
++
++func _policy_is_enemy(target) -> bool:
++	return is_instance_valid(target) and target.is_inside_tree() and target.team == 2 and not target.is_destroyed()
++
++func _policy_publish() -> void :
++	if not OS.has_feature("JavaScript"):
++		return
++	var contacts = {}
++	if is_instance_valid(player):
++		if hud_minimap.is_visible_in_tree():
++			for target in hud_minimap._policy_revealed_targets:
++				if _policy_is_enemy(target):
++					contacts[target._gw_id] = _policy_target_record(target)
++		for target in target_boxes:
++			var box = target_boxes[target]
++			if _policy_is_enemy(target) and box.is_visible_in_tree() and viewport_rect.has_point(box.position):
++				contacts[target._gw_id] = _policy_target_record(target)
++	JavaScript.eval("window.__intellispherePolicy.receive(" + JSON.print({
++		"observable_targets": contacts.values(), "missile_warning": _policy_warning
++	}) + ")", true)
+--- a/HudMinimap.gd
++++ b/HudMinimap.gd
+@@ -17,4 +17,6 @@
+ 
+ var target_pointers: = {}
++
++var _policy_revealed_targets: = []
+ var zoom_level: = ZOOM_S
+ 
+@@ -29,5 +31,5 @@
+ 
+ 
+-func _remove_pointer(target: Target) -> void :
++func _remove_pointer(target) -> void :
+ 		var pointer: Control = target_pointers[target]
+ 		remove_child(pointer)
+@@ -37,5 +39,6 @@
+ 
+ func clear() -> void :
+-		for target in target_pointers:
++		_policy_revealed_targets.clear()
++		for target in target_pointers.keys():
+ 				_remove_pointer(target)
+ 
+@@ -47,13 +50,14 @@
+ 		delta: float
+ ) -> void :
++		_policy_revealed_targets.clear()
+ 		for target in targets:
+ 				if not target_pointers.has(target):
+ 						_add_pointer(target)
+-		for _target in target_pointers:
++		for _target in target_pointers.keys():
++				if not is_instance_valid(_target) or not targets.has(_target):
++						_remove_pointer(_target)
++						continue
+ 				var target: Target = _target
+-				var pointer: Control = target_pointers[target]
+-				if not targets.has(target):
+-						_remove_pointer(target)
+-						continue
++				var pointer: Control = target_pointers[_target]
+ 				
+ 				var transform: = target_self.get_transform()
+@@ -73,4 +77,6 @@
+ 				var pointer_pos: = (pointer_pos_01 + Vector2(1, 1)) * 0.5 * rect_size
+ 				pointer.visible = _is_inside_circle(pointer_pos_01)
++				if pointer.visible:
++						_policy_revealed_targets.append(target)
+ 				pointer.rect_position = pointer_pos - pointer_half_size
+ 				pointer.rect_rotation = rad2deg( - rotation.y)
+--- a/Math.gd
++++ b/Math.gd
+@@ -48,4 +48,3 @@
+ 
+ static func prob(percent: float) -> bool:
+-		randomize()
+ 		return randf() * 100.0 <= percent
+--- a/Mission.gd
++++ b/Mission.gd
+@@ -39,4 +39,5 @@
+ 
+ func _process(delta: float) -> void :
++		_gw_publish(delta)
+ 		
+ 		if state >= 10:
+@@ -77,4 +78,9 @@
+ 
+ func _on_Events_target_destroyed(payload: Dictionary) -> void :
++		if OS.has_feature("JavaScript"):
++				JavaScript.eval("window.__intellisphere.onDestroyed(" + JSON.print({
++						"target": payload.target._gw_record(), 
++						"by_player": is_instance_valid(payload.last_hit_by) and payload.last_hit_by == player
++				}) + ")", true)
+ 		var last_hit_by: = payload.last_hit_by as Node
+ 		
+@@ -102,4 +108,6 @@
+ 		var prev_state: = state
+ 		state = next_state
++		if OS.has_feature("JavaScript"):
++				JavaScript.eval("window.__intellisphere.onMissionState(" + str(state) + ")", true)
+ 		_on_state_changed(prev_state, next_state)
+ 
+@@ -149,2 +157,39 @@
+ 				announcer.queue_msg(Announcer.MSG_MISSION_FAILED)
+ 				return
++
++
++var _gw_publish_elapsed = 0.0
++func _gw_publish(delta: float) -> void :
++	if not OS.has_feature("JavaScript"):
++		return
++	_gw_publish_elapsed += delta
++	if _gw_publish_elapsed < 0.1:
++		return
++	_gw_publish_elapsed = 0.0
++	var result = {
++		"scene": get_tree().current_scene.filename, "mission_state": state, 
++		"game_time_ms": OS.get_ticks_msec() - initialized_at, 
++		"mission_time_ms": get_mission_time() * 1000.0, 
++		"targets": [], "player": null, "ready": false
++	}
++	for target in Target.get_all(self):
++		result.targets.append(target._gw_record())
++	if is_instance_valid(player) and player.is_inside_tree() and is_instance_valid(player.target):
++		var selected = player.radar.active_target
++		var has_selected = is_instance_valid(selected) and selected.is_inside_tree() and not selected.is_destroyed()
++		result.player = {
++			"id": str(player.target.get_path()), "team": player.target.team, 
++			"health": player.target.health, "damage": player.target.total_damage, 
++			"position": [player.translation.x, player.translation.y, player.translation.z], 
++			"rotation": [player.rotation.x, player.rotation.y, player.rotation.z], 
++			"speed_kmh": player.linear_velocity.length() * Global.SI_TO_KMH, 
++			"altitude_agl": Global.get_terrain_altitude_of_rigidbody(player), 
++			"pitch": player.controller.pitch_knob.value, "roll": player.controller.roll_knob.value, 
++			"yaw": player.controller.yaw_knob.value, "throttle": player.controller.throttle_knob.value, 
++			"brakes": player.controller.brakes_knob.value, "ammo": player.weapons.get_stats(), 
++			"selected_target": str(selected.get_path()) if has_selected else "", 
++			"target_distance": player.radar.distance_to_target(selected) if has_selected else - 1.0, 
++			"target_locked": player.radar.can_lock_onto(selected) if has_selected else false
++		}
++		result.ready = player.controller.use_player_input and player.weapons.loaded_item != null
++	JavaScript.eval("window.__intellisphere.receive(" + JSON.print(result) + ")", true)
+--- a/Radar.gd
++++ b/Radar.gd
+@@ -27,5 +27,5 @@
+ 
+ func _process_lock() -> void :
+-		if not is_instance_valid(active_target):
++		if not is_instance_valid(active_target) or not active_target.is_inside_tree() or active_target.is_destroyed():
+ 				return
+ 		active_target_locked = can_lock_onto(active_target)
+@@ -40,5 +40,7 @@
+ 
+ func _process_select() -> void :
+-		if not is_instance_valid(active_target):
++		if not is_instance_valid(active_target) or not active_target.is_inside_tree() or active_target.is_destroyed():
++				active_target = null
++				active_target_locked = false
+ 				select_next_target()
+ 				return
+@@ -140,5 +142,5 @@
+ 
+ func is_target_in_frame(target: Target) -> bool:
+-		if not target:
++		if not is_instance_valid(target) or not target.is_inside_tree() or target.is_destroyed():
+ 				return false
+ 		var local_position: = target.get_position() - get_position();
+@@ -153,5 +155,5 @@
+ 
+ func can_lock_onto(target: Target) -> bool:
+-		if not target:
++		if not is_instance_valid(target) or not target.is_inside_tree() or target.is_destroyed():
+ 				return false
+ 		var local_position: = target.get_position() - get_position();
+--- a/Target.gd
++++ b/Target.gd
+@@ -20,4 +20,5 @@
+ 
+ var total_damage: = 0.0
++var _gw_id = ""
+ 
+ onready var parent: Spatial = get_parent()
+@@ -25,5 +26,5 @@
+ 
+ static func get_all(relative_to: Node) -> Array:
+-		if not is_instance_valid(relative_to):
++		if not is_instance_valid(relative_to) or not relative_to.is_inside_tree():
+ 				return []
+ 		var tree: = relative_to.get_tree()
+@@ -57,4 +58,5 @@
+ 
+ func _ready() -> void :
++		_gw_id = str(get_path())
+ 		add_to_group("target")
+ 		Events.connect("missile_exploded", self, "_on_Events_missile_exploded")
+@@ -71,9 +73,9 @@
+ 
+ func get_transform() -> Transform:
+-		return parent.global_transform
++		return parent.global_transform if parent.is_inside_tree() else parent.transform
+ 
+ 
+ func get_position() -> Vector3:
+-		return parent.global_transform.origin
++		return get_transform().origin
+ 
+ 
+@@ -93,7 +95,14 @@
+ 				return
+ 		var was_destroyed = is_destroyed()
++		var gw_previous_damage = total_damage
+ 		
+ 		if damage > 0:
+ 				total_damage += damage
++				if OS.has_feature("JavaScript"):
++						var effective_damage = max(0.0, min(health, total_damage) - min(health, gw_previous_damage))
++						var by_player = is_instance_valid(last_hit_by) and last_hit_by.get("is_player") == true
++						JavaScript.eval("window.__intellisphere.onDamage(" + JSON.print({
++								"target": _gw_record(), "effective_damage": effective_damage, "by_player": by_player
++						}) + ")", true)
+ 		
+ 		if not was_destroyed and is_destroyed():
+@@ -120,2 +129,11 @@
+ 		return total_damage >= health
+ 		
++
++
++
++func _gw_record() -> Dictionary:
++	return {
++		"id": _gw_id, "name": hud_name, "team": team, "type": type, 
++		"primary": primary, "health": health, "damage": total_damage, 
++		"destroyed": is_destroyed(), "indestructible": indestructible
++	}

@@ -1,0 +1,17 @@
+{
+  "game_id": "449_pico-puzzle-league",
+  "source_url": "https://tvil.itch.io/pico-puzzle-league",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/1442933/index.html",
+      "path": "index.html",
+      "sha256": "bb47a306be46c3e86a5ba18c62023553a758635b1a8e516bd9621735c42fa4dd"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/1442933/picopuzzleleague.js",
+      "path": "picopuzzleleague.js",
+      "sha256": "e7c6659e4523d9e6f676c1f7297dc28368f72f2e500919a81ed4e7e5790010ff"
+    }
+  ]
+}

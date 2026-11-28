@@ -1,0 +1,17 @@
+{
+  "game_id": "363_dusk-child",
+  "source_url": "https://sophieh.itch.io/dusk-child",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/444679/webver14/index.html",
+      "path": "index.html",
+      "sha256": "409046c135758959f1259cccef81a895e04a9e3b39001364c5457e9e91982820"
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/444679/webver14/dc14.js",
+      "path": "dc14.js",
+      "sha256": "d5a01a622c4d308a4da37aa38427164df6ab7423ce533576744a44bef8750039"
+    }
+  ]
+}

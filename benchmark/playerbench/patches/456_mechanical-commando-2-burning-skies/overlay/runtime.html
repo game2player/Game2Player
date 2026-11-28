@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000}ruffle-player{width:100%;height:100%;display:block}</style>
+<script>window.RufflePlayer={config:{autoplay:"on",unmuteOverlay:"hidden",splashScreen:false,contextMenu:"off",allowScriptAccess:true,openUrlMode:"deny",logLevel:"error",letterbox:"on"}};</script>
+<script src="ruffle/ruffle.js"></script></head><body><script>
+const epoch=Number(new URLSearchParams(location.search).get('epoch'));
+window.addEventListener('load',async()=>{
+ try{window.player=RufflePlayer.newest().createPlayer();player.tabIndex=0;document.body.append(player);
+ await player.ruffle().load({url:'game.swf',allowScriptAccess:true});}
+ catch(e){parent.__mcError(epoch,String(e));}
+});
+</script></body></html>

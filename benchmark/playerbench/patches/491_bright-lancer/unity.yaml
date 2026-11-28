@@ -1,0 +1,38 @@
+schema_version: 1
+game_id: 491_bright-lancer
+runtime:
+  pointer_size: 4
+  class_static_fields_offset: 92
+  allow_method_calls: false
+  include_diagnostics: true
+state:
+  fields:
+    game_state.using_gamepad:
+      kind: memory
+      type: bool
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3077524
+        steps:
+        - offset: 0
+          dereference: true
+          expected_type_info: 3077524
+        - offset: 32
+    game_state.carried_health:
+      kind: memory
+      type: i32
+      address:
+        kind: chain
+        base:
+          kind: static_fields
+          type_info: 3077524
+        steps:
+        - offset: 0
+          dereference: true
+          expected_type_info: 3077524
+        - offset: 40
+  status:
+    default: loading
+  actionable_statuses: []

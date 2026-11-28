@@ -1,0 +1,679 @@
+{
+  "game_id": "197_frogfall",
+  "source_url": "https://kultisti.itch.io/frogfall",
+  "entrypoint": "index.html",
+  "downloads": [
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/index.html",
+      "path": "index.html",
+      "sha256": "bfe49db0429b34e1286ed43cf1917be8381f6eb34a4000e0ec944e32196b816e",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/Frogfall.js?cachebust=1135798055",
+      "path": "Frogfall/Frogfall.js",
+      "sha256": "cb46bca9809670adad2b78c06a4a52a61a8dad8ae9030ade0a975e924cdb5bc8",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/tph_fixwindow.js",
+      "path": "Frogfall/tph_fixwindow.js",
+      "sha256": "102f2526001daa32065912d392b89d3477b4738c88212f28010c7f19292fb637",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/Frogfall_texture_0.png",
+      "path": "Frogfall/Frogfall_texture_0.png",
+      "sha256": "195b34b8151585cc0dd2e92e838683a635749ec3dc647917bdb2f35db7af8b4a",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/Frogfall_texture_1.png",
+      "path": "Frogfall/Frogfall_texture_1.png",
+      "sha256": "9bb200f94155dc1c81f3a1e6894d839bacb6f4e32ed80c17c3c32e428bfb674a",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soTHANKYOU.ogg",
+      "path": "Frogfall/soTHANKYOU.ogg",
+      "sha256": "68f49afe40201bc4fdfaaa4d629c21aceb5ffa1283f3016f05274ec94e471b3f",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/muFrogTuto.ogg",
+      "path": "Frogfall/muFrogTuto.ogg",
+      "sha256": "12ae5844535231b8172d004f549a197c6fe658c0b028e5254cc77326f1a9b283",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soMAPCLOSELEVEL.ogg",
+      "path": "Frogfall/soMAPCLOSELEVEL.ogg",
+      "sha256": "d1d25710659a0723e6668da71850c76567d7baca36f4260279061570117c2193",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soGOLEVEL.ogg",
+      "path": "Frogfall/soGOLEVEL.ogg",
+      "sha256": "964a7c59fdd0b9a49802d09ea2f29aff235011378b55ceb7ce5a1daa794d7c61",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soLEVELSTART.ogg",
+      "path": "Frogfall/soLEVELSTART.ogg",
+      "sha256": "f3f34f39ece7957b09125d5555de4adab3895f95f5d525f99df9e8360995e3b7",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soTRANSITION.ogg",
+      "path": "Frogfall/soTRANSITION.ogg",
+      "sha256": "c0d34ef2b54644cfe8ea6043d4b6f57618338a3e71e66d707f44478262fa199f",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soMENUSELECT.ogg",
+      "path": "Frogfall/soMENUSELECT.ogg",
+      "sha256": "6620ad4e83a2aec94e4244e5301bed77ef034d78e27dd30d62a1066e59660b2c",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soSPEEDRUNSTART.ogg",
+      "path": "Frogfall/soSPEEDRUNSTART.ogg",
+      "sha256": "38b7a24d9a0571e37de621271eeddd2bff258a414515c67eefc2c5fa3335d3e8",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soSTARTGAME.ogg",
+      "path": "Frogfall/soSTARTGAME.ogg",
+      "sha256": "f3b8c792ca8ff151d06630149ab10b8301666a235c236ec5dff6b956f38e4e67",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soMENUCART.ogg",
+      "path": "Frogfall/soMENUCART.ogg",
+      "sha256": "0a35f3a854d1c1d1f3bbdab5e911d45bd7f447ee3df968f6d4a705b3fe6fae87",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/muFrogMenu_01.ogg",
+      "path": "Frogfall/muFrogMenu_01.ogg",
+      "sha256": "40abcbd38930302a1d9956f36e7c4ea9bb6094c0594fed04b02d871dbb140fc6",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soJUMPTOWATER.ogg",
+      "path": "Frogfall/soJUMPTOWATER.ogg",
+      "sha256": "1fbda75fc9a02cfd6844f49e187981b7bd27a92e4f9c11fc3c13ae80a7aa013d",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soBATTURN.ogg",
+      "path": "Frogfall/soBATTURN.ogg",
+      "sha256": "4ef3b72e0c8456e0f281b584b47a0b8f53cdde79a4ea05726df96f64514bf277",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soANDYOU.ogg",
+      "path": "Frogfall/soANDYOU.ogg",
+      "sha256": "8ff3538d370d61423d6f7c7c0080c206d2176981f7a00b211ed353bcba4fe68b",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soKULTISTIOUT.ogg",
+      "path": "Frogfall/soKULTISTIOUT.ogg",
+      "sha256": "43f73ef423616fb7eb75fee6e5ec429aff654cc0832587b05ee6eaac9b39758c",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soBSIDE_UNLOCK.ogg",
+      "path": "Frogfall/soBSIDE_UNLOCK.ogg",
+      "sha256": "0093f3f840f584212a3ae2520b7789a4c4074411282f40c6b2ec6ab1c70f2cf3",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soLOCKE.ogg",
+      "path": "Frogfall/soLOCKE.ogg",
+      "sha256": "342a598e0a11c9764174764c8ef4993313ad835678dc0d71df69b12b2142983a",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGMOVE.ogg",
+      "path": "Frogfall/soFROGMOVE.ogg",
+      "sha256": "cab3f18ae7d8cfe64e4c7fb6244a4c3e0899a9a6dddf7b0de884671f012e8175",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soMAPMOVE.ogg",
+      "path": "Frogfall/soMAPMOVE.ogg",
+      "sha256": "ab6546bd4621e5fd57ec199547e3551755991e4ca21244875f7165130882f72a",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/muFrogRooftop_01.ogg",
+      "path": "Frogfall/muFrogRooftop_01.ogg",
+      "sha256": "dc82fd158bb4bbff6c0a434adbe02594ddeb538a32a0ceb91f14240a59e35f00",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soMENUMOVE.ogg",
+      "path": "Frogfall/soMENUMOVE.ogg",
+      "sha256": "ab6546bd4621e5fd57ec199547e3551755991e4ca21244875f7165130882f72a",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soMAPOPENLEVEL.ogg",
+      "path": "Frogfall/soMAPOPENLEVEL.ogg",
+      "sha256": "26f84aedf9c6efe40b0b845ef9c6a7732602706dd440cabf706fa58043ee39a5",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/muFrogCave_01.ogg",
+      "path": "Frogfall/muFrogCave_01.ogg",
+      "sha256": "dc4a7526b9588b37f5baf4ab36d616cc3365a2506d14ba765a681f4c9fedcc0f",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soUNPAUSE.ogg",
+      "path": "Frogfall/soUNPAUSE.ogg",
+      "sha256": "89b0d3c2eab27667d65bbcc798de33095d0043b43a918670de6c1fc7a9acf6f0",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soJUMPFROMWATER.ogg",
+      "path": "Frogfall/soJUMPFROMWATER.ogg",
+      "sha256": "9eb43d793b81d557e50317e74c03f88a61e1c5c2774602f2b5a89e0047fe17ef",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soBACKTOMENU.ogg",
+      "path": "Frogfall/soBACKTOMENU.ogg",
+      "sha256": "5650d3b7d914eed0ac3179217a16f76847938b540210ddeb5dfdffbd48a9d0d2",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGHIT.ogg",
+      "path": "Frogfall/soFROGHIT.ogg",
+      "sha256": "2f01620f89723a032ea3fbc9d97ced52e66ed4195cc0d5ef76aa1d8b9e4f5816",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soSPEEDRUNOPEN.ogg",
+      "path": "Frogfall/soSPEEDRUNOPEN.ogg",
+      "sha256": "ebcdcf4a370e7e39d831a36d67ce3e58fcbf86e3145c3bcd6ae9b76202704e64",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/muFrogMenu_02.ogg",
+      "path": "Frogfall/muFrogMenu_02.ogg",
+      "sha256": "51dabe8ad550677566dc9a14e0db16470fe37b073a713945223b7a326fb3e9e6",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soMAPCHANGETOB.ogg",
+      "path": "Frogfall/soMAPCHANGETOB.ogg",
+      "sha256": "5c6e75d865515489295eb4ecadff1329ddf5ea04a3cf78136849f3bac8a4a671",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soSPEAK.ogg",
+      "path": "Frogfall/soSPEAK.ogg",
+      "sha256": "21aebd10e2c75bbf246dc66c86ebb1c31d3f37b43a6841cd66a1a81f4abcc849",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soWALLBROKEN.ogg",
+      "path": "Frogfall/soWALLBROKEN.ogg",
+      "sha256": "4902ba8e67caba19f6532bdead5cfb8aefdbd9c0fcd0e3fb09b696fb2170d165",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGEAT4.ogg",
+      "path": "Frogfall/soFROGEAT4.ogg",
+      "sha256": "0dca7d4a0a72afefc03aac673b22d94788c42d2a53dae99d57a3523f882eb4d6",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soBLOCKAPPEARHIT.ogg",
+      "path": "Frogfall/soBLOCKAPPEARHIT.ogg",
+      "sha256": "ffb6876f9d9a2362487bece95830c7d3fe22a7cc6bf6757314b5ec9a14c4fe8f",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soZZZ.ogg",
+      "path": "Frogfall/soZZZ.ogg",
+      "sha256": "c5754a6428cde06b7d3456f916f34736ba700f52a4420f6150a13fefaa0226fa",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/muFrogWind.ogg",
+      "path": "Frogfall/muFrogWind.ogg",
+      "sha256": "0a80097e454d66e53b78f7273992be274e6869eec6b1ab1af2c309f5192ce1b1",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soSKATESPIN.ogg",
+      "path": "Frogfall/soSKATESPIN.ogg",
+      "sha256": "0f274f6241be6801b04cbfd66a9fff26e0776c5ba4e6f181df57e1899b9f0567",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soKEY.ogg",
+      "path": "Frogfall/soKEY.ogg",
+      "sha256": "8be926969132f261d7da9b6687daf2a85e0cf2eb655ceecfac0c5f260ba3a4d0",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soPAUSE.ogg",
+      "path": "Frogfall/soPAUSE.ogg",
+      "sha256": "e0be9840c836b3c8609b61afe86db60d9481a999b011d63ddb01acbc022784f1",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soVICTORY.ogg",
+      "path": "Frogfall/soVICTORY.ogg",
+      "sha256": "baac5f7cc30c62803ab84932cf2eb7b2153f07ec1a29bf682092392b95ab45ca",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soSKATING.ogg",
+      "path": "Frogfall/soSKATING.ogg",
+      "sha256": "bee717db0f7dc1694b9e1a4b464c83f92a72328091bcf48db81ac7fb7af61f9c",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soBATAPPEAR.ogg",
+      "path": "Frogfall/soBATAPPEAR.ogg",
+      "sha256": "a93cb03e415f87866d02f42419e7d254e7dabb462b26b664c2bb725e9ec427b6",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soLEVELCARTAPPEAR.ogg",
+      "path": "Frogfall/soLEVELCARTAPPEAR.ogg",
+      "sha256": "8dde76f75b2a1c5e07ff91e2e1980a1ff4a1a144d6df2f1e827f2a10b7402e47",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soLETTER.ogg",
+      "path": "Frogfall/soLETTER.ogg",
+      "sha256": "bd3e47985dcd2da79c84f48fef6edaf9a12fd3b982f7d3fc0fedd89fe81f14bd",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/muFrogSwamp_01.ogg",
+      "path": "Frogfall/muFrogSwamp_01.ogg",
+      "sha256": "4e587d06bda458e80fe7eb4ffef2f7deb1589176b223c6e45863719fb4cd62e8",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soHEART.ogg",
+      "path": "Frogfall/soHEART.ogg",
+      "sha256": "66ed40921bc1858d9efd54945b613a943d6081a85e22210a5a2beafe89e91f39",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGEAT3.ogg",
+      "path": "Frogfall/soFROGEAT3.ogg",
+      "sha256": "8096a1e4242b263a47eea6155518d8e3c7673701a61ff123ff0300618def74f5",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soGOSKATE.ogg",
+      "path": "Frogfall/soGOSKATE.ogg",
+      "sha256": "b0bd704710433c2a5722c34f9497176ef5290080deb489ffd54fbc06922bdf40",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGBOUNCE.ogg",
+      "path": "Frogfall/soFROGBOUNCE.ogg",
+      "sha256": "0085068ae5ca66940c1081950e28506a15a9ca0fd6beff0459a0bd47a2817699",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGFALL.ogg",
+      "path": "Frogfall/soFROGFALL.ogg",
+      "sha256": "f4a358b5be1afe579782d1f4a5205deb337a1e67ec7c18055442abb2b64bc60c",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGHITWAV.ogg",
+      "path": "Frogfall/soFROGHITWAV.ogg",
+      "sha256": "fa22b99dd71d42ae977b6d6e5e61ad55f0ce999f9d7604842165a50ef419f60b",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFINALEAT.ogg",
+      "path": "Frogfall/soFINALEAT.ogg",
+      "sha256": "1a8813228fc3d4fd3bad01c7d461f8ccfb883d37280545af2f7025c3592a5016",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soMAPCHANGETOA.ogg",
+      "path": "Frogfall/soMAPCHANGETOA.ogg",
+      "sha256": "7494e207bad0087d9c0bec87675954d36a1653421f2e68fcfbdf69d253eb63f1",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soPLAYTESTING.ogg",
+      "path": "Frogfall/soPLAYTESTING.ogg",
+      "sha256": "330dc24299f6247984a34cfad371d2a0d4d7f9f5b6a718ff6d40137887ef8a72",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soSPECIALTHANKS.ogg",
+      "path": "Frogfall/soSPECIALTHANKS.ogg",
+      "sha256": "fb28bb05826d2e9d7be17e556c2907cfc434efc01d92ffdf6fe61bc988ab0446",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soEATFLY.ogg",
+      "path": "Frogfall/soEATFLY.ogg",
+      "sha256": "ba534b082b8ff2155759c84446459c03683d3fed71a5eb3cec3f0e044498396b",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFINALFLY.ogg",
+      "path": "Frogfall/soFINALFLY.ogg",
+      "sha256": "f5b8a4e49ef5e4b82f3a6e521b626dae1faebed86848ce520eb8e817b0e27161",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soSKATEJUMP.ogg",
+      "path": "Frogfall/soSKATEJUMP.ogg",
+      "sha256": "754e9b1bf6355098408b63ca8553125ac43f5182fac415abb775480929d40d40",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soLEVELCARTAWAY.ogg",
+      "path": "Frogfall/soLEVELCARTAWAY.ogg",
+      "sha256": "856c9e9cdc3e347ca7966fddeb0831d5d320880fe49dcd98c5037c18fad2335b",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soLEVELSELECTMOVE.ogg",
+      "path": "Frogfall/soLEVELSELECTMOVE.ogg",
+      "sha256": "d50b9cd00c611b77428fcb81a49e022e95375591c3ab2e4ba37fdf635e98f0a6",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soSPEEDRUNCLOSE.ogg",
+      "path": "Frogfall/soSPEEDRUNCLOSE.ogg",
+      "sha256": "38f46b2be2f17c66bf1f31e254f7153ab0e297036f0e21f37aa3d424d825b218",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/muFrogSkate_01.ogg",
+      "path": "Frogfall/muFrogSkate_01.ogg",
+      "sha256": "f8080adf3d6cf9890c1e6b1155b5e986f7ff043db8f326a4b2195a9493490f7c",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/muFrogMenu_03.ogg",
+      "path": "Frogfall/muFrogMenu_03.ogg",
+      "sha256": "9be600ee845cdd575a6b4dc9283258ce619178ae932d0ff0d443523e53df49cc",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soBATFLIP.ogg",
+      "path": "Frogfall/soBATFLIP.ogg",
+      "sha256": "23ce2b37a84bf8ea14929cb9e3ab6e28143f1ff6c83ec12f44b91359896ec3ac",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGEAT.ogg",
+      "path": "Frogfall/soFROGEAT.ogg",
+      "sha256": "e803653b08414c12e6dd80c6f7b73c2f806435764ce80c42fd13475502772798",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soMAPGOTOLEVEL.ogg",
+      "path": "Frogfall/soMAPGOTOLEVEL.ogg",
+      "sha256": "c6b01200f7b68cc0ec461a076af9a22d1256e4b3c303b1c6706947f964e4150c",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/muFrogMountain_01.ogg",
+      "path": "Frogfall/muFrogMountain_01.ogg",
+      "sha256": "17c95bceb101ff77c8921c5967daa908969cdc7d6c857e3a803a163f1c345515",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soTHANKYOU_SPARKLE.ogg",
+      "path": "Frogfall/soTHANKYOU_SPARKLE.ogg",
+      "sha256": "7d64052dc201d7db8bb256d3a783f95edcff5bd9a74919c7c8107796b6d5a096",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soMAPFROGJUMP.ogg",
+      "path": "Frogfall/soMAPFROGJUMP.ogg",
+      "sha256": "3f67610d0ea14cd30dfdd5e00d0f3febc801ac1e5f7ec5d8087a261b91c41012",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soKULTISTI.ogg",
+      "path": "Frogfall/soKULTISTI.ogg",
+      "sha256": "638aefa7291af0977bebc95520e66cebc80ef212a0db8b72dba190e234e8ff0e",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGFALL_OUT.ogg",
+      "path": "Frogfall/soFROGFALL_OUT.ogg",
+      "sha256": "321689933c1bcd2f33418a91c56f1b7f4c7ee2e1745c224ab6e8c0732892ae16",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soSTAGECLEAR.ogg",
+      "path": "Frogfall/soSTAGECLEAR.ogg",
+      "sha256": "98410e99b3c404f36f0bb693fd0c309254f438a1eb1533b6f092497e5bb87066",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soEATLASTFLY.ogg",
+      "path": "Frogfall/soEATLASTFLY.ogg",
+      "sha256": "8a662f572401ee801647bedb2f0622ea460a4171b3f53e7b0f9e2593d8f2cca0",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGJUMP.ogg",
+      "path": "Frogfall/soFROGJUMP.ogg",
+      "sha256": "7f5eee8504f8e249edf4035d1fb84a709a3494460c197900891518bf3194f865",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGTOUCHWALL.ogg",
+      "path": "Frogfall/soFROGTOUCHWALL.ogg",
+      "sha256": "2b5bcce4cddc54323fd23b75a9ca7526e2fcb3f7a13305538cb20423d48f2208",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/muFrogVictory.ogg",
+      "path": "Frogfall/muFrogVictory.ogg",
+      "sha256": "2178a6195e63d081eec0a20fdda87f269f8372ba4e8103bd5564902354f69c6d",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGEAT2.ogg",
+      "path": "Frogfall/soFROGEAT2.ogg",
+      "sha256": "ef3550cfaf4e1fe27668171d493b37568c88952c7ca0171db6f139902b02ef90",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/soFROGFLY.ogg",
+      "path": "Frogfall/soFROGFLY.ogg",
+      "sha256": "f054e1331fcf2a05954e7c4b6eebb4caeabce35ac1225135d21e510ae8195549",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    },
+    {
+      "url": "https://html-classic.itch.zone/html/10695139/Frogfall/sound/worklets/audio-worklet.js",
+      "path": "Frogfall/sound/worklets/audio-worklet.js",
+      "sha256": "70b9442c815cdb9276ca1fd36c099c7c312fee9dfcb6cba9e58be2e5c85fb76c",
+      "headers": {
+        "Referer": "https://kultisti.itch.io/frogfall"
+      }
+    }
+  ]
+}

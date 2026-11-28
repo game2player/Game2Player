@@ -1,0 +1,31 @@
+schema_version: 1
+game_id: 80_tiny-kingdom
+runtime:
+  pointer_size: 4
+  class_static_fields_offset: 92
+  allow_method_calls: false
+# These build-specific metadata roots are validated by name in game_api.js.
+# The adapter resolves the live instances through the shared bridge and publishes
+# Resources and RegionParameter values; these slots alone are not gameplay state.
+state:
+  fields:
+    game_state.bridge_roots.tilemap_class:
+      kind: memory
+      type: ptr
+      address: {kind: absolute, address: 6440020}
+    game_state.bridge_roots.gameplay_class:
+      kind: memory
+      type: ptr
+      address: {kind: absolute, address: 6432104}
+  status: {default: loading}
+  actionable_statuses: []
+actions:
+  reset: {kind: reload}
+capabilities:
+  supports_seed: false
+  supports_reload_reset: true
+  supports_inplace_reset: false
+  supports_task_autostart: true
+  provides_actionable_flag: true
+  supports_pause_detection: true
+  supports_menu_detection: true
